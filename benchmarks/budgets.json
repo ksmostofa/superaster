@@ -1,0 +1,14 @@
+{
+  "status": "NOT FROZEN",
+  "decision_gate": "G2",
+  "reason": "Freeze numerical budgets from measured actual-device evidence before tuning; do not invent them during corpus preparation.",
+  "laptop_complete_median_seconds": null,
+  "laptop_complete_p95_seconds": null,
+  "phone_complete_median_seconds": null,
+  "phone_complete_p95_seconds": null,
+  "decoded_pixel_ceiling_by_runtime": null,
+  "peak_memory_ceiling_by_runtime": null,
+  "quality_acceptance_by_category": null,
+  "cross_runtime_alpha_tolerance": null,
+  "cross_runtime_color_tolerance": null
+}

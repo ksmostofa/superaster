@@ -1,0 +1,22 @@
+[
+  {
+    "id": "people-motion",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg/640px-Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg",
+    "error": "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
+  },
+  {
+    "id": "product-shadow",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Office_chair_shadow_%2815021216101%29.jpg/640px-Office_chair_shadow_%2815021216101%29.jpg",
+    "error": "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
+  },
+  {
+    "id": "animal-dog",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg/640px-Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg",
+    "error": "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
+  },
+  {
+    "id": "material-glass",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Port_wine.jpg/640px-Port_wine.jpg",
+    "error": "HTTP Error 400: Use thumbnail sizes listed on https://w.wiki/GHai"
+  }
+]
