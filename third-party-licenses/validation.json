@@ -1,0 +1,49 @@
+{
+  "checked": "2026-10-09",
+  "environment": {
+    "platform": "Linux x86_64",
+    "node": "26.11.1"
+  },
+  "checks": {
+    "complete_notice_hashes": {
+      "status": "PASS",
+      "files": 58,
+      "command": "Verify every manifest entry byte length and SHA-256"
+    },
+    "local_document_links": {
+      "status": "PASS",
+      "scope": "installation/device/quality/launch-decisions/top-level-notices/SOURCES"
+    },
+    "recipe_example": {
+      "status": "PASS",
+      "source": "actual integrated compiled parseRecipe, no inference"
+    },
+    "harness_sidecar_and_gallery": {
+      "status": "PASS",
+      "command": "python -m unittest test_evidence.ImageEvidenceTest.test_runner_retains_actual_adjacent_execution_sidecar test_evidence.ImageEvidenceTest.test_gallery_uses_actual_warm_timing_scope -v",
+      "tests": 2
+    },
+    "source_archive_retrieval": {
+      "status": "PASS",
+      "scope": "five actual primary-host downloads with recorded sizes and SHA-256; no build"
+    },
+    "fetch_source_script": {
+      "status": "PASS",
+      "scope": "five preserved actual archive bodies supplied through an explicit test fetch; hash-verification success, corrupt-body rejection and no created file on rejection; no repeated network download"
+    },
+    "final_static_notice_bundle": {
+      "status": "NOT RUN",
+      "reason": "Coordinator must copy into final distribution and verify accessible links"
+    },
+    "source_rebuild_recombination": {
+      "status": "NOT RUN",
+      "reason": "Exact historical fork patch/container inputs and rebuilt/modified library substitution not reproduced"
+    },
+    "physical_pixel7": {
+      "status": "NOT RUN"
+    },
+    "human_quality_judgments": {
+      "status": "NOT RUN"
+    }
+  }
+}
