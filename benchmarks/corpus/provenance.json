@@ -1,6 +1,8 @@
 [
   {
     "id": "people-hair",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/people-hair.json",
+    "raw_source_snapshot_sha256": "deb1dc69dc70bc44c86069862effb2bcc1dda32f598075dacea7a96ea2824934",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=woman+long+hair+portrait+photograph+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "woman long hair portrait photograph",
     "selected_page": {
@@ -13,25 +15,10 @@
               "source": "commons-desc-page",
               "value": "Vladimir Pustovit"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Tube tops|Portrait photographs of women|Women with long hair|Young women of Ukraine|Flickr images reviewed by FlickreviewR 2|Young women standing|Photos by Vladimir Pustovit"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -47,19 +34,6 @@
               "source": "mediawiki-metadata",
               "value": "2020-06-12 15:38:14"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2014-06-07 18:30:43"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Portrait of a young long-haired woman."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-2.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -68,10 +42,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/2.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Portrait of a young long-haired woman"
             },
             "Restrictions": {
               "hidden": "",
@@ -92,9 +62,6 @@
           "width": 2976
         }
       ],
-      "imagerepository": "local",
-      "index": 3,
-      "ns": 6,
       "pageid": 91153160,
       "revisions": [
         {
@@ -108,6 +75,8 @@
   },
   {
     "id": "people-covering",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/people-covering.json",
+    "raw_source_snapshot_sha256": "e664d510f06fb608900b3a0729b7b4535515e8ba03fc2f2b5fdb16bd00942d07",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=woman+hijab+portrait+photograph+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "woman hijab portrait photograph",
     "selected_page": {
@@ -120,25 +89,10 @@
               "source": "commons-desc-page",
               "value": "<p><a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/21976354@N07\">Neil</a>\n</p>\n<table class=\"toccolours layouttemplate commons-file-information-table\" style=\"width: 100%;\" dir=\"ltr\" lang=\"en\">\n<tbody><tr><th class=\"type fileinfo-paramfield\">Camera location</th><td style=\"border:none;\"><span class=\"plainlinks\"><span class=\"plainlinksneverexpand\"><a class=\"external text\" href=\"https://geohack.toolforge.org/geohack.php?pagename=File:Hijab_glance_back_Indonesia.jpg&amp;params=-08.773796_N_0117.947845_E_globe:Earth_type:camera_source:exif_&amp;language=en\">8° 46′ 25.67″ S, 117° 56′ 52.24″ E</a></span></span> <a class=\"mw-kartographer-maplink no-icon\" data-mw-kartographer=\"maplink\" data-style=\"osm-intl\" href=\"//commons.wikimedia.org/wiki/Special:Map/13/-8.773796/117.947845/en\" data-zoom=\"13\" data-lat=\"-8.773796\" data-lon=\"117.947845\" data-overlays='[\"_ef4c9f6ce0d80b6b5c3a2f0268620cecf490cc06\"]'><span typeof=\"mw:File\"><span title=\"Kartographer map based on OpenStreetMap.\"><img alt=\"Kartographer map based on OpenStreetMap.\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Openstreetmap_logo.svg/20px-Openstreetmap_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"20\" height=\"20\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Openstreetmap_logo.svg/40px-Openstreetmap_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"256\" data-file-height=\"256\"></span></span></a></td><td style=\"border:none;\">View this and other nearby images on: <a class=\"external text\" href=\"https://wikimap.toolforge.org/?wp=false&amp;cluster=false&amp;zoom=16&amp;lat=-08.773796&amp;lon=0117.947845\">OpenStreetMap</a></td><td style=\"border:none;\"><span class=\"skin-invert\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/Commons:Geocoding\" title=\"Commons:Geocoding\"><img alt=\"info\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/OOjs_UI_icon_help.svg/20px-OOjs_UI_icon_help.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"18\" height=\"18\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/OOjs_UI_icon_help.svg/40px-OOjs_UI_icon_help.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"24\" data-file-height=\"24\"></a></span><span class=\"geo\" style=\"display:none\"> -8.773796;  117.947845</span></td></tr>\n</tbody></table>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Taken with Canon EOS 400D|Women of Indonesia|Flickr images uploaded by Flickr upload bot|Portrait photographs of women at bust length|Women wearing hijabs in Indonesia|Files with coordinates missing SDC location of creation|Side-eye"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -154,32 +108,6 @@
               "source": "mediawiki-metadata",
               "value": "2009-02-27 20:22:50"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2008-08-16 10:20:38"
-            },
-            "GPSLatitude": {
-              "source": "commons-desc-page",
-              "value": "-8.773796"
-            },
-            "GPSLongitude": {
-              "source": "commons-desc-page",
-              "value": "117.947845"
-            },
-            "GPSMapDatum": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "WGS-84"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Woman in Indonesia wearing a hijab, looking to her left. Her magenta-coloured clothing is in colour while the rest of the photo is in black and white. In the background, a blur of people."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-2.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -188,15 +116,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/2.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Hijab glance back Indonesia"
-            },
-            "Permission": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "<table id=\"FlickrReview\" style=\"width:100%; margin:0.3em auto; text-align:start; background-color:var(--background-color-success-subtle,#d5fdf4); padding: 3px; border:1px solid var(--border-color-base,#a2a9b1); color:inherit;\" dir=\"ltr\" lang=\"en\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><a href=\"https://en.wikipedia.org/wiki/Flickr\" class=\"extiw\" title=\"en:Flickr\">Flickr</a></b>, was uploaded to Commons using <b><a href=\"//commons.wikimedia.org/wiki/User:Flickr_upload_bot\" title=\"User:Flickr upload bot\">Flickr upload bot</a></b> on 27 February 2009, 20:02 by <span id=\"flickr_upload_bot_reviewer\"><b><a href=\"//commons.wikimedia.org/wiki/User:Ranveig\" title=\"User:Ranveig\">Ranveig</a></b></span>. On that date, it was confirmed to be licensed under the terms of the license indicated.\n</td>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/60px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/120px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td></tr></tbody></table>\n<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/2.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/2.0/deed.en\">Attribution 2.0 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/2.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 2.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 2.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>"
             },
             "Restrictions": {
               "hidden": "",
@@ -217,9 +136,6 @@
           "width": 2075
         }
       ],
-      "imagerepository": "local",
-      "index": 3,
-      "ns": 6,
       "pageid": 6056302,
       "revisions": [
         {
@@ -233,6 +149,8 @@
   },
   {
     "id": "people-group",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/people-group.json",
+    "raw_source_snapshot_sha256": "1a4841b39abda1b965492142f53a4c045165fc03f63b48f36202d2031691fbfb",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=group+people+photograph+outdoors+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "group people photograph outdoors",
     "selected_page": {
@@ -245,25 +163,10 @@
               "source": "commons-desc-page",
               "value": "Walton LaVonda, U.S. Fish and Wildlife Service"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "PD US FWS|Images uploaded by Fæ|Uploads by Fæ with linkrot|Public-domain-image.com|Birdwatching in the United States|People pointing|People standing outdoors|Photographs by Walton LaVonda"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -279,32 +182,10 @@
               "source": "mediawiki-metadata",
               "value": "2013-02-27 09:10:14"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "<p>Not given\n</p>\n<ul><li>Transferred by <a href=\"//commons.wikimedia.org/wiki/User:F%C3%A6\" title=\"User:Fæ\">Fæ</a> on 2013-02-27</li></ul>"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "A group of people stand birdwatching\n<dl><dd>Image from Public domain images website, <a rel=\"nofollow\" class=\"external free\" href=\"http://www.public-domain-image.com/full-image/people-public-domain-images-pictures/a-group-of-people-stand-birdwatching.jpg.html\">http://www.public-domain-image.com/full-image/people-public-domain-images-pictures/a-group-of-people-stand-birdwatching.jpg.html</a></dd></dl>"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "pd"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "Public domain"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "A group of people stand birdwatching"
-            },
-            "Permission": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "This file is in public domain, not copyrighted, no rights reserved, free for any use. You can use this picture for any use including commercial purposes without the prior written permission and without fee or obligation."
             },
             "Restrictions": {
               "hidden": "",
@@ -325,9 +206,6 @@
           "width": 2784
         }
       ],
-      "imagerepository": "local",
-      "index": 4,
-      "ns": 6,
       "pageid": 24888979,
       "revisions": [
         {
@@ -341,6 +219,8 @@
   },
   {
     "id": "people-motion",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/people-motion.json",
+    "raw_source_snapshot_sha256": "af8dd5fa6fe441acbad2b1e02e0c6ac290c3630e7bbe72730012cb9582f5ab15",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=runner+motion+blur+photograph+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "runner motion blur photograph",
     "selected_page": {
@@ -353,25 +233,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/39072595@N03\">Yogendra Joshi</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Images with watermarks|Files with coordinates missing SDC location of creation|United States photographs taken on 2010-06-27|Flickr images reviewed by FlickreviewR 2|Cycling in the 2010s|Flickr files uploaded by Red panda bot|Photos in Flickr Explore|Cycling men in New York City|Men wearing sunglasses in Manhattan, New York City|Central Park in June 2010"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -387,32 +252,6 @@
               "source": "mediawiki-metadata",
               "value": "2020-07-16 06:10:46"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "Taken on 27 June 2010, 21:50"
-            },
-            "GPSLatitude": {
-              "source": "commons-desc-page",
-              "value": "40.782398"
-            },
-            "GPSLongitude": {
-              "source": "commons-desc-page",
-              "value": "-73.965553"
-            },
-            "GPSMapDatum": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "WGS-84"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "<p><b><a rel=\"nofollow\" class=\"external text\" href=\"http://yogendraphotography.blogspot.com/\">Blogged</a></b>\nThis was in Central Park New\nYork Last sunday... dozens of\ncyclists and runners using the\ntracks in[/photos/yogendra174/4752248835/ ...]\n</p><p>First prize winner in monthly contest @ P@P\n</p>\n<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/groups/photographersatpune/discuss/72157626432147010/\">www.flickr.com/groups/photographersatpune/discuss/7215762...</a>"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-2.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -421,10 +260,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/2.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Zoom... (Explored 1st July ^ 10) - Flickr - Yogendra174"
             },
             "Restrictions": {
               "hidden": "",
@@ -445,9 +280,6 @@
           "width": 1114
         }
       ],
-      "imagerepository": "local",
-      "index": 5,
-      "ns": 6,
       "pageid": 92291702,
       "revisions": [
         {
@@ -461,6 +293,8 @@
   },
   {
     "id": "people-portrait",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/people-portrait.json",
+    "raw_source_snapshot_sha256": "4eadc0887c79fba575535182c8dec791563c9a9d0d07b1a816acc0be3bcf0aea",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=man+portrait+photograph+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "man portrait photograph",
     "selected_page": {
@@ -473,25 +307,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://pixabay.com/en/users/ThuyHaBich-6663646/\">ThuyHaBich</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "featured|potd"
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "CC-Zero|Personality rights warning|Featured pictures by others nominated by Yann Forget|Files uploaded by Yann Forget|Featured pictures of people|Images from Pixabay|Featured photographs in the public domain|Black and white portrait photographs of men with beards|Black and white photographs of men smoking pipe|21st-century black and white portrait photographs of sitting men at bust length"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -507,19 +326,6 @@
               "source": "mediawiki-metadata",
               "value": "2018-04-27 06:58:03"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2018"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Bearded man smoking pipe."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -528,10 +334,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Bearded man smoking pipe-3013924"
             },
             "Restrictions": {
               "hidden": "",
@@ -552,9 +354,6 @@
           "width": 5500
         }
       ],
-      "imagerepository": "local",
-      "index": 9,
-      "ns": 6,
       "pageid": 68598168,
       "revisions": [
         {
@@ -568,6 +367,8 @@
   },
   {
     "id": "product-hole",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/product-hole.json",
+    "raw_source_snapshot_sha256": "a1b5f223ecb2992b7a6eb47280fd50938cfa33a18abc9ea2beb3b4fcf290bf20",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=scissors+isolated+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "scissors isolated",
     "selected_page": {
@@ -580,25 +381,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/188454520@N02\">Tool Dude8mm</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Secateurs|Flickr images missing SDC inception|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -614,19 +400,6 @@
               "source": "mediawiki-metadata",
               "value": "2026-05-15 06:38:23"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2020-05-16 00:32"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Feel free to use this image but please give credit with a link to &lt;a href=\"<a rel=\"nofollow\" class=\"external free\" href=\"https://www.mechanicalcaveman.com/\">https://www.mechanicalcaveman.com/</a>\" rel=\"noreferrer nofollow\"&gt;www.mechanicalcaveman.com&lt;/a&gt; (NOT Flickr)"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-2.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -635,10 +408,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/2.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Background Isolated Garden Scissors Edited 2020 (49913697766)"
             },
             "Restrictions": {
               "hidden": "",
@@ -659,9 +428,6 @@
           "width": 4152
         }
       ],
-      "imagerepository": "local",
-      "index": 1,
-      "ns": 6,
       "pageid": 192003083,
       "revisions": [
         {
@@ -675,6 +441,8 @@
   },
   {
     "id": "product-white",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/product-white.json",
+    "raw_source_snapshot_sha256": "424faf7b49d823790e85c127f649be14c19c931b79124bab4156b734108a84a9",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=white+porcelain+cup+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "white porcelain cup",
     "selected_page": {
@@ -687,25 +455,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/wiki/User:W.carter\" title=\"User:W.carter\">W.carter</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Taken with Canon EOS 600D and Canon EF-S 18-55mm f/3.5-5.6 IS II|Self-published work|Images by W.carter|Files with coordinates missing SDC location of creation|Glögg cups|Studio photography by W.carter in Tuntorp, Brastad"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -721,32 +474,6 @@
               "source": "mediawiki-metadata",
               "value": "2025-02-05 18:36:59"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2025-02-03 20:26:24"
-            },
-            "GPSLatitude": {
-              "source": "commons-desc-page",
-              "value": "58.384123"
-            },
-            "GPSLongitude": {
-              "source": "commons-desc-page",
-              "value": "11.473737"
-            },
-            "GPSMapDatum": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "WGS-84"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Four white porcelain glögg cups. Photographed in Tuntorp, Brastad, Lysekil Municipality, Sweden."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-4.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -755,10 +482,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/4.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "White porcelain glögg cup 1"
             },
             "Restrictions": {
               "hidden": "",
@@ -779,9 +502,6 @@
           "width": 4060
         }
       ],
-      "imagerepository": "local",
-      "index": 2,
-      "ns": 6,
       "pageid": 159189126,
       "revisions": [
         {
@@ -795,6 +515,8 @@
   },
   {
     "id": "product-dark",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/product-dark.json",
+    "raw_source_snapshot_sha256": "0fff783f8bdadf51bd5e23211f7cfeace4b0981d1f5227939dcaa9542df88d5b",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=black+shoe+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "black shoe",
     "selected_page": {
@@ -807,25 +529,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/wiki/User:Wikipedia-ce\" title=\"User:Wikipedia-ce\">Wikipedia-ce</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Taken with Canon PowerShot A650 IS|CC-Zero|Derby shoes|Self-published work|Single black shoes|Single shoes on white background|Male black leather shoes"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -841,19 +548,6 @@
               "source": "mediawiki-metadata",
               "value": "2012-07-07 09:37:20"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2012-07-07"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Black Blucher Shoe"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -862,10 +556,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Shoe-Blucher-Black with rubber sole"
             },
             "Restrictions": {
               "hidden": "",
@@ -886,9 +576,6 @@
           "width": 3000
         }
       ],
-      "imagerepository": "local",
-      "index": 6,
-      "ns": 6,
       "pageid": 20166929,
       "revisions": [
         {
@@ -902,6 +589,8 @@
   },
   {
     "id": "product-shadow",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/product-shadow.json",
+    "raw_source_snapshot_sha256": "b6ac2debaa398c03cecfb953f51a64227d469400a4dac5871f09c510dd649a5f",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=chair+shadow+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "chair shadow",
     "selected_page": {
@@ -914,25 +603,10 @@
               "source": "commons-desc-page",
               "value": "pcs34560"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Chairs|Self-published work|PD-self|Files uploaded by Pcs34560"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -948,27 +622,10 @@
               "source": "mediawiki-metadata",
               "value": "2017-08-28 23:06:35"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2017-08-27"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "モダン・スナップ"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "pd"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "Public domain"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Wire chair with shadow - Pcs34560 IMG6674"
             },
             "Restrictions": {
               "hidden": "",
@@ -989,9 +646,6 @@
           "width": 5472
         }
       ],
-      "imagerepository": "local",
-      "index": 4,
-      "ns": 6,
       "pageid": 96070700,
       "revisions": [
         {
@@ -1005,6 +659,8 @@
   },
   {
     "id": "product-tools",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/product-tools.json",
+    "raw_source_snapshot_sha256": "757e9f772935b89a1dcb3e63704039296071f304c61709efe2dea286ef3a9786",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=wrench+hand+tool+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "wrench hand tool",
     "selected_page": {
@@ -1017,25 +673,10 @@
               "source": "commons-desc-page",
               "value": "M338"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Taken with Canon PowerShot G7|Mechanical hand tools|Self-published work|PD-self|Images with extracted images"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1051,27 +692,10 @@
               "source": "mediawiki-metadata",
               "value": "2010-03-21 06:09:35"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2010-03-10"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Cutters&amp;wrenches&amp;pliers&amp;screwdrivers&amp;strippers&amp;etc.\nmade in japan."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "pd"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "Public domain"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Hand tools"
             },
             "Restrictions": {
               "hidden": "",
@@ -1092,9 +716,6 @@
           "width": 3510
         }
       ],
-      "imagerepository": "local",
-      "index": 12,
-      "ns": 6,
       "pageid": 9792066,
       "revisions": [
         {
@@ -1108,6 +729,8 @@
   },
   {
     "id": "animal-fur",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/animal-fur.json",
+    "raw_source_snapshot_sha256": "783daaa066c728da5cb4acef2843a5c63049171ccb77714a439ce01a61f3b36e",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=cat+long+hair+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "cat long hair",
     "selected_page": {
@@ -1120,25 +743,10 @@
               "source": "commons-desc-page",
               "value": "COOLPIX P530"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "CC-Zero|Images from Pxhere|Cats in snow|Long-haired red tabby cats|Cats in unidentified countries"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1154,19 +762,6 @@
               "source": "mediawiki-metadata",
               "value": "2021-02-02 14:38:08"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "0006-04-06"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "There is an orange tabby cat in the picture standing in snow looking to its left.\n<p>The free high-resolution photo of a red tabby domestic long haired cat in the snow, taken with an COOLPIX P530  04/06 2017 The picture taken with 26.0mm, f/4.4s, 10/1250s, ISO 110.\nThe image is released free of copyrights under Creative Commons CC0.\n</p>\nYou may download, modify, distribute, and use them royalty free for anything you like, even in commercial applications. Attribution is not required."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -1175,10 +770,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Red tabby DLH cat in snow"
             },
             "Restrictions": {
               "hidden": "",
@@ -1199,9 +790,6 @@
           "width": 1200
         }
       ],
-      "imagerepository": "local",
-      "index": 2,
-      "ns": 6,
       "pageid": 99507653,
       "revisions": [
         {
@@ -1215,6 +803,8 @@
   },
   {
     "id": "animal-whisker",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/animal-whisker.json",
+    "raw_source_snapshot_sha256": "161bd813c23655510e10b23af636ff5f89e48159ed69fe4a7619d502b18d1330",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=cat+face+closeup+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "cat face closeup",
     "selected_page": {
@@ -1227,25 +817,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Chhabi_Gupta&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Chhabi Gupta (page does not exist)\">Chhabi Gupta</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Self-published work|PD-self|Low quality images of cats"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1261,27 +836,10 @@
               "source": "mediawiki-metadata",
               "value": "2017-05-11 00:34:02"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "30 June 2015"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "A closeup photo of a cat's face"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "pd"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "Public domain"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Closeup of a cat with green eyes' face looking at the viewer"
             },
             "Restrictions": {
               "hidden": "",
@@ -1302,9 +860,6 @@
           "width": 1280
         }
       ],
-      "imagerepository": "local",
-      "index": 1,
-      "ns": 6,
       "pageid": 41379620,
       "revisions": [
         {
@@ -1318,6 +873,8 @@
   },
   {
     "id": "animal-feather",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/animal-feather.json",
+    "raw_source_snapshot_sha256": "e6d0dc66780a929adbe58c764ae3eb499f9c37a127b1070993bd8625ed565d3f",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=peacock+feathers+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "peacock feathers",
     "selected_page": {
@@ -1330,25 +887,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "CC-Zero|Peacock feathers|Pavo cristatus (captive, male display)|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2012-12-22|Flickr images missing SDC published in"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1364,32 +906,6 @@
               "source": "mediawiki-metadata",
               "value": "2021-04-11 07:36:57"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2012-12-22 16:58"
-            },
-            "GPSLatitude": {
-              "source": "commons-desc-page",
-              "value": "-43.462856"
-            },
-            "GPSLongitude": {
-              "source": "commons-desc-page",
-              "value": "172.601394"
-            },
-            "GPSMapDatum": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "WGS-84"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "<p>Peacocks are large, colorful pheasants (typically blue and green) known for their iridescent tails. These tail feathers, or coverts, spread out in a distinctive train that is more than 60 percent of the bird’s total body length and boast colorful \"eye\" markings of blue, gold, red, and other hues. The large train is used in mating rituals and courtship displays. It can be arched into a magnificent fan that reaches across the bird's back and touches the ground on either side. Females are believed to choose their mates according to the size, color, and quality of these outrageous feather trains.\n</p>\nThe term \"peacock\" is commonly used to refer to birds of both sexes. Technically, only males are peacocks. Females are peahens, and together, they are called peafowl."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -1398,10 +914,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Peacock (11) (8315376663)"
             },
             "Restrictions": {
               "hidden": "",
@@ -1422,9 +934,6 @@
           "width": 3000
         }
       ],
-      "imagerepository": "local",
-      "index": 7,
-      "ns": 6,
       "pageid": 103436994,
       "revisions": [
         {
@@ -1438,6 +947,8 @@
   },
   {
     "id": "animal-dog",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/animal-dog.json",
+    "raw_source_snapshot_sha256": "bd75e5e11ebf1d049b83fcd1849106b6045769b5964bcd1491a67095b69dc85c",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=dog+grass+portrait+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "dog grass portrait",
     "selected_page": {
@@ -1450,30 +961,10 @@
               "source": "commons-desc-page",
               "value": "<div class=\"fn value\">\nCollins, Tudor Washington, 1898-1970, photographer</div>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
-            "Attribution": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "Auckland Museum"
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Images uploaded by Fæ|Artworks without Wikidata item|Images from Auckland Museum|Artworks with known accession number|Unknown date|Portraits of dogs by Tudor Washington Collins"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1489,15 +980,6 @@
               "source": "mediawiki-metadata",
               "value": "2018-01-15 11:47:35"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "Unknown date"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-4.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -1506,15 +988,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/4.0"
-            },
-            "ObjectName": {
-              "source": "commons-desc-page",
-              "value": "<div class=\"fn\">\n(Portrait of a dog seated on the grass)</div>"
-            },
-            "Permission": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "This image has been released as \"CCBY\" by Auckland Museum. For details refer to the <a href=\"//commons.wikimedia.org/wiki/Commons:Batch_uploading/AucklandMuseumCCBY\" title=\"Commons:Batch uploading/AucklandMuseumCCBY\">Commons project page</a>."
             },
             "Restrictions": {
               "hidden": "",
@@ -1535,9 +1008,6 @@
           "width": 926
         }
       ],
-      "imagerepository": "local",
-      "index": 1,
-      "ns": 6,
       "pageid": 65543199,
       "revisions": [
         {
@@ -1551,6 +1021,8 @@
   },
   {
     "id": "animal-bird",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/animal-bird.json",
+    "raw_source_snapshot_sha256": "7567335178d7b70d378d710ff60041ee10712461542fc16371ec7a1581128f77",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=bird+branch+photograph+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "bird branch photograph",
     "selected_page": {
@@ -1563,25 +1035,10 @@
               "source": "commons-desc-page",
               "value": "Alexis LOURS"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "quality|featured"
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Lac des Chanteraines|Birds of Hauts-de-Seine|Featured pictures of Hauts-de-Seine|Flickr images reviewed by FlickreviewR 2|Featured pictures of Alcedo atthis|Aves in left lateral aspect|Photos by Alexis Lours|Featured photos by Alexis Lours|QI photos by Alexis Lours|Île-de-France photographs taken on 2021-10-16|Alcedo atthis in France|Spread-wing postures|Photos of Alcedo atthis by Alexis Lours|Birds on branches|Flickr images missing SDC published in"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1597,32 +1054,6 @@
               "source": "mediawiki-metadata",
               "value": "2021-11-20 23:37:05"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2021-10-16 13:06:09"
-            },
-            "GPSLatitude": {
-              "source": "commons-desc-page",
-              "value": "48.934665"
-            },
-            "GPSLongitude": {
-              "source": "commons-desc-page",
-              "value": "2.314049"
-            },
-            "GPSMapDatum": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "WGS-84"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "A common kingfisher (<i>Alcedo atthis</i>) on a branch opening its wings in Gennevilliers, France."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-2.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -1631,10 +1062,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/2.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Common kingfisher on a branch opening its wings"
             },
             "Restrictions": {
               "hidden": "",
@@ -1655,9 +1082,6 @@
           "width": 3300
         }
       ],
-      "imagerepository": "local",
-      "index": 1,
-      "ns": 6,
       "pageid": 112511565,
       "revisions": [
         {
@@ -1671,6 +1095,8 @@
   },
   {
     "id": "thin-spokes",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/thin-spokes.json",
+    "raw_source_snapshot_sha256": "0042e5cf542ca9504a0d8cbdfc84fad7fe116a6c0913d9bf0483e58a85dae819",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=bicycle+wheel+spokes+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "bicycle wheel spokes",
     "selected_page": {
@@ -1683,25 +1109,10 @@
               "source": "commons-desc-page",
               "value": "Wayne Bishop <a rel=\"nofollow\" class=\"external text\" href=\"https://unsplash.com/@wayneb250\">wayneb250</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "CC-Zero|Bicycle drivetrains|Images uploaded by Fæ|Images from Unsplash|Images from Unsplash (review needed)"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1717,19 +1128,6 @@
               "source": "mediawiki-metadata",
               "value": "2017-08-17 09:18:56"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2015-01-16"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Wayne Bishop 2015"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -1738,10 +1136,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Wheel and gears of bicycle (Unsplash)"
             },
             "Restrictions": {
               "hidden": "",
@@ -1762,9 +1156,6 @@
           "width": 5184
         }
       ],
-      "imagerepository": "local",
-      "index": 13,
-      "ns": 6,
       "pageid": 61737020,
       "revisions": [
         {
@@ -1778,6 +1169,8 @@
   },
   {
     "id": "thin-mesh",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/thin-mesh.json",
+    "raw_source_snapshot_sha256": "4bff447fa8d6ed4930130434a2fd4e8b222aa69cd2acba6dd57f52e851da1c0c",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=wire+mesh+fence+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "wire mesh fence",
     "selected_page": {
@@ -1790,25 +1183,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/56091199@N03\">Stiller Beobachter</a> from Ansbach, Germany"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Flickr images reviewed by FlickreviewR 2|Photographs by Stiller Beobachter|Media needing category review as of 1 January 2019"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1824,19 +1202,6 @@
               "source": "mediawiki-metadata",
               "value": "2019-01-01 21:51:39"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2014-10-04 10:45"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "rusty wire-mesh fence"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-2.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -1845,10 +1210,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/2.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Rusty wire-mesh fence - Flickr - Stiller Beobachter"
             },
             "Restrictions": {
               "hidden": "",
@@ -1869,9 +1230,6 @@
           "width": 4816
         }
       ],
-      "imagerepository": "local",
-      "index": 16,
-      "ns": 6,
       "pageid": 75500203,
       "revisions": [
         {
@@ -1885,6 +1243,8 @@
   },
   {
     "id": "thin-plant",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/thin-plant.json",
+    "raw_source_snapshot_sha256": "0ceff0a5e7fa29fffeabcf4bcc01d88fe594a654abb995babdc176854eb7ce74",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=fern+potted+plant+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "fern potted plant",
     "selected_page": {
@@ -1897,30 +1257,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/97499887@N06\">Forest and Kim Starr</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
-            "Attribution": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://www.starrenvironmental.com/\">Forest &amp; Kim Starr</a>"
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Taken with Canon PowerShot SX10 IS|Pukalani, Hawaii|Flickr images reviewed by FlickreviewR 2|Plant files uploaded by Tyler de Noche|Unidentified Nephrolepis|Starr Environmental 2010"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -1936,19 +1276,6 @@
               "source": "mediawiki-metadata",
               "value": "2018-08-22 01:27:28"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2010-06-23 12:17"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "<ul><li><a rel=\"nofollow\" class=\"external text\" href=\"http://www.starrenvironmental.com/images/species/?q=Nephrolepis+sp\"><b><i>Nephrolepis sp.</i> (Sword fern)</b></a></li></ul><b>\n</b><p>Potted plants in shade house at Pukalani Plant Company Pulehu, Maui, Hawaii.\nJune 23, 2010\n</p><p><br>\n</p>\n<ul><li><a rel=\"nofollow\" class=\"external text\" href=\"http://www.starrenvironmental.com/images/search/?q=100623-7771\">#100623-7771</a></li></ul>\n<p><br>\n</p>\n<ul><li><a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/starr-environmental/\">Image Use Policy</a></li></ul>\nAlso placed in Nephrolepidae."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-3.0-us"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -1957,10 +1284,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/3.0/us/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Starr-100623-7771-Nephrolepis sp-potted plants in shade house-Pukalani Plant Company Pulehu-Maui (24746746030)"
             },
             "Restrictions": {
               "hidden": "",
@@ -1981,9 +1304,6 @@
           "width": 3648
         }
       ],
-      "imagerepository": "local",
-      "index": 6,
-      "ns": 6,
       "pageid": 71860039,
       "revisions": [
         {
@@ -1997,6 +1317,8 @@
   },
   {
     "id": "thin-cables",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/thin-cables.json",
+    "raw_source_snapshot_sha256": "a75aa3243e781ef3baf2a24c0e89fe771b6b8c8f74b3e132aad3d96959cb9571",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=electrical+cables+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "electrical cables",
     "selected_page": {
@@ -2009,25 +1331,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/wiki/User:Blood_Red_Sandman\" title=\"User:Blood Red Sandman\">Blood Red Sandman</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "quality"
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Electric cables|Oban|Scottish independence|Self-published work|White street signs"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -2043,19 +1350,6 @@
               "source": "mediawiki-metadata",
               "value": "2020-07-11 11:53:49"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2020-07-08"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Electrical cables on Argyll Street in Oban, upon which someone has added an unsanctioned and unofficial sign renaming the street Independence Road."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-4.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -2064,10 +1358,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/4.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Cables on 'Independence Road', Oban, July 2020"
             },
             "Restrictions": {
               "hidden": "",
@@ -2088,9 +1378,6 @@
           "width": 3185
         }
       ],
-      "imagerepository": "local",
-      "index": 7,
-      "ns": 6,
       "pageid": 92118107,
       "revisions": [
         {
@@ -2104,6 +1391,8 @@
   },
   {
     "id": "thin-branches",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/thin-branches.json",
+    "raw_source_snapshot_sha256": "fcae20fa5c307931bd45c61e1473f6aa5150149923706a738a4bb2372997a885",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=bare+tree+winter+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "bare tree winter",
     "selected_page": {
@@ -2116,25 +1405,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/wiki/User:Roc0ast3r\" title=\"User:Roc0ast3r\">Roc0ast3r</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "CC-Zero|Self-published work|February 2025 in Washington (state)|2025 photographs by Roc0ast3r|Photographs by Roc0ast3r|Photographs of Kent, Washington by Roc0ast3r|Bare trees in Kent, Washington|Winter in Kent, Washington|Blue sky in Kent, Washington|Photographs by Roc0ast3r taken with Nikon Coolpix P7700"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -2150,19 +1424,6 @@
               "source": "mediawiki-metadata",
               "value": "2025-02-07 02:29:21"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2025-02-04 01:46:52"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "A bare tree in the city of Kent, Washington."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -2171,10 +1432,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Bare tree in Kent, WA (2025) - 0010"
             },
             "Restrictions": {
               "hidden": "",
@@ -2195,9 +1452,6 @@
           "width": 3000
         }
       ],
-      "imagerepository": "local",
-      "index": 32,
-      "ns": 6,
       "pageid": 159267078,
       "revisions": [
         {
@@ -2211,6 +1465,8 @@
   },
   {
     "id": "material-glass",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/material-glass.json",
+    "raw_source_snapshot_sha256": "e3dfbfacc8ba9b426ad37d4373cb259a2cc06e65a1657ae8284e384aaf51eaef",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=wine+glass+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "wine glass",
     "selected_page": {
@@ -2223,25 +1479,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://pdphoto.org/About.php\">Jon Sullivan</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "potd"
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "PD-author|Port wine glasses|Commons featured desktop backgrounds|Formerly featured pictures on Wikimedia Commons|PDphotos.org|Glasses of wine in Portugal|January 2003 in Porto"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -2257,32 +1498,10 @@
               "source": "mediawiki-metadata",
               "value": "2010-08-18 23:05:42"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2003-01-06"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "A glass of <a href=\"https://en.wikipedia.org/wiki/port_wine\" class=\"extiw\" title=\"en:port wine\">port wine</a>."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "pd"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "Public domain"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Port wine"
-            },
-            "Permission": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "Quote of <a rel=\"nofollow\" class=\"external free\" href=\"http://pdphoto.org/PictureDetail.php?oldpg=2479\">http://pdphoto.org/PictureDetail.php?oldpg=2479</a> - <i>This image is public domain. You may use this image for any purpose, including commercial. If you do use it, please let me know. I enjoy seeing what others have created with these photos.</i>"
             },
             "Restrictions": {
               "hidden": "",
@@ -2303,9 +1522,6 @@
           "width": 1024
         }
       ],
-      "imagerepository": "local",
-      "index": 2,
-      "ns": 6,
       "pageid": 25990,
       "revisions": [
         {
@@ -2319,6 +1535,8 @@
   },
   {
     "id": "material-translucent",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/material-translucent.json",
+    "raw_source_snapshot_sha256": "f7c8cfb46687cda300a526413e1f470a375291824a3f1523e66f4fdc9556a78a",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=transparent+plastic+bag+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "transparent plastic bag",
     "selected_page": {
@@ -2331,25 +1549,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/wiki/User:Fructibus\" title=\"User:Fructibus\">Fructibus</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "CC-Zero|Pressure lock bags|Self-published work|Computer screws|Objects on teal background|Transparent plastic bags|Taken by Fructibus with Samsung Galaxy A5 (2017)"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -2365,19 +1568,6 @@
               "source": "mediawiki-metadata",
               "value": "2017-09-21 21:24:04"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2017-09-21 19:03:41"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Computer screws in a transparent zipper storage bag - 6 x 9 cm"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -2386,10 +1576,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Computer screws in a zipper storage bag - 6 x 9 cm - on Aqua Deep plastic"
             },
             "Restrictions": {
               "hidden": "",
@@ -2410,9 +1596,6 @@
           "width": 3456
         }
       ],
-      "imagerepository": "local",
-      "index": 3,
-      "ns": 6,
       "pageid": 62643947,
       "revisions": [
         {
@@ -2426,6 +1609,8 @@
   },
   {
     "id": "material-reflective",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/material-reflective.json",
+    "raw_source_snapshot_sha256": "1b1df6502ac13f0f80db376402d928b5e797477d04d7b8ff3f486a1882f03359",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=kettle+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "kettle",
     "selected_page": {
@@ -2438,25 +1623,10 @@
               "source": "commons-desc-page",
               "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/chefranden/\">https://www.flickr.com/photos/chefranden/</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "true"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Taken with Canon EOS 20D|Kettles|Cauldrons|Flickr images reviewed by FlickreviewR|Flickr images missing SDC creator|Copper cookware"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -2472,19 +1642,6 @@
               "source": "mediawiki-metadata",
               "value": "2009-01-14 18:59:33"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2008-07-18"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Copper kettle (not tea, but the wide-open vat one)"
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "cc-by-2.0"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
@@ -2493,10 +1650,6 @@
             "LicenseUrl": {
               "source": "commons-desc-page",
               "value": "https://creativecommons.org/licenses/by/2.0"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Copper kettle flickr"
             },
             "Restrictions": {
               "hidden": "",
@@ -2517,9 +1670,6 @@
           "width": 2736
         }
       ],
-      "imagerepository": "local",
-      "index": 6,
-      "ns": 6,
       "pageid": 5713108,
       "revisions": [
         {
@@ -2533,6 +1683,8 @@
   },
   {
     "id": "material-clear",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/material-clear.json",
+    "raw_source_snapshot_sha256": "018cbbcf2dc6f6cef08b83835e5fe355e0597da81f861fbf815ca4a218c0655d",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=glass+bottle+filetype%3Abitmap&gsrnamespace=6&gsrlimit=15&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "glass bottle",
     "selected_page": {
@@ -2545,25 +1697,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/wiki/User:George_Chernilevsky\" title=\"User:George Chernilevsky\">George Chernilevsky</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "quality|featured|potd"
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "Sunlight|Taken with Canon EOS 750D|Beer bottles|Glass bottles|Brown glass bottles|Self-published work|PD-self|Featured pictures by George Chernilevsky|Bottles in Ukraine|Photographs taken on 2018-03-22|4 objects|Featured photographs in the public domain|Green glass bottles|Blue glass bottles|Bottles on white background|Images by George Chernilevsky|Colorful shadows|Blue, brown, green, olive"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -2579,32 +1716,10 @@
               "source": "mediawiki-metadata",
               "value": "2018-04-09 07:32:55"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2018-03-22 09:09:55"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Beer bottles of different colors. From left to right: brown 0.5 l, yellow-green 0.5 l, green 0.4 l, blue 0.46 l."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "pd"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "Public domain"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Beer bottles 2018 G1"
-            },
-            "Permission": {
-              "hidden": "",
-              "source": "commons-desc-page",
-              "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td>I, the copyright holder of this work, release this work into the <b><a href=\"https://en.wikipedia.org/wiki/en:public_domain\" class=\"extiw\" title=\"w:en:public domain\">public domain</a></b>. This applies worldwide.<br><small>In some countries this may not be legally possible; if so:</small><br><i>I grant anyone the right to use this work <b>for any purpose</b>, without any conditions, unless such conditions are required by law.</i>\n</td></tr></tbody></table>"
             },
             "Restrictions": {
               "hidden": "",
@@ -2625,9 +1740,6 @@
           "width": 4800
         }
       ],
-      "imagerepository": "local",
-      "index": 1,
-      "ns": 6,
       "pageid": 68171881,
       "revisions": [
         {
@@ -2641,6 +1753,8 @@
   },
   {
     "id": "material-complex",
+    "raw_source_snapshot_local_path": "benchmarks/corpus/source-snapshots/material-complex.json",
+    "raw_source_snapshot_sha256": "c88d186844127623254845e653c63d4761e1cb8a6bfeff980eaf6936cae847a1",
     "request_url": "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=lace+doily+filetype%3Abitmap&gsrnamespace=6&gsrlimit=40&prop=imageinfo%7Crevisions&iiprop=url%7Csize%7Cmime%7Csha1%7Ctimestamp%7Cextmetadata&rvprop=ids%7Ctimestamp&format=json",
     "search_query": "lace doily",
     "selected_page": {
@@ -2653,25 +1767,10 @@
               "source": "commons-desc-page",
               "value": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>"
             },
-            "Assessments": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": ""
-            },
             "AttributionRequired": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "false"
-            },
-            "Categories": {
-              "hidden": "",
-              "source": "commons-categories",
-              "value": "CC-Zero|Author died more than 70 years ago public domain images|UBC Museum of Anthropology|Self-published work|CC-PD-Mark|Lace from Belgium|Files uploaded by Daderot|Lace doilies"
-            },
-            "CommonsMetadataExtension": {
-              "hidden": "",
-              "source": "extension",
-              "value": 1.2
             },
             "Copyrighted": {
               "hidden": "",
@@ -2687,27 +1786,10 @@
               "source": "mediawiki-metadata",
               "value": "2016-09-10 15:03:34"
             },
-            "DateTimeOriginal": {
-              "source": "commons-desc-page",
-              "value": "2015-06-21 19:43:27"
-            },
-            "ImageDescription": {
-              "source": "commons-desc-page",
-              "value": "Exhibit in the Museum of Anthropology, University of British Columbia - Vancouver, British Columbia, Canada."
-            },
-            "License": {
-              "hidden": "",
-              "source": "commons-templates",
-              "value": "pd"
-            },
             "LicenseShortName": {
               "hidden": "",
               "source": "commons-desc-page",
               "value": "Public domain"
-            },
-            "ObjectName": {
-              "source": "mediawiki-metadata",
-              "value": "Lace doily, Belgium, 1714-1715 - Museum of Anthropology, University of British Columbia - DSC09267"
             },
             "Restrictions": {
               "hidden": "",
@@ -2728,9 +1810,6 @@
           "width": 3475
         }
       ],
-      "imagerepository": "local",
-      "index": 2,
-      "ns": 6,
       "pageid": 51299061,
       "revisions": [
         {

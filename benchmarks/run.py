@@ -63,6 +63,8 @@ def main() -> None:
     parser.add_argument('--timeout-seconds', type=float, default=180)
     parser.add_argument('--acknowledge-heldout', action='store_true', help='Release evaluation only, after tuning decisions are frozen.')
     args = parser.parse_args()
+    if os.name != 'posix':
+        parser.error('This benchmark driver requires POSIX process groups for bounded timeouts; this platform needs a tested driver')
     manifest = read_json(args.manifest)
     profile = read_json(args.profile)
     argv_template = json.loads(args.command_json)
@@ -147,7 +149,8 @@ def main() -> None:
                         'single_frame': properties['frames'] == 1,
                         'has_nonopaque_pixels': properties['transparent_pixels'] + properties['partially_transparent_pixels'] > 0,
                         'has_retained_pixels': properties['partially_transparent_pixels'] + properties['opaque_pixels'] > 0,
-                        'source_preserved': digest(input_path) == expected['sha256'],
+                        'evaluation_input_preserved': digest(input_path) == expected['sha256'],
+                        **({'source_original_preserved': digest(resolve_input(case['original']['path'])) == case['original']['sha256']} if 'original' in case else {}),
                     }
                     record['decoded_properties'] = properties
                     record['artifact_checks'] = {key: 'PASS' if passed else 'FAIL' for key, passed in checks.items()}

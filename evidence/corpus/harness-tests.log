@@ -8,6 +8,6 @@ test_runner_bounds_stalled_command (test_evidence.ImageEvidenceTest.test_runner_
 test_runner_reports_success_without_output_as_failure (test_evidence.ImageEvidenceTest.test_runner_reports_success_without_output_as_failure) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.359s
+Ran 8 tests in 0.357s
 
 OK

@@ -35,8 +35,8 @@
     "physical_pixel_7": "NOT RUN, hardware access not established",
     "human_hidden_label_quality_review": "NOT RUN, human reviewer not available",
     "full_resolution_remove_bg_comparator": "NOT RUN, suitable outputs/credits not provided",
-    "heldout_100_images": "IN PREPARATION, separate from screening",
-    "checkpoint_train_test_overlap_audit": "NOT RUN, exact winning checkpoints not frozen"
+    "heldout_100_images": "PASS: 99 real source images, approximately 100, selected and visually triaged before any model output",
+    "checkpoint_train_test_overlap_audit": "PASS: pinned candidate cards inspected and hashes retained; exclusion remains UNKNOWN"
   },
   "claims": "Corpus and harness readiness only; no quality, speed, superiority, or device support claim",
   "reproduction": [
@@ -49,5 +49,27 @@
     "No ground-truth alpha",
     "Commons images may overlap with checkpoint training",
     "Human judgments and actual physical-phone measurements remain required"
-  ]
+  ],
+  "heldout_case_count": 99,
+  "heldout_category_counts": {
+    "people": 20,
+    "products": 19,
+    "animals": 20,
+    "thin_structures": 20,
+    "difficult_materials": 20
+  },
+  "heldout_licenses": {
+    "Public domain": 28,
+    "CC BY 4.0": 17,
+    "CC BY 2.0": 20,
+    "CC0": 25,
+    "CC BY 3.0": 6,
+    "CC BY 2.0 fr": 1,
+    "CC BY 2.5": 2
+  },
+  "heldout_manifest_sha256": "c08508992a6e171d1827a6e99c2bd67f31e3fd9fe41ae6f4f78ba9ae5e8b0296",
+  "heldout_exact_canonical_duplicate_count": 0,
+  "screen_heldout_exact_canonical_overlap_count": 0,
+  "model_overlap_record": "benchmarks/corpus/model-overlap.json",
+  "base_commit": "344b426"
 }

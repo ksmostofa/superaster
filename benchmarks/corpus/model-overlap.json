@@ -1,0 +1,52 @@
+{
+  "checked_date_jst": "2026-10-08",
+  "status": "UNKNOWN",
+  "candidates": [
+    {
+      "engine_candidate_id": "birefnet-lite-512-fp16",
+      "source_checkpoint_repository": "ZhengPeng7/BiRefNet_lite",
+      "source_checkpoint_revision": "aa62cd87eafb9cc43056d08ef3615a14628b831d",
+      "onnx_artifact_sha256": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+      "source_card_url": "https://huggingface.co/ZhengPeng7/BiRefNet_lite/resolve/aa62cd87eafb9cc43056d08ef3615a14628b831d/README.md",
+      "source_card_sha256": "22fe432bdd706e8079ee1c53dcd6192962291d023c84d5416df3c983f6e665a2",
+      "training_overlap_status": "UNKNOWN",
+      "known_overlap_count": null,
+      "known_excluded_count": null,
+      "inference": "Named splits do not provide canonical source-file hashes. Training exclusion for this Commons corpus is not established.",
+      "local_screening_vs_heldout_exact_duplicates": "excluded by canonical Commons SHA-1; this establishes only local split separation",
+      "measured_card_fact": {
+        "reported_training_split": [
+          "DIS-TR"
+        ],
+        "reported_validation_splits": [
+          "DIS-TEs",
+          "DIS-VD"
+        ]
+      }
+    },
+    {
+      "engine_candidate_id": "birefnet-512-fp16",
+      "source_checkpoint_repository": "ZhengPeng7/BiRefNet_512x512",
+      "source_checkpoint_revision": "678c37f9158280a2b3000b566ecd12bfbfd1a09c",
+      "onnx_artifact_sha256": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+      "source_card_url": "https://huggingface.co/ZhengPeng7/BiRefNet_512x512/resolve/678c37f9158280a2b3000b566ecd12bfbfd1a09c/README.md",
+      "source_card_sha256": "a6fb56db520842b937e859932d520a5906a34c3b825d11375b12317e77ce5754",
+      "training_overlap_status": "UNKNOWN",
+      "known_overlap_count": null,
+      "known_excluded_count": null,
+      "inference": "Evaluation on DIS-VD is not a complete training-data manifest. Training exclusion for this Commons corpus is not established.",
+      "local_screening_vs_heldout_exact_duplicates": "excluded by canonical Commons SHA-1; this establishes only local split separation",
+      "measured_card_fact": {
+        "reported_training_image_size": [
+          512,
+          512
+        ],
+        "reported_evaluation_split": [
+          "DIS-VD"
+        ],
+        "training_asset_membership_in_card": "not specified"
+      }
+    }
+  ],
+  "claims_policy": "Do not call this corpus unseen by the checkpoint. Heldout means not used for local tuning, not verified model-training exclusion."
+}
