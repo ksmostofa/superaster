@@ -1,5 +1,5 @@
 import { Type, type Static } from '@sinclair/typebox';
-import Ajv from 'ajv';
+import { Ajv } from 'ajv';
 
 const exact = { additionalProperties: false } as const;
 const px = Type.Integer({ minimum: 1, maximum: 16384 });
@@ -51,8 +51,8 @@ export function parseRecipe(value: unknown): Recipe {
 }
 export type Stage = 'download'|'verify'|'decode'|'initialize'|'preprocess'|'inference'|'refine'|'render'|'encode'|'validate'|'complete';
 export interface Progress { stage: Stage; completed?: number; total?: number; message?: string }
-export interface ImageInfo { width:number; height:number; format:string; channels:number; has_alpha:boolean; bytes:number; orientation?:number; color_space:string; pages:number; metadata: {icc:boolean;exif:boolean;density?:number} }
-export interface ExecutionRecord { contract_version:'1.0'; implementation_version:string; input_hash:string; recipe_hash:string; resolved_recipe:Recipe; engine: {id:string;version:string;model_hash:string|null;precision:string;inference_dimensions:number[];runtime:string;backend:string;refinement:string}; encoder:Record<string,unknown>; applied_operations:Operation[]; output: ImageInfo & {hash:string}; timings_ms:Record<string,number>; warnings:string[]; rules:RuleOutcome[]; preset?:{id:string;version:string} }
+export interface ImageInfo { width:number; height:number; format:string; channels:number; has_alpha:boolean; is_opaque?:boolean; bytes:number; orientation?:number; color_space:string; pages:number; metadata: {icc:boolean;exif:boolean;density?:number} }
+export interface ExecutionRecord { contract_version:'1.0'; implementation_version:string; input_hash:string; recipe_hash:string; resolved_recipe:Recipe; binding_hashes?:Record<string,string>; engine: {id:string;version:string;model_hash:string|null;precision:string;inference_dimensions:number[];runtime:string;backend:string;refinement:string}; encoder:Record<string,unknown>; applied_operations:Operation[]; output: ImageInfo & {hash:string}; timings_ms:Record<string,number>; warnings:string[]; rules:RuleOutcome[]; preset?:{id:string;version:string} }
 export type RuleState = 'pass'|'fail'|'needs_review'|'not_checked';
 export interface RuleOutcome { id:string; state:RuleState; message:string; source?:string; user_confirmation?:boolean }
 export const operationDefinitions = [

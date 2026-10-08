@@ -22,7 +22,7 @@ export function canonicalJson(value:unknown):string {
   return JSON.stringify(value);
 }
 export async function sha256(bytes:Uint8Array):Promise<string> { const copied=Uint8Array.from(bytes); const digest=await globalThis.crypto.subtle.digest('SHA-256',copied); return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join(''); }
-export async function recipeHash(recipe:Recipe):Promise<string> { return sha256(new TextEncoder().encode(canonicalJson(recipe))); }
+export async function recipeHash(recipe:Recipe,bindingHashes?:Record<string,string>):Promise<string> { return sha256(new TextEncoder().encode(canonicalJson(bindingHashes && Object.keys(bindingHashes).length ? {recipe,binding_hashes:bindingHashes} : recipe))); }
 export function plan(value:unknown, adapter:EngineAdapter):Recipe {
   const recipe=parseRecipe(value), caps=adapter.capabilities();
   for(const op of recipe.operations) if(!caps.operations.includes(op.op)) throw new SuperasterError('UNSUPPORTED',`Operation ${op.op} is unavailable on ${adapter.id}`,{operation:op.op});
