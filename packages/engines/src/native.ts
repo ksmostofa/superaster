@@ -64,9 +64,16 @@ export class NativeImagingKernel implements ImagingKernel {
  async resize(raster:Raster,width:number,height:number,kernel:KernelName):Promise<Raster>{checkDimensions(width,height);return toRaster(rawInput(raster).resize(width,height,{fit:'fill',kernel}));}
  async rotate(raster:Raster,angle:number,background:string):Promise<Raster>{return toRaster(rawInput(raster).rotate(angle,{background}));}
  async encode(raster:Raster,options:EncodeOptions):Promise<Uint8Array>{
-  assertRaster(raster);if(options.metadata==='preserve')throw new SuperasterError('UNSUPPORTED','Preserving arbitrary source metadata is not yet supported by the native encoder');
-  let pipeline=rawInput(raster);let gray=true,opaque=true;for(let i=0;i<raster.data.length;i+=4){if(raster.data[i]!==raster.data[i+1]||raster.data[i]!==raster.data[i+2])gray=false;if(raster.data[i+3]!==255)opaque=false;if(!gray&&!opaque)break;}
-  if(gray&&opaque)pipeline=pipeline.removeAlpha().greyscale().toColourspace('b-w');else pipeline=pipeline.withIccProfile('srgb');
+  assertRaster(raster);
+  let pipeline=rawInput(raster);
+  if(options.metadata==='preserve'){
+   if(!options.source)throw new SuperasterError('INVALID_INPUT','Metadata preservation requires the original encoded input');
+   await this.inspect(options.source);
+   // The source image carries metadata; blend source replaces every decoded pixel with the final raster.
+   // Sharp/libvips retains the source EXIF/XMP/IPTC, while orientation and sRGB ICC describe the normalized output.
+   pipeline=sharpInput(options.source).autoOrient().toColourspace('srgb').resize(raster.width,raster.height,{fit:'fill'}).composite([{input:Buffer.from(raster.data.buffer,raster.data.byteOffset,raster.data.byteLength),raw:{width:raster.width,height:raster.height,channels:4},blend:'source'}]).keepMetadata().withIccProfile('srgb').withExifMerge({IFD0:{Orientation:'1'},IFD2:{PixelXDimension:String(raster.width),PixelYDimension:String(raster.height)}});
+  }let gray=true,opaque=true;for(let i=0;i<raster.data.length;i+=4){if(raster.data[i]!==raster.data[i+1]||raster.data[i]!==raster.data[i+2])gray=false;if(raster.data[i+3]!==255)opaque=false;if(!gray&&!opaque)break;}
+  if(gray&&opaque&&options.metadata!=='preserve')pipeline=pipeline.removeAlpha().greyscale().toColourspace('b-w');else pipeline=pipeline.withIccProfile('srgb');
   if(options.dpi)pipeline=pipeline.withMetadata({density:options.dpi});
   if(options.format==='png')pipeline=pipeline.png({compressionLevel:Math.round((options.quality??90)*9/100)});
   else if(options.format==='jpeg')pipeline=pipeline.jpeg({quality:options.quality??90,chromaSubsampling:'4:4:4'});
