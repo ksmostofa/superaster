@@ -38,12 +38,12 @@ export function bilinearAlpha(alpha:Float32Array,width:number,height:number,outW
 export function applyAlpha(source:Raster,alpha:Float32Array):Raster {assertRaster(source);if(alpha.length!==source.width*source.height)throw new SuperasterError('PROCESSING_FAILED','Alpha dimensions differ from source');const out=cloneRaster(source);for(let i=0;i<alpha.length;i++)out.data[i*4+3]=Math.round(source.data[i*4+3]!*alpha[i]!);return out;}
 export function extractAlpha(raster:Raster):Float32Array {assertRaster(raster);const alpha=new Float32Array(raster.width*raster.height);for(let i=0;i<alpha.length;i++)alpha[i]=raster.data[i*4+3]!/255;return alpha;}
 export function maskRaster(raster:Raster):Raster {const out=blank(raster.width,raster.height,'#000000');for(let i=0;i<raster.width*raster.height;i++){const a=raster.data[i*4+3]!;out.data[i*4]=a;out.data[i*4+1]=a;out.data[i*4+2]=a;}return out;}
-/** Estimate nearby captured background color, then undo its contribution at soft alpha edges. Opaque pixels are unchanged. */
+/** Recover captured opaque-source edges. Existing transparent-source RGB is unassociated and must not be unblended. */
 export function cleanEdgeRgb(source:Raster,cutout:Raster,signal?:AbortSignal):{raster:Raster;changed:number} {
  assertRaster(source);assertRaster(cutout);if(source.width!==cutout.width||source.height!==cutout.height)throw new SuperasterError('PROCESSING_FAILED','Edge cleanup source dimensions differ');
  const out=cloneRaster(cutout);let changed=0;const directions=[[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
- for(let y=0;y<out.height;y++){if(y%32===0)cancelled(signal);for(let x=0;x<out.width;x++){const i=(y*out.width+x)*4,a=cutout.data[i+3]!/255;if(a<.05||a>=.995)continue;let sum=[0,0,0],count=0;
-  for(const radius of [1,2,4,8,16]){for(const [dx,dy] of directions){const xx=x+dx!*radius,yy=y+dy!*radius;if(xx<0||yy<0||xx>=out.width||yy>=out.height)continue;const j=(yy*out.width+xx)*4;if(cutout.data[j+3]!>8)continue;for(let c=0;c<3;c++)sum[c]=sum[c]!+source.data[j+c]!;count++;}if(count)break;}
+ for(let y=0;y<out.height;y++){if(y%32===0)cancelled(signal);for(let x=0;x<out.width;x++){const i=(y*out.width+x)*4,a=cutout.data[i+3]!/255;if(source.data[i+3]!==255||a<.05||a>=.995)continue;let sum=[0,0,0],count=0;
+  for(const radius of [1,2,4,8,16]){for(const [dx,dy] of directions){const xx=x+dx!*radius,yy=y+dy!*radius;if(xx<0||yy<0||xx>=out.width||yy>=out.height)continue;const j=(yy*out.width+xx)*4;if(source.data[j+3]!==255||cutout.data[j+3]!>8)continue;for(let c=0;c<3;c++)sum[c]=sum[c]!+source.data[j+c]!;count++;}if(count)break;}
   if(!count)continue;for(let c=0;c<3;c++)out.data[i+c]=Math.max(0,Math.min(255,Math.round((source.data[i+c]!-(1-a)*sum[c]!/count)/a)));if(out.data[i]!==cutout.data[i]||out.data[i+1]!==cutout.data[i+1]||out.data[i+2]!==cutout.data[i+2])changed++;
  }}return {raster:out,changed};
 }

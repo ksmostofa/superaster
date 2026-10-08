@@ -18,6 +18,12 @@ describe('native observable processing contracts',()=>{
  it('two-bound contain resize pads to exact requested dimensions',async()=>{
   const input=await rgba(3,2,Array(6).fill([255,0,0,255]).flat());const result=await run(input,[{op:'resize',width:6,height:6,fit:'contain',allow_upscale:true,resampling:'nearest'}]);const output=await decode(result.bytes);expect([output.width,output.height]).toEqual([6,6]);expect(output.data[3]).toBe(0);expect([...output.data.subarray((1*6)*4,(1*6)*4+4)]).toEqual([255,0,0,255]);expect(output.data[(5*6)*4+3]).toBe(0);
  });
+ it('compiled nearest preserves unassociated RGB and alpha bytes exactly',async()=>{
+  const pixels=[40,80,200,128,90,60,10,64,20,130,70,0];const source={width:3,height:1,data:new Uint8Array(pixels)};
+  const up=await kernel.resize(source,6,2,'nearest');const row=pixels.slice(0,4).concat(pixels.slice(0,4),pixels.slice(4,8),pixels.slice(4,8),pixels.slice(8,12),pixels.slice(8,12));expect([...up.data]).toEqual(row.concat(row));
+  const down=await kernel.resize(up,3,1,'nearest');expect([...down.data]).toEqual(pixels);
+  const result=await run(await rgba(3,1,pixels),[{op:'resize',width:6,height:2,fit:'fill',allow_upscale:true,resampling:'nearest'}]);expect([...(await decode(result.bytes)).data]).toEqual(row.concat(row));
+ });
  it('flip and crop use current integer coordinates',async()=>{
   const input=await rgba(3,1,[255,0,0,255,0,255,0,255,0,0,255,255]);const result=await run(input,[{op:'flip',axis:'horizontal'},{op:'crop',x:0,y:0,width:1,height:1}]);expect([...(await decode(result.bytes)).data]).toEqual([0,0,255,255]);
  });
@@ -69,6 +75,10 @@ describe('shared alpha and boundary RGB fixtures',()=>{
  it('uses half-pixel bilinear alpha with clamped edges',()=>{expect([...bilinearAlpha(new Float32Array([0,1]),2,1,4,1)]).toEqual([0,.25,.75,1]);expect(()=>bilinearAlpha(new Float32Array([0]),2,1,4,1)).toThrow();});
  it('recovers a known composited edge without changing opaque foreground',()=>{
   const source={width:3,height:1,data:new Uint8Array([255,255,255,255,255,128,128,255,255,0,0,255])};const cutout={...source,data:new Uint8Array([255,255,255,0,255,128,128,128,255,0,0,255])};const result=cleanEdgeRgb(source,cutout);expect(result.changed).toBe(1);expect([...result.raster.data.subarray(4,8)]).toEqual([255,2,2,128]);expect([...result.raster.data.subarray(8,12)]).toEqual([255,0,0,255]);
+ });
+ it('edge cleanup preserves already-transparent RGB and ignores its hidden colors as background',()=>{
+  const source={width:3,height:1,data:new Uint8Array([255,255,255,0,255,128,128,128,255,0,0,255])};const result=cleanEdgeRgb(source,{...source,data:source.data.slice()});expect(result.changed).toBe(0);expect([...result.raster.data]).toEqual([...source.data]);
+  const opaqueEdge={...source,data:new Uint8Array([255,255,255,0,255,128,128,255,255,0,0,255])};const cutout={...opaqueEdge,data:new Uint8Array([255,255,255,0,255,128,128,128,255,0,0,255])};const hiddenBackground=cleanEdgeRgb(opaqueEdge,cutout);expect(hiddenBackground.changed).toBe(0);expect([...hiddenBackground.raster.data]).toEqual([...cutout.data]);
  });
  it('rejects malformed RGBA buffers and retains explicit grayscale coverage',()=>{expect(()=>assertRaster({width:2,height:2,data:new Uint8Array(12)})).toThrow();const raster=blank(1,1);raster.data[3]=127;expect([...maskRaster(raster).data]).toEqual([127,127,127,255]);});
 });

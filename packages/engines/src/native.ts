@@ -61,7 +61,22 @@ export class NativeImagingKernel implements ImagingKernel {
   }catch(error){if(error instanceof SuperasterError)throw error;throw new SuperasterError('INVALID_INPUT',error instanceof Error?error.message:'Image could not be decoded');}
  }
  async decode(bytes:Uint8Array):Promise<Raster>{await this.inspect(bytes);return toRaster(sharpInput(bytes).autoOrient());}
- async resize(raster:Raster,width:number,height:number,kernel:KernelName):Promise<Raster>{checkDimensions(width,height);return toRaster(rawInput(raster).resize(width,height,{fit:'fill',kernel}));}
+ async resize(raster:Raster,width:number,height:number,kernel:KernelName):Promise<Raster>{
+  assertRaster(raster);checkDimensions(width,height);
+  if(kernel!=='nearest')return toRaster(rawInput(raster).resize(width,height,{fit:'fill',kernel}));
+  // Sharp pipeline.cc premultiplies/casts uchar RGBA before resize and loses RGB bytes
+  // even with nearest. Materialize RGB and alpha first, then use compiled nearest
+  // on independent planes so unassociated RGB (including alpha-zero pixels) survives.
+  const rgb=await rawInput(raster).removeAlpha().raw().toBuffer();
+  const alpha=await rawInput(raster).extractChannel(3).raw().toBuffer();
+  if(rgb.length!==raster.width*raster.height*3||alpha.length!==raster.width*raster.height)throw new SuperasterError('PROCESSING_FAILED','Nearest source planes have invalid channel lengths');
+  const resizedRgb=await sharp(rgb,{raw:{width:raster.width,height:raster.height,channels:3}}).resize(width,height,{fit:'fill',kernel:'nearest'}).raw().toBuffer();
+  const resizedAlpha=await sharp(alpha,{raw:{width:raster.width,height:raster.height,channels:1}}).resize(width,height,{fit:'fill',kernel:'nearest'}).toColourspace('b-w').raw().toBuffer();
+  if(resizedRgb.length!==width*height*3||resizedAlpha.length!==width*height)throw new SuperasterError('PROCESSING_FAILED','Nearest resized planes have invalid channel lengths');
+  const data=new Uint8Array(width*height*4);
+  for(let i=0;i<width*height;i++){data[i*4]=resizedRgb[i*3]!;data[i*4+1]=resizedRgb[i*3+1]!;data[i*4+2]=resizedRgb[i*3+2]!;data[i*4+3]=resizedAlpha[i]!;}
+  return {width,height,data};
+ }
  async rotate(raster:Raster,angle:number,background:string):Promise<Raster>{return toRaster(rawInput(raster).rotate(angle,{background}));}
  async encode(raster:Raster,options:EncodeOptions):Promise<Uint8Array>{
   assertRaster(raster);
