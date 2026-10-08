@@ -66,6 +66,38 @@ class ImageEvidenceTest(unittest.TestCase):
     def test_runner_bounds_stalled_command(self) -> None:
         self.check_runner([sys.executable, '-c', 'import time;time.sleep(60)'], timeout=.1, expected_timed_out=True)
 
+    def test_runner_retains_actual_adjacent_execution_sidecar(self) -> None:
+        with tempfile.TemporaryDirectory() as name:
+            temp = Path(name)
+            fixture = self.generated / 'rgba.png'
+            manifest = {'version': 'test', 'split': 'correctness', 'cases': [{'id': 'fixture', 'category': 'synthetic-correctness', 'evaluation': {'path': str(fixture.relative_to(ROOT)), 'sha256': digest(fixture), 'width': 8, 'height': 6}}]}
+            manifest_path = temp / 'manifest.json'
+            manifest_path.write_text(json.dumps(manifest))
+            profile = temp / 'profile.json'
+            profile.write_text(json.dumps({'role': 'execution sidecar binding test; no inference'}))
+            output = temp / 'run'
+            command = [sys.executable, '-c', 'import json,shutil,sys;from pathlib import Path;shutil.copyfile(sys.argv[1],sys.argv[2]);Path(sys.argv[2]+".json").write_text(json.dumps({"observed_marker":"actual processor sidecar"}))', '{input}', '{output}']
+            completed = subprocess.run([sys.executable, str(ROOT / 'benchmarks/run.py'), '--manifest', str(manifest_path), '--profile', str(profile), '--command-json', json.dumps(command), '--output', str(output)], capture_output=True, text=True)
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+            record = json.loads((output / 'results.json').read_text())['records'][0]
+            actual_path = output / 'fixture--1/cutout.png.json'
+            self.assertEqual(record['engine_execution_record'], {'observed_marker': 'actual processor sidecar'})
+            self.assertEqual(record['engine_execution_record_path'], str(actual_path.resolve()))
+            self.assertEqual(record['engine_execution_record_sha256'], digest(actual_path))
+            self.assertFalse((output / 'fixture--1/execution.json').exists())
+
+    def test_gallery_uses_actual_warm_timing_scope(self) -> None:
+        with tempfile.TemporaryDirectory() as name:
+            temp = Path(name)
+            scope = 'warmed persistent session; <one init> excluded'
+            (temp / 'conditions.json').write_text(json.dumps({'timing_scope': scope}))
+            (temp / 'results.json').write_text(json.dumps({'records': []}))
+            completed = subprocess.run([sys.executable, str(ROOT / 'benchmarks/gallery.py'), '--run', str(temp)], capture_output=True, text=True)
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+            rendered = (temp / 'gallery.html').read_text()
+            self.assertIn('warmed persistent session; &lt;one init&gt; excluded', rendered)
+            self.assertNotIn('Timings are complete fresh commands', rendered)
+
     def check_runner(self, command: list[str], timeout: float, expected_timed_out: bool) -> None:
         with tempfile.TemporaryDirectory() as name:
             temp = Path(name)

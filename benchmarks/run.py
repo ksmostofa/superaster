@@ -161,10 +161,14 @@ def main() -> None:
                     record['artifact_error'] = f'{type(error).__name__}: {error}'
             elif exit_code == 0:
                 record['artifact_error'] = 'Command returned success without requested cutout PNG'
-            if record_path.exists():
+            # Native Superaster writes OUTPUT.json. Prefer an explicitly requested
+            # record, then retain the actual adjacent sidecar without synthesizing it.
+            actual_record_path = record_path if record_path.exists() else output_path.with_name(output_path.name + '.json')
+            if actual_record_path.exists():
+                record['engine_execution_record_path'] = str(actual_record_path.resolve())
                 try:
-                    record['engine_execution_record'] = read_json(record_path)
-                    record['engine_execution_record_sha256'] = digest(record_path)
+                    record['engine_execution_record'] = read_json(actual_record_path)
+                    record['engine_execution_record_sha256'] = digest(actual_record_path)
                 except (OSError, ValueError) as error:
                     record['execution_record_error'] = str(error)
             else:
