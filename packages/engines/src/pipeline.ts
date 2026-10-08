@@ -1,7 +1,7 @@
 import { SuperasterError, type Recipe, type ExecutionRecord, type Progress } from '../../contract/src/index.js';
 import { cancelled, recipeHash, sha256, type RuntimeOptions, type ProcessResult } from '../../core/src/index.js';
-import { DEFAULT_LIMITS, assertRaster, checkDimensions, blank, cloneRaster, cropRaster, flipRaster, compositeAt, bilinearAlpha, applyAlpha, extractAlpha, maskRaster, cleanEdgeRgb, type Raster, type ImagingKernel, type EncodeOptions } from './raster.js';
-export interface InferenceResult {alpha:Float32Array;width:number;height:number;engine:ExecutionRecord['engine'];cacheHit?:boolean}
+import { DEFAULT_LIMITS, assertRaster, checkDimensions, blank, cloneRaster, cropRaster, flipRaster, compositeAt, bilinearAlpha, applyAlpha, maskRaster, cleanEdgeRgb, type Raster, type ImagingKernel, type EncodeOptions } from './raster.js';
+export interface InferenceResult {alpha:Float32Array;width:number;height:number;engine:ExecutionRecord['engine'];cacheHit?:boolean;timings_ms?:Record<string,number>}
 export interface PipelineOptions extends RuntimeOptions {kernel:ImagingKernel;infer:(raster:Raster,recipe:Recipe,options:RuntimeOptions)=>Promise<InferenceResult>;limits?:{max_pixels:number;max_bytes:number;max_concurrency:number}}
 function placement(canvasW:number,canvasH:number,w:number,h:number,position='center'):{left:number;top:number}{return {left:position==='left'?0:position==='right'?canvasW-w:Math.floor((canvasW-w)/2),top:position==='top'?0:position==='bottom'?canvasH-h:Math.floor((canvasH-h)/2)};}
 export async function fitRaster(raster:Raster,width:number,height:number,fit:'contain'|'cover'|'fill',kernel:ImagingKernel,resampling:'nearest'|'lanczos3'='lanczos3',allowUpscale=true):Promise<Raster>{
@@ -28,7 +28,7 @@ export async function executePipeline(input:Uint8Array,recipe:Recipe,options:Pip
   switch(operation.op){
    case 'normalize':break; // Every decode normalizes orientation once and converts to sRGB.
    case 'remove_background':{
-    const result=await stage('inference',()=>options.infer(current,recipe,options));engine=result.engine;
+    const result=await stage('inference',()=>options.infer(current,recipe,options));engine=result.engine;for(const [name,ms] of Object.entries(result.timings_ms??{}))timings[name]=(timings[name]??0)+ms;
     const alpha=bilinearAlpha(result.alpha,result.width,result.height,current.width,current.height,signal);current=applyAlpha(current,alpha);hasMask=true;
     if(result.cacheHit)warnings.push('Inference alpha reused from the identical input and pinned model');
     if((operation.edge_cleanup??'auto')==='auto'){const cleanup=await stage('refine',async()=>cleanEdgeRgb(original,current,signal));current=cleanup.raster;engine={...engine,refinement:'local-edge-rgb-v1'};warnings.push(`Local edge RGB recovery changed ${cleanup.changed} soft-edge pixels; quality screening remains specific to the recorded profile`);}foregroundMask=cloneRaster(current);break;

@@ -8,7 +8,7 @@ import sharp, { type Sharp } from 'sharp';
 import { SuperasterError, type Progress, type Recipe, type ImageInfo, type ExecutionRecord } from '../../contract/src/index.js';
 import { cancelled, sha256, processingError, type EngineAdapter, type RuntimeOptions, type ProcessResult } from '../../core/src/index.js';
 import { MODELS, chooseModel, listModels, type ModelDefinition } from './models.js';
-import { assertRaster, checkDimensions, DEFAULT_LIMITS, bilinearAlpha, type Raster, type ImagingKernel, type EncodeOptions, type KernelName } from './raster.js';
+import { assertRaster, checkDimensions, DEFAULT_LIMITS, type Raster, type ImagingKernel, type EncodeOptions, type KernelName } from './raster.js';
 import { executePipeline, type InferenceResult } from './pipeline.js';
 export { MODELS, chooseModel, listModels } from './models.js';
 export function defaultModelDir():string { return join(homedir(),'.cache','superaster','models'); }
@@ -90,23 +90,23 @@ export class NativeEngine implements EngineAdapter {
  capabilities(){return {operations:['remove_background','resize','crop','subject_crop','canvas','composite','rotate','flip','correct','mask','normalize','print_sheet'],formats:['png','jpeg','webp'],engines:MODELS.map(model=>({...model,runtime:'onnxruntime-node 1.30.0',backend:'cpu',validated:'feasibility; quality screening pending'})),limits:{...DEFAULT_LIMITS},offline:true};}
  async inspect(input:Uint8Array,options:RuntimeOptions={}):Promise<ImageInfo>{cancelled(options.signal);return this.kernel.inspect(input);}
  private async infer(raster:Raster,recipe:Recipe,options:RuntimeOptions):Promise<InferenceResult>{
-  cancelled(options.signal);const definition=chooseModel(recipe.engine,recipe.quality);const key=definition.sha256+':'+raster.width+':'+raster.height+':'+await sha256(raster.data);
-  if(this.cached?.key===key)return {...this.cached.result,alpha:this.cached.result.alpha.slice(),cacheHit:true};
+  cancelled(options.signal);const timings:Record<string,number>={},lookupStarted=performance.now();const definition=chooseModel(recipe.engine,recipe.quality);const key=definition.sha256+':'+raster.width+':'+raster.height+':'+await sha256(raster.data);
+  if(this.cached?.key===key)return {...this.cached.result,alpha:this.cached.result.alpha.slice(),cacheHit:true,timings_ms:{alpha_cache_lookup:performance.now()-lookupStarted}};
   if(this.sessionModel?.id!==definition.id){await this.session?.release();this.session=undefined;this.sessionModel=undefined;this.cached=undefined;
-   const path=await installModel(definition.id,{modelDir:options.modelDir??this.modelDir,signal:options.signal,onProgress:options.onProgress});cancelled(options.signal);options.onProgress?.({stage:'initialize',message:`Initializing ${definition.name}`});
-   this.session=await ort.InferenceSession.create(path,{executionProviders:['cpu'],logSeverityLevel:3});this.sessionModel=definition;
+   const setupStarted=performance.now();const path=await installModel(definition.id,{modelDir:options.modelDir??this.modelDir,signal:options.signal,onProgress:options.onProgress});timings.model_setup=performance.now()-setupStarted;cancelled(options.signal);const initializeStarted=performance.now();options.onProgress?.({stage:'initialize',message:`Initializing ${definition.name}`});
+   this.session=await ort.InferenceSession.create(path,{executionProviders:['cpu'],logSeverityLevel:3});this.sessionModel=definition;timings.initialize=performance.now()-initializeStarted;
    const input=this.session.inputMetadata[0],output=this.session.outputMetadata[0];
    if(!input?.isTensor||input.name!==definition.inputName||input.type!=='float32'||input.shape.join(',')!=='1,3,512,512'||!output?.isTensor||output.name!==definition.outputName||output.type!=='float32'||output.shape.join(',')!=='1,1,512,512'){await this.session.release();this.session=undefined;this.sessionModel=undefined;throw new SuperasterError('MODEL_INTEGRITY','Loaded ONNX tensor contract differs from approved profile');}
   }
-  cancelled(options.signal);options.onProgress?.({stage:'preprocess',message:'Preparing 512px local inference input'});
+  cancelled(options.signal);const preprocessStarted=performance.now();options.onProgress?.({stage:'preprocess',message:'Preparing 512px local inference input'});
   const small=await this.kernel.resize(raster,512,512,'linear'),data=new Float32Array(3*512*512),mean=[.485,.456,.406],std=[.229,.224,.225];
   for(let c=0;c<3;c++)for(let i=0;i<512*512;i++)data[c*512*512+i]=(small.data[i*4+c]!/255-mean[c]!)/std[c]!;
-  cancelled(options.signal);options.onProgress?.({stage:'inference',message:`Running ${definition.name} locally`});
-  const output=await this.session!.run({[definition.inputName]:new ort.Tensor('float32',data,[1,3,512,512])});cancelled(options.signal);const tensor=output[definition.outputName];
+  timings.preprocess=performance.now()-preprocessStarted;cancelled(options.signal);const inferenceStarted=performance.now();options.onProgress?.({stage:'inference',message:`Running ${definition.name} locally`});
+  const output=await this.session!.run({[definition.inputName]:new ort.Tensor('float32',data,[1,3,512,512])});timings.inference_kernel=performance.now()-inferenceStarted;cancelled(options.signal);const tensor=output[definition.outputName];
   if(!tensor||tensor.type!=='float32'||tensor.dims.join(',')!=='1,1,512,512'||!(tensor.data instanceof Float32Array))throw new SuperasterError('PROCESSING_FAILED','Inference returned an invalid tensor');
-  const alpha=new Float32Array(tensor.data.length);for(let i=0;i<alpha.length;i++){const value=tensor.data[i]!;if(!Number.isFinite(value))throw new SuperasterError('PROCESSING_FAILED','Inference returned non-finite alpha logits');alpha[i]=1/(1+Math.exp(-value));}
+  const alphaStarted=performance.now(),alpha=new Float32Array(tensor.data.length);for(let i=0;i<alpha.length;i++){const value=tensor.data[i]!;if(!Number.isFinite(value))throw new SuperasterError('PROCESSING_FAILED','Inference returned non-finite alpha logits');alpha[i]=1/(1+Math.exp(-value));}
   const engine:ExecutionRecord['engine']={id:definition.id,version:definition.revision,model_hash:definition.sha256,precision:'fp16 weights / float32 I/O',inference_dimensions:[512,512],runtime:'onnxruntime-node 1.30.0',backend:'cpu',refinement:'none'};
-  const result={alpha,width:512,height:512,engine};this.cached={key,result};return {...result,alpha:alpha.slice()};
+  timings.alpha_decode=performance.now()-alphaStarted;const result={alpha,width:512,height:512,engine,timings_ms:timings};this.cached={key,result};return {...result,alpha:alpha.slice()};
  }
  async execute(input:Uint8Array,recipe:Recipe,options:RuntimeOptions={}):Promise<ProcessResult>{const run=async()=>{try{cancelled(options.signal);return await executePipeline(input,recipe,{...options,kernel:this.kernel,infer:(r,p,o)=>this.infer(r,p,o)});}catch(error){throw processingError(error);}};const task=this.tail.then(run,run);this.tail=task.then(()=>undefined,()=>undefined);return task;}
  async dispose():Promise<void>{await this.tail;await this.session?.release();this.session=undefined;this.sessionModel=undefined;this.cached=undefined;}
