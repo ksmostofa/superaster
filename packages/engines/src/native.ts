@@ -37,7 +37,7 @@ export async function installModel(id:string,options:InstallOptions={}):Promise<
    const advertised=response.headers.get('content-length');
    if(advertised && Number(advertised)!==definition.bytes) throw new SuperasterError('MODEL_INTEGRITY','Model download size does not match approved artifact');
    handle=await open(temporary,'wx');const hash=createHash('sha256');let downloaded=0;const reader=response.body.getReader();
-   try {for(;;){cancelled(options.signal);const chunk=await reader.read();if(chunk.done)break;downloaded+=chunk.value.byteLength;if(downloaded>definition.bytes)throw new SuperasterError('MODEL_INTEGRITY','Model exceeds approved artifact size');await handle.write(chunk.value);hash.update(chunk.value);options.onProgress?.({stage:'download',completed:downloaded,total:definition.bytes,message:`Downloading ${definition.name}`});}}
+   try {for(;;){cancelled(options.signal);const chunk=await reader.read();if(chunk.done)break;downloaded+=chunk.value.byteLength;if(downloaded>definition.bytes)throw new SuperasterError('MODEL_INTEGRITY','Model exceeds approved artifact size');await handle.writeFile(chunk.value);hash.update(chunk.value);options.onProgress?.({stage:'download',completed:downloaded,total:definition.bytes,message:`Downloading ${definition.name}`});}}
    finally {await reader.cancel().catch(()=>undefined);reader.releaseLock();}
    cancelled(options.signal);options.onProgress?.({stage:'verify',message:'Checking model SHA-256'});
    if(downloaded!==definition.bytes || hash.digest('hex')!==definition.sha256)throw new SuperasterError('MODEL_INTEGRITY','Downloaded model does not match approved artifact');

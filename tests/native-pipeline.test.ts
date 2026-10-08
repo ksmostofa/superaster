@@ -33,6 +33,9 @@ describe('native observable processing contracts',()=>{
  it('EXIF orientation is applied exactly once and export strips source metadata',async()=>{
   const input=new Uint8Array(await sharp({create:{width:2,height:3,channels:3,background:'#ff0000'}}).jpeg().withMetadata({orientation:6}).toBuffer());const before=await kernel.inspect(input);expect(before.orientation).toBe(6);const first=await run(input,[{op:'normalize',color_space:'srgb'}]);expect([first.record.output.width,first.record.output.height]).toEqual([3,2]);expect(first.record.output.orientation).toBeUndefined();expect(first.record.output.metadata.exif).toBe(false);expect(first.record.output.metadata.icc).toBe(true);const second=await run(first.bytes,[{op:'normalize',color_space:'srgb'}]);expect([second.record.output.width,second.record.output.height]).toEqual([3,2]);
  });
+ it('orientation transforms known pixels once, including nonuniform EXIF PNG',async()=>{
+  const input=new Uint8Array(await sharp(Buffer.from([255,0,0,0,255,0,0,0,255,255,255,0,255,0,255,0,255,255]),{raw:{width:2,height:3,channels:3}}).png().withMetadata({orientation:6}).toBuffer());const result=await run(input,[{op:'normalize',color_space:'srgb'}]);const normalized=await decode(result.bytes);expect([normalized.width,normalized.height]).toEqual([3,2]);expect([...normalized.data]).toEqual([255,0,255,255,0,0,255,255,255,0,0,255,0,255,255,255,255,255,0,255,0,255,0,255]);const again=await run(result.bytes,[]);expect([...(await decode(again.bytes)).data]).toEqual([...normalized.data]);
+ });
  it('print sheet records density and fixed placements',async()=>{
   const input=await rgba(1,1,[255,0,0,255]);const result=await run(input,[{op:'print_sheet',sheet_width_mm:25.4,sheet_height_mm:25.4,item_width_mm:5.08,item_height_mm:5.08,dpi:100,rows:2,columns:2,margin_mm:2.54,spacing_mm:2.54}]);const output=await decode(result.bytes);expect([output.width,output.height]).toEqual([100,100]);expect(result.record.output.metadata.density).toBe(100);expect([...output.data.subarray((10*100+10)*4,(10*100+10)*4+4)]).toEqual([255,0,0,255]);expect([...output.data.subarray(0,4)]).toEqual([255,255,255,255]);
  });
@@ -51,6 +54,12 @@ describe('native observable processing contracts',()=>{
  });
  it('foreground mask remains coverage after an opaque composition',async()=>{
   const input=await rgba(2,1,[200,20,30,255,40,50,220,255]);const result=await run(input,[{op:'correct',regions:[{x:1,y:0,width:1,height:1,mode:'erase'}]},{op:'composite',background:'#ffffff'}]);expect((await kernel.inspect(result.bytes)).is_opaque).toBe(true);expect([...((await decode(result.mask!)).data)]).toEqual([255,255,255,255,0,0,0,255]);const direct=await run(input,[{op:'correct',regions:[{x:1,y:0,width:1,height:1,mode:'erase'}]},{op:'canvas',width:4,height:2,background:'#ffffff'},{op:'mask'}]);const pixels=await decode(direct.bytes);expect(pixels.data[0]).toBe(255);expect(pixels.data[12]).toBe(0);
+ });
+ it('increased programmatic coverage restores original RGB after edge recovery',async()=>{
+  // This deterministic unit fixture substitutes known alpha only inside the test; production infer remains ORT.
+  const input=await rgba(3,1,[255,255,255,255,255,128,128,255,255,0,0,255]);const coverage=await rgba(3,1,[0,0,0,255,255,255,255,255,255,255,255,255]);
+  const infer=async()=>({alpha:new Float32Array([0,.5,1]),width:3,height:1,engine:{id:'test-fixture',version:'1',model_hash:null,precision:'float32',inference_dimensions:[3,1],runtime:'deterministic unit fixture',backend:'test',refinement:'none'}});
+  const result=await executePipeline(input,recipe([{op:'remove_background',edge_cleanup:'auto'},{op:'correct',mask_ref:'coverage'}]),{kernel,bindings:{coverage},infer});const output=await decode(result.bytes);expect([...output.data.subarray(4,8)]).toEqual([255,128,128,255]);expect(result.record.warnings[0]).toContain('changed 1 soft-edge pixels');
  });
  it('programmatic mask coverage and region restoration compose with the same source',async()=>{
   const input=await rgba(2,1,[200,20,30,255,40,50,220,255]);const mask=await rgba(2,1,[128,128,128,255,0,0,0,255]);const result=await executePipeline(input,recipe([{op:'correct',mask_ref:'m',regions:[{x:1,y:0,width:1,height:1,mode:'restore'}]}]),{kernel,bindings:{m:mask},infer:async()=>{throw new Error('Fixture must not call inference');}});expect([...(await decode(result.bytes)).data]).toEqual([200,20,30,128,40,50,220,255]);
