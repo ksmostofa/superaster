@@ -10,6 +10,49 @@ export interface ImagingKernel {
  rotate(raster:Raster,angle:number,background:string):Promise<Raster>;
  encode(raster:Raster,options:EncodeOptions):Promise<Uint8Array>;
 }
+/** Physical density declared in the encoded file, never a decoder's implicit default.
+ * PNG pHYs: W3C PNG3 §11.3.4.3; JPEG APP0: JFIF1.02; EXIF uses TIFF IFD0
+ * X/YResolution and ResolutionUnit. Reads are bounded, no recursive IFD traversal.
+ * Codecs validate image/container integrity separately before calling this helper.
+ */
+export function readDeclaredDensity(bytes:Uint8Array,format:string):number|undefined {
+ const view=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
+ const name=(offset:number,length:number)=>String.fromCharCode(...bytes.subarray(offset,offset+length));
+ const dpi=(value:number)=>Number.isFinite(value)&&value>0&&Math.round(value)>0?Math.round(value):undefined;
+ const exif=(data:Uint8Array):number|undefined=>{
+  if(data.length>=6&&String.fromCharCode(...data.subarray(0,6))==='Exif\0\0')data=data.subarray(6);
+  if(data.length<8)return undefined;const v=new DataView(data.buffer,data.byteOffset,data.byteLength),little=data[0]===73&&data[1]===73;
+  if(!little&&!(data[0]===77&&data[1]===77)||v.getUint16(2,little)!==42)return undefined;
+  const offset=v.getUint32(4,little);if(offset+2>data.length)return undefined;const count=v.getUint16(offset,little);if(offset+2+count*12+4>data.length)return undefined;
+  let x:number|undefined,y:number|undefined,unit:number|undefined;
+  for(let i=0;i<count;i++){const entry=offset+2+i*12,tag=v.getUint16(entry,little),type=v.getUint16(entry+2,little),items=v.getUint32(entry+4,little);
+   if(tag===296&&type===3&&items===1)unit=v.getUint16(entry+8,little);
+   if((tag===282||tag===283)&&type===5&&items===1){const position=v.getUint32(entry+8,little);if(position+8>data.length)continue;const denominator=v.getUint32(position+4,little);if(!denominator)continue;const value=v.getUint32(position,little)/denominator;if(tag===282)x=value;else y=value;}
+  }
+  return x&&y&&(unit===2||unit===3)?dpi(x*(unit===3?2.54:1)):undefined;
+ };
+ if(format==='png'){
+  if(bytes.length<8||name(0,8)!=='\x89PNG\r\n\x1a\n')return undefined;let exifDensity:number|undefined;
+  for(let offset=8;offset+12<=bytes.length;){const size=view.getUint32(offset);if(offset+12+size>bytes.length)return undefined;const type=name(offset+4,4);
+   if(type==='pHYs'&&size===9&&bytes[offset+16]===1){const value=dpi(view.getUint32(offset+8)*.0254);if(value)return value;}
+   if(type==='eXIf')exifDensity=exif(bytes.subarray(offset+8,offset+8+size));offset+=size+12;
+  }return exifDensity;
+ }
+ if(format==='jpeg'){
+  if(bytes[0]!==255||bytes[1]!==216)return undefined;let jfifDensity:number|undefined;
+  for(let offset=2;offset+2<=bytes.length;){if(bytes[offset++]!==255)return undefined;while(bytes[offset]===255)offset++;const marker=bytes[offset++];if(marker===218||marker===217)break;if(marker===1||marker!==undefined&&marker>=208&&marker<=215)continue;
+   if(offset+2>bytes.length)return undefined;const size=view.getUint16(offset);if(size<2||offset+size>bytes.length)return undefined;const payload=offset+2;
+   if(marker===225&&size>=16&&name(payload,6)==='Exif\0\0'){const value=exif(bytes.subarray(payload,offset+size));if(value)return value;}
+   if(marker===224&&size>=16&&name(payload,5)==='JFIF\0'){const unit=bytes[payload+7],x=view.getUint16(payload+8),y=view.getUint16(payload+10);if(x&&y&&(unit===1||unit===2))jfifDensity=dpi(x*(unit===2?2.54:1));}
+   offset+=size;
+  }return jfifDensity;
+ }
+ if(format==='webp'){
+  if(bytes.length<12||name(0,4)!=='RIFF'||name(8,4)!=='WEBP')return undefined;const end=view.getUint32(4,true)+8;if(end>bytes.length)return undefined;
+  for(let offset=12;offset+8<=end;){const size=view.getUint32(offset+4,true);if(offset+8+size>end)return undefined;if(name(offset,4)==='EXIF')return exif(bytes.subarray(offset+8,offset+8+size));offset+=8+size+(size%2);}
+ }
+ return undefined;
+}
 export const DEFAULT_LIMITS={max_pixels:16777216,max_bytes:40000000,max_concurrency:1} as const;
 export function checkDimensions(width:number,height:number,maxPixels:number=DEFAULT_LIMITS.max_pixels):void {
  if(!Number.isSafeInteger(width)||!Number.isSafeInteger(height)||width<1||height<1)throw new SuperasterError('INVALID_INPUT','Invalid raster dimensions');

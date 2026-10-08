@@ -8,7 +8,7 @@ import sharp, { type Sharp } from 'sharp';
 import { SuperasterError, type Progress, type Recipe, type ImageInfo, type ExecutionRecord } from '../../contract/src/index.js';
 import { cancelled, sha256, processingError, type EngineAdapter, type RuntimeOptions, type ProcessResult } from '../../core/src/index.js';
 import { MODELS, chooseModel, listModels, type ModelDefinition } from './models.js';
-import { assertRaster, checkDimensions, DEFAULT_LIMITS, type Raster, type ImagingKernel, type EncodeOptions, type KernelName } from './raster.js';
+import { assertRaster, checkDimensions, readDeclaredDensity, DEFAULT_LIMITS, type Raster, type ImagingKernel, type EncodeOptions, type KernelName } from './raster.js';
 import { executePipeline, type InferenceResult } from './pipeline.js';
 export { MODELS, chooseModel, listModels } from './models.js';
 export function defaultModelDir():string { return join(homedir(),'.cache','superaster','models'); }
@@ -56,8 +56,8 @@ export class NativeImagingKernel implements ImagingKernel {
   if(!bytes.length)throw new SuperasterError('INVALID_INPUT','Input file is empty');
   if(bytes.length>DEFAULT_LIMITS.max_bytes)throw new SuperasterError('LIMIT_EXCEEDED','Input exceeds compressed byte limit');
   try {const metadata=await sharpInput(bytes).metadata();checkDimensions(metadata.width,metadata.pageHeight??metadata.height);const pages=metadata.pages??1;if(!['png','jpeg','webp'].includes(metadata.format))throw new SuperasterError('UNSUPPORTED','Only JPEG, PNG and WebP files are supported');if(pages!==1)throw new SuperasterError('UNSUPPORTED','Animated and multi-frame inputs are unavailable');
-   const isOpaque=metadata.hasAlpha?(await sharpInput(bytes).stats()).isOpaque:true;
-   return {width:metadata.width,height:metadata.height,format:metadata.format,channels:metadata.channels,has_alpha:metadata.hasAlpha,is_opaque:isOpaque,bytes:bytes.length,...(metadata.orientation?{orientation:metadata.orientation}:{}),color_space:metadata.space,pages,metadata:{icc:Boolean(metadata.icc),exif:Boolean(metadata.exif),...(metadata.density?{density:metadata.density}:{})}};
+   const isOpaque=metadata.hasAlpha?(await sharpInput(bytes).stats()).isOpaque:true,density=readDeclaredDensity(bytes,metadata.format);
+   return {width:metadata.width,height:metadata.height,format:metadata.format,channels:metadata.channels,has_alpha:metadata.hasAlpha,is_opaque:isOpaque,bytes:bytes.length,...(metadata.orientation?{orientation:metadata.orientation}:{}),color_space:metadata.space,pages,metadata:{icc:Boolean(metadata.icc),exif:Boolean(metadata.exif),...(density?{density}:{})}};
   }catch(error){if(error instanceof SuperasterError)throw error;throw new SuperasterError('INVALID_INPUT',error instanceof Error?error.message:'Image could not be decoded');}
  }
  async decode(bytes:Uint8Array):Promise<Raster>{await this.inspect(bytes);return toRaster(sharpInput(bytes).autoOrient());}

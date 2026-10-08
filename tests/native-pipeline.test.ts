@@ -2,7 +2,7 @@ import {describe,it,expect} from 'vitest';
 import sharp from 'sharp';
 import {NativeEngine,NativeImagingKernel} from '../packages/engines/src/native.js';
 import {Processor} from '../packages/core/src/index.js';
-import {bilinearAlpha,cleanEdgeRgb,maskRaster,blank,assertRaster} from '../packages/engines/src/raster.js';
+import {bilinearAlpha,cleanEdgeRgb,maskRaster,blank,assertRaster,readDeclaredDensity} from '../packages/engines/src/raster.js';
 import {executePipeline} from '../packages/engines/src/pipeline.js';
 import {parseRecipe,type Operation,type Recipe} from '../packages/contract/src/index.js';
 const kernel=new NativeImagingKernel();
@@ -45,6 +45,11 @@ describe('native observable processing contracts',()=>{
  it('print sheet records density and fixed placements',async()=>{
   const input=await rgba(1,1,[255,0,0,255]);const result=await run(input,[{op:'print_sheet',sheet_width_mm:25.4,sheet_height_mm:25.4,item_width_mm:5.08,item_height_mm:5.08,dpi:100,rows:2,columns:2,margin_mm:2.54,spacing_mm:2.54}]);const output=await decode(result.bytes);expect([output.width,output.height]).toEqual([100,100]);expect(result.record.output.metadata.density).toBe(100);expect([...output.data.subarray((10*100+10)*4,(10*100+10)*4+4)]).toEqual([255,0,0,255]);expect([...output.data.subarray(0,4)]).toEqual([255,255,255,255]);
  });
+ it('density inspection uses actual physical tags and preserves declared low DPI',async()=>{
+  for(const format of ['png','jpeg','webp'] as const)for(const density of [1,25,72,300]){const input=new Uint8Array(await sharp({create:{width:2,height:2,channels:3,background:'#204060'}}).withMetadata({density}).toFormat(format).toBuffer());expect((await kernel.inspect(input)).metadata.density).toBe(density);}
+  const jpeg=new Uint8Array(await sharp({create:{width:2,height:2,channels:3,background:'#204060'}}).jpeg().toBuffer());expect((await sharp(jpeg).metadata()).density).toBe(72);expect((await kernel.inspect(jpeg)).metadata.density).toBeUndefined();
+  const png=await rgba(1,1,[20,40,60,255]);const chunks:Uint8Array[]=[png.subarray(0,8)];const view=new DataView(png.buffer,png.byteOffset,png.byteLength);for(let offset=8;offset+12<=png.length;){const size=view.getUint32(offset),type=String.fromCharCode(...png.subarray(offset+4,offset+8));if(type!=='pHYs')chunks.push(png.subarray(offset,offset+size+12));offset+=size+12;}const tagless=Buffer.concat(chunks);expect((await kernel.inspect(tagless)).metadata.density).toBeUndefined();
+ });
  it('cancellation and unsupported requests produce explicit errors',async()=>{
   const input=await rgba(1,1,[1,2,3,255]);const processor=new Processor(new NativeEngine());const controller=new AbortController();controller.abort();await expect(processor.transform(input,recipe([]),{signal:controller.signal})).rejects.toMatchObject({code:'CANCELLED'});await expect(processor.transform(new Uint8Array([1,2,3]),recipe([]))).rejects.toMatchObject({code:'INVALID_INPUT'});await processor.dispose();
  });
@@ -72,6 +77,7 @@ describe('native observable processing contracts',()=>{
  });
 });
 describe('shared alpha and boundary RGB fixtures',()=>{
+ it('bounded density parsing ignores truncated containers and unknown formats',()=>{for(const format of ['png','jpeg','webp','unknown'])expect(readDeclaredDensity(new Uint8Array([255,216,255]),format)).toBeUndefined();});
  it('uses half-pixel bilinear alpha with clamped edges',()=>{expect([...bilinearAlpha(new Float32Array([0,1]),2,1,4,1)]).toEqual([0,.25,.75,1]);expect(()=>bilinearAlpha(new Float32Array([0]),2,1,4,1)).toThrow();});
  it('recovers a known composited edge without changing opaque foreground',()=>{
   const source={width:3,height:1,data:new Uint8Array([255,255,255,255,255,128,128,255,255,0,0,255])};const cutout={...source,data:new Uint8Array([255,255,255,0,255,128,128,128,255,0,0,255])};const result=cleanEdgeRgb(source,cutout);expect(result.changed).toBe(1);expect([...result.raster.data.subarray(4,8)]).toEqual([255,2,2,128]);expect([...result.raster.data.subarray(8,12)]).toEqual([255,0,0,255]);
