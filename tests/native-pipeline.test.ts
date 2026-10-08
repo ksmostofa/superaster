@@ -15,6 +15,9 @@ describe('native observable processing contracts',()=>{
  it('contain canvas preserves proportions and writes exact opaque pixels',async()=>{
   const input=await rgba(2,1,[255,0,0,255,0,0,255,255]);const result=await run(input,[{op:'canvas',width:4,height:4,fit:'contain',background:'#ffffff'}]);const output=await decode(result.bytes);expect([output.width,output.height]).toEqual([4,4]);expect([...output.data.subarray(0,4)]).toEqual([255,255,255,255]);expect(output.data[4*4+3]).toBe(255);expect(result.record.output.has_alpha).toBe(true);expect((await kernel.inspect(result.bytes)).is_opaque).toBe(true);
  });
+ it('two-bound contain resize pads to exact requested dimensions',async()=>{
+  const input=await rgba(3,2,Array(6).fill([255,0,0,255]).flat());const result=await run(input,[{op:'resize',width:6,height:6,fit:'contain',allow_upscale:true,resampling:'nearest'}]);const output=await decode(result.bytes);expect([output.width,output.height]).toEqual([6,6]);expect(output.data[3]).toBe(0);expect([...output.data.subarray((1*6)*4,(1*6)*4+4)]).toEqual([255,0,0,255]);expect(output.data[(5*6)*4+3]).toBe(0);
+ });
  it('flip and crop use current integer coordinates',async()=>{
   const input=await rgba(3,1,[255,0,0,255,0,255,0,255,0,0,255,255]);const result=await run(input,[{op:'flip',axis:'horizontal'},{op:'crop',x:0,y:0,width:1,height:1}]);expect([...(await decode(result.bytes)).data]).toEqual([0,0,255,255]);
  });
@@ -42,6 +45,12 @@ describe('native observable processing contracts',()=>{
  });
  it('erase and restore use original source, grayscale mask remains one channel',async()=>{
   const input=await rgba(2,1,[200,20,30,255,40,50,220,255]);const result=await run(input,[{op:'correct',regions:[{x:0,y:0,width:2,height:1,mode:'erase'},{x:0,y:0,width:1,height:1,mode:'restore'}]}]);expect([...(await decode(result.bytes)).data]).toEqual([200,20,30,255,40,50,220,0]);expect(result.mask).toBeDefined();const maskInfo=await kernel.inspect(result.mask!);expect(maskInfo.channels).toBe(1);const mask=await decode(result.mask!);expect([...mask.data]).toEqual([255,255,255,255,0,0,0,255]);
+ });
+ it('binding content changes recipe identity and preflight rejects missing refs before inference',async()=>{
+  const input=await rgba(1,1,[200,20,30,255]);const one=await rgba(1,1,[128,128,128,255]),two=await rgba(1,1,[64,64,64,255]);const r=recipe([{op:'correct',mask_ref:'m'}]);const infer=async()=>{throw new Error('Fixture must not call inference');};const a=await executePipeline(input,r,{kernel,bindings:{m:one},infer}),b=await executePipeline(input,r,{kernel,bindings:{m:two},infer});expect(a.record.recipe_hash).not.toBe(b.record.recipe_hash);expect(a.record.binding_hashes?.m).toBeDefined();await expect(executePipeline(input,recipe([{op:'remove_background'},{op:'correct',mask_ref:'missing'}]),{kernel,infer})).rejects.toMatchObject({code:'INVALID_INPUT'});
+ });
+ it('foreground mask remains coverage after an opaque composition',async()=>{
+  const input=await rgba(2,1,[200,20,30,255,40,50,220,255]);const result=await run(input,[{op:'correct',regions:[{x:1,y:0,width:1,height:1,mode:'erase'}]},{op:'composite',background:'#ffffff'}]);expect((await kernel.inspect(result.bytes)).is_opaque).toBe(true);expect([...((await decode(result.mask!)).data)]).toEqual([255,255,255,255,0,0,0,255]);const direct=await run(input,[{op:'correct',regions:[{x:1,y:0,width:1,height:1,mode:'erase'}]},{op:'canvas',width:4,height:2,background:'#ffffff'},{op:'mask'}]);const pixels=await decode(direct.bytes);expect(pixels.data[0]).toBe(255);expect(pixels.data[12]).toBe(0);
  });
  it('programmatic mask coverage and region restoration compose with the same source',async()=>{
   const input=await rgba(2,1,[200,20,30,255,40,50,220,255]);const mask=await rgba(2,1,[128,128,128,255,0,0,0,255]);const result=await executePipeline(input,recipe([{op:'correct',mask_ref:'m',regions:[{x:1,y:0,width:1,height:1,mode:'restore'}]}]),{kernel,bindings:{m:mask},infer:async()=>{throw new Error('Fixture must not call inference');}});expect([...(await decode(result.bytes)).data]).toEqual([200,20,30,128,40,50,220,255]);
