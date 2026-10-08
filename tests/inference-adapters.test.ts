@@ -13,7 +13,8 @@ import type { Recipe, Progress } from '../packages/contract/src/index.js';
 
 // Explicit opt-in keeps expensive, real model execution separate from deterministic suites.
 // A skipped run is NOT RUN, never a gate pass. One model process runs at a time.
-const enabled = process.env.SUPERASTER_RUN_INFERENCE_ACCEPTANCE === '1';
+const continuationRoot = process.env.SUPERASTER_EXISTING_ACCEPTANCE_EVIDENCE ? resolve(process.env.SUPERASTER_EXISTING_ACCEPTANCE_EVIDENCE) : undefined;
+const enabled = process.env.SUPERASTER_RUN_INFERENCE_ACCEPTANCE === '1' && !continuationRoot;
 const acceptanceRoot = resolve(process.env.SUPERASTER_ACCEPTANCE_ROOT ?? '.');
 const packageRoot = resolve(process.env.SUPERASTER_PACKAGE_ROOT ?? '.');
 const modelDir = resolve(process.env.SUPERASTER_MODEL_DIR ?? '.cache/models');
@@ -41,25 +42,30 @@ const recordSchema = z.object({
 const removalPayload = z.object({ file: z.string(), resource_uri: z.string(), record_file: z.string(), record: recordSchema }).passthrough();
 
 beforeAll(async () => {
-  if (!enabled) return;
+  if (!enabled && !continuationRoot) return;
   await mkdir('.cache', { recursive: true }); evidence = await mkdtemp(resolve('.cache/inference-adapters-'));
   const manifest = z.object({ version: z.string(), t01: z.object({ path: z.string(), sha256: z.string(), width: z.number(), height: z.number(), license: z.string(), source_url: z.string(), source_sha256: z.string(), retained_subject: z.string() }).passthrough() }).passthrough()
     .parse(JSON.parse(await readFile(join(acceptanceRoot, 'benchmarks/fixtures/acceptance-manifest.json'), 'utf8')));
   expect(manifest.t01.sha256).toBe(sourceHash); expect([manifest.t01.width, manifest.t01.height]).toEqual([2400, 1600]);
   const fixture = join(acceptanceRoot, manifest.t01.path); expect(await sha256(await readFile(fixture))).toBe(sourceHash);
-  input = join(evidence, 'input.png'); await copyFile(fixture, input); sdkOutput = join(evidence, 'sdk-cutout.png');
-  const model = chooseModel('auto', 'quality'); expect(model.sha256).toBe(modelHash); await verifyModel(join(modelDir, model.id + '.onnx'), model);
+  input = continuationRoot ? join(continuationRoot, 'input.png') : join(evidence, 'input.png'); if (!continuationRoot) await copyFile(fixture, input); sdkOutput = join(continuationRoot ?? evidence, 'sdk-cutout.png');
+  const model = chooseModel('auto', 'quality'); expect(model.sha256).toBe(modelHash); if (!continuationRoot) await verifyModel(join(modelDir, model.id + '.onnx'), model);
   sdk = await import(pathToFileURL(join(packageRoot, 'dist/native/sdk/src/index.js')).href);
   observations.conditions = {
     started_at: new Date().toISOString(), node: process.version, native_versions: sharp.versions,
     test_commit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
     package_root: packageRoot, model_directory: modelDir, model, input: manifest.t01,
     compiled_hashes: Object.fromEntries(await Promise.all(['dist/native/sdk/src/index.js', 'dist/native/cli/src/index.js', 'dist/native/mcp/src/index.js', 'dist/native/engines/src/native.js', 'dist/native/engines/src/pipeline.js', 'dist/native/core/src/index.js', 'dist/native/contract/src/index.js'].map(async path => [path, await sha256(await readFile(join(packageRoot, path)))]))),
-    parallel_inference_jobs: 1, download_condition: 'Approved existing model files verified by byte size and SHA-256; cold download not exercised'
+    parallel_inference_jobs: continuationRoot ? 0 : 1, download_condition: 'Approved existing model files verified by byte size and SHA-256 in initial run; cold download not exercised',
+    ...(continuationRoot ? { continuation_from: continuationRoot, continuation_scope: 'Existing real inference outputs retained; only previously failing response assertion and unexecuted non-ML checks rerun' } : {})
   };
+  if (process.env.SUPERASTER_SPEC_PATH) {
+    const specBytes = await readFile(process.env.SUPERASTER_SPEC_PATH), header = specBytes.toString().match(/^Revision:\s*([\d.]+)/m);
+    observations.specification = { revision: header?.[1]?.replace(/\.$/, ''), sha256: await sha256(specBytes) };
+  }
 });
 afterAll(async () => {
-  if (!enabled || !evidence) return;
+  if ((!enabled && !continuationRoot) || !evidence) return;
   await writeFile(join(evidence, 'observations.json'), JSON.stringify(observations, null, 2) + '\n');
   console.info(`Real adapter evidence retained at ${evidence}`);
 });
@@ -144,8 +150,8 @@ describe.skipIf(!enabled)('real native inference through installed adapters', ()
       expect(transformResult.file).toBe(output); expect(transformResult.resource_uri).toBe(pathToFileURL(output).href); expect(transformResult.record_file).toBe(output + '.json');
       observations.mcp_prepared = await prepared(output);
       const validation = await tool('validate', { input: output, preset: 'shopify-product-square', version: '2026-10-08.1' });
-      const checked = z.object({ rules: z.array(z.object({ id: z.string(), status: z.enum(['pass', 'fail', 'needs_review', 'not_checked']) }).passthrough()) }).passthrough().parse(validation.structuredContent);
-      expect(checked.rules).toEqual(expect.arrayContaining([expect.objectContaining({ id: 'maximum-size', status: 'pass' }), expect.objectContaining({ id: 'bytes', status: 'pass' }), expect.objectContaining({ id: 'formats', status: 'pass' })]));
+      const checked = validationPayload.parse(validation.structuredContent);
+      expectMandatoryRules(checked);
       const deniedPath = join(evidence, 'unsupported.webp'), unsupported = await client.callTool({ name: 'transform', arguments: { input: removed, output: deniedPath, recipe: { ...preparation, operations: [{ op: 'generate' }] } } });
       expect(unsupported.isError).toBe(true); responses.unsupported = unsupported;
       await expect(readFile(deniedPath)).rejects.toMatchObject({ code: 'ENOENT' });
@@ -158,5 +164,38 @@ describe.skipIf(!enabled)('real native inference through installed adapters', ()
     try { await sdk.transformFile(processor, sdkOutput, preparation, expectedPath); } finally { await processor.dispose(); }
     observations.sdk_prepared = await prepared(expectedPath); observations.prepared_pixels = await identicalPixels(expectedPath, join(evidence, 'mcp-prepared.webp'));
     observations.status = 'PASS for the executed machine checks only';
+  });
+});
+
+// Contract index.ts defines RuleOutcome.state, not status. Keeping the captured
+// failure proves this test correction follows the declared API rather than hiding a product failure.
+const validationPayload = z.object({ rules: z.array(z.object({ id: z.string(), state: z.enum(['pass', 'fail', 'needs_review', 'not_checked']) }).passthrough()) }).passthrough();
+function expectMandatoryRules(value: z.infer<typeof validationPayload>) {
+  expect(value.rules).toEqual(expect.arrayContaining([expect.objectContaining({ id: 'maximum-size', state: 'pass' }), expect.objectContaining({ id: 'bytes', state: 'pass' }), expect.objectContaining({ id: 'formats', state: 'pass' }), expect.objectContaining({ id: 'recommended-size', state: 'fail' }), expect.objectContaining({ id: 'shape', state: 'needs_review' })]));
+}
+describe.skipIf(!continuationRoot)('retained actual removal evidence, non-ML continuation', () => {
+  it('checks declared rule response and completes unsupported-request and exact SDK preparation checks without reinference', async () => {
+    if (!continuationRoot) throw new Error('Explicit prior actual evidence is required');
+    const priorBytes = await readFile(join(continuationRoot, 'observations.json'));
+    const prior = z.object({ t01_native: z.string(), conditions: z.object({ compiled_hashes: z.record(z.string(), z.string()) }).passthrough(), mcp_responses: z.record(z.string(), z.unknown()), mcp_cutout: z.object({ sha256: z.string() }).passthrough(), mcp_prepared: z.object({ sha256: z.string() }).passthrough() }).passthrough().parse(JSON.parse(priorBytes.toString()));
+    observations.previous_observations_sha256 = await sha256(priorBytes);
+    for (const [path, hash] of Object.entries(prior.conditions.compiled_hashes)) expect(await sha256(await readFile(join(packageRoot, path)))).toBe(hash);
+    const captured = z.object({ structuredContent: validationPayload }).passthrough().parse(prior.mcp_responses.validate); expectMandatoryRules(captured.structuredContent);
+    const removed = join(continuationRoot, 'mcp-cutout.png'), preparedPath = join(continuationRoot, 'mcp-prepared.webp');
+    expect(await sha256(await readFile(input))).toBe(sourceHash); expect(await sha256(await readFile(removed))).toBe(prior.mcp_cutout.sha256); expect(await sha256(await readFile(preparedPath))).toBe(prior.mcp_prepared.sha256);
+    const transport = new StdioClientTransport({ command: process.execPath, args: [cliPath, 'mcp', '--roots', [continuationRoot, evidence].join(','), '--model-dir', modelDir], stderr: 'pipe' });
+    const client = new Client({ name: 'superaster-independent-nonml-continuation', version: '1.0.0' }, { capabilities: {} });
+    try {
+      await client.connect(transport);
+      const validation = await client.callTool({ name: 'validate', arguments: { input: preparedPath, preset: 'shopify-product-square', version: '2026-10-08.1' } });
+      observations.validation = validation; expect(validation.isError).not.toBe(true); expectMandatoryRules(validationPayload.parse(validation.structuredContent));
+      const deniedPath = join(evidence, 'unsupported.webp'), unsupported = await client.callTool({ name: 'transform', arguments: { input: removed, output: deniedPath, recipe: { ...preparation, operations: [{ op: 'generate' }] } } });
+      observations.unsupported = unsupported; expect(unsupported.isError).toBe(true); await expect(readFile(deniedPath)).rejects.toMatchObject({ code: 'ENOENT' });
+      const responseSizes = Object.values(prior.mcp_responses).map(value => Buffer.byteLength(JSON.stringify(value))); observations.maximum_mcp_response_bytes = Math.max(...responseSizes); expect(observations.maximum_mcp_response_bytes).toBeLessThan(20000);
+    } finally { await client.close(); await transport.close(); }
+    const expected = join(evidence, 'sdk-prepared.webp'), processor = sdk.createProcessor({ modelDir });
+    try { await sdk.transformFile(processor, sdkOutput, preparation, expected); } finally { await processor.dispose(); }
+    observations.sdk_prepared = await prepared(expected); observations.prepared_pixels = await identicalPixels(expected, preparedPath);
+    observations.status = 'PASS for corrected response assertion and previously unexecuted non-ML checks; real removal evidence is the original identified run';
   });
 });

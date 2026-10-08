@@ -1,0 +1,1208 @@
+{
+  "status": "NOT RUN",
+  "scope": "Real native SDK/CLI/MCP workflow checks; browser and human subject-quality checks remain separate",
+  "cross_adapter_pixel_tolerance": 0,
+  "human_intended_subject": "NOT RUN",
+  "fresh_package_install": "NOT RUN unless SUPERASTER_PACKAGE_ROOT identifies the clean installed package",
+  "conditions": {
+    "started_at": "2026-10-08T21:27:24.176Z",
+    "node": "v26.11.1",
+    "native_versions": {
+      "aom": "3.15.1",
+      "archive": "3.8.9",
+      "cairo": "1.18.6",
+      "cgif": "0.5.4",
+      "exif": "0.6.26",
+      "expat": "2.8.5",
+      "ffi": "3.8.0",
+      "fontconfig": "2.18.3",
+      "freetype": "2.14.3",
+      "fribidi": "1.0.17",
+      "glib": "2.90.0",
+      "harfbuzz": "14.5.0",
+      "heif": "1.23.5",
+      "highway": "1.4.0",
+      "imagequant": "2.4.1",
+      "lcms": "2.19.1",
+      "mozjpeg": "0826579",
+      "pango": "1.58.2",
+      "pixman": "0.46.4",
+      "png": "1.6.58",
+      "proxy-libintl": "0.5",
+      "rsvg": "2.63.2",
+      "tiff": "4.7.2",
+      "uhdr": "2.0.2",
+      "vips": "8.18.7",
+      "webp": "1.6.0",
+      "xml2": "2.15.4",
+      "zlib-ng": "2.3.3",
+      "sharp": "0.35.5"
+    },
+    "test_commit": "7469a908858856b78318f5a04befd2b21b3744b4",
+    "package_root": "/home/sadid/Downloads/Superaster/superaster-verification-adapters",
+    "model_directory": "/home/sadid/Downloads/Superaster/superaster/.cache/models",
+    "model": {
+      "id": "birefnet-512-fp16",
+      "name": "BiRefNet 512 Quality",
+      "repository": "naddy24/birefnet-512-webgpu",
+      "revision": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+      "file": "onnx/model_fp16.onnx",
+      "bytes": 473435223,
+      "sha256": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+      "inputSize": 512,
+      "license": "MIT",
+      "url": "https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx",
+      "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+      "width": 512,
+      "height": 512,
+      "precision": "fp16",
+      "inputName": "input_image",
+      "outputName": "output_image"
+    },
+    "input": {
+      "path": "benchmarks/fixtures/generated/acceptance/t01-2400x1600.png",
+      "sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "width": 2400,
+      "height": 1600,
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+      "source_sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+      "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+      "derived_geometry": {
+        "canvas_background": "#ffffff",
+        "position_px": [
+          0,
+          3
+        ],
+        "resampling": "Pillow 12.3.0 LANCZOS; contain without upscaling",
+        "source_scaled_dimensions": [
+          2400,
+          1593
+        ]
+      },
+      "orientation_normalized": true,
+      "source_case_id": "people-group"
+    },
+    "compiled_hashes": {
+      "dist/native/sdk/src/index.js": "1e9ac6aaa28c8a62e90dc517d1cd3021c0c2522f9976614da3d6c2b7a5d42a9b",
+      "dist/native/cli/src/index.js": "f390732631910db08e9053cc992778a74b88950c96f384142033ef7b02c1b0cd",
+      "dist/native/mcp/src/index.js": "575b3993f729569e374451420406e75b4e8c7dd1418b197cae87b5c5f31f6d5c",
+      "dist/native/engines/src/native.js": "04e80900cef2983183498a15dca34be233960a987d4744fc046b835aaab04cfe",
+      "dist/native/engines/src/pipeline.js": "151b6e6ef558224ed7e0af7bc3cd11aaa04acdf3e88170edef8035e869d564ea",
+      "dist/native/core/src/index.js": "6ac4e388c8e0a6852bd2afd2cb89fd1732e286820bc492d9c5f1c82399846b56",
+      "dist/native/contract/src/index.js": "52469a8b5564a2ae2c70703e3fda456961180de9ba066207cd1e2a519ee14fd1"
+    },
+    "parallel_inference_jobs": 1,
+    "download_condition": "Approved existing model files verified by byte size and SHA-256; cold download not exercised"
+  },
+  "sdk_elapsed_ms": 23335.114389000002,
+  "sdk": {
+    "sha256": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8",
+    "bytes": 6997873,
+    "transparent_pixels": 2656034,
+    "partial_pixels": 218578,
+    "opaque_pixels": 965388,
+    "opaque_rgb_changed": 0,
+    "record": {
+      "contract_version": "1.0",
+      "input_hash": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "recipe_hash": "9f4d6107dd3cc4d4029d1c42bfba8151b4ba5dfeabc836f4f21c2c3a4ef193ba",
+      "resolved_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "engine": {
+        "id": "birefnet-512-fp16",
+        "model_hash": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+        "runtime": "onnxruntime-node 1.30.0",
+        "backend": "cpu",
+        "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+        "precision": "fp16 weights / float32 I/O",
+        "inference_dimensions": [
+          512,
+          512
+        ],
+        "refinement": "none"
+      },
+      "output": {
+        "width": 2400,
+        "height": 1600,
+        "format": "png",
+        "hash": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8",
+        "is_opaque": false,
+        "channels": 4,
+        "has_alpha": true,
+        "bytes": 6997873,
+        "color_space": "srgb",
+        "pages": 1,
+        "metadata": {
+          "icc": true,
+          "exif": false,
+          "density": 25
+        }
+      },
+      "timings_ms": {
+        "decode": 55.4391440000004,
+        "inference": 21932.677756,
+        "model_setup": 1162.9667559999998,
+        "initialize": 6920.533046999999,
+        "preprocess": 58.31233500000053,
+        "inference_kernel": 13724.130448999998,
+        "alpha_decode": 17.033016000001226,
+        "encode": 326.9534569999996,
+        "validate": 408.389699000003
+      },
+      "warnings": [],
+      "implementation_version": "0.1.0-alpha.1",
+      "binding_hashes": {},
+      "encoder": {
+        "format": "png",
+        "quality": 90,
+        "metadata": "strip",
+        "kernel": "declared imaging adapter"
+      },
+      "applied_operations": [
+        {
+          "op": "remove_background",
+          "edge_cleanup": "none"
+        }
+      ],
+      "rules": []
+    }
+  },
+  "sdk_progress": [
+    {
+      "stage": "decode",
+      "message": "decode"
+    },
+    {
+      "stage": "inference",
+      "message": "inference"
+    },
+    {
+      "stage": "verify",
+      "message": "Verifying cached model"
+    },
+    {
+      "stage": "initialize",
+      "message": "Initializing BiRefNet 512 Quality"
+    },
+    {
+      "stage": "preprocess",
+      "message": "Preparing 512px local inference input"
+    },
+    {
+      "stage": "inference",
+      "message": "Running BiRefNet 512 Quality locally"
+    },
+    {
+      "stage": "encode",
+      "message": "encode"
+    },
+    {
+      "stage": "validate",
+      "message": "validate"
+    },
+    {
+      "stage": "complete",
+      "message": "Export complete"
+    }
+  ],
+  "cli_command": {
+    "code": 0,
+    "stdout": "{\n  \"contract_version\": \"1.0\",\n  \"implementation_version\": \"0.1.0-alpha.1\",\n  \"input_hash\": \"08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734\",\n  \"recipe_hash\": \"9f4d6107dd3cc4d4029d1c42bfba8151b4ba5dfeabc836f4f21c2c3a4ef193ba\",\n  \"binding_hashes\": {},\n  \"resolved_recipe\": {\n    \"spec_version\": \"1.0\",\n    \"input\": {\n      \"ref\": \"input-0\"\n    },\n    \"engine\": \"auto\",\n    \"quality\": \"quality\",\n    \"operations\": [\n      {\n        \"op\": \"remove_background\",\n        \"edge_cleanup\": \"none\"\n      }\n    ],\n    \"output\": {\n      \"format\": \"png\",\n      \"metadata\": \"strip\"\n    }\n  },\n  \"engine\": {\n    \"id\": \"birefnet-512-fp16\",\n    \"version\": \"ca02a86c094927479e2be583abe87f8ea73fcfda\",\n    \"model_hash\": \"6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8\",\n    \"precision\": \"fp16 weights / float32 I/O\",\n    \"inference_dimensions\": [\n      512,\n      512\n    ],\n    \"runtime\": \"onnxruntime-node 1.30.0\",\n    \"backend\": \"cpu\",\n    \"refinement\": \"none\"\n  },\n  \"encoder\": {\n    \"format\": \"png\",\n    \"quality\": 90,\n    \"metadata\": \"strip\",\n    \"kernel\": \"declared imaging adapter\"\n  },\n  \"applied_operations\": [\n    {\n      \"op\": \"remove_background\",\n      \"edge_cleanup\": \"none\"\n    }\n  ],\n  \"output\": {\n    \"width\": 2400,\n    \"height\": 1600,\n    \"format\": \"png\",\n    \"channels\": 4,\n    \"has_alpha\": true,\n    \"is_opaque\": false,\n    \"bytes\": 6997873,\n    \"color_space\": \"srgb\",\n    \"pages\": 1,\n    \"metadata\": {\n      \"icc\": true,\n      \"exif\": false,\n      \"density\": 25\n    },\n    \"hash\": \"9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8\"\n  },\n  \"timings_ms\": {\n    \"decode\": 71.16545199999996,\n    \"inference\": 18898.97459,\n    \"model_setup\": 1350.799852,\n    \"initialize\": 6078.114169,\n    \"preprocess\": 61.38483599999927,\n    \"inference_kernel\": 11333.159381000001,\n    \"alpha_decode\": 18.720358999999007,\n    \"encode\": 310.8338249999979,\n    \"validate\": 341.4276200000022\n  },\n  \"warnings\": [],\n  \"rules\": []\n}\n",
+    "stderr": "{\"stage\":\"decode\",\"message\":\"decode\"}\n{\"stage\":\"inference\",\"message\":\"inference\"}\n{\"stage\":\"verify\",\"message\":\"Verifying cached model\"}\n{\"stage\":\"initialize\",\"message\":\"Initializing BiRefNet 512 Quality\"}\n{\"stage\":\"preprocess\",\"message\":\"Preparing 512px local inference input\"}\n{\"stage\":\"inference\",\"message\":\"Running BiRefNet 512 Quality locally\"}\n{\"stage\":\"encode\",\"message\":\"encode\"}\n{\"stage\":\"validate\",\"message\":\"validate\"}\n{\"stage\":\"complete\",\"message\":\"Export complete\"}\n"
+  },
+  "cli": {
+    "sha256": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8",
+    "bytes": 6997873,
+    "transparent_pixels": 2656034,
+    "partial_pixels": 218578,
+    "opaque_pixels": 965388,
+    "opaque_rgb_changed": 0,
+    "record": {
+      "contract_version": "1.0",
+      "input_hash": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "recipe_hash": "9f4d6107dd3cc4d4029d1c42bfba8151b4ba5dfeabc836f4f21c2c3a4ef193ba",
+      "resolved_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "engine": {
+        "id": "birefnet-512-fp16",
+        "model_hash": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+        "runtime": "onnxruntime-node 1.30.0",
+        "backend": "cpu",
+        "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+        "precision": "fp16 weights / float32 I/O",
+        "inference_dimensions": [
+          512,
+          512
+        ],
+        "refinement": "none"
+      },
+      "output": {
+        "width": 2400,
+        "height": 1600,
+        "format": "png",
+        "hash": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8",
+        "is_opaque": false,
+        "channels": 4,
+        "has_alpha": true,
+        "bytes": 6997873,
+        "color_space": "srgb",
+        "pages": 1,
+        "metadata": {
+          "icc": true,
+          "exif": false,
+          "density": 25
+        }
+      },
+      "timings_ms": {
+        "decode": 71.16545199999996,
+        "inference": 18898.97459,
+        "model_setup": 1350.799852,
+        "initialize": 6078.114169,
+        "preprocess": 61.38483599999927,
+        "inference_kernel": 11333.159381000001,
+        "alpha_decode": 18.720358999999007,
+        "encode": 310.8338249999979,
+        "validate": 341.4276200000022
+      },
+      "warnings": [],
+      "implementation_version": "0.1.0-alpha.1",
+      "binding_hashes": {},
+      "encoder": {
+        "format": "png",
+        "quality": 90,
+        "metadata": "strip",
+        "kernel": "declared imaging adapter"
+      },
+      "applied_operations": [
+        {
+          "op": "remove_background",
+          "edge_cleanup": "none"
+        }
+      ],
+      "rules": []
+    }
+  },
+  "sdk_cli_pixels": {
+    "maximum_channel_delta": 0,
+    "first_pixel_sha256": "120359d25957a67ddc9f68af95975cbbbfc111e28ffb3812dc11df30e30fe22a",
+    "second_pixel_sha256": "120359d25957a67ddc9f68af95975cbbbfc111e28ffb3812dc11df30e30fe22a"
+  },
+  "t01_native": "PASS for machine artifact/semantic checks; intended-subject human review and web workflow remain NOT RUN",
+  "mcp_responses": {
+    "tools": {
+      "tools": [
+        {
+          "name": "capabilities",
+          "description": "Discover supported operations, exact model profiles, schema version and limits",
+          "inputSchema": {
+            "type": "object",
+            "properties": {},
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "inspect",
+          "description": "Inspect a local single-frame image within configured roots",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "input"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "remove",
+          "description": "Remove background using local verified weights and export PNG, preserve original; model download may be required",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              },
+              "output": {
+                "type": "string"
+              },
+              "quality": {
+                "default": "quality",
+                "type": "string",
+                "enum": [
+                  "quality",
+                  "fast"
+                ]
+              },
+              "engine": {
+                "default": "auto",
+                "type": "string"
+              }
+            },
+            "required": [
+              "input",
+              "output"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "transform",
+          "description": "Run the shared ordered operation contract on a local file; no hosted inference",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              },
+              "output": {
+                "type": "string"
+              },
+              "recipe": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              },
+              "bindings": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "input",
+              "output",
+              "recipe"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "batch",
+          "description": "Run a warmed serial local directory batch with verified identity resume and attributable failures",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input_directory": {
+                "type": "string"
+              },
+              "output_directory": {
+                "type": "string"
+              },
+              "recipe": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              },
+              "resume": {
+                "default": false,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "input_directory",
+              "output_directory",
+              "recipe"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "resolve_preset",
+          "description": "Resolve an exact immutable preset or return material ambiguity before editing",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "request": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "request"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "validate",
+          "description": "Check supported pixel/file rules, mark visual judgments and user confirmations separately",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              },
+              "preset": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "input",
+              "preset"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        }
+      ]
+    },
+    "capabilities": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"contract_version\":\"1.0\",\"implementation_version\":\"0.1.0-alpha.1\",\"adapter\":\"native\",\"operation_definitions\":[{\"id\":\"remove_background\",\"features\":[\"F001\",\"F002\",\"F003\",\"F004\"],\"description\":\"Continuous foreground alpha from approved local model\"},{\"id\":\"resize\",\"features\":[\"F027\"],\"description\":\"Exact resampling with explicit upscaling permission\"},{\"id\":\"crop\",\"features\":[\"F028\"],\"description\":\"Integer rectangle in current oriented pixels\"},{\"id\":\"subject_crop\",\"features\":[\"F029\"],\"description\":\"Alpha bounds plus explicit pixel margin\"},{\"id\":\"canvas\",\"features\":[\"F030\",\"F031\"],\"description\":\"Fit and place on exact canvas\"},{\"id\":\"composite\",\"features\":[\"F025\",\"F026\"],\"description\":\"Explicit solid or supplied background\"},{\"id\":\"rotate\",\"features\":[\"F032\"],\"description\":\"Clockwise degrees, expanded bounds\"},{\"id\":\"flip\",\"features\":[\"F033\"],\"description\":\"Horizontal or vertical reflection\"},{\"id\":\"correct\",\"features\":[\"F013\",\"F014\",\"F015\"],\"description\":\"Erase/restore from normalized original\"},{\"id\":\"mask\",\"features\":[\"F037\"],\"description\":\"Grayscale foreground coverage\"},{\"id\":\"normalize\",\"features\":[\"F038\",\"F039\",\"F040\",\"F041\"],\"description\":\"Orient once and convert to sRGB\"},{\"id\":\"print_sheet\",\"features\":[\"F084\",\"F085\"],\"description\":\"Fixed grid, round mm*dpi/25.4 to nearest pixel\"}],\"operations\":[\"remove_background\",\"resize\",\"crop\",\"subject_crop\",\"canvas\",\"composite\",\"rotate\",\"flip\",\"correct\",\"mask\",\"normalize\",\"print_sheet\"],\"formats\":[\"png\",\"jpeg\",\"webp\"],\"engines\":[{\"id\":\"birefnet-512-fp16\",\"name\":\"BiRefNet 512 Quality\",\"repository\":\"naddy24/birefnet-512-webgpu\",\"revision\":\"ca02a86c094927479e2be583abe87f8ea73fcfda\",\"file\":\"onnx/model_fp16.onnx\",\"bytes\":473435223,\"sha256\":\"6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8\",\"inputSize\":512,\"license\":\"MIT\",\"url\":\"https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx\",\"version\":\"ca02a86c094927479e2be583abe87f8ea73fcfda\",\"width\":512,\"height\":512,\"precision\":\"fp16\",\"inputName\":\"input_image\",\"outputName\":\"output_image\",\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"validated\":\"feasibility; quality screening pending\"},{\"id\":\"birefnet-lite-512-fp16\",\"name\":\"BiRefNet lite 512 Fast\",\"repository\":\"studioludens/birefnet-lite-512\",\"revision\":\"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\"file\":\"onnx/model_fp16.onnx\",\"bytes\":98484532,\"sha256\":\"eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516\",\"inputSize\":512,\"license\":\"MIT\",\"url\":\"https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model_fp16.onnx\",\"version\":\"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\"width\":512,\"height\":512,\"precision\":\"fp16\",\"inputName\":\"input_image\",\"outputName\":\"output_image\",\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"validated\":\"feasibility; quality screening pending\"}],\"limits\":{\"max_pixels\":16777216,\"max_bytes\":40000000,\"max_concurrency\":1},\"offline\":true}"
+        }
+      ],
+      "structuredContent": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "adapter": "native",
+        "operation_definitions": [
+          {
+            "id": "remove_background",
+            "features": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "description": "Continuous foreground alpha from approved local model"
+          },
+          {
+            "id": "resize",
+            "features": [
+              "F027"
+            ],
+            "description": "Exact resampling with explicit upscaling permission"
+          },
+          {
+            "id": "crop",
+            "features": [
+              "F028"
+            ],
+            "description": "Integer rectangle in current oriented pixels"
+          },
+          {
+            "id": "subject_crop",
+            "features": [
+              "F029"
+            ],
+            "description": "Alpha bounds plus explicit pixel margin"
+          },
+          {
+            "id": "canvas",
+            "features": [
+              "F030",
+              "F031"
+            ],
+            "description": "Fit and place on exact canvas"
+          },
+          {
+            "id": "composite",
+            "features": [
+              "F025",
+              "F026"
+            ],
+            "description": "Explicit solid or supplied background"
+          },
+          {
+            "id": "rotate",
+            "features": [
+              "F032"
+            ],
+            "description": "Clockwise degrees, expanded bounds"
+          },
+          {
+            "id": "flip",
+            "features": [
+              "F033"
+            ],
+            "description": "Horizontal or vertical reflection"
+          },
+          {
+            "id": "correct",
+            "features": [
+              "F013",
+              "F014",
+              "F015"
+            ],
+            "description": "Erase/restore from normalized original"
+          },
+          {
+            "id": "mask",
+            "features": [
+              "F037"
+            ],
+            "description": "Grayscale foreground coverage"
+          },
+          {
+            "id": "normalize",
+            "features": [
+              "F038",
+              "F039",
+              "F040",
+              "F041"
+            ],
+            "description": "Orient once and convert to sRGB"
+          },
+          {
+            "id": "print_sheet",
+            "features": [
+              "F084",
+              "F085"
+            ],
+            "description": "Fixed grid, round mm*dpi/25.4 to nearest pixel"
+          }
+        ],
+        "operations": [
+          "remove_background",
+          "resize",
+          "crop",
+          "subject_crop",
+          "canvas",
+          "composite",
+          "rotate",
+          "flip",
+          "correct",
+          "mask",
+          "normalize",
+          "print_sheet"
+        ],
+        "formats": [
+          "png",
+          "jpeg",
+          "webp"
+        ],
+        "engines": [
+          {
+            "id": "birefnet-512-fp16",
+            "name": "BiRefNet 512 Quality",
+            "repository": "naddy24/birefnet-512-webgpu",
+            "revision": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+            "file": "onnx/model_fp16.onnx",
+            "bytes": 473435223,
+            "sha256": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+            "inputSize": 512,
+            "license": "MIT",
+            "url": "https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx",
+            "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+            "width": 512,
+            "height": 512,
+            "precision": "fp16",
+            "inputName": "input_image",
+            "outputName": "output_image",
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "validated": "feasibility; quality screening pending"
+          },
+          {
+            "id": "birefnet-lite-512-fp16",
+            "name": "BiRefNet lite 512 Fast",
+            "repository": "studioludens/birefnet-lite-512",
+            "revision": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+            "file": "onnx/model_fp16.onnx",
+            "bytes": 98484532,
+            "sha256": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+            "inputSize": 512,
+            "license": "MIT",
+            "url": "https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model_fp16.onnx",
+            "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+            "width": 512,
+            "height": 512,
+            "precision": "fp16",
+            "inputName": "input_image",
+            "outputName": "output_image",
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "validated": "feasibility; quality screening pending"
+          }
+        ],
+        "limits": {
+          "max_pixels": 16777216,
+          "max_bytes": 40000000,
+          "max_concurrency": 1
+        },
+        "offline": true
+      }
+    },
+    "inspect": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"image\":{\"width\":2400,\"height\":1600,\"format\":\"png\",\"channels\":3,\"has_alpha\":false,\"is_opaque\":true,\"bytes\":3465653,\"color_space\":\"srgb\",\"pages\":1,\"metadata\":{\"icc\":false,\"exif\":false}}}"
+        }
+      ],
+      "structuredContent": {
+        "image": {
+          "width": 2400,
+          "height": 1600,
+          "format": "png",
+          "channels": 3,
+          "has_alpha": false,
+          "is_opaque": true,
+          "bytes": 3465653,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": false,
+            "exif": false
+          }
+        }
+      }
+    },
+    "remove": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"file\":\"/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-cutout.png\",\"resource_uri\":\"file:///home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-cutout.png\",\"record_file\":\"/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-cutout.png.json\",\"record\":{\"contract_version\":\"1.0\",\"implementation_version\":\"0.1.0-alpha.1\",\"input_hash\":\"08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734\",\"recipe_hash\":\"9f4d6107dd3cc4d4029d1c42bfba8151b4ba5dfeabc836f4f21c2c3a4ef193ba\",\"binding_hashes\":{},\"resolved_recipe\":{\"spec_version\":\"1.0\",\"input\":{\"ref\":\"input-0\"},\"engine\":\"auto\",\"quality\":\"quality\",\"operations\":[{\"op\":\"remove_background\",\"edge_cleanup\":\"none\"}],\"output\":{\"format\":\"png\",\"metadata\":\"strip\"}},\"engine\":{\"id\":\"birefnet-512-fp16\",\"version\":\"ca02a86c094927479e2be583abe87f8ea73fcfda\",\"model_hash\":\"6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8\",\"precision\":\"fp16 weights / float32 I/O\",\"inference_dimensions\":[512,512],\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"refinement\":\"none\"},\"encoder\":{\"format\":\"png\",\"quality\":90,\"metadata\":\"strip\",\"kernel\":\"declared imaging adapter\"},\"applied_operations\":[{\"op\":\"remove_background\",\"edge_cleanup\":\"none\"}],\"output\":{\"width\":2400,\"height\":1600,\"format\":\"png\",\"channels\":4,\"has_alpha\":true,\"is_opaque\":false,\"bytes\":6997873,\"color_space\":\"srgb\",\"pages\":1,\"metadata\":{\"icc\":true,\"exif\":false,\"density\":25},\"hash\":\"9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8\"},\"timings_ms\":{\"decode\":56.75148899999999,\"inference\":19279.930856,\"model_setup\":1218.839289,\"initialize\":6096.497584999999,\"preprocess\":66.62791800000014,\"inference_kernel\":11839.895626000001,\"alpha_decode\":11.586212000001979,\"encode\":344.8661429999993,\"validate\":426.7605560000011},\"warnings\":[],\"rules\":[]}}"
+        }
+      ],
+      "structuredContent": {
+        "file": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-cutout.png",
+        "resource_uri": "file:///home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-cutout.png",
+        "record_file": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-cutout.png.json",
+        "record": {
+          "contract_version": "1.0",
+          "implementation_version": "0.1.0-alpha.1",
+          "input_hash": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+          "recipe_hash": "9f4d6107dd3cc4d4029d1c42bfba8151b4ba5dfeabc836f4f21c2c3a4ef193ba",
+          "binding_hashes": {},
+          "resolved_recipe": {
+            "spec_version": "1.0",
+            "input": {
+              "ref": "input-0"
+            },
+            "engine": "auto",
+            "quality": "quality",
+            "operations": [
+              {
+                "op": "remove_background",
+                "edge_cleanup": "none"
+              }
+            ],
+            "output": {
+              "format": "png",
+              "metadata": "strip"
+            }
+          },
+          "engine": {
+            "id": "birefnet-512-fp16",
+            "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+            "model_hash": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+            "precision": "fp16 weights / float32 I/O",
+            "inference_dimensions": [
+              512,
+              512
+            ],
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "refinement": "none"
+          },
+          "encoder": {
+            "format": "png",
+            "quality": 90,
+            "metadata": "strip",
+            "kernel": "declared imaging adapter"
+          },
+          "applied_operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "width": 2400,
+            "height": 1600,
+            "format": "png",
+            "channels": 4,
+            "has_alpha": true,
+            "is_opaque": false,
+            "bytes": 6997873,
+            "color_space": "srgb",
+            "pages": 1,
+            "metadata": {
+              "icc": true,
+              "exif": false,
+              "density": 25
+            },
+            "hash": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8"
+          },
+          "timings_ms": {
+            "decode": 56.75148899999999,
+            "inference": 19279.930856,
+            "model_setup": 1218.839289,
+            "initialize": 6096.497584999999,
+            "preprocess": 66.62791800000014,
+            "inference_kernel": 11839.895626000001,
+            "alpha_decode": 11.586212000001979,
+            "encode": 344.8661429999993,
+            "validate": 426.7605560000011
+          },
+          "warnings": [],
+          "rules": []
+        }
+      }
+    },
+    "transform": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"file\":\"/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-prepared.webp\",\"resource_uri\":\"file:///home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-prepared.webp\",\"record_file\":\"/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-prepared.webp.json\",\"record\":{\"contract_version\":\"1.0\",\"implementation_version\":\"0.1.0-alpha.1\",\"input_hash\":\"9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8\",\"recipe_hash\":\"98eea99f5f0cbb990729fe0b487807405ba5d3d8ffb88d3d73948a49a6ae1b83\",\"binding_hashes\":{},\"resolved_recipe\":{\"spec_version\":\"1.0\",\"input\":{\"ref\":\"input-0\"},\"operations\":[{\"op\":\"canvas\",\"width\":1200,\"height\":1200,\"fit\":\"contain\",\"position\":\"center\",\"background\":\"#ffffff\"}],\"output\":{\"format\":\"webp\",\"quality\":100,\"metadata\":\"strip\"},\"engine\":\"auto\",\"quality\":\"quality\"},\"engine\":{\"id\":\"imaging\",\"version\":\"1.0\",\"model_hash\":null,\"precision\":\"uint8\",\"inference_dimensions\":[],\"runtime\":\"imaging-kernel\",\"backend\":\"local\",\"refinement\":\"none\"},\"encoder\":{\"format\":\"webp\",\"quality\":100,\"metadata\":\"strip\",\"kernel\":\"declared imaging adapter\"},\"applied_operations\":[{\"op\":\"canvas\",\"width\":1200,\"height\":1200,\"fit\":\"contain\",\"position\":\"center\",\"background\":\"#ffffff\"}],\"output\":{\"width\":1200,\"height\":1200,\"format\":\"webp\",\"channels\":3,\"has_alpha\":false,\"is_opaque\":true,\"bytes\":111968,\"color_space\":\"srgb\",\"pages\":1,\"metadata\":{\"icc\":true,\"exif\":false},\"hash\":\"69f42310aeed84deadc5e4f0581c683403edde296d02a2b94e5d3d445feb69dd\"},\"timings_ms\":{\"decode\":463.6288969999987,\"render\":152.0587319999977,\"encode\":150.2802210000009,\"validate\":1.0316899999997986},\"warnings\":[],\"rules\":[]}}"
+        }
+      ],
+      "structuredContent": {
+        "file": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-prepared.webp",
+        "resource_uri": "file:///home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-prepared.webp",
+        "record_file": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL/mcp-prepared.webp.json",
+        "record": {
+          "contract_version": "1.0",
+          "implementation_version": "0.1.0-alpha.1",
+          "input_hash": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8",
+          "recipe_hash": "98eea99f5f0cbb990729fe0b487807405ba5d3d8ffb88d3d73948a49a6ae1b83",
+          "binding_hashes": {},
+          "resolved_recipe": {
+            "spec_version": "1.0",
+            "input": {
+              "ref": "input-0"
+            },
+            "operations": [
+              {
+                "op": "canvas",
+                "width": 1200,
+                "height": 1200,
+                "fit": "contain",
+                "position": "center",
+                "background": "#ffffff"
+              }
+            ],
+            "output": {
+              "format": "webp",
+              "quality": 100,
+              "metadata": "strip"
+            },
+            "engine": "auto",
+            "quality": "quality"
+          },
+          "engine": {
+            "id": "imaging",
+            "version": "1.0",
+            "model_hash": null,
+            "precision": "uint8",
+            "inference_dimensions": [],
+            "runtime": "imaging-kernel",
+            "backend": "local",
+            "refinement": "none"
+          },
+          "encoder": {
+            "format": "webp",
+            "quality": 100,
+            "metadata": "strip",
+            "kernel": "declared imaging adapter"
+          },
+          "applied_operations": [
+            {
+              "op": "canvas",
+              "width": 1200,
+              "height": 1200,
+              "fit": "contain",
+              "position": "center",
+              "background": "#ffffff"
+            }
+          ],
+          "output": {
+            "width": 1200,
+            "height": 1200,
+            "format": "webp",
+            "channels": 3,
+            "has_alpha": false,
+            "is_opaque": true,
+            "bytes": 111968,
+            "color_space": "srgb",
+            "pages": 1,
+            "metadata": {
+              "icc": true,
+              "exif": false
+            },
+            "hash": "69f42310aeed84deadc5e4f0581c683403edde296d02a2b94e5d3d445feb69dd"
+          },
+          "timings_ms": {
+            "decode": 463.6288969999987,
+            "render": 152.0587319999977,
+            "encode": 150.2802210000009,
+            "validate": 1.0316899999997986
+          },
+          "warnings": [],
+          "rules": []
+        }
+      }
+    },
+    "validate": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"preset\":{\"id\":\"shopify-product-square\",\"version\":\"2026-10-08.1\",\"purpose\":\"Shopify square product image\",\"jurisdiction\":\"Global\",\"authority\":\"Shopify\",\"channel\":\"Product or collection image upload\",\"language\":\"en\",\"aliases\":[\"shopify image\",\"shopify product\",\"shopify square\"],\"sources\":[{\"url\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"title\":\"Shopify product media types\",\"verified_at\":\"2026-10-08\"}],\"rules\":[{\"id\":\"maximum-size\",\"kind\":\"dimensions\",\"strength\":\"mandatory\",\"text\":\"At most 5000 by 5000 pixels, 25MP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":{\"max_width\":5000,\"max_height\":5000}},{\"id\":\"recommended-size\",\"kind\":\"dimensions\",\"strength\":\"recommended\",\"text\":\"2048 square usually displays best; theme controls actual display.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":{\"width\":2048,\"height\":2048}},{\"id\":\"bytes\",\"kind\":\"max_bytes\",\"strength\":\"mandatory\",\"text\":\"Smaller than 20MB; decimal/binary interval needs review.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":19999999,\"tolerance\":971520},{\"id\":\"formats\",\"kind\":\"formats\",\"strength\":\"mandatory\",\"text\":\"Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":[\"png\",\"jpeg\",\"webp\",\"tiff\",\"bmp\",\"gif\",\"svg\",\"heic\"]},{\"id\":\"shape\",\"kind\":\"visual\",\"strength\":\"recommended\",\"text\":\"Use consistent aspect ratios across main images.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"}],\"edit_policy\":{\"allowed\":[\"remove_background\",\"resize\",\"crop\",\"subject_crop\",\"canvas\",\"composite\",\"rotate\",\"flip\",\"correct\",\"mask\",\"normalize\",\"print_sheet\"],\"forbidden\":[],\"unspecified\":[],\"notes\":\"Superaster permits requested faithful image preparation. The platform source does not specify a complete editing policy; this operation list is Superaster behavior, not a claim of authority approval. Generation and identity alteration are outside the MVP.\"},\"exceptions\":[],\"user_confirmations\":[],\"freshness\":{\"status\":\"verified\",\"verified_at\":\"2026-10-08\"},\"license\":\"CC0-1.0\",\"recipe_operations\":[{\"op\":\"canvas\",\"width\":2048,\"height\":2048,\"fit\":\"contain\",\"background\":\"#ffffff\",\"position\":\"center\"}]},\"rules\":[{\"id\":\"maximum-size\",\"state\":\"pass\",\"message\":\"mandatory: At most 5000 by 5000 pixels, 25MP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"recommended-size\",\"state\":\"fail\",\"message\":\"recommended: 2048 square usually displays best; theme controls actual display.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"bytes\",\"state\":\"pass\",\"message\":\"mandatory: Smaller than 20MB; decimal/binary interval needs review.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"formats\",\"state\":\"pass\",\"message\":\"mandatory: Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"shape\",\"state\":\"needs_review\",\"message\":\"Use consistent aspect ratios across main images.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"}]}"
+        }
+      ],
+      "structuredContent": {
+        "preset": {
+          "id": "shopify-product-square",
+          "version": "2026-10-08.1",
+          "purpose": "Shopify square product image",
+          "jurisdiction": "Global",
+          "authority": "Shopify",
+          "channel": "Product or collection image upload",
+          "language": "en",
+          "aliases": [
+            "shopify image",
+            "shopify product",
+            "shopify square"
+          ],
+          "sources": [
+            {
+              "url": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "title": "Shopify product media types",
+              "verified_at": "2026-10-08"
+            }
+          ],
+          "rules": [
+            {
+              "id": "maximum-size",
+              "kind": "dimensions",
+              "strength": "mandatory",
+              "text": "At most 5000 by 5000 pixels, 25MP.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": {
+                "max_width": 5000,
+                "max_height": 5000
+              }
+            },
+            {
+              "id": "recommended-size",
+              "kind": "dimensions",
+              "strength": "recommended",
+              "text": "2048 square usually displays best; theme controls actual display.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": {
+                "width": 2048,
+                "height": 2048
+              }
+            },
+            {
+              "id": "bytes",
+              "kind": "max_bytes",
+              "strength": "mandatory",
+              "text": "Smaller than 20MB; decimal/binary interval needs review.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": 19999999,
+              "tolerance": 971520
+            },
+            {
+              "id": "formats",
+              "kind": "formats",
+              "strength": "mandatory",
+              "text": "Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": [
+                "png",
+                "jpeg",
+                "webp",
+                "tiff",
+                "bmp",
+                "gif",
+                "svg",
+                "heic"
+              ]
+            },
+            {
+              "id": "shape",
+              "kind": "visual",
+              "strength": "recommended",
+              "text": "Use consistent aspect ratios across main images.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+            }
+          ],
+          "edit_policy": {
+            "allowed": [
+              "remove_background",
+              "resize",
+              "crop",
+              "subject_crop",
+              "canvas",
+              "composite",
+              "rotate",
+              "flip",
+              "correct",
+              "mask",
+              "normalize",
+              "print_sheet"
+            ],
+            "forbidden": [],
+            "unspecified": [],
+            "notes": "Superaster permits requested faithful image preparation. The platform source does not specify a complete editing policy; this operation list is Superaster behavior, not a claim of authority approval. Generation and identity alteration are outside the MVP."
+          },
+          "exceptions": [],
+          "user_confirmations": [],
+          "freshness": {
+            "status": "verified",
+            "verified_at": "2026-10-08"
+          },
+          "license": "CC0-1.0",
+          "recipe_operations": [
+            {
+              "op": "canvas",
+              "width": 2048,
+              "height": 2048,
+              "fit": "contain",
+              "background": "#ffffff",
+              "position": "center"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "id": "maximum-size",
+            "state": "pass",
+            "message": "mandatory: At most 5000 by 5000 pixels, 25MP.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "recommended-size",
+            "state": "fail",
+            "message": "recommended: 2048 square usually displays best; theme controls actual display.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "bytes",
+            "state": "pass",
+            "message": "mandatory: Smaller than 20MB; decimal/binary interval needs review.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "formats",
+            "state": "pass",
+            "message": "mandatory: Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "shape",
+            "state": "needs_review",
+            "message": "Use consistent aspect ratios across main images.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          }
+        ]
+      }
+    }
+  },
+  "mcp_cutout": {
+    "sha256": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8",
+    "bytes": 6997873,
+    "transparent_pixels": 2656034,
+    "partial_pixels": 218578,
+    "opaque_pixels": 965388,
+    "opaque_rgb_changed": 0,
+    "record": {
+      "contract_version": "1.0",
+      "input_hash": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "recipe_hash": "9f4d6107dd3cc4d4029d1c42bfba8151b4ba5dfeabc836f4f21c2c3a4ef193ba",
+      "resolved_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "engine": {
+        "id": "birefnet-512-fp16",
+        "model_hash": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+        "runtime": "onnxruntime-node 1.30.0",
+        "backend": "cpu",
+        "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+        "precision": "fp16 weights / float32 I/O",
+        "inference_dimensions": [
+          512,
+          512
+        ],
+        "refinement": "none"
+      },
+      "output": {
+        "width": 2400,
+        "height": 1600,
+        "format": "png",
+        "hash": "9e1bc86a97eebe62f4574b876d4bcb688754b95f36a821cd6037745c23dfabb8",
+        "is_opaque": false,
+        "channels": 4,
+        "has_alpha": true,
+        "bytes": 6997873,
+        "color_space": "srgb",
+        "pages": 1,
+        "metadata": {
+          "icc": true,
+          "exif": false,
+          "density": 25
+        }
+      },
+      "timings_ms": {
+        "decode": 56.75148899999999,
+        "inference": 19279.930856,
+        "model_setup": 1218.839289,
+        "initialize": 6096.497584999999,
+        "preprocess": 66.62791800000014,
+        "inference_kernel": 11839.895626000001,
+        "alpha_decode": 11.586212000001979,
+        "encode": 344.8661429999993,
+        "validate": 426.7605560000011
+      },
+      "warnings": [],
+      "implementation_version": "0.1.0-alpha.1",
+      "binding_hashes": {},
+      "encoder": {
+        "format": "png",
+        "quality": 90,
+        "metadata": "strip",
+        "kernel": "declared imaging adapter"
+      },
+      "applied_operations": [
+        {
+          "op": "remove_background",
+          "edge_cleanup": "none"
+        }
+      ],
+      "rules": []
+    }
+  },
+  "sdk_mcp_pixels": {
+    "maximum_channel_delta": 0,
+    "first_pixel_sha256": "120359d25957a67ddc9f68af95975cbbbfc111e28ffb3812dc11df30e30fe22a",
+    "second_pixel_sha256": "120359d25957a67ddc9f68af95975cbbbfc111e28ffb3812dc11df30e30fe22a"
+  },
+  "mcp_prepared": {
+    "sha256": "69f42310aeed84deadc5e4f0581c683403edde296d02a2b94e5d3d445feb69dd",
+    "bytes": 111968,
+    "decoded_pixel_sha256": "a4b3f7a7b944eb51ed6bb8adabd8a085613337c9f144b552cd91adadf29eb6cc",
+    "metadata": {
+      "width": 1200,
+      "height": 1200,
+      "format": "webp",
+      "has_icc": true,
+      "exif": false
+    }
+  }
+}
