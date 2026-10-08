@@ -1,0 +1,135 @@
+{
+  "runtime": {
+    "common": "1.30.0",
+    "node": "1.30.0"
+  },
+  "node": "v26.11.1",
+  "modelPath": ".cache/models/birefnet-lite-512-fp16.onnx",
+  "inputPath": "research/upstream/bg0/apps/web/public/samples/cat.webp",
+  "inputHash": "26acb4714b0ed85c28ebd6e000b372de336b076db7fcc0b8755f0d06483bd966",
+  "modelHash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+  "metadata": {
+    "format": "webp",
+    "mediaType": "image/webp",
+    "size": 26854,
+    "width": 768,
+    "height": 512,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 768,
+      "height": 512
+    }
+  },
+  "preprocess": {
+    "width": 512,
+    "height": 512,
+    "kernel": "linear",
+    "rescale": 0.00392156862745098,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "inputMetadata": [
+    {
+      "name": "input_image",
+      "isTensor": true,
+      "type": "float32",
+      "shape": [
+        1,
+        3,
+        512,
+        512
+      ]
+    }
+  ],
+  "outputMetadata": [
+    {
+      "name": "output_image",
+      "isTensor": true,
+      "type": "float32",
+      "shape": [
+        1,
+        1,
+        512,
+        512
+      ]
+    }
+  ],
+  "actualOutput": {
+    "type": "float32",
+    "dims": [
+      1,
+      1,
+      512,
+      512
+    ],
+    "alphaMin": 6.016614933910552e-7,
+    "alphaMax": 0.9999999206712137,
+    "intermediatePixels": 13240,
+    "maskPixels": 262144
+  },
+  "timingsMs": {
+    "decodePreprocess": 10.995340000000013,
+    "initialize": 4247.257378,
+    "inference": 3349.878852,
+    "postprocessExport": 95.93342699999994,
+    "total": 7748.990793
+  },
+  "resourceUsage": {
+    "userCPUTime": 16898815,
+    "systemCPUTime": 568159,
+    "maxRSS": 2455516,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 187979,
+    "majorPageFault": 4,
+    "swappedOut": 0,
+    "fsRead": 29960,
+    "fsWrite": 2848,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 1137,
+    "involuntaryContextSwitches": 1751
+  },
+  "rss": 2514448384,
+  "output": {
+    "path": "research/upstream/lite-native-smoke-cutout.png",
+    "sha256": "d96776c0bea92717238d339db18690c226add15bfeb0ce4d480a460b9893cac3",
+    "bytes": 644757,
+    "metadata": {
+      "format": "png",
+      "mediaType": "image/png",
+      "size": 644757,
+      "width": 768,
+      "height": 512,
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "isProgressive": false,
+      "isPalette": false,
+      "bitsPerSample": 8,
+      "hasProfile": false,
+      "hasAlpha": true,
+      "autoOrient": {
+        "width": 768,
+        "height": 512
+      }
+    }
+  },
+  "sourcePreserved": true
+}
