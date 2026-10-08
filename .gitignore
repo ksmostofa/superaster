@@ -1,0 +1,8 @@
+superaster-technical-spec*.md
+node_modules/
+dist/
+.cache/
+.env*
+*.tgz
+research/upstream/
+evidence/private/
