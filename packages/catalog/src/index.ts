@@ -170,6 +170,22 @@ export function planPreset(preset: Preset, value: Recipe): Recipe {
   return { ...recipe, preset: { id: preset.id, version: preset.version } };
 }
 
+/** A visible destination choice adds the reviewed contain/grid example or exact size.
+ * It never invents permission, stretches the subject, or changes a requested format. */
+export function preparePreset(preset:Preset,value:Recipe):Recipe {
+ const base=planPreset(preset,value);const operations=[...base.operations];const output={...base.output};
+ if(preset.recipe_operations?.length)operations.push(...preset.recipe_operations);
+ else {
+  const dimension=preset.rules.find(rule=>rule.kind==='dimensions'&&typeof rule.value==='object'&&rule.value!==null&&('width' in rule.value||'width_mm' in rule.value));
+  if(dimension){const values=dimensionValues(dimension);const dpi=values.dpi;const width=values.width_mm?Math.round(values.width_mm*dpi!/25.4):values.width;const height=values.height_mm?Math.round(values.height_mm*dpi!/25.4):values.height;
+   if(width&&height)operations.push({op:'canvas',width,height,fit:'contain',background:'#ffffff',position:'center'});if(dpi)output.dpi=dpi;
+  }
+  if(preset.rules.some(rule=>rule.kind==='opaque'&&rule.value===true))operations.push({op:'composite',background:'#ffffff'});
+ }
+ for(const rule of preset.rules){if(rule.kind==='max_bytes')output.max_bytes=Math.min(output.max_bytes??Infinity,positiveNumber(rule.value));if(rule.kind==='formats'&&rule.strength==='mandatory'&&Array.isArray(rule.value)&&!rule.value.includes(output.format))throw new SuperasterError('CONSTRAINT_UNSATISFIABLE',`Select an accepted output format for ${preset.id}`,{formats:rule.value});}
+ return planPreset(preset,{...base,operations,output});
+}
+
 export interface SourceCheck { url: string; status: 'unchanged' | 'changed' | 'unknown'; sha256?: string; reason?: string }
 export interface SourceMonitorResult { preset_id: string; preset_version: string; checked_at: string; status: 'verified' | 'needs_review' | 'unknown'; checks: SourceCheck[] }
 export interface SourceMonitorOptions { fetcher?: typeof fetch; signal?: AbortSignal; max_source_bytes?: number; timeout_ms?: number }

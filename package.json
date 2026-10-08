@@ -29,13 +29,15 @@
     "README.md"
   ],
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
+    "dev": "npm run assets && vite --host 127.0.0.1",
     "build": "npm run build:native && npm run build:web",
     "build:native": "tsc -p tsconfig.native.json",
-    "build:web": "vite build",
+    "build:web": "npm run assets && vite build && tsx scripts/service-worker.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "schemas": "tsx scripts/schemas.ts"
+    "schemas": "tsx scripts/schemas.ts",
+    "assets": "tsx scripts/assets.ts",
+    "preview": "vite preview --host 127.0.0.1 --port 5180"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.3",
@@ -66,6 +68,8 @@
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "sharp": "0.35.5",
-    "tailwind-merge": "3.7.0"
+    "tailwind-merge": "3.7.0",
+    "wasm-vips": "0.0.19",
+    "zod": "4.6.5"
   }
 }

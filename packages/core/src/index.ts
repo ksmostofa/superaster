@@ -1,3 +1,4 @@
+import {resolvePreset,planPreset,validate as validatePreset} from '../../catalog/src/index.js';
 import { Effect, Semaphore } from 'effect';
 import { parseRecipe, SuperasterError, operationDefinitions, type Recipe, type Operation, type ImageInfo, type ExecutionRecord, type Progress } from '../../contract/src/index.js';
 
@@ -23,6 +24,10 @@ export function canonicalJson(value:unknown):string {
 }
 export async function sha256(bytes:Uint8Array):Promise<string> { const copied=Uint8Array.from(bytes); const digest=await globalThis.crypto.subtle.digest('SHA-256',copied); return Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join(''); }
 export async function recipeHash(recipe:Recipe,bindingHashes?:Record<string,string>):Promise<string> { return sha256(new TextEncoder().encode(canonicalJson(bindingHashes && Object.keys(bindingHashes).length ? {recipe,binding_hashes:bindingHashes} : recipe))); }
+export async function bindingHashes(recipe:Recipe,bindings:RuntimeOptions['bindings']={}) {
+ const refs=new Set(recipe.operations.flatMap(op=>op.op==='composite'&&op.image_ref?[op.image_ref]:op.op==='correct'&&op.mask_ref?[op.mask_ref]:[]));
+ const hashes:Record<string,string>={};for(const ref of refs){const bytes=bindings[ref];if(!bytes)throw new SuperasterError('INVALID_INPUT',`Missing bound input ${ref}`);hashes[ref]=await sha256(bytes);}return hashes;
+}
 export function plan(value:unknown, adapter:EngineAdapter):Recipe {
   const recipe=parseRecipe(value), caps=adapter.capabilities();
   for(const op of recipe.operations) if(!caps.operations.includes(op.op)) throw new SuperasterError('UNSUPPORTED',`Operation ${op.op} is unavailable on ${adapter.id}`,{operation:op.op});
@@ -35,11 +40,11 @@ export class Processor {
   capabilities() { return {contract_version:'1.0',implementation_version:'0.1.0-alpha.1',adapter:this.adapter.id, operation_definitions:operationDefinitions, ...this.adapter.capabilities()}; }
   async inspect(input:Uint8Array, options:RuntimeOptions={}) { cancelled(options.signal); return this.adapter.inspect(input,options); }
   async transform(input:Uint8Array,value:unknown,options:RuntimeOptions={}):Promise<ProcessResult> {
-    const recipe=plan(value,this.adapter);
+    let recipe=plan(value,this.adapter);if(recipe.preset)recipe=planPreset(resolvePreset(recipe.preset.id,recipe.preset.version),recipe);
     const task=this.semaphore.withPermit(Effect.tryPromise({try: async signal=>{cancelled(options.signal); return this.adapter.execute(input,recipe,{...options,signal:options.signal??signal});},catch:processingError}));
     // runPromiseExit preserves the typed public error instead of exposing runtime wrappers.
     const exit=await Effect.runPromiseExit(task);
-    if(exit._tag==='Success') return exit.value;
+    if(exit._tag==='Success'){const result=exit.value;if(recipe.preset)result.record.rules=validatePreset(result.record.output,resolvePreset(recipe.preset.id,recipe.preset.version));return result;}
     const failure=exit.cause.reasons.find(reason=>reason._tag==='Fail');
     if(failure && failure._tag==='Fail') throw failure.error;
     throw new SuperasterError('CANCELLED','Operation interrupted');
@@ -49,7 +54,7 @@ export class Processor {
 export interface BatchItem { id:string; input:Uint8Array; name:string }
 export interface BatchEntry { id:string; name:string; input_hash:string; recipe_hash:string; status:'completed'|'failed'|'cancelled'; output_hash?:string; error?:ReturnType<SuperasterError['toJSON']> }
 export async function runBatch(processor:Processor, items:BatchItem[], recipe:unknown, options:RuntimeOptions & { onItem?:(entry:BatchEntry,result?:ProcessResult)=>Promise<void>|void }={}) {
-  const parsed=plan(recipe,processor.adapter); const hash=await recipeHash(parsed); const entries:BatchEntry[]=[];
+  const parsed=plan(recipe,processor.adapter); const hash=await recipeHash(parsed,await bindingHashes(parsed,options.bindings)); const entries:BatchEntry[]=[];
   // Serial scheduling shares the warmed model; additional concurrency requires measurements.
   for(const item of items) {
     const entry:BatchEntry={id:item.id,name:item.name,input_hash:await sha256(item.input),recipe_hash:hash,status:'cancelled'};

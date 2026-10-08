@@ -1,6 +1,6 @@
 # Reference to interface mapping
 
-Inspected 2026-10-08. Actual source revisions recorded; third-party license decision pending. These are implementation choices, not acceptance evidence.
+Inspected 2026-10-08. Actual source revisions recorded; owner approved retained third-party application terms on 2026-10-09. These are implementation choices, not acceptance evidence.
 
 | Reference | Concrete application | Verification |
 | --- | --- | --- |
@@ -12,4 +12,4 @@ Inspected 2026-10-08. Actual source revisions recorded; third-party license deci
 
 Primary sources: [Rare UI source/license](https://github.com/swamimalode07/rare-ui/tree/b4de46efe4eb2613e22bb8134b482ed4e0c7736a), [Animate UI source/license](https://github.com/imskyleen/animate-ui/tree/efeb96ffd7a3b7a4868667e4ac3c346620fb3044), [official preset CLI](https://ui.shadcn.com/docs/cli), [BG0](https://github.com/opencoredev/bg0).
 
-Rare UI catalog has no image-mask brush, image comparison, export settings, crop, batch queue or model cache manager. Build those product controls to match Rare UI. Do not add decorative components solely to make a library quota. Its license permits use in an application but restricts redistribution of component libraries; retain notices and visible credit if authorized. Animate UI similarly restricts component redistribution. Original Superaster code remains Apache-2.0; no relabeling imported code as Apache.
+Rare UI catalog has no image-mask brush, image comparison, export settings, crop, batch queue or model cache manager. Build those product controls to match Rare UI. Do not add decorative components solely to make a library quota. Its license permits use in an application but restricts redistribution of component libraries; retain notices and visible credit with the retained terms approved by the owner. Animate UI similarly restricts component redistribution. Original Superaster code remains Apache-2.0; no relabeling imported code as Apache.

@@ -6,3 +6,9 @@ dist/
 *.tgz
 research/upstream/
 evidence/private/
+
+packages/web/public/runtime/
+
+evidence/browser/*.png
+evidence/browser/*.jpg
+evidence/benchmarks/outputs/

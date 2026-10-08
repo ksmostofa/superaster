@@ -1,0 +1,16 @@
+{
+  "format": "png",
+  "width": 2400,
+  "height": 1600,
+  "channels": 4,
+  "icc": false,
+  "exif": false,
+  "bytes": 3540081,
+  "hash": "b81888a305bc500ba55c81f3f8b0fea5e43388b13f8ecd41dac5ea9155b81d6b",
+  "alpha": {
+    "min": 0,
+    "max": 255,
+    "soft": 93394
+  },
+  "hashMatchesRecord": true
+}
