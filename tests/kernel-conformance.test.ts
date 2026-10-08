@@ -41,6 +41,24 @@ afterAll(async () => {
 
 function raster(width: number, height: number, pixels: readonly number[]): Raster { return { width, height, data: Uint8Array.from(pixels) }; }
 async function png(value: Raster) { return new Uint8Array(await sharp(Buffer.from(value.data), { raw: { width: value.width, height: value.height, channels: 4 } }).png().toBuffer()); }
+function pngChunks(bytes: Uint8Array) {
+  const chunks: Array<{ type: string; bytes: Uint8Array; payload: Uint8Array }> = [];
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  for (let offset = 8; offset + 12 <= bytes.length;) {
+    const length = view.getUint32(offset), end = offset + length + 12;
+    if (end > bytes.length) throw new Error('Malformed generated PNG fixture');
+    chunks.push({ type: new TextDecoder().decode(bytes.slice(offset + 4, offset + 8)), bytes: bytes.slice(offset, end), payload: bytes.slice(offset + 8, end - 4) }); offset = end;
+  }
+  return chunks;
+}
+function withoutPngDensity(bytes: Uint8Array) {
+  // Sharp 0.35.5 emits pHYs=1000/1000 metres even when its metadata() omits density.
+  // Remove the entire optional chunk; retained chunks and their CRCs stay unchanged.
+  const pieces = [bytes.slice(0, 8), ...pngChunks(bytes).filter(chunk => chunk.type !== 'pHYs').map(chunk => chunk.bytes)];
+  const result = new Uint8Array(pieces.reduce((length, piece) => length + piece.length, 0));
+  let offset = 0; for (const piece of pieces) { result.set(piece, offset); offset += piece.length; }
+  return result;
+}
 async function output(name: string, bytes: Uint8Array) {
   const path = join(evidence, name); await writeFile(path, bytes);
   return { path, bytes: bytes.length, sha256: await sha256(bytes), metadata: await sharp(bytes).metadata() };
@@ -150,9 +168,22 @@ describe('native and Node-hosted WASM image contract', () => {
     }
   });
   it('does not invent a declared density for a PNG without a density tag', async () => {
-    const input = await png(blank(2, 2, '#203040')); expect((await sharp(input).metadata()).density).toBeUndefined();
-    const a = await native.inspect(input), b = await browser.inspect(input); measured.missing_density = { native: a, wasm: b };
-    expect(a.metadata.density).toBeUndefined(); expect(b.metadata.density).toBeUndefined();
+    const original = await png(blank(2, 2, '#203040')), input = withoutPngDensity(original);
+    expect(pngChunks(original).some(chunk => chunk.type === 'pHYs')).toBe(true);
+    expect(pngChunks(input).some(chunk => chunk.type === 'pHYs')).toBe(false);
+    const originalPixels = await sharp(original).ensureAlpha().raw().toBuffer(), correctedPixels = await sharp(input).ensureAlpha().raw().toBuffer();
+    expect(correctedPixels).toEqual(originalPixels);
+    const a = await native.inspect(input), b = await browser.inspect(input); measured.missing_density = { input: await output('density-absent-input.png', input), correction: 'Original generated PNG actually contained pHYs; complete optional chunk removed without changing pixels or tolerance. Binary tag absence is authoritative because Sharp synthesizes 72 DPI after removal.', native: a, wasm: b };
+    expect.soft(a.metadata.density).toBeUndefined(); expect.soft(b.metadata.density).toBeUndefined();
+  });
+  it('reports the real pHYs density even when the native library suppresses its default value', async () => {
+    const input = await png(blank(2, 2, '#203040')), physical = pngChunks(input).find(chunk => chunk.type === 'pHYs'); expect(physical).toBeDefined();
+    const view = new DataView(physical!.payload.buffer, physical!.payload.byteOffset, physical!.payload.byteLength);
+    expect([view.getUint32(0), view.getUint32(4), view.getUint8(8)]).toEqual([1000, 1000, 1]);
+    const a = await native.inspect(input), b = await browser.inspect(input);
+    measured.declared_default_density = { input: await output('density-1000ppm-input.png', input), png_pHYs: { x_pixels_per_metre: 1000, y_pixels_per_metre: 1000, unit: 1 }, native: a, wasm: b };
+    // Inspection currently declares rounded integer DPI; 1000 ppm is 25.4 DPI, rounded to 25.
+    expect.soft(a.metadata.density).toBe(25); expect.soft(b.metadata.density).toBe(25);
   });
   it('keeps clockwise right-angle pixels exact and arbitrary rotation bounds/fill consistent', async () => {
     const source = raster(3, 2, [200,30,80,255, 40,80,200,255, 70,200,30,255, 25,40,90,255, 210,80,50,255, 20,180,220,255]);
