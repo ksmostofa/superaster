@@ -88,8 +88,16 @@ The targeted run passed four tests, failed the two density checks and skipped ei
 
 The fix follows the installed Sharp implementation, inspected directly. `node_modules/sharp/src/pipeline.cc`, SHA-256 `445ed9aa726806dc01188cf13a2866ee47ccd38504cddd049e4e639703edc0e9`, uses `image.rot(rotation)` for cardinal rotation and `image.rotate(angle, {background})` for arbitrary rotation. It premultiplies and casts before filtered resizing, then unpremultiplies and casts afterwards. `common.cc`, SHA-256 `c3c56a37bb780dfd97ee53d3556d9ba3d674b1b9cf7d57caf94248f982207a75`, supplies the alpha component of the explicit fill. This inspected source explains the fixes without adding ad-hoc coordinate offsets.
 
+## Declared-density fix verification
+
+Main integrated the tag parser in commit `9409757993a2b536a550a6fe44ee253993122ab7`. After copying the exact updated source inputs and rebuilding, the two density tests passed without changing their criteria or fixture pixels. Native and WASM both report density absent for the 74-byte untagged PNG and 25 DPI for the 95-byte tagged PNG.
+
+The density-only command above was repeated with `--outputFile=.cache/kernel-density-fixed-results.json`. Two tests passed and twelve unaffected tests were skipped. Evidence: `.cache/kernel-conformance-75KEnm/measurements.json`, SHA-256 `fa4014a83ea940aba7b764a5f9a7b71c822b6b9f9309832dc37bd378fe08c73a`. Runner JSON SHA-256: `396f599e31e96d3759605900e39cba3707f6a9601c8d2babdd20bddd26060e70`.
+
+Changed input hashes: native `f61f7745c53a2adff17070e14ee00d4b1f6e8d9a6be7686966d552bf59f80ed2`; raster `3bea48ef456d73b4efd02d5ad0fa3e2df393c7d05272ac2b6977c3f911401fbe`; BrowserKernel `7e274b80278119190aaa9eed4924ba40c75b4ece40540bd076e3b156735cc4e5`. Other source hashes in the preceding table remain unchanged. Native build and typecheck passed. The isolated tree initially lacked the current Vite environment declaration after copying browser sources; copying `packages/web/src/env.d.ts` restored the same typecheck inputs without a production-code change.
+
 ## Outstanding acceptance
 
-Native declared-density correctness is FAIL on these identified sources. The full final integrated suite, browser execution, physical-phone tests, real removal quality, cross-runtime inference tolerances and cold/offline paths are NOT RUN by this kernel check. Prior passing results identify their earlier inputs; they are not a claim that every requirement passes on a final release. G2-G7 remain incomplete.
+The diagnosed kernel regressions now pass their affected checks on the identified source inputs. The full final integrated suite, browser execution, physical-phone tests, real removal quality, cross-runtime inference tolerances and cold/offline paths are NOT RUN by this kernel check. Prior passing results identify their earlier inputs; they are not a claim that every requirement passes on a final release. G2-G7 remain incomplete.
 
 Raw evidence paths are local to `/home/sadid/Downloads/Superaster/superaster-verification-adapters`. The test reproduces and saves the actual output artifacts under a new `.cache/kernel-conformance-*` directory for each run.
