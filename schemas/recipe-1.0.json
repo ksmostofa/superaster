@@ -1,0 +1,606 @@
+{
+  "$id": "https://superaster.local/schema/recipe-1.0.json",
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "spec_version",
+    "input",
+    "operations",
+    "output"
+  ],
+  "properties": {
+    "spec_version": {
+      "const": "1.0",
+      "type": "string"
+    },
+    "input": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "ref"
+      ],
+      "properties": {
+        "ref": {
+          "minLength": 1,
+          "type": "string"
+        }
+      }
+    },
+    "engine": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "quality": {
+      "anyOf": [
+        {
+          "const": "quality",
+          "type": "string"
+        },
+        {
+          "const": "fast",
+          "type": "string"
+        }
+      ]
+    },
+    "operations": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op"
+            ],
+            "properties": {
+              "op": {
+                "const": "remove_background",
+                "type": "string"
+              },
+              "edge_cleanup": {
+                "anyOf": [
+                  {
+                    "const": "none",
+                    "type": "string"
+                  },
+                  {
+                    "const": "auto",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op"
+            ],
+            "properties": {
+              "op": {
+                "const": "resize",
+                "type": "string"
+              },
+              "width": {
+                "minimum": 1,
+                "maximum": 16384,
+                "type": "integer"
+              },
+              "height": {
+                "minimum": 1,
+                "maximum": 16384,
+                "type": "integer"
+              },
+              "fit": {
+                "anyOf": [
+                  {
+                    "const": "contain",
+                    "type": "string"
+                  },
+                  {
+                    "const": "cover",
+                    "type": "string"
+                  },
+                  {
+                    "const": "fill",
+                    "type": "string"
+                  }
+                ]
+              },
+              "allow_upscale": {
+                "type": "boolean"
+              },
+              "resampling": {
+                "anyOf": [
+                  {
+                    "const": "nearest",
+                    "type": "string"
+                  },
+                  {
+                    "const": "lanczos3",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op",
+              "x",
+              "y",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "op": {
+                "const": "crop",
+                "type": "string"
+              },
+              "x": {
+                "minimum": 0,
+                "maximum": 16384,
+                "type": "integer"
+              },
+              "y": {
+                "minimum": 0,
+                "maximum": 16384,
+                "type": "integer"
+              },
+              "width": {
+                "minimum": 1,
+                "maximum": 16384,
+                "type": "integer"
+              },
+              "height": {
+                "minimum": 1,
+                "maximum": 16384,
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op",
+              "margin"
+            ],
+            "properties": {
+              "op": {
+                "const": "subject_crop",
+                "type": "string"
+              },
+              "margin": {
+                "minimum": 0,
+                "maximum": 16384,
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "op": {
+                "const": "canvas",
+                "type": "string"
+              },
+              "width": {
+                "minimum": 1,
+                "maximum": 16384,
+                "type": "integer"
+              },
+              "height": {
+                "minimum": 1,
+                "maximum": 16384,
+                "type": "integer"
+              },
+              "fit": {
+                "anyOf": [
+                  {
+                    "const": "contain",
+                    "type": "string"
+                  },
+                  {
+                    "const": "cover",
+                    "type": "string"
+                  },
+                  {
+                    "const": "fill",
+                    "type": "string"
+                  }
+                ]
+              },
+              "background": {
+                "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$",
+                "type": "string"
+              },
+              "position": {
+                "anyOf": [
+                  {
+                    "const": "center",
+                    "type": "string"
+                  },
+                  {
+                    "const": "top",
+                    "type": "string"
+                  },
+                  {
+                    "const": "bottom",
+                    "type": "string"
+                  },
+                  {
+                    "const": "left",
+                    "type": "string"
+                  },
+                  {
+                    "const": "right",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op"
+            ],
+            "properties": {
+              "op": {
+                "const": "composite",
+                "type": "string"
+              },
+              "background": {
+                "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$",
+                "type": "string"
+              },
+              "image_ref": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "fit": {
+                "anyOf": [
+                  {
+                    "const": "contain",
+                    "type": "string"
+                  },
+                  {
+                    "const": "cover",
+                    "type": "string"
+                  },
+                  {
+                    "const": "fill",
+                    "type": "string"
+                  }
+                ]
+              },
+              "position": {
+                "anyOf": [
+                  {
+                    "const": "center",
+                    "type": "string"
+                  },
+                  {
+                    "const": "top",
+                    "type": "string"
+                  },
+                  {
+                    "const": "bottom",
+                    "type": "string"
+                  },
+                  {
+                    "const": "left",
+                    "type": "string"
+                  },
+                  {
+                    "const": "right",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op",
+              "angle"
+            ],
+            "properties": {
+              "op": {
+                "const": "rotate",
+                "type": "string"
+              },
+              "angle": {
+                "minimum": -360,
+                "maximum": 360,
+                "type": "number"
+              },
+              "background": {
+                "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$",
+                "type": "string"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op",
+              "axis"
+            ],
+            "properties": {
+              "op": {
+                "const": "flip",
+                "type": "string"
+              },
+              "axis": {
+                "anyOf": [
+                  {
+                    "const": "horizontal",
+                    "type": "string"
+                  },
+                  {
+                    "const": "vertical",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op"
+            ],
+            "properties": {
+              "op": {
+                "const": "correct",
+                "type": "string"
+              },
+              "regions": {
+                "maxItems": 10000,
+                "type": "array",
+                "items": {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height",
+                    "mode"
+                  ],
+                  "properties": {
+                    "x": {
+                      "minimum": 0,
+                      "maximum": 16384,
+                      "type": "integer"
+                    },
+                    "y": {
+                      "minimum": 0,
+                      "maximum": 16384,
+                      "type": "integer"
+                    },
+                    "width": {
+                      "minimum": 1,
+                      "maximum": 16384,
+                      "type": "integer"
+                    },
+                    "height": {
+                      "minimum": 1,
+                      "maximum": 16384,
+                      "type": "integer"
+                    },
+                    "mode": {
+                      "anyOf": [
+                        {
+                          "const": "erase",
+                          "type": "string"
+                        },
+                        {
+                          "const": "restore",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "mask_ref": {
+                "minLength": 1,
+                "type": "string"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op"
+            ],
+            "properties": {
+              "op": {
+                "const": "mask",
+                "type": "string"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op",
+              "color_space"
+            ],
+            "properties": {
+              "op": {
+                "const": "normalize",
+                "type": "string"
+              },
+              "color_space": {
+                "const": "srgb",
+                "type": "string"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "op",
+              "sheet_width_mm",
+              "sheet_height_mm",
+              "item_width_mm",
+              "item_height_mm",
+              "dpi",
+              "rows",
+              "columns",
+              "margin_mm",
+              "spacing_mm"
+            ],
+            "properties": {
+              "op": {
+                "const": "print_sheet",
+                "type": "string"
+              },
+              "sheet_width_mm": {
+                "exclusiveMinimum": 0,
+                "maximum": 2000,
+                "type": "number"
+              },
+              "sheet_height_mm": {
+                "exclusiveMinimum": 0,
+                "maximum": 2000,
+                "type": "number"
+              },
+              "item_width_mm": {
+                "exclusiveMinimum": 0,
+                "maximum": 2000,
+                "type": "number"
+              },
+              "item_height_mm": {
+                "exclusiveMinimum": 0,
+                "maximum": 2000,
+                "type": "number"
+              },
+              "dpi": {
+                "minimum": 72,
+                "maximum": 1200,
+                "type": "integer"
+              },
+              "rows": {
+                "minimum": 1,
+                "maximum": 100,
+                "type": "integer"
+              },
+              "columns": {
+                "minimum": 1,
+                "maximum": 100,
+                "type": "integer"
+              },
+              "margin_mm": {
+                "minimum": 0,
+                "maximum": 1000,
+                "type": "number"
+              },
+              "spacing_mm": {
+                "minimum": 0,
+                "maximum": 1000,
+                "type": "number"
+              },
+              "background": {
+                "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$",
+                "type": "string"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "format"
+      ],
+      "properties": {
+        "format": {
+          "anyOf": [
+            {
+              "const": "png",
+              "type": "string"
+            },
+            {
+              "const": "jpeg",
+              "type": "string"
+            },
+            {
+              "const": "webp",
+              "type": "string"
+            }
+          ]
+        },
+        "quality": {
+          "minimum": 1,
+          "maximum": 100,
+          "type": "integer"
+        },
+        "max_bytes": {
+          "minimum": 1,
+          "maximum": 1000000000,
+          "type": "integer"
+        },
+        "metadata": {
+          "anyOf": [
+            {
+              "const": "strip",
+              "type": "string"
+            },
+            {
+              "const": "preserve",
+              "type": "string"
+            }
+          ]
+        },
+        "dpi": {
+          "minimum": 1,
+          "maximum": 1200,
+          "type": "integer"
+        }
+      }
+    },
+    "preset": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      }
+    }
+  }
+}
