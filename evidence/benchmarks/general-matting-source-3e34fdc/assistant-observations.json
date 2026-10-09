@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-09T16:53:27.070533+00:00",
+  "observer": "assistant",
+  "scope": "Actual exported diagnostic images; no blind human ratings or gate awarded",
+  "inspected": [
+    "t01-three-birdwatchers/white.png",
+    "thin-plant/white.png",
+    "thin-plant/alpha.png"
+  ],
+  "group": "White composite visibly contains all three birdwatchers, including the left person erased by earlier production candidates",
+  "fern": "Nonempty fronds and stems visible; alpha also covers broad image areas softly; background retention, transparency and edge quality need human judgment",
+  "quality_acceptance": "NOT AWARDED",
+  "production_models_changed": false,
+  "next_prerequisite": "Audited general-matting ONNX producer and source/export comparison using saved exact input tensors",
+  "remaining": [
+    "numerical tolerances/budgets not frozen",
+    "actual phone baseline",
+    "hidden-label human review",
+    "held-out evaluation",
+    "matched remove.bg comparator"
+  ]
+}

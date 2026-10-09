@@ -30,9 +30,20 @@ The recorded command uses an unprivileged Linux network namespace. `--require-is
 
 Only the coordinator may allocate the serial inference slot. Add `--run` to the same command, with a new output directory and `--threads 4`, when that slot is granted. No source inference or export is implied by a preflight pass. Real CPU activation memory and execution time remain unknown until measured. The source contains 220,176,498 logical parameters; parameter count and allocation-free construction RSS do not predict full inference memory. Existing ORT Full1024 reached about 9.13 GB sampled process RSS on this laptop, so use a quiet machine and one heavy job. That number is contextual evidence, not a guarantee or acceptance threshold for this source route.
 
+The approved 2026-10-10 two-image investigation used `timeout --signal=INT --kill-after=10s 900s` before the `unshare` command, `--threads 4 --run`, and a fresh directory. That 15-minute lifetime bound is an investigation guard, not a frozen product acceptance budget. It completed once; no inference rerun is needed to check its retained exports.
+
 A real run retains exact preprocessed `input.npy`, raw `logits.npy`, continuous `coverage.npy`, original-sized continuous coverage, grayscale alpha, unmodified-RGB cutout and white/black/magenta composites for each case. It records CPU initialization, decode/preprocess, inference, sigmoid, tensor diagnostics and export timings separately. Linux process RSS is a cumulative high-water mark, not a sampled stage peak. Input/original files are checked again after processing. Failure/cancellation records retain the actual stage; an OS kill may require the coordinator's process log.
 
 The diagnostic export keeps continuous coverage until half-pixel bilinear upsampling and nearest-byte PNG assignment. Upstream's handler quantizes before its final resize and applies separate RGB foreground estimation; neither is silently represented as identical. Composites use byte-space source-over for visual diagnosis, and do not certify the application's color contract. The retained subject remains all three birdwatchers and the foreground fern fronds.
+
+Verify actual PNG format, dimensions, decoded alpha and RGB, metadata, composition, tensor properties and every recorded output hash without repeating inference:
+
+```sh
+.cache/source-reference-venv/bin/python benchmarks/source-reference/verify.py \
+  --run SOURCE_RUN \
+  --manifest ../superaster/evidence/benchmarks/full1024-targeted-233231f/targeted-manifest.json \
+  --corpus-root ../superaster --output properties-NEW.json
+```
 
 A later audited ONNX conversion can reuse the saved input tensors. Its conditions must name the same source revision/weight and manifest hashes, an immutable ONNX artifact hash, completed inference and matching case/input identities. Save raw logits and sigmoid coverage in the same array layout, then measure differences:
 

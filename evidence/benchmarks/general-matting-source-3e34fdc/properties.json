@@ -1,0 +1,246 @@
+{
+  "scope": "Actual exported source-reference diagnostics; not production color/quality conformance",
+  "verifier_sha256": "68f87e2a5736cd8ba7969053c3a9242aa407d1154c7d86cd5bb85ce611b620e7",
+  "cases": [
+    {
+      "id": "t01-three-birdwatchers",
+      "dimensions": [
+        2400,
+        1600
+      ],
+      "arrays": {
+        "input": {
+          "shape": [
+            1,
+            3,
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": -2.1179039478302,
+          "max": 2.640000104904175
+        },
+        "logits": {
+          "shape": [
+            1,
+            1,
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": -19.798927307128906,
+          "max": 31.249713897705078
+        },
+        "coverage": {
+          "shape": [
+            1,
+            1,
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 2.5202007147839822e-09,
+          "max": 1.0
+        },
+        "coverage-original": {
+          "shape": [
+            1600,
+            2400
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 2.729167780657349e-09,
+          "max": 1.0
+        }
+      },
+      "pngs": {
+        "alpha": {
+          "format": "PNG",
+          "dimensions": [
+            2400,
+            1600
+          ],
+          "mode": "L",
+          "metadata_keys": [],
+          "bytes": 90060
+        },
+        "cutout": {
+          "format": "PNG",
+          "dimensions": [
+            2400,
+            1600
+          ],
+          "mode": "RGBA",
+          "metadata_keys": [],
+          "bytes": 4061193
+        },
+        "white": {
+          "format": "PNG",
+          "dimensions": [
+            2400,
+            1600
+          ],
+          "mode": "RGB",
+          "metadata_keys": [],
+          "bytes": 1239756
+        },
+        "black": {
+          "format": "PNG",
+          "dimensions": [
+            2400,
+            1600
+          ],
+          "mode": "RGB",
+          "metadata_keys": [],
+          "bytes": 1232953
+        },
+        "color": {
+          "format": "PNG",
+          "dimensions": [
+            2400,
+            1600
+          ],
+          "mode": "RGB",
+          "metadata_keys": [],
+          "bytes": 1257235
+        }
+      },
+      "checks": {
+        "arrays_shapes_dtype_finite": "PASS",
+        "coverage_range": "PASS",
+        "png_format_mode_dimensions": "PASS",
+        "alpha_quantization_all_pixels": "PASS",
+        "cutout_alpha_all_pixels": "PASS",
+        "source_RGB_preserved_all_pixels": "PASS",
+        "diagnostic_byte_space_composition_all_pixels": "PASS",
+        "all_recorded_output_hashes": "PASS",
+        "source_and_original_hashes_preserved": "PASS",
+        "no_EXIF_XMP": "PASS",
+        "quality": "NOT AWARDED"
+      }
+    },
+    {
+      "id": "thin-plant",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "arrays": {
+        "input": {
+          "shape": [
+            1,
+            3,
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": -2.1179039478302,
+          "max": 2.640000104904175
+        },
+        "logits": {
+          "shape": [
+            1,
+            1,
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": -9.685401916503906,
+          "max": 8.571958541870117
+        },
+        "coverage": {
+          "shape": [
+            1,
+            1,
+            1024,
+            1024
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 6.21808139840141e-05,
+          "max": 0.9998107552528381
+        },
+        "coverage-original": {
+          "shape": [
+            960,
+            1280
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "min": 7.057729089865461e-05,
+          "max": 0.9997939467430115
+        }
+      },
+      "pngs": {
+        "alpha": {
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            960
+          ],
+          "mode": "L",
+          "metadata_keys": [],
+          "bytes": 439315
+        },
+        "cutout": {
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            960
+          ],
+          "mode": "RGBA",
+          "metadata_keys": [],
+          "bytes": 3496752
+        },
+        "white": {
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            960
+          ],
+          "mode": "RGB",
+          "metadata_keys": [],
+          "bytes": 2750996
+        },
+        "black": {
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            960
+          ],
+          "mode": "RGB",
+          "metadata_keys": [],
+          "bytes": 2734490
+        },
+        "color": {
+          "format": "PNG",
+          "dimensions": [
+            1280,
+            960
+          ],
+          "mode": "RGB",
+          "metadata_keys": [],
+          "bytes": 2753512
+        }
+      },
+      "checks": {
+        "arrays_shapes_dtype_finite": "PASS",
+        "coverage_range": "PASS",
+        "png_format_mode_dimensions": "PASS",
+        "alpha_quantization_all_pixels": "PASS",
+        "cutout_alpha_all_pixels": "PASS",
+        "source_RGB_preserved_all_pixels": "PASS",
+        "diagnostic_byte_space_composition_all_pixels": "PASS",
+        "all_recorded_output_hashes": "PASS",
+        "source_and_original_hashes_preserved": "PASS",
+        "no_EXIF_XMP": "PASS",
+        "quality": "NOT AWARDED"
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "utc": "2026-10-09T16:50:35.787466+00:00",
+  "pre_run": {
+    "utc": "2026-10-09T16:47:21.865426+00:00",
+    "commit": "3e34fdcc2e622a343950437cbcde6e7186c01fa5",
+    "cpu_model": "Intel(R) Core(TM) i7-8665U CPU @ 1.90GHz",
+    "logical_cpus": 8,
+    "platform": "Linux-7.2.5-3-omarchy-x86_64-with-glibc2.44",
+    "memory": {
+      "total": 16558505984,
+      "available": 7596285952,
+      "percent": 54.1,
+      "used": 8962220032,
+      "free": 1250877440,
+      "active": 6214381568,
+      "inactive": 7922368512,
+      "buffers": 6135808,
+      "cached": 7976460288,
+      "shared": 673890304,
+      "slab": 467836928
+    },
+    "swap": {
+      "total": 16558059520,
+      "used": 36864,
+      "free": 16558022656,
+      "percent": 0.0,
+      "sin": 0,
+      "sout": 36864
+    },
+    "cpu_percent_1_second": 5.6,
+    "investigation_wall_limit_seconds": 900,
+    "limit_scope": "Bound for this named source-reference diagnosis; not frozen acceptance budget",
+    "heavy_inference_jobs": 1,
+    "quality": "NOT AWARDED"
+  },
+  "sample_scope": "30 one-second samples during first group inference only; not complete stage peaks",
+  "sample_count": 30,
+  "sampled_max_rss_bytes": 3434336256,
+  "sampled_host_min_available_bytes": 4997505024,
+  "sampled_host_max_swap_used_bytes": 130691072,
+  "process_cumulative_high_water_rss_bytes": 4068081664,
+  "post_run_memory": {
+    "total": 16558505984,
+    "available": 8168431616,
+    "percent": 50.7,
+    "used": 8390074368,
+    "free": 3895844864,
+    "active": 5669126144,
+    "inactive": 5933211648,
+    "buffers": 4743168,
+    "cached": 5856055296,
+    "shared": 633970688,
+    "slab": 449789952
+  },
+  "post_run_swap": {
+    "total": 16558059520,
+    "used": 125886464,
+    "free": 16432173056,
+    "percent": 0.8,
+    "sin": 3891200,
+    "sout": 93548544
+  },
+  "execution_exit_code": 0,
+  "diagnostic_wall_limit_seconds": 900,
+  "diagnostic_limit_reached": false,
+  "acceptance_budget": "NOT FROZEN"
+}

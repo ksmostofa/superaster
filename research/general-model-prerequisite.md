@@ -1,6 +1,6 @@
 # General-model provenance prerequisite
 
-Initial source audit: 2026-10-09 JST against private active specification 1.3 and worktree commit `f24a674`. Research preflight completed 2026-10-10 JST. The pinned weight is now downloaded and verified, and the reviewed local source passes an allocation-free offline architecture/input preflight. CPU weight materialization, image inference, export/parity and quality acceptance remain NOT RUN. No thresholds, production defaults or gates changed.
+Initial source audit: 2026-10-09 JST against private active specification 1.3 and worktree commit `f24a674`. Research preflight and one approved offline CPU source-reference diagnosis completed 2026-10-10 JST. The pinned weight is downloaded and verified. The source visibly retains all three birdwatchers, including the previously erased left person, and returns a nonempty fern. ONNX conversion/parity and hidden-label quality acceptance remain NOT RUN. No thresholds, production defaults or gates changed.
 
 Decision: an approved general-matting source checkpoint exists, but no inspected ready-made ONNX artifact establishes the complete source-to-export chain and failed-case parity. The next useful prerequisite is one reproducible conversion and source-reference comparison for the pinned official `ZhengPeng7/BiRefNet-matting` checkpoint below. Do not run another broad candidate screen merely because its name says general or dynamic. Whether this checkpoint retains all three people remains unknown.
 
@@ -12,7 +12,7 @@ The [official model zoo](https://github.com/ZhengPeng7/BiRefNet/blob/ebcc0bc8ec7
 
 | Inspected route | Exact source/artifact facts | Remaining prerequisite |
 | --- | --- | --- |
-| Official general matting | HF revision `eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9`; `model.safetensors`, locally verified 884,878,856 bytes and SHA-256 `a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb` | One bounded source-reference diagnosis, reproducible export, graph/runtime audit and source/export numerical comparison. The pinned HF tree has no ONNX artifact. |
+| Official general matting | HF revision `eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9`; `model.safetensors`, locally verified 884,878,856 bytes and SHA-256 `a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb` | Reproducible export, graph/runtime audit and source/export numerical comparison. One bounded source diagnosis is complete. The pinned HF tree has no ONNX artifact. |
 | Official lite matting | HF revision `99c33412e3f58e1f33187abdc8c435c645243690`; `model.safetensors`, 88,965,896 bytes, declared SHA-256 `ce8bcfc045e336322c0424a5863dcfb7e9ce8fed0a5fd4d1b2b20adf12d97243`; MIT card | No ONNX in its pinned tree. It would require a separate conversion and quality/resource proof. Lower file size predicts neither subject retention nor phone support. No second trial is recommended here. |
 | Dynamic general 1024 export | [Conversion card](https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/blob/6defd3a19cec21042b178108815c9c4508d09867/README.md), revision `6defd3a19cec21042b178108815c9c4508d09867`; fp16 file 489,811,221 bytes, declared SHA-256 `ee32f829fbf050fd501e53ed330369a71a0cbc69b9ab574da13d18ecbfa93dca`; MIT | The card names `ZhengPeng7/BiRefNet_dynamic` but no original revision, weight hash, converter revision or parity result. Its processor fixes 1024 square inputs. The model name does not establish a dynamic production graph. |
 | Dynamic CUDA export | [Card](https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/blob/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/README.md), revision `5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9`; ONNX 466,586,004 bytes, declared SHA-256 `1fefe02158d58b32d589cc4bdd7c2be938cd49171316e4a6ed5da485ccf39b19`; MIT | Pins official source revision `280306042f57b7a33854319da62fd86aaa89ec4c` and reports CUDA parity. Producer script, exact toolchain and comparison inputs/conditions are absent; CPU/browser validation is explicitly excluded. No local NVIDIA route was established. |
@@ -50,7 +50,27 @@ The first whole-file transfer reset, and a subsequent 64 MiB exact HTTP range ex
 
 The command ran in an unprivileged isolated Linux network namespace containing only loopback. Controlled external probes returned IPv4 `ENETUNREACH` and IPv6 `EADDRNOTAVAIL`; model-path Python networking attempts were zero. HF offline flags and a rejecting Python socket audit remain additional guards. This measured namespace condition is stronger than treating the audit hook alone as an OS network sandbox.
 
-Nine deterministic comparison/transport boundary checks pass. Their synthetic arrays and responses are labelled test fixtures. No synthetic result stands in for model inference. The next useful action is the coordinator-approved serial two-image source diagnosis documented in the tool README, preserving raw logits, continuous coverage, exact inputs and real exports. Materialization/inference, ONNX parity, human subject judgment, device/budget baselines and superiority remain unresolved.
+Nine deterministic comparison/transport boundary checks pass. Their synthetic arrays and responses are labelled test fixtures. No synthetic result stands in for model inference. At this preflight stage, materialization and image inference had not run. The subsequent approved two-image diagnosis below preserves raw logits, continuous coverage, exact inputs and real exports. ONNX parity, human subject judgment, device/budget baselines and superiority remain unresolved.
+
+## One completed source diagnosis
+
+The coordinator reviewed the fixed runner and allocated one heavy slot. [Execution evidence](../evidence/benchmarks/general-matting-source-3e34fdc/results.json) identifies commit `3e34fdc`, the same source/weight/input hashes and a fresh output directory. It completed within its descriptive 15-minute lifetime bound in an isolated network namespace, with no model-path network attempts. No inference retry or additional candidate screen was run.
+
+| Actual CPU observation | Group, first image | Fern, subsequent distinct image |
+| --- | --- | --- |
+| Inference kernel | 32.378 s | 32.425 s |
+| Decode/preprocess | 142.345 ms | 90.142 ms |
+| Diagnostic file export | 3.507 s | 1.576 s |
+| Raw logits | FLOAT32 `[1,1,1024,1024]`, finite, -19.799..31.250 | FLOAT32 `[1,1,1024,1024]`, finite, -9.685..8.572 |
+| Original/evaluation preservation | Complete hashes unchanged | Complete hashes unchanged |
+
+Initialization took 2.497 s after verified setup. Process cumulative high-water RSS reached 4,068,081,664 bytes. Thirty one-second resource samples cover the group stage only: sampled host available memory stayed above 4,997,505,024 bytes. These are two descriptive CPU observations, not median/p95, complete production-pipeline timing, phone support or a remove.bg comparison.
+
+The assistant inspected actual white composites and alpha. The group contains all three people; this narrows the previous failure to the selected model route rather than unavoidable loss in the supplied photograph. The fern retains visible fronds but also broad soft coverage (mean model coverage 0.8541); retained background, translucency and fine edges still require human judgment. These observations are not hidden-label release ratings.
+
+The reusable [export verifier](../benchmarks/source-reference/verify.py) passes decoded format/mode/dimensions, finite arrays, continuous coverage range, all-pixel alpha quantization, unchanged input RGB, diagnostic composition, absent source EXIF/XMP and every recorded output hash. Actual PNG/NPY files remain in the ignored source-run cache; their hashes and reproduction commands are public source evidence. Upstream foreground-color estimation and production color conformance were not tested.
+
+Decision: proceed to an audited general-matting ONNX producer and source/export comparison using these saved byte-identical inputs. This source result makes that prerequisite useful; it does not approve a production default or broad screening. Numerical tolerance must remain unfrozen until its required gate. Phone, hidden-label human review, held-out evaluation and matched comparator remain independent prerequisites.
 
 ## Retained source evidence
 
