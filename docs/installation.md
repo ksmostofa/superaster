@@ -1,10 +1,12 @@
 # Local installation and release reproduction
 
-These instructions describe the integrated alpha interfaces inspected on 2026-10-09. They are a reproduction guide, not a G6A/G7 result. Identify the exact commit and retain command output when running them. Physical-device support, human quality acceptance, clean package installation and public deployment remain separate checks in [execution.md](execution.md).
+These instructions describe the integrated alpha interfaces inspected on 2026-10-09. They are a reproduction guide, not a G6A/G7 result. Identify the exact commit and retain command output when running them. Physical-device support, human quality acceptance and public deployment remain separate checks in [execution.md](execution.md). The recorded clean-install check passed 34 native CLI/SDK/MCP checks on its identified Linux/Node candidate; its required removal/offline and other release checks remain incomplete.
 
 The observed development machine is Linux x86_64 with glibc, an Intel i7-8665U and 16 GiB RAM, running Node 26.11.1. The package declares Node >=22; other Node versions, Windows, macOS, Safari, iOS and Firefox have not been established by this guide. Query capabilities for the current adapter's formats, operations and provisional limits. A dependency's codec or platform support does not establish Superaster support.
 
 ## Build the source
+
+Source builds and the verifier/benchmark commands below require the repository checkout, not just an installed npm tarball. The package ships the native CLI/SDK/MCP build, schemas, catalog data, notices and documentation; it does not ship the web application, private specification, entire corpus or development toolchain.
 
 Choose a new directory and clone the public repository. The private product specifications are intentionally absent from its history and packages.
 
@@ -40,6 +42,8 @@ sha256sum .cache/models/*.onnx
 | --- | --- | ---: | --- |
 | Quality | `birefnet-512-fp16`, `naddy24/birefnet-512-webgpu` at `ca02a86c094927479e2be583abe87f8ea73fcfda` | 473,435,223 | `6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8` |
 | Fast | `birefnet-lite-512-fp16`, `studioludens/birefnet-lite-512` at `4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7` | 98,484,532 | `eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516` |
+
+Additional 1024/BEN2 entries in `models list` are explicit experimental profiles. Their licenses and graph contracts are recorded in [artifacts.json](../research/artifacts.json); Quality/Fast defaults do not change. Runtime/device/quality admission remains pending.
 
 Both approved files are `onnx/model_fp16.onnx` at their pinned Hugging Face revisions. [artifacts.json](../research/artifacts.json) records lineage and [third-party notices](../THIRD_PARTY_NOTICES.md) records rights. These are approved candidates, not declared quality winners. Quality is the default; Fast is explicit. Both use a 512×512 inference input and restore the mask to the requested image dimensions. That interpolation does not prove recovery of fine details.
 
@@ -134,7 +138,7 @@ try {
 }
 ```
 
-Run `node demo.mjs`. For T16 retain the tarball, its hash, dependency tree, OS/Node versions, command logs and decoded output. Reproduce first setup, cached setup, offline processing, cancellation/errors and preserved source hashes from this clean installation. Check included LICENSE, notices, catalog data, schemas and executable files using `npm pack --dry-run --json`. A pack listing alone does not establish clean-install acceptance.
+Run `node demo.mjs`. For T16 retain the tarball, its hash, dependency tree, OS/Node versions, command logs and decoded output. Reproduce first setup, cached setup, offline processing, cancellation/errors and preserved source hashes from this clean installation. Check included LICENSE, notices, catalog data, schemas and executable files using `npm pack --dry-run --json`. A pack listing alone does not establish clean-install acceptance. From the repository checkout, audit the actual tarball with `python scripts/package-audit.py --package /absolute/path/release-packages/superaster-local-0.1.0-alpha.1.tgz --output /absolute/path/package-audit.json`. This checks linked packaged documents, private-file exclusion, notices, schemas and native import closure without running inference.
 
 ## Local MCP
 

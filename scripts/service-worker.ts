@@ -1,8 +1,12 @@
-import {readdir,readFile,writeFile} from 'node:fs/promises';
+import {readdir,readFile,writeFile,unlink} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {join} from 'node:path';
 const root='dist/web';
-const files=(await readdir(root,{recursive:true,withFileTypes:true})).filter(item=>item.isFile()).map(item=>join(item.parentPath,item.name).slice(root.length+1)).filter(path=>!path.startsWith('_')&&path!=='sw.js');
+let files=(await readdir(root,{recursive:true,withFileTypes:true})).filter(item=>item.isFile()).map(item=>join(item.parentPath,item.name).slice(root.length+1)).filter(path=>!path.startsWith('_')&&path!=='sw.js');
+// ORT's universal bundle emits a WebNN asyncify binary even though Superaster
+// only requests WASM/WebGPU. WebGPU receives its verified jsep bytes directly.
+const unused=await readFile('node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.asyncify.wasm'),unusedHash=createHash('sha256').update(unused).digest('hex');
+for(const file of files){const bytes=await readFile(join(root,file));if(file.includes('ort-wasm-simd-threaded.asyncify-')&&createHash('sha256').update(bytes).digest('hex')===unusedHash){await unlink(join(root,file));files=files.filter(value=>value!==file);continue;}if(bytes.length>25*1024*1024)throw new Error(`Static deployment asset exceeds 25 MiB: ${file}`);}
 const hash=createHash('sha256');for(const file of files.sort())hash.update(file).update(await readFile(join(root,file)));
 const cache='superaster-app-'+hash.digest('hex').slice(0,16);
 const assets=files.map(file=>'/'+file);

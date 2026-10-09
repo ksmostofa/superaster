@@ -1,0 +1,198 @@
+{
+  "status": "MEASURED BASELINE; NOT A GATE PASS OR BUDGET FREEZE",
+  "generated_at": "2026-10-08T16:58:08.944290+00:00",
+  "profiles": [
+    {
+      "profile": "quality",
+      "conditions_path": "evidence/benchmarks/screening-quality-d21946e/conditions.json",
+      "results_path": "evidence/benchmarks/screening-quality-d21946e/results.json",
+      "commit": "d21946ebb736cf7093e5c5534bdfd7ee1a0dd9de",
+      "spec": {
+        "revision": "1.2",
+        "sha256": "b7c33afd05ad020f285f9b62d85c809204c03b1a9790fcae21e5b6cab753f374"
+      },
+      "model_id": "birefnet-512-fp16",
+      "model_sha256": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+      "machine_status": "PASS",
+      "machine_checks_pass": 25,
+      "machine_checks_fail": 0,
+      "failure_details": [],
+      "cold_complete_seconds": 19.293458417,
+      "cold_timings_ms": {
+        "decode": 41.57994999999994,
+        "inference": 18798.721254999997,
+        "model_setup": 1179.920474,
+        "initialize": 7233.34671,
+        "preprocess": 52.91736000000128,
+        "inference_kernel": 10308.882496,
+        "alpha_decode": 10.58243500000026,
+        "encode": 124.55321899999763,
+        "validate": 130.82732499999838
+      },
+      "warm_all_completed_operations": {
+        "sample_size": 24,
+        "median_seconds": 11.43381092850001,
+        "p95_seconds": 13.562604352850016
+      },
+      "warm_machine_passing_operations": {
+        "sample_size": 24,
+        "median_seconds": 11.43381092850001,
+        "p95_seconds": 13.562604352850016
+      },
+      "warm_stage_statistics": {
+        "decode": {
+          "sample_size": 24,
+          "median_ms": 25.94648899999811,
+          "p95_ms": 48.50983139999152
+        },
+        "preprocess": {
+          "sample_size": 24,
+          "median_ms": 37.599364999998215,
+          "p95_ms": 54.39817314999781
+        },
+        "inference_kernel": {
+          "sample_size": 24,
+          "median_ms": 10863.587130000004,
+          "p95_ms": 12957.52065604999
+        },
+        "alpha_decode": {
+          "sample_size": 24,
+          "median_ms": 36.23135449999427,
+          "p95_ms": 57.38334000000177
+        },
+        "encode": {
+          "sample_size": 24,
+          "median_ms": 132.4549229999975,
+          "p95_ms": 216.37195580000622
+        },
+        "validate": {
+          "sample_size": 24,
+          "median_ms": 143.20412249999936,
+          "p95_ms": 208.82681839999347
+        }
+      },
+      "peak_process_rss_bytes_sampled": 4651806720,
+      "process_lifetime_max_rss_kib": 4542780,
+      "opaque_changed_pixels": 0,
+      "human_quality": "NOT RUN",
+      "physical_phone": "NOT RUN",
+      "derived_serial_processing_throughput": {
+        "images": 25,
+        "sum_complete_seconds": 297.043338017,
+        "images_per_minute": 5.049768192122033,
+        "scope": "Sum of observed per-item complete operations, including cold setup and failed output; excludes gallery/evidence I/O and scheduling gaps. This is not the separately measured end-to-end benchmark wall throughput."
+      }
+    },
+    {
+      "profile": "fast",
+      "conditions_path": "evidence/benchmarks/screening-fast-40d2c57/conditions.json",
+      "results_path": "evidence/benchmarks/screening-fast-40d2c57/results.json",
+      "commit": "3f009d0b9283a4e146f197e08dfe1a2654fe07ab",
+      "spec": {
+        "revision": "1.2",
+        "sha256": "b7c33afd05ad020f285f9b62d85c809204c03b1a9790fcae21e5b6cab753f374"
+      },
+      "model_id": "birefnet-lite-512-fp16",
+      "model_sha256": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+      "machine_status": "FAIL",
+      "machine_checks_pass": 24,
+      "machine_checks_fail": 1,
+      "failure_details": [
+        {
+          "id": "thin-plant",
+          "failed_checks": {
+            "has_retained_pixels": "FAIL"
+          },
+          "decoded_properties": {
+            "width": 1280,
+            "height": 960,
+            "format": "png",
+            "channels": 4,
+            "bytes": 3880530,
+            "transparent_pixels": 1228800,
+            "partially_transparent_pixels": 0,
+            "opaque_pixels": 0,
+            "opaque_changed_pixels": 0,
+            "maximum_opaque_rgb_difference": 0,
+            "has_icc": true
+          }
+        }
+      ],
+      "cold_complete_seconds": 9.410427674000001,
+      "cold_timings_ms": {
+        "decode": 32.07332699999995,
+        "inference": 8789.942219,
+        "model_setup": 244.3636029999999,
+        "initialize": 4263.460166,
+        "preprocess": 66.69047099999989,
+        "inference_kernel": 4191.984129,
+        "alpha_decode": 12.047765999999683,
+        "encode": 134.1066869999995,
+        "validate": 197.14936600000146
+      },
+      "warm_all_completed_operations": {
+        "sample_size": 24,
+        "median_seconds": 4.367936078500002,
+        "p95_seconds": 5.1665684745999965
+      },
+      "warm_machine_passing_operations": {
+        "sample_size": 23,
+        "median_seconds": 4.342157668,
+        "p95_seconds": 5.175784714399997
+      },
+      "warm_stage_statistics": {
+        "decode": {
+          "sample_size": 24,
+          "median_ms": 28.398313500001677,
+          "p95_ms": 45.84255074999182
+        },
+        "preprocess": {
+          "sample_size": 24,
+          "median_ms": 37.89389300000039,
+          "p95_ms": 62.49790490000012
+        },
+        "inference_kernel": {
+          "sample_size": 24,
+          "median_ms": 3834.463186500002,
+          "p95_ms": 4578.182689950001
+        },
+        "alpha_decode": {
+          "sample_size": 24,
+          "median_ms": 38.07661050000388,
+          "p95_ms": 56.650157500003196
+        },
+        "encode": {
+          "sample_size": 24,
+          "median_ms": 136.28812900000048,
+          "p95_ms": 178.96947529999974
+        },
+        "validate": {
+          "sample_size": 24,
+          "median_ms": 131.9993345000039,
+          "p95_ms": 151.5570009500014
+        }
+      },
+      "peak_process_rss_bytes_sampled": 3955183616,
+      "process_lifetime_max_rss_kib": 3863068,
+      "opaque_changed_pixels": 0,
+      "human_quality": "NOT RUN",
+      "physical_phone": "NOT RUN",
+      "derived_serial_processing_throughput": {
+        "images": 25,
+        "sum_complete_seconds": 117.23658896300002,
+        "images_per_minute": 12.794640421288626,
+        "scope": "Sum of observed per-item complete operations, including cold setup and failed output; excludes gallery/evidence I/O and scheduling gaps. This is not the separately measured end-to-end benchmark wall throughput."
+      }
+    }
+  ],
+  "identical_engine_source_hashes": true,
+  "manifest_sha256": "4856791a5b76405ac2b254c5458dda4893478977167f9d75c0d0f12736559fb6",
+  "cases": 25,
+  "input_pixel_range": [
+    344000,
+    1342720
+  ],
+  "limits": "This screening does not establish maximum-pixel support. Earlier2400x1600 smoke is separately identified, not included in these percentiles. Native CPU timings do not establish browser/phone performance.20ms RSS samples may miss peaks; maxRSS is process-lifetime. Timing excludes gallery-file writes; artifacts cached before setup. No human quality conclusions from machine checks. Fast thin-plant is a retained-subject failure, not omitted from all-completed latency statistics.",
+  "percentile_method": "linear interpolation at(n-1)*p; descriptive sample statistic, not confidence bound",
+  "tuning": "NONE; edge_cleanup:none throughout; numerical budgets/tolerances not altered"
+}

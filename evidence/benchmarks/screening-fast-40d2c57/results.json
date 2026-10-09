@@ -1,0 +1,5083 @@
+{
+  "status": "FAIL",
+  "status_scope": "machine artifact/opaque-pixel checks only",
+  "profile": "fast",
+  "split": "screening",
+  "summaries": {
+    "none": {
+      "attempts": 25,
+      "artifact_pass": 24,
+      "artifact_fail": 1,
+      "warm_complete_median_seconds": 4.342157668,
+      "warm_complete_p95_seconds": 5.175784714399997,
+      "warm_sample_size": 23,
+      "refinement_median_ms": 0,
+      "cold_session_record": "people-hair"
+    }
+  },
+  "percentile_method": "linear interpolation at (n-1)*p; descriptive sample statistic, not a confidence bound",
+  "quality_status": "NOT RUN",
+  "physical_phone_status": "NOT RUN",
+  "records": [
+    {
+      "id": "people-hair",
+      "category": "people",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 9.410427674000001,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 884,
+        "height": 1280,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2959381,
+        "transparent_pixels": 635499,
+        "partially_transparent_pixels": 45602,
+        "opaque_pixels": 450419,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "c2fb68f779061d47fe2bfe78536953710d37f001794394366dbb91664f1adbeb",
+        "recipe_hash": "28dc76b1ff5641ea6fd42d231cf5bc1128f12be07849fc62b47348ec49d8f13f",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "people-hair"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 884,
+          "height": 1280,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2959381,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "fb7624148f067b48c425e654e9f2a76a6b51cc2a91ba023638aad2852964ab0d"
+        },
+        "timings_ms": {
+          "decode": 32.07332699999995,
+          "inference": 8789.942219,
+          "model_setup": 244.3636029999999,
+          "initialize": 4263.460166,
+          "preprocess": 66.69047099999989,
+          "inference_kernel": 4191.984129,
+          "alpha_decode": 12.047765999999683,
+          "encode": 134.1066869999995,
+          "validate": 197.14936600000146
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "9fef12e53412d6b948195680bb758dd7adb054e00b180e3affc48bbfcbb5ff94",
+      "input_sha256": "c2fb68f779061d47fe2bfe78536953710d37f001794394366dbb91664f1adbeb",
+      "output_sha256": "fb7624148f067b48c425e654e9f2a76a6b51cc2a91ba023638aad2852964ab0d",
+      "mask_sha256": "dd862f8e951136505dce77525c132218cbc87add51878e2618f0de3a76703566",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.5811279169999998,
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Portrait_of_a_young_long-haired_woman.jpg",
+        "artist_plain": "Vladimir Pustovit",
+        "canonical_original_height": 4308,
+        "canonical_original_sha1": "d0e281a1130b2dd5d1fc7f55447af3bb2d2e580e",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Portrait_of_a_young_long-haired_woman.jpg",
+        "canonical_original_width": 2976,
+        "copyrighted": "True",
+        "credit_plain": "https://www.flickr.com/photos/pustovit/14452150996/",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_young_long-haired_woman.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 91153160,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1120122914,
+        "revision_timestamp": "2025-11-23T03:54:58Z",
+        "source_snapshot_sha256": "deb1dc69dc70bc44c86069862effb2bcc1dda32f598075dacea7a96ea2824934",
+        "title": "File:Portrait of a young long-haired woman.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "people-hair"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 3.2311420000000908
+        },
+        {
+          "stage": "inference",
+          "at_ms": 36.880359
+        },
+        {
+          "stage": "verify",
+          "at_ms": 48.68694900000003
+        },
+        {
+          "stage": "initialize",
+          "at_ms": 292.38317199999995
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 4555.851504
+        },
+        {
+          "stage": "inference",
+          "at_ms": 4622.565727
+        },
+        {
+          "stage": "encode",
+          "at_ms": 9050.285492
+        },
+        {
+          "stage": "validate",
+          "at_ms": 9184.488142
+        },
+        {
+          "stage": "complete",
+          "at_ms": 9409.197767000001
+        }
+      ],
+      "peak_rss_bytes_sampled": 2539909120,
+      "process_max_rss_kib_lifetime": 2488828,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "first session initialization; cached model files where present"
+    },
+    {
+      "id": "people-covering",
+      "category": "people",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.457440586000001,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 875,
+        "format": "png",
+        "channels": 4,
+        "bytes": 1475208,
+        "transparent_pixels": 717618,
+        "partially_transparent_pixels": 27884,
+        "opaque_pixels": 374498,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "c6953196a2e1b506ef71fea1127d3c02b1a6fe4a4901e1a38ea48dc2bf71aff1",
+        "recipe_hash": "81dfe89c7c453b87f1f73d3a77513106b344ddf47623f3e4fd6adcb93ccd8ef6",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "people-covering"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 875,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 1475208,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "82a9e3fff1149f2e80e1eef08acc9eb3eaaa597e4a6b51bf872aab2b58f9565d"
+        },
+        "timings_ms": {
+          "decode": 31.01116499999989,
+          "inference": 3969.748977000001,
+          "preprocess": 33.75120400000014,
+          "inference_kernel": 3858.319608,
+          "alpha_decode": 53.365952999998626,
+          "encode": 118.36354500000016,
+          "validate": 129.18323299999975
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "34d43f9775d3a8bf69969879eb82f0c23d539bde3ed01c4f1eb3ebe2039d50c6",
+      "input_sha256": "c6953196a2e1b506ef71fea1127d3c02b1a6fe4a4901e1a38ea48dc2bf71aff1",
+      "output_sha256": "82a9e3fff1149f2e80e1eef08acc9eb3eaaa597e4a6b51bf872aab2b58f9565d",
+      "mask_sha256": "6245f037b4571da7b14eea804b31f5a0fd4f7179d2fe0c416b540ca958721962",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2114415680000002,
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hijab_glance_back_Indonesia.jpg",
+        "artist_plain": "Neil\n\n\nCamera location8° 46′ 25.67″ S, 117° 56′ 52.24″ E View this and other nearby images on: OpenStreetMap -8.773796;  117.947845\n",
+        "canonical_original_height": 1418,
+        "canonical_original_sha1": "0d341709edc1eda760e4c87871a039adf6efd348",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hijab_glance_back_Indonesia.jpg",
+        "canonical_original_width": 2075,
+        "copyrighted": "True",
+        "credit_plain": "originally posted to Flickr as Hijab glance back candid",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Hijab_glance_back_Indonesia.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 6056302,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1216794439,
+        "revision_timestamp": "2026-05-19T14:43:52Z",
+        "source_snapshot_sha256": "e664d510f06fb608900b3a0729b7b4535515e8ba03fc2f2b5fdb16bd00942d07",
+        "title": "File:Hijab glance back Indonesia.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "people-covering"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.7891830000007758
+        },
+        {
+          "stage": "inference",
+          "at_ms": 33.9070670000001
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 57.88639300000068
+        },
+        {
+          "stage": "inference",
+          "at_ms": 91.70016100000066
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4202.617209
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4321.071132000001
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4457.298124000001
+        }
+      ],
+      "peak_rss_bytes_sampled": 3922501632,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "people-group",
+      "category": "people",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.329534776999999,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 850,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2287903,
+        "transparent_pixels": 736071,
+        "partially_transparent_pixels": 56370,
+        "opaque_pixels": 295559,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "8bdcdd74c7a97d134b21029c6cbae479aa2bd5b80180ede4beceab95d141bcf2",
+        "recipe_hash": "24cad1a8dbb488db68892a482e8293e3752e1a321beb5dbfd42510e1570ef434",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "people-group"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 850,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2287903,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "1119647448de432aba43260037ecb6db3afbbe35d8f08c2332128fd72bd32d51"
+        },
+        "timings_ms": {
+          "decode": 21.628914999999324,
+          "inference": 3865.0315850000006,
+          "preprocess": 45.70461299999988,
+          "inference_kernel": 3762.7844179999993,
+          "alpha_decode": 40.753992999998445,
+          "encode": 106.83040700000129,
+          "validate": 121.15267500000118
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "06e4c8d2c4b508f2d9e31abdb1d5840f80968cd921540ff96cec7114d610c6e0",
+      "input_sha256": "8bdcdd74c7a97d134b21029c6cbae479aa2bd5b80180ede4beceab95d141bcf2",
+      "output_sha256": "1119647448de432aba43260037ecb6db3afbbe35d8f08c2332128fd72bd32d51",
+      "mask_sha256": "3ea5d6a5d055233037089a7e9964f958be88cb8ee1e7428c7889046ef16fab8a",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.21101361199999882,
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "artist_plain": "Walton LaVonda, U.S. Fish and Wildlife Service",
+        "canonical_original_height": 1848,
+        "canonical_original_sha1": "6b884c562ae07a58974873b6f18cf7529c491416",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "canonical_original_width": 2784,
+        "copyrighted": "False",
+        "credit_plain": "http://www.public-domain-image.com/public-domain-images-pictures-free-stock-photos/people-public-domain-images-pictures/a-group-of-people-stand-birdwatching.jpg",
+        "description_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 24888979,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1192131628,
+        "revision_timestamp": "2026-04-05T17:35:54Z",
+        "source_snapshot_sha256": "1a4841b39abda1b965492142f53a4c045165fc03f63b48f36202d2031691fbfb",
+        "title": "File:A group of people stand birdwatching.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "people-group"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.7675939999990078
+        },
+        {
+          "stage": "inference",
+          "at_ms": 25.87963800000034
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 41.39611799999875
+        },
+        {
+          "stage": "inference",
+          "at_ms": 87.2343779999992
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4091.2506410000005
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4198.137754999998
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4329.296314000001
+        }
+      ],
+      "peak_rss_bytes_sampled": 3930136576,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "people-motion",
+      "category": "people",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.121697994000002,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 960,
+        "height": 618,
+        "format": "png",
+        "channels": 4,
+        "bytes": 500661,
+        "transparent_pixels": 545760,
+        "partially_transparent_pixels": 18628,
+        "opaque_pixels": 28892,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "a6c9ad508330ce6137ebd877cf4ba80a2c7f0603bfa76bb075b28a03065686f6",
+        "recipe_hash": "573c828b36d0981a58682c311ee912dbfb8407f3dfceb771843606ddc8d24d96",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "people-motion"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 960,
+          "height": 618,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 500661,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "4096907b17a3f383738f31140899e4fb360f6f1e75f27c4d3676d304384639a1"
+        },
+        "timings_ms": {
+          "decode": 9.102234000001772,
+          "inference": 3861.8500109999986,
+          "preprocess": 46.242081999997026,
+          "inference_kernel": 3767.907722,
+          "alpha_decode": 41.25734899999952,
+          "encode": 52.2261789999975,
+          "validate": 84.89038100000107
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "b76fec1005569f1a4943b5b696968b0eb338b56fef5b09b09b9cdc63cd5451da",
+      "input_sha256": "a6c9ad508330ce6137ebd877cf4ba80a2c7f0603bfa76bb075b28a03065686f6",
+      "output_sha256": "4096907b17a3f383738f31140899e4fb360f6f1e75f27c4d3676d304384639a1",
+      "mask_sha256": "9860335f5b9d010b20c815a1368a8c7a06bcf0f9270e3950a7621bf86118e4a5",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.11427661699999954,
+      "source": {
+        "artifact_rendition": "official published 960px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg/960px-Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg",
+        "artist_plain": "Yogendra Joshi",
+        "canonical_original_height": 717,
+        "canonical_original_sha1": "de7cc7d5b424f7d582796d54f1ec45386715b17b",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg",
+        "canonical_original_width": 1114,
+        "copyrighted": "True",
+        "credit_plain": "Zoom... (Explored 1st July # 10)",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Zoom..._(Explored_1st_July_%5E_10)_-_Flickr_-_Yogendra174.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 92291702,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1123770478,
+        "revision_timestamp": "2025-12-01T05:25:08Z",
+        "source_snapshot_sha256": "af8dd5fa6fe441acbad2b1e02e0c6ac290c3630e7bbe72730012cb9582f5ab15",
+        "title": "File:Zoom... (Explored 1st July ^ 10) - Flickr - Yogendra174.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "people-motion"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.7833669999999984
+        },
+        {
+          "stage": "inference",
+          "at_ms": 10.277084000001196
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 16.590864000001602
+        },
+        {
+          "stage": "inference",
+          "at_ms": 62.83482300000105
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3981.5245529999993
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4033.833321000002
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4121.597274
+        }
+      ],
+      "peak_rss_bytes_sampled": 3930529792,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "people-portrait",
+      "category": "people",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.342157668,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 853,
+        "format": "png",
+        "channels": 4,
+        "bytes": 990286,
+        "transparent_pixels": 607905,
+        "partially_transparent_pixels": 47061,
+        "opaque_pixels": 436874,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "2e1ada599cd0ddbeb8eb942a668e032a920de16ed98f7deb53d9bbd5604833ed",
+        "recipe_hash": "684905b98106adb8706c55267889de65ae3549ead29551887ac4e9c7e62ecff7",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "people-portrait"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 853,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 990286,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "620afa73b09ecf03f81ee31d0493d3ecb5128c599a5f5f0061461ff2ace91928"
+        },
+        "timings_ms": {
+          "decode": 17.87007099999755,
+          "inference": 3837.3054969999976,
+          "preprocess": 50.73620399999709,
+          "inference_kernel": 3735.6857850000015,
+          "alpha_decode": 37.40615500000058,
+          "encode": 181.64841800000067,
+          "validate": 139.21261400000003
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "074bc3e10d5e98d30396ed025a58e211e6d21594c13346aa4e155e15e23d32cc",
+      "input_sha256": "2e1ada599cd0ddbeb8eb942a668e032a920de16ed98f7deb53d9bbd5604833ed",
+      "output_sha256": "620afa73b09ecf03f81ee31d0493d3ecb5128c599a5f5f0061461ff2ace91928",
+      "mask_sha256": "b8704c63bebae7a8d0dd0e417e66f21c675866a3a12487416f4cbd1d9d014072",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2730668179999993,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Bearded_man_smoking_pipe-3013924.jpg/1280px-Bearded_man_smoking_pipe-3013924.jpg",
+        "artist_plain": "ThuyHaBich",
+        "canonical_original_height": 3667,
+        "canonical_original_sha1": "8cdf785a3e2d5479e1e437ede6f5a931453bea70",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Bearded_man_smoking_pipe-3013924.jpg",
+        "canonical_original_width": 5500,
+        "copyrighted": "True",
+        "credit_plain": "https://pixabay.com/en/portrait-old-people-man-scarf-3013924/ archive copy at the Wayback Machine",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Bearded_man_smoking_pipe-3013924.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 68598168,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "personality",
+        "revision_id": 896949370,
+        "revision_timestamp": "2024-07-11T08:49:48Z",
+        "source_snapshot_sha256": "4eadc0887c79fba575535182c8dec791563c9a9d0d07b1a816acc0be3bcf0aea",
+        "title": "File:Bearded man smoking pipe-3013924.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "people-portrait"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.4277389999988372
+        },
+        {
+          "stage": "inference",
+          "at_ms": 20.112504000000627
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 33.32790600000226
+        },
+        {
+          "stage": "inference",
+          "at_ms": 84.08292799999981
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4012.991844
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4194.693320000002
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4342.043332000001
+        }
+      ],
+      "peak_rss_bytes_sampled": 3930529792,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "product-hole",
+      "category": "products",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 5.869097384999997,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 850,
+        "format": "png",
+        "channels": 4,
+        "bytes": 747814,
+        "transparent_pixels": 845698,
+        "partially_transparent_pixels": 35525,
+        "opaque_pixels": 206777,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "e2cee6af17d72293f03023fddb6642a4368c3a4c065a5abf9f57a252287dceb8",
+        "recipe_hash": "009fed8c8ae491cf59e6a8ca834857547bbbde8de007da49f7ea881292a6e46b",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "product-hole"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 850,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 747814,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "e1822d49794fde95b96967571f1631c0fd11384725c2645282663280846fbe17"
+        },
+        "timings_ms": {
+          "decode": 44.290030000000115,
+          "inference": 5395.9492859999955,
+          "preprocess": 67.90848599999663,
+          "inference_kernel": 5256.292912000001,
+          "alpha_decode": 57.229723000004014,
+          "encode": 124.02760999999737,
+          "validate": 142.448384000003
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "923c7a2b2d900af5f41dac406b817c58e516efe14e16b25de7cfb5d4de5c7d0f",
+      "input_sha256": "e2cee6af17d72293f03023fddb6642a4368c3a4c065a5abf9f57a252287dceb8",
+      "output_sha256": "e1822d49794fde95b96967571f1631c0fd11384725c2645282663280846fbe17",
+      "mask_sha256": "3afc096d662fe2d3ac8f57b1ecb5b434850b8b423503c3114edd6c1c41074ca5",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2583567140000014,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Background_Isolated_Garden_Scissors_Edited_2020_%2849913697766%29.jpg/1280px-Background_Isolated_Garden_Scissors_Edited_2020_%2849913697766%29.jpg",
+        "artist_plain": "Tool Dude8mm",
+        "canonical_original_height": 2758,
+        "canonical_original_sha1": "f946dac1b91c1253964ccc5ddb28fc4d96e65b30",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Background_Isolated_Garden_Scissors_Edited_2020_%2849913697766%29.jpg",
+        "canonical_original_width": 4152,
+        "copyrighted": "True",
+        "credit_plain": "Background Isolated Garden Scissors Edited 2020",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Background_Isolated_Garden_Scissors_Edited_2020_(49913697766).jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 192003083,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1214289080,
+        "revision_timestamp": "2026-05-15T08:39:21Z",
+        "source_snapshot_sha256": "a1b5f223ecb2992b7a6eb47280fd50938cfa33a18abc9ea2beb3b4fcf290bf20",
+        "title": "File:Background Isolated Garden Scissors Edited 2020 (49913697766).jpg",
+        "usage_terms": "Creative Commons Attribution 2.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "product-hole"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.856062999999267
+        },
+        {
+          "stage": "inference",
+          "at_ms": 46.24272099999871
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 60.465250000001106
+        },
+        {
+          "stage": "inference",
+          "at_ms": 128.38055800000075
+        },
+        {
+          "stage": "encode",
+          "at_ms": 5596.810807999998
+        },
+        {
+          "stage": "validate",
+          "at_ms": 5720.926877000002
+        },
+        {
+          "stage": "complete",
+          "at_ms": 5868.9805430000015
+        }
+      ],
+      "peak_rss_bytes_sampled": 3932233728,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "product-white",
+      "category": "products",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.579716747000006,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 1049,
+        "format": "png",
+        "channels": 4,
+        "bytes": 1123130,
+        "transparent_pixels": 811332,
+        "partially_transparent_pixels": 34807,
+        "opaque_pixels": 496581,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "abfb998bf3947ad5b8562a524f5d141fead62371e6cd582ca2da455da70417de",
+        "recipe_hash": "ae411c94859a6c85441a0b8adc73b07f32e3c7889d86be313707d9cf2745c6a6",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "product-white"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 1049,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 1123130,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "6988ed6800f805d4aa90bce2c95dde9a2675ac21b56bcfb178529112baeff5f6"
+        },
+        "timings_ms": {
+          "decode": 52.721825000000536,
+          "inference": 3927.007896000003,
+          "preprocess": 56.83410500000173,
+          "inference_kernel": 3810.606765000004,
+          "alpha_decode": 42.176464999996824,
+          "encode": 240.5127760000032,
+          "validate": 151.55966600000102
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "fa8daf57378708c9db08b19741d9bf9e6255e978f55db398441ada8b61cf1e3d",
+      "input_sha256": "abfb998bf3947ad5b8562a524f5d141fead62371e6cd582ca2da455da70417de",
+      "output_sha256": "6988ed6800f805d4aa90bce2c95dde9a2675ac21b56bcfb178529112baeff5f6",
+      "mask_sha256": "162ff506a5abebfa735a70d3d3fb9c3bd15ea24c36299b536d7cdc6a095f7663",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2602785229999936,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/White_porcelain_gl%C3%B6gg_cup_1.jpg/1280px-White_porcelain_gl%C3%B6gg_cup_1.jpg",
+        "artist_plain": "W.carter",
+        "canonical_original_height": 3327,
+        "canonical_original_sha1": "d0d80d3754aaf23d1a4132098aea8ec53f16d96f",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/White_porcelain_gl%C3%B6gg_cup_1.jpg",
+        "canonical_original_width": 4060,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:White_porcelain_gl%C3%B6gg_cup_1.jpg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "page_id": 159189126,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1156632560,
+        "revision_timestamp": "2026-01-30T22:45:45Z",
+        "source_snapshot_sha256": "424faf7b49d823790e85c127f649be14c19c931b79124bab4156b734108a84a9",
+        "title": "File:White porcelain glögg cup 1.jpg",
+        "usage_terms": "Creative Commons Attribution 4.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "product-white"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.8668390000020736
+        },
+        {
+          "stage": "inference",
+          "at_ms": 54.70649100000446
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 71.91263600000093
+        },
+        {
+          "stage": "inference",
+          "at_ms": 128.75072100000398
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4180.957066000003
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4421.535453000004
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4579.6147770000025
+        }
+      ],
+      "peak_rss_bytes_sampled": 3929612288,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "product-dark",
+      "category": "products",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.820118944000002,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 962,
+        "format": "png",
+        "channels": 4,
+        "bytes": 1083482,
+        "transparent_pixels": 741689,
+        "partially_transparent_pixels": 30327,
+        "opaque_pixels": 459344,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "01096d7374b7595ff632d0219914425a25c1bf064871d42854bde35cd977f45d",
+        "recipe_hash": "763893be66ff44d9915833a06368a2e812476bc6b8d4cbd4431be52d222afa5d",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "product-dark"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 962,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 1083482,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "be5a68f72b43582b4f786333c354a525a23db1463794bfdfb2e008746912eb5a"
+        },
+        "timings_ms": {
+          "decode": 20.401196000006166,
+          "inference": 4371.756070000003,
+          "preprocess": 54.89204400000017,
+          "inference_kernel": 4251.446765000001,
+          "alpha_decode": 49.3572920000006,
+          "encode": 136.74805800000468,
+          "validate": 122.27746299999853
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "9ffb6db8d875fce8b1dc550f35953d51a10dcd89a6173a1d255bf106b528f912",
+      "input_sha256": "01096d7374b7595ff632d0219914425a25c1bf064871d42854bde35cd977f45d",
+      "output_sha256": "be5a68f72b43582b4f786333c354a525a23db1463794bfdfb2e008746912eb5a",
+      "mask_sha256": "e3955a563dc7a5f14a77495c1e9642dc03d15cfb3b979499b8a83b15b5d36a63",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2082377009999982,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Shoe-Blucher-Black_with_rubber_sole.jpg/1280px-Shoe-Blucher-Black_with_rubber_sole.jpg",
+        "artist_plain": "Wikipedia-ce",
+        "canonical_original_height": 2254,
+        "canonical_original_sha1": "9e2eece173d60afe2fcc5e403594c44db37a2438",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Shoe-Blucher-Black_with_rubber_sole.jpg",
+        "canonical_original_width": 3000,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Shoe-Blucher-Black_with_rubber_sole.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 20166929,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1180408885,
+        "revision_timestamp": "2026-03-13T15:18:44Z",
+        "source_snapshot_sha256": "0fff783f8bdadf51bd5e23211f7cfeace4b0981d1f5227939dcaa9542df88d5b",
+        "title": "File:Shoe-Blucher-Black with rubber sole.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "product-dark"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.7135710000002291
+        },
+        {
+          "stage": "inference",
+          "at_ms": 22.057990000001155
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 37.947871999997005
+        },
+        {
+          "stage": "inference",
+          "at_ms": 92.85557999999583
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4555.981631000002
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4692.771108000001
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4820.0347859999965
+        }
+      ],
+      "peak_rss_bytes_sampled": 3929817088,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "product-shadow",
+      "category": "products",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 5.009892397999996,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 853,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2802532,
+        "transparent_pixels": 874919,
+        "partially_transparent_pixels": 161206,
+        "opaque_pixels": 55715,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "cac404308bc23c6740a7031abeaf398107591864af30349c478d5b6042525b8a",
+        "recipe_hash": "5228f395df65e2d668fb894d531878ebf4db2495b2435e2ceab1e10080bf49f1",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "product-shadow"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 853,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2802532,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "d4965cc50bc257048e4ea3f73d6dc8e1144126b25eb610507743800b2dfcbf52"
+        },
+        "timings_ms": {
+          "decode": 24.585437000001548,
+          "inference": 4515.536464999997,
+          "preprocess": 49.141475999997056,
+          "inference_kernel": 4373.141763,
+          "alpha_decode": 79.90363599999546,
+          "encode": 136.61377999999968,
+          "validate": 133.04447900000378
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "fbce984eff828ac68d920eea27ae41f95683efefe15d18795587867ff06908ac",
+      "input_sha256": "cac404308bc23c6740a7031abeaf398107591864af30349c478d5b6042525b8a",
+      "output_sha256": "d4965cc50bc257048e4ea3f73d6dc8e1144126b25eb610507743800b2dfcbf52",
+      "mask_sha256": "212f03fb6b3a9f54c9813341edc971a6cec848008b193a156c5304741ac9c929",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.24660119400000258,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg/1280px-Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg",
+        "artist_plain": "pcs34560",
+        "canonical_original_height": 3648,
+        "canonical_original_sha1": "7d61e524cca7e1038e7007d4979f38bc07702d30",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg",
+        "canonical_original_width": 5472,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 96070700,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1074493580,
+        "revision_timestamp": "2025-08-18T21:26:51Z",
+        "source_snapshot_sha256": "b6ac2debaa398c03cecfb953f51a64227d469400a4dac5871f09c510dd649a5f",
+        "title": "File:Wire chair with shadow - Pcs34560 IMG6674.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "product-shadow"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.7814109999962966
+        },
+        {
+          "stage": "inference",
+          "at_ms": 26.41382199999498
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 39.62772199999745
+        },
+        {
+          "stage": "inference",
+          "at_ms": 88.81795799999963
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4725.306872999994
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4861.988523
+        },
+        {
+          "stage": "complete",
+          "at_ms": 5009.315612999999
+        }
+      ],
+      "peak_rss_bytes_sampled": 3932491776,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "product-tools",
+      "category": "products",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.480810545000001,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 921,
+        "format": "png",
+        "channels": 4,
+        "bytes": 3469599,
+        "transparent_pixels": 661814,
+        "partially_transparent_pixels": 142272,
+        "opaque_pixels": 374794,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "239a0b8237bcb990c9dd33d5e5a4d0ba529493859321f7c72340a25b74185a76",
+        "recipe_hash": "262f1b365d12c81786e2346ed6092e1c56dec94ac5b045d1cd32b26b8d95d509",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "product-tools"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 921,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 3469599,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "4a09d35526c89a286cf97b4f38e9847a121d0e275f4a7c88ee67c02882ceaa9e"
+        },
+        "timings_ms": {
+          "decode": 44.17225600000529,
+          "inference": 3978.322454000001,
+          "preprocess": 50.24083200000314,
+          "inference_kernel": 3871.2538950000016,
+          "alpha_decode": 38.83594599999924,
+          "encode": 135.96247800000128,
+          "validate": 138.83255800000188
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "2a06fbd111fc46f387912e4adddd023edc1f7e9b15ace1cb9b4ae46e997c4ef0",
+      "input_sha256": "239a0b8237bcb990c9dd33d5e5a4d0ba529493859321f7c72340a25b74185a76",
+      "output_sha256": "4a09d35526c89a286cf97b4f38e9847a121d0e275f4a7c88ee67c02882ceaa9e",
+      "mask_sha256": "07baa224d402b897c645ed5b841ed25afb8cb5c151e143028c6a786297a8618f",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.35111620800000676,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Hand_tools.jpg/1280px-Hand_tools.jpg",
+        "artist_plain": "M338",
+        "canonical_original_height": 2526,
+        "canonical_original_sha1": "955e8daac8934a74d83ebc5a6b117612e8b89c2a",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Hand_tools.jpg",
+        "canonical_original_width": 3510,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Hand_tools.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 9792066,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1114554761,
+        "revision_timestamp": "2025-11-13T07:47:33Z",
+        "source_snapshot_sha256": "757e9f772935b89a1dcb3e63704039296071f304c61709efe2dea286ef3a9786",
+        "title": "File:Hand tools.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "product-tools"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.1739620000007562
+        },
+        {
+          "stage": "inference",
+          "at_ms": 46.58019900000363
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 64.33690200000274
+        },
+        {
+          "stage": "inference",
+          "at_ms": 114.58843100000377
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4188.626553000002
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4324.660223000006
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4480.0462620000035
+        }
+      ],
+      "peak_rss_bytes_sampled": 3950960640,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "animal-fur",
+      "category": "animals",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 5.1942171939999975,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1200,
+        "height": 977,
+        "format": "png",
+        "channels": 4,
+        "bytes": 1988882,
+        "transparent_pixels": 769192,
+        "partially_transparent_pixels": 59739,
+        "opaque_pixels": 343469,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "a6fb8781aba578c1a8a7f561f30bc2c8bbb27dd3d94c489354ea30febc167434",
+        "recipe_hash": "01fb49e073d995936bdac29d158af4d37afd5670a0eb82dcdfd4361994d0dc79",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "animal-fur"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1200,
+          "height": 977,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 1988882,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "c6d2ad38eb144b2feac61b775e17efa61f60d81f17f7c780d034409dffcfc964"
+        },
+        "timings_ms": {
+          "decode": 43.94876800000202,
+          "inference": 4751.921880000002,
+          "preprocess": 63.49739899999986,
+          "inference_kernel": 4608.554400000001,
+          "alpha_decode": 52.115140999994765,
+          "encode": 119.93386700000701,
+          "validate": 118.14364000000205
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "4e17a2fdd3bbdb3e36404a6045ca6ba808124a4ba2808a09b975ee2c70c5b938",
+      "input_sha256": "a6fb8781aba578c1a8a7f561f30bc2c8bbb27dd3d94c489354ea30febc167434",
+      "output_sha256": "c6d2ad38eb144b2feac61b775e17efa61f60d81f17f7c780d034409dffcfc964",
+      "mask_sha256": "26d9e05f665b618fd00cbebeb4e2df33cc357789ca526a67eec3e0ee8c2beb04",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2216116600000023,
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Red_tabby_DLH_cat_in_snow.jpg",
+        "artist_plain": "COOLPIX P530",
+        "canonical_original_height": 977,
+        "canonical_original_sha1": "06ee9ac891278848dc0cabbf21f9e9f396e7a382",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Red_tabby_DLH_cat_in_snow.jpg",
+        "canonical_original_width": 1200,
+        "copyrighted": "True",
+        "credit_plain": "https://pxhere.com/en/photo/1373954",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Red_tabby_DLH_cat_in_snow.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 99507653,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1167194873,
+        "revision_timestamp": "2026-02-16T21:20:38Z",
+        "source_snapshot_sha256": "783daaa066c728da5cb4acef2843a5c63049171ccb77714a439ce01a61f3b36e",
+        "title": "File:Red tabby DLH cat in snow.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "animal-fur"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.3451599999971222
+        },
+        {
+          "stage": "inference",
+          "at_ms": 46.36188199999742
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 73.95578399999795
+        },
+        {
+          "stage": "inference",
+          "at_ms": 137.4644100000005
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4947.974593999999
+        },
+        {
+          "stage": "validate",
+          "at_ms": 5067.963238000004
+        },
+        {
+          "stage": "complete",
+          "at_ms": 5194.123204000003
+        }
+      ],
+      "peak_rss_bytes_sampled": 3934846976,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "animal-whisker",
+      "category": "animals",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.059789859000004,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 960,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2727916,
+        "transparent_pixels": 501014,
+        "partially_transparent_pixels": 57848,
+        "opaque_pixels": 669938,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "eb2f780aa586467369670da557d666865fea244d1ba86f835aa7160cfc7a472d",
+        "recipe_hash": "2dafc01b5c01b9031caa16372c47bd30d8f316c3d1ede72bd431a673539bb001",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "animal-whisker"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 960,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2727916,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "6d06d064d9b2e2531e80f41534e5fccd55058e4fde19f424cb29cbd87b286634"
+        },
+        "timings_ms": {
+          "decode": 21.607997999999498,
+          "inference": 3609.3309420000005,
+          "preprocess": 45.63601000000199,
+          "inference_kernel": 3510.3012210000015,
+          "alpha_decode": 38.64034299999912,
+          "encode": 118.88894699999946,
+          "validate": 133.5315380000029
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "c7f21adb1c76b87e9c0c4a5cb2cef71ff7629a76d408ab2157aa86644c9ad3b6",
+      "input_sha256": "eb2f780aa586467369670da557d666865fea244d1ba86f835aa7160cfc7a472d",
+      "output_sha256": "6d06d064d9b2e2531e80f41534e5fccd55058e4fde19f424cb29cbd87b286634",
+      "mask_sha256": "2f1098e99d4696ff7f5602270b925c1d634a019453d3568f216637988444d83f",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.28756300199999535,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg/1280px-Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg",
+        "artist_plain": "Chhabi Gupta",
+        "canonical_original_height": 960,
+        "canonical_original_sha1": "e5f7b86f2470ddbbfb3c47dc6a86af4765e62180",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg",
+        "canonical_original_width": 1280,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 41379620,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 862399678,
+        "revision_timestamp": "2024-03-21T20:12:45Z",
+        "source_snapshot_sha256": "161bd813c23655510e10b23af636ff5f89e48159ed69fe4a7619d502b18d1330",
+        "title": "File:Closeup of a cat with green eyes' face looking at the viewer.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "animal-whisker"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.7637089999989257
+        },
+        {
+          "stage": "inference",
+          "at_ms": 23.944023000003654
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 38.47474399999919
+        },
+        {
+          "stage": "inference",
+          "at_ms": 84.1381360000014
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3795.9907500000045
+        },
+        {
+          "stage": "validate",
+          "at_ms": 3914.9383890000026
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4059.1006200000047
+        }
+      ],
+      "peak_rss_bytes_sampled": 3940958208,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "animal-feather",
+      "category": "animals",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.213218505999998,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 902,
+        "format": "png",
+        "channels": 4,
+        "bytes": 3490171,
+        "transparent_pixels": 0,
+        "partially_transparent_pixels": 185,
+        "opaque_pixels": 1154375,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "bcef00a300c4e6f428cadaea9fa361243b08d17e66607543140a7abff3ef9b73",
+        "recipe_hash": "f5dda4fce9e6e673d67d3fa50553be078bfb72c52ec38d33eccf5b8df57df976",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "animal-feather"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 902,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 3490171,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "74f946e05b2c78a45f8bf555734c9cf4bcad4f6b916d4426ab37ff0c44049d86"
+        },
+        "timings_ms": {
+          "decode": 41.046376999998756,
+          "inference": 3722.3853180000006,
+          "preprocess": 46.01096099999995,
+          "inference_kernel": 3623.4050360000037,
+          "alpha_decode": 39.71296199999051,
+          "encode": 145.42161699999997,
+          "validate": 127.43402800000331
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "e167376ae841d4f8c9a54913d8816147a2360c87cb988b5674c20ab459fe4037",
+      "input_sha256": "bcef00a300c4e6f428cadaea9fa361243b08d17e66607543140a7abff3ef9b73",
+      "output_sha256": "74f946e05b2c78a45f8bf555734c9cf4bcad4f6b916d4426ab37ff0c44049d86",
+      "mask_sha256": "64ea1292f87fd39fd36af6bbd2636830a8580ab06b5446f25b064a6ac735809d",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.42112019000000145,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Peacock_%2811%29_%288315376663%29.jpg/1280px-Peacock_%2811%29_%288315376663%29.jpg",
+        "artist_plain": "Bernard Spragg. NZ from Christchurch, New Zealand",
+        "canonical_original_height": 2115,
+        "canonical_original_sha1": "1203a34bb38e4f97258c4b6aabdf120db11f8757",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Peacock_%2811%29_%288315376663%29.jpg",
+        "canonical_original_width": 3000,
+        "copyrighted": "True",
+        "credit_plain": "Peacock (11)",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Peacock_(11)_(8315376663).jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 103436994,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1217335276,
+        "revision_timestamp": "2026-05-20T14:48:16Z",
+        "source_snapshot_sha256": "e6d0dc66780a929adbe58c764ae3eb499f9c37a127b1070993bd8625ed565d3f",
+        "title": "File:Peacock (11) (8315376663).jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "animal-feather"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.4597209999992629
+        },
+        {
+          "stage": "inference",
+          "at_ms": 44.02915800000483
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 57.083049000000756
+        },
+        {
+          "stage": "inference",
+          "at_ms": 103.11139299999923
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3919.6216500000082
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4065.0909900000042
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4212.985322
+        }
+      ],
+      "peak_rss_bytes_sampled": 3941265408,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "animal-dog",
+      "category": "animals",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.2101682,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 500,
+        "height": 688,
+        "format": "png",
+        "channels": 4,
+        "bytes": 382301,
+        "transparent_pixels": 278406,
+        "partially_transparent_pixels": 12364,
+        "opaque_pixels": 53230,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "632ddaaeba4d8de981a53b99df2a2a61fdcae79b55aa31051d89efaa52e1280c",
+        "recipe_hash": "e477e776483de298affb56342d32b85c09d1d8d61a88ee3cd36767a837c0e731",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "animal-dog"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 500,
+          "height": 688,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 382301,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "d028a0a9eae872076b7d5e3b777742625020c74c03a65445653c616f552996af"
+        },
+        "timings_ms": {
+          "decode": 16.21588800000609,
+          "inference": 3993.9776500000007,
+          "preprocess": 42.036582000000635,
+          "inference_kernel": 3908.5733009999967,
+          "alpha_decode": 39.49583200000052,
+          "encode": 88.25188799999887,
+          "validate": 52.321404000002076
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "e97ab3310ec44e79e17d2757a39bb88507ab80e2c94d8bb954a1176125a06468",
+      "input_sha256": "632ddaaeba4d8de981a53b99df2a2a61fdcae79b55aa31051d89efaa52e1280c",
+      "output_sha256": "d028a0a9eae872076b7d5e3b777742625020c74c03a65445653c616f552996af",
+      "mask_sha256": "f550c5e93be076ebe365abed0d9c2233e58431380f5fa738927837f2ef2de231",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.08450084100000095,
+      "source": {
+        "artifact_rendition": "official published 500px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg/500px-Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg",
+        "artist_plain": "\nCollins, Tudor Washington, 1898-1970, photographer",
+        "canonical_original_height": 1275,
+        "canonical_original_sha1": "a6cdfda144006e688449496eda511a93a6824868",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg",
+        "canonical_original_width": 926,
+        "copyrighted": "True",
+        "credit_plain": "API data\nCatalogue record\n\nPhoto",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_dog_seated_on_the_grass_(AM_84888-1).jpg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "page_id": 65543199,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1139384356,
+        "revision_timestamp": "2025-12-31T03:28:37Z",
+        "source_snapshot_sha256": "bd75e5e11ebf1d049b83fcd1849106b6045769b5964bcd1491a67095b69dc85c",
+        "title": "File:Portrait of a dog seated on the grass (AM 84888-1).jpg",
+        "usage_terms": "Creative Commons Attribution 4.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "animal-dog"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.8557270000019344
+        },
+        {
+          "stage": "inference",
+          "at_ms": 17.252854999998817
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 20.748645999992732
+        },
+        {
+          "stage": "inference",
+          "at_ms": 62.88944800000172
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4066.9969989999954
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4155.292910000004
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4210.086968000003
+        }
+      ],
+      "peak_rss_bytes_sampled": 3943755776,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "animal-bird",
+      "category": "animals",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.187398342999994,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 853,
+        "format": "png",
+        "channels": 4,
+        "bytes": 1504929,
+        "transparent_pixels": 974911,
+        "partially_transparent_pixels": 21281,
+        "opaque_pixels": 95648,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "1b13825c30df470a9f426779438296ca51d7f777f9b5c2b263ad30c515cf7385",
+        "recipe_hash": "a59e38dceed843c852c40619bd5286638cce3a26b81808138edd90b7610b8d4f",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "animal-bird"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 853,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 1504929,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "ca3ee7da953f9f090a73fe17c5101c910bc8a27ff62c1979db8c6123504c0132"
+        },
+        "timings_ms": {
+          "decode": 33.89828799999668,
+          "inference": 3719.811692000003,
+          "preprocess": 29.81742900000245,
+          "inference_kernel": 3639.3177140000043,
+          "alpha_decode": 37.51287800000864,
+          "encode": 117.98943899999722,
+          "validate": 151.54189900000347
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "8c30283fbc8ef1000e7f520f11de56aa05ca5d63b8d5f0ce2f761ffe789bf74f",
+      "input_sha256": "1b13825c30df470a9f426779438296ca51d7f777f9b5c2b263ad30c515cf7385",
+      "output_sha256": "ca3ee7da953f9f090a73fe17c5101c910bc8a27ff62c1979db8c6123504c0132",
+      "mask_sha256": "2c703de0fe2c2cbeedf32d93acdc49d07fd722c94080a5d2469434aa30907a13",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.22238758400001096,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Common_kingfisher_on_a_branch_opening_its_wings.jpg/1280px-Common_kingfisher_on_a_branch_opening_its_wings.jpg",
+        "artist_plain": "Alexis LOURS",
+        "canonical_original_height": 2200,
+        "canonical_original_sha1": "b4d86c000f743028ee4244f566a6cbd8b2efb454",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Common_kingfisher_on_a_branch_opening_its_wings.jpg",
+        "canonical_original_width": 3300,
+        "copyrighted": "True",
+        "credit_plain": "Own work / [1]",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Common_kingfisher_on_a_branch_opening_its_wings.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 112511565,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1047814024,
+        "revision_timestamp": "2025-06-22T23:36:40Z",
+        "source_snapshot_sha256": "7567335178d7b70d378d710ff60041ee10712461542fc16371ec7a1581128f77",
+        "title": "File:Common kingfisher on a branch opening its wings.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "animal-bird"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.7227439999987837
+        },
+        {
+          "stage": "inference",
+          "at_ms": 35.7170860000042
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 48.72946200000297
+        },
+        {
+          "stage": "inference",
+          "at_ms": 78.47965300000214
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3909.9377349999995
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4028.0175949999975
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4187.348576000004
+        }
+      ],
+      "peak_rss_bytes_sampled": 3932348416,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "thin-spokes",
+      "category": "thin_structures",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.129198676,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 853,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2292744,
+        "transparent_pixels": 418729,
+        "partially_transparent_pixels": 157184,
+        "opaque_pixels": 515927,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "28731b61c50aa83a2c50cde2e2677bb36ab2025311fe2062addcd25d866afae1",
+        "recipe_hash": "3a97dd74eba9c8b669355ebe26ea9d34465576ca4c894fa24b499c90307b2755",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "thin-spokes"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 853,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2292744,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "cfcef362b5e469038ff88a6f436aab78fa0f57bc6ded502723fb3d247165277d"
+        },
+        "timings_ms": {
+          "decode": 18.719708999997238,
+          "inference": 3726.2448700000095,
+          "preprocess": 25.57827399999951,
+          "inference_kernel": 3674.6665990000038,
+          "alpha_decode": 13.07422100000258,
+          "encode": 97.76553099999728,
+          "validate": 120.43354099999124
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "da9f5bb00869b9b45c892c09c403bbe82520781feca5e409a879ba8a85a3ae57",
+      "input_sha256": "28731b61c50aa83a2c50cde2e2677bb36ab2025311fe2062addcd25d866afae1",
+      "output_sha256": "cfcef362b5e469038ff88a6f436aab78fa0f57bc6ded502723fb3d247165277d",
+      "mask_sha256": "4f41ba12e05decfad3b99f6846fe91119d42729eb0178173fdd53ffbd9fd862b",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.26049748499999986,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Wheel_and_gears_of_bicycle_%28Unsplash%29.jpg/1280px-Wheel_and_gears_of_bicycle_%28Unsplash%29.jpg",
+        "artist_plain": "Wayne Bishop wayneb250",
+        "canonical_original_height": 3456,
+        "canonical_original_sha1": "2646217d3a60f87082e8b2b57a1fa67422ffe4fa",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Wheel_and_gears_of_bicycle_%28Unsplash%29.jpg",
+        "canonical_original_width": 5184,
+        "copyrighted": "True",
+        "credit_plain": "https://unsplash.com/photos/7YUW7fvIYoQ\narchive copy at the Wayback Machine\n\nImage at the Wayback Machine",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Wheel_and_gears_of_bicycle_(Unsplash).jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 61737020,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1129044605,
+        "revision_timestamp": "2025-12-11T02:52:13Z",
+        "source_snapshot_sha256": "0042e5cf542ca9504a0d8cbdfc84fad7fe116a6c0913d9bf0483e58a85dae819",
+        "title": "File:Wheel and gears of bicycle (Unsplash).jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "thin-spokes"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.6727810000011232
+        },
+        {
+          "stage": "inference",
+          "at_ms": 20.86311900000146
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 33.654999999998836
+        },
+        {
+          "stage": "inference",
+          "at_ms": 59.25749299999734
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3901.9193470000027
+        },
+        {
+          "stage": "validate",
+          "at_ms": 3999.7622589999955
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4129.112384000007
+        }
+      ],
+      "peak_rss_bytes_sampled": 3942338560,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "thin-mesh",
+      "category": "thin_structures",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.574365218000006,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 961,
+        "format": "png",
+        "channels": 4,
+        "bytes": 3423887,
+        "transparent_pixels": 905024,
+        "partially_transparent_pixels": 291314,
+        "opaque_pixels": 33742,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "efeb28f8d3d0e51cb506b4f3a2b4edd998d7269dd522e85c798b83e5a0e82570",
+        "recipe_hash": "e755157f610616f9b9ad488a67f1af77ca848bf3ca1ccc188690825d84a35632",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "thin-mesh"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 961,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 3423887,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "edb4681a1dbfcc68deb5d07c7629bf91435fd0ebda59b3097753ee7acf626353"
+        },
+        "timings_ms": {
+          "decode": 28.411481000002823,
+          "inference": 4075.3492289999995,
+          "preprocess": 14.923820000010892,
+          "inference_kernel": 4035.57012199999,
+          "alpha_decode": 9.014389000003575,
+          "encode": 138.51991099999577,
+          "validate": 140.5374720000109
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "51d12b94d7261c8268b889f0311920cd646c235299e45bdfa7acc067acb04505",
+      "input_sha256": "efeb28f8d3d0e51cb506b4f3a2b4edd998d7269dd522e85c798b83e5a0e82570",
+      "output_sha256": "edb4681a1dbfcc68deb5d07c7629bf91435fd0ebda59b3097753ee7acf626353",
+      "mask_sha256": "1249d2087c53c450ec0178374e39a15b4d398d87743ed455423dae0b4c19671b",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.28791202299999713,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg/1280px-Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg",
+        "artist_plain": "Stiller Beobachter from Ansbach, Germany",
+        "canonical_original_height": 3616,
+        "canonical_original_sha1": "c842245a232c9e6dcb5dfaec95085da3f3c89857",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg",
+        "canonical_original_width": 4816,
+        "copyrighted": "True",
+        "credit_plain": "rusty wire-mesh fence",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 75500203,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1117118238,
+        "revision_timestamp": "2025-11-17T02:24:41Z",
+        "source_snapshot_sha256": "4bff447fa8d6ed4930130434a2fd4e8b222aa69cd2acba6dd57f52e851da1c0c",
+        "title": "File:Rusty wire-mesh fence - Flickr - Stiller Beobachter.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "thin-mesh"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.9095050000032643
+        },
+        {
+          "stage": "inference",
+          "at_ms": 31.133134000003338
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 46.904352000012295
+        },
+        {
+          "stage": "inference",
+          "at_ms": 61.81792700001097
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4278.700769000003
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4417.305956000011
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4573.8107530000125
+        }
+      ],
+      "peak_rss_bytes_sampled": 3946237952,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "thin-plant",
+      "category": "thin_structures",
+      "repeat": 1,
+      "variant": "none",
+      "status": "FAIL",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.683505202,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "FAIL",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 960,
+        "format": "png",
+        "channels": 4,
+        "bytes": 3880530,
+        "transparent_pixels": 1228800,
+        "partially_transparent_pixels": 0,
+        "opaque_pixels": 0,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+        "recipe_hash": "f8ef01aadecdac89b0c5df700b4df68e9063e42cfa51477539ef2748b09d0d5b",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "thin-plant"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 960,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 3880530,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "d709639338ea58d875405f487ee1574f5f402a2b9d6ccec0e2eab1d2f7149a38"
+        },
+        "timings_ms": {
+          "decode": 28.385146000000532,
+          "inference": 4180.595895999999,
+          "preprocess": 21.374557999995886,
+          "inference_kernel": 4132.278363999998,
+          "alpha_decode": 10.268869999999879,
+          "encode": 142.40050099999644,
+          "validate": 137.3626280000026
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "43791ad1a714c41e4e804f022d17447ff4fba1d5b2925e7ffdbccc8ad6b624b2",
+      "input_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+      "output_sha256": "d709639338ea58d875405f487ee1574f5f402a2b9d6ccec0e2eab1d2f7149a38",
+      "mask_sha256": "7169a32d8d38c45779e79b57e95a9157c1323d9b3ab3af6adac78cb864a4a24c",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2500076379999955,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg/1280px-Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "artist_plain": "Forest and Kim Starr",
+        "canonical_original_height": 2736,
+        "canonical_original_sha1": "0579478773bd09dcf225da4c3af7a6c05691c747",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "canonical_original_width": 3648,
+        "copyrighted": "True",
+        "credit_plain": "starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_(24746746030).jpg",
+        "license": "CC BY 3.0 us",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+        "page_id": 71860039,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1190650229,
+        "revision_timestamp": "2026-04-03T02:22:29Z",
+        "source_snapshot_sha256": "0ceff0a5e7fa29fffeabcf4bcc01d88fe594a654abb995babdc176854eb7ce74",
+        "title": "File:Starr-100623-7771-Nephrolepis sp-potted plants in shade house-Pukalani Plant Company Pulehu-Maui (24746746030).jpg",
+        "usage_terms": "Creative Commons Attribution 3.0 us",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "thin-plant"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.9533769999979995
+        },
+        {
+          "stage": "inference",
+          "at_ms": 31.142221000001882
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 47.681471999996575
+        },
+        {
+          "stage": "inference",
+          "at_ms": 69.05579600000056
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4380.733698999989
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4523.186046999996
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4683.320082999999
+        }
+      ],
+      "peak_rss_bytes_sampled": 3955183616,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "thin-cables",
+      "category": "thin_structures",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.166614384000001,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 924,
+        "format": "png",
+        "channels": 4,
+        "bytes": 3411640,
+        "transparent_pixels": 1094438,
+        "partially_transparent_pixels": 17177,
+        "opaque_pixels": 71105,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "63c2205961585e4a40e28f8d4fec3f931e57aedc243e7d851e9b9016c76cfa57",
+        "recipe_hash": "36a19698a6a4f1a46214953d40733906333d77407472b7a2befdb512ec33a2c5",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "thin-cables"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 924,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 3411640,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "6aeeb5dc34406032faeb4917cc04751cd6eb6171f976ff6ad3d30c8283ccc1af"
+        },
+        "timings_ms": {
+          "decode": 42.740434000006644,
+          "inference": 3670.2118590000027,
+          "preprocess": 14.54008099999919,
+          "inference_kernel": 3631.0098330000037,
+          "alpha_decode": 9.675006999998004,
+          "encode": 140.72436500000185,
+          "validate": 134.83764399999927
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "3645a4806c71f784b258fa9bfdd40463a73d7966b18e951ce3aa7c6c1c3f7a50",
+      "input_sha256": "63c2205961585e4a40e28f8d4fec3f931e57aedc243e7d851e9b9016c76cfa57",
+      "output_sha256": "6aeeb5dc34406032faeb4917cc04751cd6eb6171f976ff6ad3d30c8283ccc1af",
+      "mask_sha256": "5de0b7e8df80b48402c9d8e07e748e1d7c8d271d848bdf5046bde19f3d07c2ff",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.2635163339999999,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Cables_on_%27Independence_Road%27%2C_Oban%2C_July_2020.jpg/1280px-Cables_on_%27Independence_Road%27%2C_Oban%2C_July_2020.jpg",
+        "artist_plain": "Blood Red Sandman",
+        "canonical_original_height": 2298,
+        "canonical_original_sha1": "5f71c8f7639fdbf8ee677c77378cff2af9ab606e",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Cables_on_%27Independence_Road%27%2C_Oban%2C_July_2020.jpg",
+        "canonical_original_width": 3185,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Cables_on_%27Independence_Road%27,_Oban,_July_2020.jpg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "page_id": 92118107,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 845120604,
+        "revision_timestamp": "2024-01-25T06:23:07Z",
+        "source_snapshot_sha256": "a75aa3243e781ef3baf2a24c0e89fe771b6b8c8f74b3e132aad3d96959cb9571",
+        "title": "File:Cables on 'Independence Road', Oban, July 2020.jpg",
+        "usage_terms": "Creative Commons Attribution 4.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "thin-cables"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.1275409999943804
+        },
+        {
+          "stage": "inference",
+          "at_ms": 45.32808400000795
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 60.23110900000029
+        },
+        {
+          "stage": "inference",
+          "at_ms": 74.76372000000265
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3869.8497650000063
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4010.6385620000074
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4166.544810000007
+        }
+      ],
+      "peak_rss_bytes_sampled": 3945156608,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "thin-branches",
+      "category": "thin_structures",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.201806224999993,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 960,
+        "height": 1280,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2442467,
+        "transparent_pixels": 1228640,
+        "partially_transparent_pixels": 160,
+        "opaque_pixels": 0,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "d565a96534d150f1c8071a4ce7bacfccf3cd96e6bc9701bdff8b89475b4cdc54",
+        "recipe_hash": "a0e7036403351ef6b37b24e9372d7670c6f225cff8b2198fecd9b074134decad",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "thin-branches"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 960,
+          "height": 1280,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2442467,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "b6df0f4d978596812f9c90ca735c9d864934237b9bdea2fe7e4b3d1d52101c87"
+        },
+        "timings_ms": {
+          "decode": 38.18636699998751,
+          "inference": 3671.8399289999943,
+          "preprocess": 14.4201219999959,
+          "inference_kernel": 3627.4290360000014,
+          "alpha_decode": 9.973012999995262,
+          "encode": 156.34435200000007,
+          "validate": 159.02317899999616
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "37d72e4e0dcecd12b59bfbedfd47ecab2c56adac37c40845979e1d9708f02009",
+      "input_sha256": "d565a96534d150f1c8071a4ce7bacfccf3cd96e6bc9701bdff8b89475b4cdc54",
+      "output_sha256": "b6df0f4d978596812f9c90ca735c9d864934237b9bdea2fe7e4b3d1d52101c87",
+      "mask_sha256": "f8b147928ddb317627fe1aa8eeea2f7e765ebada23c79697b8371ad91f5bfc64",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.24782318400000805,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Bare_tree_in_Kent%2C_WA_%282025%29_-_0010.jpg/1280px-Bare_tree_in_Kent%2C_WA_%282025%29_-_0010.jpg",
+        "artist_plain": "Roc0ast3r",
+        "canonical_original_height": 4000,
+        "canonical_original_sha1": "61a54ba16d856ea44b643bf595e40b7c5d8283be",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Bare_tree_in_Kent%2C_WA_%282025%29_-_0010.jpg",
+        "canonical_original_width": 3000,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Bare_tree_in_Kent,_WA_(2025)_-_0010.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 159267078,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1080959779,
+        "revision_timestamp": "2025-09-04T22:41:23Z",
+        "source_snapshot_sha256": "fcae20fa5c307931bd45c61e1473f6aa5150149923706a738a4bb2372997a885",
+        "title": "File:Bare tree in Kent, WA (2025) - 0010.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "thin-branches"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.7297359999938635
+        },
+        {
+          "stage": "inference",
+          "at_ms": 40.21623599999293
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 60.10406499999226
+        },
+        {
+          "stage": "inference",
+          "at_ms": 74.53124699999171
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3873.8120930000005
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4030.2146079999948
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4201.701371999996
+        }
+      ],
+      "peak_rss_bytes_sampled": 3942391808,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "material-glass",
+      "category": "difficult_materials",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.405113377999995,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 960,
+        "height": 720,
+        "format": "png",
+        "channels": 4,
+        "bytes": 1783807,
+        "transparent_pixels": 456614,
+        "partially_transparent_pixels": 32689,
+        "opaque_pixels": 201897,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "7d2d3a31c0fee184990ceb3f685c717e379737dc86e27be68891c620a2ba5829",
+        "recipe_hash": "60d81deeef0f2b6299e2a0e3bc47491ccc2808e7e3f91a87c89cbdab0e4d062c",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "material-glass"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 960,
+          "height": 720,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 1783807,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "ff7eae8093f3f576d21413c2f25ce13814430904b2462cc62323063c1a7b5f1d"
+        },
+        "timings_ms": {
+          "decode": 16.53957700000319,
+          "inference": 4105.988368999999,
+          "preprocess": 10.701904000001377,
+          "inference_kernel": 4072.7746310000075,
+          "alpha_decode": 15.100637999988976,
+          "encode": 80.42846899999131,
+          "validate": 85.3027640000073
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "bd2ba8ce88d341e6167df13473dded36a47edea11650b5809009d19f39e221bb",
+      "input_sha256": "7d2d3a31c0fee184990ceb3f685c717e379737dc86e27be68891c620a2ba5829",
+      "output_sha256": "ff7eae8093f3f576d21413c2f25ce13814430904b2462cc62323063c1a7b5f1d",
+      "mask_sha256": "1aa18ec4603d257800b2f4fcafb9c9f50ce7a585a7c4a70f47ba79c893684803",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.16333055700000843,
+      "source": {
+        "artifact_rendition": "official published 960px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Port_wine.jpg/960px-Port_wine.jpg",
+        "artist_plain": "Jon Sullivan",
+        "canonical_original_height": 768,
+        "canonical_original_sha1": "08b2d7635937b36a57287105c66992020d8dfba5",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Port_wine.jpg",
+        "canonical_original_width": 1024,
+        "copyrighted": "False",
+        "credit_plain": "pdphoto.org\n\nhttp://pdphoto.org/PictureDetail.php?oldpg=2479",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Port_wine.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 25990,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1053304222,
+        "revision_timestamp": "2025-07-06T22:33:57Z",
+        "source_snapshot_sha256": "e3dfbfacc8ba9b426ad37d4373cb259a2cc06e65a1657ae8284e384aaf51eaef",
+        "title": "File:Port wine.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "material-glass"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.395420999993803
+        },
+        {
+          "stage": "inference",
+          "at_ms": 18.447795000000042
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 25.718619999999646
+        },
+        {
+          "stage": "inference",
+          "at_ms": 36.434001000001444
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4231.2920650000015
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4311.755680999995
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4405.035466999994
+        }
+      ],
+      "peak_rss_bytes_sampled": 3923517440,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "material-translucent",
+      "category": "difficult_materials",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.26721686500001,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 960,
+        "height": 1280,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2400649,
+        "transparent_pixels": 645228,
+        "partially_transparent_pixels": 35699,
+        "opaque_pixels": 547873,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "23e83192c90a07a8cd206d0c091de9c7d5569b72d950de2e6ef7c109c9691490",
+        "recipe_hash": "d9b226df3404ec8d8bda8fb8249a84723ee2f1b375db9f2753bd9001f6521509",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "material-translucent"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 960,
+          "height": 1280,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2400649,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "ede4402a9c4124ec98697f8d0342b97f32e346fa565ae6c8fab3cfdc537d262a"
+        },
+        "timings_ms": {
+          "decode": 22.32023100000515,
+          "inference": 3774.5602370000124,
+          "preprocess": 20.950587999992422,
+          "inference_kernel": 3728.4016589999956,
+          "alpha_decode": 9.751608999999007,
+          "encode": 163.7887999999948,
+          "validate": 130.95419000000402
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "6b18ad47f9d31fbff558cde152e9889ece30217f86e4cd261a230645596c8424",
+      "input_sha256": "23e83192c90a07a8cd206d0c091de9c7d5569b72d950de2e6ef7c109c9691490",
+      "output_sha256": "ede4402a9c4124ec98697f8d0342b97f32e346fa565ae6c8fab3cfdc537d262a",
+      "mask_sha256": "e422629958ab332dc4428a2787dd1cf377883afd5c9b67a8cb259dd84a4fca7b",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.26152563000000373,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg/1280px-Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg",
+        "artist_plain": "Fructibus",
+        "canonical_original_height": 4608,
+        "canonical_original_sha1": "06af528ede819e010c807c4c749bb53938efa55c",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg",
+        "canonical_original_width": 3456,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 62643947,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 866864091,
+        "revision_timestamp": "2024-04-08T19:51:02Z",
+        "source_snapshot_sha256": "f7c8cfb46687cda300a526413e1f470a375291824a3f1523e66f4fdc9556a78a",
+        "title": "File:Computer screws in a zipper storage bag - 6 x 9 cm - on Aqua Deep plastic.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "material-translucent"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.7057460000069113
+        },
+        {
+          "stage": "inference",
+          "at_ms": 24.014720999999554
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 39.39184300000488
+        },
+        {
+          "stage": "inference",
+          "at_ms": 60.344862000012654
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3961.285791000002
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4125.114846000011
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4267.129072000011
+        }
+      ],
+      "peak_rss_bytes_sampled": 3943837696,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "material-reflective",
+      "category": "difficult_materials",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.393714489000005,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 751,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2112111,
+        "transparent_pixels": 572951,
+        "partially_transparent_pixels": 29763,
+        "opaque_pixels": 358566,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "9c3778ae8efc11d81de1e75bf79faaa8656968bc5715a95371c77213f3be3d23",
+        "recipe_hash": "9ff936ed22e5fe0e4a4d8a1388a3c9423ed4c1c0776d2cb451bd360141b1eb2e",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "material-reflective"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 751,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2112111,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "c9b65d978e9a5a8dfabe788c936c4884d422763fa0a078b4840776f39eb4b4fa"
+        },
+        "timings_ms": {
+          "decode": 40.0860820000089,
+          "inference": 4002.2308439999906,
+          "preprocess": 13.052785000007134,
+          "inference_kernel": 3964.7468200000003,
+          "alpha_decode": 9.795083999997587,
+          "encode": 99.12057800000184,
+          "validate": 111.05978099998902
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "1bdfb29bfba9f28a958be3e00fd5e033900103cad4bf87b1ba95e7b69b561446",
+      "input_sha256": "9c3778ae8efc11d81de1e75bf79faaa8656968bc5715a95371c77213f3be3d23",
+      "output_sha256": "c9b65d978e9a5a8dfabe788c936c4884d422763fa0a078b4840776f39eb4b4fa",
+      "mask_sha256": "1a436c631c962b732ec15295e30040862ea1db04d626b7b3bab65a170fec0b7c",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.26054264099999275,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Copper_kettle_flickr.jpg/1280px-Copper_kettle_flickr.jpg",
+        "artist_plain": "https://www.flickr.com/photos/chefranden/",
+        "canonical_original_height": 1606,
+        "canonical_original_sha1": "dd11a4f9d4ea426687878da421b7f697f7b70de3",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Copper_kettle_flickr.jpg",
+        "canonical_original_width": 2736,
+        "copyrighted": "True",
+        "credit_plain": "https://www.flickr.com/photos/chefranden/2680252465/",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Copper_kettle_flickr.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 5713108,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1071620746,
+        "revision_timestamp": "2025-08-14T00:52:55Z",
+        "source_snapshot_sha256": "1b1df6502ac13f0f80db376402d928b5e797477d04d7b8ff3f486a1882f03359",
+        "title": "File:Copper kettle flickr.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "material-reflective"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.546409999995376
+        },
+        {
+          "stage": "inference",
+          "at_ms": 42.1944710000098
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 56.67199299999629
+        },
+        {
+          "stage": "inference",
+          "at_ms": 69.73830599999928
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4174.365111000006
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4273.54303500001
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4393.626382000002
+        }
+      ],
+      "peak_rss_bytes_sampled": 3936440320,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "material-clear",
+      "category": "difficult_materials",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.960272603000005,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 960,
+        "format": "png",
+        "channels": 4,
+        "bytes": 2124113,
+        "transparent_pixels": 606472,
+        "partially_transparent_pixels": 62775,
+        "opaque_pixels": 559553,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "6f64cabda8bf55416762e49da3e6966fc5ce53e8d59b0892fc5daea66ba31af0",
+        "recipe_hash": "4111dc347ebe910ce69f5d352cffca8be1af87a60f7e3e8e6f093a49005f7267",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "material-clear"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 960,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 2124113,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "4b49578db1c8f3cbc772fa70cb550b99e8077e404ac9b2abaaa1db0f50a01dfd"
+        },
+        "timings_ms": {
+          "decode": 46.11652499999036,
+          "inference": 4454.204534000004,
+          "preprocess": 21.808978000000934,
+          "inference_kernel": 4406.0763330000045,
+          "alpha_decode": 9.685438999993494,
+          "encode": 154.35507800000778,
+          "validate": 130.19362599999295
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "4d7145265dba51fb3f63fcf59f4e9c35c41555f71f61650138ec303dfc31a4af",
+      "input_sha256": "6f64cabda8bf55416762e49da3e6966fc5ce53e8d59b0892fc5daea66ba31af0",
+      "output_sha256": "4b49578db1c8f3cbc772fa70cb550b99e8077e404ac9b2abaaa1db0f50a01dfd",
+      "mask_sha256": "686be3bd86e2de1749834688319db340ef5857e76f4ad87baaedacff8011cb36",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.27227418799999575,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Beer_bottles_2018_G1.jpg/1280px-Beer_bottles_2018_G1.jpg",
+        "artist_plain": "George Chernilevsky",
+        "canonical_original_height": 3600,
+        "canonical_original_sha1": "d7625e1b517abb6cb86c722647eb603f802dd166",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Beer_bottles_2018_G1.jpg",
+        "canonical_original_width": 4800,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Beer_bottles_2018_G1.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 68171881,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 959202040,
+        "revision_timestamp": "2024-11-19T16:52:25Z",
+        "source_snapshot_sha256": "018cbbcf2dc6f6cef08b83835e5fe355e0597da81f861fbf815ca4a218c0655d",
+        "title": "File:Beer bottles 2018 G1.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "material-clear"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 0.6963899999973364
+        },
+        {
+          "stage": "inference",
+          "at_ms": 47.973635000002105
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 64.48878200000036
+        },
+        {
+          "stage": "inference",
+          "at_ms": 86.30278199999884
+        },
+        {
+          "stage": "encode",
+          "at_ms": 4666.412509000002
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4820.827279000005
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4960.181524
+        }
+      ],
+      "peak_rss_bytes_sampled": 3944157184,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    },
+    {
+      "id": "material-complex",
+      "category": "difficult_materials",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 4.169095103,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 954,
+        "height": 1280,
+        "format": "png",
+        "channels": 4,
+        "bytes": 3089465,
+        "transparent_pixels": 415187,
+        "partially_transparent_pixels": 40762,
+        "opaque_pixels": 765171,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "ac4919b5900b3c5fb27e0f82d0d7a379c6c0b568e1a45da9e5ea1e7ad74a6316",
+        "recipe_hash": "1f05b2167443e303a2f0dab1a819416ed9651b43a0e7c3dd6706ad3ecd8472fe",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "material-complex"
+          },
+          "engine": "birefnet-lite-512-fp16",
+          "quality": "fast",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-lite-512-fp16",
+          "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+          "model_hash": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+          "precision": "fp16 weights / float32 I/O",
+          "inference_dimensions": [
+            512,
+            512
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 954,
+          "height": 1280,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 3089465,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false
+          },
+          "hash": "bf2a06f4cb61f4ec33638870a1715d5f4283d73d485fb2741b9f4b6e03f3f271"
+        },
+        "timings_ms": {
+          "decode": 24.530142999996315,
+          "inference": 3680.035447000002,
+          "preprocess": 18.992050999993808,
+          "inference_kernel": 3633.2367830000003,
+          "alpha_decode": 10.117830999995931,
+          "encode": 152.40423499999451,
+          "validate": 134.47883900000306
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "d10f1c3a0bcd89d94b0d5b189f7023cf051c37305aa286f9e1d3c0684a5a4577",
+      "input_sha256": "ac4919b5900b3c5fb27e0f82d0d7a379c6c0b568e1a45da9e5ea1e7ad74a6316",
+      "output_sha256": "bf2a06f4cb61f4ec33638870a1715d5f4283d73d485fb2741b9f4b6e03f3f271",
+      "mask_sha256": "b054cd9fc97c638fb488087963c7ec5f84b62bb163c7054a0df4987b77b14b95",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.3300398859999987,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Lace_doily%2C_Belgium%2C_1714-1715_-_Museum_of_Anthropology%2C_University_of_British_Columbia_-_DSC09267.jpg/1280px-Lace_doily%2C_Belgium%2C_1714-1715_-_Museum_of_Anthropology%2C_University_of_British_Columbia_-_DSC09267.jpg",
+        "artist_plain": "Daderot",
+        "canonical_original_height": 4665,
+        "canonical_original_sha1": "87748cf6a60d0bac98f9fb166b59c78baac9f2f3",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Lace_doily%2C_Belgium%2C_1714-1715_-_Museum_of_Anthropology%2C_University_of_British_Columbia_-_DSC09267.jpg",
+        "canonical_original_width": 3475,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Lace_doily,_Belgium,_1714-1715_-_Museum_of_Anthropology,_University_of_British_Columbia_-_DSC09267.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 51299061,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1182631254,
+        "revision_timestamp": "2026-03-17T15:28:44Z",
+        "source_snapshot_sha256": "c88d186844127623254845e653c63d4761e1cb8a6bfeff980eaf6936cae847a1",
+        "title": "File:Lace doily, Belgium, 1714-1715 - Museum of Anthropology, University of British Columbia - DSC09267.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "material-complex"
+        },
+        "engine": "birefnet-lite-512-fp16",
+        "quality": "fast",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 1.2290849999990314
+        },
+        {
+          "stage": "inference",
+          "at_ms": 26.944596999994246
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 44.47906700000749
+        },
+        {
+          "stage": "inference",
+          "at_ms": 63.48139800000354
+        },
+        {
+          "stage": "encode",
+          "at_ms": 3866.4499519999954
+        },
+        {
+          "stage": "validate",
+          "at_ms": 4018.903403999997
+        },
+        {
+          "stage": "complete",
+          "at_ms": 4168.505151000005
+        }
+      ],
+      "peak_rss_bytes_sampled": 3943321600,
+      "process_max_rss_kib_lifetime": 3863068,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    }
+  ]
+}

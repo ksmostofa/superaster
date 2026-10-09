@@ -48,7 +48,7 @@ An initial `patch --dry-run` on the multi-commit GLib/libvips patch series faile
 
 ## External-copy compiled-kernel proof
 
-[scripts/source-verification.mjs](../scripts/source-verification.mjs) verifies retained source bodies and copies the unmodified npm WASM and wrappers into a new runtime directory. It loads the copied Node wrapper with `locateFile` pointing at that directory, confirms that the actual requested `vips.wasm` is the copied path, omits plugins, then exercises the integrated `BrowserKernel` and common pipeline.
+The packaged [scripts/source-verification.mjs](../scripts/source-verification.mjs) requires the repository checkout, its pinned development dependencies and the separately retained archives. It is provided for inspection and reproduction from that checkout, not as a standalone installed-package command. The verifier checks retained source bodies and copies the unmodified npm WASM and wrappers into a new runtime directory. It loads the copied Node wrapper with `locateFile` pointing at that directory, confirms that the actual requested `vips.wasm` is the copied path, omits plugins, then exercises the integrated `BrowserKernel` and common pipeline.
 
 Actual run: `node --import tsx scripts/source-verification.mjs --app-root /home/sadid/Downloads/Superaster/superaster --archives /tmp/superaster-release-source-audit/source-archives --output /home/sadid/Downloads/Superaster/superaster/.cache/runtime-source-replacement-09e1f05`.
 

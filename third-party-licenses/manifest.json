@@ -440,6 +440,20 @@
       "sha256": "6c9f0d975b41afaa34d22f55bb8986ce69e5cb7ad327cb2b28820cd425edf5ee",
       "bytes": 867,
       "source_url": "https://raw.githubusercontent.com/zlib-ng/zlib-ng/2.3.3/LICENSE.md"
+    },
+    {
+      "path": "wasm/README.ijg",
+      "bytes": 12715,
+      "sha256": "f4a85f8677ca4e41b185c0a9f7c31a30ddb9ce43c561483ee92ef12db37c2a10",
+      "component": "IJG JPEG software in mozjpeg",
+      "version": "0826579",
+      "source": "https://raw.githubusercontent.com/mozilla/mozjpeg/0826579/README.ijg"
+    },
+    {
+      "path": "models/BEN2-LICENSE",
+      "bytes": 1066,
+      "sha256": "a4843132cbd56c50f20ae008739d85b7563d38905fd692a337af52ad588c581a",
+      "source_url": "https://huggingface.co/PramaLLC/BEN2/raw/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/LICENSE"
     }
   ],
   "failures": []
