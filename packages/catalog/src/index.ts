@@ -1,6 +1,7 @@
 import { Ajv } from 'ajv';
 import { Type } from '@sinclair/typebox';
 import reviewedData from '../data/presets.json' with { type: 'json' };
+import sourceObservations from '../data/source-observations.json' with {type:'json'};
 import { OperationSchema, parseRecipe, SuperasterError, operationDefinitions, type ImageInfo, type Recipe, type RuleOutcome } from '../../contract/src/index.js';
 import { sha256 } from '../../core/src/index.js';
 import type { CatalogRule, Preset, Source } from './types.js';
@@ -25,7 +26,7 @@ export const PresetSchema = Type.Object({
   aliases: Type.Array(Type.String({ minLength: 1 })), sources: Type.Array(sourceSchema, { minItems: 1 }), rules: Type.Array(ruleSchema),
   edit_policy: Type.Object({ allowed: Type.Array(Type.String()), forbidden: Type.Array(Type.String()), unspecified: Type.Array(Type.String()), notes: Type.String() }, exact),
   exceptions: Type.Array(Type.String()), user_confirmations: Type.Array(Type.String()),
-  freshness: Type.Object({ status: Type.Union([Type.Literal('verified'), Type.Literal('needs_review'), Type.Literal('unknown')]), verified_at: Type.String(), source_change: Type.Optional(Type.String()) }, exact),
+  freshness: Type.Object({ status: Type.Union([Type.Literal('verified'), Type.Literal('needs_review'), Type.Literal('unknown')]), verified_at: Type.String(), checked_at: Type.Optional(Type.String()), source_change: Type.Optional(Type.String()) }, exact),
   recipe_operations: Type.Optional(Type.Array(OperationSchema)), license: Type.Literal('CC0-1.0')
 }, { ...exact, $id: 'https://superaster.local/schema/preset-1.0.json' });
 const ajv = new Ajv({ strict: true, allErrors: true });
@@ -83,41 +84,107 @@ export function parsePresets(value: unknown): Preset[] {
   return freeze(value);
 }
 
-const presets = parsePresets(reviewedData);
 const queryKey = (value: string) => value.trim().toLocaleLowerCase('en').replace(/\s+/g, ' ');
-function versions(id: string): Preset[] { return presets.filter(preset => preset.id === id).sort((a, b) => b.version.localeCompare(a.version, 'en', { numeric: true })); }
+const compareVersions = (a: Preset, b: Preset) => b.version.localeCompare(a.version, 'en', { numeric: true });
+export interface CatalogNotice { kind: 'source-freshness' | 'newer-version'; message: string; status?: Preset['freshness']['status']; newer_version?: string }
+export interface PresetResolution { preset: Preset; notices: CatalogNotice[] }
+export interface CatalogOptions { monitor_results?: unknown; max_age_ms?: number; clock?: () => number }
 
-/** Latest reviewed records for chooser defaults, or all immutable pins for offline history. */
-export function listPresets(options: { history?: boolean } = {}): Preset[] {
-  if (options.history) return [...presets];
-  const ids = [...new Set(presets.map(preset => preset.id))];
-  return ids.flatMap(id => { const reviewed = versions(id).find(preset => preset.freshness.status === 'verified'); return reviewed ? [reviewed] : []; });
-}
+const monitorSchema = Type.Array(Type.Object({
+  preset_id: Type.String({ minLength: 1, maxLength: 256 }), preset_version: Type.String({ minLength: 1, maxLength: 256 }), checked_at: Type.String({ pattern: '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$' }),
+  status: Type.Union(['verified', 'needs_review', 'unknown'].map(value => Type.Literal(value))),
+  checks: Type.Array(Type.Object({ url: Type.String({ pattern: '^https://', maxLength: 2048 }), status: Type.Union(['unchanged', 'changed', 'unknown'].map(value => Type.Literal(value))), sha256: Type.Optional(Type.String({ pattern: '^[a-f0-9]{64}$' })), reason: Type.Optional(Type.String({ minLength: 1, maxLength: 4096 })) }, exact), { minItems: 1, maxItems: 64 })
+}, exact), { maxItems: 10000 });
+const checkMonitors = ajv.compile<SourceMonitorResult[]>(monitorSchema);
+const monitorStatus = (checks: SourceCheck[]): SourceMonitorResult['status'] => checks.some(check => check.status === 'changed') ? 'needs_review' : checks.some(check => check.status === 'unknown') ? 'unknown' : 'verified';
 
-export function resolvePreset(query: string, version?: string): Preset {
-  if (typeof query !== 'string' || !query.trim()) throw new SuperasterError('INVALID_INPUT', 'Destination query must be a nonempty string');
-  const exact = versions(query);
-  if (exact.length) {
-    const found = version ? exact.find(preset => preset.version === version) : exact.find(preset => preset.freshness.status === 'verified');
-    if (found) return found;
-    throw new SuperasterError('PRESET_NOT_FOUND', `No reviewed ${query} version ${version ?? 'latest'}`, { available_versions: exact.map(preset => preset.version) });
+/** Separate source observations from immutable rules. A monitoring response cannot publish new rules. */
+export function createCatalog(value: unknown = reviewedData, options: CatalogOptions = {}) {
+  const published = parsePresets(value), maxAge = options.max_age_ms ?? 24 * 60 * 60 * 1000, clock = options.clock ?? Date.now;
+  if (!Number.isFinite(maxAge) || maxAge < 1) invalid('source-monitor maximum age must be positive');
+  const observations = new Map<string, { checked_at: string; time: number; check: SourceCheck }>();
+  if (options.monitor_results !== undefined) {
+    if (!checkMonitors(options.monitor_results)) invalid(ajv.errorsText(checkMonitors.errors));
+    for (const result of options.monitor_results) {
+      const origin = published.find(preset => preset.id === result.preset_id && preset.version === result.preset_version), time = Date.parse(result.checked_at);
+      if (!origin || !Number.isFinite(time) || result.status !== monitorStatus(result.checks)) invalid('source-monitor result has an unknown pin, invalid date or inconsistent status');
+      const seen = new Set<string>();
+      for (const check of result.checks) {
+        const source = origin.sources.find(source => source.url === check.url);
+        if (!source || seen.has(check.url)) invalid('source-monitor result has an uncited or repeated source');
+        seen.add(check.url);
+        if (check.status !== 'unknown' && (!check.sha256 || !source.sha256 || (check.status === 'unchanged') !== (check.sha256 === source.sha256))) invalid('source-monitor comparison differs from its reviewed baseline');
+        if (check.status === 'unknown' && !check.reason) invalid('unknown source-monitor check must explain its failure');
+        const previous = observations.get(check.url);
+        const observationKey = (check: SourceCheck) => check.status === 'unknown' ? `unknown:${check.sha256 ?? ''}:${check.reason ?? ''}` : `observed:${check.sha256}`;
+        if (previous?.time === time && observationKey(previous.check) !== observationKey(check)) invalid('conflicting source observations have the same timestamp');
+        if (!previous || time > previous.time) observations.set(check.url, { checked_at: result.checked_at, time, check: freeze({ ...check }) });
+      }
+    }
   }
-  const key = queryKey(query);
-  const available = version ? listPresets({ history: true }).filter(preset => preset.version === version) : listPresets();
-  const candidates = available.filter(preset => queryKey(preset.purpose) === key || preset.aliases.some(alias => queryKey(alias) === key));
-  if (candidates.length > 1) throw new SuperasterError('AMBIGUOUS_PRESET', 'Choose the purpose, submitting authority or upload channel before editing', {
-    candidates: candidates.map(preset => ({ id: preset.id, version: preset.version, purpose: preset.purpose, authority: preset.authority, channel: preset.channel }))
-  });
-  const selected = candidates[0];
-  if (!selected || (version && selected.version !== version)) throw new SuperasterError('PRESET_NOT_FOUND', `No reviewed destination matches ${query}`, { query, version });
-  return selected;
+  function versions(id: string) { return published.filter(preset => preset.id === id).sort(compareVersions); }
+  function reviewedDefaults() {
+    return [...new Set(published.map(preset => preset.id))].flatMap(id => { const reviewed = versions(id).find(preset => preset.freshness.status === 'verified'); return reviewed ? [reviewed] : []; });
+  }
+  function view(preset: Preset): Preset {
+    if (options.monitor_results === undefined) return preset;
+    const now = clock();
+    if (!Number.isFinite(now)) invalid('source-monitor clock must return a finite timestamp');
+    const checks: SourceCheck[] = preset.sources.map(source => {
+      const observation = observations.get(source.url);
+      if (!observation) return { url: source.url, status: 'unknown', reason: 'No source observation in this monitoring snapshot' };
+      if (observation.time > now || now - observation.time > maxAge) return { url: source.url, status: 'unknown', reason: observation.time > now ? 'Source observation is in the future; check the device clock' : 'Source observation is older than the monitoring maximum age' };
+      if (observation.check.status === 'unknown') return observation.check;
+      if (!source.sha256) return { url: source.url, status: 'unknown', reason: 'No reviewed raw-content baseline; maintainer verification required' };
+      return { url: source.url, status: observation.check.sha256 === source.sha256 ? 'unchanged' : 'changed', sha256: observation.check.sha256 };
+    });
+    const monitored = monitorStatus(checks);
+    const status = preset.freshness.status === 'verified' ? monitored : preset.freshness.status === 'needs_review' || monitored === 'needs_review' ? 'needs_review' : 'unknown';
+    const times = preset.sources.flatMap(source => { const observation = observations.get(source.url); return observation ? [observation] : []; }).sort((a, b) => b.time - a.time);
+    const reasons = checks.filter(check => check.status !== 'unchanged').map(check => `${check.url}: ${check.reason ?? 'raw source content changed; maintainer review required'}`);
+    return freeze({ ...preset, freshness: { ...preset.freshness, status, checked_at: times[0]?.checked_at, source_change: reasons.length ? reasons.join('; ') : preset.freshness.source_change } });
+  }
+  function listPresets(options: { history?: boolean } = {}): Preset[] {
+    if (options.history) return published.map(view);
+    return reviewedDefaults().map(view);
+  }
+  function select(query: string, version?: string): Preset {
+    if (typeof query !== 'string' || !query.trim()) throw new SuperasterError('INVALID_INPUT', 'Destination query must be a nonempty string');
+    const exact = versions(query);
+    if (exact.length) {
+      const found = version ? exact.find(preset => preset.version === version) : exact.find(preset => preset.freshness.status === 'verified');
+      if (found) return found;
+      throw new SuperasterError('PRESET_NOT_FOUND', `No reviewed ${query} version ${version ?? 'latest'}`, { available_versions: exact.map(preset => preset.version) });
+    }
+    const key = queryKey(query), available = version ? published.filter(preset => preset.version === version) : reviewedDefaults();
+    const candidates = available.filter(preset => queryKey(preset.purpose) === key || preset.aliases.some(alias => queryKey(alias) === key));
+    if (candidates.length > 1) throw new SuperasterError('AMBIGUOUS_PRESET', 'Choose the purpose, submitting authority or upload channel before editing', { candidates: candidates.map(preset => ({ id: preset.id, version: preset.version, purpose: preset.purpose, authority: preset.authority, channel: preset.channel })) });
+    const selected = candidates[0];
+    if (!selected) throw new SuperasterError('PRESET_NOT_FOUND', `No reviewed destination matches ${query}`, { query, version });
+    return selected;
+  }
+  function resolvePresetStatus(query: string, version?: string): PresetResolution {
+    const publishedPreset = select(query, version), preset = view(publishedPreset), notices: CatalogNotice[] = [];
+    if (preset.freshness.status !== 'verified') notices.push({ kind: 'source-freshness', status: preset.freshness.status, message: preset.freshness.source_change ?? `Source freshness is ${preset.freshness.status}; review authority guidance before editing` });
+    const newer = versions(preset.id).find(candidate => candidate.freshness.status === 'verified' && compareVersions(candidate, publishedPreset) < 0);
+    if (newer) notices.push({ kind: 'newer-version', newer_version: newer.version, message: `A newer reviewed version ${newer.version} is available. The selected ${preset.version} pin is preserved; choose the new version explicitly to change rules.` });
+    return freeze({ preset, notices });
+  }
+  function presetHistory(id: string): { versions: Preset[]; latest_verified?: string } {
+    const history = versions(id);
+    if (!history.length) throw new SuperasterError('PRESET_NOT_FOUND', `Unknown destination ${id}`);
+    return { versions: history.map(view), latest_verified: history.find(preset => preset.freshness.status === 'verified')?.version };
+  }
+  return Object.freeze({ publishedRecords: () => [...published], listPresets, resolvePreset: (query: string, version?: string) => resolvePresetStatus(query, version).preset, resolvePresetStatus, presetHistory });
 }
 
-export function presetHistory(id: string): { versions: Preset[]; latest_verified?: string } {
-  const history = versions(id);
-  if (!history.length) throw new SuperasterError('PRESET_NOT_FOUND', `Unknown destination ${id}`);
-  return { versions: history, latest_verified: history.find(preset => preset.freshness.status === 'verified')?.version };
-}
+export type CatalogRegistry = ReturnType<typeof createCatalog>;
+const catalog = createCatalog(reviewedData,{monitor_results:sourceObservations});
+/** Chooser defaults use the latest maintainer-reviewed rules; freshness is a separate observation. */
+export const listPresets = catalog.listPresets;
+export const resolvePreset = catalog.resolvePreset;
+export const resolvePresetStatus = catalog.resolvePresetStatus;
+export const presetHistory = catalog.presetHistory;
 
 function state(rule: CatalogRule, matches: boolean, uncertain = false): RuleOutcome {
   return { id: rule.id, state: uncertain ? 'needs_review' : matches ? 'pass' : 'fail', message: `${rule.strength}: ${rule.text}`, source: rule.source };
@@ -190,6 +257,18 @@ export interface SourceCheck { url: string; status: 'unchanged' | 'changed' | 'u
 export interface SourceMonitorResult { preset_id: string; preset_version: string; checked_at: string; status: 'verified' | 'needs_review' | 'unknown'; checks: SourceCheck[] }
 export interface SourceMonitorOptions { fetcher?: typeof fetch; signal?: AbortSignal; max_source_bytes?: number; timeout_ms?: number }
 
+/** Check each cited URL once, sequentially. Results retain their origin pins and can be
+ * applied to every related immutable baseline with createCatalog(..., { monitor_results }). */
+export async function monitorCatalogSources(value: unknown = listPresets({ history: true }), options: SourceMonitorOptions = {}): Promise<SourceMonitorResult[]> {
+  const presets = parsePresets(value), seen = new Set<string>(), results: SourceMonitorResult[] = [];
+  for (const preset of presets) for (const source of preset.sources) {
+    if (seen.has(source.url)) continue;
+    seen.add(source.url);
+    results.push(await monitorSources({ ...preset, sources: [source] }, options));
+  }
+  return results;
+}
+
 /** Monitoring reports review state; it never mutates a published pin or approves new rules. */
 export async function monitorSources(preset: Preset, options: SourceMonitorOptions = {}): Promise<SourceMonitorResult> {
   const fetcher = options.fetcher ?? globalThis.fetch, limit = options.max_source_bytes ?? 8 * 1024 * 1024, timeout = options.timeout_ms ?? 15_000;
@@ -201,13 +280,17 @@ export async function monitorSources(preset: Preset, options: SourceMonitorOptio
     let reader: ReadableStreamDefaultReader<Uint8Array> | undefined;
     try {
       const response = await fetcher(source.url, { signal, redirect: 'follow' });
+      if (options.signal?.aborted) throw new SuperasterError('CANCELLED', 'Source monitoring cancelled');
+      if (timeoutSignal.aborted) throw new Error('Source monitoring timed out');
       if (!response.ok || !response.body) throw new Error(`Source access failed: HTTP ${response.status}`);
       reader = response.body.getReader();
       const chunks: Uint8Array[] = []; let length = 0;
-      while (true) { const chunk = await reader.read(); if (chunk.done) break; length += chunk.value.length; if (length > limit) throw new Error('Source exceeds bounded download limit'); chunks.push(chunk.value); }
+      while (true) { const chunk = await reader.read(); if (options.signal?.aborted) throw new SuperasterError('CANCELLED', 'Source monitoring cancelled'); if (timeoutSignal.aborted) throw new Error('Source monitoring timed out'); if (chunk.done) break; length += chunk.value.length; if (length > limit) throw new Error('Source exceeds bounded download limit'); chunks.push(chunk.value); }
       const bytes = new Uint8Array(length); let offset = 0;
       for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
       const hash = await sha256(bytes);
+      if (options.signal?.aborted) throw new SuperasterError('CANCELLED', 'Source monitoring cancelled');
+      if (timeoutSignal.aborted) throw new Error('Source monitoring timed out');
       checks.push(!source.sha256 ? { url: source.url, status: 'unknown', sha256: hash, reason: 'No reviewed raw-content baseline; maintainer verification required' } : { url: source.url, status: source.sha256 === hash ? 'unchanged' : 'changed', sha256: hash });
     } catch (error) {
       if (options.signal?.aborted) throw new SuperasterError('CANCELLED', 'Source monitoring cancelled');
