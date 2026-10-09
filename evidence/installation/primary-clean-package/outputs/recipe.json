@@ -1,0 +1,1 @@
+{"spec_version":"1.0","input":{"ref":"input-0"},"engine":"auto","quality":"quality","operations":[{"op":"canvas","width":1200,"height":1200,"fit":"contain","background":"#ffffff","position":"center"}],"output":{"format":"webp","quality":90,"metadata":"strip"}}

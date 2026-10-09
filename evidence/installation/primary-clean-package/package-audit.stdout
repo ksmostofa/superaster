@@ -1,0 +1,319 @@
+{
+  "package": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/superaster-local-0.1.0-alpha.1.tgz",
+  "package_sha256": "9e6e8bfe7a88ec980c03d59e3cca34b5ecb47edb1a8670a5268a6d2479b2fe73",
+  "package_file_count": 130,
+  "checks": [
+    {
+      "id": "private-package-exclusion",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "id": "application-license",
+      "status": "PASS",
+      "details": {
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    },
+    {
+      "id": "notice-manifest",
+      "status": "PASS",
+      "details": [
+        {
+          "path": "third-party-licenses/browser-modules.json",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/fetch-sources.mjs",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/@fontsource-variable__figtree-5.3.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/@sinclair__typebox-0.34.52-license",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/ajv-8.20.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/effect-4.0.2-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/fast-deep-equal-3.1.3-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/fast-uri-3.1.8-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/fflate-0.8.3-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/framer-motion-14.0.0-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/json-schema-traverse-1.0.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/motion-14.0.0-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/motion-dom-14.0.0-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/motion-utils-14.0.0-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/react-19.3.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/react-dom-19.3.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/rolldown-1.2.13-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/scheduler-0.28.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/vite-8.3.4-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/js/wasm-vips-0.0.19-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/legal/LGPL-2.1.txt",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/legal/LGPL-3.0-and-GPL-3.0.txt",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/models/BiRefNet-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/native/sharp-0.35.5-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/native/sharp-libvips-linux-x64-1.3.4-README.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/native/sharp-libvips-linux-x64-1.3.4-versions.json",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/runtime/onnxruntime-1.30.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/runtime/onnxruntime-1.30.0-ThirdPartyNotices.txt",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/runtime/wasm-vips-0.0.19-THIRD-PARTY-NOTICES.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/runtime/wasm-vips-0.0.19-versions.json",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/SOURCES.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/sources/archives.json",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/sources/sharp-libvips-Linux-x64-Dockerfile",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/sources/sharp-libvips-posix.sh",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/sources/wasm-vips-build.sh",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/sources/wasm-vips-ci.yml",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/sources/wasm-vips-Dockerfile",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/sources/wasm-vips-npm-provenance.json",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/ui/ANIMATE-UI.txt",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/ui/RARE-UI.txt",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/cgif-0.5.4-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/emscripten-6.0.10-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/expat-2.8.5-COPYING",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/glib-2.90.0-LGPL-2.1-or-later.txt",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/highway-1.4.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/lcms-2.19.1-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libexif-0.6.26-COPYING",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libffi-3.8.0-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libimagequant-2.4.1-COPYRIGHT",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libnsgif-bundled-libvips-8.18.7-COPYING",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libpng-1.6.58-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libtiff-4.7.2-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libultrahdr-2.0.2-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libvips-8.18.7-LICENSE",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libwebp-1.6.0-COPYING",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/libwebp-1.6.0-PATENTS",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/mozjpeg-0826579-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/zlib-ng-2.3.3-LICENSE.md",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/wasm/README.ijg",
+          "matches": true
+        },
+        {
+          "path": "third-party-licenses/models/BEN2-LICENSE",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "id": "packaged-document-links",
+      "status": "PASS",
+      "details": {
+        "checked_relative_links": 105,
+        "broken_links": []
+      }
+    },
+    {
+      "id": "native-runtime-import-closure",
+      "status": "PASS",
+      "details": {
+        "missing_relative_imports": [],
+        "imported_packages": [
+          "@modelcontextprotocol/sdk",
+          "@sinclair/typebox",
+          "ajv",
+          "effect",
+          "onnxruntime-node",
+          "sharp",
+          "zod"
+        ],
+        "undeclared_runtime_dependencies": []
+      }
+    },
+    {
+      "id": "public-entrypoints",
+      "status": "PASS",
+      "details": {
+        "missing": [],
+        "missing_bin_shebang": [],
+        "tar_bin_modes": {
+          "dist/native/cli/src/index.js": "0o644"
+        },
+        "installed_bin_execution": "Requires a separate installed check"
+      }
+    },
+    {
+      "id": "schemas-and-catalog",
+      "status": "PASS",
+      "details": {
+        "missing": [],
+        "catalog_records": 20
+      }
+    },
+    {
+      "id": "fern-derivative-attribution",
+      "status": "PASS",
+      "details": {
+        "attribution_document": "evidence/benchmarks/native-screening-baseline.md",
+        "sha256": "9e5356f466920b70152867df12ee4c5beebde27fad24cdd1b3d85d53e0d24039"
+      }
+    }
+  ],
+  "baseline_comparison": null
+}

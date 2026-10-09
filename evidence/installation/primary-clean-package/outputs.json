@@ -1,0 +1,75 @@
+{
+  "scope": "Actual deterministic fixture and decoded-output files; no inferred foreground masks, no private owner photographs",
+  "files": [
+    {
+      "path": "outputs/input.png",
+      "bytes": 175,
+      "sha256": "f0416c5782a061758c53cf150482aa4a791768785b11cf12d99d00a7277cd3ee"
+    },
+    {
+      "path": "outputs/source-metadata.png",
+      "bytes": 778,
+      "sha256": "2d4f47105a22b83c2a2f212b0df983be9b75541e76dad6a013296147e1a26486"
+    },
+    {
+      "path": "outputs/cli.webp",
+      "bytes": 5158,
+      "sha256": "d89e98cf7006c3b1c17496fffa1bbee613c5d79e90a0c9d0ee18fef384941cbc"
+    },
+    {
+      "path": "outputs/cli.webp.json",
+      "bytes": 1800,
+      "sha256": "fcbaa2966d191f66492ef0d794f98c995781e64d4d2af66895a0578c193a1396"
+    },
+    {
+      "path": "outputs/sdk.webp",
+      "bytes": 5158,
+      "sha256": "d89e98cf7006c3b1c17496fffa1bbee613c5d79e90a0c9d0ee18fef384941cbc"
+    },
+    {
+      "path": "outputs/sdk.webp.json",
+      "bytes": 1799,
+      "sha256": "8d3d5682b308ec3f6adcd256d246d6e6991f96981b60e65d8f0705521ac4a4ba"
+    },
+    {
+      "path": "outputs/mcp.webp",
+      "bytes": 5158,
+      "sha256": "d89e98cf7006c3b1c17496fffa1bbee613c5d79e90a0c9d0ee18fef384941cbc"
+    },
+    {
+      "path": "outputs/mcp.webp.json",
+      "bytes": 1800,
+      "sha256": "780c8f55cc156f8026a6ef94a57cd4f6f246a24593915bdc2a8b9ea495e0cbfb"
+    },
+    {
+      "path": "outputs/exact-sdk.png",
+      "bytes": 489,
+      "sha256": "9a71fc1fa923a9e9531ab3cacbf00087d16bcbbc212a2658f98b8ce19b0e155c"
+    },
+    {
+      "path": "outputs/exact-sdk.png.json",
+      "bytes": 1733,
+      "sha256": "56d8f3a465477997d0362a5b7f508e704f0cd311fa60d56d49a5b1eb0cdac926"
+    },
+    {
+      "path": "outputs/exact-cli.png",
+      "bytes": 489,
+      "sha256": "9a71fc1fa923a9e9531ab3cacbf00087d16bcbbc212a2658f98b8ce19b0e155c"
+    },
+    {
+      "path": "outputs/exact-cli.png.json",
+      "bytes": 1732,
+      "sha256": "c56520a098e141a37ff0ace91af1eb5535ec9fe042696346eb9823b97cfe6900"
+    },
+    {
+      "path": "outputs/recipe.json",
+      "bytes": 260,
+      "sha256": "95ad953145af6b9b1479a17127a8033ecf9dfd43b70c72a0e16fe543d4fd084d"
+    },
+    {
+      "path": "outputs/exact-recipe.json",
+      "bytes": 195,
+      "sha256": "54014f625be0c57c7649ea78f5c2177d94f1a4fc95d278470218a96045ed35cd"
+    }
+  ]
+}

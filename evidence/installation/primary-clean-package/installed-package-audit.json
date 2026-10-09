@@ -1,0 +1,657 @@
+{
+  "checked_at_utc": "2026-10-09T16:44:11.871649+00:00",
+  "status": "PASS",
+  "package_sha256": "9e6e8bfe7a88ec980c03d59e3cca34b5ecb47edb1a8670a5268a6d2479b2fe73",
+  "files": [
+    {
+      "path": "LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "README.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "benchmarks/README.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "benchmarks/budgets.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "benchmarks/corpus/NOTICE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "benchmarks/corpus/model-overlap.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "benchmarks/review-protocol.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/catalog/data/presets.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/catalog/data/source-status.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/catalog/src/index.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/catalog/src/index.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/catalog/src/types.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/catalog/src/types.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/cli/src/batch.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/cli/src/batch.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/cli/src/index.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/cli/src/index.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/contract/src/index.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/contract/src/index.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/core/src/index.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/core/src/index.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/models.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/models.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/native.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/native.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/pipeline.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/pipeline.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/raster.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/engines/src/raster.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/mcp/src/index.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/mcp/src/index.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/sdk/src/files.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/sdk/src/files.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/sdk/src/index.d.ts",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "dist/native/sdk/src/index.js",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/catalog-freshness.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/cloud-resume.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/contract.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/device-validation.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/execution.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/installation.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/quality-review.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "docs/spec-changes.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/native-screening-baseline.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/native-screening-baseline.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-fast-40d2c57/conditions.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-fast-40d2c57/results.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-fast-40d2c57/thin-plant--1/alpha.png",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-fast-40d2c57/thin-plant--1/measurement.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-fast-40d2c57/thin-plant--1/white.png",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-quality-d21946e/conditions.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-quality-d21946e/results.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "evidence/benchmarks/screening-quality-d21946e/thin-plant--1/white.png",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "package.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "packages/catalog/data/presets.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "packages/catalog/data/source-retrievals.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "packages/catalog/data/source-status.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "research/artifacts.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "research/catalog.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "research/runtime-source-compliance.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "schemas/error-1.0.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "schemas/execution-record-1.0.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "schemas/file-batch-1.0.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "schemas/image-info-1.0.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "schemas/operation-1.0.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "schemas/recipe-1.0.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "scripts/source-verification.mjs",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/SOURCES.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/browser-modules.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/fetch-sources.mjs",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/@fontsource-variable__figtree-5.3.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/@sinclair__typebox-0.34.52-license",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/ajv-8.20.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/effect-4.0.2-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/fast-deep-equal-3.1.3-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/fast-uri-3.1.8-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/fflate-0.8.3-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/framer-motion-14.0.0-LICENSE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/json-schema-traverse-1.0.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/motion-14.0.0-LICENSE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/motion-dom-14.0.0-LICENSE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/motion-utils-14.0.0-LICENSE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/react-19.3.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/react-dom-19.3.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/rolldown-1.2.13-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/scheduler-0.28.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/vite-8.3.4-LICENSE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/js/wasm-vips-0.0.19-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/legal/LGPL-2.1.txt",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/legal/LGPL-3.0-and-GPL-3.0.txt",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/manifest.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/models/BEN2-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/models/BiRefNet-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/native/sharp-0.35.5-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/native/sharp-libvips-linux-x64-1.3.4-README.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/native/sharp-libvips-linux-x64-1.3.4-versions.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/runtime/onnxruntime-1.30.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/runtime/onnxruntime-1.30.0-ThirdPartyNotices.txt",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/runtime/wasm-vips-0.0.19-THIRD-PARTY-NOTICES.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/runtime/wasm-vips-0.0.19-versions.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/sources/archives.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/sources/sharp-libvips-Linux-x64-Dockerfile",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/sources/sharp-libvips-posix.sh",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/sources/wasm-vips-Dockerfile",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/sources/wasm-vips-build.sh",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/sources/wasm-vips-ci.yml",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/sources/wasm-vips-npm-provenance.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/ui/ANIMATE-UI.txt",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/ui/RARE-UI.txt",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/validation.json",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/README.ijg",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/cgif-0.5.4-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/emscripten-6.0.10-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/expat-2.8.5-COPYING",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/glib-2.90.0-LGPL-2.1-or-later.txt",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/highway-1.4.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/lcms-2.19.1-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libexif-0.6.26-COPYING",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libffi-3.8.0-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libimagequant-2.4.1-COPYRIGHT",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libnsgif-bundled-libvips-8.18.7-COPYING",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libpng-1.6.58-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libtiff-4.7.2-LICENSE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libultrahdr-2.0.2-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libvips-8.18.7-LICENSE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libwebp-1.6.0-COPYING",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/libwebp-1.6.0-PATENTS",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/mozjpeg-0826579-LICENSE.md",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "third-party-licenses/wasm/zlib-ng-2.3.3-LICENSE.md",
+      "present": true,
+      "match": true
+    }
+  ]
+}

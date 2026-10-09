@@ -1,0 +1,3 @@
+
+> superaster-local@0.1.0-alpha.1 build:native
+> tsc -p tsconfig.native.json

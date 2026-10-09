@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-10-09T16:44:50.305625+00:00",
+  "scope": "Fresh installed package non-inference contracts only; not G7 or complete T11/T16",
+  "source_base": "653cf02e32ce9a744ee7a7d22883822520e4cf5c",
+  "package_sha256": "9e6e8bfe7a88ec980c03d59e3cca34b5ecb47edb1a8670a5268a6d2479b2fe73",
+  "package_bytes": 354554,
+  "package_files": 130,
+  "native_sources_match_base": true,
+  "tarball_audit": {
+    "pass": 8,
+    "fail": 0
+  },
+  "consumer_checks": {
+    "pass": 35,
+    "fail": 0
+  },
+  "installed_files_hashes_match": "PASS",
+  "consumer_node_modules_is_symlink": false,
+  "install_exit": 0,
+  "consumer_run_exit": 0,
+  "dependency_tree_exit": 0,
+  "ml_model_artifacts_present": [],
+  "required_not_run": [
+    "Model first download, cache reuse and offline inference from this installed package",
+    "T11 full removal workflow; previous source-checkout evidence was not repeated",
+    "Physical phone, other OS/Node/browser configurations",
+    "Heldout or human quality evaluation",
+    "Source rebuild, modified library test or served-browser runtime replacement"
+  ],
+  "reproduction_commands": [
+    "npm run build:native",
+    "npm pack --json --pack-destination /ABSOLUTE/PATH/packages",
+    "python3 scripts/package-audit.py --package /ABSOLUTE/PATH/packages/superaster-local-0.1.0-alpha.1.tgz --output /ABSOLUTE/PATH/evidence/package-audit.json",
+    "mkdir /ABSOLUTE/PATH/fresh-consumer; cd /ABSOLUTE/PATH/fresh-consumer",
+    "Create private type=module consumer package.json",
+    "ONNXRUNTIME_NODE_INSTALL=skip npm install /ABSOLUTE/PATH/packages/superaster-local-0.1.0-alpha.1.tgz --no-audit --no-fund",
+    "cp /CHECKOUT/evidence/installation/primary-clean-package/consumer-check.mjs .",
+    "node consumer-check.mjs /ABSOLUTE/PATH/evidence --skip-source-monitor"
+  ]
+}

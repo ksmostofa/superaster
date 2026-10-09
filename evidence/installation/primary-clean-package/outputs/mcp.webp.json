@@ -1,0 +1,80 @@
+{
+  "contract_version": "1.0",
+  "implementation_version": "0.1.0-alpha.1",
+  "input_hash": "f0416c5782a061758c53cf150482aa4a791768785b11cf12d99d00a7277cd3ee",
+  "recipe_hash": "e7a3f055b5d170bad824e43d7bbcac80462e335bc6068b4a0b9e887f1058c514",
+  "binding_hashes": {},
+  "resolved_recipe": {
+    "spec_version": "1.0",
+    "input": {
+      "ref": "input-0"
+    },
+    "engine": "auto",
+    "quality": "quality",
+    "operations": [
+      {
+        "op": "canvas",
+        "width": 1200,
+        "height": 1200,
+        "fit": "contain",
+        "background": "#ffffff",
+        "position": "center"
+      }
+    ],
+    "output": {
+      "format": "webp",
+      "quality": 90,
+      "metadata": "strip"
+    }
+  },
+  "engine": {
+    "id": "imaging",
+    "version": "1.0",
+    "model_hash": null,
+    "precision": "uint8",
+    "inference_dimensions": [],
+    "runtime": "imaging-kernel",
+    "backend": "local",
+    "refinement": "none"
+  },
+  "encoder": {
+    "format": "webp",
+    "quality": 90,
+    "metadata": "strip",
+    "kernel": "declared imaging adapter"
+  },
+  "applied_operations": [
+    {
+      "op": "canvas",
+      "width": 1200,
+      "height": 1200,
+      "fit": "contain",
+      "background": "#ffffff",
+      "position": "center"
+    }
+  ],
+  "output": {
+    "width": 1200,
+    "height": 1200,
+    "format": "webp",
+    "channels": 3,
+    "has_alpha": false,
+    "is_opaque": true,
+    "bytes": 5158,
+    "color_space": "srgb",
+    "pages": 1,
+    "metadata": {
+      "icc": true,
+      "exif": false
+    },
+    "hash": "d89e98cf7006c3b1c17496fffa1bbee613c5d79e90a0c9d0ee18fef384941cbc"
+  },
+  "timings_ms": {
+    "decode": 16.907170000000065,
+    "render": 144.32864500000005,
+    "encode": 117.98663600000009,
+    "validate": 0.6166849999999613
+  },
+  "warnings": [],
+  "rules": []
+}
