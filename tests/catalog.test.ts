@@ -1,12 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { listPresets, createCatalog, validate, planPreset, parsePresets, monitorSources } from '../packages/catalog/src/index.js';
+import { createCatalog, validate, planPreset, parsePresets, monitorSources } from '../packages/catalog/src/index.js';
+import reviewedData from '../packages/catalog/data/presets.json' with { type: 'json' };
 import { SuperasterError, type ImageInfo, type Recipe } from '../packages/contract/src/index.js';
 import { sha256 } from '../packages/core/src/index.js';
 
-// Geometry and permission tests use immutable reviewed rules; observed freshness is tested separately.
-const resolvePreset=createCatalog().resolvePreset;
 const info = (change: Partial<ImageInfo & { is_opaque: boolean }> = {}): ImageInfo & { is_opaque: boolean } => ({ width: 800, height: 1000, format: 'jpeg', channels: 3, has_alpha: false, is_opaque: true, bytes: 100_000, pages: 1, color_space: 'srgb', metadata: { icc: false, exif: false, density: 300 }, ...change });
 const recipe: Recipe = { spec_version: '1.0', input: { ref: 'original' }, operations: [{ op: 'crop', x: 0, y: 0, width: 600, height: 750 }], output: { format: 'jpeg' } };
+// Rule semantics use the immutable published records. Production freshness is checked separately.
+const { listPresets, resolvePreset } = createCatalog(reviewedData);
 function errorCode(action: () => unknown) { try { action(); } catch (error) { if (error instanceof SuperasterError) return error.code; throw error; } throw new Error('Expected public error'); }
 
 describe('reviewed catalog contract', () => {

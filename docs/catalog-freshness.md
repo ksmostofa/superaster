@@ -1,19 +1,27 @@
-# Catalog observations and immutable pins
+# Catalog source freshness
 
-Every destination retains its original ID, version, rules and reviewed source baseline. A separate validated observation snapshot updates current freshness. The distributed snapshot was collected by the actual installed SDK on 2026-10-09; thirteen unique sources returned four matching raw hashes, four changed hashes and five unknown results. Changed HTML indicates review is needed, not that an official rule changed.
+Published preset rules, edit policies, citations and version pins are immutable. The separate `packages/catalog/data/source-status.json` snapshot records observed source bytes and failed retrievals. It does not approve a new rule or change a pin. Its October 9, 2026 observations come from the actual installed-SDK checks retained in `evidence/installation/continuation/source-monitor.json`.
 
-`createCatalog(records, {monitor_results, clock, max_age_ms})` exposes immutable current views. Missing, expired, future or inaccessible observations become unknown. The default observation lifetime is 24 hours, matching the intended daily source check; it is an implementation policy, not a photo-rule or performance tolerance. Unchanged hashes cannot approve an unreviewed record. Existing planners block automatic destination edits while freshness is unresolved; file validation can still report supported properties, visual judgments and separate confirmations.
+The default catalog loads that snapshot for `listPresets`, `resolvePreset` and `resolvePresetStatus`. Chooser defaults still select the latest maintainer-reviewed rule version. Each selected record separately reports `verified`, `needs_review` or `unknown` source freshness. A changed raw page needs maintainer review, because byte changes can include irrelevant page content. Failed access, missing baselines, missing checks, future dates and observations older than 24 hours report unknown freshness. This snapshot does not guarantee current authority requirements.
 
-`resolvePresetStatus(id, version)` returns the selected exact pin and notices. If a separately reviewed newer version exists, the old pin remains accessible and the notice asks for an explicit selection before changing rules. Tests use plainly fictional prospective updates. No actual authority update was invented or published here.
+`planPreset` and `preparePreset` block editing when source freshness requires review or is unknown. `validate` still evaluates the pinned rules and reports a source-freshness review outcome. Both recheck a retained catalog record at use time, so an old object cannot keep a now-expired observation verified. No rule values are silently replaced.
+
+Use `resolvePresetStatus(id, version)` when displaying a selected pin or recording execution warnings. It returns `{ preset, notices }`. Notices include the freshness reason and, when a genuinely reviewed newer version exists, an explicit newer-version notice. The old pin and its rules remain selected. Validation also reports a newer-version notice. Current production data contains no newly invented authority update; prospective versions appear only in fictional tests.
+
+## Manual checks
+
+From a source checkout, run this command when you explicitly want to refresh source observations. It checks each cited URL once, sequentially, with a 15-second default timeout and an 8 MiB per-source byte ceiling. `--timeout-ms` permits an integer from 1 to 60000. The repository workflow runs only when manually dispatched. No scheduled check or background follow-up is configured.
 
 ```sh
-node --import tsx scripts/monitor-catalog.ts --output .cache/new-source-observations.json
+node --import tsx scripts/catalog-monitor.ts --output packages/catalog/data/source-status.next.json
 ```
 
-The bounded sequential monitor checks each cited source once, up to 8 MiB and 15 seconds per response. The output must be a new file. It never changes rules or approves a pin. The free public-repository Actions workflow runs daily and retains this observation artifact; its execution is still NOT RUN until the source is pushed and Actions completes. A successful job means observations were collected, not that rules passed.
+To turn existing installed-SDK evidence into the same validated snapshot without another network check:
 
-A maintainer inspects changed/unknown sources and reviews applicable authority/channel text. For changed rules, publish a new immutable version while preserving the old record. For unchanged rules but changed HTML, record a newly reviewed version/baseline with evidence rather than rewriting an existing pin. Review and deliberately replace `packages/catalog/data/source-observations.json` when incorporating the actual artifact. New builds distribute it to web, CLI, SDK and MCP; offline clients retain the observation date and eventually show unknown freshness. The website never sends a user's image to these sources.
+```sh
+node --import tsx scripts/catalog-monitor.ts --from evidence/installation/continuation/source-monitor.json --output packages/catalog/data/source-status.next.json
+```
 
-The snapshot integration and fictional-update tests do not award G6B. Actual source review, browser/version-notice inspection, print-output checks and required release/device evidence remain separate acceptance work.
+The command refuses to overwrite an existing output. It preserves imported observation timestamps, checks all origin pins and baseline comparisons, and reports preset status counts on stdout. Review the new file and its evidence, then replace `source-status.json` deliberately and rebuild. Keep the dated evidence. Do not change a reviewed baseline merely to remove a changed-source warning.
 
-Pinned Actions inputs were inspected against their official releases on 2026-10-09: [checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1), [setup-node v7.1.0](https://github.com/actions/setup-node/releases/tag/v7.1.0), [upload-artifact v7.0.2](https://github.com/actions/upload-artifact/releases/tag/v7.0.2). Workflow hashes are the exact commits returned by the primary GitHub API, with read-only repository permissions and no saved checkout credentials.
+For a real rule change, a maintainer must review authority guidance and publish a new immutable rule version with its evidence. A successful retrieval, an unchanged hash, or this command cannot approve that update. Rule-only development can use an explicit `createCatalog(records)` registry; supply `monitor_results` when testing or using monitored freshness. Production exports use the persisted snapshot by default.

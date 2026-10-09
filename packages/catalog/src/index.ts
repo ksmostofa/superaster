@@ -1,7 +1,7 @@
 import { Ajv } from 'ajv';
 import { Type } from '@sinclair/typebox';
 import reviewedData from '../data/presets.json' with { type: 'json' };
-import sourceObservations from '../data/source-observations.json' with {type:'json'};
+import sourceStatusData from '../data/source-status.json' with { type: 'json' };
 import { OperationSchema, parseRecipe, SuperasterError, operationDefinitions, type ImageInfo, type Recipe, type RuleOutcome } from '../../contract/src/index.js';
 import { sha256 } from '../../core/src/index.js';
 import type { CatalogRule, Preset, Source } from './types.js';
@@ -89,24 +89,44 @@ const compareVersions = (a: Preset, b: Preset) => b.version.localeCompare(a.vers
 export interface CatalogNotice { kind: 'source-freshness' | 'newer-version'; message: string; status?: Preset['freshness']['status']; newer_version?: string }
 export interface PresetResolution { preset: Preset; notices: CatalogNotice[] }
 export interface CatalogOptions { monitor_results?: unknown; max_age_ms?: number; clock?: () => number }
+export const SOURCE_STATUS_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const presetContexts = new WeakMap<Preset, () => PresetResolution>();
+const timestampPattern = '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$';
 
 const monitorSchema = Type.Array(Type.Object({
-  preset_id: Type.String({ minLength: 1, maxLength: 256 }), preset_version: Type.String({ minLength: 1, maxLength: 256 }), checked_at: Type.String({ pattern: '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$' }),
+  preset_id: Type.String({ minLength: 1, maxLength: 256 }), preset_version: Type.String({ minLength: 1, maxLength: 256 }), checked_at: Type.String({ pattern: timestampPattern }),
   status: Type.Union(['verified', 'needs_review', 'unknown'].map(value => Type.Literal(value))),
   checks: Type.Array(Type.Object({ url: Type.String({ pattern: '^https://', maxLength: 2048 }), status: Type.Union(['unchanged', 'changed', 'unknown'].map(value => Type.Literal(value))), sha256: Type.Optional(Type.String({ pattern: '^[a-f0-9]{64}$' })), reason: Type.Optional(Type.String({ minLength: 1, maxLength: 4096 })) }, exact), { minItems: 1, maxItems: 64 })
 }, exact), { maxItems: 10000 });
 const checkMonitors = ajv.compile<SourceMonitorResult[]>(monitorSchema);
 const monitorStatus = (checks: SourceCheck[]): SourceMonitorResult['status'] => checks.some(check => check.status === 'changed') ? 'needs_review' : checks.some(check => check.status === 'unknown') ? 'unknown' : 'verified';
+export interface SourceStatusSnapshot { schema_version: '1.0'; checked_at: string; method: string; results: SourceMonitorResult[] }
+const snapshotSchema = Type.Object({
+  schema_version: Type.Literal('1.0'), checked_at: Type.String({ pattern: timestampPattern }),
+  method: Type.String({ minLength: 1, maxLength: 4096 }), results: monitorSchema
+}, exact);
+const checkSnapshot = ajv.compile<SourceStatusSnapshot>(snapshotSchema);
+function timestamp(value: string) {
+  const time = Date.parse(value);
+  if (!Number.isFinite(time) || new Date(time).toISOString().slice(0, 19) !== value.slice(0, 19)) invalid('source-monitor date must be a real UTC date');
+  return time;
+}
+export function parseSourceStatusSnapshot(value: unknown): SourceStatusSnapshot {
+  if (!checkSnapshot(value)) invalid(ajv.errorsText(checkSnapshot.errors));
+  const completed = timestamp(value.checked_at);
+  for (const result of value.results) if (timestamp(result.checked_at) > completed) invalid('source-monitor result is newer than its snapshot completion');
+  return freeze(value);
+}
 
 /** Separate source observations from immutable rules. A monitoring response cannot publish new rules. */
 export function createCatalog(value: unknown = reviewedData, options: CatalogOptions = {}) {
-  const published = parsePresets(value), maxAge = options.max_age_ms ?? 24 * 60 * 60 * 1000, clock = options.clock ?? Date.now;
+  const published = parsePresets(value), maxAge = options.max_age_ms ?? SOURCE_STATUS_MAX_AGE_MS, clock = options.clock ?? (() => Date.now());
   if (!Number.isFinite(maxAge) || maxAge < 1) invalid('source-monitor maximum age must be positive');
   const observations = new Map<string, { checked_at: string; time: number; check: SourceCheck }>();
   if (options.monitor_results !== undefined) {
     if (!checkMonitors(options.monitor_results)) invalid(ajv.errorsText(checkMonitors.errors));
     for (const result of options.monitor_results) {
-      const origin = published.find(preset => preset.id === result.preset_id && preset.version === result.preset_version), time = Date.parse(result.checked_at);
+      const origin = published.find(preset => preset.id === result.preset_id && preset.version === result.preset_version), time = timestamp(result.checked_at);
       if (!origin || !Number.isFinite(time) || result.status !== monitorStatus(result.checks)) invalid('source-monitor result has an unknown pin, invalid date or inconsistent status');
       const seen = new Set<string>();
       for (const check of result.checks) {
@@ -127,7 +147,11 @@ export function createCatalog(value: unknown = reviewedData, options: CatalogOpt
     return [...new Set(published.map(preset => preset.id))].flatMap(id => { const reviewed = versions(id).find(preset => preset.freshness.status === 'verified'); return reviewed ? [reviewed] : []; });
   }
   function view(preset: Preset): Preset {
-    if (options.monitor_results === undefined) return preset;
+    if (options.monitor_results === undefined) {
+      const record = freeze({ ...preset });
+      presetContexts.set(record, () => resolvePresetStatus(preset.id, preset.version));
+      return record;
+    }
     const now = clock();
     if (!Number.isFinite(now)) invalid('source-monitor clock must return a finite timestamp');
     const checks: SourceCheck[] = preset.sources.map(source => {
@@ -142,7 +166,9 @@ export function createCatalog(value: unknown = reviewedData, options: CatalogOpt
     const status = preset.freshness.status === 'verified' ? monitored : preset.freshness.status === 'needs_review' || monitored === 'needs_review' ? 'needs_review' : 'unknown';
     const times = preset.sources.flatMap(source => { const observation = observations.get(source.url); return observation ? [observation] : []; }).sort((a, b) => b.time - a.time);
     const reasons = checks.filter(check => check.status !== 'unchanged').map(check => `${check.url}: ${check.reason ?? 'raw source content changed; maintainer review required'}`);
-    return freeze({ ...preset, freshness: { ...preset.freshness, status, checked_at: times[0]?.checked_at, source_change: reasons.length ? reasons.join('; ') : preset.freshness.source_change } });
+    const record = freeze({ ...preset, freshness: { ...preset.freshness, status, checked_at: times[0]?.checked_at, source_change: reasons.length ? reasons.join('; ') : preset.freshness.source_change } });
+    presetContexts.set(record, () => resolvePresetStatus(preset.id, preset.version));
+    return record;
   }
   function listPresets(options: { history?: boolean } = {}): Preset[] {
     if (options.history) return published.map(view);
@@ -179,22 +205,31 @@ export function createCatalog(value: unknown = reviewedData, options: CatalogOpt
 }
 
 export type CatalogRegistry = ReturnType<typeof createCatalog>;
-const catalog = createCatalog(reviewedData,{monitor_results:sourceObservations});
+export const sourceStatusSnapshot = parseSourceStatusSnapshot(sourceStatusData);
+const catalog = createCatalog(reviewedData, { monitor_results: sourceStatusSnapshot.results });
 /** Chooser defaults use the latest maintainer-reviewed rules; freshness is a separate observation. */
 export const listPresets = catalog.listPresets;
 export const resolvePreset = catalog.resolvePreset;
 export const resolvePresetStatus = catalog.resolvePresetStatus;
 export const presetHistory = catalog.presetHistory;
+function currentPresetStatus(preset: Preset): PresetResolution {
+  const context = presetContexts.get(preset);
+  if (context) return context();
+  if (catalog.publishedRecords().some(record => record.id === preset.id && record.version === preset.version)) return resolvePresetStatus(preset.id, preset.version);
+  return { preset, notices: [] };
+}
 
 function state(rule: CatalogRule, matches: boolean, uncertain = false): RuleOutcome {
   return { id: rule.id, state: uncertain ? 'needs_review' : matches ? 'pass' : 'fail', message: `${rule.strength}: ${rule.text}`, source: rule.source };
 }
 
 export function validate(info: ImageInfo, preset: Preset): RuleOutcome[] {
+  const current = currentPresetStatus(preset); preset = current.preset;
   if (![info.width, info.height, info.bytes, info.pages].every(number => Number.isSafeInteger(number) && number > 0)) throw new SuperasterError('INVALID_INPUT', 'Image inspection lacks valid integer dimensions, bytes or frame count');
   const outcomes: RuleOutcome[] = [];
   if (info.pages !== 1) outcomes.push({ id: 'single-frame-support', state: 'fail', message: 'These profiles support still images; animated/multi-frame preparation is outside the MVP' });
-  if (preset.freshness.status !== 'verified') outcomes.push({ id: 'source-freshness', state: 'needs_review', message: `Source freshness is ${preset.freshness.status}; review authority guidance` });
+  if (preset.freshness.status !== 'verified') outcomes.push({ id: 'source-freshness', state: 'needs_review', message: `Source freshness is ${preset.freshness.status}; ${preset.freshness.source_change ?? 'review authority guidance'}` });
+  for (const notice of current.notices) if (notice.kind === 'newer-version') outcomes.push({ id: 'newer-preset-version', state: 'needs_review', message: notice.message });
   for (const rule of preset.rules) {
     if (rule.kind === 'confirmation') { outcomes.push({ id: rule.id, state: 'not_checked', message: rule.text, source: rule.source, user_confirmation: true }); continue; }
     if (rule.kind === 'visual') { outcomes.push({ id: rule.id, state: 'needs_review', message: rule.text, source: rule.source }); continue; }
@@ -226,8 +261,9 @@ export function validate(info: ImageInfo, preset: Preset): RuleOutcome[] {
 
 /** Plan only explicitly permitted edits. A validation-only profile cannot re-encode an unaltered input. */
 export function planPreset(preset: Preset, value: Recipe): Recipe {
+  preset = currentPresetStatus(preset).preset;
   const recipe = parseRecipe(value);
-  if (preset.freshness.status !== 'verified') throw new SuperasterError('EDIT_FORBIDDEN', 'Destination sources need review before editing', { preset: preset.id, freshness: preset.freshness.status });
+  if (preset.freshness.status !== 'verified') throw new SuperasterError('EDIT_FORBIDDEN', 'Destination sources need review before editing', { preset: preset.id, freshness: preset.freshness.status, checked_at: preset.freshness.checked_at, source_change: preset.freshness.source_change });
   if (recipe.preset && (recipe.preset.id !== preset.id || recipe.preset.version !== preset.version)) throw new SuperasterError('INVALID_RECIPE', 'Recipe destination pin differs from the planned profile');
   if (!preset.edit_policy.allowed.length && !preset.edit_policy.unspecified.length) throw new SuperasterError('EDIT_FORBIDDEN', 'This destination requires an unaltered photo. Validate the original file; retake if it fails.', { preset: preset.id, reason: 'unaltered-original', guidance: preset.edit_policy.notes });
   for (const operation of recipe.operations) {
@@ -240,6 +276,7 @@ export function planPreset(preset: Preset, value: Recipe): Recipe {
 /** A visible destination choice adds the reviewed contain/grid example or exact size.
  * It never invents permission, stretches the subject, or changes a requested format. */
 export function preparePreset(preset:Preset,value:Recipe):Recipe {
+ preset=currentPresetStatus(preset).preset;
  const base=planPreset(preset,value);const operations=[...base.operations];const output={...base.output};
  if(preset.recipe_operations?.length)operations.push(...preset.recipe_operations);
  else {

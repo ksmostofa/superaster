@@ -1,5 +1,6 @@
-import { describe, expect, it } from 'vitest';
-import { createCatalog, listPresets, monitorCatalogSources, monitorSources, planPreset, resolvePreset, validate, type Preset } from '../packages/catalog/src/index.js';
+import { describe, expect, it, vi } from 'vitest';
+import { createCatalog, listPresets, monitorCatalogSources, monitorSources, parseSourceStatusSnapshot, planPreset, resolvePreset, resolvePresetStatus, sourceStatusSnapshot, SOURCE_STATUS_MAX_AGE_MS, validate, type Preset } from '../packages/catalog/src/index.js';
+import reviewedData from '../packages/catalog/data/presets.json' with { type: 'json' };
 import { SuperasterError, type ImageInfo, type Recipe } from '../packages/contract/src/index.js';
 import { sha256 } from '../packages/core/src/index.js';
 
@@ -57,6 +58,7 @@ describe('catalog immutable versions and observed freshness', () => {
     expect(registry.listPresets().map(profile => profile.version)).toEqual([updated.version]);
     expect(registry.presetHistory(old.id)).toMatchObject({ latest_verified: updated.version, versions: [{ version: pending.version }, { version: updated.version }, { version: old.version }] });
     expect(registry.resolvePresetStatus(old.id, updated.version).notices).toEqual([]);
+    expect(validate(image, pinned.preset).find(rule => rule.id === 'newer-preset-version')?.message).toContain(updated.version);
     expect(code(() => createCatalog([old, { ...old, purpose: 'Rewritten published pin' }]))).toBe('INVALID_INPUT');
   });
 
@@ -89,6 +91,12 @@ describe('catalog immutable versions and observed freshness', () => {
     clock += 1001;
     expect(reusable.resolvePreset(profile.id).freshness.source_change).toContain('older');
     expect(createCatalog([profile], { monitor_results: [unchanged], clock: () => now - 1 }).resolvePreset(profile.id).freshness.source_change).toContain('future');
+    clock = now;
+    const retained = reusable.resolvePreset(profile.id);
+    expect(planPreset(retained, recipe).preset?.version).toBe(profile.version);
+    clock += 1001;
+    expect(code(() => planPreset(retained, recipe))).toBe('EDIT_FORBIDDEN');
+    expect(validate(image, retained).find(rule => rule.id === 'source-freshness')?.message).toContain('older');
   });
 
   it('shares source observations across profiles and compares each immutable baseline independently', async () => {
@@ -107,6 +115,7 @@ describe('catalog immutable versions and observed freshness', () => {
     const profile = await fixture(), checked = await observation(profile, 'fictional reviewed source');
     for (const malformed of [
       [{ ...checked, unexpected: true }], [{ ...checked, preset_version: 'missing' }], [{ ...checked, checked_at: '1' }], [{ ...checked, status: 'needs_review' }],
+      [{ ...checked, checked_at: '2026-02-30T12:00:00.000Z' }],
       [{ ...checked, checks: [{ ...checked.checks[0], url: 'https://example.org/uncited' }] }],
       [{ ...checked, checks: [{ ...checked.checks[0], sha256: 'a'.repeat(64) }] }],
       [{ ...checked, checks: [checked.checks[0], checked.checks[0]] }]
@@ -119,8 +128,46 @@ describe('catalog immutable versions and observed freshness', () => {
 
   it('does not publish prospective test versions in the default offline catalog', () => {
     expect(listPresets()).toHaveLength(20);
-    expect(listPresets().some(profile=>profile.freshness.status!=='verified')).toBe(true);
     expect(listPresets({ history: true }).some(profile => profile.id.startsWith('test-fixture'))).toBe(false);
+  });
+
+  it('loads the actual persisted October 9 observations in production consumers without changing published rules', () => {
+    const original = JSON.stringify(reviewedData);
+    const clock = vi.spyOn(Date, 'now').mockReturnValue(Date.parse(sourceStatusSnapshot.checked_at));
+    try {
+      expect(sourceStatusSnapshot.checked_at).toBe('2026-10-09T04:08:01.781Z');
+      expect(sourceStatusSnapshot.results).toHaveLength(13);
+      expect(resolvePreset('jp-residence-status-paper').freshness.status).toBe('verified');
+      for (const id of ['uk-passport-digital-own-device', 'youtube-video-thumbnail-mobile', 'youtube-channel-banner', 'google-article-image-16x9']) {
+        const selected = resolvePresetStatus(id, '2026-10-08.1');
+        expect(selected.preset.freshness.status).toBe('needs_review');
+        expect(selected.notices).toMatchObject([{ kind: 'source-freshness', status: 'needs_review' }]);
+        expect(selected.preset.rules).toEqual(reviewedData.find(record => record.id === id)!.rules);
+      }
+      for (const id of ['x-profile-photo', 'shopify-product-square', 'etsy-listing-landscape', 'print-grid-4x6in-30x40mm']) expect(resolvePreset(id).freshness.status).toBe('unknown');
+      expect(listPresets().find(record => record.id === 'shopify-product-square')?.freshness.status).toBe('unknown');
+      const staleClaim = { ...structuredClone(resolvePreset('shopify-product-square')), freshness: { status: 'verified' as const, verified_at: '2026-10-08' } };
+      expect(code(() => planPreset(staleClaim, recipe))).toBe('EDIT_FORBIDDEN');
+      expect(validate(image, staleClaim).find(rule => rule.id === 'source-freshness')?.message).toContain('unknown');
+      const retained = resolvePreset('jp-residence-status-paper');
+      expect(retained.freshness.status).toBe('verified');
+      clock.mockReturnValue(Date.parse(sourceStatusSnapshot.checked_at) + SOURCE_STATUS_MAX_AGE_MS + 1);
+      expect(resolvePreset('jp-residence-status-paper').freshness.status).toBe('unknown');
+      expect(code(() => planPreset(retained, recipe))).toBe('EDIT_FORBIDDEN');
+      expect(validate(image, retained).find(rule => rule.id === 'source-freshness')?.message).toContain('older');
+      expect(JSON.stringify(reviewedData)).toBe(original);
+    } finally { clock.mockRestore(); }
+  });
+
+  it('validates persisted snapshot dates, schema and completion before applying source observations', () => {
+    expect(Object.isFrozen(sourceStatusSnapshot.results)).toBe(true);
+    for (const value of [
+      { ...sourceStatusSnapshot, schema_version: '2.0' },
+      { ...sourceStatusSnapshot, checked_at: '2026-02-30T12:00:00Z' },
+      { ...sourceStatusSnapshot, checked_at: '2026-10-08T04:08:01.781Z' },
+      { ...sourceStatusSnapshot, extra: 'unexpected' },
+      { ...sourceStatusSnapshot, results: [{ ...sourceStatusSnapshot.results[0], checks: [] }] }
+    ]) expect(code(() => parseSourceStatusSnapshot(value))).toBe('INVALID_INPUT');
   });
 
   it('checks repeated catalog citations once with one bounded fetch at a time and preserves cancellation', async () => {

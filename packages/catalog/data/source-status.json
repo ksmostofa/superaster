@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "checked_at": "2026-10-09T04:08:01.781Z",
+  "method": "Actual installed SDK monitorSources, unique sources checked separately, no pin mutation or approval",
+  "results": [
+    {
+      "preset_id": "jp-entry-visa-washington-paper",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:39.662Z",
+      "status": "unknown",
+      "checks": [
+        {
+          "url": "https://www.us.emb-japan.go.jp/itpr_en/visa-short-term-visit.html",
+          "status": "unknown",
+          "sha256": "d70a38c03b33080bc94cc5edeab6d2eced06a447142f1b2f20c88386e816268f",
+          "reason": "No reviewed raw-content baseline; maintainer verification required"
+        }
+      ]
+    },
+    {
+      "preset_id": "jp-residence-status-paper",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:41.338Z",
+      "status": "verified",
+      "checks": [
+        {
+          "url": "https://www.moj.go.jp/isa/applications/status/photo_info_00002.html",
+          "status": "unchanged",
+          "sha256": "b51591567adb305823613021bf26386e92a1e2245bbc70959f7afeee25827c99"
+        }
+      ]
+    },
+    {
+      "preset_id": "jp-residence-status-paper",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:41.806Z",
+      "status": "verified",
+      "checks": [
+        {
+          "url": "https://www.moj.go.jp/isa/content/930002400.gif",
+          "status": "unchanged",
+          "sha256": "649ea7e8198bee4838ae1612f5296bd2fee36597be39b613b65db9a701c1eca0"
+        }
+      ]
+    },
+    {
+      "preset_id": "uk-passport-digital-own-device",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:44.231Z",
+      "status": "needs_review",
+      "checks": [
+        {
+          "url": "https://www.gov.uk/photos-for-passports",
+          "status": "changed",
+          "sha256": "6ef91d16fe52bb1f4ea19fc3d5b43ce7f0ba638ef177491e1a224a0ab417fbf2"
+        }
+      ]
+    },
+    {
+      "preset_id": "x-profile-photo",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:45.646Z",
+      "status": "unknown",
+      "checks": [
+        {
+          "url": "https://help.x.com/en/managing-your-account/common-issues-when-uploading-profile-photo",
+          "status": "unknown",
+          "reason": "Source access failed: HTTP 403"
+        }
+      ]
+    },
+    {
+      "preset_id": "youtube-video-thumbnail-mobile",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:47.925Z",
+      "status": "needs_review",
+      "checks": [
+        {
+          "url": "https://support.google.com/youtube/answer/72431?hl=en&isappinstalled=0",
+          "status": "changed",
+          "sha256": "a90af25d9c78c8ca73538f619f1b580f0e3568b30ba0abe736b47434f87a0afa"
+        }
+      ]
+    },
+    {
+      "preset_id": "youtube-channel-banner",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:49.893Z",
+      "status": "needs_review",
+      "checks": [
+        {
+          "url": "https://support.google.com/youtube/answer/10456525?hl=en",
+          "status": "changed",
+          "sha256": "a674f2aa5015d09ba69ff0a63453c8a480c65833d14e8693b6a2a3975f65a4fe"
+        }
+      ]
+    },
+    {
+      "preset_id": "shopify-product-square",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:51.893Z",
+      "status": "unknown",
+      "checks": [
+        {
+          "url": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+          "status": "unknown",
+          "reason": "Source access failed: HTTP 403"
+        }
+      ]
+    },
+    {
+      "preset_id": "etsy-listing-landscape",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:54.206Z",
+      "status": "unknown",
+      "checks": [
+        {
+          "url": "https://help.etsy.com/hc/en-us/articles/115015663347-Requirements-and-Best-Practices-for-Images-in-Your-Etsy-Shop",
+          "status": "unknown",
+          "reason": "Source access failed: HTTP 403"
+        }
+      ]
+    },
+    {
+      "preset_id": "google-article-image-16x9",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:57.862Z",
+      "status": "needs_review",
+      "checks": [
+        {
+          "url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+          "status": "changed",
+          "sha256": "b56226e3b0a72c3e646f6acbc27de98c4cee95fb9d3f4b1178183d4f2c891d02"
+        }
+      ]
+    },
+    {
+      "preset_id": "print-grid-4x6in-30x40mm",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:07:59.464Z",
+      "status": "verified",
+      "checks": [
+        {
+          "url": "https://www.w3.org/TR/css-values-4/#absolute-lengths",
+          "status": "unchanged",
+          "sha256": "7b6b68c34d00d7f6945e66e4e2efa913266299f597d5825393cae85dac1cc78c"
+        }
+      ]
+    },
+    {
+      "preset_id": "print-grid-4x6in-30x40mm",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:08:01.336Z",
+      "status": "unknown",
+      "checks": [
+        {
+          "url": "https://github.com/ksmostofa/superaster/blob/main/research/catalog.md",
+          "status": "unknown",
+          "reason": "Source access failed: HTTP 404"
+        }
+      ]
+    },
+    {
+      "preset_id": "print-grid-a4-35x45mm",
+      "preset_version": "2026-10-08.1",
+      "checked_at": "2026-10-09T04:08:01.781Z",
+      "status": "verified",
+      "checks": [
+        {
+          "url": "https://www.w3.org/TR/css-page-3/#page-size",
+          "status": "unchanged",
+          "sha256": "6051274a159df3f315c0e6474faf5c7b595b9e0f8c23e1402dc956b765812f57"
+        }
+      ]
+    }
+  ]
+}
