@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-09T03:27:19.115623+00:00",
+  "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/onnx/model_fp16.onnx",
+  "path": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/full1024-audit/birefnet-full-1024-fp16.onnx",
+  "bytes": 489666272,
+  "sha256": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+  "expected_bytes": 489666272,
+  "expected_sha256": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+  "match": true,
+  "download_or_verify_seconds": 712.6719860240046,
+  "model_session_initialized": false
+}

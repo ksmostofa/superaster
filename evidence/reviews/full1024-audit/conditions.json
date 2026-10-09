@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-09T03:20:48.421173+00:00",
+  "audit_worktree": "/home/sadid/Downloads/Superaster/superaster-verification-adapters",
+  "audit_head": "a2b02fcc4874d4589887990d7d813c56c48e2be7",
+  "private_spec_sha256": "e5f828d0a6d62d0b92a79b0f440c0528a4200ef4c469aa19fb514afe17a967a1",
+  "audit_worktree_source_hashes": {
+    "packages/engines/src/models.ts": "e1aae271dd22ef8dbecb98b67940c6c3e85f8ee9234708c1a7e0f4976ace6df5",
+    "packages/engines/src/native.ts": "f61f7745c53a2adff17070e14ee00d4b1f6e8d9a6be7686966d552bf59f80ed2",
+    "packages/engines/src/pipeline.ts": "d9b83874cb365f89e49407b5ea902573c96ab40e3f5c53f2d0e99ff48865bcc1",
+    "packages/engines/src/raster.ts": "3bea48ef456d73b4efd02d5ad0fa3e2df393c7d05272ac2b6977c3f911401fbe"
+  },
+  "coordinator_observed_head": "df81e4a15db403930dfe7197d041f13234ca3c9f",
+  "coordinator_observed_source_hashes": {
+    "packages/engines/src/models.ts": "a42d3f4658e1f8a95bb7e0c80a3182ebdd73db9d711c0f2d38800f6224d679b0",
+    "packages/engines/src/native.ts": "045a43cfcb1e0dc8c57dc0a0b43078dc8ffa2931dd74738198282eb2578ec833",
+    "packages/engines/src/pipeline.ts": "6f069bbd002edc53691fa8bf8dd100cc97f7fc2417dacafb2428e31f8adae645",
+    "packages/engines/src/raster.ts": "731a10a1d16abdb8bb870da293fb850a189ef6733c962e4766ff50b57d8e66a1"
+  },
+  "audit_only": true,
+  "model_session_initialized": false,
+  "inference_ran": false
+}

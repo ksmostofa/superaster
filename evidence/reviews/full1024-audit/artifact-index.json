@@ -1,0 +1,14 @@
+{
+  "files": {
+    "download.json": "f3a8ffa04bf3f170c6b146cf27194249730fbd5de4956ea3e2435fcd4b6f5d3f",
+    "graph.json": "13e792ba3db7819bfaa5852dc2a4797d2363af6a9fc47180c2688fb435a1e568",
+    "conditions.json": "eb054e320a27b89f4c94fe45a7a0d6d9a5db5bc24af430ef254959bb79ab58c1",
+    "source-index.json": "37d7063383bbe393d5d6730b39de9726c00b0c65e7e21d9b1f353fca09be8819",
+    "source-code-index.json": "a5add83b16a21db24c0009ed7b94269f007d68045522731799a5dba19c5029b2",
+    "candidate.json": "ca78d6a3c89a910bc5887e4f2ef5d83d965cb3b5531817bad25fa2f5524d16dc"
+  },
+  "model_in_git": false,
+  "model_path": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/full1024-audit/birefnet-full-1024-fp16.onnx",
+  "model_sha256": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+  "inference_ran": false
+}

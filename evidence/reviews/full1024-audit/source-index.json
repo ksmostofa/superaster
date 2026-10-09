@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-09T03:15:26.443354+00:00",
+  "sources": [
+    {
+      "file": "conversion-card.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/README.md",
+      "bytes": 4281,
+      "sha256": "561faa7cfaa4869745d576f23d18bde010ab0b98c1c7bfbe44a147703385df0a"
+    },
+    {
+      "file": "conversion-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/config.json",
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "file": "conversion-processor.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/preprocessor_config.json",
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "file": "conversion-api.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-ONNX/revision/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+      "bytes": 1405,
+      "sha256": "aeaa56f47c9a94dbb53e041b16dbdebffc6743661b0f40665cb7f9a2869c9f0d"
+    },
+    {
+      "file": "conversion-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-ONNX/tree/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67?recursive=true",
+      "bytes": 1102,
+      "sha256": "394b36b5eb897da65d6365696735f476b3de049f519b3de34e8e539dc05c9760"
+    },
+    {
+      "file": "source-card.md",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/README.md",
+      "bytes": 9965,
+      "sha256": "ceac4a1bb69b807eac5510bff80ff5599f606ef7458bee3b54b68d866e868532"
+    },
+    {
+      "file": "source-config.json",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/config.json",
+      "bytes": 405,
+      "sha256": "c97ea21569daf66b205491a4635147dd3bc42c7c168b89d7d75b53f67ef548ae"
+    },
+    {
+      "file": "source-BiRefNet_config.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/BiRefNet_config.py",
+      "bytes": 298,
+      "sha256": "e7b8c2a74f6cea6a59553d517f71d47f2c1d90e670a13416af17c25fe2f3dc52"
+    },
+    {
+      "file": "source-tree.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet/tree/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4?recursive=true",
+      "bytes": 1096,
+      "sha256": "0bbfe14b1482992d543377b8a2656f3800b065801d0da8979780152fe6219043"
+    },
+    {
+      "file": "source-license.txt",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE",
+      "bytes": 1066,
+      "sha256": "92a7089e0915fc32bc40067560b398f1e6a7a5958abd7d04eda393629a5acefb"
+    },
+    {
+      "file": "source-model-zoo.md",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/README.md",
+      "bytes": 42500,
+      "sha256": "7a4c7661d0861bd99845e78e7980c5440a9c2095eff9b7d6fdbccdcc45c8fec7"
+    }
+  ]
+}
