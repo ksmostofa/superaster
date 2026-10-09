@@ -8,7 +8,16 @@ research/upstream/
 evidence/private/
 
 packages/web/public/runtime/
+packages/web/public/third-party-licenses/
+packages/web/public/THIRD_PARTY_NOTICES.md
 
 evidence/browser/*.png
 evidence/browser/*.jpg
+evidence/browser/continuation/*.jpg
 evidence/benchmarks/outputs/
+evidence/benchmarks/**/*.png
+evidence/feasibility/*.png
+evidence/feasibility/*.jpg
+
+evidence/browser/**/*.png
+evidence/browser/*.jpeg

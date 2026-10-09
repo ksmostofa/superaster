@@ -1,9 +1,9 @@
 import { SuperasterError } from '../../contract/src/index.js';
 export interface MaskState{width:number;height:number;alpha:Uint8Array;source:Uint8ClampedArray}
-export async function loadEditor(original:File,cutout:Uint8Array):Promise<MaskState>{
- const [source,output]=await Promise.all([createImageBitmap(original),createImageBitmap(new Blob([Uint8Array.from(cutout)],{type:'image/png'}))]);
+export async function loadEditor(original:File,coverage:Uint8Array):Promise<MaskState>{
+ const [source,output]=await Promise.all([createImageBitmap(original),createImageBitmap(new Blob([Uint8Array.from(coverage)],{type:'image/png'}))]);
  try {if(source.width!==output.width||source.height!==output.height)throw new SuperasterError('UNSUPPORTED','Correct before changing geometry; restore the original-size removal recipe first');
-  const canvas=document.createElement('canvas');canvas.width=output.width;canvas.height=output.height;const ctx=canvas.getContext('2d',{willReadFrequently:true,colorSpace:'srgb'});if(!ctx)throw new Error('Canvas unavailable');ctx.drawImage(source,0,0);const rgba=ctx.getImageData(0,0,output.width,output.height).data;ctx.clearRect(0,0,output.width,output.height);ctx.drawImage(output,0,0);const pixels=ctx.getImageData(0,0,output.width,output.height).data;const alpha=new Uint8Array(output.width*output.height);for(let i=0;i<alpha.length;i++)alpha[i]=pixels[i*4+3]!;return{width:output.width,height:output.height,alpha,source:rgba};
+  const canvas=document.createElement('canvas');canvas.width=output.width;canvas.height=output.height;const ctx=canvas.getContext('2d',{willReadFrequently:true,colorSpace:'srgb'});if(!ctx)throw new Error('Canvas unavailable');ctx.drawImage(source,0,0);const rgba=ctx.getImageData(0,0,output.width,output.height).data;ctx.clearRect(0,0,output.width,output.height);ctx.drawImage(output,0,0);const pixels=ctx.getImageData(0,0,output.width,output.height).data;const alpha=new Uint8Array(output.width*output.height);for(let i=0;i<alpha.length;i++)alpha[i]=pixels[i*4]!;return{width:output.width,height:output.height,alpha,source:rgba};
  }finally{source.close();output.close();}
 }
 export function paint(mask:MaskState,x:number,y:number,radius:number,mode:'erase'|'restore') {

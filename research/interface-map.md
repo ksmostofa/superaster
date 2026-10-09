@@ -8,6 +8,7 @@ Inspected 2026-10-08. Actual source revisions recorded; owner approved retained 
 | Rare UI b4de46efe4eb2613e22bb8134b482ed4e0c7736a | Tactile neutral controls, compact segmented navigation, focusable actions, adapted components only where useful; editor controls match it | Compare rendered image hierarchy, keyboard/touch access, source attribution |
 | shadcn 4.21.4, b1VlJBjs | Official decoded Luma, neutral theme, Figtree, Hugeicons; exact registry light/dark variables in theme.css | Preserve registry tokens; typography and contrast inspection |
 | Animate UI efeb96ffd7a3b7a4868667e4ac3c346620fb3044 | Brief press and panel fade; use compatible Motion dependency; reduced motion | No delay in execution; reduce-motion state inspection |
+| Owner references, 2026-10-09 | Dark monochrome, restrained type, sparse static point texture; original aster mark dissolves into fine particles. Existing Luma dark variables remain exact. No copied figure, logo or reference assets. | Desktop/mobile hierarchy and contrast; texture never overlays a user image or obscures errors |
 | Effect.app | Later Art reference only | No Art launch dependency |
 
 Primary sources: [Rare UI source/license](https://github.com/swamimalode07/rare-ui/tree/b4de46efe4eb2613e22bb8134b482ed4e0c7736a), [Animate UI source/license](https://github.com/imskyleen/animate-ui/tree/efeb96ffd7a3b7a4868667e4ac3c346620fb3044), [official preset CLI](https://ui.shadcn.com/docs/cli), [BG0](https://github.com/opencoredev/bg0).
