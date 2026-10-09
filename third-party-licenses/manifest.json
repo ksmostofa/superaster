@@ -3,10 +3,10 @@
   "entries": [
     {
       "path": "browser-modules.json",
-      "sha256": "cf2be7179a73d6917a6402ec15762f4a7cd703be4d81849e7c4024f61b727abe",
-      "bytes": 33506,
+      "sha256": "f833a522413e3d9d3cd8d0aa38a8a81fd8c44cc6d2d0c02d5cf8c6fd9000dfcf",
+      "bytes": 33524,
       "component": "rendered module audit",
-      "status": "observed temporary build of current integrated source; repeat for final candidate"
+      "status": "observed final integrated source build; module inventory only"
     },
     {
       "path": "fetch-sources.mjs",

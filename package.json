@@ -55,7 +55,7 @@
     "build:native": "tsc -p tsconfig.native.json",
     "build:web": "npm run assets && vite build && tsx scripts/service-worker.ts",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "npm run build:native && vitest run",
     "schemas": "tsx scripts/schemas.ts",
     "assets": "tsx scripts/assets.ts",
     "preview": "vite preview --host 127.0.0.1 --port 5180"

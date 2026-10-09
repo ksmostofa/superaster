@@ -2,7 +2,7 @@ import { Ajv } from 'ajv';
 import { Type, type TSchema } from '@sinclair/typebox';
 import { RecipeSchema, parseRecipe, SuperasterError, type Recipe, type ImageInfo } from '../../contract/src/index.js';
 import { processingError } from '../../core/src/index.js';
-import { resolvePreset, validate } from '../../catalog/src/index.js';
+import { resolvePreset, resolvePresetStatus, validate } from '../../catalog/src/index.js';
 
 // Progressive enhancement, current Chrome imperative API (2026-09-21).
 // Registrations are page-scoped; input refs name files the user selected here.
@@ -39,7 +39,7 @@ export function registerWebTools(actions:()=>WebTools,onError:(message:string)=>
   for(const selected of input.input_refs as string[]){if(signal.aborted){results.push({input_ref:selected,error:new SuperasterError('CANCELLED','Not scheduled after cancellation').toJSON()});continue;}try{results.push({input_ref:selected,result:await actions().transform(selected,recipe,signal)});}catch(error){results.push({input_ref:selected,error:processingError(error).toJSON()});}}
   return {results};
  });
- register('resolve_preset','Resolve an immutable reviewed destination pin; ambiguous requests require an authority/channel choice before editing',Type.Object({request:ref,version:optionalVersion},exact),true,input=>resolvePreset(String(input.request),input.version as string|undefined));
+ register('resolve_preset','Resolve an immutable reviewed destination pin; ambiguous requests require an authority/channel choice before editing',Type.Object({request:ref,version:optionalVersion},exact),true,input=>resolvePresetStatus(String(input.request),input.version as string|undefined));
  register('validate','Check a selected image against the reviewed destination. Visual rules and user confirmations remain separate from file properties.',Type.Object({input_ref:ref,preset:ref,version:optionalVersion},exact),true,async(input,signal)=>{const preset=resolvePreset(String(input.preset),input.version as string|undefined);return {preset:{id:preset.id,version:preset.version},rules:validate(await actions().inspect(String(input.input_ref),signal),preset)};});
  return()=>lifetime.abort();
 }

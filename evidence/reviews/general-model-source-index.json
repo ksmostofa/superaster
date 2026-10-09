@@ -1,0 +1,757 @@
+{
+  "checked_at_utc": "2026-10-09T11:38:35.222762+00:00",
+  "sources": [
+    {
+      "name": "github-head.json",
+      "url": "https://api.github.com/repos/ZhengPeng7/BiRefNet/commits/main",
+      "final_url": "https://api.github.com/repos/ZhengPeng7/BiRefNet/commits/main",
+      "status": 200,
+      "bytes": 5529,
+      "sha256": "6b6622c62661b959a38c60a4a2a3baf252466194b940feacb2d9f400e068f4da"
+    },
+    {
+      "name": "github-release.json",
+      "url": "https://api.github.com/repos/ZhengPeng7/BiRefNet/releases/tags/v1",
+      "final_url": "https://api.github.com/repos/ZhengPeng7/BiRefNet/releases/tags/v1",
+      "status": 200,
+      "bytes": 43096,
+      "sha256": "4f1f22fb0d3a9b5378ec76511a974e3d94c660f1ac7b503752957af0fcbcfbdd"
+    },
+    {
+      "name": "github-tree.json",
+      "url": "https://api.github.com/repos/ZhengPeng7/BiRefNet/git/trees/ebcc0bc8ec7fe919cec829f2dea656b3078acddc?recursive=1",
+      "final_url": "https://api.github.com/repos/ZhengPeng7/BiRefNet/git/trees/ebcc0bc8ec7fe919cec829f2dea656b3078acddc?recursive=1",
+      "status": 200,
+      "bytes": 8802,
+      "sha256": "757a809832ee2000f87b8085b082b43c0190d1912a93b9a07d00ec8a56a3eaa8"
+    },
+    {
+      "name": "github-README.md",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/README.md",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/README.md",
+      "status": 200,
+      "bytes": 42500,
+      "sha256": "7a4c7661d0861bd99845e78e7980c5440a9c2095eff9b7d6fdbccdcc45c8fec7"
+    },
+    {
+      "name": "github-LICENSE",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE",
+      "status": 200,
+      "bytes": 1066,
+      "sha256": "92a7089e0915fc32bc40067560b398f1e6a7a5958abd7d04eda393629a5acefb"
+    },
+    {
+      "name": "github-config.py",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/config.py",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/config.py",
+      "status": 200,
+      "bytes": 11365,
+      "sha256": "6580aacdd661a16575a700561f91eb341d6d2df1440591056f462a1a1b1044aa"
+    },
+    {
+      "name": "github-inference.py",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/inference.py",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/inference.py",
+      "status": 200,
+      "bytes": 4741,
+      "sha256": "451d6ee07edf7d05f550fd3bb879696b9af8860cd6cbe7a26d58ea8a920593ec"
+    },
+    {
+      "name": "github-requirements.txt",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/requirements.txt",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/requirements.txt",
+      "status": 200,
+      "bytes": 155,
+      "sha256": "0d40d5a37d5427d70ea54aac210c972d54a3c05d99c9be5c024139804761b6b2"
+    },
+    {
+      "name": "onnx-community-list.json",
+      "url": "https://huggingface.co/api/models?author=onnx-community&search=BiRefNet&limit=100&full=true",
+      "final_url": "https://huggingface.co/api/models?author=onnx-community&search=BiRefNet&limit=100&full=true",
+      "status": 200,
+      "bytes": 9412,
+      "sha256": "4609ac0d72fc4be937e0fdde27cb04e4d6e4d27ab5078f93b075549b64f6bd24"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-metadata.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet",
+      "status": 200,
+      "bytes": 4533,
+      "sha256": "6946a2105ccdb3324626b15e79f5482b2cea3349f129db089dfefeba7068b8d7"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-tree.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet/tree/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4?recursive=true",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet/tree/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4?recursive=true",
+      "status": 200,
+      "bytes": 1096,
+      "sha256": "0bbfe14b1482992d543377b8a2656f3800b065801d0da8979780152fe6219043"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-README.md",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/README.md?%2FZhengPeng7%2FBiRefNet%2Fresolve%2Fe2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4%2FREADME.md=&etag=%2283cda9675fd4096e9b3a65bb4e1f8fa3d652929f%22",
+      "status": 200,
+      "bytes": 9965,
+      "sha256": "ceac4a1bb69b807eac5510bff80ff5599f606ef7458bee3b54b68d866e868532"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-config.json",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/config.json?%2FZhengPeng7%2FBiRefNet%2Fresolve%2Fe2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4%2Fconfig.json=&etag=%2206d8fa9d7f2f4c6f1cf0dc6e7bfd194153176a42%22",
+      "status": 200,
+      "bytes": 405,
+      "sha256": "c97ea21569daf66b205491a4635147dd3bc42c7c168b89d7d75b53f67ef548ae"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-metadata.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet-matting",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet-matting",
+      "status": 200,
+      "bytes": 2118,
+      "sha256": "7b0cd6afc6f72a30b3d9c7670ceca2e6577630702fce6d82734dde729de24f0e"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-tree.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet-matting/tree/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9?recursive=true",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet-matting/tree/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9?recursive=true",
+      "status": 200,
+      "bytes": 999,
+      "sha256": "76f1ed6cefa34496ae2dd915305d9e156303cbda4cfaa733dd00b28aaad949d6"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-README.md",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/README.md?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2FREADME.md=&etag=%222ed9a9176704c8b74e554672799624d616b15792%22",
+      "status": 200,
+      "bytes": 4724,
+      "sha256": "e43576e298fcfd143239f7c1dc080e1d03f4eef5e78156da4f0466d93f2c45a1"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-config.json",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/config.json?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2Fconfig.json=&etag=%22a90e853725c77d46f395583b265df9125f40f672%22",
+      "status": 200,
+      "bytes": 413,
+      "sha256": "b2b235983b80fbff325976ca517bb7eda25e915b84a97b150eca41266cf8a13b"
+    },
+    {
+      "name": "onnx-community--BiRefNet-COD-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-COD-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-COD-ONNX",
+      "status": 200,
+      "bytes": 1397,
+      "sha256": "5ef41936c05ac444e6752974959235f74d79e7c114807a89c0866fef2c595ff4"
+    },
+    {
+      "name": "onnx-community--BiRefNet-COD-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-COD-ONNX/tree/19e94ba49a925e9ca1227d56d2a3a422e34c8d84?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-COD-ONNX/tree/19e94ba49a925e9ca1227d56d2a3a422e34c8d84?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "70897670e81e746139cffc005f1d892145d6adc162b51c8342128fdecfad01e9"
+    },
+    {
+      "name": "onnx-community--BiRefNet-COD-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-COD-ONNX/resolve/19e94ba49a925e9ca1227d56d2a3a422e34c8d84/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-COD-ONNX/19e94ba49a925e9ca1227d56d2a3a422e34c8d84/README.md?%2Fonnx-community%2FBiRefNet-COD-ONNX%2Fresolve%2F19e94ba49a925e9ca1227d56d2a3a422e34c8d84%2FREADME.md=&etag=%228d808b57a7979316eb777ff30183d8ea9320c4d2%22",
+      "status": 200,
+      "bytes": 4289,
+      "sha256": "126c2e8d4ffcafb1418da6aa0997b87edee8b06167d47a8f9b93285ca6459dba"
+    },
+    {
+      "name": "onnx-community--BiRefNet-COD-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-COD-ONNX/resolve/19e94ba49a925e9ca1227d56d2a3a422e34c8d84/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-COD-ONNX/19e94ba49a925e9ca1227d56d2a3a422e34c8d84/config.json?%2Fonnx-community%2FBiRefNet-COD-ONNX%2Fresolve%2F19e94ba49a925e9ca1227d56d2a3a422e34c8d84%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-COD-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-COD-ONNX/resolve/19e94ba49a925e9ca1227d56d2a3a422e34c8d84/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-COD-ONNX/19e94ba49a925e9ca1227d56d2a3a422e34c8d84/preprocessor_config.json?%2Fonnx-community%2FBiRefNet-COD-ONNX%2Fresolve%2F19e94ba49a925e9ca1227d56d2a3a422e34c8d84%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-ONNX",
+      "status": 200,
+      "bytes": 1407,
+      "sha256": "3ad5213d8a49b627b4154ac782a2e570aad04e80236cbfd0f6f7e34037c427cf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-ONNX/tree/c99ba6fba16fd69458572c284bf2dadc0bb67ed8?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-ONNX/tree/c99ba6fba16fd69458572c284bf2dadc0bb67ed8?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "284ed0b8d39c4d61b693213b65059abe5feb618ff3d2b53adb08f41054034d65"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-DIS5K-ONNX/resolve/c99ba6fba16fd69458572c284bf2dadc0bb67ed8/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-DIS5K-ONNX/c99ba6fba16fd69458572c284bf2dadc0bb67ed8/README.md?%2Fonnx-community%2FBiRefNet-DIS5K-ONNX%2Fresolve%2Fc99ba6fba16fd69458572c284bf2dadc0bb67ed8%2FREADME.md=&etag=%228ee919d9b0ca7739194101266d4144609c62814a%22",
+      "status": 200,
+      "bytes": 4293,
+      "sha256": "27cc58b4fddc56a3de2d779061d6aac551887558683f25841b0438562b10cd8c"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-DIS5K-ONNX/resolve/c99ba6fba16fd69458572c284bf2dadc0bb67ed8/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-DIS5K-ONNX/c99ba6fba16fd69458572c284bf2dadc0bb67ed8/config.json?%2Fonnx-community%2FBiRefNet-DIS5K-ONNX%2Fresolve%2Fc99ba6fba16fd69458572c284bf2dadc0bb67ed8%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-DIS5K-ONNX/resolve/c99ba6fba16fd69458572c284bf2dadc0bb67ed8/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-DIS5K-ONNX/c99ba6fba16fd69458572c284bf2dadc0bb67ed8/preprocessor_config.json?%2Fonnx-community%2FBiRefNet-DIS5K-ONNX%2Fresolve%2Fc99ba6fba16fd69458572c284bf2dadc0bb67ed8%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet_lite-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_lite-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_lite-ONNX",
+      "status": 200,
+      "bytes": 1517,
+      "sha256": "f09755f163168d6814de38ba7b32bed231a5c9303e5de72c183a49ea2f839f2b"
+    },
+    {
+      "name": "onnx-community--BiRefNet_lite-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_lite-ONNX/tree/de15b22ba131738a16dff04aab8bdf8dc32e3ac1?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_lite-ONNX/tree/de15b22ba131738a16dff04aab8bdf8dc32e3ac1?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "9dc65240e0059279c856adc2808e2931121c2138ee9b860b3bae848f72f4297f"
+    },
+    {
+      "name": "onnx-community--BiRefNet_lite-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_lite-ONNX/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/README.md?%2Fonnx-community%2FBiRefNet_lite-ONNX%2Fresolve%2Fde15b22ba131738a16dff04aab8bdf8dc32e3ac1%2FREADME.md=&etag=%22df795005792416fd98f4e343f2b4c5b547ac3ad6%22",
+      "status": 200,
+      "bytes": 4286,
+      "sha256": "95be7ac786fc40352e1405c397767af132e3e44f7eb6b924391bb145a2446542"
+    },
+    {
+      "name": "onnx-community--BiRefNet_lite-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_lite-ONNX/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/config.json?%2Fonnx-community%2FBiRefNet_lite-ONNX%2Fresolve%2Fde15b22ba131738a16dff04aab8bdf8dc32e3ac1%2Fconfig.json=&etag=%22bef7cb2de5ca167af3170a519066a6898ce0ddd6%22",
+      "status": 200,
+      "bytes": 81,
+      "sha256": "50acd2d700ee3d5facdcf3aab2312bb586372726dce8bdd5741bdae0ca6eb84f"
+    },
+    {
+      "name": "onnx-community--BiRefNet_lite-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_lite-ONNX/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/preprocessor_config.json?%2Fonnx-community%2FBiRefNet_lite-ONNX%2Fresolve%2Fde15b22ba131738a16dff04aab8bdf8dc32e3ac1%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-ONNX",
+      "status": 200,
+      "bytes": 1405,
+      "sha256": "ba834e8f7f22a2f01437f43daa4a10248cfe8f302c8982b43565403741f6a218"
+    },
+    {
+      "name": "onnx-community--BiRefNet-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-ONNX/tree/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-ONNX/tree/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "394b36b5eb897da65d6365696735f476b3de049f519b3de34e8e539dc05c9760"
+    },
+    {
+      "name": "onnx-community--BiRefNet-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-ONNX/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/README.md?%2Fonnx-community%2FBiRefNet-ONNX%2Fresolve%2F534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67%2FREADME.md=&etag=%222978e2da2b376c8eabc96679641753f6ae877a16%22",
+      "status": 200,
+      "bytes": 4281,
+      "sha256": "561faa7cfaa4869745d576f23d18bde010ab0b98c1c7bfbe44a147703385df0a"
+    },
+    {
+      "name": "onnx-community--BiRefNet-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-ONNX/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/config.json?%2Fonnx-community%2FBiRefNet-ONNX%2Fresolve%2F534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-ONNX/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/preprocessor_config.json?%2Fonnx-community%2FBiRefNet-ONNX%2Fresolve%2F534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet-HRSOD_DHU-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-HRSOD_DHU-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-HRSOD_DHU-ONNX",
+      "status": 200,
+      "bytes": 1415,
+      "sha256": "008c7ab361ee3616e6dd55f2f9d0bf49c1f043630b11a6006cb6f0c22c997a63"
+    },
+    {
+      "name": "onnx-community--BiRefNet-HRSOD_DHU-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-HRSOD_DHU-ONNX/tree/c6358c318c38de192d85abc15608ac44af2e3128?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-HRSOD_DHU-ONNX/tree/c6358c318c38de192d85abc15608ac44af2e3128?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "956bd4123ba704934271a5221945187552ca8a1170d13c122e9a61145c3d26da"
+    },
+    {
+      "name": "onnx-community--BiRefNet-HRSOD_DHU-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-HRSOD_DHU-ONNX/resolve/c6358c318c38de192d85abc15608ac44af2e3128/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-HRSOD_DHU-ONNX/c6358c318c38de192d85abc15608ac44af2e3128/README.md?%2Fonnx-community%2FBiRefNet-HRSOD_DHU-ONNX%2Fresolve%2Fc6358c318c38de192d85abc15608ac44af2e3128%2FREADME.md=&etag=%2243316d9252731c5956abda0d08b4840e05903823%22",
+      "status": 200,
+      "bytes": 4297,
+      "sha256": "181c752ea6fe97f8023bd3167614239b57be4ce5d14d6834fed20b738563ec60"
+    },
+    {
+      "name": "onnx-community--BiRefNet-HRSOD_DHU-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-HRSOD_DHU-ONNX/resolve/c6358c318c38de192d85abc15608ac44af2e3128/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-HRSOD_DHU-ONNX/c6358c318c38de192d85abc15608ac44af2e3128/config.json?%2Fonnx-community%2FBiRefNet-HRSOD_DHU-ONNX%2Fresolve%2Fc6358c318c38de192d85abc15608ac44af2e3128%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-HRSOD_DHU-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-HRSOD_DHU-ONNX/resolve/c6358c318c38de192d85abc15608ac44af2e3128/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-HRSOD_DHU-ONNX/c6358c318c38de192d85abc15608ac44af2e3128/preprocessor_config.json?%2Fonnx-community%2FBiRefNet-HRSOD_DHU-ONNX%2Fresolve%2Fc6358c318c38de192d85abc15608ac44af2e3128%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-TR_TEs-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX",
+      "status": 200,
+      "bytes": 1442,
+      "sha256": "44ee99151fa53b4b723ab319a15ad8adc81bdeca6ca3d798768223c51478752b"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-TR_TEs-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/tree/4b637fff93a93176aa5dc22e1361b10a7fb506f6?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/tree/4b637fff93a93176aa5dc22e1361b10a7fb506f6?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "999b5cf238b1f0d47d51b28fd62ba96371a0b8523190de6c78f135e590a13fcf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-TR_TEs-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/resolve/4b637fff93a93176aa5dc22e1361b10a7fb506f6/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/4b637fff93a93176aa5dc22e1361b10a7fb506f6/README.md?%2Fonnx-community%2FBiRefNet-DIS5K-TR_TEs-ONNX%2Fresolve%2F4b637fff93a93176aa5dc22e1361b10a7fb506f6%2FREADME.md=&etag=%22b57af7e4e70bb2ded5d59fe70b20ae2f710bd733%22",
+      "status": 200,
+      "bytes": 4307,
+      "sha256": "08c4f29945d6a728be6c69aa877a6747947b89745a9634d64d3132e3ebed3f1a"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-TR_TEs-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/resolve/4b637fff93a93176aa5dc22e1361b10a7fb506f6/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/4b637fff93a93176aa5dc22e1361b10a7fb506f6/config.json?%2Fonnx-community%2FBiRefNet-DIS5K-TR_TEs-ONNX%2Fresolve%2F4b637fff93a93176aa5dc22e1361b10a7fb506f6%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-DIS5K-TR_TEs-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/resolve/4b637fff93a93176aa5dc22e1361b10a7fb506f6/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-DIS5K-TR_TEs-ONNX/4b637fff93a93176aa5dc22e1361b10a7fb506f6/preprocessor_config.json?%2Fonnx-community%2FBiRefNet-DIS5K-TR_TEs-ONNX%2Fresolve%2F4b637fff93a93176aa5dc22e1361b10a7fb506f6%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet-portrait-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-portrait-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-portrait-ONNX",
+      "status": 200,
+      "bytes": 1423,
+      "sha256": "af640499855dd54b672944146e7b7d908078d9dc7351208eeec8e57da12c4936"
+    },
+    {
+      "name": "onnx-community--BiRefNet-portrait-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet-portrait-ONNX/tree/dd7167f6a8b54ff7efc29a4c988938d79866464f?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet-portrait-ONNX/tree/dd7167f6a8b54ff7efc29a4c988938d79866464f?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "3df0af0c7dc15f50e0738218b7332c0f137ec1576d928f7d8383e5533dadb2e0"
+    },
+    {
+      "name": "onnx-community--BiRefNet-portrait-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-portrait-ONNX/resolve/dd7167f6a8b54ff7efc29a4c988938d79866464f/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-portrait-ONNX/dd7167f6a8b54ff7efc29a4c988938d79866464f/README.md?%2Fonnx-community%2FBiRefNet-portrait-ONNX%2Fresolve%2Fdd7167f6a8b54ff7efc29a4c988938d79866464f%2FREADME.md=&etag=%22256de3f439eca34ae86062baf5e21e338fe752ac%22",
+      "status": 200,
+      "bytes": 4299,
+      "sha256": "6e8e63dd077d4de237ce48be2a92a1444bf65350fd8036ed67315c9d9db9b6d1"
+    },
+    {
+      "name": "onnx-community--BiRefNet-portrait-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-portrait-ONNX/resolve/dd7167f6a8b54ff7efc29a4c988938d79866464f/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-portrait-ONNX/dd7167f6a8b54ff7efc29a4c988938d79866464f/config.json?%2Fonnx-community%2FBiRefNet-portrait-ONNX%2Fresolve%2Fdd7167f6a8b54ff7efc29a4c988938d79866464f%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet-portrait-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-portrait-ONNX/resolve/dd7167f6a8b54ff7efc29a4c988938d79866464f/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet-portrait-ONNX/dd7167f6a8b54ff7efc29a4c988938d79866464f/preprocessor_config.json?%2Fonnx-community%2FBiRefNet-portrait-ONNX%2Fresolve%2Fdd7167f6a8b54ff7efc29a4c988938d79866464f%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet_512x512-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_512x512-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_512x512-ONNX",
+      "status": 200,
+      "bytes": 1418,
+      "sha256": "c580442b55552e863a4ee7b6b11dedf6534857148e1c66b54e36ce9e7347b2a7"
+    },
+    {
+      "name": "onnx-community--BiRefNet_512x512-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_512x512-ONNX/tree/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_512x512-ONNX/tree/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "44ceb5e547490dadec05c83921d8342647caf9b7158e20cf58e2f34f0dc09294"
+    },
+    {
+      "name": "onnx-community--BiRefNet_512x512-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_512x512-ONNX/resolve/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_512x512-ONNX/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b/README.md?%2Fonnx-community%2FBiRefNet_512x512-ONNX%2Fresolve%2Fb0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b%2FREADME.md=&etag=%220770f333027aab9945bc9be857d4cd5654d21c71%22",
+      "status": 200,
+      "bytes": 4297,
+      "sha256": "ba06c011615797cdcec3217e7fe74b75db4ed80ac54826b1e66520e33bd731f6"
+    },
+    {
+      "name": "onnx-community--BiRefNet_512x512-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_512x512-ONNX/resolve/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_512x512-ONNX/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b/config.json?%2Fonnx-community%2FBiRefNet_512x512-ONNX%2Fresolve%2Fb0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet_512x512-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_512x512-ONNX/resolve/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_512x512-ONNX/b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b/preprocessor_config.json?%2Fonnx-community%2FBiRefNet_512x512-ONNX%2Fresolve%2Fb0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b%2Fpreprocessor_config.json=&etag=%228bd4f91cd670c60fca7ce32ca1ebab809bf9187f%22",
+      "status": 200,
+      "bytes": 389,
+      "sha256": "a79663b311d8404dfb329f7b45bc9f970a0c155aeedae8ac15b6b77d76789613"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX",
+      "status": 200,
+      "bytes": 1437,
+      "sha256": "ab1474ec351d9bb3584620a9516ed5bd732526fa63e2dffab2cf90d6bc53c7c9"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/tree/6defd3a19cec21042b178108815c9c4508d09867?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/tree/6defd3a19cec21042b178108815c9c4508d09867?recursive=true",
+      "status": 200,
+      "bytes": 1102,
+      "sha256": "0b5b18d68d19b0120117f6e2dba810cfeae0590a0c5b63cb67826f22d624da91"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/resolve/6defd3a19cec21042b178108815c9c4508d09867/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/6defd3a19cec21042b178108815c9c4508d09867/README.md?%2Fonnx-community%2FBiRefNet_dynamic-1024x1024-ONNX%2Fresolve%2F6defd3a19cec21042b178108815c9c4508d09867%2FREADME.md=&etag=%22d22cdc5a82e9dcd8316dd26fc556a6d783ab5482%22",
+      "status": 200,
+      "bytes": 4307,
+      "sha256": "24a277197a47f68176f3d01fbb7eb74094d1faf3aee1ce02f10abf6bf0202df8"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/resolve/6defd3a19cec21042b178108815c9c4508d09867/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/6defd3a19cec21042b178108815c9c4508d09867/config.json?%2Fonnx-community%2FBiRefNet_dynamic-1024x1024-ONNX%2Fresolve%2F6defd3a19cec21042b178108815c9c4508d09867%2Fconfig.json=&etag=%2275b92902a450340109085b241db2b71fe95e5ac3%22",
+      "status": 200,
+      "bytes": 30,
+      "sha256": "88b20240c9078cf9cc3843dc7d69a42d274b8c242de56a3b2a41ef9995cb93bf"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-preprocessor_config.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/resolve/6defd3a19cec21042b178108815c9c4508d09867/preprocessor_config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/6defd3a19cec21042b178108815c9c4508d09867/preprocessor_config.json?%2Fonnx-community%2FBiRefNet_dynamic-1024x1024-ONNX%2Fresolve%2F6defd3a19cec21042b178108815c9c4508d09867%2Fpreprocessor_config.json=&etag=%22825398cfd94a348babce456f2bcc8422c9bebb93%22",
+      "status": 200,
+      "bytes": 391,
+      "sha256": "447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-CUDA-metadata.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA",
+      "status": 200,
+      "bytes": 1330,
+      "sha256": "a10c871fb4c2c52e3d1c2ac13326b9b73843ef84792adeaf4bcd09b39172eb30"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-CUDA-tree.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/tree/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9?recursive=true",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/tree/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9?recursive=true",
+      "status": 200,
+      "bytes": 691,
+      "sha256": "8efae955a1e9dfef485e9b9299cd39f6f0ea6b2cbfe5e388ddf9a67af335732c"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-CUDA-README.md",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/resolve/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/README.md?%2Fonnx-community%2FBiRefNet_dynamic-1024x1024-ONNX-CUDA%2Fresolve%2F5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9%2FREADME.md=&etag=%22383995026a3891612d0dadaf6e93b927e079366f%22",
+      "status": 200,
+      "bytes": 5870,
+      "sha256": "48ddfa4a97052592e0e9733ac6b53bf43df227d2cbeeb7a37a5e33b6d29e4f03"
+    },
+    {
+      "name": "github-tutorials_BiRefNet_pth2onnx.ipynb",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/tutorials/BiRefNet_pth2onnx.ipynb",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/tutorials/BiRefNet_pth2onnx.ipynb",
+      "status": 200,
+      "bytes": 10453,
+      "sha256": "129388fdf66b99d4cc7d193a63b61721bba631c368d4fcc668a7120056b7e90d"
+    },
+    {
+      "name": "github-models_birefnet.py",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/models/birefnet.py",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/models/birefnet.py",
+      "status": 200,
+      "bytes": 16702,
+      "sha256": "7b3ccc1db3826e9cb350c5cd76de148d515826f9c19b342d9db617781c494871"
+    },
+    {
+      "name": "github-utils.py",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/utils.py",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/utils.py",
+      "status": 200,
+      "bytes": 2908,
+      "sha256": "7fbdcd4d5dedca7c251e1b5d6848494bb8512899b21f280dbe7a2625fa7043a4"
+    },
+    {
+      "name": "github-dataset.py",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/dataset.py",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/dataset.py",
+      "status": 200,
+      "bytes": 10316,
+      "sha256": "e684883e7ba07c95f0b98f8ebe7d9cb33749583ba043b0fba70c59a29677862d"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-metadata.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_dynamic",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_dynamic",
+      "status": 200,
+      "bytes": 1863,
+      "sha256": "0c5ed97e02c67be541a352857e33da2907696788906fd046d124e5e7907d207f"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-tree.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_dynamic/tree/280306042f57b7a33854319da62fd86aaa89ec4c?recursive=true",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_dynamic/tree/280306042f57b7a33854319da62fd86aaa89ec4c?recursive=true",
+      "status": 200,
+      "bytes": 1000,
+      "sha256": "30489131d5fe996a13026ff904d8768170e6e2e4845478989da23ed4deb9274e"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-README.md",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_dynamic/resolve/280306042f57b7a33854319da62fd86aaa89ec4c/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_dynamic/280306042f57b7a33854319da62fd86aaa89ec4c/README.md?%2FZhengPeng7%2FBiRefNet_dynamic%2Fresolve%2F280306042f57b7a33854319da62fd86aaa89ec4c%2FREADME.md=&etag=%221ecf90d123cc075829e2a619d46b65cbe5648e00%22",
+      "status": 200,
+      "bytes": 11184,
+      "sha256": "bc9008b95a26984e92ed29c7d65e53b5f3d560dbe36a2e77090e9c5d577fba83"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-config.json",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_dynamic/resolve/280306042f57b7a33854319da62fd86aaa89ec4c/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_dynamic/280306042f57b7a33854319da62fd86aaa89ec4c/config.json?%2FZhengPeng7%2FBiRefNet_dynamic%2Fresolve%2F280306042f57b7a33854319da62fd86aaa89ec4c%2Fconfig.json=&etag=%22c89ae3b3cec8352baa366fdf7f07188ff25c8d83%22",
+      "status": 200,
+      "bytes": 413,
+      "sha256": "557f461de22ede5b0a2ff60967e579180194ded47587f6e30a3a09ad08ae248b"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-birefnet.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_dynamic/resolve/280306042f57b7a33854319da62fd86aaa89ec4c/birefnet.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_dynamic/280306042f57b7a33854319da62fd86aaa89ec4c/birefnet.py?%2FZhengPeng7%2FBiRefNet_dynamic%2Fresolve%2F280306042f57b7a33854319da62fd86aaa89ec4c%2Fbirefnet.py=&etag=%22237ac4e21c0999b007381742a387ec1276e6c684%22",
+      "status": 200,
+      "bytes": 92134,
+      "sha256": "2a45b4e0ece72d7c4212bca1a988e7d7e52bfe9f98ec59c58b8809c8a8b7a831"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-handler.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_dynamic/resolve/280306042f57b7a33854319da62fd86aaa89ec4c/handler.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_dynamic/280306042f57b7a33854319da62fd86aaa89ec4c/handler.py?%2FZhengPeng7%2FBiRefNet_dynamic%2Fresolve%2F280306042f57b7a33854319da62fd86aaa89ec4c%2Fhandler.py=&etag=%22525bb8c047e1555971ecd1d2d39d633cfa4172ee%22",
+      "status": 200,
+      "bytes": 5256,
+      "sha256": "a1ea9391d06df142f35217af9c84953cf4a21fff0e1f37469afb3fe14565bc3e"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-requirements.txt",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_dynamic/resolve/280306042f57b7a33854319da62fd86aaa89ec4c/requirements.txt",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_dynamic/280306042f57b7a33854319da62fd86aaa89ec4c/requirements.txt?%2FZhengPeng7%2FBiRefNet_dynamic%2Fresolve%2F280306042f57b7a33854319da62fd86aaa89ec4c%2Frequirements.txt=&etag=%223af359c55a02bbaea4d9f3a95a12c48cad2209f3%22",
+      "status": 200,
+      "bytes": 149,
+      "sha256": "7fd8bec732f48505785f1b6a89ac4a6fc27ea6258cdbab2f2e55897c16f86a7d"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_lite-matting-metadata.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_lite-matting",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_lite-matting",
+      "status": 200,
+      "bytes": 1820,
+      "sha256": "aaddc22269fb00614b4460d0ee84ef9b59b0ab9b5bb22a69a183376a01ed7b2d"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_lite-matting-tree.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_lite-matting/tree/99c33412e3f58e1f33187abdc8c435c645243690?recursive=true",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_lite-matting/tree/99c33412e3f58e1f33187abdc8c435c645243690?recursive=true",
+      "status": 200,
+      "bytes": 992,
+      "sha256": "d847f5df268b250c27be421e5293f8ac660501bc7760fa3635b26152587dae1d"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_lite-matting-README.md",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_lite-matting/resolve/99c33412e3f58e1f33187abdc8c435c645243690/README.md",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_lite-matting/99c33412e3f58e1f33187abdc8c435c645243690/README.md?%2FZhengPeng7%2FBiRefNet_lite-matting%2Fresolve%2F99c33412e3f58e1f33187abdc8c435c645243690%2FREADME.md=&etag=%22014e98390ae97728a7038be30e4b890309eca505%22",
+      "status": 200,
+      "bytes": 4959,
+      "sha256": "1181998ea9751085382da6d2ceff79e9e94e5ff5c45b03c44886e8b229bcfee9"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_lite-matting-config.json",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_lite-matting/resolve/99c33412e3f58e1f33187abdc8c435c645243690/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_lite-matting/99c33412e3f58e1f33187abdc8c435c645243690/config.json?%2FZhengPeng7%2FBiRefNet_lite-matting%2Fresolve%2F99c33412e3f58e1f33187abdc8c435c645243690%2Fconfig.json=&etag=%2289814e5e74e58b793bd08309c81fed2e074cb853%22",
+      "status": 200,
+      "bytes": 418,
+      "sha256": "2050e7f1d76417bb167d86a22a52737de2a6e114c0f26c8df85c188366819d72"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_lite-matting-birefnet.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_lite-matting/resolve/99c33412e3f58e1f33187abdc8c435c645243690/birefnet.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_lite-matting/99c33412e3f58e1f33187abdc8c435c645243690/birefnet.py?%2FZhengPeng7%2FBiRefNet_lite-matting%2Fresolve%2F99c33412e3f58e1f33187abdc8c435c645243690%2Fbirefnet.py=&etag=%22fc9d83875236591d89dc9f5faf3951d3c55441e5%22",
+      "status": 200,
+      "bytes": 92134,
+      "sha256": "af8568b5be406bf4d2a68a7ed6d72e40f73b37a1fb6fc9ebd71b5b3cbcd069c9"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_lite-matting-handler.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet_lite-matting/resolve/99c33412e3f58e1f33187abdc8c435c645243690/handler.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet_lite-matting/99c33412e3f58e1f33187abdc8c435c645243690/handler.py?%2FZhengPeng7%2FBiRefNet_lite-matting%2Fresolve%2F99c33412e3f58e1f33187abdc8c435c645243690%2Fhandler.py=&etag=%22a4d7dadcd3eae59a55201d0ecc8ad21e01b9a2c1%22",
+      "status": 200,
+      "bytes": 4875,
+      "sha256": "2ac368524ae81695b58f2f5006f2ea554b30a96e921e8ee85f7651a3636136d2"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-birefnet.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/birefnet.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/birefnet.py?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2Fbirefnet.py=&etag=%22237ac4e21c0999b007381742a387ec1276e6c684%22",
+      "status": 200,
+      "bytes": 92134,
+      "sha256": "2a45b4e0ece72d7c4212bca1a988e7d7e52bfe9f98ec59c58b8809c8a8b7a831"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-handler.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/handler.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/handler.py?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2Fhandler.py=&etag=%228b841031c46fde741573b777ec783431c493dcca%22",
+      "status": 200,
+      "bytes": 4707,
+      "sha256": "43319b954403f90a8824a162c59018134750964a70d2f981668525bce9b3ed38"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-BiRefNet_config.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/BiRefNet_config.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/BiRefNet_config.py?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2FBiRefNet_config.py=&etag=%2237c8ac58bec2f52dac34204978a7b61b69e3da76%22",
+      "status": 200,
+      "bytes": 298,
+      "sha256": "e7b8c2a74f6cea6a59553d517f71d47f2c1d90e670a13416af17c25fe2f3dc52"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-requirements.txt",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/requirements.txt",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/requirements.txt?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2Frequirements.txt=&etag=%22ed8583eb7e7264c7a0c76523882b265a3297423f%22",
+      "status": 200,
+      "bytes": 149,
+      "sha256": "bdfdd83a090d31a2acf64f7350653fa63cd8b5d9d6e0ff3e135bea7ce3786341"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-birefnet.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/birefnet.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/birefnet.py?%2FZhengPeng7%2FBiRefNet%2Fresolve%2Fe2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4%2Fbirefnet.py=&etag=%228dea801e2b56facb8486ba351e6f91c3e664eb6d%22",
+      "status": 200,
+      "bytes": 91896,
+      "sha256": "208771ae626f653d64128fbf2d6ac9f8e645c5cc5e286258a73ec3322bbfe5ef"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-handler.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/handler.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/handler.py?%2FZhengPeng7%2FBiRefNet%2Fresolve%2Fe2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4%2Fhandler.py=&etag=%22a7125cb498ca55e30b3632caa474056dff1f59a5%22",
+      "status": 200,
+      "bytes": 4762,
+      "sha256": "b95f5806bfcd575ccff2a9f08816ae0e5d4df1e81b48797f9997f68b531404a5"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-BiRefNet_config.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/BiRefNet_config.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/BiRefNet_config.py?%2FZhengPeng7%2FBiRefNet%2Fresolve%2Fe2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4%2FBiRefNet_config.py=&etag=%2237c8ac58bec2f52dac34204978a7b61b69e3da76%22",
+      "status": 200,
+      "bytes": 298,
+      "sha256": "e7b8c2a74f6cea6a59553d517f71d47f2c1d90e670a13416af17c25fe2f3dc52"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-requirements.txt",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet/resolve/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/requirements.txt",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet/e2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4/requirements.txt?%2FZhengPeng7%2FBiRefNet%2Fresolve%2Fe2bf8e4460fc8fa32bba5ea4d94b3233d367b0e4%2Frequirements.txt=&etag=%22ed8583eb7e7264c7a0c76523882b265a3297423f%22",
+      "status": 200,
+      "bytes": 149,
+      "sha256": "bdfdd83a090d31a2acf64f7350653fa63cd8b5d9d6e0ff3e135bea7ce3786341"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-commits.json",
+      "url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/commits/main",
+      "final_url": "https://huggingface.co/api/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/commits/main",
+      "status": 200,
+      "bytes": 1446,
+      "sha256": "0f43abc0a274214e92a46434b17757e921a75ab08f919bd92a15800ab602bba6"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-commits.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet-matting/commits/main",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet-matting/commits/main",
+      "status": 200,
+      "bytes": 4609,
+      "sha256": "996cecde91cd59fef9fc7a40082cb3565143be19d857dcc8effc02e287d0693d"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet_dynamic-commits.json",
+      "url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_dynamic/commits/main",
+      "final_url": "https://huggingface.co/api/models/ZhengPeng7/BiRefNet_dynamic/commits/main",
+      "status": 200,
+      "bytes": 3800,
+      "sha256": "35bf18a1aa74697e5c47510949dde8ec36885410b97ac5dceac59cabb74d4d04"
+    },
+    {
+      "name": "onnx-community--BiRefNet_dynamic-1024x1024-ONNX-CUDA-manifest.json",
+      "url": "https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/resolve/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/manifest.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/manifest.json?%2Fonnx-community%2FBiRefNet_dynamic-1024x1024-ONNX-CUDA%2Fresolve%2F5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9%2Fmanifest.json=&etag=%22fef7ddb962b50e69b1c38d0ab197d34699810487%22",
+      "status": 200,
+      "bytes": 1190,
+      "sha256": "00a85b88b062bf35778a07c2871e6d2c6e73e974c92d97e6f736331d7be83d3e"
+    }
+  ]
+}

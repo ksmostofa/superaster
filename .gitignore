@@ -21,3 +21,7 @@ evidence/feasibility/*.jpg
 
 evidence/browser/**/*.png
 evidence/browser/*.jpeg
+
+evidence/browser/continuation/*.png
+evidence/browser/continuation/*.jpeg
+evidence/browser/continuation/*.zip

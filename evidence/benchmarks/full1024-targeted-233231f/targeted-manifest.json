@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0-targeted-lite1024",
+  "split": "diagnostic-screening",
+  "reason": "Two observed 512 failures; not heldout or release quality sample. T01 retains its existing derived input; fern retains its existing screening evaluation. No input hashes or retained subjects changed.",
+  "parent_screening_manifest_sha256": "4856791a5b76405ac2b254c5458dda4893478977167f9d75c0d0f12736559fb6",
+  "parent_acceptance_manifest_sha256": "36c16076aa94f94c4af1f2f0deb106fca33aeb5f94a0fe05425ea42c7124d4ce",
+  "cases": [
+    {
+      "alpha_ground_truth": null,
+      "category": "people",
+      "challenges": [
+        "group subjects",
+        "overlap",
+        "busy outdoor background"
+      ],
+      "evaluation": {
+        "path": "benchmarks/fixtures/generated/acceptance/t01-2400x1600.png",
+        "sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+        "width": 2400,
+        "height": 1600
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "t01-three-birdwatchers",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 300543,
+        "height": 1848,
+        "path": "benchmarks/corpus/originals/people-group.jpg",
+        "sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+        "width": 2784
+      },
+      "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "artist_plain": "Walton LaVonda, U.S. Fish and Wildlife Service",
+        "canonical_original_height": 1848,
+        "canonical_original_sha1": "6b884c562ae07a58974873b6f18cf7529c491416",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "canonical_original_width": 2784,
+        "copyrighted": "False",
+        "credit_plain": "http://www.public-domain-image.com/public-domain-images-pictures-free-stock-photos/people-public-domain-images-pictures/a-group-of-people-stand-birdwatching.jpg",
+        "description_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 24888979,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1192131628,
+        "revision_timestamp": "2026-04-05T17:35:54Z",
+        "source_snapshot_sha256": "1a4841b39abda1b965492142f53a4c045165fc03f63b48f36202d2031691fbfb",
+        "title": "File:A group of people stand birdwatching.jpg",
+        "usage_terms": "Public domain"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "thin_structures",
+      "challenges": [
+        "plants",
+        "thin leaves",
+        "crowded nursery"
+      ],
+      "evaluation": {
+        "bytes": 2875335,
+        "height": 960,
+        "path": "benchmarks/corpus/evaluation/thin-plant.png",
+        "sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "thin-plant",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 571398,
+        "height": 960,
+        "path": "benchmarks/corpus/originals/thin-plant.jpg",
+        "sha256": "20778fc6cc3b0a862578ec669d3714b00fcf9202591ac04dac7290ff70273ed9",
+        "width": 1280
+      },
+      "retained_subject": "foreground fern fronds including leaves and stems",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg/1280px-Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "artist_plain": "Forest and Kim Starr",
+        "canonical_original_height": 2736,
+        "canonical_original_sha1": "0579478773bd09dcf225da4c3af7a6c05691c747",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "canonical_original_width": 3648,
+        "copyrighted": "True",
+        "credit_plain": "starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_(24746746030).jpg",
+        "license": "CC BY 3.0 us",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+        "page_id": 71860039,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1190650229,
+        "revision_timestamp": "2026-04-03T02:22:29Z",
+        "source_snapshot_sha256": "0ceff0a5e7fa29fffeabcf4bcc01d88fe594a654abb995babdc176854eb7ce74",
+        "title": "File:Starr-100623-7771-Nephrolepis sp-potted plants in shade house-Pukalani Plant Company Pulehu-Maui (24746746030).jpg",
+        "usage_terms": "Creative Commons Attribution 3.0 us"
+      }
+    }
+  ]
+}

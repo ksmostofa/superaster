@@ -1,0 +1,203 @@
+{
+  "id": "thin-plant",
+  "category": "thin_structures",
+  "repeat": 1,
+  "variant": "none",
+  "status": "PASS",
+  "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+  "elapsed_seconds": 77.197023263,
+  "human_intended_subject": "NOT RUN",
+  "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+  "artifact_checks": {
+    "requested_dimensions": "PASS",
+    "png": "PASS",
+    "single_frame": "PASS",
+    "mask_dimensions": "PASS",
+    "mask_one_channel": "PASS",
+    "has_nonopaque_pixels": "PASS",
+    "has_retained_pixels": "PASS",
+    "opaque_rgb_unchanged": "PASS",
+    "sensitive_metadata_stripped": "PASS",
+    "evaluation_input_preserved": "PASS",
+    "source_original_preserved": "PASS",
+    "pinned_model": "PASS"
+  },
+  "decoded_properties": {
+    "width": 1280,
+    "height": 960,
+    "format": "png",
+    "channels": 4,
+    "bytes": 3991241,
+    "transparent_pixels": 421709,
+    "partially_transparent_pixels": 57228,
+    "opaque_pixels": 749863,
+    "opaque_changed_pixels": 0,
+    "maximum_opaque_rgb_difference": 0,
+    "has_icc": true
+  },
+  "engine_execution_record": {
+    "contract_version": "1.0",
+    "implementation_version": "0.1.0-alpha.1",
+    "input_hash": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+    "recipe_hash": "2f1e5b293e3d7f646ebcd9a45a54ea1eb4a51504062c7f54bffe844a896047bc",
+    "binding_hashes": {},
+    "resolved_recipe": {
+      "spec_version": "1.0",
+      "input": {
+        "ref": "thin-plant"
+      },
+      "engine": "birefnet-full-1024-fp16",
+      "quality": "quality",
+      "operations": [
+        {
+          "op": "remove_background",
+          "edge_cleanup": "none"
+        }
+      ],
+      "output": {
+        "format": "png",
+        "metadata": "strip"
+      }
+    },
+    "engine": {
+      "id": "birefnet-full-1024-fp16",
+      "version": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+      "model_hash": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+      "precision": "fp16 weights / float32 input / float32 output",
+      "inference_dimensions": [
+        1024,
+        1024
+      ],
+      "runtime": "onnxruntime-node 1.30.0",
+      "backend": "cpu",
+      "refinement": "none"
+    },
+    "encoder": {
+      "format": "png",
+      "quality": 90,
+      "metadata": "strip",
+      "kernel": "declared imaging adapter"
+    },
+    "applied_operations": [
+      {
+        "op": "remove_background",
+        "edge_cleanup": "none"
+      }
+    ],
+    "output": {
+      "width": 1280,
+      "height": 960,
+      "format": "png",
+      "channels": 4,
+      "has_alpha": true,
+      "is_opaque": false,
+      "bytes": 3991241,
+      "color_space": "srgb",
+      "pages": 1,
+      "metadata": {
+        "icc": true,
+        "exif": false,
+        "density": 25
+      },
+      "hash": "333cf6fc1f7942f38333251485a83070ca8e3ac33bfce1841f15979ca516d44b"
+    },
+    "timings_ms": {
+      "decode": 46.16427799999656,
+      "inference": 76434.242899,
+      "preprocess": 93.64581999999791,
+      "inference_kernel": 76268.551029,
+      "alpha_decode": 45.39039099999354,
+      "encode": 166.26879999999073,
+      "validate": 204.5099169999885
+    },
+    "warnings": [],
+    "rules": []
+  },
+  "engine_execution_record_sha256": "a58c9bc9d86faa06746e42a8cec1b335f240fd042626ba535218ed836910898e",
+  "input_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+  "output_sha256": "333cf6fc1f7942f38333251485a83070ca8e3ac33bfce1841f15979ca516d44b",
+  "mask_sha256": "5c3c71d2dcc35d7bfae5b8a205c70f8eb069ad84e69e9f0ea33ff5ef22c07426",
+  "visual_files": {
+    "cutout": "cutout.png",
+    "mask": "alpha.png",
+    "white": "white.png",
+    "black": "black.png",
+    "color": "color.png"
+  },
+  "evidence_export_seconds": 0.4996451959999977,
+  "source": {
+    "artifact_rendition": "official published 1280px-wide rendition",
+    "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg/1280px-Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+    "artist_plain": "Forest and Kim Starr",
+    "canonical_original_height": 2736,
+    "canonical_original_sha1": "0579478773bd09dcf225da4c3af7a6c05691c747",
+    "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+    "canonical_original_width": 3648,
+    "copyrighted": "True",
+    "credit_plain": "starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui",
+    "description_url": "https://commons.wikimedia.org/wiki/File:Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_(24746746030).jpg",
+    "license": "CC BY 3.0 us",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+    "page_id": 71860039,
+    "provider": "Wikimedia Commons",
+    "restriction_metadata": "",
+    "revision_id": 1190650229,
+    "revision_timestamp": "2026-04-03T02:22:29Z",
+    "source_snapshot_sha256": "0ceff0a5e7fa29fffeabcf4bcc01d88fe594a654abb995babdc176854eb7ce74",
+    "title": "File:Starr-100623-7771-Nephrolepis sp-potted plants in shade house-Pukalani Plant Company Pulehu-Maui (24746746030).jpg",
+    "usage_terms": "Creative Commons Attribution 3.0 us",
+    "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+  },
+  "recipe": {
+    "spec_version": "1.0",
+    "input": {
+      "ref": "thin-plant"
+    },
+    "engine": "birefnet-full-1024-fp16",
+    "quality": "quality",
+    "operations": [
+      {
+        "op": "remove_background",
+        "edge_cleanup": "none"
+      }
+    ],
+    "output": {
+      "format": "png",
+      "metadata": "strip"
+    }
+  },
+  "progress_events": [
+    {
+      "stage": "decode",
+      "at_ms": 6.657311999995727
+    },
+    {
+      "stage": "inference",
+      "at_ms": 58.02819399999862
+    },
+    {
+      "stage": "preprocess",
+      "at_ms": 82.85862700000143
+    },
+    {
+      "stage": "inference",
+      "at_ms": 176.57553599999665
+    },
+    {
+      "stage": "encode",
+      "at_ms": 76747.354395
+    },
+    {
+      "stage": "validate",
+      "at_ms": 76913.73253099999
+    },
+    {
+      "stage": "complete",
+      "at_ms": 77169.35096400001
+    }
+  ],
+  "peak_rss_bytes_sampled": 9134694400,
+  "process_max_rss_kib_lifetime": 9412516,
+  "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+  "session_condition": "warmed session, distinct image"
+}

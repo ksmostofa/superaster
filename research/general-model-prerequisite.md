@@ -1,0 +1,58 @@
+# General-model provenance prerequisite
+
+Checked 2026-10-09 JST against private active specification 1.3 and worktree commit `f24a674`. This is a source audit. No weights were downloaded, Python model code executed, inference run, thresholds tuned, defaults changed or gates awarded.
+
+Decision: an approved general-matting source checkpoint exists, but no inspected ready-made ONNX artifact establishes the complete source-to-export chain and failed-case parity. The next useful prerequisite is one reproducible conversion and source-reference comparison for the pinned official `ZhengPeng7/BiRefNet-matting` checkpoint below. Do not run another broad candidate screen merely because its name says general or dynamic. Whether this checkpoint retains all three people remains unknown.
+
+## Facts that affect the decision
+
+The existing [Full1024 diagnostic](../evidence/benchmarks/full1024-targeted-233231f/assistant-review.json) still erases the required left birdwatcher. The fern is nonempty but complete frond retention remains unresolved. The previous [finite strategy](quality-strategy.md) therefore rules out an unchanged rerun or 25-case expansion. Preserve manifest SHA-256 `e293dfc4721a5394d9203da05f3064ea428ec65375541b31d39cbfd69330d2c9`, group input `08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734`, and fern input `11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b`. No manual restoration can count as T19 automatic improvement.
+
+The [official model zoo](https://github.com/ZhengPeng7/BiRefNet/blob/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/README.md) separates general segmentation, general matting and portrait matting. Its current source commit is `ebcc0bc8ec7fe919cec829f2dea656b3078acddc`, dated 2026-09-02. The [general-matting card](https://huggingface.co/ZhengPeng7/BiRefNet-matting/blob/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/README.md) names a broad matting training mix, including human and general-object data, and declares MIT. These are upstream declarations. Training-set overlap with Superaster's corpus is unknown; published dataset scores establish no Superaster quality or speed result.
+
+| Inspected route | Exact source/artifact facts | Remaining prerequisite |
+| --- | --- | --- |
+| Official general matting | HF revision `eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9`; `model.safetensors`, 884,878,856 bytes, declared SHA-256 `a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb` | Complete downloaded hash, reproducible export, graph/runtime audit and source/export numerical comparison. The pinned HF tree has no ONNX artifact. |
+| Official lite matting | HF revision `99c33412e3f58e1f33187abdc8c435c645243690`; `model.safetensors`, 88,965,896 bytes, declared SHA-256 `ce8bcfc045e336322c0424a5863dcfb7e9ce8fed0a5fd4d1b2b20adf12d97243`; MIT card | No ONNX in its pinned tree. It would require a separate conversion and quality/resource proof. Lower file size predicts neither subject retention nor phone support. No second trial is recommended here. |
+| Dynamic general 1024 export | [Conversion card](https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/blob/6defd3a19cec21042b178108815c9c4508d09867/README.md), revision `6defd3a19cec21042b178108815c9c4508d09867`; fp16 file 489,811,221 bytes, declared SHA-256 `ee32f829fbf050fd501e53ed330369a71a0cbc69b9ab574da13d18ecbfa93dca`; MIT | The card names `ZhengPeng7/BiRefNet_dynamic` but no original revision, weight hash, converter revision or parity result. Its processor fixes 1024 square inputs. The model name does not establish a dynamic production graph. |
+| Dynamic CUDA export | [Card](https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/blob/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/README.md), revision `5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9`; ONNX 466,586,004 bytes, declared SHA-256 `1fefe02158d58b32d589cc4bdd7c2be938cd49171316e4a6ed5da485ccf39b19`; MIT | Pins official source revision `280306042f57b7a33854319da62fd86aaa89ec4c` and reports CUDA parity. Producer script, exact toolchain and comparison inputs/conditions are absent; CPU/browser validation is explicitly excluded. No local NVIDIA route was established. |
+| Official release ONNX files | [Release API](https://api.github.com/repos/ZhengPeng7/BiRefNet/releases/tags/v1) records general epoch 244 ONNX asset ID 186740004, 972,666,916 bytes; matting epoch 100 ONNX asset ID 202243782, 972,667,742 bytes | Both historical assets have `digest: null`. Filenames and release authors establish intended provenance, but no complete hash or exact producing toolchain/parity was audited here. |
+
+The ten current `onnx-community` BiRefNet repositories were inspected through their cards and complete small tree listings. None contains an export script. Nine omit an immutable original-weight linkage; the CUDA-only dynamic export is the exception. No general-matting conversion appeared in that author's list. This is a bounded inventory of that author, not a claim that no conversion exists anywhere. FeyNoBg adds another conversion prerequisite and answers no remaining question here, so its investigation was not expanded.
+
+## Source and output semantics
+
+The pinned matting [handler](https://huggingface.co/ZhengPeng7/BiRefNet-matting/blob/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/handler.py) selects `Matting`, converts to RGB, resizes to 1024 square, uses RGB 0..1 with ImageNet mean/std, then applies sigmoid to the final model prediction. Its separate foreground-color estimator must not be confused with alpha refinement. A parity diagnosis should omit that estimator and compare raw logits and continuous sigmoid coverage before quantization/export.
+
+The bundled [model code](https://huggingface.co/ZhengPeng7/BiRefNet-matting/blob/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/birefnet.py) uses the large Swin backbone and returns the decoder's prediction list in evaluation mode. Its internal task config still says DIS5K. That copied training configuration does not override the card's stated checkpoint task, and cannot establish the checkpoint's training history. The pinned config explicitly disables backbone-pretrained loading. Import this reviewed local code in an isolated research environment; do not use mutable `trust_remote_code=True` or execute network-fetched Python in production.
+
+The official [conversion notebook](https://github.com/ZhengPeng7/BiRefNet/blob/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/tutorials/BiRefNet_pth2onnx.ipynb) loads a named dynamic `.pth` file, exports at opset 17 with `input_image` / `output_image`, registers a legacy deform-convolution exporter and compares source/ONNX sigmoid outputs. It is a useful starting implementation. Its unpinned package installation and mutable exporter clone prevent treating it as a reproducible producer. Adapting its selected weights to matting is a new conversion, not proof about either historical published ONNX file. The source's generic assertion that differences are acceptable supplies no Superaster numerical tolerance.
+
+The CUDA [manifest](https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/blob/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/manifest.json) declares PyTorch 2.6.0, opset 19, 20 native DeformConv nodes, FP16 `IMAGE` input and `ALPHA` output, and sigmoid inside the graph. It reports mean error `1.4735e-5` and maximum error `0.004486` against source FP16. These are producer-reported figures, without disclosed input/version/device conditions for the comparison. They do not establish subject retention, laptop/phone support or Superaster tolerances. The available record cannot justify replacing the shared float32-input CPU/browser profiles with this CUDA artifact.
+
+MIT use and redistribution require the retained [copyright/permission notice](https://github.com/ZhengPeng7/BiRefNet/blob/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE), SHA-256 `92a7089e0915fc32bc40067560b398f1e6a7a5958abd7d04eda393629a5acefb`. Preserve source/converter attribution. These weights are not Apache-2.0 merely because the application is.
+
+## One concrete next prerequisite
+
+Prepare a research-only producer for the pinned full general-matting checkpoint, with exact reviewed local source, dependency versions, deform-convolution exporter revision, conversion settings and source/artifact hashes. Preflight the unchanged fixtures and resource availability. Fix the source-reference preprocessing and comparison method before executing anything. Establish numerical tolerances through the appropriate specification gate before tuning to them.
+
+One serial source-reference/export comparison can then answer two separate questions: does the original matting checkpoint retain the required subjects, and does the exported route preserve its predictions? Retain raw logits, finite values, actual tensor names/dtypes/shapes, alpha and original-sized composites. A loss in both routes is model evidence; a discrepancy isolates an export or runtime issue. If source inference still erases an intended person, stop that checkpoint rather than broadening its screen. If it succeeds and the ONNX route agrees within declared semantics, a separately approved screening decision becomes concrete. Browser operators, cached setup, phone memory, full pipeline cost and held-out quality still require their own checks.
+
+This recommendation is a proposal for the next bounded G2 prerequisite under F001-F004, F012, F020-F024, F053-F055 and F069. It changes no scope or acceptance. G2/T01 remain incomplete; T19, physical Pixel 7, hidden-label human review and frozen budgets are not supplied by this audit. No evidence here supports faster or more accurate than remove.bg.
+
+## Retained source evidence
+
+Small source/API snapshots and reproduction scripts are in ignored `.cache/general-model-prerequisite/`. Its `source-index.json` pins URLs, response status, byte counts and actual body hashes; index SHA-256 is `5baa5bc2090c82ad2d04596b3a8182ee8cfca25fa00fc13ce5b3ecbb2bcf2402`. Weight hashes above are remote LFS declarations, not local download verification.
+
+| Inspected source body | SHA-256 |
+| --- | --- |
+| GitHub model-zoo README | `7a4c7661d0861bd99845e78e7980c5440a9c2095eff9b7d6fdbccdcc45c8fec7` |
+| General-matting card | `e43576e298fcfd143239f7c1dc080e1d03f4eef5e78156da4f0466d93f2c45a1` |
+| General-matting bundled model | `2a45b4e0ece72d7c4212bca1a988e7d7e52bfe9f98ec59c58b8809c8a8b7a831` |
+| General-matting handler | `43319b954403f90a8824a162c59018134750964a70d2f981668525bce9b3ed38` |
+| General-matting config | `b2b235983b80fbff325976ca517bb7eda25e915b84a97b150eca41266cf8a13b` |
+| Official conversion notebook | `129388fdf66b99d4cc7d193a63b61721bba631c368d4fcc668a7120056b7e90d` |
+| Dynamic ONNX card | `24a277197a47f68176f3d01fbb7eb74094d1faf3aee1ce02f10abf6bf0202df8` |
+| Dynamic 1024 processor | `447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54` |
+
+Reproduce metadata/source collection with `python .cache/general-model-prerequisite/fetch.py`, then `python .cache/general-model-prerequisite/followup.py` and `python .cache/general-model-prerequisite/cuda-manifest.py` in this worktree. These scripts download text metadata/source only and run no imported model code. Fetching current heads again may legitimately record changed revisions. Preserve this snapshot for comparison. Source snapshots establish declarations and inspected behavior, not empirical model quality.

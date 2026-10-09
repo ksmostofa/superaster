@@ -128,6 +128,7 @@ pre { overflow: auto; font: 13px/1.7 monospace; padding: 20px; background: var(-
 @media (max-width: 850px) {
   header { padding: 16px 20px; gap: 20px; }
   .local-label { display: none; }
+  .local-label.has-update { display: flex; flex-wrap: wrap; width: 100%; margin-left: 0; }
   main { padding: 22px 20px 32px; }
   .workspace { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .drop-area { min-height: 390px; }
@@ -149,6 +150,7 @@ pre { overflow: auto; font: 13px/1.7 monospace; padding: 20px; background: var(-
   .intro p { font-size: 13px; }
   .intro.has-image p { display: none; }
   .intro.has-image .secondary { min-height: 48px; padding: 8px 10px; }
+  aside.has-result .panel-heading { display: none; }
   .drop-area { min-height: 340px; padding: 24px 16px; }
   .drop-area .aster-mark { width: 112px; height: 96px; }
   .image-toolbar { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px; }

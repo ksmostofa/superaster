@@ -8,9 +8,9 @@ The default catalog loads that snapshot for `listPresets`, `resolvePreset` and `
 
 Use `resolvePresetStatus(id, version)` when displaying a selected pin or recording execution warnings. It returns `{ preset, notices }`. Notices include the freshness reason and, when a genuinely reviewed newer version exists, an explicit newer-version notice. The old pin and its rules remain selected. Validation also reports a newer-version notice. Current production data contains no newly invented authority update; prospective versions appear only in fictional tests.
 
-## Manual checks
+## Daily and manual checks
 
-From a source checkout, run this command when you explicitly want to refresh source observations. It checks each cited URL once, sequentially, with a 15-second default timeout and an 8 MiB per-source byte ceiling. `--timeout-ms` permits an integer from 1 to 60000. The repository workflow runs only when manually dispatched. No scheduled check or background follow-up is configured.
+From a source checkout, run this command when you explicitly want to refresh source observations. It checks each cited URL once, sequentially, with a 15-second default timeout and an 8 MiB per-source byte ceiling. `--timeout-ms` permits an integer from 1 to 60000. The repository workflow runs daily at 03:23 UTC and supports manual dispatch. It retains an observation artifact for maintainer review and never changes published rules automatically. This product monitor does not schedule personal chat follow-ups.
 
 ```sh
 node --import tsx scripts/catalog-monitor.ts --output packages/catalog/data/source-status.next.json

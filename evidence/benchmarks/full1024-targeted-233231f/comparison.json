@@ -1,0 +1,102 @@
+{
+  "scope": "Existing recorded assistant diagnoses and same-targeted-manifest descriptive machine measures; no blind human ranking or matched cross-model performance claim",
+  "manifest_sha256": "e293dfc4721a5394d9203da05f3064ea428ec65375541b31d39cbfd69330d2c9",
+  "records": [
+    {
+      "profile": "Lite1024",
+      "evidence_directory": "/home/sadid/Downloads/Superaster/superaster/evidence/benchmarks/lite1024-targeted-d140d55",
+      "id": "t01-three-birdwatchers",
+      "machine_status": "PASS",
+      "elapsed_seconds": 20.799163731,
+      "inference_kernel_ms": 15689.437156,
+      "peak_rss_bytes_sampled": 9095000064,
+      "process_max_rss_kib_lifetime": 8903980,
+      "alpha_counts": {
+        "transparent_pixels": 2787378,
+        "partially_transparent_pixels": 78269,
+        "opaque_pixels": 974353
+      },
+      "source_results_sha256": "b4580eacf96f8aa3ae32362123131e72406dd46667f037618d6bef09bf69a422"
+    },
+    {
+      "profile": "Lite1024",
+      "evidence_directory": "/home/sadid/Downloads/Superaster/superaster/evidence/benchmarks/lite1024-targeted-d140d55",
+      "id": "thin-plant",
+      "machine_status": "FAIL",
+      "elapsed_seconds": 44.92703066000001,
+      "inference_kernel_ms": 43835.726128999995,
+      "peak_rss_bytes_sampled": 9247064064,
+      "process_max_rss_kib_lifetime": 10172676,
+      "alpha_counts": {
+        "transparent_pixels": 1228800,
+        "partially_transparent_pixels": 0,
+        "opaque_pixels": 0
+      },
+      "source_results_sha256": "b4580eacf96f8aa3ae32362123131e72406dd46667f037618d6bef09bf69a422"
+    },
+    {
+      "profile": "BEN2 Base",
+      "evidence_directory": "/home/sadid/Downloads/Superaster/superaster/evidence/benchmarks/ben2-targeted-df81e4a",
+      "id": "t01-three-birdwatchers",
+      "machine_status": "PASS",
+      "elapsed_seconds": 21.923306361,
+      "inference_kernel_ms": 18102.628534,
+      "peak_rss_bytes_sampled": 4783898624,
+      "process_max_rss_kib_lifetime": 4678304,
+      "alpha_counts": {
+        "transparent_pixels": 2736637,
+        "partially_transparent_pixels": 365050,
+        "opaque_pixels": 738313
+      },
+      "source_results_sha256": "e10c1b254b431be0b06ba961925c6f18006e4955ecf94f08371df3b66aa3e2c5"
+    },
+    {
+      "profile": "BEN2 Base",
+      "evidence_directory": "/home/sadid/Downloads/Superaster/superaster/evidence/benchmarks/ben2-targeted-df81e4a",
+      "id": "thin-plant",
+      "machine_status": "PASS",
+      "elapsed_seconds": 20.137318213,
+      "inference_kernel_ms": 19477.077057000002,
+      "peak_rss_bytes_sampled": 8165113856,
+      "process_max_rss_kib_lifetime": 7977976,
+      "alpha_counts": {
+        "transparent_pixels": 151637,
+        "partially_transparent_pixels": 1020637,
+        "opaque_pixels": 56526
+      },
+      "source_results_sha256": "e10c1b254b431be0b06ba961925c6f18006e4955ecf94f08371df3b66aa3e2c5"
+    },
+    {
+      "profile": "Full1024",
+      "evidence_directory": "/home/sadid/Downloads/Superaster/superaster/evidence/benchmarks/full1024-targeted-233231f",
+      "id": "t01-three-birdwatchers",
+      "machine_status": "PASS",
+      "elapsed_seconds": 51.17723267,
+      "inference_kernel_ms": 43062.083626,
+      "peak_rss_bytes_sampled": 9109835776,
+      "process_max_rss_kib_lifetime": 9361808,
+      "alpha_counts": {
+        "transparent_pixels": 2830434,
+        "partially_transparent_pixels": 44408,
+        "opaque_pixels": 965158
+      },
+      "source_results_sha256": "a819330118a7dde4ee42b9db786cfcf6086d6a1528cf287474fc56b56e368977"
+    },
+    {
+      "profile": "Full1024",
+      "evidence_directory": "/home/sadid/Downloads/Superaster/superaster/evidence/benchmarks/full1024-targeted-233231f",
+      "id": "thin-plant",
+      "machine_status": "PASS",
+      "elapsed_seconds": 77.197023263,
+      "inference_kernel_ms": 76268.551029,
+      "peak_rss_bytes_sampled": 9134694400,
+      "process_max_rss_kib_lifetime": 9412516,
+      "alpha_counts": {
+        "transparent_pixels": 421709,
+        "partially_transparent_pixels": 57228,
+        "opaque_pixels": 749863
+      },
+      "source_results_sha256": "a819330118a7dde4ee42b9db786cfcf6086d6a1528cf287474fc56b56e368977"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "contract_version": "1.0",
+  "implementation_version": "0.1.0-alpha.1",
+  "input_hash": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+  "recipe_hash": "2f1e5b293e3d7f646ebcd9a45a54ea1eb4a51504062c7f54bffe844a896047bc",
+  "binding_hashes": {},
+  "resolved_recipe": {
+    "spec_version": "1.0",
+    "input": {
+      "ref": "thin-plant"
+    },
+    "engine": "birefnet-full-1024-fp16",
+    "quality": "quality",
+    "operations": [
+      {
+        "op": "remove_background",
+        "edge_cleanup": "none"
+      }
+    ],
+    "output": {
+      "format": "png",
+      "metadata": "strip"
+    }
+  },
+  "engine": {
+    "id": "birefnet-full-1024-fp16",
+    "version": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+    "model_hash": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+    "precision": "fp16 weights / float32 input / float32 output",
+    "inference_dimensions": [
+      1024,
+      1024
+    ],
+    "runtime": "onnxruntime-node 1.30.0",
+    "backend": "cpu",
+    "refinement": "none"
+  },
+  "encoder": {
+    "format": "png",
+    "quality": 90,
+    "metadata": "strip",
+    "kernel": "declared imaging adapter"
+  },
+  "applied_operations": [
+    {
+      "op": "remove_background",
+      "edge_cleanup": "none"
+    }
+  ],
+  "output": {
+    "width": 1280,
+    "height": 960,
+    "format": "png",
+    "channels": 4,
+    "has_alpha": true,
+    "is_opaque": false,
+    "bytes": 3991241,
+    "color_space": "srgb",
+    "pages": 1,
+    "metadata": {
+      "icc": true,
+      "exif": false,
+      "density": 25
+    },
+    "hash": "333cf6fc1f7942f38333251485a83070ca8e3ac33bfce1841f15979ca516d44b"
+  },
+  "timings_ms": {
+    "decode": 46.16427799999656,
+    "inference": 76434.242899,
+    "preprocess": 93.64581999999791,
+    "inference_kernel": 76268.551029,
+    "alpha_decode": 45.39039099999354,
+    "encode": 166.26879999999073,
+    "validate": 204.5099169999885
+  },
+  "warnings": [],
+  "rules": []
+}

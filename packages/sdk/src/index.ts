@@ -6,7 +6,7 @@ import { SuperasterError } from '../../contract/src/index.js';
 export { SuperasterError, RecipeSchema, OperationSchema, parseRecipe } from '../../contract/src/index.js';
 export type { Recipe, Operation, ExecutionRecord, ImageInfo, Progress } from '../../contract/src/index.js';
 export { Processor, runBatch } from '../../core/src/index.js';
-export { listPresets, resolvePreset, validate, planPreset, preparePreset, presetHistory, monitorSources, monitorCatalogSources, createCatalog, resolvePresetStatus } from '../../catalog/src/index.js';
+export { listPresets, resolvePreset, validate, planPreset, preparePreset, presetHistory, monitorSources, monitorCatalogSources, createCatalog, resolvePresetStatus, sourceStatusSnapshot, parseSourceStatusSnapshot, SOURCE_STATUS_MAX_AGE_MS } from '../../catalog/src/index.js';
 export { fileBatch as batchFiles } from './files.js';
 export { NativeEngine } from '../../engines/src/native.js';
 export function createProcessor(options:{modelDir?:string}={}) { return new Processor(new NativeEngine(options)); }

@@ -41,7 +41,9 @@ export class BrowserEngine implements EngineAdapter {
  private async infer(raster:Raster,recipe:Recipe,options:RuntimeOptions={}) {
   const parts=(recipe.engine??'auto').split(':'),model=chooseModel(parts[0],recipe.quality),requested=parts[1]??this.preferredBackend;
   if(!['auto','wasm','webgpu'].includes(requested)||parts.length>2)throw new SuperasterError('UNSUPPORTED','Unknown browser inference backend');
-  const backend=requested==='auto'?((await probeWebGpu(options.signal)).supported?'webgpu':'wasm'):requested as 'wasm'|'webgpu';
+  const gpu=requested==='wasm'?undefined:await probeWebGpu(options.signal);
+  if(requested==='webgpu'&&gpu&&!gpu.supported)throw new SuperasterError('UNSUPPORTED','WebGPU is unavailable; choose WASM for the same model',{model:model.id,backend:'webgpu',reason:gpu.reason});
+  const backend=requested==='auto'?(gpu?.supported?'webgpu':'wasm'):requested as 'wasm'|'webgpu';
   if(this.realmBackend&&this.realmBackend!==backend)throw new SuperasterError('UNSUPPORTED','Changing ORT backend requires a fresh worker',{restart_backend:backend});
   const timings:Record<string,number>={},lookup=performance.now(),key=model.sha256+':'+backend+':'+raster.width+':'+raster.height+':'+await sha256(raster.data);
   if(this.cached?.key===key)return{...this.cached.result,alpha:this.cached.result.alpha.slice(),cacheHit:true,timings_ms:{alpha_cache_lookup:performance.now()-lookup}};

@@ -101,8 +101,8 @@ try {
   else if(command==='batch'){
    const manifest=await fileBatch(processor,required(arg,'input directory'),required(values.output,'--output'),await recipeFile(required(values.recipe,'--recipe')),{...runOptions,resume:values.resume,retry:values.retry});emit(manifest);if(manifest.entries.some(e=>e.status!=='completed'))process.exitCode=5;
   }else if(command==='resolve'||command==='validate'){
-   const {resolvePreset,validate}=await import('../../catalog/src/index.js');
-   if(command==='resolve')emit(resolvePreset(required(arg,'request'),values['preset-version']));
+   const {resolvePreset,resolvePresetStatus,validate}=await import('../../catalog/src/index.js');
+   if(command==='resolve')emit(resolvePresetStatus(required(arg,'request'),values['preset-version']));
    else {const preset=resolvePreset(required(values.preset,'--preset'),values['preset-version']);emit(validate(await processor.inspect(await readInput(required(arg,'input')),options),preset));}
   }else throw new SuperasterError('UNSUPPORTED',`Unknown command ${command}`);
  }

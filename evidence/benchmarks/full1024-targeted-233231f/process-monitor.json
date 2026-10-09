@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-09T06:09:41.782272+00:00",
+  "resumed_model_pid": 31995,
+  "resumed_wrapper_pid": 31988,
+  "both_processes_absent": true,
+  "final_results_present": true,
+  "observer_records": 2,
+  "new_inference_jobs_started_by_reviewer": 0,
+  "runner_exit_code": null,
+  "runner_exit_code_status": "Originating coordinator session must supply exit code; external process monitoring does not recover it",
+  "heavy_slot_release_notified_to_coordinator": true
+}

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-import { listPresets } from '../../../catalog/src/index.js';
+import { listPresets,resolvePresetStatus } from '../../../catalog/src/index.js';
 import type { Preset } from '../../../catalog/src/types.js';
 import { Button as RareButton } from './button.js';
 
@@ -48,6 +48,7 @@ export function CatalogPage({ onSelectPreset }: CatalogPageProps) {
             </div>
             <div>
               <p>{preset.edit_policy.notes}</p>
+              {resolvePresetStatus(preset.id,preset.version).notices.map(notice=><p className="destination-note" key={notice.kind}>{notice.message}</p>)}
               {preset.sources.map((source) => (
                 <a
                   href={source.url}

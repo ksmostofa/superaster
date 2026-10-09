@@ -1,4 +1,4 @@
-import {resolvePreset,planPreset,validate as validatePreset} from '../../catalog/src/index.js';
+import {resolvePreset,resolvePresetStatus,planPreset,validate as validatePreset} from '../../catalog/src/index.js';
 import { Effect, Semaphore } from 'effect';
 import { parseRecipe, parseImageInfo, parseExecutionRecord, SuperasterError, operationDefinitions, type Recipe, type Operation, type ImageInfo, type ExecutionRecord, type Progress } from '../../contract/src/index.js';
 
@@ -46,7 +46,7 @@ export class Processor {
     const task=this.semaphore.withPermit(Effect.tryPromise({try: async signal=>{cancelled(options.signal); return this.adapter.execute(input,recipe,{...options,signal:options.signal??signal});},catch:processingError}));
     // runPromiseExit preserves the typed public error instead of exposing runtime wrappers.
     const exit=await Effect.runPromiseExit(task);
-    if(exit._tag==='Success'){const result=exit.value;if(!(result.bytes instanceof Uint8Array)||!result.bytes.length||(result.mask!==undefined&&!(result.mask instanceof Uint8Array)))throw new SuperasterError('PROCESSING_FAILED','Invalid processor output bytes');parseExecutionRecord(result.record);if(recipe.preset)result.record.rules=validatePreset(result.record.output,resolvePreset(recipe.preset.id,recipe.preset.version));return result;}
+    if(exit._tag==='Success'){const result=exit.value;if(!(result.bytes instanceof Uint8Array)||!result.bytes.length||(result.mask!==undefined&&!(result.mask instanceof Uint8Array)))throw new SuperasterError('PROCESSING_FAILED','Invalid processor output bytes');parseExecutionRecord(result.record);if(recipe.preset){const destination=resolvePresetStatus(recipe.preset.id,recipe.preset.version);result.record.rules=validatePreset(result.record.output,destination.preset);for(const notice of destination.notices)if(!result.record.warnings.includes(notice.message))result.record.warnings.push(notice.message);}return result;}
     const failure=exit.cause.reasons.find(reason=>reason._tag==='Fail');
     if(failure && failure._tag==='Fail') throw failure.error;
     throw new SuperasterError('CANCELLED','Operation interrupted');

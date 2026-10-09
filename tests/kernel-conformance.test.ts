@@ -241,3 +241,29 @@ describe('native and Node-hosted WASM image contract', () => {
     }
   });
 });
+
+describe('exported coverage masks on transparent originals',()=>{
+ it('reapplies absolute coverage without losing alpha and restores original opacity',async()=>{
+  const input=await png(raster(4,1,[120,80,40,128, 40,100,160,64, 0,0,0,0, 20,60,90,255]));
+  const coverage=await png(raster(4,1,[64,64,64,255, 255,255,255,255, 255,255,255,255, 96,96,96,255]));
+  const base=parseRecipe({spec_version:'1.0',input:{ref:'transparent-original'},operations:[{op:'correct',mask_ref:'coverage'}],output:{format:'png',metadata:'strip'}});
+  const noInference=async():Promise<never>=>{throw new Error('Mask contract checks must not run inference');};
+  const checks:Record<string,unknown>={};
+  for(const [name,kernel] of [['native',native],['wasm',browser]] as const){
+   const first=await executePipeline(input,base,{kernel,infer:noInference,bindings:{coverage}});
+   expect(first.mask).toBeDefined();
+   const second=await executePipeline(input,base,{kernel,infer:noInference,bindings:{coverage:first.mask!}});
+   const pixels=await kernel.decode(first.bytes),reapplied=await kernel.decode(second.bytes);
+   const alphas=(value:Raster)=>[...value.data].filter((_,index)=>index%4===3);
+   expect(alphas(pixels)).toEqual([64,64,0,96]);
+   expect([...reapplied.data]).toEqual([...pixels.data]);
+   const restored=await executePipeline(input,{...base,operations:[...base.operations,{op:'correct',regions:[{x:0,y:0,width:1,height:1,mode:'restore'}]}]},{kernel,infer:noInference,bindings:{coverage:first.mask!}});
+   const restoredPixels=await kernel.decode(restored.bytes);
+   expect(alphas(restoredPixels)).toEqual([128,64,0,96]);
+   const restoredRoundtrip=await executePipeline(input,base,{kernel,infer:noInference,bindings:{coverage:restored.mask!}});
+   expect([...(await kernel.decode(restoredRoundtrip.bytes)).data]).toEqual([...restoredPixels.data]);
+   checks[name]={first:await output(`absolute-coverage-${name}.png`,first.bytes),reapplied:await output(`absolute-coverage-roundtrip-${name}.png`,second.bytes),restored:await output(`absolute-coverage-restored-${name}.png`,restored.bytes),alphas:alphas(pixels),restored_alphas:alphas(restoredPixels)};
+  }
+  measured.absolute_correction_roundtrip=checks;
+ });
+});

@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-09T06:16:45.158011+00:00",
+  "status": "FAIL",
+  "scope": "Assistant visual diagnostic; group fails the preregistered all-three-birdwatchers criterion. Machine artifact checks are separate. No human panel or release quality score.",
+  "method": "Opened actual source and white/black/magenta composites. Group displays resized 2400x1600 to 1920x1280; fern displayed at native 1280x960. Source visible; no annotated real-image alpha or fine-edge metric.",
+  "cases": [
+    {
+      "id": "t01-three-birdwatchers",
+      "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+      "intended_subject_retention": "FAIL",
+      "observation": "The two central birdwatchers remain. The required left birdwatcher is erased across white, black and magenta backgrounds, including head, torso, arms, legs and equipment. Obvious material missing intended subject.",
+      "machine_artifacts": "PASS"
+    },
+    {
+      "id": "thin-plant",
+      "retained_subject": "foreground fern fronds including leaves and stems",
+      "intended_subject_retention": "needs_review",
+      "observation": "The right/lower fern remains nonempty, resolving the empty-mask finding on this diagnostic. A broad left/upper region of fronds is erased and a detached leaf remains. Complete foreground-frond retention and separation from crowded nursery vegetation are unresolved without annotated boundaries/human review. No fern quality PASS is awarded.",
+      "machine_artifacts": "PASS",
+      "empty_mask_failure": "resolved for this exact diagnostic only"
+    }
+  ],
+  "runtime_contract": "PASS on this exact CPU artifact/runtime: Float32Array input and output, named 1024 tensors, finite logits, one external sigmoid; no tensor substitution or changed threshold",
+  "human_panel": "NOT RUN",
+  "phone": "NOT RUN",
+  "heldout": "NOT RUN",
+  "budgets": "NOT FROZEN",
+  "defaults_changed": false,
+  "reviewer_new_inference_jobs": 0,
+  "next_decision": "Candidate still fails the all-three-person prerequisite. Preserve this failure; no unchanged rerun, 25-case expansion, tuning or heldout run is justified by this diagnostic."
+}

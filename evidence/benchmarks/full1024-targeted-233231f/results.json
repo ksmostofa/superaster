@@ -1,0 +1,439 @@
+{
+  "status": "PASS",
+  "status_scope": "machine artifact/opaque-pixel checks only",
+  "profile": "quality",
+  "split": "diagnostic-screening",
+  "summaries": {
+    "none": {
+      "attempts": 2,
+      "artifact_pass": 2,
+      "artifact_fail": 0,
+      "warm_complete_median_seconds": 77.197023263,
+      "warm_complete_p95_seconds": 77.197023263,
+      "warm_sample_size": 1,
+      "refinement_median_ms": 0,
+      "cold_session_record": "t01-three-birdwatchers"
+    }
+  },
+  "percentile_method": "linear interpolation at (n-1)*p; descriptive sample statistic, not a confidence bound",
+  "quality_status": "NOT RUN",
+  "physical_phone_status": "NOT RUN",
+  "records": [
+    {
+      "id": "t01-three-birdwatchers",
+      "category": "people",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 51.17723267,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 2400,
+        "height": 1600,
+        "format": "png",
+        "channels": 4,
+        "bytes": 6807747,
+        "transparent_pixels": 2830434,
+        "partially_transparent_pixels": 44408,
+        "opaque_pixels": 965158,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+        "recipe_hash": "def6922b318d2c78de3a29ceae7767acb71f952f7ad893117000753699dfa11f",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "t01-three-birdwatchers"
+          },
+          "engine": "birefnet-full-1024-fp16",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-full-1024-fp16",
+          "version": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+          "model_hash": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+          "precision": "fp16 weights / float32 input / float32 output",
+          "inference_dimensions": [
+            1024,
+            1024
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 2400,
+          "height": 1600,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 6807747,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false,
+            "density": 25
+          },
+          "hash": "760e00ad2e3612d8d221c72264aff90c6ea6d2845912452c6012e1cd0c5dc0b7"
+        },
+        "timings_ms": {
+          "decode": 53.805529999999976,
+          "inference": 49204.30051,
+          "model_setup": 1138.493319,
+          "initialize": 4827.199869,
+          "preprocess": 75.1756260000002,
+          "inference_kernel": 43062.083626,
+          "alpha_decode": 59.04051299999992,
+          "encode": 455.9698730000018,
+          "validate": 689.922050000001
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "825c94b53b37508a6d97b27d0f58b4895d4541b94fd507402e3d0a183fef5189",
+      "input_sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "output_sha256": "760e00ad2e3612d8d221c72264aff90c6ea6d2845912452c6012e1cd0c5dc0b7",
+      "mask_sha256": "ba8ada4147d734edd5dcf2c45c0c08eae16554559759e3e981be58d8db359c17",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.9063323099999979,
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "artist_plain": "Walton LaVonda, U.S. Fish and Wildlife Service",
+        "canonical_original_height": 1848,
+        "canonical_original_sha1": "6b884c562ae07a58974873b6f18cf7529c491416",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "canonical_original_width": 2784,
+        "copyrighted": "False",
+        "credit_plain": "http://www.public-domain-image.com/public-domain-images-pictures-free-stock-photos/people-public-domain-images-pictures/a-group-of-people-stand-birdwatching.jpg",
+        "description_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 24888979,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1192131628,
+        "revision_timestamp": "2026-04-05T17:35:54Z",
+        "source_snapshot_sha256": "1a4841b39abda1b965492142f53a4c045165fc03f63b48f36202d2031691fbfb",
+        "title": "File:A group of people stand birdwatching.jpg",
+        "usage_terms": "Public domain",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "t01-three-birdwatchers"
+        },
+        "engine": "birefnet-full-1024-fp16",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 4.107586999999967
+        },
+        {
+          "stage": "inference",
+          "at_ms": 62.280259
+        },
+        {
+          "stage": "verify",
+          "at_ms": 105.62877900000001
+        },
+        {
+          "stage": "initialize",
+          "at_ms": 1241.4153430000001
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 6068.4823799999995
+        },
+        {
+          "stage": "inference",
+          "at_ms": 6143.75244
+        },
+        {
+          "stage": "encode",
+          "at_ms": 49906.37449
+        },
+        {
+          "stage": "validate",
+          "at_ms": 50362.459374000005
+        },
+        {
+          "stage": "complete",
+          "at_ms": 51151.765432
+        }
+      ],
+      "peak_rss_bytes_sampled": 9109835776,
+      "process_max_rss_kib_lifetime": 9361808,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "first session initialization; cached model files where present"
+    },
+    {
+      "id": "thin-plant",
+      "category": "thin_structures",
+      "repeat": 1,
+      "variant": "none",
+      "status": "PASS",
+      "status_scope": "decoded artifact and opaque-pixel correctness only; human quality and physical-phone checks remain NOT RUN",
+      "elapsed_seconds": 77.197023263,
+      "human_intended_subject": "NOT RUN",
+      "human_missing_subject_background_halo_fine_edges": "NOT RUN",
+      "artifact_checks": {
+        "requested_dimensions": "PASS",
+        "png": "PASS",
+        "single_frame": "PASS",
+        "mask_dimensions": "PASS",
+        "mask_one_channel": "PASS",
+        "has_nonopaque_pixels": "PASS",
+        "has_retained_pixels": "PASS",
+        "opaque_rgb_unchanged": "PASS",
+        "sensitive_metadata_stripped": "PASS",
+        "evaluation_input_preserved": "PASS",
+        "source_original_preserved": "PASS",
+        "pinned_model": "PASS"
+      },
+      "decoded_properties": {
+        "width": 1280,
+        "height": 960,
+        "format": "png",
+        "channels": 4,
+        "bytes": 3991241,
+        "transparent_pixels": 421709,
+        "partially_transparent_pixels": 57228,
+        "opaque_pixels": 749863,
+        "opaque_changed_pixels": 0,
+        "maximum_opaque_rgb_difference": 0,
+        "has_icc": true
+      },
+      "engine_execution_record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+        "recipe_hash": "2f1e5b293e3d7f646ebcd9a45a54ea1eb4a51504062c7f54bffe844a896047bc",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "thin-plant"
+          },
+          "engine": "birefnet-full-1024-fp16",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "remove_background",
+              "edge_cleanup": "none"
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "birefnet-full-1024-fp16",
+          "version": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+          "model_hash": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+          "precision": "fp16 weights / float32 input / float32 output",
+          "inference_dimensions": [
+            1024,
+            1024
+          ],
+          "runtime": "onnxruntime-node 1.30.0",
+          "backend": "cpu",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "width": 1280,
+          "height": 960,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 3991241,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false,
+            "density": 25
+          },
+          "hash": "333cf6fc1f7942f38333251485a83070ca8e3ac33bfce1841f15979ca516d44b"
+        },
+        "timings_ms": {
+          "decode": 46.16427799999656,
+          "inference": 76434.242899,
+          "preprocess": 93.64581999999791,
+          "inference_kernel": 76268.551029,
+          "alpha_decode": 45.39039099999354,
+          "encode": 166.26879999999073,
+          "validate": 204.5099169999885
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "engine_execution_record_sha256": "a58c9bc9d86faa06746e42a8cec1b335f240fd042626ba535218ed836910898e",
+      "input_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+      "output_sha256": "333cf6fc1f7942f38333251485a83070ca8e3ac33bfce1841f15979ca516d44b",
+      "mask_sha256": "5c3c71d2dcc35d7bfae5b8a205c70f8eb069ad84e69e9f0ea33ff5ef22c07426",
+      "visual_files": {
+        "cutout": "cutout.png",
+        "mask": "alpha.png",
+        "white": "white.png",
+        "black": "black.png",
+        "color": "color.png"
+      },
+      "evidence_export_seconds": 0.4996451959999977,
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg/1280px-Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "artist_plain": "Forest and Kim Starr",
+        "canonical_original_height": 2736,
+        "canonical_original_sha1": "0579478773bd09dcf225da4c3af7a6c05691c747",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "canonical_original_width": 3648,
+        "copyrighted": "True",
+        "credit_plain": "starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_(24746746030).jpg",
+        "license": "CC BY 3.0 us",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+        "page_id": 71860039,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1190650229,
+        "revision_timestamp": "2026-04-03T02:22:29Z",
+        "source_snapshot_sha256": "0ceff0a5e7fa29fffeabcf4bcc01d88fe594a654abb995babdc176854eb7ce74",
+        "title": "File:Starr-100623-7771-Nephrolepis sp-potted plants in shade house-Pukalani Plant Company Pulehu-Maui (24746746030).jpg",
+        "usage_terms": "Creative Commons Attribution 3.0 us",
+        "derivative_changes": "Orientation-normalized bounded evaluation input followed by the explicitly recorded background removal profile; original preserved"
+      },
+      "recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "thin-plant"
+        },
+        "engine": "birefnet-full-1024-fp16",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "remove_background",
+            "edge_cleanup": "none"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "progress_events": [
+        {
+          "stage": "decode",
+          "at_ms": 6.657311999995727
+        },
+        {
+          "stage": "inference",
+          "at_ms": 58.02819399999862
+        },
+        {
+          "stage": "preprocess",
+          "at_ms": 82.85862700000143
+        },
+        {
+          "stage": "inference",
+          "at_ms": 176.57553599999665
+        },
+        {
+          "stage": "encode",
+          "at_ms": 76747.354395
+        },
+        {
+          "stage": "validate",
+          "at_ms": 76913.73253099999
+        },
+        {
+          "stage": "complete",
+          "at_ms": 77169.35096400001
+        }
+      ],
+      "peak_rss_bytes_sampled": 9134694400,
+      "process_max_rss_kib_lifetime": 9412516,
+      "rss_measurement_limit": "20ms process RSS samples may miss brief peaks; resourceUsage maxRSS is process-lifetime and is not attributed to this individual warm run",
+      "session_condition": "warmed session, distinct image"
+    }
+  ]
+}

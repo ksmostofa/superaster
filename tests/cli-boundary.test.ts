@@ -135,7 +135,10 @@ describe('CLI preserves documented local command forms', () => {
     expect(capabilities.stderr).toBe('');
     const preset = await cli(['resolve', 'jp-residence-status-paper', '--preset-version', '2026-10-08.1']);
     expect(preset.code, preset.stderr).toBe(0);
-    expect(JSON.parse(preset.stdout)).toMatchObject({ id: 'jp-residence-status-paper', version: '2026-10-08.1' });
+    expect(JSON.parse(preset.stdout)).toMatchObject({ preset: { id: 'jp-residence-status-paper', version: '2026-10-08.1' }, notices: expect.any(Array) });
+    const stale = await cli(['resolve', 'shopify-product-square', '--preset-version', '2026-10-08.1']);
+    expect(stale.code, stale.stderr).toBe(0);
+    expect(JSON.parse(stale.stdout)).toMatchObject({ preset: { version: '2026-10-08.1', freshness: { status: 'unknown' } }, notices: [expect.objectContaining({ kind: 'source-freshness' })] });
     expect(preset.stderr).toBe('');
   }, 20000);
   it('runs a geometry recipe with an explicit model directory and overwrite', async () => {
