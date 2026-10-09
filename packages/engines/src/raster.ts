@@ -2,7 +2,7 @@ import { SuperasterError, type ImageInfo, type Recipe } from '../../contract/src
 import { cancelled } from '../../core/src/index.js';
 export interface Raster {width:number;height:number;data:Uint8Array}
 export type KernelName='nearest'|'lanczos3'|'linear';
-export interface EncodeOptions {format:Recipe['output']['format'];quality?:number;metadata?:'strip'|'preserve';dpi?:number;source?:Uint8Array}
+export interface EncodeOptions {format:Recipe['output']['format'];quality?:number;metadata?:'strip'|'preserve';dpi?:number;source?:Uint8Array;grayscale?:boolean}
 export interface ImagingKernel {
  inspect(bytes:Uint8Array):Promise<ImageInfo>;
  decode(bytes:Uint8Array):Promise<Raster>;

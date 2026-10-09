@@ -51,10 +51,33 @@ export function parseRecipe(value: unknown): Recipe {
 }
 export type Stage = 'download'|'verify'|'decode'|'initialize'|'preprocess'|'inference'|'refine'|'render'|'encode'|'validate'|'complete';
 export interface Progress { stage: Stage; completed?: number; total?: number; message?: string }
-export interface ImageInfo { width:number; height:number; format:string; channels:number; has_alpha:boolean; is_opaque?:boolean; bytes:number; orientation?:number; color_space:string; pages:number; metadata: {icc:boolean;exif:boolean;density?:number} }
-export interface ExecutionRecord { contract_version:'1.0'; implementation_version:string; input_hash:string; recipe_hash:string; resolved_recipe:Recipe; binding_hashes?:Record<string,string>; engine: {id:string;version:string;model_hash:string|null;precision:string;inference_dimensions:number[];runtime:string;backend:string;refinement:string}; encoder:Record<string,unknown>; applied_operations:Operation[]; output: ImageInfo & {hash:string}; timings_ms:Record<string,number>; warnings:string[]; rules:RuleOutcome[]; preset?:{id:string;version:string} }
-export type RuleState = 'pass'|'fail'|'needs_review'|'not_checked';
-export interface RuleOutcome { id:string; state:RuleState; message:string; source?:string; user_confirmation?:boolean }
+const hash=Type.String({pattern:'^[a-f0-9]{64}$'});
+export const ImageInfoSchema=Type.Object({width:px,height:px,format:Type.String({minLength:1}),channels:Type.Integer({minimum:1,maximum:16}),has_alpha:Type.Boolean(),is_opaque:Type.Optional(Type.Boolean()),bytes:Type.Integer({minimum:1}),orientation:Type.Optional(Type.Integer({minimum:1,maximum:8})),color_space:Type.String({minLength:1}),pages:Type.Integer({minimum:1}),metadata:Type.Object({icc:Type.Boolean(),exif:Type.Boolean(),density:Type.Optional(Type.Number({exclusiveMinimum:0}))},exact)},exact);
+export type ImageInfo=Static<typeof ImageInfoSchema>;
+export const ErrorSchema=Type.Object({code:Type.Union(ErrorCodes.map(value=>Type.Literal(value))),message:Type.String(),details:Type.Record(Type.String(),Type.Unknown())},exact);
+export const BatchEntrySchema=Type.Object({id:Type.String(),name:Type.String(),input_hash:Type.Union([hash,Type.Literal('')]),recipe_hash:hash,status:Type.Union(['completed','failed','cancelled'].map(value=>Type.Literal(value))),output_hash:Type.Optional(hash),error:Type.Optional(ErrorSchema)},exact);
+export const FileBatchManifestSchema=Type.Object({version:Type.Literal('1.0'),recipe_hash:hash,entries:Type.Array(Type.Object({...BatchEntrySchema.properties,source:Type.String(),output:Type.String(),record:Type.String(),record_hash:Type.Optional(hash)},exact))},{$id:'https://superaster.local/schema/file-batch-1.0.json',...exact});
+export type FileBatchManifest=Static<typeof FileBatchManifestSchema>;
+const checkManifest=ajv.compile<FileBatchManifest>(FileBatchManifestSchema),checkImage=ajv.compile<ImageInfo>(ImageInfoSchema);
+export function parseFileBatchManifest(value:unknown):FileBatchManifest{if(!checkManifest(value))throw new SuperasterError('INVALID_INPUT','Unsupported resume manifest',{errors:checkManifest.errors});return value;}
+export function parseImageInfo(value:unknown):ImageInfo{if(!checkImage(value))throw new SuperasterError('PROCESSING_FAILED','Invalid image inspection result',{errors:checkImage.errors});return value;}
+export const RuleOutcomeSchema=Type.Object({id:Type.String({minLength:1}),state:Type.Union(['pass','fail','needs_review','not_checked'].map(value=>Type.Literal(value))),message:Type.String(),source:Type.Optional(Type.String()),user_confirmation:Type.Optional(Type.Boolean())},exact);
+export type RuleOutcome=Static<typeof RuleOutcomeSchema>;
+export type RuleState=RuleOutcome['state'];
+const embeddedRecipe=Type.Object(RecipeSchema.properties,exact);
+export const ExecutionRecordSchema=Type.Object({
+ contract_version:Type.Literal('1.0'),implementation_version:Type.String({minLength:1}),input_hash:hash,recipe_hash:hash,resolved_recipe:embeddedRecipe,
+ binding_hashes:Type.Optional(Type.Record(Type.String(),hash)),
+ engine:Type.Object({id:Type.String({minLength:1}),version:Type.String(),model_hash:Type.Union([hash,Type.Null()]),precision:Type.String(),inference_dimensions:Type.Array(Type.Integer({minimum:1})),runtime:Type.String(),backend:Type.String(),refinement:Type.String(),runtime_details:Type.Optional(Type.Record(Type.String(),Type.Unknown()))},exact),
+ encoder:Type.Record(Type.String(),Type.Unknown()),applied_operations:Type.Array(OperationSchema),output:Type.Object({...ImageInfoSchema.properties,hash},exact),
+ timings_ms:Type.Record(Type.String(),Type.Number({minimum:0})),warnings:Type.Array(Type.String()),rules:Type.Array(RuleOutcomeSchema),preset:Type.Optional(Type.Object({id:Type.String({minLength:1}),version:Type.String({minLength:1})},exact))
+},{$id:'https://superaster.local/schema/execution-record-1.0.json',...exact});
+export type ExecutionRecord=Static<typeof ExecutionRecordSchema>;
+const checkRecord=ajv.compile<ExecutionRecord>(ExecutionRecordSchema);
+export function parseExecutionRecord(value:unknown):ExecutionRecord {
+ if(!checkRecord(value))throw new SuperasterError('PROCESSING_FAILED','Invalid execution record',{errors:checkRecord.errors});
+ parseRecipe(value.resolved_recipe);return value;
+}
 export const operationDefinitions = [
   {id:'remove_background',features:['F001','F002','F003','F004'],description:'Continuous foreground alpha from approved local model'},
   {id:'resize',features:['F027'],description:'Exact resampling with explicit upscaling permission'},

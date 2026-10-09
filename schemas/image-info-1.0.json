@@ -1,0 +1,79 @@
+{
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "width",
+    "height",
+    "format",
+    "channels",
+    "has_alpha",
+    "bytes",
+    "color_space",
+    "pages",
+    "metadata"
+  ],
+  "properties": {
+    "width": {
+      "minimum": 1,
+      "maximum": 16384,
+      "type": "integer"
+    },
+    "height": {
+      "minimum": 1,
+      "maximum": 16384,
+      "type": "integer"
+    },
+    "format": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "channels": {
+      "minimum": 1,
+      "maximum": 16,
+      "type": "integer"
+    },
+    "has_alpha": {
+      "type": "boolean"
+    },
+    "is_opaque": {
+      "type": "boolean"
+    },
+    "bytes": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "orientation": {
+      "minimum": 1,
+      "maximum": 8,
+      "type": "integer"
+    },
+    "color_space": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "pages": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "metadata": {
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "icc",
+        "exif"
+      ],
+      "properties": {
+        "icc": {
+          "type": "boolean"
+        },
+        "exif": {
+          "type": "boolean"
+        },
+        "density": {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        }
+      }
+    }
+  }
+}

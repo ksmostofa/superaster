@@ -65,7 +65,7 @@ export async function executePipeline(input:Uint8Array,recipe:Recipe,options:Pip
   assertRaster(current);checkDimensions(current.width,current.height,limits.max_pixels);
  }
  if(recipe.output.format==='jpeg'&&!opaque(current))throw new SuperasterError('INVALID_RECIPE','JPEG output requires an explicit opaque background composition');
- let mask:Uint8Array|undefined;if(hasMask)mask=await kernel.encode(maskRaster(foregroundMask??current),{format:'png',metadata:'strip'});
+ let mask:Uint8Array|undefined;if(hasMask)mask=await kernel.encode(maskRaster(foregroundMask??current),{format:'png',metadata:'strip',grayscale:true});
  const settings:EncodeOptions={format:recipe.output.format,quality:recipe.output.quality??90,metadata:recipe.output.metadata??'strip',dpi,source:input};let actualQuality=settings.quality;
  let bytes=await stage('encode',()=>kernel.encode(current,settings));
  if(recipe.output.max_bytes&&bytes.length>recipe.output.max_bytes){

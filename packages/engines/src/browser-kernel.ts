@@ -1,6 +1,6 @@
 import type Vips from 'wasm-vips';
 import { SuperasterError, type ImageInfo } from '../../contract/src/index.js';
-import type { Raster, ImagingKernel } from './raster.js';
+import { colorBytes, readDeclaredDensity, type Raster, type ImagingKernel, type EncodeOptions } from './raster.js';
 
 type VipsModule = Awaited<ReturnType<typeof Vips>>;
 let modulePromise:Promise<VipsModule>|undefined;
@@ -39,7 +39,7 @@ export class BrowserKernel implements ImagingKernel {
  async inspect(bytes:Uint8Array):Promise<ImageInfo> {
   const vips=await this.loadModule(),image=load(vips,bytes);
   try {
-   const hasAlpha=image.hasAlpha(),metadata={icc:!!image.getTypeof('icc-profile-data'),exif:!!image.getTypeof('exif-data'),density:Math.round(image.xres*25.4)};
+   const density=readDeclaredDensity(bytes,fileFormat(bytes)),hasAlpha=image.hasAlpha(),metadata={icc:!!image.getTypeof('icc-profile-data'),exif:!!image.getTypeof('exif-data'),...(density?{density}:{})};
    const raster=hasAlpha?await this.decode(bytes):undefined;
    let opaque=true;if(raster)for(let i=3;i<raster.data.length;i+=4)if(raster.data[i]!==255){opaque=false;break;}
    return {width:image.width,height:image.height,format:fileFormat(bytes),channels:image.bands,has_alpha:hasAlpha,is_opaque:opaque,bytes:bytes.length,orientation:image.getTypeof('orientation')?image.getInt('orientation'):undefined,color_space:image.interpretation,pages:1,metadata};
@@ -54,15 +54,23 @@ export class BrowserKernel implements ImagingKernel {
   }finally{objects.reverse().forEach(im=>im.delete());}
  }
  async resize(raster:Raster,width:number,height:number,kernel:'nearest'|'lanczos3'|'linear'):Promise<Raster> {
-  checkBounds(width,height);const vips=await this.loadModule(),image=fromRaster(vips,raster);let resized:Vips.Image|undefined;
-  try {resized=image.resize(width/raster.width,{vscale:height/raster.height,kernel});return rawRaster(resized);}finally{resized?.delete();image.delete();}
+  checkBounds(width,height);const vips=await this.loadModule(),objects:Vips.Image[]=[];const keep=(image:Vips.Image)=>{objects.push(image);return image;};
+  try {
+   let image=keep(fromRaster(vips,raster));
+   // Match Sharp's compiled filtering path. Nearest copies unassociated pixels exactly.
+   const filter=kernel!=='nearest'&&(width!==raster.width||height!==raster.height);
+   if(filter)image=keep(keep(image.premultiply()).cast('uchar'));
+   image=keep(image.resize(width/raster.width,{vscale:height/raster.height,kernel}));
+   if(filter)image=keep(keep(image.unpremultiply()).cast('uchar'));
+   return rawRaster(image);
+  }finally{objects.reverse().forEach(image=>image.delete());}
  }
  async rotate(raster:Raster,angle:number,background:string):Promise<Raster> {
   const vips=await this.loadModule(),image=fromRaster(vips,raster);let output:Vips.Image|undefined;
-  const color=background.replace('#',''),values=[0,2,4,6].map((pos,i)=>i===3&&color.length===6?0:parseInt(color.slice(pos,pos+2),16));
-  try {output=image.rotate(angle,{background:values});checkBounds(output.width,output.height);return rawRaster(output);}finally{output?.delete();image.delete();}
+  const normalized=((angle%360)+360)%360;
+  try {output=normalized%90===0?image.rot(normalized===0?'d0':normalized===90?'d90':normalized===180?'d180':'d270'):image.rotate(angle,{background:colorBytes(background)});checkBounds(output.width,output.height);return rawRaster(output);}finally{output?.delete();image.delete();}
  }
- async encode(raster:Raster,options:{format:'png'|'jpeg'|'webp';quality?:number;metadata?:'strip'|'preserve';dpi?:number;source?:Uint8Array}):Promise<Uint8Array> {
+ async encode(raster:Raster,options:EncodeOptions):Promise<Uint8Array> {
   const vips=await this.loadModule(),objects:Vips.Image[]=[];const keep=(image:Vips.Image)=>{objects.push(image);return image;};
   try {
    let target=keep(fromRaster(vips,raster));
@@ -71,8 +79,10 @@ export class BrowserKernel implements ImagingKernel {
     let base=keep(load(vips,options.source));base=keep(base.autorot());base=keep(base.colourspace('srgb'));if(!base.hasAlpha())base=keep(base.addalpha());base=keep(base.resize(raster.width/base.width,{vscale:raster.height/base.height,kernel:'nearest'}));target=keep(base.composite2(target,'source'));target.setInt('orientation',1);
     if(target.getTypeof('exif-ifd0-Orientation'))target.setString('exif-ifd0-Orientation','1');
    }
-   target=keep(target.copy({xres:(options.dpi??72)/25.4,yres:(options.dpi??72)/25.4}));
-   const settings:Record<string,unknown>={keep:options.metadata==='preserve'?31:0,profile:'srgb'};if(options.format!=='png')settings.Q=options.quality??90;
+   const density=options.dpi??(options.metadata==='preserve'&&options.source?readDeclaredDensity(options.source,fileFormat(options.source)):undefined)??72;
+   target=keep(target.copy({xres:density/25.4,yres:density/25.4}));
+   if(options.grayscale){for(let i=0;i<raster.data.length;i+=4)if(raster.data[i]!==raster.data[i+1]||raster.data[i]!==raster.data[i+2]||raster.data[i+3]!==255)throw new SuperasterError('INVALID_INPUT','Grayscale mask encoding requires opaque grayscale pixels');target=keep(keep(target.extractBand(0)).copy({interpretation:'b-w'}));}
+   const settings:Record<string,unknown>={keep:options.metadata==='preserve'?31:0,...(!options.grayscale?{profile:'srgb'}:{})};if(options.format!=='png')settings.Q=options.quality??90;
    const bytes=target.writeToBuffer(options.format==='jpeg'?'.jpg':'.'+options.format,settings);return Uint8Array.from(bytes);
   }finally{objects.reverse().forEach(image=>image.delete());}
  }

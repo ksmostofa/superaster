@@ -217,7 +217,7 @@ export async function createGpuSession(modelBytes: Uint8Array, model: ModelDefin
     session = await runtime.InferenceSession.create(modelBytes, { executionProviders: ['webgpu'], graphOptimizationLevel: 'all' });
     cancelled(options.signal);
     const input = session.inputMetadata[0], output = session.outputMetadata[0];
-    if (session.inputNames.length !== 1 || session.outputNames.length !== 1 || !input?.isTensor || input.name !== approved.inputName || input.type !== 'float32' || input.shape.join(',') !== '1,3,512,512' || !output?.isTensor || output.name !== approved.outputName || output.type !== 'float32' || output.shape.join(',') !== '1,1,512,512') {
+    if (session.inputNames.length !== 1 || session.outputNames.length !== 1 || !input?.isTensor || input.name !== approved.inputName || input.type !== 'float32' || input.shape.join(',') !== [1,3,approved.height,approved.width].join(',') || !output?.isTensor || output.name !== approved.outputName || output.type !== approved.outputType || output.shape.join(',') !== [1,1,approved.height,approved.width].join(',')) {
       throw new SuperasterError('MODEL_INTEGRITY', 'The WebGPU model tensor contract differs from the approved profile');
     }
     timings_ms.initialize = performance.now() - startInitialize;

@@ -2,10 +2,10 @@ import { readdir, lstat, readFile, writeFile, mkdir, rename } from 'node:fs/prom
 import { resolve, relative, join, dirname } from 'node:path';
 import type { Processor, RuntimeOptions, BatchEntry } from '../../core/src/index.js';
 import { recipeHash, sha256, plan, processingError, bindingHashes } from '../../core/src/index.js';
-import { SuperasterError, type Recipe } from '../../contract/src/index.js';
+import { SuperasterError, parseFileBatchManifest, parseExecutionRecord, type FileBatchManifest } from '../../contract/src/index.js';
 import { readInput, assertAllowedPath } from './index.js';
 export interface FileBatchEntry extends BatchEntry {source:string;output:string;record:string;record_hash?:string}
-interface Manifest {version:'1.0';recipe_hash:string;entries:FileBatchEntry[]}
+type Manifest=FileBatchManifest;
 async function files(root:string):Promise<string[]> {
   const entries=await readdir(root,{withFileTypes:true});const all:string[]=[];
   for(const entry of entries.sort((a,b)=>a.name.localeCompare(b.name))) {
@@ -20,8 +20,7 @@ export async function fileBatch(processor:Processor,source:string,output:string,
   const planned=inputFiles.map(path=>({source:path,output:join(out,relative(root,path)+'.'+extension)}));
   const names=new Set<string>();for(const item of planned){const key=item.output.normalize('NFC').toLowerCase();if(names.has(key))throw new SuperasterError('INVALID_INPUT','Output filename collision',{output:item.output});names.add(key);}
   let old:Manifest|undefined;
-  if(options.resume||options.retry){try{old=JSON.parse(await readFile(manifestPath,'utf8')) as Manifest;}catch(error){if(!(error instanceof Error)||!('code' in error)||error.code!=='ENOENT')throw new SuperasterError('INVALID_INPUT','Cannot read resume manifest');}}
-  if(old && (!Array.isArray(old.entries)||old.version!=='1.0'||typeof old.recipe_hash!=='string'||old.entries.some(e=>!e||typeof e!=='object'||!['id','name','source','output','record','input_hash','recipe_hash'].every(k=>typeof (e as unknown as Record<string,unknown>)[k]==='string')||!['completed','failed','cancelled'].includes(e.status))))throw new SuperasterError('INVALID_INPUT','Unsupported manifest');
+  if(options.resume||options.retry){try{old=parseFileBatchManifest(JSON.parse(await readFile(manifestPath,'utf8')));}catch(error){if(error instanceof SuperasterError)throw error;if(!(error instanceof Error)||!('code' in error)||error.code!=='ENOENT')throw new SuperasterError('INVALID_INPUT','Cannot read resume manifest');}}
   const guardedPath=async(path:string)=>{
     if(options.allowedRoots)await assertAllowedPath(path,options.allowedRoots,'write');
     // Reject symlinks in existing output ancestry for every caller, including CLI.
@@ -38,7 +37,7 @@ export async function fileBatch(processor:Processor,source:string,output:string,
       input=await readInput(item.source,processor.adapter.capabilities().limits.max_bytes);entry.input_hash=await sha256(input);
       const previous=old?.entries.find(e=>e.id===id);
       if(previous?.status==='completed'&&previous.input_hash===entry.input_hash&&previous.recipe_hash===hash&&previous.output===item.output) {
-        try {const bytes=await readFile(item.output);const record=JSON.parse(await readFile(recordPath,'utf8')) as {input_hash?:string;recipe_hash?:string;output?:{hash?:string}};
+        try {const bytes=await readFile(item.output);const record=parseExecutionRecord(JSON.parse(await readFile(recordPath,'utf8')));
           if(await sha256(bytes)===previous.output_hash&&record.input_hash===entry.input_hash&&record.recipe_hash===hash&&record.output?.hash===previous.output_hash){manifest.entries.push(previous);await persist();continue;}
         }catch{/* stale work is rerun only when it belongs to this prior manifest */}
       }
@@ -49,7 +48,7 @@ export async function fileBatch(processor:Processor,source:string,output:string,
         try {owned=await sha256(await readFile(item.output))===previous.output_hash;}catch{/* missing output is recreated exclusively */}
         if(previous.record_hash){try{recordOwned=await sha256(await readFile(recordPath))===previous.record_hash;}catch{/* missing record is recreated exclusively */}}
         // Only a previously completed record establishes provenance for replacing stale output.
-        if(previous.status==='completed'){try{const previousRecord=JSON.parse(await readFile(recordPath,'utf8')) as {input_hash?:string;recipe_hash?:string;output?:{hash?:string}};if(previousRecord.input_hash===previous.input_hash&&previousRecord.recipe_hash===previous.recipe_hash&&previousRecord.output?.hash===previous.output_hash){owned=true;recordOwned=true;}}catch{/* unverified ownership cannot overwrite */}}
+        if(previous.status==='completed'){try{const previousRecord=parseExecutionRecord(JSON.parse(await readFile(recordPath,'utf8')));if(previousRecord.input_hash===previous.input_hash&&previousRecord.recipe_hash===previous.recipe_hash&&previousRecord.output?.hash===previous.output_hash){owned=true;recordOwned=true;}}catch{/* unverified ownership cannot overwrite */}}
       }
       const result=await processor.transform(input,recipe,options);await mkdir(dirname(item.output),{recursive:true});
       await guardedPath(item.output);await guardedPath(recordPath);

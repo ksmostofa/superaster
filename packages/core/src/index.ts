@@ -1,6 +1,6 @@
 import {resolvePreset,planPreset,validate as validatePreset} from '../../catalog/src/index.js';
 import { Effect, Semaphore } from 'effect';
-import { parseRecipe, SuperasterError, operationDefinitions, type Recipe, type Operation, type ImageInfo, type ExecutionRecord, type Progress } from '../../contract/src/index.js';
+import { parseRecipe, parseImageInfo, parseExecutionRecord, SuperasterError, operationDefinitions, type Recipe, type Operation, type ImageInfo, type ExecutionRecord, type Progress } from '../../contract/src/index.js';
 
 export interface RuntimeOptions { signal?: AbortSignal; onProgress?: (progress: Progress)=>void; bindings?:Record<string, Uint8Array>; modelDir?:string }
 export interface ProcessResult { bytes: Uint8Array; record: ExecutionRecord; mask?:Uint8Array }
@@ -30,6 +30,8 @@ export async function bindingHashes(recipe:Recipe,bindings:RuntimeOptions['bindi
 }
 export function plan(value:unknown, adapter:EngineAdapter):Recipe {
   const recipe=parseRecipe(value), caps=adapter.capabilities();
+  const available=new Set<string>();for(const profile of caps.engines){if(typeof profile.id!=='string')continue;available.add(profile.id);if(profile.id.includes(':')){available.add(profile.id.split(':')[0]!);available.add(profile.id.split(':')[0]!+':auto');}}
+  if(recipe.engine&&recipe.engine!=='auto'&&!available.has(recipe.engine))throw new SuperasterError('UNSUPPORTED',`Engine ${recipe.engine} is unavailable on ${adapter.id}`,{available:[...available]});
   for(const op of recipe.operations) if(!caps.operations.includes(op.op)) throw new SuperasterError('UNSUPPORTED',`Operation ${op.op} is unavailable on ${adapter.id}`,{operation:op.op});
   if(!caps.formats.includes(recipe.output.format)) throw new SuperasterError('UNSUPPORTED',`Format ${recipe.output.format} is unavailable`);
   return {...recipe, engine:recipe.engine??'auto', quality:recipe.quality??'quality', output:{...recipe.output,metadata:recipe.output.metadata??'strip'}};
@@ -38,13 +40,13 @@ export class Processor {
   private readonly semaphore:Semaphore.Semaphore;
   constructor(readonly adapter:EngineAdapter) { this.semaphore=Semaphore.makeUnsafe(adapter.capabilities().limits.max_concurrency); }
   capabilities() { return {contract_version:'1.0',implementation_version:'0.1.0-alpha.1',adapter:this.adapter.id, operation_definitions:operationDefinitions, ...this.adapter.capabilities()}; }
-  async inspect(input:Uint8Array, options:RuntimeOptions={}) { cancelled(options.signal); return this.adapter.inspect(input,options); }
+  async inspect(input:Uint8Array, options:RuntimeOptions={}) { cancelled(options.signal); return parseImageInfo(await this.adapter.inspect(input,options)); }
   async transform(input:Uint8Array,value:unknown,options:RuntimeOptions={}):Promise<ProcessResult> {
     let recipe=plan(value,this.adapter);if(recipe.preset)recipe=planPreset(resolvePreset(recipe.preset.id,recipe.preset.version),recipe);
     const task=this.semaphore.withPermit(Effect.tryPromise({try: async signal=>{cancelled(options.signal); return this.adapter.execute(input,recipe,{...options,signal:options.signal??signal});},catch:processingError}));
     // runPromiseExit preserves the typed public error instead of exposing runtime wrappers.
     const exit=await Effect.runPromiseExit(task);
-    if(exit._tag==='Success'){const result=exit.value;if(recipe.preset)result.record.rules=validatePreset(result.record.output,resolvePreset(recipe.preset.id,recipe.preset.version));return result;}
+    if(exit._tag==='Success'){const result=exit.value;if(!(result.bytes instanceof Uint8Array)||!result.bytes.length||(result.mask!==undefined&&!(result.mask instanceof Uint8Array)))throw new SuperasterError('PROCESSING_FAILED','Invalid processor output bytes');parseExecutionRecord(result.record);if(recipe.preset)result.record.rules=validatePreset(result.record.output,resolvePreset(recipe.preset.id,recipe.preset.version));return result;}
     const failure=exit.cause.reasons.find(reason=>reason._tag==='Fail');
     if(failure && failure._tag==='Fail') throw failure.error;
     throw new SuperasterError('CANCELLED','Operation interrupted');

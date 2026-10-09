@@ -83,6 +83,22 @@ async function pipeline(kernel: ImagingKernel, input: Uint8Array, value: Recipe)
 const rgba = raster(2, 2, [200,30,80,255, 40,80,200,128, 70,200,30,64, 25,40,90,0]);
 
 describe('native and Node-hosted WASM image contract', () => {
+  it('exports single-channel coverage masks while ordinary gray images retain sRGB',async()=>{
+    const input=await png(blank(2,1,'#777777'));
+    for(const kernel of [native,browser]){
+      const result=await pipeline(kernel,input,recipe([{op:'correct',regions:[{x:0,y:0,width:1,height:1,mode:'erase'}]}]));
+      expect(result.mask).toBeDefined();const tags=await sharp(result.mask).metadata();expect(tags.channels).toBe(1);
+      expect([...(await sharp(result.mask).extractChannel(0).raw().toBuffer())]).toEqual([0,255]);
+      const image=await kernel.encode(blank(2,1,'#777777'),{format:'png',metadata:'strip'});expect((await kernel.inspect(image)).color_space).toBe('srgb');expect((await sharp(image).metadata()).icc).toBeDefined();
+    }
+  });
+  it('preserves declared source density unless the recipe explicitly overrides it',async()=>{
+    const source=new Uint8Array(await sharp({create:{width:2,height:2,channels:3,background:'#224466'}}).jpeg().withMetadata({density:300}).toBuffer());
+    for(const kernel of [native,browser]){
+      const pixels=await kernel.decode(source),preserved=await kernel.encode(pixels,{format:'png',metadata:'preserve',source});expect((await kernel.inspect(preserved)).metadata.density).toBe(300);
+      const override=await kernel.encode(pixels,{format:'png',metadata:'preserve',source,dpi:150});expect((await kernel.inspect(override)).metadata.density).toBe(150);
+    }
+  });
   it('decodes the known RGBA PNG exactly, including continuous alpha', async () => {
     const input = await png(rgba), a = await native.decode(input), b = await browser.decode(input);
     measured.decode_rgba = { input: await output('rgba-input.png', input), native: await native.inspect(input), wasm: await browser.inspect(input), difference: difference(a, b) };

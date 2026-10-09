@@ -1,6 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
+import { pathToFileURL } from 'node:url';
 import { createProcessor, assertAllowedPath, readInput, writeResult } from '../../sdk/src/index.js';
 import { parseRecipe, type Recipe } from '../../contract/src/index.js';
 import { processingError } from '../../core/src/index.js';
@@ -19,7 +20,7 @@ export async function createMcpServer(roots:string[],modelDir?:string) {
   const bindings:Record<string,Uint8Array>={};for(const [ref,path] of Object.entries(boundPaths))bindings[ref]=await read(path);
   await assertAllowedPath(target+'.json',roots,'write');
   const result=await processor.transform(await readInput(source),recipe,{signal,bindings});await writeResult(result,target,{inputPath:source});
-  return{file:target,resource_uri:new URL('file://'+target).href,record_file:target+'.json',record:result.record};
+  return{file:target,resource_uri:pathToFileURL(target).href,record_file:target+'.json',record:result.record};
  };
  server.registerTool('remove',{description:'Remove background using local verified weights and export PNG, preserve original; model download may be required',inputSchema:z.object({input:z.string(),output:z.string(),quality:z.enum(['quality','fast']).default('quality'),engine:z.string().default('auto')}).strict(),annotations:{readOnlyHint:false,destructiveHint:false,openWorldHint:false}},({input,output,quality,engine},extra)=>guarded(()=>perform(input,output,{spec_version:'1.0',input:{ref:'input-0'},engine,quality,operations:[{op:'remove_background',edge_cleanup:'none'}],output:{format:'png'}},extra.signal)));
  server.registerTool('transform',{description:'Run the shared ordered operation contract on a local file; no hosted inference',inputSchema:z.object({input:z.string(),output:z.string(),recipe:z.record(z.string(),z.unknown()),bindings:z.record(z.string(),z.string()).optional()}).strict(),annotations:{readOnlyHint:false,destructiveHint:false,openWorldHint:false}},({input,output,recipe,bindings},extra)=>guarded(()=>perform(input,output,parseRecipe(recipe),extra.signal,bindings)));
