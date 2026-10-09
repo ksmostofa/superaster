@@ -1,0 +1,11 @@
+{
+  "time_utc": "2026-10-09T16:41:41.681678+00:00",
+  "source": ".cache/general-model-prerequisite/source-reference/model/model.safetensors.curl-download",
+  "destination": ".cache/general-model-prerequisite/source-reference/model/model.safetensors.partial",
+  "bytes": 520200572,
+  "prefix_sha256": "3cc320863e8756a2c39c55b458b03101ea317ffd9d6371ef4427189e71c10f71",
+  "status": "UNVERIFIED PREFIX",
+  "acceptance": "Only a complete expected SHA-256 will admit this checkpoint",
+  "previous_failure": "64 MiB range exceeded 120 seconds",
+  "next_transport": "16 MiB sequential ranges; completed exact ranges staged then appended; no automatic retries"
+}

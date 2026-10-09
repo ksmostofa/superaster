@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "error": "ConnectionResetError: [Errno 104] Connection reset by peer",
+  "source": "immutable Hugging Face checkpoint transfer",
+  "last_observed_complete_written_bytes": 360710144,
+  "last_observed_at_jst": "2026-10-09T20:52:02.933650046+09:00",
+  "whole_weight_verified": false,
+  "cleanup": "Incomplete bytes removed by original fetcher; no checkpoint accepted",
+  "log_sha256": "cb0cb2e5d0a6d2dee142944d6af8cedc4eeb58fef90caa222608f636cac92bd9",
+  "next_attempt": "One bounded curl transfer using the same immutable revision; no retries or inference"
+}

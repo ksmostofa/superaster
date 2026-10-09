@@ -1,6 +1,6 @@
 # General-model provenance prerequisite
 
-Checked 2026-10-09 JST against private active specification 1.3 and worktree commit `f24a674`. This is a source audit. No weights were downloaded, Python model code executed, inference run, thresholds tuned, defaults changed or gates awarded.
+Initial source audit: 2026-10-09 JST against private active specification 1.3 and worktree commit `f24a674`. Research preflight completed 2026-10-10 JST. The pinned weight is now downloaded and verified, and the reviewed local source passes an allocation-free offline architecture/input preflight. CPU weight materialization, image inference, export/parity and quality acceptance remain NOT RUN. No thresholds, production defaults or gates changed.
 
 Decision: an approved general-matting source checkpoint exists, but no inspected ready-made ONNX artifact establishes the complete source-to-export chain and failed-case parity. The next useful prerequisite is one reproducible conversion and source-reference comparison for the pinned official `ZhengPeng7/BiRefNet-matting` checkpoint below. Do not run another broad candidate screen merely because its name says general or dynamic. Whether this checkpoint retains all three people remains unknown.
 
@@ -12,7 +12,7 @@ The [official model zoo](https://github.com/ZhengPeng7/BiRefNet/blob/ebcc0bc8ec7
 
 | Inspected route | Exact source/artifact facts | Remaining prerequisite |
 | --- | --- | --- |
-| Official general matting | HF revision `eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9`; `model.safetensors`, 884,878,856 bytes, declared SHA-256 `a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb` | Complete downloaded hash, reproducible export, graph/runtime audit and source/export numerical comparison. The pinned HF tree has no ONNX artifact. |
+| Official general matting | HF revision `eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9`; `model.safetensors`, locally verified 884,878,856 bytes and SHA-256 `a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb` | One bounded source-reference diagnosis, reproducible export, graph/runtime audit and source/export numerical comparison. The pinned HF tree has no ONNX artifact. |
 | Official lite matting | HF revision `99c33412e3f58e1f33187abdc8c435c645243690`; `model.safetensors`, 88,965,896 bytes, declared SHA-256 `ce8bcfc045e336322c0424a5863dcfb7e9ce8fed0a5fd4d1b2b20adf12d97243`; MIT card | No ONNX in its pinned tree. It would require a separate conversion and quality/resource proof. Lower file size predicts neither subject retention nor phone support. No second trial is recommended here. |
 | Dynamic general 1024 export | [Conversion card](https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX/blob/6defd3a19cec21042b178108815c9c4508d09867/README.md), revision `6defd3a19cec21042b178108815c9c4508d09867`; fp16 file 489,811,221 bytes, declared SHA-256 `ee32f829fbf050fd501e53ed330369a71a0cbc69b9ab574da13d18ecbfa93dca`; MIT | The card names `ZhengPeng7/BiRefNet_dynamic` but no original revision, weight hash, converter revision or parity result. Its processor fixes 1024 square inputs. The model name does not establish a dynamic production graph. |
 | Dynamic CUDA export | [Card](https://huggingface.co/onnx-community/BiRefNet_dynamic-1024x1024-ONNX-CUDA/blob/5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9/README.md), revision `5e8a5a4aa9b0e0342a22ef6e47e456dd4fd9c4b9`; ONNX 466,586,004 bytes, declared SHA-256 `1fefe02158d58b32d589cc4bdd7c2be938cd49171316e4a6ed5da485ccf39b19`; MIT | Pins official source revision `280306042f57b7a33854319da62fd86aaa89ec4c` and reports CUDA parity. Producer script, exact toolchain and comparison inputs/conditions are absent; CPU/browser validation is explicitly excluded. No local NVIDIA route was established. |
@@ -40,9 +40,21 @@ One serial source-reference/export comparison can then answer two separate quest
 
 This recommendation is a proposal for the next bounded G2 prerequisite under F001-F004, F012, F020-F024, F053-F055 and F069. It changes no scope or acceptance. G2/T01 remain incomplete; T19, physical Pixel 7, hidden-label human review and frozen budgets are not supplied by this audit. No evidence here supports faster or more accurate than remove.bg.
 
+## Verified source-reference preflight
+
+[Research-only tools](../benchmarks/source-reference/README.md) pin a Linux x86_64 CPython 3.12 environment through exact wheel URLs and hashes. Recorded Python 3.12.14, PyTorch 2.5.1+cpu and torchvision 0.20.1+cpu import the fixed reviewed local source. Transformers 5.0.0 matches the source's explicit compatibility branch. No mutable remote-code loader, backbone checkpoint download or pickle weight load is used.
+
+The first whole-file transfer reset, and a subsequent 64 MiB exact HTTP range exceeded its 120-second bound. These failures are preserved. The final transfer resumed the retained 520,200,572-byte untrusted prefix through 22 exact HTTP 206 ranges of at most 16 MiB. Completed segments were staged and hashed before appending. The resulting whole file has the expected size and SHA-256, so it is now admitted as this checkpoint. Transport duration is setup evidence, not inference performance.
+
+[Preflight evidence](../evidence/benchmarks/general-matting-source-preflight/acceptance.json) records source/weight hashes, dependency environment/licenses, the unchanged group/fern manifest and originals, actual image preprocessing, and exact agreement of all 754 safetensors state keys/shapes with the allocation-free model. Logical parameter count is 220,176,498. Preflight high-water RSS was 425,328,640 bytes; available system memory was 7,359,389,696 bytes. Neither quantity establishes actual CPU inference memory or phone feasibility.
+
+The command ran in an unprivileged isolated Linux network namespace containing only loopback. Controlled external probes returned IPv4 `ENETUNREACH` and IPv6 `EADDRNOTAVAIL`; model-path Python networking attempts were zero. HF offline flags and a rejecting Python socket audit remain additional guards. This measured namespace condition is stronger than treating the audit hook alone as an OS network sandbox.
+
+Nine deterministic comparison/transport boundary checks pass. Their synthetic arrays and responses are labelled test fixtures. No synthetic result stands in for model inference. The next useful action is the coordinator-approved serial two-image source diagnosis documented in the tool README, preserving raw logits, continuous coverage, exact inputs and real exports. Materialization/inference, ONNX parity, human subject judgment, device/budget baselines and superiority remain unresolved.
+
 ## Retained source evidence
 
-Small source/API snapshots and reproduction scripts are in ignored `.cache/general-model-prerequisite/`. Its `source-index.json` pins URLs, response status, byte counts and actual body hashes; index SHA-256 is `5baa5bc2090c82ad2d04596b3a8182ee8cfca25fa00fc13ce5b3ecbb2bcf2402`. Weight hashes above are remote LFS declarations, not local download verification.
+Small source/API snapshots and reproduction scripts are in ignored `.cache/general-model-prerequisite/`. Its `source-index.json` pins URLs, response status, byte counts and actual body hashes; index SHA-256 is `5baa5bc2090c82ad2d04596b3a8182ee8cfca25fa00fc13ce5b3ecbb2bcf2402`. Only the full general-matting weight has local complete-file verification here; the other weight hashes remain remote declarations.
 
 | Inspected source body | SHA-256 |
 | --- | --- |

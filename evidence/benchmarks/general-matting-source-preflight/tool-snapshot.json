@@ -1,0 +1,40 @@
+{
+  "recorded_utc": "2026-10-09T16:46:00.578611+00:00",
+  "files": [
+    {
+      "path": "benchmarks/source-reference/README.md",
+      "bytes": 6809,
+      "sha256": "d2f1891b8c1222ce9dd7df94d21d60ba2b719b3b900679b8517e44e5268f5633"
+    },
+    {
+      "path": "benchmarks/source-reference/compare.py",
+      "bytes": 2901,
+      "sha256": "92b1b608426d0cee30dfb935ad938afcc56fac71e41af56fad1d5f87418debe3"
+    },
+    {
+      "path": "benchmarks/source-reference/prepare.py",
+      "bytes": 6808,
+      "sha256": "4970ebbd7628acee2d16c020d050c528cc574e76449d19d672bbb02bcaf3ce2c"
+    },
+    {
+      "path": "benchmarks/source-reference/requirements.in",
+      "bytes": 338,
+      "sha256": "9fdfef7e759edc32db6587af059dfe6197ff038c549f8f27f137a1e624594c58"
+    },
+    {
+      "path": "benchmarks/source-reference/requirements.lock.txt",
+      "bytes": 10066,
+      "sha256": "24d67c83f2c26ebd70da98d2d9315b55b82d84b95e7ca160afff542c41883c52"
+    },
+    {
+      "path": "benchmarks/source-reference/run.py",
+      "bytes": 15715,
+      "sha256": "05fe0bc45671e5ff14313943e4406b809dbb68665dd185afb02bd8456b4d1a21"
+    },
+    {
+      "path": "benchmarks/source-reference/test_tools.py",
+      "bytes": 5872,
+      "sha256": "d6fd430d08c0ed70da32fb35ebc7f5a95505f13b30cadfaf8bc08463d31b2a54"
+    }
+  ]
+}

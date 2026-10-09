@@ -1,0 +1,1 @@
+{"preflight": "PASS", "model_initialization": "NOT RUN", "inference": "NOT RUN", "output": ".cache/general-model-prerequisite/source-reference/preflight-20261010-offline", "weight_tensors": 754}

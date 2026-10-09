@@ -1,0 +1,126 @@
+{
+  "mode": "preflight",
+  "repository": "ZhengPeng7/BiRefNet-matting",
+  "revision": "eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9",
+  "weight_sha256": "a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb",
+  "manifest_sha256": "e293dfc4721a5394d9203da05f3064ea428ec65375541b31d39cbfd69330d2c9",
+  "script_sha256": "05fe0bc45671e5ff14313943e4406b809dbb68665dd185afb02bd8456b4d1a21",
+  "prepare_sha256": "4970ebbd7628acee2d16c020d050c528cc574e76449d19d672bbb02bcaf3ce2c",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "linux",
+    "cpu_only": true,
+    "threads": 4,
+    "interop_threads": 1,
+    "packages": {
+      "torch": "2.5.1+cpu",
+      "torchvision": "0.20.1+cpu",
+      "transformers": "5.0.0",
+      "timm": "1.0.23",
+      "numpy": "1.26.4",
+      "Pillow": "12.1.0",
+      "safetensors": "0.7.0",
+      "kornia": "0.8.2",
+      "einops": "0.8.2",
+      "psutil": "7.2.2"
+    }
+  },
+  "reviewed_config": {
+    "bb": "swin_v1_l",
+    "size": 1024,
+    "SDPA_enabled": false,
+    "refine": "",
+    "auxiliary_classification": false,
+    "mul_scl_ipt": "cat",
+    "dec_att": "ASPPDeformable",
+    "dec_blk": "BasicDecBlk",
+    "cxt_num": 3,
+    "dec_ipt": true,
+    "dec_ipt_split": true,
+    "ms_supervision": true,
+    "out_ref": true,
+    "batch_size": 4
+  },
+  "meta_state_preflight": {
+    "status": "PASS",
+    "scope": "allocation-free meta construction and exact checkpoint state-key/shape match",
+    "logical_parameter_count": 220176498,
+    "state_tensor_count": 754,
+    "cpu_materialization": "NOT RUN"
+  },
+  "semantics": {
+    "input": "Pillow RGB -> torchvision PIL bilinear 1024 square -> RGB 0..1 -> ImageNet normalization -> NCHW float32",
+    "output": "last raw float32 logits, one sigmoid, continuous half-pixel bilinear coverage to original dimensions, multiply original alpha, nearest-byte quantization",
+    "refinement": "none",
+    "color_cleanup": "none",
+    "precision": "float32 CPU; no autocast or compile",
+    "comparison": "source-reference only; no ONNX parity or numerical acceptance awarded",
+    "composites": "diagnostic byte-space RGB source-over using continuous coverage; not application color conformance"
+  },
+  "network_attempts": [],
+  "model_initialization": "NOT RUN",
+  "inference": "NOT RUN",
+  "cases": [
+    {
+      "id": "t01-three-birdwatchers",
+      "input_sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "original_sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+      "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+      "preprocess": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          3,
+          1024,
+          1024
+        ],
+        "minimum": -2.1179039478302,
+        "maximum": 2.640000104904175,
+        "mean": 0.008240307681262493
+      }
+    },
+    {
+      "id": "thin-plant",
+      "input_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+      "original_sha256": "20778fc6cc3b0a862578ec669d3714b00fcf9202591ac04dac7290ff70273ed9",
+      "retained_subject": "foreground fern fronds including leaves and stems",
+      "preprocess": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          3,
+          1024,
+          1024
+        ],
+        "minimum": -2.1179039478302,
+        "maximum": 2.640000104904175,
+        "mean": -0.2645682096481323
+      }
+    }
+  ],
+  "network_isolation": {
+    "required": true,
+    "namespace": "net:[4026532953]",
+    "interfaces": [
+      "lo"
+    ],
+    "probes": [
+      {
+        "family": "IPv4",
+        "errno": 101,
+        "result": "network unreachable"
+      },
+      {
+        "family": "IPv6",
+        "errno": 99,
+        "result": "no IPv6 source address available"
+      }
+    ],
+    "scope": "Linux isolated network namespace with loopback only; IPv4/IPv6 external connections unavailable"
+  },
+  "requirements_lock_sha256": "24d67c83f2c26ebd70da98d2d9315b55b82d84b95e7ca160afff542c41883c52",
+  "python_executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+  "available_memory_bytes": 7359389696,
+  "preflight_ms": 6467.332010999598,
+  "preflight_peak_rss_bytes": 425328640
+}
