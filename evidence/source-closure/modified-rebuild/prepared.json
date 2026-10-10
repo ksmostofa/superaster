@@ -1,0 +1,18 @@
+{
+  "status": "PREPARED_NOT_COMPILED",
+  "source_directory": "/home/sadid/Downloads/Superaster/superaster-wasm-source-rebuild/.cache/runtime-rebuild/source/wasm-vips-49ac4378f2df80e38f45491abeeac9b86dddbedd",
+  "marker": "8.18.7-superaster-modified",
+  "compiler_jobs": 2,
+  "upstream_build_sha256": "03087405e00849b4da5f46681ba019904817b7e65554c75a4b25c9c9a7485b7c",
+  "adapted_build_sha256": "fea9bbde5d5151532ee291ede047b3282cbc028e0f648778ebb14073e1c50a24",
+  "removed_supplier_binaries": [],
+  "arguments": [
+    "--disable-jxl",
+    "--disable-avif",
+    "--disable-svg"
+  ],
+  "modified_library": "libvips version_string only; image algorithms unchanged",
+  "historical_binary_reproduction": "NOT ASSERTED",
+  "inputs_manifest_sha256": "52a6ea064fd1becff79e991e531206f50bf89da34e0386ac1477c4f572aed123",
+  "toolchain_manifest_sha256": "ab88f62a7fecab7f9e3398333dd20432e564edbaac479a2c6fec21b6c69f31fd"
+}

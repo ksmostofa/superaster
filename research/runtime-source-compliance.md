@@ -68,3 +68,26 @@ This demonstrates an independently loaded identical runtime and compiled operati
 | Served-browser replacement and release notice bundle | NOT RUN by this lane. Follow the existing asset replacement/build/service-worker procedure on the identified isolated build and verify fresh-origin cache behavior and accessible source/notice files. |
 
 These findings do not clear public binary publication. They remove specific source uncertainties and provide a working external-load verifier. The next useful actions are retaining the recovered pinned inputs, completing the named source closure, then performing the isolated replacement/source-build checks when the resource slot is free. No recommendation here weakens the required G7 evidence.
+
+## Rootless modified-build preparation, 2026-10-10
+
+The earlier `/tmp` archive directory was absent after the host restart. The twelve additional main-build bodies and four recorded patches remained available. This lane restored the missing wasm-vips, libvips, GLib and libexif source archives from their declared URLs and verified their existing lengths/hashes. It reused the other retained bodies. The declared sixteen main source archives and four patches are in [inputs.json](../benchmarks/runtime-rebuild/inputs.json); the native sharp build repository is outside this browser compilation.
+
+The [official emsdk 6.0.10 tag](https://github.com/emscripten-core/emsdk/tree/a2b92777574c2feda07994cd4f1079a3dfc151f8) maps to Linux toolchain `666337b525e673e769121856d175f6f52b8ead64`. Its inspected manifest selects the official Google-hosted archive. The SDK can reside inside its own directory, as described in the [official installation instructions](https://emscripten.org/docs/getting_started/downloads.html). This lane downloaded and safely extracted the archive without running an installer or changing system configuration. It inspected the SDK fetch/extraction path, compiler driver, local configuration/cache handling and the retained upstream build script before invoking tool-version checks.
+
+Actual retained tool artifacts are pinned in [toolchain.json](../benchmarks/runtime-rebuild/toolchain.json):
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Emscripten 6.0.10 Linux toolchain | 299,612,332 | `a51dd2829bdf725d268974728e032533b106ea01cb482a62288ec12627a7abbe` |
+| Node 24.19.0, official emsdk mirror | 31,633,904 | `14b342e71204f811bde6153be8e04b62aef63c236fef92b55f9c83154b409647` |
+| Meson 1.12.1 wheel | 1,108,668 | `930bc7542cbd9f57009e182fd014eba48cf1a0180a7b9006d2d32d8f168d8b02` |
+| CMake 3.28.3, official Kitware release | 52,618,129 | `804d231460ab3c8b556a42d2660af4ac7a0e21c98a7f8ee3318a74b4a9a187a6` |
+
+CMake 3.28.3 is reported in the retained producer log. Its downloaded artifact matches [Kitware's release checksum](https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-SHA-256.txt). Meson's artifact matches the hash declared by the [versioned PyPI record](https://pypi.org/pypi/meson/1.12.1/json). The local `emcc --version` invocation reports 6.0.10 and source `d6c521a7f05449857c76bd99e396895583cf2083`; Node and Meson version checks pass. Host Ninja 1.13.2, pkgconf and native GLib 2.88.3 are distinct recorded inputs. Matching some tool versions is not bit-reproduction of the original build.
+
+The prepared build preserves upstream image algorithms and changes only libvips's returned version string to `8.18.7-superaster-modified`. The integer version/ABI remains unchanged. This makes actual modified-library loading observable. It omits the application's unshipped optional JXL/AVIF/resvg plugins, retains UHDR and the other declared main dependencies, limits compilation to two jobs and sets a 75-minute process bound. No compiler job has run. Rust is unnecessary for this declared build because resvg is omitted.
+
+The [owned scripts and commands](../benchmarks/runtime-rebuild/README.md) prepare a fresh source tree with pinned local fetch aliases. Bubblewrap's `--unshare-net --ro-bind / / /usr/bin/true` preflight returned 0 without privileges or system changes. The actual build command makes the host read-only, binds only this cache writable and disables networking. Its resource-slot guard returned 2 when approval was absent. The [preparation evidence](../evidence/source-closure/modified-rebuild/preparation.json) records actual scope and checks. This establishes an available build route; it does not demonstrate a compilation.
+
+After the coordinator grants the serial resource slot, compile once and retain actual modified sources, complete log, resource measurements and output hashes. Then execute the new modified-runtime verifier and the served-browser replacement procedure on an identified isolated app build. Source compilation, modified pixel checks and served recombination remain NOT RUN. No production asset was replaced and no public binary admission is inferred.

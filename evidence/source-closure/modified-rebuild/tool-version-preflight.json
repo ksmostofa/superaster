@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "scope": "Version/config invocation only; no compilation",
+  "commands": [
+    {
+      "command": [
+        "emcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "shared:INFO: (Emscripten: Running sanity checks)\nemcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.10-git (d6c521a7f05449857c76bd99e396895583cf2083)\nCopyright (C) 2026 the Emscripten authors (see AUTHORS.txt)\nThis is free and open source software under the MIT license.\nThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "v24.19.0\n"
+    },
+    {
+      "command": [
+        "meson",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "1.12.1\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "cmake version 4.4.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+    },
+    {
+      "command": [
+        "ninja",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "1.13.2\n"
+    },
+    {
+      "command": [
+        "pkg-config",
+        "--modversion",
+        "glib-2.0"
+      ],
+      "exit_code": 0,
+      "output": "2.88.3\n"
+    },
+    {
+      "command": [
+        "patch",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "GNU patch 2.8\nCopyright 1989-2025 Free Software Foundation, Inc.\nCopyright 1984-1988 Larry Wall\n\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Larry Wall and Paul Eggert\n"
+    }
+  ]
+}
