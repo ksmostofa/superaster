@@ -116,3 +116,7 @@ Small source/API snapshots and reproduction scripts are in ignored `.cache/gener
 | Dynamic 1024 processor | `447d9ccb2c4129ab0ca045fc293e7d79dbc45e293ac1e94818d865db77f65a54` |
 
 Reproduce metadata/source collection with `python .cache/general-model-prerequisite/fetch.py`, then `python .cache/general-model-prerequisite/followup.py` and `python .cache/general-model-prerequisite/cuda-manifest.py` in this worktree. These scripts download text metadata/source only and run no imported model code. Fetching current heads again may legitimately record changed revisions. Preserve this snapshot for comparison. Source snapshots establish declarations and inspected behavior, not empirical model quality.
+
+## Full browser allocation failure
+
+One actual fixed group browser diagnosis loaded the exact full graph in ORT1.30 WASM and verified its static interface. Inference then failed with `std::bad_alloc`, before producing logits. [The retained report](../evidence/benchmarks/general-matting-browser-598af47/README.md) records size/hash checks, one-thread browser options, cleanup, runtime constraints and reproduction. No retry, model/profile switch, precision/input change, threshold change or gate award followed. Native success does not establish browser feasibility; browser memory reduction is an unresolved conversion/runtime prerequisite. Human quality and phone evidence remain separate.

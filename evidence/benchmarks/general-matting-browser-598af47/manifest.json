@@ -1,0 +1,60 @@
+{
+  "scope": "ONE pinned group tensor; research only, full browser execution not yet run",
+  "source_revision": "eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9",
+  "weight_sha256": "a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb",
+  "source_conditions_sha256": "feb5eb5e97ddf83f5e5cf6eaf0d51b9c0faf0bff53b6a86231f7fcd3b741e4da",
+  "native_conditions_sha256": "ce4c30ff152590dd671550dfe542e06529b9b9119c32377db846fe30bde4c776",
+  "source_manifest_sha256": "e293dfc4721a5394d9203da05f3064ea428ec65375541b31d39cbfd69330d2c9",
+  "case": "t01-three-birdwatchers",
+  "files": {
+    "model.onnx": {
+      "bytes": 929574771,
+      "sha256": "09e180872581e886bb531e5c72a1df354ba2dd55445a11bb0618435a98abe92d"
+    },
+    "input.npy": {
+      "bytes": 12583040,
+      "sha256": "24e6193e65609e8f88326676a0b845072ed0836653e9ee5264f59ea3a7698771"
+    },
+    "source-logits.npy": {
+      "bytes": 4194432,
+      "sha256": "221a940711594bb0617a1b5c6a73b3436c1e2448cd8e716d2ee0b9a70751d345"
+    },
+    "native-logits.npy": {
+      "bytes": 4194432,
+      "sha256": "fc08106649b30d1b274b2d9d6f4c25375acd1a3e7e86700a0bbf35d8c651a1e9"
+    },
+    "runtime/ort.wasm.min.mjs": {
+      "bytes": 50126,
+      "sha256": "219e6a1fc8a9938268d18efca3c91d310bd2f4a59bbd13744df5b2b7fc6cee3b"
+    },
+    "runtime/ort-wasm-simd-threaded.mjs": {
+      "bytes": 24381,
+      "sha256": "e13f7f94fc51b4ca72b12faeb1ee95f4ace6dfbc8939bc718aabdc0a27c4299b"
+    },
+    "runtime/ort-wasm-simd-threaded.wasm": {
+      "bytes": 14239897,
+      "sha256": "3398c10d07d229bd91b364548e130e0e51a8e5704b88c7c083ebbeb78842dee2"
+    }
+  },
+  "harness_code": {
+    "full-browser.html": {
+      "bytes": 1226,
+      "sha256": "e729abf3994f4c583d9cb6bfe28d7c1dbc6bc2bb1a159b410940bb2f1dbad2e7"
+    },
+    "full-browser.mjs": {
+      "bytes": 2671,
+      "sha256": "fba0906e8b698b672bb7ebfe49be867a13df047fae2c8fadaf2a15f103d4a336"
+    },
+    "full-browser-worker.mjs": {
+      "bytes": 8252,
+      "sha256": "4f639bff8c03c3e40de5cfe996f70dfaefd1653b6de8af9eaf744f685af0fdb1"
+    }
+  },
+  "wasm_heap_ceiling_bytes": 4294967296,
+  "provider": "wasm",
+  "threads": 1,
+  "proxy": false,
+  "numerical_acceptance": "NOT AWARDED",
+  "quality": "NOT AWARDED",
+  "investigation_bound_ms": 600000
+}

@@ -98,3 +98,9 @@ timeout --signal=INT --kill-after=10s 900s \
 Use `compare.py` on the retained runs for descriptive raw-logit/coverage deltas and `verify.py` for decoded diagnostic exports. These tools cannot freeze a tolerance, pass human quality, establish complete browser-model execution or certify device performance.
 
 The first full export failed at the strict intermediate metadata check; `evidence/benchmarks/general-matting-export-first-failure` preserves its actual failure and a minimal Torch TensorType reproduction. The reviewed mapping now uses individual dimension metadata without inventing missing spatial sizes. The affected tiny operator checks pass with byte-identical graph fixtures, so the earlier Node/browser checks remain applicable. The single focused retry exported and checked the fixed graph. One exact two-case CPU comparison completed; evidence is in `evidence/benchmarks/general-matting-onnx-bb8cc67`. Numerical tolerances and quality remain unawarded.
+
+## Full browser prerequisite
+
+`prepare_full_browser.py` verifies the fixed full artifact, saved group input/source/native tensors and exact installed ORT WASM files before staging hardlinks in a new isolated directory. `serve_full_browser.py` serves only these files over loopback with COOP/COEP and a same-origin CSP. The separate `full-browser.html` page runs a single one-thread local worker with a ten-minute investigation guard and explicit termination; it is never included in the product.
+
+The coordinator's one actual run is retained at `evidence/benchmarks/general-matting-browser-598af47`: initialization passed, inference failed with `std::bad_alloc`, session cleanup completed, and no logits were produced. Keep this failure distinct from the successful tiny DeformConv operator probe and native comparison. Full browser parity and quality remain incomplete.
