@@ -59,7 +59,7 @@ The source/model MIT notice and its original copyright are retained in [the sour
 
 ## Native ONNX conversion prerequisite
 
-The pinned TorchVision schema was checked against the installed CPU wheel. `native_deform.py` translates that exact signature to the standard ONNX opset-19 DeformConv input order `image, weight, offset, bias, mask`, with explicit strides, symmetric pads, dilations, groups and offset groups. It keeps the graph static and float32 and delegates execution to ORT's existing compiled kernel. The inspected legacy upstream exporter expands this operator into GatherND/Conv; its fixed revision/license/source hashes remain in the research audit, but that module is not imported or modified here.
+The pinned TorchVision schema was checked against the installed CPU wheel. `native_deform.py` translates that exact signature to the standard ONNX opset-19 DeformConv input order `image, weight, offset, bias, mask`, with explicit strides, symmetric pads, dilations, groups and offset groups. It retains known source dimensions and leaves unknown intermediate dimensions unknown. The producer separately requires static float32 final interfaces and delegates execution to ORT's existing compiled kernel. The inspected legacy upstream exporter expands this operator into GatherND/Conv; its fixed revision/license/source hashes remain in the research audit, but that module is not imported or modified here.
 
 ORT 1.30.0 at source revision `f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7` contains the native CPU float32 kernel. Two tiny synthetic fixtures pass exactly against hand-derived binary-fraction results in TorchVision, ORT CPU, Node WASM and the actual in-app browser WASM. They cover zero offsets with a padded 3×3 kernel and asymmetric fractional offsets with edge sampling and mask modulation. This proves the named operator prerequisite only. The pinned WebGPU resolver lacks DeformConv; no WebGPU support is claimed.
 
@@ -96,3 +96,5 @@ timeout --signal=INT --kill-after=10s 900s \
 ```
 
 Use `compare.py` on the retained runs for descriptive raw-logit/coverage deltas and `verify.py` for decoded diagnostic exports. These tools cannot freeze a tolerance, pass human quality, establish complete browser-model execution or certify device performance.
+
+The first full export failed at the strict intermediate metadata check; `evidence/benchmarks/general-matting-export-first-failure` preserves its actual failure and a minimal Torch TensorType reproduction. The reviewed mapping now uses individual dimension metadata without inventing missing spatial sizes. The affected tiny operator checks pass with byte-identical graph fixtures, so the earlier Node/browser checks remain applicable. One focused export retry is authorized; full-model parity is still pending.

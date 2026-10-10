@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "Affected synthetic TorchVision/ORT CPU operator probes only",
+  "fixture_artifacts_unchanged": true,
+  "previous_node_wasm_and_actual_browser": "Remain applicable to byte-identical fixtures; not rerun",
+  "full_model_parity": "NOT RUN",
+  "symbolic_sha256": "1c57315530f17458d87e049ef2a83f1d282763da0a70e2fadd1a3094853e2f83"
+}

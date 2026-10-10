@@ -1,0 +1,28 @@
+{
+  "execution_commit": "6d610e6b69e556304af3eabf20f4fd4d2ebbb134",
+  "status": "FAIL",
+  "cause": "Strict Torch symbolic size helper discards the whole dimension list when any dimension is symbolic",
+  "accepted_artifact": false,
+  "sampling_scope": "30 one-second samples from this export only; no continuous stage-peak claim",
+  "sampled_max_rss_bytes": 4898263040,
+  "sampled_host_min_available_bytes": 4127518720,
+  "sampled_host_max_swap_used_bytes": 2419310592,
+  "process_high_water_rss_bytes": 5143986176,
+  "post_failure_memory": {
+    "total": 16558505984,
+    "available": 8303529984,
+    "percent": 49.9,
+    "used": 8254976000,
+    "free": 3648163840,
+    "active": 4748861440,
+    "inactive": 6401740800,
+    "buffers": 36864,
+    "cached": 5935640576,
+    "shared": 339279872,
+    "slab": 443097088
+  },
+  "diagnostic_limit_seconds": 900,
+  "diagnostic_limit_reached": false,
+  "next_change": "Retain unknown image spatial metadata as None; require known parameter kernel dimensions; retain full static interface audit",
+  "automatic_retry": false
+}
