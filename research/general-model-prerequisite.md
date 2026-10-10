@@ -72,7 +72,7 @@ The reusable [export verifier](../benchmarks/source-reference/verify.py) passes 
 
 Decision: proceed to an audited general-matting ONNX producer and source/export comparison using these saved byte-identical inputs. This source result makes that prerequisite useful; it does not approve a production default or broad screening. Numerical tolerance must remain unfrozen until its required gate. Phone, hidden-label human review, held-out evaluation and matched comparator remain independent prerequisites.
 
-## Settled conversion approach; full export pending
+## Native conversion and two-case comparison
 
 The concrete prerequisite is a static float32 opset-19 graph with the final raw logits and native DeformConv. ONNX [defines the operator input/attribute semantics](https://onnx.ai/onnx/operators/onnx__DeformConv.html); the actual installed TorchVision 0.20.1 schema fixes the source argument order. A small symbolic maps those interfaces and supplies only dimensions established by source metadata or ONNX semantics. Execution reuses the existing compiled ORT kernel; the producer separately requires static final inputs and outputs.
 
@@ -86,7 +86,19 @@ The research-only dependency extension pins ONNX 1.17.0 (Apache-2.0), ORT 1.30.0
 
 The [reviewable export and comparison scripts](../benchmarks/source-reference/README.md) require explicit heavy-execution flags, isolated networking, unchanged source/weight/input hashes, new output directories, stage failure records and raw float32 logits. The first full export at `6d610e6` failed in the symbolic metadata check before producing an admitted artifact. [Failure evidence](../evidence/benchmarks/general-matting-export-first-failure/review.json) preserves the log, stage, resource observations and minimal metadata reproduction. Torch 2.5.1 returns no dimension list from its strict size helper when any intermediate dimension is symbolic, even though the physical input is fixed. The reviewed fix retains unknown intermediate dimensions as unknown and still requires known weight kernel dimensions plus the static final producer interface. The affected tiny TorchVision/ORT CPU probes pass; their graph bytes match the already-tested Node/browser fixtures exactly.
 
-The coordinator approved one focused bounded export retry in a fresh directory. Graph audit and at most one exact two-case CPU comparison may follow if it passes. No numerical tolerance, broader quality screen or production default is approved; full-model parity remains NOT RUN.
+The single approved retry at `bb8cc67` exported a self-contained 929,574,771-byte float32 opset-19 artifact, SHA-256 `09e180872581e886bb531e5c72a1df354ba2dd55445a11bb0618435a98abe92d`. [Graph evidence](../evidence/benchmarks/general-matting-onnx-bb8cc67/graph-audit.json) confirms 20 native DeformConv nodes, no external initializers/custom domains, input `image` `[1,3,1024,1024]` and raw output `logits` `[1,1,1024,1024]`. The final producer is Conv; 23 internal model Sigmoid nodes remain. The earlier producer report wording “no in-graph sigmoid” meant no final-output sigmoid and is clarified in the retained graph audit and current source. Initialization plus tracing/export took 52.223 s; process high-water RSS was 5,108,469,760 bytes. Source tracing warnings remain in the log.
+
+One approved CPU ORT 1.30 run used the byte-identical saved source inputs in an isolated namespace, with no network attempts. Initialization took 3.044 s. Group/fern kernel observations were 18.453/18.380 s; cumulative process high-water RSS reached 7,721,951,232 bytes. These are two observations from CPU4 execution, not a repeated performance distribution, complete app cost or phone result.
+
+| Source/native ORT measurement | Group | Fern |
+| --- | --- | --- |
+| Raw-logit MAE / maximum difference | `2.28698e-5` / `5.05447e-4` | `8.38792e-6` / `1.19090e-4` |
+| Sigmoid-coverage MAE / maximum difference | `3.47353e-8` / `4.72069e-5` | `5.80981e-7` / `2.76864e-5` |
+| Exact saved input bytes | PASS | PASS |
+| Decoded diagnostic output properties | PASS | PASS |
+| Frozen numerical tolerance / blind human quality | NOT AWARDED / NOT RUN | NOT AWARDED / NOT RUN |
+
+[Comparison and actual-output evidence](../evidence/benchmarks/general-matting-onnx-bb8cc67/README.md) retains every raw tensor/output hash and reproduction command. Assistant inspection of actual white composites sees all three people and broad soft fern/background coverage, consistent with the source. It does not award hidden-label quality. No broader screen, tolerance or production default is approved; full-model browser execution and device feasibility remain separate prerequisites.
 
 ## Retained source evidence
 

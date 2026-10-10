@@ -1,0 +1,537 @@
+{
+  "status": "PASS",
+  "scope": "Static exported graph audit; execution/numerical acceptance not awarded",
+  "onnx_artifact_sha256": "09e180872581e886bb531e5c72a1df354ba2dd55445a11bb0618435a98abe92d",
+  "final_logits_producer": {
+    "name": "/model/decoder/conv_out1/conv_out1.0/Conv",
+    "op_type": "Conv",
+    "domain": ""
+  },
+  "internal_sigmoid_nodes": 23,
+  "clarification": "Internal source-model Sigmoid operations remain; only final-output sigmoid is absent",
+  "node_count": 20829,
+  "initializer_count": 593,
+  "external_initializers": 0,
+  "deform_conv_attributes": [
+    {
+      "name": "/model/squeeze_module/squeeze_module.0/dec_att/aspp1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/squeeze_module/squeeze_module.0/dec_att/aspp_deforms.0/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/squeeze_module/squeeze_module.0/dec_att/aspp_deforms.1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "offset_group": 1,
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/squeeze_module/squeeze_module.0/dec_att/aspp_deforms.2/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          7,
+          7
+        ],
+        "offset_group": 1,
+        "pads": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block4/dec_att/aspp1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block4/dec_att/aspp_deforms.0/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block4/dec_att/aspp_deforms.1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "offset_group": 1,
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block4/dec_att/aspp_deforms.2/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          7,
+          7
+        ],
+        "offset_group": 1,
+        "pads": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block3/dec_att/aspp1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block3/dec_att/aspp_deforms.0/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block3/dec_att/aspp_deforms.1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "offset_group": 1,
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block3/dec_att/aspp_deforms.2/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          7,
+          7
+        ],
+        "offset_group": 1,
+        "pads": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block2/dec_att/aspp1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block2/dec_att/aspp_deforms.0/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block2/dec_att/aspp_deforms.1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "offset_group": 1,
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block2/dec_att/aspp_deforms.2/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          7,
+          7
+        ],
+        "offset_group": 1,
+        "pads": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block1/dec_att/aspp1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block1/dec_att/aspp_deforms.0/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          1,
+          1
+        ],
+        "offset_group": 1,
+        "pads": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block1/dec_att/aspp_deforms.1/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          3,
+          3
+        ],
+        "offset_group": 1,
+        "pads": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "/model/decoder/decoder_block1/dec_att/aspp_deforms.2/atrous_conv/DeformConv",
+      "input_count": 5,
+      "attributes": {
+        "dilations": [
+          1,
+          1
+        ],
+        "group": 1,
+        "kernel_shape": [
+          7,
+          7
+        ],
+        "offset_group": 1,
+        "pads": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "strides": [
+          1,
+          1
+        ]
+      }
+    }
+  ]
+}

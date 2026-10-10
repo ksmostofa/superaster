@@ -82,7 +82,7 @@ timeout --signal=INT --kill-after=10s 900s \
   --output .cache/general-model-prerequisite/conversion-audit/export-NEW --execute
 ```
 
-The wrapper exports only the final raw logits with no in-graph sigmoid. The script verifies the exact source and both saved input identities, uses strict local safetensors, refuses external tensor files or unexpected operator domains/interfaces, records stages/failures, and leaves numerical/quality acceptance unawarded. Full export and parity were not supplied by the synthetic probe. A graph audit must precede the following separately bounded CPU comparison command:
+The wrapper exports only the final raw logits with no final-output sigmoid. Internal source-model sigmoid operations remain. The script verifies the exact source and both saved input identities, uses strict local safetensors, refuses external tensor files or unexpected operator domains/interfaces, records stages/failures, and leaves numerical/quality acceptance unawarded. Full export and parity were not supplied by the synthetic probe. A graph audit must precede the following separately bounded CPU comparison command:
 
 ```sh
 timeout --signal=INT --kill-after=10s 900s \
@@ -97,4 +97,4 @@ timeout --signal=INT --kill-after=10s 900s \
 
 Use `compare.py` on the retained runs for descriptive raw-logit/coverage deltas and `verify.py` for decoded diagnostic exports. These tools cannot freeze a tolerance, pass human quality, establish complete browser-model execution or certify device performance.
 
-The first full export failed at the strict intermediate metadata check; `evidence/benchmarks/general-matting-export-first-failure` preserves its actual failure and a minimal Torch TensorType reproduction. The reviewed mapping now uses individual dimension metadata without inventing missing spatial sizes. The affected tiny operator checks pass with byte-identical graph fixtures, so the earlier Node/browser checks remain applicable. One focused export retry is authorized; full-model parity is still pending.
+The first full export failed at the strict intermediate metadata check; `evidence/benchmarks/general-matting-export-first-failure` preserves its actual failure and a minimal Torch TensorType reproduction. The reviewed mapping now uses individual dimension metadata without inventing missing spatial sizes. The affected tiny operator checks pass with byte-identical graph fixtures, so the earlier Node/browser checks remain applicable. The single focused retry exported and checked the fixed graph. One exact two-case CPU comparison completed; evidence is in `evidence/benchmarks/general-matting-onnx-bb8cc67`. Numerical tolerances and quality remain unawarded.

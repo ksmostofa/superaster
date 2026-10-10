@@ -1,0 +1,186 @@
+[
+  {
+    "id": "t01-three-birdwatchers",
+    "input_sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+    "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+    "first_image": true,
+    "stage_timings": {
+      "inference_ms": 18453.08053500048,
+      "diagnostic_export_ms": 2834.769449000305
+    },
+    "tensors": {
+      "raw_logits": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          1,
+          1024,
+          1024
+        ],
+        "minimum": -19.798892974853516,
+        "maximum": 31.249675750732422,
+        "mean": -6.373446464538574
+      },
+      "continuous_coverage": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          1,
+          1024,
+          1024
+        ],
+        "minimum": 2.520287312179903e-09,
+        "maximum": 1.0,
+        "mean": 0.31593436002731323
+      }
+    },
+    "exports": {
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 2555363,
+      "soft_pixels": 155088,
+      "opaque_pixels": 1129549,
+      "files": [
+        {
+          "path": "alpha.png",
+          "bytes": 90066,
+          "sha256": "5fc28ed1b8fd56de2b96918b6ddaa26820b505a3d757216e5db0d18a0e706baf"
+        },
+        {
+          "path": "black.png",
+          "bytes": 1232952,
+          "sha256": "d57c4e87ff16908b8f4d454525b1ea9d0bbdb58c6085c538ee47de9e32b1b525"
+        },
+        {
+          "path": "color.png",
+          "bytes": 1257220,
+          "sha256": "92c06199a0d9220eb0c5d4bc2d805ccd5fff6d67e5ca1f2e16e9983e5d9e23b6"
+        },
+        {
+          "path": "coverage-original.npy",
+          "bytes": 15360128,
+          "sha256": "1e93a330990966a52453cb395b174778167078aa0da029fb9c20fd1f82ef1dcf"
+        },
+        {
+          "path": "coverage.npy",
+          "bytes": 4194432,
+          "sha256": "2fdb77cf7236a7418003f0d1afc664c15f7b37431c123db3632fe68194600f23"
+        },
+        {
+          "path": "cutout.png",
+          "bytes": 4061188,
+          "sha256": "997c528f74937b6091df15475c6313fab62b33c2bd02664914f5b996ca502dc3"
+        },
+        {
+          "path": "input.npy",
+          "bytes": 12583040,
+          "sha256": "24e6193e65609e8f88326676a0b845072ed0836653e9ee5264f59ea3a7698771"
+        },
+        {
+          "path": "logits.npy",
+          "bytes": 4194432,
+          "sha256": "fc08106649b30d1b274b2d9d6f4c25375acd1a3e7e86700a0bbf35d8c651a1e9"
+        },
+        {
+          "path": "white.png",
+          "bytes": 1239746,
+          "sha256": "86ef681afc94fc41adf3fd71b47248ac3bb1010691fa1e0bd207919a1783f3f4"
+        }
+      ]
+    },
+    "process_peak_rss_bytes": 5263261696,
+    "quality": "needs_review"
+  },
+  {
+    "id": "thin-plant",
+    "input_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+    "retained_subject": "foreground fern fronds including leaves and stems",
+    "first_image": false,
+    "stage_timings": {
+      "inference_ms": 18380.40324600297,
+      "diagnostic_export_ms": 1570.3126480002538
+    },
+    "tensors": {
+      "raw_logits": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          1,
+          1024,
+          1024
+        ],
+        "minimum": -9.685384750366211,
+        "maximum": 8.5719575881958,
+        "mean": 2.7543153762817383
+      },
+      "continuous_coverage": {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          1,
+          1024,
+          1024
+        ],
+        "minimum": 6.218187627382576e-05,
+        "maximum": 0.9998107552528381,
+        "mean": 0.854096531867981
+      }
+    },
+    "exports": {
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 3321,
+      "soft_pixels": 1222662,
+      "opaque_pixels": 2817,
+      "files": [
+        {
+          "path": "alpha.png",
+          "bytes": 439301,
+          "sha256": "843bc8168bb56e086f33193d1aa76aa050601e9041b150aa48cf1f87e6b855b9"
+        },
+        {
+          "path": "black.png",
+          "bytes": 2734504,
+          "sha256": "ac20a82a4609cfef0dba0413dd550ba1c44aba9da2c4aad78e10a53fa5615bd2"
+        },
+        {
+          "path": "color.png",
+          "bytes": 2753493,
+          "sha256": "73de9f04c4f8538bd2148f588be6f2ee5e0b31122d8abb8e1f9bc96a580ec845"
+        },
+        {
+          "path": "coverage-original.npy",
+          "bytes": 4915328,
+          "sha256": "816516244f9397c5f95371e79cc8031f40f12a9f54488ee22c85c3a401e964d5"
+        },
+        {
+          "path": "coverage.npy",
+          "bytes": 4194432,
+          "sha256": "378d8c56bac05bbf027329afd6aa58565745969ce0ddfb794101b4b7d56a4c3f"
+        },
+        {
+          "path": "cutout.png",
+          "bytes": 3496745,
+          "sha256": "97ea11bdbe6aab2479d64e4a2180a5bff3326643d08d08c7e376c7716b2eb23b"
+        },
+        {
+          "path": "input.npy",
+          "bytes": 12583040,
+          "sha256": "826141ce1beddaac3d2374fcf5999fdb77b06e26308c0862b179c9443913b29c"
+        },
+        {
+          "path": "logits.npy",
+          "bytes": 4194432,
+          "sha256": "d7ca8e046225547f592f1ba779c3f90c2a5d228072532bca60484ec7f69be24a"
+        },
+        {
+          "path": "white.png",
+          "bytes": 2750990,
+          "sha256": "aafa885425cc75e694eead79609e32350a61c2d9d2671fa72506bf2ba04420da"
+        }
+      ]
+    },
+    "process_peak_rss_bytes": 7721951232,
+    "quality": "needs_review"
+  }
+]

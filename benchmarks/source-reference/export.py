@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Research proposal: export the exact source to float32 native-opset-19 ONNX."""
+"""Research producer: export the exact source to float32 native-opset-19 ONNX."""
 import argparse, collections, importlib.metadata, json, os, pathlib, resource, sys, time
 from prepare import FILES, REVISION, hash_file
 from run import EXPECTED_CASES, MANIFEST_HASH, NETWORK_ATTEMPTS, check_config, check_network_isolation, load_reviewed_module, prohibit_network, verify_sources, write_json
@@ -71,7 +71,7 @@ def main():
             'export_script_sha256':hash_file(pathlib.Path(__file__)),'native_symbolic_sha256':hash_file(pathlib.Path(__file__).with_name('native_deform.py')),
             'dependency_lock_sha256':hash_file(pathlib.Path(__file__).with_name('export-requirements.lock.txt')),'versions':versions,'network_isolation':isolation,'network_attempts':NETWORK_ATTEMPTS,
             'export_seconds':export_seconds,'process_high_water_rss_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,
-            'semantics':'raw final logits; no in-graph sigmoid or foreground cleanup; static float32 1024 input',
+            'semantics':'raw final logits; no final-output sigmoid or foreground cleanup; internal source-model sigmoids retained; static float32 1024 input',
             'quality':'NOT AWARDED','numerical_acceptance':'NOT AWARDED','cpu_browser_execution':'NOT RUN'}
     write_json(a.output/'export.json',report);print(json.dumps({'export':'completed','parity':'NOT RUN','artifact_sha256':report['onnx_artifact_sha256']}))
 

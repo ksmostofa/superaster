@@ -1,0 +1,54 @@
+{
+  "mode": "execute-onnx",
+  "revision": "eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9",
+  "weight_sha256": "a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb",
+  "manifest_sha256": "e293dfc4721a5394d9203da05f3064ea428ec65375541b31d39cbfd69330d2c9",
+  "onnx_artifact_sha256": "09e180872581e886bb531e5c72a1df354ba2dd55445a11bb0618435a98abe92d",
+  "source_conditions_sha256": "feb5eb5e97ddf83f5e5cf6eaf0d51b9c0faf0bff53b6a86231f7fcd3b741e4da",
+  "script_sha256": "cf33eb506bf3fbe055f5402fbe8f2c12a3833d046729201b6edbd28577179d3d",
+  "network_isolation": {
+    "required": true,
+    "namespace": "net:[4026533004]",
+    "interfaces": [
+      "lo"
+    ],
+    "probes": [
+      {
+        "family": "IPv4",
+        "errno": 101,
+        "result": "network unreachable"
+      },
+      {
+        "family": "IPv6",
+        "errno": 99,
+        "result": "no IPv6 source address available"
+      }
+    ],
+    "scope": "Linux isolated network namespace with loopback only; IPv4/IPv6 external connections unavailable"
+  },
+  "network_attempts": [],
+  "inference": "completed",
+  "session_initialization_ms": 3043.5658269998385,
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=f2c39fe, fp8-kv-cache=1, build type=Release",
+  "environment": {
+    "onnxruntime": "1.30.0",
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "Pillow": "12.1.0"
+  },
+  "semantics": "Exact saved source NCHW input, native float32 ONNX raw logits, one Torch sigmoid and same diagnostic exports; no refinement or color cleanup",
+  "cases": [
+    {
+      "id": "t01-three-birdwatchers",
+      "input_sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734"
+    },
+    {
+      "id": "thin-plant",
+      "input_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b"
+    }
+  ],
+  "process_peak_rss_bytes": 7721951232
+}
