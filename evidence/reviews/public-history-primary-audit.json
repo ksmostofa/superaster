@@ -1,0 +1,27 @@
+{
+  "refs": {
+    "HEAD": "873d5a8f02dd511beb7f450ba1b96c4362de023a"
+  },
+  "includes_index": false,
+  "private_file_count": 2,
+  "history_and_index_blobs_checked": 619,
+  "forbidden_paths": [],
+  "synthetic_fixture_checks": [
+    {
+      "path": "evidence/benchmarks/general-matting-conversion-prerequisite/fractional-asymmetric-offset-edge-mask.onnx",
+      "oid": "87651653bfa4736d6621c24b89a184366ecf8b16",
+      "bytes": 410,
+      "status": "PASS"
+    },
+    {
+      "path": "evidence/benchmarks/general-matting-conversion-prerequisite/zero-offset-3x3-padding.onnx",
+      "oid": "fb77afbd82fcbf0de664cec34e533cc4e91a2d92",
+      "bytes": 410,
+      "status": "PASS"
+    }
+  ],
+  "oversize_blobs": [],
+  "private_body_matches": [],
+  "credential_pattern_flags": [],
+  "status": "PASS"
+}
