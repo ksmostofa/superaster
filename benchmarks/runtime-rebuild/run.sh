@@ -6,11 +6,12 @@ if [[ ${SUPERASTER_COMPILE_APPROVED:-} != yes ]]; then
 fi
 if [[ $# != 1 ]]; then echo 'Usage: run.sh PREPARED_CACHE_DIRECTORY' >&2; exit 2; fi
 rebuild_cache=$(realpath "$1")
+rebuild_scripts=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 rebuild_source=$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["source_directory"])' "$rebuild_cache/prepared.json")
 rebuild_path="$rebuild_cache/bin:$rebuild_cache/toolchain/install/emscripten:$rebuild_cache/toolchain/install/bin:$rebuild_cache/node/node-v24.19.0-linux-x64/bin:$rebuild_cache/cmake/cmake-3.28.3-linux-x86_64/bin:/usr/bin:/bin"
 # All host files are read-only. Only this task cache is writable; networking is
 # unavailable throughout compilation. Keep the complete log, including failure.
-/usr/bin/time -v -o "$rebuild_cache/compile-resource.txt" \
+python3 "$rebuild_scripts/measure.py" --output "$rebuild_cache/compile-resource.json" -- \
   bwrap --unshare-net --die-with-parent --ro-bind / / \
   --bind "$rebuild_cache" "$rebuild_cache" --tmpfs /tmp --dev /dev --proc /proc \
   --chdir "$rebuild_source" \

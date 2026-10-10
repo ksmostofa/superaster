@@ -30,7 +30,7 @@ Pass `--reuse /absolute/path/retained-inputs` to either fetch command to reuse a
 
 ## Compile after the coordinator grants the resource slot
 
-The existing source tree is writable only inside the chosen cache. Bubblewrap makes the host read-only, removes network access and provides a private temporary directory. The command has a 75-minute bound and retains both the complete compiler log and resource report, including failures.
+The existing source tree is writable only inside the chosen cache. Bubblewrap makes the host read-only, removes network access and provides a private temporary directory. The command has a 75-minute bound and retains both the complete compiler log and resource report, including failures. Python's standard `resource` module records waited-child CPU usage and maximum RSS. That RSS value is not the simultaneous sum of all compiler processes. An existing resource report blocks accidental overwriting.
 
 ```sh
 SUPERASTER_COMPILE_APPROVED=yes bash benchmarks/runtime-rebuild/run.sh .cache/runtime-rebuild
