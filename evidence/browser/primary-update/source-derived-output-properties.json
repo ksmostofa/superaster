@@ -1,0 +1,130 @@
+{
+  "scope": "Actual browser geometry and export of an offline diagnostic source-derived cutout. This is not browser inference or approval of the candidate model.",
+  "input_hash": "35af399b79f1c66062f4dd854d96a73889d80e81d0eae899c608bc93c6514a83",
+  "input_source": "Recorded source run t01-three-birdwatchers/cutout.png",
+  "output": {
+    "sha256": "7042100c8cd77debdfe2533b2c1d2c8b9668d8864b164eb4a3ba9b735e9707ba",
+    "bytes": 671450,
+    "width": 1200,
+    "height": 800,
+    "format": "png",
+    "channels": 4,
+    "opaque": true,
+    "exif": false,
+    "icc": true,
+    "orientation": null
+  },
+  "record": {
+    "contract_version": "1.0",
+    "implementation_version": "0.1.0-alpha.1",
+    "input_hash": "35af399b79f1c66062f4dd854d96a73889d80e81d0eae899c608bc93c6514a83",
+    "recipe_hash": "b32095b8866f6e682e42005df09b362ac4ab25c693b9b071fa50fffd71937c06",
+    "binding_hashes": {},
+    "resolved_recipe": {
+      "spec_version": "1.0",
+      "input": {
+        "ref": "input-0"
+      },
+      "engine": "auto",
+      "quality": "quality",
+      "operations": [
+        {
+          "op": "composite",
+          "background": "#ffffff"
+        },
+        {
+          "op": "resize",
+          "width": 1200
+        }
+      ],
+      "output": {
+        "format": "png",
+        "metadata": "strip"
+      }
+    },
+    "engine": {
+      "id": "imaging",
+      "version": "1.0",
+      "model_hash": null,
+      "precision": "uint8",
+      "inference_dimensions": [],
+      "runtime": "imaging-kernel",
+      "backend": "local",
+      "refinement": "none"
+    },
+    "encoder": {
+      "format": "png",
+      "quality": 90,
+      "metadata": "strip",
+      "kernel": "declared imaging adapter"
+    },
+    "applied_operations": [
+      {
+        "op": "composite",
+        "background": "#ffffff"
+      },
+      {
+        "op": "resize",
+        "width": 1200
+      }
+    ],
+    "output": {
+      "width": 1200,
+      "height": 800,
+      "format": "png",
+      "channels": 4,
+      "has_alpha": true,
+      "is_opaque": true,
+      "bytes": 671450,
+      "color_space": "srgb",
+      "pages": 1,
+      "metadata": {
+        "icc": true,
+        "exif": false,
+        "density": 72
+      },
+      "hash": "7042100c8cd77debdfe2533b2c1d2c8b9668d8864b164eb4a3ba9b735e9707ba"
+    },
+    "timings_ms": {
+      "decode": 93.52500000037253,
+      "render": 140.63499999977648,
+      "encode": 44.16000000014901,
+      "validate": 47.57000000029802
+    },
+    "warnings": [],
+    "rules": []
+  },
+  "source_attribution": {
+    "artifact_rendition": "highest-resolution original",
+    "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+    "artist_plain": "Walton LaVonda, U.S. Fish and Wildlife Service",
+    "canonical_original_height": 1848,
+    "canonical_original_sha1": "6b884c562ae07a58974873b6f18cf7529c491416",
+    "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+    "canonical_original_width": 2784,
+    "copyrighted": "False",
+    "credit_plain": "http://www.public-domain-image.com/public-domain-images-pictures-free-stock-photos/people-public-domain-images-pictures/a-group-of-people-stand-birdwatching.jpg",
+    "description_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+    "license": "Public domain",
+    "license_url": "",
+    "page_id": 24888979,
+    "provider": "Wikimedia Commons",
+    "restriction_metadata": "",
+    "revision_id": 1192131628,
+    "revision_timestamp": "2026-04-05T17:35:54Z",
+    "source_snapshot_sha256": "1a4841b39abda1b965492142f53a4c045165fc03f63b48f36202d2031691fbfb",
+    "title": "File:A group of people stand birdwatching.jpg",
+    "usage_terms": "Public domain"
+  },
+  "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+  "checks": {
+    "dimensions": true,
+    "format": true,
+    "output_hash": true,
+    "output_bytes": true,
+    "opaque": true,
+    "metadata_exif_stripped": true,
+    "input_hash": true
+  },
+  "limits": "Original underlying corpus-file preservation was checked by the separately recorded source run. This check concerns the imported diagnostic PNG."
+}

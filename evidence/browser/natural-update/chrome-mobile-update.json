@@ -1,0 +1,27 @@
+{
+  "scope": "390x844 browser emulation only; no physical-phone measurement.",
+  "header": "Superaster\nRemove\nDestinations\nDocs\nUpdate downloaded. Download exports, close all Superaster tabs, then reopen to apply.",
+  "headerBounds": {
+    "bottom": -472.79296875,
+    "height": 176.58203125,
+    "left": 0,
+    "right": 375,
+    "top": -649.375,
+    "width": 375,
+    "x": 0,
+    "y": -649.375
+  },
+  "height": 844,
+  "noticeBounds": {
+    "bottom": -483.41796875,
+    "height": 51.97265625,
+    "left": 15.99609375,
+    "right": 359.00390625,
+    "top": -535.390625,
+    "width": 343.0078125,
+    "x": 15.99609375,
+    "y": -535.390625
+  },
+  "overflow": false,
+  "width": 390
+}

@@ -1,0 +1,20 @@
+{
+  "alert": "Could not finish\n\nClose the other open Superaster tabs before updating. Their images and exports remain in those tabs.",
+  "retained_tab": {
+    "result": {
+      "type": "object",
+      "value": {
+        "caches": [
+          "superaster-app-9173a87a9a35b73c",
+          "superaster-models-v1",
+          "superaster-app-567f1b1f502bc1b1"
+        ],
+        "scripts": [
+          "http://127.0.0.1:5196/assets/index-BAAbzZ8h.js"
+        ],
+        "waiting": true
+      }
+    }
+  },
+  "observed_at": "2026-10-09T16:40:43.996Z"
+}

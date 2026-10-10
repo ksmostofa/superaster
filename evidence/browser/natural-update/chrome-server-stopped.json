@@ -1,0 +1,15 @@
+{
+  "active": "activated",
+  "caches": [
+    "superaster-app-78e80a3dbac99b99",
+    "superaster-models-v1",
+    "superaster-app-b7510adb0cbee917"
+  ],
+  "controller": "http://127.0.0.1:5210/sw.js",
+  "header": "Superaster\nRemove\nDestinations\nDocs\nUpdate downloaded. Download exports, close all Superaster tabs, then reopen to apply.",
+  "scripts": [
+    "http://127.0.0.1:5210/assets/index-QAddaa04412d6e.js"
+  ],
+  "url": "http://127.0.0.1:5210/",
+  "waiting": "installed"
+}

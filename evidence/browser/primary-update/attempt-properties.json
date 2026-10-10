@@ -1,0 +1,80 @@
+{
+  "observed_at": "2026-10-09T16:47:40.505Z",
+  "first_zip_sha256": "bc95d77b2b0b85d7bde81da44187a3e650fb9cc709c0377eb5a94cea4a14a879",
+  "failed_zip_sha256": "e579f5eb5bcce76a5a499ac999f66d48339876c2de1c79126f7812bf348921c9",
+  "first_manifest": [
+    {
+      "index": 1,
+      "input_ref": "image-1",
+      "input": "same.png",
+      "status": "completed",
+      "output": "001-same.png.png",
+      "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+      "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf"
+    },
+    {
+      "index": 2,
+      "input_ref": "image-2",
+      "input": "same.png",
+      "status": "failed",
+      "input_hash": "5464533c9647b67eb320c40ccc5959537c09102ae75388f6a7675b433e745c9d",
+      "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "error": {
+        "code": "UNSUPPORTED",
+        "message": "Use a single-frame JPEG, PNG or WebP image",
+        "details": {}
+      }
+    }
+  ],
+  "failed_manifest": [
+    {
+      "index": 1,
+      "input_ref": "image-1",
+      "input": "same.png",
+      "status": "failed",
+      "output": "001-same.png.png",
+      "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+      "recipe_hash": "3542cd3e802ff0185f6499eed80619d672698f6d1ac1eda5b92d1b4fb9eaa82f",
+      "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "error": {
+        "code": "CONSTRAINT_UNSATISFIABLE",
+        "message": "Lossless PNG exceeds byte target at fixed dimensions",
+        "details": {
+          "actual_bytes": 2071,
+          "max_bytes": 1
+        }
+      }
+    },
+    {
+      "index": 2,
+      "input_ref": "image-2",
+      "input": "same.png",
+      "status": "failed",
+      "input_hash": "5464533c9647b67eb320c40ccc5959537c09102ae75388f6a7675b433e745c9d",
+      "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "error": {
+        "code": "UNSUPPORTED",
+        "message": "Use a single-frame JPEG, PNG or WebP image",
+        "details": {}
+      }
+    }
+  ],
+  "checks": {
+    "corrupt_input_and_recipe_attribution": "PASS",
+    "changed_attempt_recipe": "PASS",
+    "retained_output_recipe": "PASS",
+    "retained_png_and_record_bytes": "PASS",
+    "decoded_dimensions_and_no_source_exif": "PASS",
+    "output_record_hash": "PASS"
+  },
+  "output": {
+    "width": 120,
+    "height": 80,
+    "format": "png",
+    "bytes": 2071,
+    "hash": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7"
+  },
+  "local_archives": ".cache/update-preview/exports",
+  "scope": "Actual browser UI first run and actual WebMCP rerun; deterministic operations, no inference."
+}

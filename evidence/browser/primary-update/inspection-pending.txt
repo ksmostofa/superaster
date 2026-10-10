@@ -1,0 +1,104 @@
+- banner:
+  - link "Superaster":
+    - /url: /remove
+  - navigation "Workspaces":
+    - list:
+      - button "Remove"
+      - button "Destinations"
+      - button "Docs"
+  - generic: App cached · local processing
+- main:
+  - heading "Remove background" [level=1]
+  - paragraph: Inspect the edges. Prepare the exact export.
+  - region "Image work area":
+    - heading "Start with an image" [level=2]
+    - paragraph: Drop images here, or choose files.
+    - button "Choose images" [active]
+    - text: JPEG, PNG or WebP. Originals stay untouched.
+    - text: Models download separately. No image upload or account.
+  - complementary "Processing and export settings":
+    - heading "Prepare & export" [level=2]
+    - generic: Local alpha
+    - text: Quality
+    - combobox "Quality" [disabled]:
+      - option "Quality" [selected]
+      - option "Fast · lighter model"
+    - text: Export format
+    - combobox "Export format" [disabled]:
+      - option "PNG · transparency" [selected]
+      - option "WebP"
+      - option "JPEG · opaque background required"
+    - button "Cancel"
+    - generic: Choose an image to begin. Models download separately.
+    - generic: "Engine: Auto"
+    - generic "Destination"
+    - option "Custom preparation" [selected]
+    - option "Japan short-term entry visa photo · Washington Embassy in-person paper application"
+    - option "Japan residence/status procedure photo · Paper submission for procedures requiring the ISA photo specification"
+    - option "UK digital passport photo · Online application, own device photo"
+    - option "UK digital passport photo · Online application, photo booth/shop code"
+    - option "X profile photo · Official app/web profile upload"
+    - option "X header photo · Official app/web profile header"
+    - option "YouTube video thumbnail · YouTube Studio mobile upload"
+    - option "YouTube video thumbnail · YouTube Studio desktop upload"
+    - option "YouTube channel banner · YouTube Studio channel branding"
+    - option "YouTube profile photo · YouTube Studio channel branding"
+    - option "YouTube channel video watermark image · YouTube Studio channel branding"
+    - option "Shopify square product image · Product or collection image upload"
+    - option "Etsy listing image · Shop upload"
+    - option "Etsy shop logo · Shop upload"
+    - option "Etsy big shop banner · Shop upload"
+    - option "Google Article image 16x9 · Article structured data image URL"
+    - option "Google Article image 4x3 · Article structured data image URL"
+    - option "Google Article image 1x1 · Article structured data image URL"
+    - option "4 by 6 inch grid of 30 by 40mm items · Fixed-grid raster sheet; print at actual size"
+    - option "A4 grid of 35 by 45mm items · Fixed-grid raster sheet; print at actual size"
+    - generic "Advanced engine"
+    - option "Auto · selected quality, available backend" [selected]
+    - option "BiRefNet 512 Quality · Auto backend"
+    - option "BiRefNet 512 Quality · WASM"
+    - option "BiRefNet 512 Quality · WebGPU"
+    - option "BiRefNet lite 512 Fast · Auto backend"
+    - option "BiRefNet lite 512 Fast · WASM"
+    - option "BiRefNet lite 512 Fast · WebGPU"
+    - option "BiRefNet lite 1024 candidate · Auto backend"
+    - option "BiRefNet lite 1024 candidate · WASM"
+    - option "BiRefNet lite 1024 candidate · WebGPU"
+    - option "BiRefNet full 1024 candidate · Auto backend"
+    - option "BiRefNet full 1024 candidate · WASM"
+    - option "BiRefNet full 1024 candidate · WebGPU"
+    - option "BEN2 Base candidate · Auto backend"
+    - option "BEN2 Base candidate · WASM"
+    - option "BEN2 Base candidate · WebGPU"
+    - generic "Size & background"
+    - option "Contain · pad" [selected]
+    - option "Cover · crop"
+    - option "Transparent" [selected]
+    - option "White"
+    - option "Black"
+    - option "Magenta"
+    - option "None" [selected]
+    - option "Horizontal"
+    - option "Vertical"
+    - generic "Exact recipe"
+    - paragraph: Ordered operations and explicit constraints. Apply before processing.
+    - textbox "Operation recipe JSON": "{ \"spec_version\": \"1.0\", \"input\": { \"ref\": \"input-0\" }, \"engine\": \"auto\", \"quality\": \"quality\", \"operations\": [ { \"op\": \"composite\", \"background\": \"#ffffff\" }, { \"op\": \"resize\", \"width\": 120 } ], \"output\": { \"format\": \"png\", \"metadata\": \"strip\" } }"
+    - button "Apply recipe" [disabled]
+    - button "Save recipe"
+    - text: Load recipe
+    - button "Load recipe"
+    - generic "Model preparation"
+- contentinfo:
+  - generic: Free supported exports. No watermark. No image uploads.
+  - text: UI adapted from
+  - link "Rare UI":
+    - /url: https://rareui.com
+  - text: and
+  - link "Animate UI":
+    - /url: https://animate-ui.com
+  - text: ·
+  - link "GitHub":
+    - /url: https://github.com/ksmostofa/superaster
+  - text: ·
+  - link "Notices":
+    - /url: /THIRD_PARTY_NOTICES.md

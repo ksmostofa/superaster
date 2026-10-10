@@ -1,0 +1,18 @@
+{
+  "facts": {
+    "height": 720,
+    "image": {
+      "bottom": 777.060546875,
+      "height": 500,
+      "left": 88.49609375,
+      "right": 838.49609375,
+      "top": 277.060546875,
+      "width": 750,
+      "x": 88.49609375,
+      "y": 277.060546875
+    },
+    "overflow": false,
+    "width": 1280
+  },
+  "scope": "Actual geometry/export of a diagnostic source-derived cutout. Model inference occurred in the separate recorded source run."
+}

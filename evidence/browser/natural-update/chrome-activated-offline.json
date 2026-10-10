@@ -1,0 +1,14 @@
+{
+  "active": "activated",
+  "caches": [
+    "superaster-models-v1",
+    "superaster-app-b7510adb0cbee917"
+  ],
+  "controller": "http://127.0.0.1:5210/sw.js",
+  "header": "Superaster\nRemove\nDestinations\nDocs\nApp cached · local processing",
+  "scripts": [
+    "http://127.0.0.1:5210/assets/index-QA848ac6545322.js"
+  ],
+  "url": "http://127.0.0.1:5210/",
+  "waiting": null
+}

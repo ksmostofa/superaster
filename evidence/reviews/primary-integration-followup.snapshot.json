@@ -1,0 +1,65 @@
+{
+  "target_commit": "653cf02e32ce9a744ee7a7d22883822520e4cf5c",
+  "reviewed_at_utc": "2026-10-09T12:04:49.239049+00:00",
+  "scope": "Focused source review of initial fixes; real-browser update checks are coordinator-owned and not represented as reviewer PASS",
+  "reviewed_commit_files": {
+    "packages/web/src/App.tsx": {
+      "sha256": "243ce983a52847f0747653539592471f884a86e6e7d6e1591cc632c3562609d2",
+      "bytes": 35922,
+      "current_worktree_matches": true
+    },
+    "packages/web/src/client.ts": {
+      "sha256": "1fbf45a2dc0585247193fbd6bebcf2a7c186f00b04e4599483e836c3b0ce1094",
+      "bytes": 4031,
+      "current_worktree_matches": true
+    },
+    "scripts/service-worker.ts": {
+      "sha256": "3f8afd289ffa7dbed2eb217d4dabed16580d8137d46eace2f1e7560f32e06abb",
+      "bytes": 2828,
+      "current_worktree_matches": true
+    },
+    "tests/cli-boundary.test.ts": {
+      "sha256": "e669063dba68c760b43b4f7166ed67bbc65c5290f773ae81b10bffc01374af1a",
+      "bytes": 11574,
+      "current_worktree_matches": true
+    },
+    "docs/catalog-freshness.md": {
+      "sha256": "d87ae591d5eae77f48e392d30cd2f4b521a1cf7f5fab352a6084eb5dee359a04",
+      "bytes": 3555,
+      "current_worktree_matches": true
+    },
+    ".github/workflows/catalog-sources.yml": {
+      "sha256": "c114fc2a75870d2f831a49b7b04370620353014520db4dcc688fefae32f610f7",
+      "bytes": 900,
+      "current_worktree_matches": true
+    },
+    "package.json": {
+      "sha256": "572cacdf2f5d4deabdea21ecbb3e3ac7e8e868b20688202d5e6a9f96a14cf2f9",
+      "bytes": 3137,
+      "current_worktree_matches": true
+    },
+    "tests/catalog-freshness.test.ts": {
+      "sha256": "6bac84a4c9ae83cd0f6bdc7010c29f3a0858607cf55769e109f40973738c24c3",
+      "bytes": 15456,
+      "current_worktree_matches": true
+    }
+  },
+  "inspected_existing_test_results": {
+    "evidence/reviews/primary-tests/cli-fixed.json": {
+      "sha256": "8ec14a60f1143b45aacdfd664db4f69a3c9eedc74d8def16024e8b09143fb59f",
+      "passed": 52,
+      "failed": 0,
+      "pending": 0,
+      "success": true,
+      "scope": "Prior coordinator-run evidence; not rerun by this reviewer"
+    },
+    "evidence/reviews/primary-tests/adapters-fixed.json": {
+      "sha256": "3b8daa2dd78d9401d92aa4d36c43b79deb3ed6674e7e8af7c58598f1f024038c",
+      "passed": 19,
+      "failed": 0,
+      "pending": 0,
+      "success": true,
+      "scope": "Prior coordinator-run evidence; not rerun by this reviewer"
+    }
+  }
+}

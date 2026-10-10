@@ -1,0 +1,15 @@
+{
+  "result": {
+    "type": "object",
+    "value": {
+      "caches": [
+        "superaster-models-v1",
+        "superaster-app-840b330505ffbd50"
+      ],
+      "scripts": [
+        "http://127.0.0.1:5196/assets/index-B6y83CCy.js"
+      ],
+      "waiting": false
+    }
+  }
+}
