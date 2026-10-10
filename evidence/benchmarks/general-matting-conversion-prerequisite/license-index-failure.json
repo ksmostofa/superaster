@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "stage": "license member lookup",
+  "cause": "ORT wheel stores LICENSE and notices in onnxruntime/, not dist-info/",
+  "installed": false,
+  "fix": "Inspect verified archive member inventory; index the actual retained files"
+}

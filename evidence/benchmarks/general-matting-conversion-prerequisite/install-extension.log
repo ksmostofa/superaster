@@ -1,0 +1,6 @@
+Processing ./.cache/general-model-prerequisite/conversion-audit/wheels/onnx-1.17.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+Processing ./.cache/general-model-prerequisite/conversion-audit/wheels/onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_x86_64.whl
+Processing ./.cache/general-model-prerequisite/conversion-audit/wheels/protobuf-4.25.8-cp37-abi3-manylinux2014_x86_64.whl
+Processing ./.cache/general-model-prerequisite/conversion-audit/wheels/flatbuffers-25.2.10-py2.py3-none-any.whl
+Installing collected packages: flatbuffers, protobuf, onnxruntime, onnx
+Successfully installed flatbuffers-25.2.10 onnx-1.17.0 onnxruntime-1.30.0 protobuf-4.25.8

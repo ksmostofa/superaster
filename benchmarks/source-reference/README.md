@@ -56,3 +56,43 @@ A later audited ONNX conversion can reuse the saved input tensors. Its condition
 The comparison requires byte-identical preprocessed tensors and reports mean/max/RMS differences. It awards no numerical tolerance or quality acceptance. Nine deterministic tool tests cover comparison boundaries and exact-range resume/admission using clearly identified synthetic arrays and transport responses; they are not fabricated inference outputs. No ONNX export/parity, hidden-label judgment, phone result, frozen budget or remove.bg superiority claim is supplied by these scripts.
 
 The source/model MIT notice and its original copyright are retained in [the source audit](../../research/general-model-prerequisite.md). Imported dependencies retain their own notices. The private cache stores installation reports, license inventory, full source review, transfer failures and preflight conditions. Downloaded model/source/venv files stay outside public package artifacts.
+
+## Native ONNX conversion prerequisite
+
+The pinned TorchVision schema was checked against the installed CPU wheel. `native_deform.py` translates that exact signature to the standard ONNX opset-19 DeformConv input order `image, weight, offset, bias, mask`, with explicit strides, symmetric pads, dilations, groups and offset groups. It keeps the graph static and float32 and delegates execution to ORT's existing compiled kernel. The inspected legacy upstream exporter expands this operator into GatherND/Conv; its fixed revision/license/source hashes remain in the research audit, but that module is not imported or modified here.
+
+ORT 1.30.0 at source revision `f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7` contains the native CPU float32 kernel. Two tiny synthetic fixtures pass exactly against hand-derived binary-fraction results in TorchVision, ORT CPU, Node WASM and the actual in-app browser WASM. They cover zero offsets with a padded 3×3 kernel and asymmetric fractional offsets with edge sampling and mask modulation. This proves the named operator prerequisite only. The pinned WebGPU resolver lacks DeformConv; no WebGPU support is claimed.
+
+Install only the reviewed research extension; its four wheel hashes and complete retained license-file hashes are recorded in `evidence/benchmarks/general-matting-conversion-prerequisite/verified-wheels.json`. Existing source packages remain unchanged. Wheels and their complete notices remain in the ignored cache and installed research environment; no wheel binaries are redistributed in the application.
+
+```sh
+.cache/source-reference-venv/bin/python -m pip install \
+  -r benchmarks/source-reference/export-requirements.lock.txt
+.cache/source-reference-venv/bin/python -m pip check
+```
+
+After the coordinator grants the serial slot, the proposed full export command is:
+
+```sh
+timeout --signal=INT --kill-after=10s 900s \
+  unshare --user --map-root-user --net -- \
+  .cache/source-reference-venv/bin/python benchmarks/source-reference/export.py \
+  --model-dir .cache/general-model-prerequisite/source-reference/model \
+  --source-run .cache/general-model-prerequisite/source-reference/run-20261010-source \
+  --output .cache/general-model-prerequisite/conversion-audit/export-NEW --execute
+```
+
+The wrapper exports only the final raw logits with no in-graph sigmoid. The script verifies the exact source and both saved input identities, uses strict local safetensors, refuses external tensor files or unexpected operator domains/interfaces, records stages/failures, and leaves numerical/quality acceptance unawarded. Full export and parity were not supplied by the synthetic probe. A graph audit must precede the following separately bounded CPU comparison command:
+
+```sh
+timeout --signal=INT --kill-after=10s 900s \
+  unshare --user --map-root-user --net -- \
+  .cache/source-reference-venv/bin/python benchmarks/source-reference/run_onnx.py \
+  --artifact EXPORT_DIRECTORY/general-matting-f32-opset19.onnx \
+  --export-report EXPORT_DIRECTORY/export.json \
+  --source-run .cache/general-model-prerequisite/source-reference/run-20261010-source \
+  --manifest ../superaster/evidence/benchmarks/full1024-targeted-233231f/targeted-manifest.json \
+  --corpus-root ../superaster --output ONNX_RUN_NEW --run
+```
+
+Use `compare.py` on the retained runs for descriptive raw-logit/coverage deltas and `verify.py` for decoded diagnostic exports. These tools cannot freeze a tolerance, pass human quality, establish complete browser-model execution or certify device performance.

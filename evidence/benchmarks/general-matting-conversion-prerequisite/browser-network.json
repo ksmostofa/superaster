@@ -1,0 +1,328 @@
+{
+  "cursor": 270,
+  "events": [
+    {
+      "sequence": 29,
+      "source": {
+        "tabId": 5
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:5209/",
+        "frameId": "2FC60CCDC229E48B5E2195EC3B53F1FB",
+        "hasUserGesture": true,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 27,
+                "functionName": "",
+                "lineNumber": 14,
+                "scriptId": "9",
+                "url": "http://127.0.0.1:5209/browser-probe.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "0316B5122C7A383DC39B6CD2E75E63C6",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:5209/",
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Linux\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:5209/probe.json"
+        },
+        "requestId": "56719.6",
+        "timestamp": 36499.637178,
+        "type": "Fetch",
+        "wallTime": 1791593186.398478
+      }
+    },
+    {
+      "sequence": 36,
+      "source": {
+        "tabId": 5
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:5209/",
+        "frameId": "2FC60CCDC229E48B5E2195EC3B53F1FB",
+        "hasUserGesture": true,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 34,
+                "functionName": "",
+                "lineNumber": 20,
+                "scriptId": "9",
+                "url": "http://127.0.0.1:5209/browser-probe.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "0316B5122C7A383DC39B6CD2E75E63C6",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:5209/",
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Linux\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:5209/zero-offset-3x3-padding.onnx"
+        },
+        "requestId": "56719.7",
+        "timestamp": 36499.676425,
+        "type": "Fetch",
+        "wallTime": 1791593186.437748
+      }
+    },
+    {
+      "sequence": 42,
+      "source": {
+        "tabId": 5
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:5209/",
+        "frameId": "2FC60CCDC229E48B5E2195EC3B53F1FB",
+        "hasUserGesture": true,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 22668,
+                "functionName": "Nn",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 23177,
+                "functionName": "tn",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 24926,
+                "functionName": "Oe",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 45281,
+                "functionName": "pn",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 49481,
+                "functionName": "init",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 1489,
+                "functionName": "_n",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 1782,
+                "functionName": "ht",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 19856,
+                "functionName": "create",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 49,
+                "functionName": "",
+                "lineNumber": 24,
+                "scriptId": "9",
+                "url": "http://127.0.0.1:5209/browser-probe.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "0316B5122C7A383DC39B6CD2E75E63C6",
+        "redirectHasExtraInfo": false,
+        "renderBlockingBehavior": "NonBlocking",
+        "request": {
+          "headers": {
+            "Origin": "http://127.0.0.1:5209",
+            "Referer": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs",
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Linux\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:5209/runtime/ort-wasm-simd-threaded.mjs"
+        },
+        "requestId": "56719.8",
+        "timestamp": 36499.712827,
+        "type": "Script",
+        "wallTime": 1791593186.474478
+      }
+    },
+    {
+      "sequence": 49,
+      "source": {
+        "tabId": 5
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:5209/",
+        "frameId": "2FC60CCDC229E48B5E2195EC3B53F1FB",
+        "hasUserGesture": true,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 209,
+                "functionName": "Na",
+                "lineNumber": 9,
+                "scriptId": "21",
+                "url": "http://127.0.0.1:5209/runtime/ort-wasm-simd-threaded.mjs"
+              },
+              {
+                "columnNumber": 310,
+                "functionName": "wa",
+                "lineNumber": 14,
+                "scriptId": "21",
+                "url": "http://127.0.0.1:5209/runtime/ort-wasm-simd-threaded.mjs"
+              },
+              {
+                "columnNumber": 157,
+                "functionName": "ortWasmThreaded",
+                "lineNumber": 57,
+                "scriptId": "21",
+                "url": "http://127.0.0.1:5209/runtime/ort-wasm-simd-threaded.mjs"
+              },
+              {
+                "columnNumber": 25257,
+                "functionName": "",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              },
+              {
+                "columnNumber": 25027,
+                "functionName": "Oe",
+                "lineNumber": 5,
+                "scriptId": "14",
+                "url": "http://127.0.0.1:5209/runtime/ort.wasm.min.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "0316B5122C7A383DC39B6CD2E75E63C6",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:5209/",
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Linux\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:5209/runtime/ort-wasm-simd-threaded.wasm"
+        },
+        "requestId": "56719.9",
+        "timestamp": 36499.719675,
+        "type": "Fetch",
+        "wallTime": 1791593186.480978
+      }
+    },
+    {
+      "sequence": 264,
+      "source": {
+        "tabId": 5
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:5209/",
+        "frameId": "2FC60CCDC229E48B5E2195EC3B53F1FB",
+        "hasUserGesture": true,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 34,
+                "functionName": "",
+                "lineNumber": 20,
+                "scriptId": "9",
+                "url": "http://127.0.0.1:5209/browser-probe.mjs"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "0316B5122C7A383DC39B6CD2E75E63C6",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:5209/",
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Linux\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:5209/fractional-asymmetric-offset-edge-mask.onnx"
+        },
+        "requestId": "56719.10",
+        "timestamp": 36499.954477,
+        "type": "Fetch",
+        "wallTime": 1791593186.715798
+      }
+    }
+  ],
+  "hasMore": false,
+  "truncated": false
+}

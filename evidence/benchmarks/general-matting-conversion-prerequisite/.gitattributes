@@ -1,0 +1,2 @@
+# The tiny deterministic operator fixtures are protobuf binaries.
+*.onnx binary

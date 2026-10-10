@@ -1,0 +1,37 @@
+{
+  "scope": "Synthetic operator evidence plus unexecuted full exporter/CPU parity proposal",
+  "files": [
+    {
+      "path": "benchmarks/source-reference/export.py",
+      "sha256": "8f3b8bf2b83c99c1acf7cfc109a0d261d75f4734e6d88f5c449a3a0f9dd2e95f"
+    },
+    {
+      "path": "benchmarks/source-reference/native_deform.py",
+      "sha256": "d3c692f2e5e138d5195e6132769f78e3072458449d40e927a8edf8dfabcf5f84"
+    },
+    {
+      "path": "benchmarks/source-reference/run_onnx.py",
+      "sha256": "cf33eb506bf3fbe055f5402fbe8f2c12a3833d046729201b6edbd28577179d3d"
+    },
+    {
+      "path": "benchmarks/source-reference/probe.py",
+      "sha256": "b5a5aa79afaf1a9f7a2542c03e69f49b8ab1815b612a5ef92ad450d370fc7c90"
+    },
+    {
+      "path": "benchmarks/source-reference/probe-wasm.mjs",
+      "sha256": "099f13c5841211378e9a19766985bc84626478ebc7b08586b14dc93ad362eb91"
+    },
+    {
+      "path": "benchmarks/source-reference/browser-probe.html",
+      "sha256": "ff97dbd89eb60d2572f27af0372e33f96a88a10d2583ca47d8d0e49f75ff1d3a"
+    },
+    {
+      "path": "benchmarks/source-reference/browser-probe.mjs",
+      "sha256": "04ac8e58cd03b1d09b0458210a3dce6534a7ce0f9e2fd9e1cc6c50f5b79b54fe"
+    },
+    {
+      "path": "benchmarks/source-reference/export-requirements.lock.txt",
+      "sha256": "74310df2761ad1bfa50fd036aa8a801d20a5e934ee828ac6d0c03ba8de1421b8"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+[
+  {
+    "filename": "onnx-1.17.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/3d/7c/67f4952d1b56b3f74a154b97d0dd0630d525923b354db117d04823b8b49b/onnx-1.17.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "bytes": 16046307,
+    "sha256": "4f3fb5cc4e2898ac5312a7dc03a65133dd2abf9a5e520e69afb880a7251ec97a",
+    "declared_license": "Apache License v2.0",
+    "licenses": [
+      {
+        "path": "onnx-1.17.0.dist-info/LICENSE",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "first_lines": [
+          "",
+          "                                 Apache License",
+          "                           Version 2.0, January 2004",
+          "                        http://www.apache.org/licenses/",
+          "",
+          "   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION"
+        ]
+      }
+    ]
+  },
+  {
+    "filename": "onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/34/35/e7f862dbacbc99fadd9b14a614e49c99bf0f35fd9927a82f096e3de33531/onnxruntime-1.30.0-cp312-cp312-manylinux_2_28_x86_64.whl",
+    "bytes": 23585654,
+    "sha256": "fa688e7891a6aa206636fe7372e27ee75fd17713289f6b4fc7b190e0a7de9328",
+    "declared_license": "MIT License",
+    "licenses": [
+      {
+        "path": "onnxruntime/LICENSE",
+        "bytes": 1073,
+        "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+        "first_lines": [
+          "MIT License",
+          "",
+          "Copyright (c) Microsoft Corporation",
+          "",
+          "Permission is hereby granted, free of charge, to any person obtaining a copy",
+          "of this software and associated documentation files (the \"Software\"), to deal"
+        ]
+      },
+      {
+        "path": "onnxruntime/ThirdPartyNotices.txt",
+        "bytes": 338088,
+        "sha256": "143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3",
+        "first_lines": [
+          "THIRD PARTY SOFTWARE NOTICES AND INFORMATION",
+          "",
+          "Do Not Translate or Localize",
+          "",
+          "This software incorporates material from third parties. Microsoft makes certain",
+          "open source code available at http://3rdpartysource.microsoft.com, or you may"
+        ]
+      }
+    ]
+  },
+  {
+    "filename": "protobuf-4.25.8-cp37-abi3-manylinux2014_x86_64.whl",
+    "url": "https://files.pythonhosted.org/packages/d6/c6/c9deaa6e789b6fc41b88ccbdfe7a42d2b82663248b715f55aa77fbc00724/protobuf-4.25.8-cp37-abi3-manylinux2014_x86_64.whl",
+    "bytes": 294924,
+    "sha256": "83e6e54e93d2b696a92cad6e6efc924f3850f82b52e1563778dfab8b355101b0",
+    "declared_license": "3-Clause BSD License",
+    "licenses": [
+      {
+        "path": "protobuf-4.25.8.dist-info/LICENSE",
+        "bytes": 1732,
+        "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d",
+        "first_lines": [
+          "Copyright 2008 Google Inc.  All rights reserved.",
+          "",
+          "Redistribution and use in source and binary forms, with or without",
+          "modification, are permitted provided that the following conditions are",
+          "met:",
+          ""
+        ]
+      }
+    ]
+  },
+  {
+    "filename": "flatbuffers-25.2.10-py2.py3-none-any.whl",
+    "url": "https://files.pythonhosted.org/packages/b8/25/155f9f080d5e4bc0082edfda032ea2bc2b8fab3f4d25d46c1e9dd22a1a89/flatbuffers-25.2.10-py2.py3-none-any.whl",
+    "bytes": 30953,
+    "sha256": "ebba5f4d5ea615af3f7fd70fc310636fbb2bbd1f566ac0a23d98dd412de50051",
+    "declared_license": "Apache 2.0",
+    "licenses": [
+      {
+        "path": "flatbuffers-25.2.10.dist-info/LICENSE",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "first_lines": [
+          "",
+          "                                 Apache License",
+          "                           Version 2.0, January 2004",
+          "                        http://www.apache.org/licenses/",
+          "",
+          "   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION"
+        ]
+      }
+    ]
+  }
+]
