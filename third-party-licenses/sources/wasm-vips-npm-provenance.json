@@ -1,0 +1,51 @@
+{
+  "source_url": "https://registry.npmjs.org/-/npm/v1/attestations/wasm-vips@0.0.19",
+  "scope": "Decoded statement from registry; signature not independently verified in this audit",
+  "statement": {
+    "_type": "https://in-toto.io/Statement/v1",
+    "subject": [
+      {
+        "name": "pkg:npm/wasm-vips@0.0.19",
+        "digest": {
+          "sha512": "29e7a362cf2836a3d47760bf5cf46142d45a6f276a392914c827568457f6b9c2fcad52aa1efb69e5962e60bc9e0c6ff8cb8e6dbd13924f79905a56bed6ea2d48"
+        }
+      }
+    ],
+    "predicateType": "https://slsa.dev/provenance/v1",
+    "predicate": {
+      "buildDefinition": {
+        "buildType": "https://slsa-framework.github.io/github-actions-buildtypes/workflow/v1",
+        "externalParameters": {
+          "workflow": {
+            "ref": "refs/tags/v0.0.19",
+            "repository": "https://github.com/kleisauke/wasm-vips",
+            "path": ".github/workflows/ci.yml"
+          }
+        },
+        "internalParameters": {
+          "github": {
+            "event_name": "push",
+            "repository_id": "291921988",
+            "repository_owner_id": "12746591"
+          }
+        },
+        "resolvedDependencies": [
+          {
+            "uri": "git+https://github.com/kleisauke/wasm-vips@refs/tags/v0.0.19",
+            "digest": {
+              "gitCommit": "49ac4378f2df80e38f45491abeeac9b86dddbedd"
+            }
+          }
+        ]
+      },
+      "runDetails": {
+        "builder": {
+          "id": "https://github.com/actions/runner/github-hosted"
+        },
+        "metadata": {
+          "invocationId": "https://github.com/kleisauke/wasm-vips/actions/runs/36542842119/attempts/1"
+        }
+      }
+    }
+  }
+}

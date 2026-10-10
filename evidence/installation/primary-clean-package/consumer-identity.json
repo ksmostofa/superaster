@@ -1,0 +1,152 @@
+{
+  "created_at_utc": "2026-10-09T16:43:21.279830+00:00",
+  "source_head": "653cf02e32ce9a744ee7a7d22883822520e4cf5c",
+  "consumer": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer",
+  "package": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/superaster-local-0.1.0-alpha.1.tgz",
+  "package_sha256": "9e6e8bfe7a88ec980c03d59e3cca34b5ecb47edb1a8670a5268a6d2479b2fe73",
+  "node": "v26.11.1",
+  "npm": "11.20.0",
+  "platform": "Linux archlinux 7.2.5-3-omarchy #1 SMP PREEMPT_DYNAMIC Mon, 14 Sep 2026 19:55:01 +0000 x86_64 GNU/Linux",
+  "source_files": [
+    {
+      "path": "package-lock.json",
+      "sha256": "1eff8f71823e96cde9198b94df90d43dc6f0e3c34dd2259c727f84f922162faa",
+      "matches_head": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "572cacdf2f5d4deabdea21ecbb3e3ac7e8e868b20688202d5e6a9f96a14cf2f9",
+      "matches_head": true
+    },
+    {
+      "path": "packages/catalog/data/presets.json",
+      "sha256": "f24d590ab9b04b936467c44e0e2ef2cfb18bebba5e1924d8243ba2e9f6fd3a14",
+      "matches_head": true
+    },
+    {
+      "path": "packages/catalog/data/source-retrievals.json",
+      "sha256": "fad7d0ebb08bfa2826cf7f83459d37664f90a87b24e4cdbab496954ccc27ea06",
+      "matches_head": true
+    },
+    {
+      "path": "packages/catalog/data/source-status.json",
+      "sha256": "f7e247abf5d7af1f9ce15ba286a3eb03d94feb19624b5a6b753c4d49e5dde0cc",
+      "matches_head": true
+    },
+    {
+      "path": "packages/catalog/src/index.ts",
+      "sha256": "cf55e616138f83e97f518fa5a00fa235be8ddaf62e3f651f9fb34ae81fa23db9",
+      "matches_head": true
+    },
+    {
+      "path": "packages/catalog/src/types.ts",
+      "sha256": "d11d0475014e738239bf94d6076e65efcc54f37cbb0c66de1816e8729817ff57",
+      "matches_head": true
+    },
+    {
+      "path": "packages/cli/src/batch.ts",
+      "sha256": "f55c7ad02c7c6dde9c2a59ac418c1176b8a72553b13fce558ff898de9ce4f59c",
+      "matches_head": true
+    },
+    {
+      "path": "packages/cli/src/index.ts",
+      "sha256": "575f6378de90e8399aa819dd52f231c79dca13d234d943322c6dd160ea5800cf",
+      "matches_head": true
+    },
+    {
+      "path": "packages/contract/src/index.ts",
+      "sha256": "fc43489ff97420a5b4fd13ba8da2339d176f9a360b699f16e16f4c1bb4bb16ac",
+      "matches_head": true
+    },
+    {
+      "path": "packages/core/src/index.ts",
+      "sha256": "2baf2b58c4e2f4b46adb179d423ffadb70bdfd0f5fcf309d151570006b4ee063",
+      "matches_head": true
+    },
+    {
+      "path": "packages/engines/src/browser-kernel.ts",
+      "sha256": "e4c15f57334a9ea6b47b5238023630907c21d8ebb76c9b3ac729617bc6969b06",
+      "matches_head": true
+    },
+    {
+      "path": "packages/engines/src/browser.ts",
+      "sha256": "d0887ffb400f7026397fc90e94a60378af6ef73648aa5ab13b411ef6839659b1",
+      "matches_head": true
+    },
+    {
+      "path": "packages/engines/src/gpu-runtime.ts",
+      "sha256": "4a1a5e7f4f2b6740a00cbaa52b828839210d47b5b351df055a13addf23de51b6",
+      "matches_head": true
+    },
+    {
+      "path": "packages/engines/src/models.ts",
+      "sha256": "947b8c6544a83c225be959ef2ba5abbc1bbbeb6006bfe0bb6827be1982c1f0b1",
+      "matches_head": true
+    },
+    {
+      "path": "packages/engines/src/native.ts",
+      "sha256": "74f1c1024ce9cacf785211fbfea19524cbfe97cac6456063e700d847bb87fb6c",
+      "matches_head": true
+    },
+    {
+      "path": "packages/engines/src/pipeline.ts",
+      "sha256": "31432b88e8f66f5db9a4cecab0a087d1486d43013a374506bedd18334a324dfc",
+      "matches_head": true
+    },
+    {
+      "path": "packages/engines/src/raster.ts",
+      "sha256": "731a10a1d16abdb8bb870da293fb850a189ef6733c962e4766ff50b57d8e66a1",
+      "matches_head": true
+    },
+    {
+      "path": "packages/mcp/src/index.ts",
+      "sha256": "db1fa0b5852e065d62f4cade2df3bbf9bec7c5e2883d270bf8f3b4b3aa5b18db",
+      "matches_head": true
+    },
+    {
+      "path": "packages/sdk/src/files.ts",
+      "sha256": "35fa69cc728fc318c4e84f02f1c9a89e6449a77993a163701edfa26a2c412eca",
+      "matches_head": true
+    },
+    {
+      "path": "packages/sdk/src/index.ts",
+      "sha256": "ec9915b964198196604c8b297534a8894b0d7e5ed0507139de8e2bf813cb1684",
+      "matches_head": true
+    },
+    {
+      "path": "tsconfig.native.json",
+      "sha256": "3d56e4f337a0ecd80617855b590b3b75db86522b58de46d1d9f45bb036d52a9e",
+      "matches_head": true
+    }
+  ],
+  "dirty_files": [
+    " M packages/web/src/App.tsx",
+    "?? evidence/browser/primary-update/",
+    "?? evidence/installation/",
+    "?? evidence/reviews/primary-integration-followup.md",
+    "?? evidence/reviews/primary-integration-followup.snapshot.json"
+  ],
+  "install_command": [
+    "npm",
+    "install",
+    "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/superaster-local-0.1.0-alpha.1.tgz",
+    "--no-audit",
+    "--no-fund"
+  ],
+  "install_environment": {
+    "ONNXRUNTIME_NODE_INSTALL": "skip"
+  },
+  "verifier_sha256": "1e0743fb0e06fe8c5f6272ba84c4ef0d0bb7c8e1162a051df183d70cd10d2d1c",
+  "install_exit": 0,
+  "installed_at_utc": "2026-10-09T16:44:12.154229+00:00",
+  "consumer_node_modules_type": "real directory, not symlink",
+  "consumer_node_modules_is_symlink": false,
+  "dependency_tree_exit": 0,
+  "installed_file_hash_status": "PASS",
+  "log_normalization": {
+    "file": "build-native.stdout",
+    "operation": "Removed only trailing empty lines for git whitespace validation; original stdout retained locally",
+    "raw_sha256": "0504c498b229cda3c8b9358bfd9e6d39e29b430aacf483a81b6a260abbca89cc",
+    "raw_path": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/build-native.stdout.raw"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "manifest_sha256": "4856791a5b76405ac2b254c5458dda4893478977167f9d75c0d0f12736559fb6",
+  "cases": [
+    {
+      "id": "people-hair",
+      "original_sha256": "bd23d43b17002a25725336ed955c127f7603089305085013eaa5c1b21276c687",
+      "evaluation_sha256": "c2fb68f779061d47fe2bfe78536953710d37f001794394366dbb91664f1adbeb",
+      "status": "PASS"
+    },
+    {
+      "id": "people-covering",
+      "original_sha256": "d502a617fffb7377b7e9eec60c075420b339115f7b07764bba95b32401c99e89",
+      "evaluation_sha256": "c6953196a2e1b506ef71fea1127d3c02b1a6fe4a4901e1a38ea48dc2bf71aff1",
+      "status": "PASS"
+    },
+    {
+      "id": "people-group",
+      "original_sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+      "evaluation_sha256": "8bdcdd74c7a97d134b21029c6cbae479aa2bd5b80180ede4beceab95d141bcf2",
+      "status": "PASS"
+    },
+    {
+      "id": "people-motion",
+      "original_sha256": "78122412da3a0752b2e6ed30bdd2864cfd408c41e6cf89c09f367844516f473a",
+      "evaluation_sha256": "a6c9ad508330ce6137ebd877cf4ba80a2c7f0603bfa76bb075b28a03065686f6",
+      "status": "PASS"
+    },
+    {
+      "id": "people-portrait",
+      "original_sha256": "71703773f2183c7bc5014b8191bfa0548a489d17eeeb5691a83e43082c95a529",
+      "evaluation_sha256": "2e1ada599cd0ddbeb8eb942a668e032a920de16ed98f7deb53d9bbd5604833ed",
+      "status": "PASS"
+    },
+    {
+      "id": "product-hole",
+      "original_sha256": "cda2842afca5ca51a35748a619beaf413859a42ba6a6e364bb4c606901460a89",
+      "evaluation_sha256": "e2cee6af17d72293f03023fddb6642a4368c3a4c065a5abf9f57a252287dceb8",
+      "status": "PASS"
+    },
+    {
+      "id": "product-white",
+      "original_sha256": "58055f403b8e2076149c789c9e488e0245cefa4051c9cfbe5ac52472ad67e3de",
+      "evaluation_sha256": "abfb998bf3947ad5b8562a524f5d141fead62371e6cd582ca2da455da70417de",
+      "status": "PASS"
+    },
+    {
+      "id": "product-dark",
+      "original_sha256": "ce993050f7244022635ab4bd7259116388a071ce71cec7b0ec3b7c75356a5186",
+      "evaluation_sha256": "01096d7374b7595ff632d0219914425a25c1bf064871d42854bde35cd977f45d",
+      "status": "PASS"
+    },
+    {
+      "id": "product-shadow",
+      "original_sha256": "ffc3788bc53269e671828467874eb036aedac3f6e13b62fa0968c6e0410f300d",
+      "evaluation_sha256": "cac404308bc23c6740a7031abeaf398107591864af30349c478d5b6042525b8a",
+      "status": "PASS"
+    },
+    {
+      "id": "product-tools",
+      "original_sha256": "99bf724e2299cc014c342f168b5bd3c358e2d2f73f59a057c35503108e87ac96",
+      "evaluation_sha256": "239a0b8237bcb990c9dd33d5e5a4d0ba529493859321f7c72340a25b74185a76",
+      "status": "PASS"
+    },
+    {
+      "id": "animal-fur",
+      "original_sha256": "228f71abecf528f4f55c151f40dc4d063205d0ef3376ec2308e793107db27f3c",
+      "evaluation_sha256": "a6fb8781aba578c1a8a7f561f30bc2c8bbb27dd3d94c489354ea30febc167434",
+      "status": "PASS"
+    },
+    {
+      "id": "animal-whisker",
+      "original_sha256": "cf94db59a6eb14b7d853597c82b796f24ca0026ece71166d2db90542882be956",
+      "evaluation_sha256": "eb2f780aa586467369670da557d666865fea244d1ba86f835aa7160cfc7a472d",
+      "status": "PASS"
+    },
+    {
+      "id": "animal-feather",
+      "original_sha256": "09ecc23a98fdb13a2e4b6ba121a3ca7cfd5db459153756c5b7509fdf68471d90",
+      "evaluation_sha256": "bcef00a300c4e6f428cadaea9fa361243b08d17e66607543140a7abff3ef9b73",
+      "status": "PASS"
+    },
+    {
+      "id": "animal-dog",
+      "original_sha256": "fcae4b6b018e1d7aeb6489ea46e686ab9d8b51b9af988bcdee7d5525495d3e6b",
+      "evaluation_sha256": "632ddaaeba4d8de981a53b99df2a2a61fdcae79b55aa31051d89efaa52e1280c",
+      "status": "PASS"
+    },
+    {
+      "id": "animal-bird",
+      "original_sha256": "84c0fc418223436f91207d51afee8c8867aeada06e3059025febf0189e7fcbb4",
+      "evaluation_sha256": "1b13825c30df470a9f426779438296ca51d7f777f9b5c2b263ad30c515cf7385",
+      "status": "PASS"
+    },
+    {
+      "id": "thin-spokes",
+      "original_sha256": "7ef447d2047ef70a709bb69bf19e9b9f91b8b27209a31e0e25a2f8109ce5177a",
+      "evaluation_sha256": "28731b61c50aa83a2c50cde2e2677bb36ab2025311fe2062addcd25d866afae1",
+      "status": "PASS"
+    },
+    {
+      "id": "thin-mesh",
+      "original_sha256": "e0248a67fd70f4e45adfddffd81bc208d5cad86beb91f3dcc034660c5f7c902c",
+      "evaluation_sha256": "efeb28f8d3d0e51cb506b4f3a2b4edd998d7269dd522e85c798b83e5a0e82570",
+      "status": "PASS"
+    },
+    {
+      "id": "thin-plant",
+      "original_sha256": "20778fc6cc3b0a862578ec669d3714b00fcf9202591ac04dac7290ff70273ed9",
+      "evaluation_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+      "status": "PASS"
+    },
+    {
+      "id": "thin-cables",
+      "original_sha256": "0bf445d24cd4577c129948ea35a972406c60e9b5398bf3234107c5d499dd6b92",
+      "evaluation_sha256": "63c2205961585e4a40e28f8d4fec3f931e57aedc243e7d851e9b9016c76cfa57",
+      "status": "PASS"
+    },
+    {
+      "id": "thin-branches",
+      "original_sha256": "5b23c921c4bd607ff684c3469331452f22edef9f0b8a3d7cec0c2da99b192150",
+      "evaluation_sha256": "d565a96534d150f1c8071a4ce7bacfccf3cd96e6bc9701bdff8b89475b4cdc54",
+      "status": "PASS"
+    },
+    {
+      "id": "material-glass",
+      "original_sha256": "61753d0d2bd3cabc5d41e36eb2305f10cfe220b2cdbdc93825f6645bf4b012ad",
+      "evaluation_sha256": "7d2d3a31c0fee184990ceb3f685c717e379737dc86e27be68891c620a2ba5829",
+      "status": "PASS"
+    },
+    {
+      "id": "material-translucent",
+      "original_sha256": "528d91ef5d2119e1d19a34a78f8bbbc7d478cc4e33621e810a86a6cb6349d6e3",
+      "evaluation_sha256": "23e83192c90a07a8cd206d0c091de9c7d5569b72d950de2e6ef7c109c9691490",
+      "status": "PASS"
+    },
+    {
+      "id": "material-reflective",
+      "original_sha256": "82eceee243a54218d4a1062a91884a4c2a7ab170b74434322143d8c521be7bc1",
+      "evaluation_sha256": "9c3778ae8efc11d81de1e75bf79faaa8656968bc5715a95371c77213f3be3d23",
+      "status": "PASS"
+    },
+    {
+      "id": "material-clear",
+      "original_sha256": "424bca68e0da43c98f8521ef900c09ada31f470644daa207e1e730acd60d9366",
+      "evaluation_sha256": "6f64cabda8bf55416762e49da3e6966fc5ce53e8d59b0892fc5daea66ba31af0",
+      "status": "PASS"
+    },
+    {
+      "id": "material-complex",
+      "original_sha256": "984dbf489df8d3ff85963976dea4f5cf8d266c632ba5a1cd8fa5865e75f4e92f",
+      "evaluation_sha256": "ac4919b5900b3c5fb27e0f82d0d7a379c6c0b568e1a45da9e5ea1e7ad74a6316",
+      "status": "PASS"
+    }
+  ]
+}

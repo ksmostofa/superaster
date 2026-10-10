@@ -1,0 +1,36 @@
+{
+  "status": "NOT RUN",
+  "method": "benchmarks/review-protocol.md",
+  "cases": [
+    {
+      "id": "t01-three-birdwatchers",
+      "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+      "challenges": [
+        "group subjects",
+        "overlap",
+        "busy outdoor background"
+      ],
+      "missing_subject": null,
+      "retained_background": null,
+      "halo_rgb": null,
+      "fine_edge_loss": null,
+      "paired_winner": null,
+      "reason": null
+    },
+    {
+      "id": "thin-plant",
+      "retained_subject": "foreground fern fronds including leaves and stems",
+      "challenges": [
+        "plants",
+        "thin leaves",
+        "crowded nursery"
+      ],
+      "missing_subject": null,
+      "retained_background": null,
+      "halo_rgb": null,
+      "fine_edge_loss": null,
+      "paired_winner": null,
+      "reason": null
+    }
+  ]
+}

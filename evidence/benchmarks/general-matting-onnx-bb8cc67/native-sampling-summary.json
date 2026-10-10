@@ -1,0 +1,7 @@
+{
+  "scope": "Finite sampled native-ORT observations, not continuous stage peaks or acceptance budgets",
+  "samples": 27,
+  "sampled_max_process_rss_bytes": 7722733568,
+  "sampled_min_host_available_bytes": 3311247360,
+  "sampled_max_host_swap_used_bytes": 716967936
+}

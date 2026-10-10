@@ -1,0 +1,39 @@
+{
+  "scope": "Tab-scoped connector events; worker network not fully captured",
+  "cursor": 27,
+  "events": [
+    {
+      "sequence": 24,
+      "source": {
+        "tabId": 1
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:5211/full-browser-worker.mjs",
+        "frameId": "524CC0D804CF49B0E706D54BCD4BB0B7",
+        "hasUserGesture": false,
+        "initiator": {
+          "type": "other",
+          "url": "http://127.0.0.1:5211/full-browser.html"
+        },
+        "loaderId": "",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Accept": "*/*"
+          },
+          "initialPriority": "VeryLow",
+          "method": "GET",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:5211/full-browser-worker.mjs"
+        },
+        "requestId": "C08EFADE26E458363D84958F5D4DB8FB",
+        "timestamp": 55037.124143,
+        "type": "Script",
+        "wallTime": 1791611723.885426
+      }
+    }
+  ],
+  "hasMore": false,
+  "truncated": false
+}

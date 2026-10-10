@@ -1,0 +1,542 @@
+{
+  "base_commit": "653cf02e32ce9a744ee7a7d22883822520e4cf5c",
+  "current_head": "653cf02e32ce9a744ee7a7d22883822520e4cf5c",
+  "reviewed_at_utc": "2026-10-09T16:43:45.818148+00:00",
+  "scope": "Focused read-only source review of dirty App.tsx after 653cf02; no tests, browser interactions, inference or gate awards",
+  "source_state": "Dirty App.tsx. Coordinator may subsequently change it; verdict applies only to these bytes.",
+  "reviewed_files": {
+    "packages/web/src/App.tsx": {
+      "sha256": "67b09416289d9b812ba241be019476d9bdff0b3bb216053a1abb0e770eb73aa8",
+      "bytes": 37172
+    },
+    "scripts/service-worker.ts": {
+      "sha256": "3f8afd289ffa7dbed2eb217d4dabed16580d8137d46eace2f1e7560f32e06abb",
+      "bytes": 2828
+    },
+    "packages/web/src/client.ts": {
+      "sha256": "1fbf45a2dc0585247193fbd6bebcf2a7c186f00b04e4599483e836c3b0ce1094",
+      "bytes": 4031
+    },
+    "packages/web/src/webmcp.ts": {
+      "sha256": "52aed02fe055b8fcbfef1dbfec2d483a0bac2cf71491a88b169f2c87b2a41bc3",
+      "bytes": 5360
+    },
+    "packages/core/src/index.ts": {
+      "sha256": "2baf2b58c4e2f4b46adb179d423ffadb70bdfd0f5fcf309d151570006b4ee063",
+      "bytes": 7559
+    },
+    "packages/catalog/src/index.ts": {
+      "sha256": "cf55e616138f83e97f518fa5a00fa235be8ddaf62e3f651f9fb34ae81fa23db9",
+      "bytes": 29888
+    },
+    "evidence/reviews/primary-integration-review.md": {
+      "sha256": "a71e4cdc41fec1bc6cabdcbeab3b283d7b5ca52bce9005a5dc555f47062bcc8b",
+      "bytes": 3828
+    },
+    "evidence/reviews/primary-integration-followup.md": {
+      "sha256": "10ec76ab5eceb01620c6f86e5d988b31361a6adca18da44d5ebd03a48c343831",
+      "bytes": 3374
+    },
+    "evidence/browser/primary-update/two-tabs-blocked.json": {
+      "sha256": "6c532032778289cac40c83aeead7913661163caa625f64aff3e93571975dfa9e",
+      "bytes": 547
+    },
+    "evidence/browser/primary-update/single-tab-updated.json": {
+      "sha256": "4967021d0dcd87b9d1070809bc2263a82067eaa891c1543c5f769a727483b0de",
+      "bytes": 299
+    }
+  },
+  "private_spec": {
+    "revision": "1.3",
+    "sha256": "e5f828d0a6d62d0b92a79b0f440c0528a4200ef4c469aa19fb514afe17a967a1",
+    "policy": "Document contents remain local and are not copied into this report"
+  },
+  "correction_reviews": [
+    {
+      "base_commit": "c6c3524d87577bfc1f8c96964de7dce89afd9cf9",
+      "current_head": "c6c3524d87577bfc1f8c96964de7dce89afd9cf9",
+      "reviewed_at_utc": "2026-10-09T16:47:59.457621+00:00",
+      "scope": "Only cause fixes for attempted identity, preflight error attribution and inspection retry; source review only",
+      "reviewed_files": {
+        "packages/web/src/App.tsx": {
+          "sha256": "37c6042f484dec2057ff69b36b16feb9040e4d829ba13ff886eb0244a1a85855",
+          "bytes": 38450
+        }
+      },
+      "verdict": "Both original causes addressed by source inspection; unscheduled changed-recipe cancellation state remains ambiguous; actual browser checks NOT RUN by this reviewer"
+    }
+  ],
+  "final_archive_inspection": {
+    "first.zip": {
+      "sha256": "bc95d77b2b0b85d7bde81da44187a3e650fb9cc709c0377eb5a94cea4a14a879",
+      "checks": [
+        {
+          "input_ref": "image-1",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        }
+      ]
+    },
+    "failed-byte-target.zip": {
+      "sha256": "e579f5eb5bcce76a5a499ac999f66d48339876c2de1c79126f7812bf348921c9",
+      "checks": [
+        {
+          "input_ref": "image-1",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        }
+      ],
+      "retained_artifact_bytes_unchanged_from_first.zip": true
+    },
+    "before-missing.zip": {
+      "sha256": "bf1eb972c6256e6939b066e9255ccf6cf08f0ce6c5e28d56756e61cad99f3f14",
+      "checks": [
+        {
+          "input_ref": "image-1",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-1",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        },
+        {
+          "input_ref": "image-2",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-2",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        }
+      ]
+    },
+    "missing.zip": {
+      "sha256": "0e22d52c37bade7ea6e89446250623e06aa08af3fec03a1478ae3ec9c173aa0e",
+      "checks": [
+        {
+          "input_ref": "image-1",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-1",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        },
+        {
+          "input_ref": "image-2",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-2",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        }
+      ],
+      "retained_artifact_bytes_unchanged_from_before-missing.zip": true
+    },
+    "after-webmcp.zip": {
+      "sha256": "deea4cd7ebddcaa8bb3addcc873964b8d3228b982fd47f2100d8eb71932207a0",
+      "checks": [
+        {
+          "input_ref": "image-1",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-1",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        },
+        {
+          "input_ref": "image-2",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-2",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        }
+      ]
+    },
+    "cancelled-changed.zip": {
+      "sha256": "3ff6ce443b1e9250831bfaab1fc663b93d9dc33ad8646ec678a2ea344b92a1e8",
+      "checks": [
+        {
+          "input_ref": "image-1",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-1",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        },
+        {
+          "input_ref": "image-2",
+          "requested_hash_matches": true
+        },
+        {
+          "input_ref": "image-2",
+          "output_hash_matches_record": true,
+          "output_dimensions_match_record": true,
+          "retained_recipe_hash_matches_record": true
+        }
+      ],
+      "retained_artifact_bytes_unchanged_from_after-webmcp.zip": true
+    }
+  },
+  "final_review": {
+    "base_commit": "6a96e7d34886b56038afe50123d3d9a1f8f3b3c8",
+    "current_head": "6a96e7d34886b56038afe50123d3d9a1f8f3b3c8",
+    "reviewed_at_utc": "2026-10-10T00:48:30.203584+00:00",
+    "scope": "Focused source and existing actual-browser export inspection; no rerun, inference or gate award",
+    "reviewed_files": {
+      "packages/web/src/App.tsx": {
+        "sha256": "169fac23346df370d3e395179ea00cf24bcc326bac757ffad4c7687d29983f6b",
+        "bytes": 38410
+      },
+      "scripts/service-worker.ts": {
+        "sha256": "3f8afd289ffa7dbed2eb217d4dabed16580d8137d46eace2f1e7560f32e06abb",
+        "bytes": 2828
+      },
+      "packages/web/src/client.ts": {
+        "sha256": "1fbf45a2dc0585247193fbd6bebcf2a7c186f00b04e4599483e836c3b0ce1094",
+        "bytes": 4031
+      },
+      "packages/web/src/webmcp.ts": {
+        "sha256": "52aed02fe055b8fcbfef1dbfec2d483a0bac2cf71491a88b169f2c87b2a41bc3",
+        "bytes": 5360
+      },
+      "evidence/browser/primary-update/changed-cancel-properties.json": {
+        "sha256": "9d4447785d2392ec5490e1973a0c3c4fb7b028179787a49ea5d8b94c892622f2",
+        "bytes": 3006
+      },
+      "evidence/browser/primary-update/preflight-error-properties.json": {
+        "sha256": "e26059ea20b66465662a7a3f2e00a8ea3445e185ceeb420a067230afa66d2f52",
+        "bytes": 4745
+      },
+      "evidence/browser/primary-update/attempt-properties.json": {
+        "sha256": "ee36c4b39d972fd8d39d503757179a1d3924c85a2b00a037900740edc3a5d7c2",
+        "bytes": 2842
+      },
+      "evidence/browser/primary-update/final-webmcp-success.json": {
+        "sha256": "2a3a40009f3fc963c00dc56c4ec22da946d6e84f85faca694dcd3810899c5923",
+        "bytes": 1659
+      },
+      "evidence/browser/primary-update/final-build-state.json": {
+        "sha256": "cea9d53e82d8609c3275173857645e8f5857a71af7cd7baab1c3f28c502133f7",
+        "bytes": 273
+      },
+      "evidence/browser/primary-update/builds.json": {
+        "sha256": "3dd40f419cd890077a4323b42f1889c3e140905e95b8b3125c4561d3bcee47a0",
+        "bytes": 40197
+      }
+    },
+    "verdict": "Reviewed causes fixed; named recorded browser failure/cancellation and successful WebMCP paths supported; no new concrete regression identified in scope",
+    "not_run": [
+      "Transient-worker inspection failure and explicit retry",
+      "Cancellation during input inspection and retry",
+      "Pending-input/update interaction",
+      "Second-tab opening during service-worker activation",
+      "Successful correction attempt identity"
+    ],
+    "archive_inspection": "See final_archive_inspection for independent SHA-256, requested hash, PNG header dimensions, execution-record/output identity and retained-byte comparisons"
+  },
+  "natural_update_review": {
+    "reviewed_at_utc": "2026-10-10T01:08:54.931124+00:00",
+    "integrated_base": "d3b242acb63975390674bd83a6c99af9fe2d4d84",
+    "source_state": "Dirty App and service-worker generator at identified hashes; source verdict applies to these bytes.",
+    "scope": "Read-only focused source review plus inspection of coordinator browser JSON/screenshots and retained exported bytes; no browser interactions, source edits, suites, inference, gate or release award.",
+    "files": {
+      "packages/web/src/App.tsx": {
+        "sha256": "7d8bf863143b69d9075a32192aae55af6331e050eda1df9521ea43adb4acf3e0",
+        "bytes": 37084
+      },
+      "scripts/service-worker.ts": {
+        "sha256": "78ae7cef07009db7ce0fc45596147fbbd5403f51c9bc56b7d3b324f64c2532d0",
+        "bytes": 2737
+      },
+      "scripts/assets.ts": {
+        "sha256": "eb2f250632391784cf3d5b1c4d438e8eabec6e1b4d67e030f436c87690de280a",
+        "bytes": 758
+      },
+      "packages/engines/src/browser.ts": {
+        "sha256": "d0887ffb400f7026397fc90e94a60378af6ef73648aa5ab13b411ef6839659b1",
+        "bytes": 10214
+      },
+      "packages/engines/src/browser-kernel.ts": {
+        "sha256": "e4c15f57334a9ea6b47b5238023630907c21d8ebb76c9b3ac729617bc6969b06",
+        "bytes": 7415
+      },
+      "packages/web/src/client.ts": {
+        "sha256": "1fbf45a2dc0585247193fbd6bebcf2a7c186f00b04e4599483e836c3b0ce1094",
+        "bytes": 4031
+      },
+      "benchmarks/browser/update-fixtures.py": {
+        "sha256": "38c939e222848658aeded38733cdc46bf23cb9e7209d90efec9d8d7711b259e2",
+        "bytes": 2336
+      },
+      "benchmarks/browser/fixtures/01/same.png": {
+        "sha256": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+        "bytes": 71098
+      },
+      "benchmarks/browser/fixtures/02/same.png": {
+        "sha256": "5d52d974f4f973a29405f539118bdea9ad4eded3f781fe4101d241d9b12ad54d",
+        "bytes": 71741
+      },
+      "evidence/browser/natural-update/builds.json": {
+        "sha256": "c9dd7ffdd7c3455f85c7b76e11ea8d2db3e51aa0e4ac5a97501e7889a61139b8",
+        "bytes": 44567
+      },
+      "evidence/browser/natural-update/builds-final.json": {
+        "sha256": "f3a94bdc2d8c80ed32ba5b5441e353172146f2e0921556658099a7260038f445",
+        "bytes": 44540
+      },
+      "evidence/browser/natural-update/fresh-uncontrolled.json": {
+        "sha256": "dcda28c8ff603e6ea75c2dc8c877ac03122bdea20876daad36836c12610696a7",
+        "bytes": 356
+      },
+      "evidence/browser/natural-update/interruption.json": {
+        "sha256": "0b7897e50a4d87e8ddd906c1d26c978c895a5e5670d4a786a76e8073d2f21669",
+        "bytes": 602
+      },
+      "evidence/browser/natural-update/chrome-fresh-uncontrolled.json": {
+        "sha256": "2c55470ef6c5e900db8d3f0a6671071284dfbafcc425396e0d601e5253528a58",
+        "bytes": 362
+      },
+      "evidence/browser/natural-update/chrome-baseline.json": {
+        "sha256": "ce680e01fcc239fcea3a17b12e64f96ad0fa45f814249f3a469a04514be57930",
+        "bytes": 378
+      },
+      "evidence/browser/natural-update/chrome-two-tabs.json": {
+        "sha256": "d3808d449818d401a76173a40aee7726824a77efc1a44842e6d01774872c43fd",
+        "bytes": 1034
+      },
+      "evidence/browser/natural-update/chrome-waiting-update.jpg": {
+        "sha256": "a3e0d2a2dec8cdcb86b547cecd3a5c25278966ecdf689269b10155cd9ab72807",
+        "bytes": 35780
+      },
+      "evidence/browser/natural-update/chrome-third-rejected.json": {
+        "sha256": "4b0c25f2aa655e360becb6e9990b9dc90bd34e8e39b2979a99665663262bc49e",
+        "bytes": 479
+      },
+      "evidence/browser/natural-update/chrome-third-rejected.txt": {
+        "sha256": "1504de5c1451dd192ea7a88801ede5757a9bee1122a05050a5c7c8d77d1d4173",
+        "bytes": 5555
+      },
+      "evidence/browser/natural-update/chrome-third-rejected.jpg": {
+        "sha256": "994714898d0b4189dac0fdb3e3e7973a98c488db874469604f8c78847d176964",
+        "bytes": 64469
+      },
+      "evidence/browser/natural-update/chrome-server-stopped.json": {
+        "sha256": "4b0c25f2aa655e360becb6e9990b9dc90bd34e8e39b2979a99665663262bc49e",
+        "bytes": 479
+      },
+      "evidence/browser/natural-update/chrome-server-stopped.txt": {
+        "sha256": "035d22d0afa2e2683cd43e9e8eb6f4412aff7a3d8dfa457bae15a714d51ca52d",
+        "bytes": 4769
+      },
+      "evidence/browser/natural-update/chrome-server-stopped.jpg": {
+        "sha256": "7ee9264658c95822d4c7ab9d0eb0cb767b12d7314c537c8e8bab280d4c2532b8",
+        "bytes": 28867
+      },
+      "evidence/browser/natural-update/chrome-activated-offline.json": {
+        "sha256": "00146bfe5ff181dcbd7690960a4e5c8d8adce6fe3235a7d4539c808b5b54929e",
+        "bytes": 378
+      },
+      "evidence/browser/natural-update/chrome-offline-new-runtime.json": {
+        "sha256": "10fecb0352f65b4adcd35ff49968df36d0a365ad7ae1149401622b42851114e4",
+        "bytes": 715
+      },
+      "evidence/browser/natural-update/chrome-offline-new-runtime.jpg": {
+        "sha256": "73ccc1d5c03a886961ced42d7032c453eb04fcb96b30cb896376c40b3929a02b",
+        "bytes": 28640
+      },
+      "evidence/browser/natural-update/old-generation-server-stopped.png": {
+        "sha256": "a69f434e9298faa2139c99f7f1beb0ac185e7d4e7d6f7b2a5216734832bd6e78",
+        "bytes": 2063
+      },
+      "evidence/browser/natural-update/new-generation-offline-reload.png": {
+        "sha256": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7",
+        "bytes": 2071
+      },
+      "evidence/browser/natural-update/export-properties.json": {
+        "sha256": "8b07c6794cba79d2ac7ba73e1930c1fc0d7ae52fb07ea2daa414bfe32f1bc8a2",
+        "bytes": 5714
+      },
+      "evidence/browser/natural-update/chrome-mobile-update.json": {
+        "sha256": "ff524366be471e5df10658d32603efdc803c063ef252c7084096e390c478c8dc",
+        "bytes": 684
+      },
+      "evidence/browser/natural-update/chrome-mobile-update.jpg": {
+        "sha256": "eea9a4bf4b3929173b6bfe6f8dca32778d9ae09d9dcb324581d0b228c8110846",
+        "bytes": 26865
+      },
+      "evidence/browser/natural-update/chrome-mobile-update-top.json": {
+        "sha256": "7a353db082b6fc2639ea24e5ac48b53a86904090d6ff79eff8759d4256a4beba",
+        "bytes": 448
+      },
+      "evidence/browser/natural-update/chrome-mobile-update-top.jpg": {
+        "sha256": "8fbc8e68ad7cc9a9ee7f292112e45c8387b834f46afdef5920da1f69d4de7358",
+        "bytes": 33969
+      },
+      "evidence/browser/natural-update/README.md": {
+        "sha256": "0cfac827eecb53aed8f6c631f80e6f8d69e1e93b4ed92232b95cdea54ba285f6",
+        "bytes": 4170
+      },
+      "evidence/browser/natural-update/source-snapshot.json": {
+        "sha256": "7eda71cb1c13b6079fe68789b9a3e833d3cf6fbfa2576d7ed9373897a7b8d3fa",
+        "bytes": 482
+      },
+      "evidence/browser/natural-update/typecheck-g-final.log": {
+        "sha256": "309f5fc9ed62cc7c561eb1cbf5a846e05c74d1d83d89c4da61a2117994f170a8",
+        "bytes": 60
+      },
+      "evidence/browser/natural-update/build-g-final.log": {
+        "sha256": "ec08ae69f1a7256005ae4c534a6f7ee7efbfccdef58001eefe78879b73d79e30",
+        "bytes": 1627
+      },
+      "evidence/browser/primary-update/inspection-recovery-properties.json": {
+        "sha256": "73b11f920657870738509c23f03e5a7c5896cbbf44b23c368d0d47ed8ffd35e0",
+        "bytes": 5494
+      },
+      "evidence/browser/primary-update/worker-fault-before.txt": {
+        "sha256": "6a747157bc645009bff092a8be94119b804262fc20da8e1747b67c54db026118",
+        "bytes": 5228
+      },
+      "evidence/browser/primary-update/worker-recovered.txt": {
+        "sha256": "90e214fbbb12d9d75b6b144f00f8a943fa83f565e6bf4329a21a4542f7fe7f78",
+        "bytes": 5232
+      },
+      "evidence/browser/primary-update/worker-recovered.jpg": {
+        "sha256": "3099392428393e118a03423b8dc433974c13ea7129f7c6f4ea4513cf5e01a020",
+        "bytes": 78429
+      },
+      "evidence/browser/primary-update/inspection-pending.txt": {
+        "sha256": "fc54b143822f78b3699ac7396daf558520e4309e32febb3e57b54edb7254b6c2",
+        "bytes": 4943
+      },
+      "evidence/browser/primary-update/inspection-cancelled.txt": {
+        "sha256": "7de11b6d03591d2f929596b3ccee62c3b07071cc57c7ec9638c2e7d9e885e4aa",
+        "bytes": 5603
+      },
+      "evidence/browser/primary-update/inspection-cancelled.jpg": {
+        "sha256": "ee382916a49bd2e7432923074ec4ffa76e1fed2f016d233820533c835e26324e",
+        "bytes": 78992
+      },
+      "evidence/browser/primary-update/inspection-retried.txt": {
+        "sha256": "5cda271399ff66ab0214511aa811acd4008f064c234afc94330022f25063525f",
+        "bytes": 5604
+      },
+      "evidence/browser/primary-update/exports/inspection-retried.zip": {
+        "sha256": "5deacb8902eb3d65f00d86a7ef94105fa151d3119f105fb500b0198458a08499",
+        "bytes": 9986
+      },
+      "evidence/browser/primary-update/source-derived-output-properties.json": {
+        "sha256": "47db5bdd90a8419d66b27a5b70d70881ab926bdc1c72e1ab2bbd9a4aa6f92cfb",
+        "bytes": 4282
+      },
+      "evidence/browser/primary-update/editor-source-derived-desktop-full.jpg": {
+        "sha256": "2022b23dc6956aacede55e5da9d21a86deeb9227bf724100873f24253279acf6",
+        "bytes": 74137
+      },
+      "evidence/reviews/service-worker-activation-race.md": {
+        "sha256": "5484b93a2e7bb6d57ca79fbcc0685cbf94524513c198885412640193b29602ad",
+        "bytes": 15649
+      },
+      "evidence/reviews/primary-integration-final-review.md": {
+        "sha256": "34a2a5237258683b6d0aaa5554fbf0fba8a20be34d4a45ed4ba73920f8780df2",
+        "bytes": 15295
+      }
+    },
+    "source_verdict": "Reviewed attempt identity and cancellation fixes remain coherent. Natural activation removes REQUEST_UPDATE/skipWaiting/clients.claim and auto-reload, bounds distinct app caches to two during admission, and prunes only predecessors with missing-own-cache guard. No new concrete regression in this scoped change.",
+    "observed_generations": {
+      "initial": "update",
+      "initial_cache": "superaster-app-78e80a3dbac99b99",
+      "waiting_and_next": "third",
+      "waiting_and_next_cache": "superaster-app-b7510adb0cbee917",
+      "additional_rejected_candidate": "base",
+      "additional_rejected_candidate_cache": "superaster-app-4d9a87b58d9d56d9",
+      "attribution_limit": "Candidate identity comes from coordinator action sequence and exact manifest. Cache setup failure/retention are visible; attribution to admission branch is source-confirmed, no full SW exception trace."
+    },
+    "independent_artifact_checks": {
+      "old-generation-server-stopped.png": {
+        "dimensions": [
+          120,
+          80
+        ],
+        "format": "png",
+        "bytes": 2063,
+        "sha256": "a69f434e9298faa2139c99f7f1beb0ac185e7d4e7d6f7b2a5216734832bd6e78",
+        "record_hash_and_bytes_match": true,
+        "decoded_alpha_extrema": [
+          255,
+          255
+        ],
+        "exif": false,
+        "icc": true
+      },
+      "new-generation-offline-reload.png": {
+        "dimensions": [
+          120,
+          80
+        ],
+        "format": "png",
+        "bytes": 2071,
+        "sha256": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7",
+        "record_hash_and_bytes_match": true,
+        "decoded_alpha_extrema": [
+          255,
+          255
+        ],
+        "exif": false,
+        "icc": true
+      },
+      "inspection-retried.zip": {
+        "sha256": "5deacb8902eb3d65f00d86a7ef94105fa151d3119f105fb500b0198458a08499",
+        "bytes": 9986,
+        "recorded_archive_hash_match": true,
+        "two_manifest_rows_completed": true,
+        "both_PNG_IHDR_dimensions": [
+          120,
+          80
+        ],
+        "output_hashes_and_bytes_match_records": true,
+        "manifest_output_recipe_hashes_match_records": true
+      }
+    },
+    "browser_evidence_scope": {
+      "fresh_uncontrolled_then_reload": "PASS recorded state",
+      "two_old_tabs_and_waiting_generation": "PASS recorded state",
+      "additional_candidate_cache_failure_and_retention": "PASS recorded transition; branch attribution source-confirmed",
+      "old_tab_with_server_stopped": "PASS deterministic imaging only",
+      "close_all_then_offline_new_generation": "PASS recorded transition",
+      "fresh_worker_with_server_stopped": "PASS deterministic imaging only",
+      "mobile_update_notice": "PASS 390x844 browser emulation; screenshot inspected",
+      "network": "Tab-scoped, truncated buffer; worker auto-attachment unavailable; no full network/privacy PASS"
+    },
+    "qa_recovery_scope": {
+      "worker_error": "Identifiable one-shot QA ErrorEvent; actual real WASM imaging after retry. PASS that event path, not real OOM or measured failure recovery.",
+      "inspection_cancel": "Identifiable held-inspection QA fixture; actual two-image retry ZIP. PASS that held/cancel/retry path, not cancellation latency."
+    },
+    "not_run": [
+      "Cancellation and fresh image-worker recreation while natural update waits",
+      "Close only one of two old tabs while update waits",
+      "Ordinary failed candidate population cleanup browser scenario",
+      "Killed-install orphan recovery",
+      "Browser cache eviction recovery",
+      "Successful correction attempt identity in these focused workflows",
+      "Historical second-tab-after-enumeration forced-activation reproduction",
+      "Physical-phone measurement, ML offline acceptance, complete worker-network capture and release-gate acceptance outside scope"
+    ],
+    "reviewer_tooling_note": "System python lacks Pillow; no package installed. Retained PNG artifact decode used already-installed sharp. No application processing rerun."
+  }
+}

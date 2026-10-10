@@ -1,0 +1,37 @@
+{
+  "branch": "work/batch-identities-primary",
+  "commit": "f24a674",
+  "archive_sha256": "8c235f09e4df6e33342ed94cbe4e2006a9d998612df4c60b9c46f58b10d40f70",
+  "scope": "Actual duplicate-basename geometry and corrupt input in isolated worktree, not integrated main acceptance",
+  "verifier_correction": "The initial verifier selected another active chat's twenty-file ZIP with the same basename. This checks the actual two-file archive saved by this browser action; no processing was repeated.",
+  "manifest": [
+    {
+      "index": 1,
+      "input_ref": "image-1",
+      "input": "same.png",
+      "status": "completed",
+      "output": "001-same.png.png",
+      "input_hash": "b3b5df6b2fefd8c14ff1f43b2bd574918803f9bbe63a0a39370166325c638e0f",
+      "recipe_hash": "e5fa3048ec01b693b222a51ec7dd76ed63cacf8ebbc179fae3cd0f331522aeb0"
+    },
+    {
+      "index": 2,
+      "input_ref": "image-2",
+      "input": "same.png",
+      "status": "failed",
+      "input_hash": "5464533c9647b67eb320c40ccc5959537c09102ae75388f6a7675b433e745c9d",
+      "error": {
+        "code": "UNSUPPORTED",
+        "message": "Use a single-frame JPEG, PNG or WebP image",
+        "details": {}
+      }
+    }
+  ],
+  "input_hashes_match": true,
+  "refs_unique": true,
+  "indexes": true,
+  "attributable_typed_error": true,
+  "output_hash_matches": true,
+  "typed_error_schema_valid": true,
+  "error_assertion_correction": "The initial verifier assumed INVALID_INPUT. The contract ErrorSchema also permits UNSUPPORTED for unrecognized format bytes, which is the actual browser response. This verifies the declared structured error and exact failed input hash; it makes no frozen cross-runtime error-taxonomy claim."
+}

@@ -1,0 +1,1 @@
+{"spec_version":"1.0","input":{"ref":"metadata-fixture"},"operations":[{"op":"canvas","width":48,"height":48,"fit":"contain","background":"#ffffff"}],"output":{"format":"png","metadata":"strip"}}

@@ -1,0 +1,4 @@
+{"stage": "model_initialization"}
+{"stage": "inference:t01-three-birdwatchers"}
+{"stage": "inference:thin-plant"}
+{"execution": "completed", "cases": 2, "quality": "NOT AWARDED", "output": ".cache/general-model-prerequisite/source-reference/run-20261010-source"}

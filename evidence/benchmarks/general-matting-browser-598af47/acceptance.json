@@ -1,0 +1,16 @@
+{
+  "scope": "Research prerequisite, not an integrated gate",
+  "artifact_hash_verification": "PASS",
+  "runtime_version_and_static_interface": "PASS",
+  "full_browser_inference": "FAIL",
+  "failure": "OrtRun ERROR_CODE6 std::bad_alloc",
+  "session_cleanup": "PASS: released before worker termination",
+  "raw_output": "NOT PRODUCED",
+  "numerical_tolerance": "NOT AWARDED",
+  "human_quality": "NOT RUN",
+  "phone": "NOT RUN",
+  "heldout": "NOT RUN",
+  "comparator": "NOT RUN",
+  "exact_heap_peak": "NOT MEASURED",
+  "full_worker_network": "NOT RUN"
+}

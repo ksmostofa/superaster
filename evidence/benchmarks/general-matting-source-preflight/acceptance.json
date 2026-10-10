@@ -1,0 +1,29 @@
+{
+  "scope": "Research-only offline source-reference preflight; no gate awarded",
+  "checks": {
+    "complete_weight_size_and_sha256": "PASS",
+    "reviewed_source_hashes": "PASS",
+    "fixed_backbone_no_pretrained_loading": "PASS",
+    "cpu_only_pinned_environment": "PASS",
+    "unchanged_group_fern_and_original_hashes": "PASS",
+    "actual_preprocessing": "PASS",
+    "754_state_tensor_keys_shapes_match": "PASS",
+    "allocation_free_meta_model": "PASS",
+    "linux_network_namespace_and_external_connection_probes": "PASS",
+    "zero_model_path_python_network_attempts": "PASS",
+    "deterministic_tool_boundaries_9": "PASS",
+    "cpu_materialization": "NOT RUN",
+    "real_inference": "NOT RUN",
+    "onnx_conversion_parity": "NOT RUN",
+    "human_quality_review": "NOT RUN",
+    "phone_memory_performance": "NOT RUN",
+    "numerical_budgets_tolerances": "NOT FROZEN"
+  },
+  "constraints": [
+    "one coordinator-approved heavy diagnostic only",
+    "unchanged two-case manifest and retained subjects",
+    "no tuning, quantization, foreground cleanup or threshold adjustment",
+    "no production defaults or root dependency changes",
+    "no paid services"
+  ]
+}

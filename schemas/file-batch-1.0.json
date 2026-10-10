@@ -1,0 +1,170 @@
+{
+  "$id": "https://superaster.local/schema/file-batch-1.0.json",
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "version",
+    "recipe_hash",
+    "entries"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0",
+      "type": "string"
+    },
+    "recipe_hash": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "input_hash",
+          "recipe_hash",
+          "status",
+          "source",
+          "output",
+          "record"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "input_hash": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "const": "",
+                "type": "string"
+              }
+            ]
+          },
+          "recipe_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "const": "completed",
+                "type": "string"
+              },
+              {
+                "const": "failed",
+                "type": "string"
+              },
+              {
+                "const": "cancelled",
+                "type": "string"
+              }
+            ]
+          },
+          "output_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "error": {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+              "code",
+              "message",
+              "details"
+            ],
+            "properties": {
+              "code": {
+                "anyOf": [
+                  {
+                    "const": "INVALID_INPUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "INVALID_RECIPE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_MISSING",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_INTEGRITY",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CANCELLED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "LIMIT_EXCEEDED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PROCESSING_FAILED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONSTRAINT_UNSATISFIABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "ACCESS_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "AMBIGUOUS_PRESET",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PRESET_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EDIT_FORBIDDEN",
+                    "type": "string"
+                  }
+                ]
+              },
+              "message": {
+                "type": "string"
+              },
+              "details": {
+                "type": "object",
+                "patternProperties": {
+                  "^(.*)$": {}
+                }
+              }
+            }
+          },
+          "source": {
+            "type": "string"
+          },
+          "output": {
+            "type": "string"
+          },
+          "record": {
+            "type": "string"
+          },
+          "record_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

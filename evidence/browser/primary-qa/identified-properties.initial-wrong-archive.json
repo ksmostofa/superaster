@@ -1,0 +1,112 @@
+{
+  "branch": "work/batch-identities-primary",
+  "commit": "f24a674",
+  "scope": "Two unchanged actual duplicate-basename inputs, one corrupt; processing in isolated worktree build on localhost5192. Not integrated main acceptance.",
+  "manifest": [
+    {
+      "input": "01-people-hair.png",
+      "status": "completed",
+      "output": "001-01-people-hair.png.png",
+      "input_hash": "c2fb68f779061d47fe2bfe78536953710d37f001794394366dbb91664f1adbeb",
+      "recipe_hash": "09c62a93f292229b6f2bcc7d437f5f53bccd5c95e5fa841802bc34d14be367bc"
+    },
+    {
+      "input": "02-people-covering.png",
+      "status": "completed",
+      "output": "002-02-people-covering.png.png",
+      "input_hash": "c6953196a2e1b506ef71fea1127d3c02b1a6fe4a4901e1a38ea48dc2bf71aff1",
+      "recipe_hash": "09c62a93f292229b6f2bcc7d437f5f53bccd5c95e5fa841802bc34d14be367bc"
+    },
+    {
+      "input": "03-people-group.png",
+      "status": "completed",
+      "output": "003-03-people-group.png.png",
+      "input_hash": "8bdcdd74c7a97d134b21029c6cbae479aa2bd5b80180ede4beceab95d141bcf2",
+      "recipe_hash": "09c62a93f292229b6f2bcc7d437f5f53bccd5c95e5fa841802bc34d14be367bc"
+    },
+    {
+      "input": "04-people-motion.png",
+      "status": "completed",
+      "output": "004-04-people-motion.png.png",
+      "input_hash": "a6c9ad508330ce6137ebd877cf4ba80a2c7f0603bfa76bb075b28a03065686f6",
+      "recipe_hash": "09c62a93f292229b6f2bcc7d437f5f53bccd5c95e5fa841802bc34d14be367bc"
+    },
+    {
+      "input": "05-people-portrait.png",
+      "status": "completed",
+      "output": "005-05-people-portrait.png.png",
+      "input_hash": "2e1ada599cd0ddbeb8eb942a668e032a920de16ed98f7deb53d9bbd5604833ed",
+      "recipe_hash": "09c62a93f292229b6f2bcc7d437f5f53bccd5c95e5fa841802bc34d14be367bc"
+    },
+    {
+      "input": "06-product-hole.png",
+      "status": "completed",
+      "output": "006-06-product-hole.png.png",
+      "input_hash": "e2cee6af17d72293f03023fddb6642a4368c3a4c065a5abf9f57a252287dceb8",
+      "recipe_hash": "09c62a93f292229b6f2bcc7d437f5f53bccd5c95e5fa841802bc34d14be367bc"
+    },
+    {
+      "input": "07-product-white.png",
+      "status": "cancelled",
+      "error": "Operation cancelled; completed outputs are retained"
+    },
+    {
+      "input": "08-product-dark.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "09-product-shadow.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "10-product-tools.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "11-animal-fur.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "12-animal-whisker.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "13-animal-feather.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "14-animal-dog.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "15-animal-bird.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "16-thin-spokes.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "17-thin-mesh.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "18-thin-plant.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "19-thin-cables.png",
+      "status": "cancelled"
+    },
+    {
+      "input": "20-corrupt.jpg",
+      "status": "cancelled",
+      "error": "Use a single-frame JPEG, PNG or WebP image"
+    }
+  ],
+  "input_hashes_match": false,
+  "refs_unique": false,
+  "indexes": false,
+  "attributable_typed_error": false,
+  "output_hash_matches": true
+}

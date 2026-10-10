@@ -1,0 +1,1370 @@
+{
+  "assembled_at": "2026-10-08",
+  "cases": [
+    {
+      "alpha_ground_truth": null,
+      "category": "people",
+      "challenges": [
+        "loose hair",
+        "skin edges",
+        "arm gaps",
+        "busy background"
+      ],
+      "evaluation": {
+        "bytes": 1365721,
+        "height": 1280,
+        "path": "benchmarks/corpus/evaluation/people-hair.png",
+        "sha256": "c2fb68f779061d47fe2bfe78536953710d37f001794394366dbb91664f1adbeb",
+        "width": 884
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "people-hair",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 6217698,
+        "height": 4308,
+        "path": "benchmarks/corpus/originals/people-hair.jpg",
+        "sha256": "bd23d43b17002a25725336ed955c127f7603089305085013eaa5c1b21276c687",
+        "width": 2976
+      },
+      "retained_subject": "woman including loose hair, face, clothing and both arms",
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Portrait_of_a_young_long-haired_woman.jpg",
+        "artist_plain": "Vladimir Pustovit",
+        "canonical_original_height": 4308,
+        "canonical_original_sha1": "d0e281a1130b2dd5d1fc7f55447af3bb2d2e580e",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Portrait_of_a_young_long-haired_woman.jpg",
+        "canonical_original_width": 2976,
+        "copyrighted": "True",
+        "credit_plain": "https://www.flickr.com/photos/pustovit/14452150996/",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_young_long-haired_woman.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 91153160,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1120122914,
+        "revision_timestamp": "2025-11-23T03:54:58Z",
+        "source_snapshot_sha256": "deb1dc69dc70bc44c86069862effb2bcc1dda32f598075dacea7a96ea2824934",
+        "title": "File:Portrait of a young long-haired woman.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "people",
+      "challenges": [
+        "religious covering",
+        "selective-color source",
+        "soft background"
+      ],
+      "evaluation": {
+        "bytes": 903355,
+        "height": 875,
+        "path": "benchmarks/corpus/evaluation/people-covering.png",
+        "sha256": "c6953196a2e1b506ef71fea1127d3c02b1a6fe4a4901e1a38ea48dc2bf71aff1",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "people-covering",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 216025,
+        "height": 1418,
+        "path": "benchmarks/corpus/originals/people-covering.jpg",
+        "sha256": "d502a617fffb7377b7e9eec60c075420b339115f7b07764bba95b32401c99e89",
+        "width": 2075
+      },
+      "retained_subject": "foreground woman including her head covering and visible clothing",
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hijab_glance_back_Indonesia.jpg",
+        "artist_plain": "Neil\n\n\nCamera location8° 46′ 25.67″ S, 117° 56′ 52.24″ E View this and other nearby images on: OpenStreetMap -8.773796;  117.947845\n",
+        "canonical_original_height": 1418,
+        "canonical_original_sha1": "0d341709edc1eda760e4c87871a039adf6efd348",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hijab_glance_back_Indonesia.jpg",
+        "canonical_original_width": 2075,
+        "copyrighted": "True",
+        "credit_plain": "originally posted to Flickr as Hijab glance back candid",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Hijab_glance_back_Indonesia.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 6056302,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1216794439,
+        "revision_timestamp": "2026-05-19T14:43:52Z",
+        "source_snapshot_sha256": "e664d510f06fb608900b3a0729b7b4535515e8ba03fc2f2b5fdb16bd00942d07",
+        "title": "File:Hijab glance back Indonesia.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "people",
+      "challenges": [
+        "group subjects",
+        "overlap",
+        "busy outdoor background"
+      ],
+      "evaluation": {
+        "bytes": 1347385,
+        "height": 850,
+        "path": "benchmarks/corpus/evaluation/people-group.png",
+        "sha256": "8bdcdd74c7a97d134b21029c6cbae479aa2bd5b80180ede4beceab95d141bcf2",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "people-group",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 300543,
+        "height": 1848,
+        "path": "benchmarks/corpus/originals/people-group.jpg",
+        "sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+        "width": 2784
+      },
+      "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "artist_plain": "Walton LaVonda, U.S. Fish and Wildlife Service",
+        "canonical_original_height": 1848,
+        "canonical_original_sha1": "6b884c562ae07a58974873b6f18cf7529c491416",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/A_group_of_people_stand_birdwatching.jpg",
+        "canonical_original_width": 2784,
+        "copyrighted": "False",
+        "credit_plain": "http://www.public-domain-image.com/public-domain-images-pictures-free-stock-photos/people-public-domain-images-pictures/a-group-of-people-stand-birdwatching.jpg",
+        "description_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 24888979,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1192131628,
+        "revision_timestamp": "2026-04-05T17:35:54Z",
+        "source_snapshot_sha256": "1a4841b39abda1b965492142f53a4c045165fc03f63b48f36202d2031691fbfb",
+        "title": "File:A group of people stand birdwatching.jpg",
+        "usage_terms": "Public domain"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "people",
+      "challenges": [
+        "motion blur",
+        "fine edges"
+      ],
+      "evaluation": {
+        "bytes": 332513,
+        "height": 618,
+        "path": "benchmarks/corpus/evaluation/people-motion.png",
+        "sha256": "a6c9ad508330ce6137ebd877cf4ba80a2c7f0603bfa76bb075b28a03065686f6",
+        "width": 960
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "people-motion",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 65164,
+        "height": 618,
+        "path": "benchmarks/corpus/originals/people-motion.jpg",
+        "sha256": "78122412da3a0752b2e6ed30bdd2864cfd408c41e6cf89c09f367844516f473a",
+        "width": 960
+      },
+      "retained_subject": "visible cyclist and bicycle without synthesizing lost detail",
+      "source": {
+        "artifact_rendition": "official published 960px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg/960px-Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg",
+        "artist_plain": "Yogendra Joshi",
+        "canonical_original_height": 717,
+        "canonical_original_sha1": "de7cc7d5b424f7d582796d54f1ec45386715b17b",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Zoom..._%28Explored_1st_July_%5E_10%29_-_Flickr_-_Yogendra174.jpg",
+        "canonical_original_width": 1114,
+        "copyrighted": "True",
+        "credit_plain": "Zoom... (Explored 1st July # 10)",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Zoom..._(Explored_1st_July_%5E_10)_-_Flickr_-_Yogendra174.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 92291702,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1123770478,
+        "revision_timestamp": "2025-12-01T05:25:08Z",
+        "source_snapshot_sha256": "af8dd5fa6fe441acbad2b1e02e0c6ac290c3630e7bbe72730012cb9582f5ab15",
+        "title": "File:Zoom... (Explored 1st July ^ 10) - Flickr - Yogendra174.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0"
+      },
+      "source_preexisting_edits": "published photo contains a decorative white border and photographer mark; Superaster must not add another watermark"
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "people",
+      "challenges": [
+        "beard",
+        "smoke",
+        "low contrast"
+      ],
+      "evaluation": {
+        "bytes": 1057196,
+        "height": 853,
+        "path": "benchmarks/corpus/evaluation/people-portrait.png",
+        "sha256": "2e1ada599cd0ddbeb8eb942a668e032a920de16ed98f7deb53d9bbd5604833ed",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "people-portrait",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 231311,
+        "height": 853,
+        "path": "benchmarks/corpus/originals/people-portrait.jpg",
+        "sha256": "71703773f2183c7bc5014b8191bfa0548a489d17eeeb5691a83e43082c95a529",
+        "width": 1280
+      },
+      "retained_subject": "man including beard, face, pipe and visible clothing",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Bearded_man_smoking_pipe-3013924.jpg/1280px-Bearded_man_smoking_pipe-3013924.jpg",
+        "artist_plain": "ThuyHaBich",
+        "canonical_original_height": 3667,
+        "canonical_original_sha1": "8cdf785a3e2d5479e1e437ede6f5a931453bea70",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Bearded_man_smoking_pipe-3013924.jpg",
+        "canonical_original_width": 5500,
+        "copyrighted": "True",
+        "credit_plain": "https://pixabay.com/en/portrait-old-people-man-scarf-3013924/ archive copy at the Wayback Machine",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Bearded_man_smoking_pipe-3013924.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 68598168,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "personality",
+        "revision_id": 896949370,
+        "revision_timestamp": "2024-07-11T08:49:48Z",
+        "source_snapshot_sha256": "4eadc0887c79fba575535182c8dec791563c9a9d0d07b1a816acc0be3bcf0aea",
+        "title": "File:Bearded man smoking pipe-3013924.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "products",
+      "challenges": [
+        "gaps",
+        "thin blades",
+        "opaque product"
+      ],
+      "evaluation": {
+        "bytes": 571186,
+        "height": 850,
+        "path": "benchmarks/corpus/evaluation/product-hole.png",
+        "sha256": "e2cee6af17d72293f03023fddb6642a4368c3a4c065a5abf9f57a252287dceb8",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "product-hole",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 104777,
+        "height": 850,
+        "path": "benchmarks/corpus/originals/product-hole.jpg",
+        "sha256": "cda2842afca5ca51a35748a619beaf413859a42ba6a6e364bb4c606901460a89",
+        "width": 1280
+      },
+      "retained_subject": "garden scissors including handles and blades; gaps remain transparent",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Background_Isolated_Garden_Scissors_Edited_2020_%2849913697766%29.jpg/1280px-Background_Isolated_Garden_Scissors_Edited_2020_%2849913697766%29.jpg",
+        "artist_plain": "Tool Dude8mm",
+        "canonical_original_height": 2758,
+        "canonical_original_sha1": "f946dac1b91c1253964ccc5ddb28fc4d96e65b30",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Background_Isolated_Garden_Scissors_Edited_2020_%2849913697766%29.jpg",
+        "canonical_original_width": 4152,
+        "copyrighted": "True",
+        "credit_plain": "Background Isolated Garden Scissors Edited 2020",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Background_Isolated_Garden_Scissors_Edited_2020_(49913697766).jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 192003083,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1214289080,
+        "revision_timestamp": "2026-05-15T08:39:21Z",
+        "source_snapshot_sha256": "a1b5f223ecb2992b7a6eb47280fd50938cfa33a18abc9ea2beb3b4fcf290bf20",
+        "title": "File:Background Isolated Garden Scissors Edited 2020 (49913697766).jpg",
+        "usage_terms": "Creative Commons Attribution 2.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "products",
+      "challenges": [
+        "white product",
+        "hole",
+        "shadows"
+      ],
+      "evaluation": {
+        "bytes": 807080,
+        "height": 1049,
+        "path": "benchmarks/corpus/evaluation/product-white.png",
+        "sha256": "abfb998bf3947ad5b8562a524f5d141fead62371e6cd582ca2da455da70417de",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "product-white",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 148882,
+        "height": 1049,
+        "path": "benchmarks/corpus/originals/product-white.jpg",
+        "sha256": "58055f403b8e2076149c789c9e488e0245cefa4051c9cfbe5ac52472ad67e3de",
+        "width": 1280
+      },
+      "retained_subject": "white porcelain cup including handle; handle hole remains transparent",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/White_porcelain_gl%C3%B6gg_cup_1.jpg/1280px-White_porcelain_gl%C3%B6gg_cup_1.jpg",
+        "artist_plain": "W.carter",
+        "canonical_original_height": 3327,
+        "canonical_original_sha1": "d0d80d3754aaf23d1a4132098aea8ec53f16d96f",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/White_porcelain_gl%C3%B6gg_cup_1.jpg",
+        "canonical_original_width": 4060,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:White_porcelain_gl%C3%B6gg_cup_1.jpg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "page_id": 159189126,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1156632560,
+        "revision_timestamp": "2026-01-30T22:45:45Z",
+        "source_snapshot_sha256": "424faf7b49d823790e85c127f649be14c19c931b79124bab4156b734108a84a9",
+        "title": "File:White porcelain glögg cup 1.jpg",
+        "usage_terms": "Creative Commons Attribution 4.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "products",
+      "challenges": [
+        "dark product",
+        "laces",
+        "low contrast"
+      ],
+      "evaluation": {
+        "bytes": 758372,
+        "height": 962,
+        "path": "benchmarks/corpus/evaluation/product-dark.png",
+        "sha256": "01096d7374b7595ff632d0219914425a25c1bf064871d42854bde35cd977f45d",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "product-dark",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 117897,
+        "height": 962,
+        "path": "benchmarks/corpus/originals/product-dark.jpg",
+        "sha256": "ce993050f7244022635ab4bd7259116388a071ce71cec7b0ec3b7c75356a5186",
+        "width": 1280
+      },
+      "retained_subject": "black shoe including laces and sole",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Shoe-Blucher-Black_with_rubber_sole.jpg/1280px-Shoe-Blucher-Black_with_rubber_sole.jpg",
+        "artist_plain": "Wikipedia-ce",
+        "canonical_original_height": 2254,
+        "canonical_original_sha1": "9e2eece173d60afe2fcc5e403594c44db37a2438",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Shoe-Blucher-Black_with_rubber_sole.jpg",
+        "canonical_original_width": 3000,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Shoe-Blucher-Black_with_rubber_sole.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 20166929,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1180408885,
+        "revision_timestamp": "2026-03-13T15:18:44Z",
+        "source_snapshot_sha256": "0fff783f8bdadf51bd5e23211f7cfeace4b0981d1f5227939dcaa9542df88d5b",
+        "title": "File:Shoe-Blucher-Black with rubber sole.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "products",
+      "challenges": [
+        "cast shadow",
+        "thin supports"
+      ],
+      "evaluation": {
+        "bytes": 2388966,
+        "height": 853,
+        "path": "benchmarks/corpus/evaluation/product-shadow.png",
+        "sha256": "cac404308bc23c6740a7031abeaf398107591864af30349c478d5b6042525b8a",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "product-shadow",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 489680,
+        "height": 853,
+        "path": "benchmarks/corpus/originals/product-shadow.jpg",
+        "sha256": "ffc3788bc53269e671828467874eb036aedac3f6e13b62fa0968c6e0410f300d",
+        "width": 1280
+      },
+      "retained_subject": "foreground green wire chair including legs and seat; exclude cast shadow and background wooden chair",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg/1280px-Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg",
+        "artist_plain": "pcs34560",
+        "canonical_original_height": 3648,
+        "canonical_original_sha1": "7d61e524cca7e1038e7007d4979f38bc07702d30",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg",
+        "canonical_original_width": 5472,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Wire_chair_with_shadow_-_Pcs34560_IMG6674.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 96070700,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1074493580,
+        "revision_timestamp": "2025-08-18T21:26:51Z",
+        "source_snapshot_sha256": "b6ac2debaa398c03cecfb953f51a64227d469400a4dac5871f09c510dd649a5f",
+        "title": "File:Wire chair with shadow - Pcs34560 IMG6674.jpg",
+        "usage_terms": "Public domain"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "products",
+      "challenges": [
+        "multiple objects",
+        "thin handles",
+        "holes"
+      ],
+      "evaluation": {
+        "bytes": 2294251,
+        "height": 921,
+        "path": "benchmarks/corpus/evaluation/product-tools.png",
+        "sha256": "239a0b8237bcb990c9dd33d5e5a4d0ba529493859321f7c72340a25b74185a76",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "product-tools",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 387138,
+        "height": 921,
+        "path": "benchmarks/corpus/originals/product-tools.jpg",
+        "sha256": "99bf724e2299cc014c342f168b5bd3c358e2d2f73f59a057c35503108e87ac96",
+        "width": 1280
+      },
+      "retained_subject": "all visible hand tools",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Hand_tools.jpg/1280px-Hand_tools.jpg",
+        "artist_plain": "M338",
+        "canonical_original_height": 2526,
+        "canonical_original_sha1": "955e8daac8934a74d83ebc5a6b117612e8b89c2a",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Hand_tools.jpg",
+        "canonical_original_width": 3510,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Hand_tools.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 9792066,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1114554761,
+        "revision_timestamp": "2025-11-13T07:47:33Z",
+        "source_snapshot_sha256": "757e9f772935b89a1dcb3e63704039296071f304c61709efe2dea286ef3a9786",
+        "title": "File:Hand tools.jpg",
+        "usage_terms": "Public domain"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "animals",
+      "challenges": [
+        "fur",
+        "snow background",
+        "fine strands"
+      ],
+      "evaluation": {
+        "bytes": 1183702,
+        "height": 977,
+        "path": "benchmarks/corpus/evaluation/animal-fur.png",
+        "sha256": "a6fb8781aba578c1a8a7f561f30bc2c8bbb27dd3d94c489354ea30febc167434",
+        "width": 1200
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "animal-fur",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 199843,
+        "height": 977,
+        "path": "benchmarks/corpus/originals/animal-fur.jpg",
+        "sha256": "228f71abecf528f4f55c151f40dc4d063205d0ef3376ec2308e793107db27f3c",
+        "width": 1200
+      },
+      "retained_subject": "cat including loose fur, paws and tail",
+      "source": {
+        "artifact_rendition": "highest-resolution original",
+        "artifact_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Red_tabby_DLH_cat_in_snow.jpg",
+        "artist_plain": "COOLPIX P530",
+        "canonical_original_height": 977,
+        "canonical_original_sha1": "06ee9ac891278848dc0cabbf21f9e9f396e7a382",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Red_tabby_DLH_cat_in_snow.jpg",
+        "canonical_original_width": 1200,
+        "copyrighted": "True",
+        "credit_plain": "https://pxhere.com/en/photo/1373954",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Red_tabby_DLH_cat_in_snow.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 99507653,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1167194873,
+        "revision_timestamp": "2026-02-16T21:20:38Z",
+        "source_snapshot_sha256": "783daaa066c728da5cb4acef2843a5c63049171ccb77714a439ce01a61f3b36e",
+        "title": "File:Red tabby DLH cat in snow.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "animals",
+      "challenges": [
+        "whiskers",
+        "fur",
+        "cropped subject"
+      ],
+      "evaluation": {
+        "bytes": 1263494,
+        "height": 960,
+        "path": "benchmarks/corpus/evaluation/animal-whisker.png",
+        "sha256": "eb2f780aa586467369670da557d666865fea244d1ba86f835aa7160cfc7a472d",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "animal-whisker",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 138202,
+        "height": 960,
+        "path": "benchmarks/corpus/originals/animal-whisker.jpg",
+        "sha256": "cf94db59a6eb14b7d853597c82b796f24ca0026ece71166d2db90542882be956",
+        "width": 1280
+      },
+      "retained_subject": "cat including face, fur and whiskers",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg/1280px-Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg",
+        "artist_plain": "Chhabi Gupta",
+        "canonical_original_height": 960,
+        "canonical_original_sha1": "e5f7b86f2470ddbbfb3c47dc6a86af4765e62180",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg",
+        "canonical_original_width": 1280,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Closeup_of_a_cat_with_green_eyes%27_face_looking_at_the_viewer.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 41379620,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 862399678,
+        "revision_timestamp": "2024-03-21T20:12:45Z",
+        "source_snapshot_sha256": "161bd813c23655510e10b23af636ff5f89e48159ed69fe4a7619d502b18d1330",
+        "title": "File:Closeup of a cat with green eyes' face looking at the viewer.jpg",
+        "usage_terms": "Public domain"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "animals",
+      "challenges": [
+        "feathers",
+        "holes",
+        "patterned background"
+      ],
+      "evaluation": {
+        "bytes": 3263654,
+        "height": 902,
+        "path": "benchmarks/corpus/evaluation/animal-feather.png",
+        "sha256": "bcef00a300c4e6f428cadaea9fa361243b08d17e66607543140a7abff3ef9b73",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "animal-feather",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 766781,
+        "height": 902,
+        "path": "benchmarks/corpus/originals/animal-feather.jpg",
+        "sha256": "09ecc23a98fdb13a2e4b6ba121a3ca7cfd5db459153756c5b7509fdf68471d90",
+        "width": 1280
+      },
+      "retained_subject": "peacock including fine feather edges",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Peacock_%2811%29_%288315376663%29.jpg/1280px-Peacock_%2811%29_%288315376663%29.jpg",
+        "artist_plain": "Bernard Spragg. NZ from Christchurch, New Zealand",
+        "canonical_original_height": 2115,
+        "canonical_original_sha1": "1203a34bb38e4f97258c4b6aabdf120db11f8757",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Peacock_%2811%29_%288315376663%29.jpg",
+        "canonical_original_width": 3000,
+        "copyrighted": "True",
+        "credit_plain": "Peacock (11)",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Peacock_(11)_(8315376663).jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 103436994,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1217335276,
+        "revision_timestamp": "2026-05-20T14:48:16Z",
+        "source_snapshot_sha256": "e6d0dc66780a929adbe58c764ae3eb499f9c37a127b1070993bd8625ed565d3f",
+        "title": "File:Peacock (11) (8315376663).jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "animals",
+      "challenges": [
+        "fur",
+        "grass background",
+        "historical photograph"
+      ],
+      "evaluation": {
+        "bytes": 350144,
+        "height": 688,
+        "path": "benchmarks/corpus/evaluation/animal-dog.png",
+        "sha256": "632ddaaeba4d8de981a53b99df2a2a61fdcae79b55aa31051d89efaa52e1280c",
+        "width": 500
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "animal-dog",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 87991,
+        "height": 688,
+        "path": "benchmarks/corpus/originals/animal-dog.jpg",
+        "sha256": "fcae4b6b018e1d7aeb6489ea46e686ab9d8b51b9af988bcdee7d5525495d3e6b",
+        "width": 500
+      },
+      "retained_subject": "dog including fur and visible paws",
+      "source": {
+        "artifact_rendition": "official published 500px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg/500px-Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg",
+        "artist_plain": "\nCollins, Tudor Washington, 1898-1970, photographer",
+        "canonical_original_height": 1275,
+        "canonical_original_sha1": "a6cdfda144006e688449496eda511a93a6824868",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Portrait_of_a_dog_seated_on_the_grass_%28AM_84888-1%29.jpg",
+        "canonical_original_width": 926,
+        "copyrighted": "True",
+        "credit_plain": "API data\nCatalogue record\n\nPhoto",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_dog_seated_on_the_grass_(AM_84888-1).jpg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "page_id": 65543199,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1139384356,
+        "revision_timestamp": "2025-12-31T03:28:37Z",
+        "source_snapshot_sha256": "bd75e5e11ebf1d049b83fcd1849106b6045769b5964bcd1491a67095b69dc85c",
+        "title": "File:Portrait of a dog seated on the grass (AM 84888-1).jpg",
+        "usage_terms": "Creative Commons Attribution 4.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "animals",
+      "challenges": [
+        "feathers",
+        "fine edges",
+        "outdoor background"
+      ],
+      "evaluation": {
+        "bytes": 1086211,
+        "height": 853,
+        "path": "benchmarks/corpus/evaluation/animal-bird.png",
+        "sha256": "1b13825c30df470a9f426779438296ca51d7f777f9b5c2b263ad30c515cf7385",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "animal-bird",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 177676,
+        "height": 853,
+        "path": "benchmarks/corpus/originals/animal-bird.jpg",
+        "sha256": "84c0fc418223436f91207d51afee8c8867aeada06e3059025febf0189e7fcbb4",
+        "width": 1280
+      },
+      "retained_subject": "kingfisher including wings, beak and visible feet; exclude branch",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Common_kingfisher_on_a_branch_opening_its_wings.jpg/1280px-Common_kingfisher_on_a_branch_opening_its_wings.jpg",
+        "artist_plain": "Alexis LOURS",
+        "canonical_original_height": 2200,
+        "canonical_original_sha1": "b4d86c000f743028ee4244f566a6cbd8b2efb454",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Common_kingfisher_on_a_branch_opening_its_wings.jpg",
+        "canonical_original_width": 3300,
+        "copyrighted": "True",
+        "credit_plain": "Own work / [1]",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Common_kingfisher_on_a_branch_opening_its_wings.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 112511565,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1047814024,
+        "revision_timestamp": "2025-06-22T23:36:40Z",
+        "source_snapshot_sha256": "7567335178d7b70d378d710ff60041ee10712461542fc16371ec7a1581128f77",
+        "title": "File:Common kingfisher on a branch opening its wings.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "thin_structures",
+      "challenges": [
+        "spokes",
+        "gaps",
+        "metal edges"
+      ],
+      "evaluation": {
+        "bytes": 1040731,
+        "height": 853,
+        "path": "benchmarks/corpus/evaluation/thin-spokes.png",
+        "sha256": "28731b61c50aa83a2c50cde2e2677bb36ab2025311fe2062addcd25d866afae1",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "thin-spokes",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 146452,
+        "height": 853,
+        "path": "benchmarks/corpus/originals/thin-spokes.jpg",
+        "sha256": "7ef447d2047ef70a709bb69bf19e9b9f91b8b27209a31e0e25a2f8109ce5177a",
+        "width": 1280
+      },
+      "retained_subject": "visible bicycle wheel, spokes, hub, gears and connected frame",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Wheel_and_gears_of_bicycle_%28Unsplash%29.jpg/1280px-Wheel_and_gears_of_bicycle_%28Unsplash%29.jpg",
+        "artist_plain": "Wayne Bishop wayneb250",
+        "canonical_original_height": 3456,
+        "canonical_original_sha1": "2646217d3a60f87082e8b2b57a1fa67422ffe4fa",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Wheel_and_gears_of_bicycle_%28Unsplash%29.jpg",
+        "canonical_original_width": 5184,
+        "copyrighted": "True",
+        "credit_plain": "https://unsplash.com/photos/7YUW7fvIYoQ\narchive copy at the Wayback Machine\n\nImage at the Wayback Machine",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Wheel_and_gears_of_bicycle_(Unsplash).jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 61737020,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1129044605,
+        "revision_timestamp": "2025-12-11T02:52:13Z",
+        "source_snapshot_sha256": "0042e5cf542ca9504a0d8cbdfc84fad7fe116a6c0913d9bf0483e58a85dae819",
+        "title": "File:Wheel and gears of bicycle (Unsplash).jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "thin_structures",
+      "challenges": [
+        "mesh",
+        "holes",
+        "thin boundary"
+      ],
+      "evaluation": {
+        "bytes": 1955553,
+        "height": 961,
+        "path": "benchmarks/corpus/evaluation/thin-mesh.png",
+        "sha256": "efeb28f8d3d0e51cb506b4f3a2b4edd998d7269dd522e85c798b83e5a0e82570",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "thin-mesh",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 306319,
+        "height": 961,
+        "path": "benchmarks/corpus/originals/thin-mesh.jpg",
+        "sha256": "e0248a67fd70f4e45adfddffd81bc208d5cad86beb91f3dcc034660c5f7c902c",
+        "width": 1280
+      },
+      "retained_subject": "foreground wire-mesh fence including all visible wires; openings remain transparent",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg/1280px-Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg",
+        "artist_plain": "Stiller Beobachter from Ansbach, Germany",
+        "canonical_original_height": 3616,
+        "canonical_original_sha1": "c842245a232c9e6dcb5dfaec95085da3f3c89857",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg",
+        "canonical_original_width": 4816,
+        "copyrighted": "True",
+        "credit_plain": "rusty wire-mesh fence",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Rusty_wire-mesh_fence_-_Flickr_-_Stiller_Beobachter.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 75500203,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1117118238,
+        "revision_timestamp": "2025-11-17T02:24:41Z",
+        "source_snapshot_sha256": "4bff447fa8d6ed4930130434a2fd4e8b222aa69cd2acba6dd57f52e851da1c0c",
+        "title": "File:Rusty wire-mesh fence - Flickr - Stiller Beobachter.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "thin_structures",
+      "challenges": [
+        "plants",
+        "thin leaves",
+        "crowded nursery"
+      ],
+      "evaluation": {
+        "bytes": 2875335,
+        "height": 960,
+        "path": "benchmarks/corpus/evaluation/thin-plant.png",
+        "sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "thin-plant",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 571398,
+        "height": 960,
+        "path": "benchmarks/corpus/originals/thin-plant.jpg",
+        "sha256": "20778fc6cc3b0a862578ec669d3714b00fcf9202591ac04dac7290ff70273ed9",
+        "width": 1280
+      },
+      "retained_subject": "foreground fern fronds including leaves and stems",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg/1280px-Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "artist_plain": "Forest and Kim Starr",
+        "canonical_original_height": 2736,
+        "canonical_original_sha1": "0579478773bd09dcf225da4c3af7a6c05691c747",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_%2824746746030%29.jpg",
+        "canonical_original_width": 3648,
+        "copyrighted": "True",
+        "credit_plain": "starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Starr-100623-7771-Nephrolepis_sp-potted_plants_in_shade_house-Pukalani_Plant_Company_Pulehu-Maui_(24746746030).jpg",
+        "license": "CC BY 3.0 us",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+        "page_id": 71860039,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1190650229,
+        "revision_timestamp": "2026-04-03T02:22:29Z",
+        "source_snapshot_sha256": "0ceff0a5e7fa29fffeabcf4bcc01d88fe594a654abb995babdc176854eb7ce74",
+        "title": "File:Starr-100623-7771-Nephrolepis sp-potted plants in shade house-Pukalani Plant Company Pulehu-Maui (24746746030).jpg",
+        "usage_terms": "Creative Commons Attribution 3.0 us"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "thin_structures",
+      "challenges": [
+        "cables",
+        "foreground ambiguity",
+        "busy street"
+      ],
+      "evaluation": {
+        "bytes": 3042060,
+        "height": 924,
+        "path": "benchmarks/corpus/evaluation/thin-cables.png",
+        "sha256": "63c2205961585e4a40e28f8d4fec3f931e57aedc243e7d851e9b9016c76cfa57",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "thin-cables",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 625534,
+        "height": 924,
+        "path": "benchmarks/corpus/originals/thin-cables.jpg",
+        "sha256": "0bf445d24cd4577c129948ea35a972406c60e9b5398bf3234107c5d499dd6b92",
+        "width": 1280
+      },
+      "retained_subject": "all visible foreground cable runs; exclude road and buildings",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Cables_on_%27Independence_Road%27%2C_Oban%2C_July_2020.jpg/1280px-Cables_on_%27Independence_Road%27%2C_Oban%2C_July_2020.jpg",
+        "artist_plain": "Blood Red Sandman",
+        "canonical_original_height": 2298,
+        "canonical_original_sha1": "5f71c8f7639fdbf8ee677c77378cff2af9ab606e",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Cables_on_%27Independence_Road%27%2C_Oban%2C_July_2020.jpg",
+        "canonical_original_width": 3185,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Cables_on_%27Independence_Road%27,_Oban,_July_2020.jpg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "page_id": 92118107,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 845120604,
+        "revision_timestamp": "2024-01-25T06:23:07Z",
+        "source_snapshot_sha256": "a75aa3243e781ef3baf2a24c0e89fe771b6b8c8f74b3e132aad3d96959cb9571",
+        "title": "File:Cables on 'Independence Road', Oban, July 2020.jpg",
+        "usage_terms": "Creative Commons Attribution 4.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "thin_structures",
+      "challenges": [
+        "branches",
+        "sky background",
+        "fine structures"
+      ],
+      "evaluation": {
+        "bytes": 1999378,
+        "height": 1280,
+        "path": "benchmarks/corpus/evaluation/thin-branches.png",
+        "sha256": "d565a96534d150f1c8071a4ce7bacfccf3cd96e6bc9701bdff8b89475b4cdc54",
+        "width": 960
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "thin-branches",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 587628,
+        "height": 1707,
+        "path": "benchmarks/corpus/originals/thin-branches.jpg",
+        "sha256": "5b23c921c4bd607ff684c3469331452f22edef9f0b8a3d7cec0c2da99b192150",
+        "width": 1280
+      },
+      "retained_subject": "visible bare tree branches including fine twigs",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Bare_tree_in_Kent%2C_WA_%282025%29_-_0010.jpg/1280px-Bare_tree_in_Kent%2C_WA_%282025%29_-_0010.jpg",
+        "artist_plain": "Roc0ast3r",
+        "canonical_original_height": 4000,
+        "canonical_original_sha1": "61a54ba16d856ea44b643bf595e40b7c5d8283be",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Bare_tree_in_Kent%2C_WA_%282025%29_-_0010.jpg",
+        "canonical_original_width": 3000,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Bare_tree_in_Kent,_WA_(2025)_-_0010.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 159267078,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1080959779,
+        "revision_timestamp": "2025-09-04T22:41:23Z",
+        "source_snapshot_sha256": "fcae20fa5c307931bd45c61e1473f6aa5150149923706a738a4bb2372997a885",
+        "title": "File:Bare tree in Kent, WA (2025) - 0010.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "difficult_materials",
+      "challenges": [
+        "glass",
+        "translucency",
+        "reflections"
+      ],
+      "evaluation": {
+        "bytes": 1103089,
+        "height": 720,
+        "path": "benchmarks/corpus/evaluation/material-glass.png",
+        "sha256": "7d2d3a31c0fee184990ceb3f685c717e379737dc86e27be68891c620a2ba5829",
+        "width": 960
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "material-glass",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 171020,
+        "height": 720,
+        "path": "benchmarks/corpus/originals/material-glass.jpg",
+        "sha256": "61753d0d2bd3cabc5d41e36eb2305f10cfe220b2cdbdc93825f6645bf4b012ad",
+        "width": 960
+      },
+      "retained_subject": "glass tumbler including rim and bowl; preserve transmitted/background ambiguity honestly",
+      "source": {
+        "artifact_rendition": "official published 960px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Port_wine.jpg/960px-Port_wine.jpg",
+        "artist_plain": "Jon Sullivan",
+        "canonical_original_height": 768,
+        "canonical_original_sha1": "08b2d7635937b36a57287105c66992020d8dfba5",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Port_wine.jpg",
+        "canonical_original_width": 1024,
+        "copyrighted": "False",
+        "credit_plain": "pdphoto.org\n\nhttp://pdphoto.org/PictureDetail.php?oldpg=2479",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Port_wine.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 25990,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1053304222,
+        "revision_timestamp": "2025-07-06T22:33:57Z",
+        "source_snapshot_sha256": "e3dfbfacc8ba9b426ad37d4373cb259a2cc06e65a1657ae8284e384aaf51eaef",
+        "title": "File:Port wine.jpg",
+        "usage_terms": "Public domain"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "difficult_materials",
+      "challenges": [
+        "translucent plastic",
+        "reflections",
+        "contents"
+      ],
+      "evaluation": {
+        "bytes": 1722550,
+        "height": 1280,
+        "path": "benchmarks/corpus/evaluation/material-translucent.png",
+        "sha256": "23e83192c90a07a8cd206d0c091de9c7d5569b72d950de2e6ef7c109c9691490",
+        "width": 960
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "material-translucent",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 445256,
+        "height": 1707,
+        "path": "benchmarks/corpus/originals/material-translucent.jpg",
+        "sha256": "528d91ef5d2119e1d19a34a78f8bbbc7d478cc4e33621e810a86a6cb6349d6e3",
+        "width": 1280
+      },
+      "retained_subject": "clear zipper bag and enclosed screws; retain partially transparent bag",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg/1280px-Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg",
+        "artist_plain": "Fructibus",
+        "canonical_original_height": 4608,
+        "canonical_original_sha1": "06af528ede819e010c807c4c749bb53938efa55c",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg",
+        "canonical_original_width": 3456,
+        "copyrighted": "True",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Computer_screws_in_a_zipper_storage_bag_-_6_x_9_cm_-_on_Aqua_Deep_plastic.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "page_id": 62643947,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 866864091,
+        "revision_timestamp": "2024-04-08T19:51:02Z",
+        "source_snapshot_sha256": "f7c8cfb46687cda300a526413e1f470a375291824a3f1523e66f4fdc9556a78a",
+        "title": "File:Computer screws in a zipper storage bag - 6 x 9 cm - on Aqua Deep plastic.jpg",
+        "usage_terms": "Creative Commons Zero, Public Domain Dedication"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "difficult_materials",
+      "challenges": [
+        "reflective metal",
+        "handle holes",
+        "specular highlights"
+      ],
+      "evaluation": {
+        "bytes": 1201214,
+        "height": 751,
+        "path": "benchmarks/corpus/evaluation/material-reflective.png",
+        "sha256": "9c3778ae8efc11d81de1e75bf79faaa8656968bc5715a95371c77213f3be3d23",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "material-reflective",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 174986,
+        "height": 751,
+        "path": "benchmarks/corpus/originals/material-reflective.jpg",
+        "sha256": "82eceee243a54218d4a1062a91884a4c2a7ab170b74434322143d8c521be7bc1",
+        "width": 1280
+      },
+      "retained_subject": "copper cooking vessel including its handles",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Copper_kettle_flickr.jpg/1280px-Copper_kettle_flickr.jpg",
+        "artist_plain": "https://www.flickr.com/photos/chefranden/",
+        "canonical_original_height": 1606,
+        "canonical_original_sha1": "dd11a4f9d4ea426687878da421b7f697f7b70de3",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Copper_kettle_flickr.jpg",
+        "canonical_original_width": 2736,
+        "copyrighted": "True",
+        "credit_plain": "https://www.flickr.com/photos/chefranden/2680252465/",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Copper_kettle_flickr.jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "page_id": 5713108,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1071620746,
+        "revision_timestamp": "2025-08-14T00:52:55Z",
+        "source_snapshot_sha256": "1b1df6502ac13f0f80db376402d928b5e797477d04d7b8ff3f486a1882f03359",
+        "title": "File:Copper kettle flickr.jpg",
+        "usage_terms": "Creative Commons Attribution 2.0"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "difficult_materials",
+      "challenges": [
+        "glass",
+        "reflections",
+        "multiple objects"
+      ],
+      "evaluation": {
+        "bytes": 1222694,
+        "height": 960,
+        "path": "benchmarks/corpus/evaluation/material-clear.png",
+        "sha256": "6f64cabda8bf55416762e49da3e6966fc5ce53e8d59b0892fc5daea66ba31af0",
+        "width": 1280
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "material-clear",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 190972,
+        "height": 960,
+        "path": "benchmarks/corpus/originals/material-clear.jpg",
+        "sha256": "424bca68e0da43c98f8521ef900c09ada31f470644daa207e1e730acd60d9366",
+        "width": 1280
+      },
+      "retained_subject": "visible glass beer bottles",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Beer_bottles_2018_G1.jpg/1280px-Beer_bottles_2018_G1.jpg",
+        "artist_plain": "George Chernilevsky",
+        "canonical_original_height": 3600,
+        "canonical_original_sha1": "d7625e1b517abb6cb86c722647eb603f802dd166",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Beer_bottles_2018_G1.jpg",
+        "canonical_original_width": 4800,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Beer_bottles_2018_G1.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 68171881,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 959202040,
+        "revision_timestamp": "2024-11-19T16:52:25Z",
+        "source_snapshot_sha256": "018cbbcf2dc6f6cef08b83835e5fe355e0597da81f861fbf815ca4a218c0655d",
+        "title": "File:Beer bottles 2018 G1.jpg",
+        "usage_terms": "Public domain"
+      }
+    },
+    {
+      "alpha_ground_truth": null,
+      "category": "difficult_materials",
+      "challenges": [
+        "lace",
+        "holes",
+        "complex edges"
+      ],
+      "evaluation": {
+        "bytes": 2714715,
+        "height": 1280,
+        "path": "benchmarks/corpus/evaluation/material-complex.png",
+        "sha256": "ac4919b5900b3c5fb27e0f82d0d7a379c6c0b568e1a45da9e5ea1e7ad74a6316",
+        "width": 954
+      },
+      "expected_failures_to_review": [
+        "missing intended subject",
+        "retained background",
+        "halo/color contamination",
+        "fine-edge loss"
+      ],
+      "id": "material-complex",
+      "noncopyright_rights": "No endorsement or identity-consent claim; use as attributed technical benchmark only, not brand advertising.",
+      "original": {
+        "bytes": 924394,
+        "height": 1718,
+        "path": "benchmarks/corpus/originals/material-complex.jpg",
+        "sha256": "984dbf489df8d3ff85963976dea4f5cf8d266c632ba5a1cd8fa5865e75f4e92f",
+        "width": 1280
+      },
+      "retained_subject": "visible lace fabric including holes and fine strands",
+      "source": {
+        "artifact_rendition": "official published 1280px-wide rendition",
+        "artifact_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Lace_doily%2C_Belgium%2C_1714-1715_-_Museum_of_Anthropology%2C_University_of_British_Columbia_-_DSC09267.jpg/1280px-Lace_doily%2C_Belgium%2C_1714-1715_-_Museum_of_Anthropology%2C_University_of_British_Columbia_-_DSC09267.jpg",
+        "artist_plain": "Daderot",
+        "canonical_original_height": 4665,
+        "canonical_original_sha1": "87748cf6a60d0bac98f9fb166b59c78baac9f2f3",
+        "canonical_original_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Lace_doily%2C_Belgium%2C_1714-1715_-_Museum_of_Anthropology%2C_University_of_British_Columbia_-_DSC09267.jpg",
+        "canonical_original_width": 3475,
+        "copyrighted": "False",
+        "credit_plain": "Own work",
+        "description_url": "https://commons.wikimedia.org/wiki/File:Lace_doily,_Belgium,_1714-1715_-_Museum_of_Anthropology,_University_of_British_Columbia_-_DSC09267.jpg",
+        "license": "Public domain",
+        "license_url": "",
+        "page_id": 51299061,
+        "provider": "Wikimedia Commons",
+        "restriction_metadata": "",
+        "revision_id": 1182631254,
+        "revision_timestamp": "2026-03-17T15:28:44Z",
+        "source_snapshot_sha256": "c88d186844127623254845e653c63d4761e1cb8a6bfeff980eaf6936cae847a1",
+        "title": "File:Lace doily, Belgium, 1714-1715 - Museum of Anthropology, University of British Columbia - DSC09267.jpg",
+        "usage_terms": "Public domain"
+      }
+    }
+  ],
+  "evaluation_policy": {
+    "color": "RGB encoded values from Pillow conversion; no color-metric claim",
+    "compress_level": 9,
+    "format": "PNG",
+    "max_edge_px": 1280,
+    "orientation": "EXIF transpose exactly once before inference",
+    "resampler": "Pillow 12.3.0 LANCZOS",
+    "source_policy": "Preserve downloaded published inputs byte-for-byte; full-resolution originals when available, official 1280/960/500px published renditions otherwise. Canonical highest-resolution URL and source SHA-1 are retained separately."
+  },
+  "ground_truth_alpha": "unavailable",
+  "human_quality_review": "NOT RUN",
+  "selection_method": "purposeful category/challenge coverage; source search results and visual triage; not a representative population sample",
+  "split": "screening",
+  "train_test_overlap": "unknown; public Commons content may occur in checkpoint training sets",
+  "version": "1.0.0"
+}

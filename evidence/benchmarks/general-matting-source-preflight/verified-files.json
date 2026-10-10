@@ -1,0 +1,62 @@
+{
+  "repository": "ZhengPeng7/BiRefNet-matting",
+  "revision": "eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9",
+  "files": [
+    {
+      "file": "birefnet.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/birefnet.py",
+      "bytes": 92134,
+      "sha256": "2a45b4e0ece72d7c4212bca1a988e7d7e52bfe9f98ec59c58b8809c8a8b7a831",
+      "cache_hit": true,
+      "verify_download_seconds": 0.0009519649993308121
+    },
+    {
+      "file": "BiRefNet_config.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/BiRefNet_config.py",
+      "bytes": 298,
+      "sha256": "e7b8c2a74f6cea6a59553d517f71d47f2c1d90e670a13416af17c25fe2f3dc52",
+      "cache_hit": true,
+      "verify_download_seconds": 6.587400002899813e-05
+    },
+    {
+      "file": "config.json",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/config.json",
+      "bytes": 413,
+      "sha256": "b2b235983b80fbff325976ca517bb7eda25e915b84a97b150eca41266cf8a13b",
+      "cache_hit": true,
+      "verify_download_seconds": 4.185499983577756e-05
+    },
+    {
+      "file": "README.md",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/README.md",
+      "bytes": 4724,
+      "sha256": "e43576e298fcfd143239f7c1dc080e1d03f4eef5e78156da4f0466d93f2c45a1",
+      "cache_hit": true,
+      "verify_download_seconds": 0.0002018470004259143
+    },
+    {
+      "file": "requirements.txt",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/requirements.txt",
+      "bytes": 149,
+      "sha256": "bdfdd83a090d31a2acf64f7350653fa63cd8b5d9d6e0ff3e135bea7ce3786341",
+      "cache_hit": true,
+      "verify_download_seconds": 6.114799998613307e-05
+    },
+    {
+      "file": "BiRefNet-MIT.txt",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE",
+      "bytes": 1066,
+      "sha256": "92a7089e0915fc32bc40067560b398f1e6a7a5958abd7d04eda393629a5acefb",
+      "cache_hit": true,
+      "verify_download_seconds": 5.905899979552487e-05
+    },
+    {
+      "file": "model.safetensors",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/model.safetensors?download=true",
+      "bytes": 884878856,
+      "sha256": "a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb",
+      "cache_hit": false,
+      "verify_download_seconds": 138.6051174230006
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "INTERRUPTED",
+  "scope": "First in-app-browser natural-lifecycle check",
+  "last_observation": "New second tab visibly reported update downloaded and displayed the cached base UI. Both tab/cache snapshots, third-generation rejection, close-all activation and offline processing were not yet recorded.",
+  "reason": "Browser surface disconnected and disappeared from available surfaces; only Chrome remained. No acceptance result inferred from the interruption.",
+  "next": "Repeat only this unfinished natural-lifecycle check in available Chrome using the same sealed fixture hashes."
+}

@@ -1,0 +1,80 @@
+{
+  "contract_version": "1.0",
+  "implementation_version": "0.1.0-alpha.1",
+  "input_hash": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+  "recipe_hash": "def6922b318d2c78de3a29ceae7767acb71f952f7ad893117000753699dfa11f",
+  "binding_hashes": {},
+  "resolved_recipe": {
+    "spec_version": "1.0",
+    "input": {
+      "ref": "t01-three-birdwatchers"
+    },
+    "engine": "birefnet-full-1024-fp16",
+    "quality": "quality",
+    "operations": [
+      {
+        "op": "remove_background",
+        "edge_cleanup": "none"
+      }
+    ],
+    "output": {
+      "format": "png",
+      "metadata": "strip"
+    }
+  },
+  "engine": {
+    "id": "birefnet-full-1024-fp16",
+    "version": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+    "model_hash": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+    "precision": "fp16 weights / float32 input / float32 output",
+    "inference_dimensions": [
+      1024,
+      1024
+    ],
+    "runtime": "onnxruntime-node 1.30.0",
+    "backend": "cpu",
+    "refinement": "none"
+  },
+  "encoder": {
+    "format": "png",
+    "quality": 90,
+    "metadata": "strip",
+    "kernel": "declared imaging adapter"
+  },
+  "applied_operations": [
+    {
+      "op": "remove_background",
+      "edge_cleanup": "none"
+    }
+  ],
+  "output": {
+    "width": 2400,
+    "height": 1600,
+    "format": "png",
+    "channels": 4,
+    "has_alpha": true,
+    "is_opaque": false,
+    "bytes": 6807747,
+    "color_space": "srgb",
+    "pages": 1,
+    "metadata": {
+      "icc": true,
+      "exif": false,
+      "density": 25
+    },
+    "hash": "760e00ad2e3612d8d221c72264aff90c6ea6d2845912452c6012e1cd0c5dc0b7"
+  },
+  "timings_ms": {
+    "decode": 53.805529999999976,
+    "inference": 49204.30051,
+    "model_setup": 1138.493319,
+    "initialize": 4827.199869,
+    "preprocess": 75.1756260000002,
+    "inference_kernel": 43062.083626,
+    "alpha_decode": 59.04051299999992,
+    "encode": 455.9698730000018,
+    "validate": 689.922050000001
+  },
+  "warnings": [],
+  "rules": []
+}

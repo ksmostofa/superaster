@@ -1,0 +1,13 @@
+{
+  "scope": "Synthetic symbolic-metadata minimal reproduction; no image/model inference",
+  "value_type": "Tensor",
+  "rank": 4,
+  "strict_all_known_sizes": null,
+  "individual_dimensions": [
+    1,
+    1,
+    null,
+    null
+  ],
+  "independent_fact": "A single unknown symbolic dimension makes the strict helper return None for all dimensions; native ONNX attributes do not require image H/W when weight kernel dimensions are known"
+}

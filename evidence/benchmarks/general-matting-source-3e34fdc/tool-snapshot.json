@@ -1,0 +1,21 @@
+{
+  "execution_commit": "3e34fdcc2e622a343950437cbcde6e7186c01fa5",
+  "files": [
+    {
+      "path": "benchmarks/source-reference/verify.py",
+      "sha256": "68f87e2a5736cd8ba7969053c3a9242aa407d1154c7d86cd5bb85ce611b620e7"
+    },
+    {
+      "path": "benchmarks/source-reference/run.py",
+      "sha256": "05fe0bc45671e5ff14313943e4406b809dbb68665dd185afb02bd8456b4d1a21"
+    },
+    {
+      "path": "benchmarks/source-reference/prepare.py",
+      "sha256": "4970ebbd7628acee2d16c020d050c528cc574e76449d19d672bbb02bcaf3ce2c"
+    },
+    {
+      "path": "benchmarks/source-reference/requirements.lock.txt",
+      "sha256": "24d67c83f2c26ebd70da98d2d9315b55b82d84b95e7ca160afff542c41883c52"
+    }
+  ]
+}

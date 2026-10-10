@@ -1,0 +1,106 @@
+# Pinned general-matting source reference
+
+Research only. These tools import the reviewed local code of `ZhengPeng7/BiRefNet-matting` at revision `eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9`, verify its immutable files, and use the exact existing group/fern manifest. They do not change production engines or acceptance criteria. They run CPU float32 without training, autocast, compilation, edge cleanup or alpha thresholds.
+
+Use Linux x86_64 CPython 3.12. The recorded environment uses Python 3.12.14, PyTorch 2.5.1+cpu, torchvision 0.20.1+cpu and Transformers 5.0.0. PyTorch's [official previous-version instructions](https://pytorch.org/get-started/previous-versions/) document this Torch/torchvision pair and CPU index. `requirements.lock.txt` pins every selected wheel URL and SHA-256. It is a platform-specific research lock, not production dependencies or support for another OS/Python version.
+
+```sh
+python3.12 -m venv .cache/source-reference-venv
+.cache/source-reference-venv/bin/python -m pip install -r benchmarks/source-reference/requirements.lock.txt
+.cache/source-reference-venv/bin/python -m pip check
+python benchmarks/source-reference/prepare.py \
+  --destination .cache/general-model-prerequisite/source-reference/model
+```
+
+`prepare.py` verifies 884,878,856 weight bytes and SHA-256 `a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb`. It uses sequential 16 MiB HTTP ranges after observed whole-transfer resets and a 64 MiB range timeout. It verifies each exact Content-Range, stages the complete bounded segment before appending it, records segment hashes, and admits the checkpoint only after the complete file hash matches. Each range has a 120-second transport bound and no automatic retry. Failed ranges leave the completed prefix intact. An inherited incomplete prefix remains untrusted until the same final complete hash passes. Source/model downloads are explicit here. Downloaded Python is not executed by the fetcher.
+
+Provide the coordinator's existing corpus root and unchanged targeted manifest. Select a new output directory on every invocation. Preflight verifies source/weight/input/original hashes, imports reviewed local model modules, verifies the fixed configuration, checks checkpoint state keys/shapes against an allocation-free meta-device model and checks actual image preprocessing. It does not materialize model weights or run image inference.
+
+```sh
+unshare --user --map-root-user --net -- \
+  .cache/source-reference-venv/bin/python benchmarks/source-reference/run.py \
+  --require-isolated-net \
+  --model-dir .cache/general-model-prerequisite/source-reference/model \
+  --manifest ../superaster/evidence/benchmarks/full1024-targeted-233231f/targeted-manifest.json \
+  --corpus-root ../superaster \
+  --output .cache/general-model-prerequisite/source-reference/preflight-NEW
+```
+
+The recorded command uses an unprivileged Linux network namespace. `--require-isolated-net` refuses any interface beyond loopback and checks that IPv4/IPv6 external connections are unavailable before importing the model. The runner also rejects Python socket resolution/connect attempts and sets the HF offline flags. The audit hook alone is not an OS sandbox; hosts unable to create the namespace cannot claim this recorded offline condition by omitting the flag. The reviewed execution path calls local tensor operations and uses no hub/download API. It never uses `AutoModel.from_pretrained`, `trust_remote_code`, backbone downloads or pickle weight loading. The reviewed constructor receives `BiRefNetConfig(bb_pretrained=False)`; the safetensors state loads strictly from the verified file.
+
+Only the coordinator may allocate the serial inference slot. Add `--run` to the same command, with a new output directory and `--threads 4`, when that slot is granted. No source inference or export is implied by a preflight pass. Real CPU activation memory and execution time remain unknown until measured. The source contains 220,176,498 logical parameters; parameter count and allocation-free construction RSS do not predict full inference memory. Existing ORT Full1024 reached about 9.13 GB sampled process RSS on this laptop, so use a quiet machine and one heavy job. That number is contextual evidence, not a guarantee or acceptance threshold for this source route.
+
+The approved 2026-10-10 two-image investigation used `timeout --signal=INT --kill-after=10s 900s` before the `unshare` command, `--threads 4 --run`, and a fresh directory. That 15-minute lifetime bound is an investigation guard, not a frozen product acceptance budget. It completed once; no inference rerun is needed to check its retained exports.
+
+A real run retains exact preprocessed `input.npy`, raw `logits.npy`, continuous `coverage.npy`, original-sized continuous coverage, grayscale alpha, unmodified-RGB cutout and white/black/magenta composites for each case. It records CPU initialization, decode/preprocess, inference, sigmoid, tensor diagnostics and export timings separately. Linux process RSS is a cumulative high-water mark, not a sampled stage peak. Input/original files are checked again after processing. Failure/cancellation records retain the actual stage; an OS kill may require the coordinator's process log.
+
+The diagnostic export keeps continuous coverage until half-pixel bilinear upsampling and nearest-byte PNG assignment. Upstream's handler quantizes before its final resize and applies separate RGB foreground estimation; neither is silently represented as identical. Composites use byte-space source-over for visual diagnosis, and do not certify the application's color contract. The retained subject remains all three birdwatchers and the foreground fern fronds.
+
+Verify actual PNG format, dimensions, decoded alpha and RGB, metadata, composition, tensor properties and every recorded output hash without repeating inference:
+
+```sh
+.cache/source-reference-venv/bin/python benchmarks/source-reference/verify.py \
+  --run SOURCE_RUN \
+  --manifest ../superaster/evidence/benchmarks/full1024-targeted-233231f/targeted-manifest.json \
+  --corpus-root ../superaster --output properties-NEW.json
+```
+
+A later audited ONNX conversion can reuse the saved input tensors. Its conditions must name the same source revision/weight and manifest hashes, an immutable ONNX artifact hash, completed inference and matching case/input identities. Save raw logits and sigmoid coverage in the same array layout, then measure differences:
+
+```sh
+.cache/source-reference-venv/bin/python benchmarks/source-reference/compare.py \
+  --source SOURCE_RUN --candidate ONNX_RUN --output comparison-NEW.json
+.cache/source-reference-venv/bin/python benchmarks/source-reference/test_tools.py
+```
+
+The comparison requires byte-identical preprocessed tensors and reports mean/max/RMS differences. It awards no numerical tolerance or quality acceptance. Nine deterministic tool tests cover comparison boundaries and exact-range resume/admission using clearly identified synthetic arrays and transport responses; they are not fabricated inference outputs. No ONNX export/parity, hidden-label judgment, phone result, frozen budget or remove.bg superiority claim is supplied by these scripts.
+
+The source/model MIT notice and its original copyright are retained in [the source audit](../../research/general-model-prerequisite.md). Imported dependencies retain their own notices. The private cache stores installation reports, license inventory, full source review, transfer failures and preflight conditions. Downloaded model/source/venv files stay outside public package artifacts.
+
+## Native ONNX conversion prerequisite
+
+The pinned TorchVision schema was checked against the installed CPU wheel. `native_deform.py` translates that exact signature to the standard ONNX opset-19 DeformConv input order `image, weight, offset, bias, mask`, with explicit strides, symmetric pads, dilations, groups and offset groups. It retains known source dimensions and leaves unknown intermediate dimensions unknown. The producer separately requires static float32 final interfaces and delegates execution to ORT's existing compiled kernel. The inspected legacy upstream exporter expands this operator into GatherND/Conv; its fixed revision/license/source hashes remain in the research audit, but that module is not imported or modified here.
+
+ORT 1.30.0 at source revision `f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7` contains the native CPU float32 kernel. Two tiny synthetic fixtures pass exactly against hand-derived binary-fraction results in TorchVision, ORT CPU, Node WASM and the actual in-app browser WASM. They cover zero offsets with a padded 3×3 kernel and asymmetric fractional offsets with edge sampling and mask modulation. This proves the named operator prerequisite only. The pinned WebGPU resolver lacks DeformConv; no WebGPU support is claimed.
+
+Install only the reviewed research extension; its four wheel hashes and complete retained license-file hashes are recorded in `evidence/benchmarks/general-matting-conversion-prerequisite/verified-wheels.json`. Existing source packages remain unchanged. Wheels and their complete notices remain in the ignored cache and installed research environment; no wheel binaries are redistributed in the application.
+
+```sh
+.cache/source-reference-venv/bin/python -m pip install \
+  -r benchmarks/source-reference/export-requirements.lock.txt
+.cache/source-reference-venv/bin/python -m pip check
+```
+
+After the coordinator grants the serial slot, the proposed full export command is:
+
+```sh
+timeout --signal=INT --kill-after=10s 900s \
+  unshare --user --map-root-user --net -- \
+  .cache/source-reference-venv/bin/python benchmarks/source-reference/export.py \
+  --model-dir .cache/general-model-prerequisite/source-reference/model \
+  --source-run .cache/general-model-prerequisite/source-reference/run-20261010-source \
+  --output .cache/general-model-prerequisite/conversion-audit/export-NEW --execute
+```
+
+The wrapper exports only the final raw logits with no final-output sigmoid. Internal source-model sigmoid operations remain. The script verifies the exact source and both saved input identities, uses strict local safetensors, refuses external tensor files or unexpected operator domains/interfaces, records stages/failures, and leaves numerical/quality acceptance unawarded. Full export and parity were not supplied by the synthetic probe. A graph audit must precede the following separately bounded CPU comparison command:
+
+```sh
+timeout --signal=INT --kill-after=10s 900s \
+  unshare --user --map-root-user --net -- \
+  .cache/source-reference-venv/bin/python benchmarks/source-reference/run_onnx.py \
+  --artifact EXPORT_DIRECTORY/general-matting-f32-opset19.onnx \
+  --export-report EXPORT_DIRECTORY/export.json \
+  --source-run .cache/general-model-prerequisite/source-reference/run-20261010-source \
+  --manifest ../superaster/evidence/benchmarks/full1024-targeted-233231f/targeted-manifest.json \
+  --corpus-root ../superaster --output ONNX_RUN_NEW --run
+```
+
+Use `compare.py` on the retained runs for descriptive raw-logit/coverage deltas and `verify.py` for decoded diagnostic exports. These tools cannot freeze a tolerance, pass human quality, establish complete browser-model execution or certify device performance.
+
+The first full export failed at the strict intermediate metadata check; `evidence/benchmarks/general-matting-export-first-failure` preserves its actual failure and a minimal Torch TensorType reproduction. The reviewed mapping now uses individual dimension metadata without inventing missing spatial sizes. The affected tiny operator checks pass with byte-identical graph fixtures, so the earlier Node/browser checks remain applicable. The single focused retry exported and checked the fixed graph. One exact two-case CPU comparison completed; evidence is in `evidence/benchmarks/general-matting-onnx-bb8cc67`. Numerical tolerances and quality remain unawarded.
+
+## Full browser prerequisite
+
+`prepare_full_browser.py` verifies the fixed full artifact, saved group input/source/native tensors and exact installed ORT WASM files before staging hardlinks in a new isolated directory. `serve_full_browser.py` serves only these files over loopback with COOP/COEP and a same-origin CSP. The separate `full-browser.html` page runs a single one-thread local worker with a ten-minute investigation guard and explicit termination; it is never included in the product.
+
+The coordinator's one actual run is retained at `evidence/benchmarks/general-matting-browser-598af47`: initialization passed, inference failed with `std::bad_alloc`, session cleanup completed, and no logits were produced. Keep this failure distinct from the successful tiny DeformConv operator probe and native comparison. Full browser parity and quality remain incomplete.

@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-10T00:50:30.955117+00:00",
+  "commit": "6d610e6b69e556304af3eabf20f4fd4d2ebbb134",
+  "memory": {
+    "total": 16558505984,
+    "available": 7478661120,
+    "percent": 54.8,
+    "used": 9079844864,
+    "free": 510189568,
+    "active": 6211309568,
+    "inactive": 8459603968,
+    "buffers": 36864,
+    "cached": 8466739200,
+    "shared": 551120896,
+    "slab": 455544832
+  },
+  "swap": {
+    "total": 16558059520,
+    "used": 1276235776,
+    "free": 15281823744,
+    "percent": 7.7,
+    "sin": 27271168,
+    "sout": 1261580288
+  },
+  "cpu_percent_1_second": 25.2,
+  "files": [
+    {
+      "path": "benchmarks/source-reference/export.py",
+      "sha256": "8f3b8bf2b83c99c1acf7cfc109a0d261d75f4734e6d88f5c449a3a0f9dd2e95f"
+    },
+    {
+      "path": "benchmarks/source-reference/native_deform.py",
+      "sha256": "d3c692f2e5e138d5195e6132769f78e3072458449d40e927a8edf8dfabcf5f84"
+    },
+    {
+      "path": "benchmarks/source-reference/export-requirements.lock.txt",
+      "sha256": "74310df2761ad1bfa50fd036aa8a801d20a5e934ee828ac6d0c03ba8de1421b8"
+    }
+  ],
+  "scope": "One approved bounded full static export; not a frozen acceptance budget or quality pass"
+}

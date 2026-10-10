@@ -1,0 +1,24 @@
+{
+  "facts": {
+    "height": 720,
+    "images": [
+      {
+        "bounds": {
+          "bottom": 317.685546875,
+          "height": 500,
+          "left": 88.49609375,
+          "right": 838.49609375,
+          "top": -182.314453125,
+          "width": 750,
+          "x": 88.49609375,
+          "y": -182.314453125
+        },
+        "naturalHeight": 800,
+        "naturalWidth": 1200
+      }
+    ],
+    "overflow": false,
+    "width": 1280
+  },
+  "scope": "Actual geometry/export processing of the diagnostic source-derived cutout, not model inference in the app."
+}

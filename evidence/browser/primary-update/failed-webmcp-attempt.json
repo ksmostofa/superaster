@@ -1,0 +1,1 @@
+"{\"error\":{\"code\":\"CONSTRAINT_UNSATISFIABLE\",\"message\":\"Lossless PNG exceeds byte target at fixed dimensions\",\"details\":{\"actual_bytes\":2071,\"max_bytes\":1}}}"

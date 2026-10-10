@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-10-09T06:13:51.664609+00:00",
+  "command": "node evidence/benchmarks/full1024-targeted-233231f/verify-artifacts.mjs",
+  "exit_code": 1,
+  "verification_script_sha256": "ba40fb8515a4eaf4d3d8a0bf160dc636f1fc0cde71d6d8f1e5aa11c9d400a4f9",
+  "failure": "Sharp raw mask channel count 3 differs from asserted 1",
+  "scope": "Reviewer checker failure; default raw output color space was not explicitly grayscale. Preserve actual PNG metadata and all model outputs. No repeated inference."
+}

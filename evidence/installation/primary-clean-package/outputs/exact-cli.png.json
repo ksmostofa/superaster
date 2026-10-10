@@ -1,0 +1,78 @@
+{
+  "contract_version": "1.0",
+  "implementation_version": "0.1.0-alpha.1",
+  "input_hash": "2d4f47105a22b83c2a2f212b0df983be9b75541e76dad6a013296147e1a26486",
+  "recipe_hash": "1d68f8ee35597162eaecc54487da2029ce2c3e9e7f149ec0ca97c9da0a5f923b",
+  "binding_hashes": {},
+  "resolved_recipe": {
+    "spec_version": "1.0",
+    "input": {
+      "ref": "metadata-fixture"
+    },
+    "operations": [
+      {
+        "op": "canvas",
+        "width": 48,
+        "height": 48,
+        "fit": "contain",
+        "background": "#ffffff"
+      }
+    ],
+    "output": {
+      "format": "png",
+      "metadata": "strip"
+    },
+    "engine": "auto",
+    "quality": "quality"
+  },
+  "engine": {
+    "id": "imaging",
+    "version": "1.0",
+    "model_hash": null,
+    "precision": "uint8",
+    "inference_dimensions": [],
+    "runtime": "imaging-kernel",
+    "backend": "local",
+    "refinement": "none"
+  },
+  "encoder": {
+    "format": "png",
+    "quality": 90,
+    "metadata": "strip",
+    "kernel": "declared imaging adapter"
+  },
+  "applied_operations": [
+    {
+      "op": "canvas",
+      "width": 48,
+      "height": 48,
+      "fit": "contain",
+      "background": "#ffffff"
+    }
+  ],
+  "output": {
+    "width": 48,
+    "height": 48,
+    "format": "png",
+    "channels": 4,
+    "has_alpha": true,
+    "is_opaque": true,
+    "bytes": 489,
+    "color_space": "srgb",
+    "pages": 1,
+    "metadata": {
+      "icc": true,
+      "exif": false,
+      "density": 25
+    },
+    "hash": "9a71fc1fa923a9e9531ab3cacbf00087d16bcbbc212a2658f98b8ce19b0e155c"
+  },
+  "timings_ms": {
+    "decode": 21.99033200000008,
+    "render": 1.2242690000000493,
+    "encode": 4.276161999999999,
+    "validate": 17.024391000000037
+  },
+  "warnings": [],
+  "rules": []
+}

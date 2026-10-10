@@ -1,0 +1,13 @@
+{
+  "base_lock_sha256": "24d67c83f2c26ebd70da98d2d9315b55b82d84b95e7ca160afff542c41883c52",
+  "extension_lock_sha256": "74310df2761ad1bfa50fd036aa8a801d20a5e934ee828ac6d0c03ba8de1421b8",
+  "existing_packages_unchanged": true,
+  "added": {
+    "flatbuffers": "25.2.10",
+    "protobuf": "4.25.8",
+    "onnxruntime": "1.30.0",
+    "onnx": "1.17.0"
+  },
+  "production_dependencies_changed": false,
+  "pip_check": "PASS"
+}

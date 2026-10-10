@@ -1,0 +1,103 @@
+{
+  "scope": "Actual native A4 synthetic correctness output; no physical printer, official-photo, phone or inference claim",
+  "commit": "ba814066e7357383812ac12229aec5d5f878e9a0",
+  "node": "v26.11.1",
+  "observed_at": "2026-10-09T11:42:35.212Z",
+  "source_hashes": {
+    "packages/engines/src/pipeline.ts": "31432b88e8f66f5db9a4cecab0a087d1486d43013a374506bedd18334a324dfc",
+    "packages/engines/src/native.ts": "74f1c1024ce9cacf785211fbfea19524cbfe97cac6456063e700d847bb87fb6c",
+    "packages/core/src/index.ts": "2baf2b58c4e2f4b46adb179d423ffadb70bdfd0f5fcf309d151570006b4ee063",
+    "packages/contract/src/index.ts": "fc43489ff97420a5b4fd13ba8da2339d176f9a360b699f16e16f4c1bb4bb16ac"
+  },
+  "input_hash": "fb94a6c24364d6dc36cd7978517794f52c5cb88a497badf80bb9a7d83f287ae6",
+  "status": "PASS",
+  "input_preserved": true,
+  "output_hash_matches": true,
+  "width": 2480,
+  "height": 3508,
+  "density": 300,
+  "exact_decoded_pixels": true,
+  "decoded_bytes": 34799360,
+  "placements": [
+    {
+      "x": 118,
+      "y": 118
+    },
+    {
+      "x": 590,
+      "y": 118
+    },
+    {
+      "x": 1062,
+      "y": 118
+    },
+    {
+      "x": 1534,
+      "y": 118
+    },
+    {
+      "x": 118,
+      "y": 708
+    },
+    {
+      "x": 590,
+      "y": 708
+    },
+    {
+      "x": 1062,
+      "y": 708
+    },
+    {
+      "x": 1534,
+      "y": 708
+    },
+    {
+      "x": 118,
+      "y": 1298
+    },
+    {
+      "x": 590,
+      "y": 1298
+    },
+    {
+      "x": 1062,
+      "y": 1298
+    },
+    {
+      "x": 1534,
+      "y": 1298
+    },
+    {
+      "x": 118,
+      "y": 1888
+    },
+    {
+      "x": 590,
+      "y": 1888
+    },
+    {
+      "x": 1062,
+      "y": 1888
+    },
+    {
+      "x": 1534,
+      "y": 1888
+    },
+    {
+      "x": 118,
+      "y": 2478
+    },
+    {
+      "x": 590,
+      "y": 2478
+    },
+    {
+      "x": 1062,
+      "y": 2478
+    },
+    {
+      "x": 1534,
+      "y": 2478
+    }
+  ]
+}

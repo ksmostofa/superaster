@@ -1,0 +1,13 @@
+test_animated_fixture_is_not_single_frame (test_evidence.ImageEvidenceTest.test_animated_fixture_is_not_single_frame) ... ok
+test_composition_uses_actual_alpha_and_rgb (test_evidence.ImageEvidenceTest.test_composition_uses_actual_alpha_and_rgb) ... ok
+test_decoded_alpha_counts (test_evidence.ImageEvidenceTest.test_decoded_alpha_counts) ... ok
+test_exif_normalizes_once (test_evidence.ImageEvidenceTest.test_exif_normalizes_once) ... ok
+test_fixture_reproduction (test_evidence.ImageEvidenceTest.test_fixture_reproduction) ... ok
+test_percentiles_do_not_create_missing_measurements (test_evidence.ImageEvidenceTest.test_percentiles_do_not_create_missing_measurements) ... ok
+test_runner_bounds_stalled_command (test_evidence.ImageEvidenceTest.test_runner_bounds_stalled_command) ... ok
+test_runner_reports_success_without_output_as_failure (test_evidence.ImageEvidenceTest.test_runner_reports_success_without_output_as_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.357s
+
+OK

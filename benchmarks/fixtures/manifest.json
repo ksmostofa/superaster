@@ -1,0 +1,129 @@
+{
+  "files": [
+    {
+      "bytes": 115,
+      "path": "benchmarks/fixtures/generated/animated.gif",
+      "sha256": "ae5739261c1c6271c42277eb7591442e2436eeacc4df05da0f5dc8ed9a23f205"
+    },
+    {
+      "bytes": 162,
+      "path": "benchmarks/fixtures/generated/composite-black.png",
+      "sha256": "dc00e8a9892d1679629a64e222ee90ce3638166a9e07ade265d9cca5a7c9a6f1"
+    },
+    {
+      "bytes": 186,
+      "path": "benchmarks/fixtures/generated/composite-color.png",
+      "sha256": "9a51bfd1e2920df21a91f58334ef93e89f1e9cab22826659bc4a40d5e6ed8e3c"
+    },
+    {
+      "bytes": 177,
+      "path": "benchmarks/fixtures/generated/composite-white.png",
+      "sha256": "9262404f39cad133ba9a4bdd35f4019a0e7d593d444aa0b66a1df1fbba5bfec5"
+    },
+    {
+      "bytes": 41,
+      "path": "benchmarks/fixtures/generated/corrupt.jpg",
+      "sha256": "228ec6c95251f7031344db761deea8ccee16d82c9952849bbda39d108fb3867a"
+    },
+    {
+      "bytes": 80,
+      "path": "benchmarks/fixtures/generated/mask.png",
+      "sha256": "b579ed9f1ec0edee0d63a2aa9fcf536c6d886c434200ddff523f22e0a7855233"
+    },
+    {
+      "bytes": 1507,
+      "path": "benchmarks/fixtures/generated/orientation-6.jpg",
+      "sha256": "f10fb434036e57c018174e037cb48c88437f08b1b80092959e53bd3585bd49e5"
+    },
+    {
+      "bytes": 156,
+      "path": "benchmarks/fixtures/generated/orientation-normalized.png",
+      "sha256": "8d94e28aa99d599972625766c405a46e37af5473051be459387dded00ccda977"
+    },
+    {
+      "bytes": 45,
+      "path": "benchmarks/fixtures/generated/oversized-header.png",
+      "sha256": "c0c9273e7eb56ec7db3669e2f894a31811a98bea731842465a5967d0ee5e3f62"
+    },
+    {
+      "bytes": 100,
+      "path": "benchmarks/fixtures/generated/rgba.png",
+      "sha256": "96b35218df196e6cf5b5fdb9c87436e0f198f45c56f89d8e972a1d6d06465f16"
+    },
+    {
+      "bytes": 571,
+      "path": "benchmarks/fixtures/generated/srgb-icc.png",
+      "sha256": "27056b8f91ebcda5ea7ae6556a5f025b39ccc6357e918068af41c61d851771db"
+    },
+    {
+      "bytes": 107,
+      "path": "benchmarks/fixtures/generated/unsupported.svg",
+      "sha256": "001149c325c5dc05598fcd615f18de29156c5508fa66f7e1aba78cd5a4680c98"
+    }
+  ],
+  "generator": "benchmarks/generate_fixtures.py",
+  "generator_sha256": "5c8a666e33a5c231e7a5c75e99db23309030f26d4c754fb0acc9ea4281d61ebe",
+  "known_answers": {
+    "animated.gif": {
+      "expected": "unsupported animated-input error",
+      "frames": 2
+    },
+    "composites": {
+      "formula": "round((foreground_byte*alpha_byte + background_byte*(255-alpha_byte))/255) in encoded sRGB bytes; no linear-light claim"
+    },
+    "corrupt.jpg": {
+      "expected": "explicit invalid-image error"
+    },
+    "mask.png": {
+      "columns": [
+        0,
+        64,
+        128,
+        192,
+        255,
+        128,
+        255,
+        0
+      ],
+      "height": 6,
+      "meaning": "light foreground; dark background",
+      "width": 8
+    },
+    "orientation-6.jpg": {
+      "normalize_exactly_once": true,
+      "normalized_height": 80,
+      "normalized_width": 60,
+      "orientation": 6,
+      "raw_height": 60,
+      "raw_width": 80,
+      "sensitive_metadata_present": [
+        "Artist",
+        "DateTime"
+      ]
+    },
+    "oversized-header.png": {
+      "declared_height": 100000,
+      "declared_width": 100000,
+      "expected": "reject before large allocation; payload intentionally has no IDAT"
+    },
+    "rgba.png": {
+      "height": 6,
+      "mode": "RGBA",
+      "pixel_formula": "[31*x, 43*y, 19*(x+y), [0,64,128,192,255,128,255,0][x]]",
+      "width": 8
+    },
+    "srgb-icc.png": {
+      "dpi": 300,
+      "height": 60,
+      "profile": "embedded generated sRGB ICC; required color metadata retained by policy",
+      "width": 80
+    },
+    "unsupported.svg": {
+      "expected": "unsupported format error; never execute arbitrary SVG"
+    }
+  },
+  "license": "CC0-1.0",
+  "pillow": "12.3.0",
+  "role": "deterministic correctness only; excluded from quality corpora",
+  "version": "1.0.0"
+}

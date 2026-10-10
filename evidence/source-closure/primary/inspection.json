@@ -1,0 +1,118 @@
+[
+  {
+    "component": "zlib-ng",
+    "archive_file_entries": 355,
+    "retained_license_paths": [
+      "zlib-ng-2.3.3/LICENSE.md"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "libffi",
+    "archive_file_entries": 481,
+    "retained_license_paths": [
+      "libffi-3.8.0/LICENSE-BUILDTOOLS",
+      "libffi-3.8.0/LICENSE"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "expat",
+    "archive_file_entries": 173,
+    "retained_license_paths": [
+      "expat-2.8.5/COPYING"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "lcms",
+    "archive_file_entries": 340,
+    "retained_license_paths": [
+      "lcms2-2.19.1/LICENSE",
+      "lcms2-2.19.1/plugins/fast_float/COPYING.GPL3",
+      "lcms2-2.19.1/plugins/threaded/COPYING.GPL3",
+      "lcms2-2.19.1/utils/jpgicc/LICENSE_iccjpeg"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "highway",
+    "archive_file_entries": 278,
+    "retained_license_paths": [
+      "highway-1.4.0/LICENSE"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "mozjpeg",
+    "archive_file_entries": 550,
+    "retained_license_paths": [
+      "mozjpeg-08265790774cd0714832c9e675522acbe5581437/LICENSE.md",
+      "mozjpeg-08265790774cd0714832c9e675522acbe5581437/java/doc/legal/ADDITIONAL_LICENSE_INFO",
+      "mozjpeg-08265790774cd0714832c9e675522acbe5581437/java/doc/legal/LICENSE",
+      "mozjpeg-08265790774cd0714832c9e675522acbe5581437/release/License.rtf"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "libultrahdr",
+    "archive_file_entries": 230,
+    "retained_license_paths": [
+      "libultrahdr-2.0.2/LICENSE",
+      "libultrahdr-2.0.2/LICENSE-APACHE",
+      "libultrahdr-2.0.2/LICENSE-MIT",
+      "libultrahdr-2.0.2/adobe-hdr-gain-map-license/Android.bp",
+      "libultrahdr-2.0.2/adobe-hdr-gain-map-license/NOTICE",
+      "libultrahdr-2.0.2/tests/data/LICENSE",
+      "libultrahdr-2.0.2/third_party/image_io/LICENSE",
+      "libultrahdr-2.0.2/third_party/image_io/MODULE_LICENSE_APACHE2",
+      "libultrahdr-2.0.2/third_party/image_io/src/modp_b64/LICENSE",
+      "libultrahdr-2.0.2/third_party/image_io/src/modp_b64/MODULE_LICENSE_BSD"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "libpng",
+    "archive_file_entries": 610,
+    "retained_license_paths": [
+      "libpng-1.6.58/LICENSE",
+      "libpng-1.6.58/ci/LICENSE_MIT.txt",
+      "libpng-1.6.58/contrib/gregbook/COPYING",
+      "libpng-1.6.58/contrib/gregbook/LICENSE",
+      "libpng-1.6.58/contrib/pngexif/LICENSE_MIT.txt",
+      "libpng-1.6.58/contrib/pngminus/LICENSE.txt"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "libimagequant",
+    "archive_file_entries": 29,
+    "retained_license_paths": [],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "cgif",
+    "archive_file_entries": 74,
+    "retained_license_paths": [
+      "cgif-0.5.4/LICENSE"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "webp",
+    "archive_file_entries": 367,
+    "retained_license_paths": [
+      "libwebp-1.6.0/COPYING"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  },
+  {
+    "component": "tiff",
+    "archive_file_entries": 657,
+    "retained_license_paths": [
+      "libtiff-v4.7.2/LICENSE.md",
+      "libtiff-v4.7.2/doc/project/license.rst"
+    ],
+    "scope": "Source archive inspection only; no build or source correspondence acceptance"
+  }
+]

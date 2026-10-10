@@ -1,0 +1,187 @@
+{
+  "scope": "One-shot QA worker ErrorEvent injection and held-inspection injection were identified development faults; retries executed real WASM imaging. No ML model or physical memory failure was simulated as production behavior.",
+  "worker_error_recovery": {
+    "decoded_dimensions": [
+      120,
+      80
+    ],
+    "hash": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7",
+    "record": {
+      "contract_version": "1.0",
+      "implementation_version": "0.1.0-alpha.1",
+      "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+      "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "binding_hashes": {},
+      "resolved_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "composite",
+            "background": "#ffffff"
+          },
+          {
+            "op": "resize",
+            "width": 120
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "engine": {
+        "id": "imaging",
+        "version": "1.0",
+        "model_hash": null,
+        "precision": "uint8",
+        "inference_dimensions": [],
+        "runtime": "imaging-kernel",
+        "backend": "local",
+        "refinement": "none"
+      },
+      "encoder": {
+        "format": "png",
+        "quality": 90,
+        "metadata": "strip",
+        "kernel": "declared imaging adapter"
+      },
+      "applied_operations": [
+        {
+          "op": "composite",
+          "background": "#ffffff"
+        },
+        {
+          "op": "resize",
+          "width": 120
+        }
+      ],
+      "output": {
+        "width": 120,
+        "height": 80,
+        "format": "png",
+        "channels": 4,
+        "has_alpha": true,
+        "is_opaque": true,
+        "bytes": 2071,
+        "color_space": "srgb",
+        "pages": 1,
+        "metadata": {
+          "icc": true,
+          "exif": false,
+          "density": 72
+        },
+        "hash": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7"
+      },
+      "timings_ms": {
+        "decode": 4.5150000005960464,
+        "render": 9.469999998807907,
+        "encode": 2.4099999964237213,
+        "validate": 10.719999998807907
+      },
+      "warnings": [],
+      "rules": []
+    },
+    "checks": {
+      "dimensions": true,
+      "record_hash": true,
+      "record_bytes": true
+    }
+  },
+  "inspection_cancel_retry": {
+    "archive_sha256": "5deacb8902eb3d65f00d86a7ef94105fa151d3119f105fb500b0198458a08499",
+    "manifest": [
+      {
+        "index": 1,
+        "input_ref": "image-5",
+        "input": "same.png",
+        "status": "completed",
+        "output": "001-same.png.png",
+        "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+        "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+        "requested_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+        "requested_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "composite",
+              "background": "#ffffff"
+            },
+            {
+              "op": "resize",
+              "width": 120
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf"
+      },
+      {
+        "index": 2,
+        "input_ref": "image-6",
+        "input": "same.png",
+        "status": "completed",
+        "output": "002-same.png.png",
+        "input_hash": "5d52d974f4f973a29405f539118bdea9ad4eded3f781fe4101d241d9b12ad54d",
+        "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+        "requested_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+        "requested_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "composite",
+              "background": "#ffffff"
+            },
+            {
+              "op": "resize",
+              "width": 120
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf"
+      }
+    ],
+    "checks": [
+      {
+        "ref": "image-5",
+        "status_completed": true,
+        "dimensions": true,
+        "input_hash": true,
+        "output_sha256": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7",
+        "format_png": true,
+        "identity": true
+      },
+      {
+        "ref": "image-6",
+        "status_completed": true,
+        "dimensions": true,
+        "input_hash": true,
+        "output_sha256": "a69f434e9298faa2139c99f7f1beb0ac185e7d4e7d6f7b2a5216734832bd6e78",
+        "format_png": true,
+        "identity": true
+      }
+    ]
+  },
+  "limits": "This does not measure cancellation latency or real device OOM recovery."
+}

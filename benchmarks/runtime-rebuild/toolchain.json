@@ -1,0 +1,31 @@
+{
+  "emsdk_tag": "6.0.10",
+  "emsdk_commit": "a2b92777574c2feda07994cd4f1079a3dfc151f8",
+  "release_toolchain": "666337b525e673e769121856d175f6f52b8ead64",
+  "archives": [
+    {
+      "file": "wasm-binaries-6.0.10.tar.xz",
+      "url": "https://storage.googleapis.com/webassembly/emscripten-releases-builds/linux/666337b525e673e769121856d175f6f52b8ead64/wasm-binaries.tar.xz",
+      "bytes": 299612332,
+      "sha256": "a51dd2829bdf725d268974728e032533b106ea01cb482a62288ec12627a7abbe"
+    },
+    {
+      "file": "node-v24.19.0-linux-x64.tar.xz",
+      "url": "https://storage.googleapis.com/webassembly/emscripten-releases-builds/deps/node-v24.19.0-linux-x64.tar.xz",
+      "bytes": 31633904,
+      "sha256": "14b342e71204f811bde6153be8e04b62aef63c236fef92b55f9c83154b409647"
+    },
+    {
+      "file": "meson-1.12.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/57/99/36cd25f9598eef70db97577440a70a360af505f6f01c2338a18d1556079c/meson-1.12.1-py3-none-any.whl",
+      "bytes": 1108668,
+      "sha256": "930bc7542cbd9f57009e182fd014eba48cf1a0180a7b9006d2d32d8f168d8b02"
+    },
+    {
+      "file": "cmake-3.28.3-linux-x86_64.tar.gz",
+      "url": "https://github.com/Kitware/CMake/releases/download/v3.28.3/cmake-3.28.3-linux-x86_64.tar.gz",
+      "bytes": 52618129,
+      "sha256": "804d231460ab3c8b556a42d2660af4ac7a0e21c98a7f8ee3318a74b4a9a187a6"
+    }
+  ]
+}

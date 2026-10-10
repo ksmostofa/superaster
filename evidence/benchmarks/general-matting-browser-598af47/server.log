@@ -1,0 +1,12 @@
+127.0.0.1 loopback allowlist server, session79851. Observed HTTP200 GETs:
+/full-browser.html
+/full-browser.mjs
+/full-browser-worker.mjs
+/runtime/ort.wasm.min.mjs
+/input.npy
+/source-logits.npy
+/native-logits.npy
+/model.onnx
+/runtime/ort-wasm-simd-threaded.mjs
+/runtime/ort-wasm-simd-threaded.wasm
+Stopped with SIGINT after captured outcome. This is a concise transcription of tool output, not a full worker-network capture.

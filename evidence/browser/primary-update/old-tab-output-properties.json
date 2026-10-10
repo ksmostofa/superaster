@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-10-09T16:42:23.188Z",
+  "sha256": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7",
+  "record_output_hash_matches": true,
+  "width": 120,
+  "height": 80,
+  "format": "png",
+  "bytes": 2071,
+  "local_output": "/home/sadid/Downloads/same.png.png",
+  "scope": "Real deterministic reprocess and download after blocked update. No inference."
+}

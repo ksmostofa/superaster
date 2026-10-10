@@ -1,0 +1,14 @@
+import {readdir,readFile,writeFile,unlink} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {join} from 'node:path';
+const root='dist/web';
+let files=(await readdir(root,{recursive:true,withFileTypes:true})).filter(item=>item.isFile()).map(item=>join(item.parentPath,item.name).slice(root.length+1)).filter(path=>!path.startsWith('_')&&path!=='sw.js');
+// ORT's universal bundle emits a WebNN asyncify binary even though Superaster
+// only requests WASM/WebGPU. WebGPU receives its verified jsep bytes directly.
+const unused=await readFile('node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.asyncify.wasm'),unusedHash=createHash('sha256').update(unused).digest('hex');
+for(const file of files){const bytes=await readFile(join(root,file));if(file.includes('ort-wasm-simd-threaded.asyncify-')&&createHash('sha256').update(bytes).digest('hex')===unusedHash){await unlink(join(root,file));files=files.filter(value=>value!==file);continue;}if(bytes.length>25*1024*1024)throw new Error(`Static deployment asset exceeds 25 MiB: ${file}`);}
+const hash=createHash('sha256');for(const file of files.sort())hash.update(file).update(await readFile(join(root,file)));
+const cache='superaster-app-'+hash.digest('hex').slice(0,16);
+const assets=files.map(file=>'/'+file);
+await writeFile(join(root,'sw.js'),`// Generated from exact build assets. Image bytes are never sent to this worker.\nconst CACHE=${JSON.stringify(cache)},ASSETS=${JSON.stringify(assets)};\nself.addEventListener('install',event=>{event.waitUntil((async()=>{const names=(await caches.keys()).filter(name=>name.startsWith('superaster-app-'));if(!names.includes(CACHE)&&names.length>=2)throw new Error('Finish exports and close all app tabs before caching another update');const created=!names.includes(CACHE);try{const cache=await caches.open(CACHE);await cache.addAll(ASSETS);}catch(error){if(created)await caches.delete(CACHE);throw error;}})());});\nself.addEventListener('activate',event=>{event.waitUntil((async()=>{const names=(await caches.keys()).filter(name=>name.startsWith('superaster-app-'));const current=names.indexOf(CACHE);if(current>=0)for(const name of names.slice(0,current))await caches.delete(name);})());});\nself.addEventListener('fetch',event=>{const request=event.request,url=new URL(request.url);if(request.method!=='GET'||url.origin!==self.location.origin)return;if(request.mode==='navigate'){event.respondWith(caches.open(CACHE).then(async cache=>(await cache.match('/index.html'))??fetch(request)));return;}if(!ASSETS.includes(url.pathname))return;event.respondWith(caches.open(CACHE).then(async cache=>(await cache.match(url.pathname))??fetch(request)));});\n`);
+console.log(JSON.stringify({cache,assets:assets.length}));

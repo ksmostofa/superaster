@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "cli-help",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "--help"
+    ],
+    "exit": 0,
+    "signal": null,
+    "stdout": "Superaster local alpha\n\n  superaster inspect INPUT\n  superaster remove INPUT --output cutout.png [--quality quality|fast] [--engine ID] [--model-dir DIR] [--overwrite]\n  superaster run RECIPE.json --input INPUT --output OUTPUT [--bind reference=PATH] [--model-dir DIR] [--overwrite]\n  superaster batch INPUT_DIR --recipe RECIPE.json --output OUTPUT_DIR [--bind reference=PATH] [--model-dir DIR] [--resume|--retry]\n  superaster models list\n  superaster models install ID [--model-dir DIR]\n  superaster capabilities --json\n  superaster validate INPUT --preset ID [--preset-version VERSION]\n  superaster resolve REQUEST [--preset-version VERSION]\n  superaster mcp --roots DIR[,DIR] [--model-dir DIR]\n\nModels are separate verified downloads. Images stay local; outputs do not overwrite existing files unless --overwrite is explicit. JSON uses stdout; progress uses stderr.\n",
+    "stderr": ""
+  },
+  {
+    "id": "installed-bin-entrypoint",
+    "command": [
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/.bin/superaster",
+      "capabilities",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"contract_version\": \"1.0\",\n  \"implementation_version\": \"0.1.0-alpha.1\",\n  \"adapter\": \"native\",\n  \"operation_definitions\": [\n    {\n      \"id\": \"remove_background\",\n      \"features\": [\n        \"F001\",\n        \"F002\",\n        \"F003\",\n        \"F004\"\n      ],\n      \"description\": \"Continuous foreground alpha from approved local model\"\n    },\n    {\n      \"id\": \"resize\",\n      \"features\": [\n        \"F027\"\n      ],\n      \"description\": \"Exact resampling with explicit upscaling permission\"\n    },\n    {\n      \"id\": \"crop\",\n      \"features\": [\n        \"F028\"\n      ],\n      \"description\": \"Integer rectangle in current oriented pixels\"\n    },\n    {\n      \"id\": \"subject_crop\",\n      \"features\": [\n        \"F029\"\n      ],\n      \"description\": \"Alpha bounds plus explicit pixel margin\"\n    },\n    {\n      \"id\": \"canvas\",\n      \"features\": [\n        \"F030\",\n        \"F031\"\n      ],\n      \"description\": \"Fit and place on exact canvas\"\n    },\n    {\n      \"id\": \"composite\",\n      \"features\": [\n        \"F025\",\n        \"F026\"\n      ],\n      \"description\": \"Explicit solid or supplied background\"\n    },\n    {\n      \"id\": \"rotate\",\n      \"features\": [\n        \"F032\"\n      ],\n      \"description\": \"Clockwise degrees, expanded bounds\"\n    },\n    {\n      \"id\": \"flip\",\n      \"features\": [\n        \"F033\"\n      ],\n      \"description\": \"Horizontal or vertical reflection\"\n    },\n    {\n      \"id\": \"correct\",\n      \"features\": [\n        \"F013\",\n        \"F014\",\n        \"F015\"\n      ],\n      \"description\": \"Erase/restore from normalized original\"\n    },\n    {\n      \"id\": \"mask\",\n      \"features\": [\n        \"F037\"\n      ],\n      \"description\": \"Grayscale foreground coverage\"\n    },\n    {\n      \"id\": \"normalize\",\n      \"features\": [\n        \"F038\",\n        \"F039\",\n        \"F040\",\n        \"F041\"\n      ],\n      \"description\": \"Orient once and convert to sRGB\"\n    },\n    {\n      \"id\": \"print_sheet\",\n      \"features\": [\n        \"F084\",\n        \"F085\"\n      ],\n      \"description\": \"Fixed grid, round mm*dpi/25.4 to nearest pixel\"\n    }\n  ],\n  \"operations\": [\n    \"remove_background\",\n    \"resize\",\n    \"crop\",\n    \"subject_crop\",\n    \"canvas\",\n    \"composite\",\n    \"rotate\",\n    \"flip\",\n    \"correct\",\n    \"mask\",\n    \"normalize\",\n    \"print_sheet\"\n  ],\n  \"formats\": [\n    \"png\",\n    \"jpeg\",\n    \"webp\"\n  ],\n  \"engines\": [\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-512-fp16\",\n      \"name\": \"BiRefNet 512 Quality\",\n      \"repository\": \"naddy24/birefnet-512-webgpu\",\n      \"revision\": \"ca02a86c094927479e2be583abe87f8ea73fcfda\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 473435223,\n      \"sha256\": \"6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8\",\n      \"inputSize\": 512,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx\",\n      \"version\": \"ca02a86c094927479e2be583abe87f8ea73fcfda\",\n      \"width\": 512,\n      \"height\": 512,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-lite-512-fp16\",\n      \"name\": \"BiRefNet lite 512 Fast\",\n      \"repository\": \"studioludens/birefnet-lite-512\",\n      \"revision\": \"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 98484532,\n      \"sha256\": \"eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516\",\n      \"inputSize\": 512,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model_fp16.onnx\",\n      \"version\": \"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\n      \"width\": 512,\n      \"height\": 512,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-lite-1024-fp16\",\n      \"name\": \"BiRefNet lite 1024 candidate\",\n      \"repository\": \"onnx-community/BiRefNet_lite-ONNX\",\n      \"revision\": \"de15b22ba131738a16dff04aab8bdf8dc32e3ac1\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 114538221,\n      \"sha256\": \"d39b897ceb16ae654c1731f3dba0cf9b368d9cae74b5a57459b455cc8bfec402\",\n      \"inputSize\": 1024,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/onnx/model_fp16.onnx\",\n      \"version\": \"de15b22ba131738a16dff04aab8bdf8dc32e3ac1\",\n      \"width\": 1024,\n      \"height\": 1024,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-full-1024-fp16\",\n      \"name\": \"BiRefNet full 1024 candidate\",\n      \"repository\": \"onnx-community/BiRefNet-ONNX\",\n      \"revision\": \"534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 489666272,\n      \"sha256\": \"3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09\",\n      \"inputSize\": 1024,\n      \"width\": 1024,\n      \"height\": 1024,\n      \"license\": \"MIT\",\n      \"version\": \"534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67\",\n      \"url\": \"https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/onnx/model_fp16.onnx\",\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"mixed fp32/fp16 weights\",\n      \"inputName\": \"input.1\",\n      \"outputName\": \"17728\",\n      \"normalization\": \"unit\",\n      \"outputType\": \"float16\",\n      \"outputActivation\": \"coverage\",\n      \"id\": \"ben2-base-1024\",\n      \"name\": \"BEN2 Base candidate\",\n      \"repository\": \"PramaLLC/BEN2\",\n      \"revision\": \"e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f\",\n      \"file\": \"BEN2_Base.onnx\",\n      \"bytes\": 222932053,\n      \"sha256\": \"22cea62108ff53b7ccc20f7a008bf30494228d84b1687f29ecbe76936a998101\",\n      \"inputSize\": 1024,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/PramaLLC/BEN2/resolve/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/BEN2_Base.onnx\",\n      \"version\": \"e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f\",\n      \"width\": 1024,\n      \"height\": 1024,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    }\n  ],\n  \"limits\": {\n    \"max_pixels\": 16777216,\n    \"max_bytes\": 40000000,\n    \"max_concurrency\": 1\n  },\n  \"offline\": true\n}\n",
+    "stderr": ""
+  },
+  {
+    "id": "cli-capabilities",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "capabilities",
+      "--json"
+    ],
+    "exit": 0,
+    "signal": null,
+    "stdout": "{\n  \"contract_version\": \"1.0\",\n  \"implementation_version\": \"0.1.0-alpha.1\",\n  \"adapter\": \"native\",\n  \"operation_definitions\": [\n    {\n      \"id\": \"remove_background\",\n      \"features\": [\n        \"F001\",\n        \"F002\",\n        \"F003\",\n        \"F004\"\n      ],\n      \"description\": \"Continuous foreground alpha from approved local model\"\n    },\n    {\n      \"id\": \"resize\",\n      \"features\": [\n        \"F027\"\n      ],\n      \"description\": \"Exact resampling with explicit upscaling permission\"\n    },\n    {\n      \"id\": \"crop\",\n      \"features\": [\n        \"F028\"\n      ],\n      \"description\": \"Integer rectangle in current oriented pixels\"\n    },\n    {\n      \"id\": \"subject_crop\",\n      \"features\": [\n        \"F029\"\n      ],\n      \"description\": \"Alpha bounds plus explicit pixel margin\"\n    },\n    {\n      \"id\": \"canvas\",\n      \"features\": [\n        \"F030\",\n        \"F031\"\n      ],\n      \"description\": \"Fit and place on exact canvas\"\n    },\n    {\n      \"id\": \"composite\",\n      \"features\": [\n        \"F025\",\n        \"F026\"\n      ],\n      \"description\": \"Explicit solid or supplied background\"\n    },\n    {\n      \"id\": \"rotate\",\n      \"features\": [\n        \"F032\"\n      ],\n      \"description\": \"Clockwise degrees, expanded bounds\"\n    },\n    {\n      \"id\": \"flip\",\n      \"features\": [\n        \"F033\"\n      ],\n      \"description\": \"Horizontal or vertical reflection\"\n    },\n    {\n      \"id\": \"correct\",\n      \"features\": [\n        \"F013\",\n        \"F014\",\n        \"F015\"\n      ],\n      \"description\": \"Erase/restore from normalized original\"\n    },\n    {\n      \"id\": \"mask\",\n      \"features\": [\n        \"F037\"\n      ],\n      \"description\": \"Grayscale foreground coverage\"\n    },\n    {\n      \"id\": \"normalize\",\n      \"features\": [\n        \"F038\",\n        \"F039\",\n        \"F040\",\n        \"F041\"\n      ],\n      \"description\": \"Orient once and convert to sRGB\"\n    },\n    {\n      \"id\": \"print_sheet\",\n      \"features\": [\n        \"F084\",\n        \"F085\"\n      ],\n      \"description\": \"Fixed grid, round mm*dpi/25.4 to nearest pixel\"\n    }\n  ],\n  \"operations\": [\n    \"remove_background\",\n    \"resize\",\n    \"crop\",\n    \"subject_crop\",\n    \"canvas\",\n    \"composite\",\n    \"rotate\",\n    \"flip\",\n    \"correct\",\n    \"mask\",\n    \"normalize\",\n    \"print_sheet\"\n  ],\n  \"formats\": [\n    \"png\",\n    \"jpeg\",\n    \"webp\"\n  ],\n  \"engines\": [\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-512-fp16\",\n      \"name\": \"BiRefNet 512 Quality\",\n      \"repository\": \"naddy24/birefnet-512-webgpu\",\n      \"revision\": \"ca02a86c094927479e2be583abe87f8ea73fcfda\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 473435223,\n      \"sha256\": \"6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8\",\n      \"inputSize\": 512,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx\",\n      \"version\": \"ca02a86c094927479e2be583abe87f8ea73fcfda\",\n      \"width\": 512,\n      \"height\": 512,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-lite-512-fp16\",\n      \"name\": \"BiRefNet lite 512 Fast\",\n      \"repository\": \"studioludens/birefnet-lite-512\",\n      \"revision\": \"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 98484532,\n      \"sha256\": \"eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516\",\n      \"inputSize\": 512,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model_fp16.onnx\",\n      \"version\": \"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\n      \"width\": 512,\n      \"height\": 512,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-lite-1024-fp16\",\n      \"name\": \"BiRefNet lite 1024 candidate\",\n      \"repository\": \"onnx-community/BiRefNet_lite-ONNX\",\n      \"revision\": \"de15b22ba131738a16dff04aab8bdf8dc32e3ac1\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 114538221,\n      \"sha256\": \"d39b897ceb16ae654c1731f3dba0cf9b368d9cae74b5a57459b455cc8bfec402\",\n      \"inputSize\": 1024,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/onnx/model_fp16.onnx\",\n      \"version\": \"de15b22ba131738a16dff04aab8bdf8dc32e3ac1\",\n      \"width\": 1024,\n      \"height\": 1024,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"fp16\",\n      \"inputName\": \"input_image\",\n      \"outputName\": \"output_image\",\n      \"normalization\": \"imagenet\",\n      \"outputType\": \"float32\",\n      \"outputActivation\": \"logits\",\n      \"id\": \"birefnet-full-1024-fp16\",\n      \"name\": \"BiRefNet full 1024 candidate\",\n      \"repository\": \"onnx-community/BiRefNet-ONNX\",\n      \"revision\": \"534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67\",\n      \"file\": \"onnx/model_fp16.onnx\",\n      \"bytes\": 489666272,\n      \"sha256\": \"3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09\",\n      \"inputSize\": 1024,\n      \"width\": 1024,\n      \"height\": 1024,\n      \"license\": \"MIT\",\n      \"version\": \"534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67\",\n      \"url\": \"https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/onnx/model_fp16.onnx\",\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    },\n    {\n      \"precision\": \"mixed fp32/fp16 weights\",\n      \"inputName\": \"input.1\",\n      \"outputName\": \"17728\",\n      \"normalization\": \"unit\",\n      \"outputType\": \"float16\",\n      \"outputActivation\": \"coverage\",\n      \"id\": \"ben2-base-1024\",\n      \"name\": \"BEN2 Base candidate\",\n      \"repository\": \"PramaLLC/BEN2\",\n      \"revision\": \"e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f\",\n      \"file\": \"BEN2_Base.onnx\",\n      \"bytes\": 222932053,\n      \"sha256\": \"22cea62108ff53b7ccc20f7a008bf30494228d84b1687f29ecbe76936a998101\",\n      \"inputSize\": 1024,\n      \"license\": \"MIT\",\n      \"url\": \"https://huggingface.co/PramaLLC/BEN2/resolve/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/BEN2_Base.onnx\",\n      \"version\": \"e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f\",\n      \"width\": 1024,\n      \"height\": 1024,\n      \"runtime\": \"onnxruntime-node 1.30.0\",\n      \"backend\": \"cpu\",\n      \"validated\": \"diagnostic execution observed; quality and device acceptance incomplete\"\n    }\n  ],\n  \"limits\": {\n    \"max_pixels\": 16777216,\n    \"max_bytes\": 40000000,\n    \"max_concurrency\": 1\n  },\n  \"offline\": true\n}\n",
+    "stderr": ""
+  },
+  {
+    "id": "cli-inspect",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "inspect",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png"
+    ],
+    "exit": 0,
+    "signal": null,
+    "stdout": "{\n  \"width\": 48,\n  \"height\": 32,\n  \"format\": \"png\",\n  \"channels\": 4,\n  \"has_alpha\": true,\n  \"is_opaque\": false,\n  \"bytes\": 175,\n  \"color_space\": \"srgb\",\n  \"pages\": 1,\n  \"metadata\": {\n    \"icc\": false,\n    \"exif\": false,\n    \"density\": 25\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "id": "cli-geometry",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "run",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/recipe.json",
+      "--input",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+      "--output",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/cli.webp"
+    ],
+    "exit": 0,
+    "signal": null,
+    "stdout": "{\n  \"contract_version\": \"1.0\",\n  \"implementation_version\": \"0.1.0-alpha.1\",\n  \"input_hash\": \"f0416c5782a061758c53cf150482aa4a791768785b11cf12d99d00a7277cd3ee\",\n  \"recipe_hash\": \"e7a3f055b5d170bad824e43d7bbcac80462e335bc6068b4a0b9e887f1058c514\",\n  \"binding_hashes\": {},\n  \"resolved_recipe\": {\n    \"spec_version\": \"1.0\",\n    \"input\": {\n      \"ref\": \"input-0\"\n    },\n    \"engine\": \"auto\",\n    \"quality\": \"quality\",\n    \"operations\": [\n      {\n        \"op\": \"canvas\",\n        \"width\": 1200,\n        \"height\": 1200,\n        \"fit\": \"contain\",\n        \"background\": \"#ffffff\",\n        \"position\": \"center\"\n      }\n    ],\n    \"output\": {\n      \"format\": \"webp\",\n      \"quality\": 90,\n      \"metadata\": \"strip\"\n    }\n  },\n  \"engine\": {\n    \"id\": \"imaging\",\n    \"version\": \"1.0\",\n    \"model_hash\": null,\n    \"precision\": \"uint8\",\n    \"inference_dimensions\": [],\n    \"runtime\": \"imaging-kernel\",\n    \"backend\": \"local\",\n    \"refinement\": \"none\"\n  },\n  \"encoder\": {\n    \"format\": \"webp\",\n    \"quality\": 90,\n    \"metadata\": \"strip\",\n    \"kernel\": \"declared imaging adapter\"\n  },\n  \"applied_operations\": [\n    {\n      \"op\": \"canvas\",\n      \"width\": 1200,\n      \"height\": 1200,\n      \"fit\": \"contain\",\n      \"background\": \"#ffffff\",\n      \"position\": \"center\"\n    }\n  ],\n  \"output\": {\n    \"width\": 1200,\n    \"height\": 1200,\n    \"format\": \"webp\",\n    \"channels\": 3,\n    \"has_alpha\": false,\n    \"is_opaque\": true,\n    \"bytes\": 5158,\n    \"color_space\": \"srgb\",\n    \"pages\": 1,\n    \"metadata\": {\n      \"icc\": true,\n      \"exif\": false\n    },\n    \"hash\": \"d89e98cf7006c3b1c17496fffa1bbee613c5d79e90a0c9d0ee18fef384941cbc\"\n  },\n  \"timings_ms\": {\n    \"decode\": 16.309200000000033,\n    \"render\": 126.15614899999991,\n    \"encode\": 112.89337699999999,\n    \"validate\": 0.9664549999999963\n  },\n  \"warnings\": [],\n  \"rules\": []\n}\n",
+    "stderr": "{\"stage\":\"decode\",\"message\":\"decode\"}\n{\"stage\":\"render\",\"message\":\"render\"}\n{\"stage\":\"encode\",\"message\":\"encode\"}\n{\"stage\":\"validate\",\"message\":\"validate\"}\n{\"stage\":\"complete\",\"message\":\"Export complete\"}\n"
+  },
+  {
+    "id": "cli-unknown-option",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "capabilities",
+      "--definitely-unknown"
+    ],
+    "exit": 2,
+    "signal": null,
+    "stdout": "",
+    "stderr": "{\"error\":{\"code\":\"INVALID_INPUT\",\"message\":\"Unknown option '--definitely-unknown'. To specify a positional argument starting with a '-', place it at the end of the command after '--', as in '-- \\\"--definitely-unknown\\\"\",\"details\":{}}}\n"
+  },
+  {
+    "id": "cli-extra-positional",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "inspect",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+      "ignored.png"
+    ],
+    "exit": 2,
+    "signal": null,
+    "stdout": "",
+    "stderr": "{\"error\":{\"code\":\"INVALID_INPUT\",\"message\":\"Too many positional arguments for inspect\",\"details\":{}}}\n"
+  },
+  {
+    "id": "cli-inapplicable-parameter",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "inspect",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+      "--quality",
+      "not-a-quality"
+    ],
+    "exit": 2,
+    "signal": null,
+    "stdout": "",
+    "stderr": "{\"error\":{\"code\":\"INVALID_INPUT\",\"message\":\"--quality is not valid for inspect\",\"details\":{}}}\n"
+  },
+  {
+    "id": "cli-unsupported-operation",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "run",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/unsupported.json",
+      "--input",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+      "--output",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/unsupported.webp"
+    ],
+    "exit": 2,
+    "signal": null,
+    "stdout": "",
+    "stderr": "{\"error\":{\"code\":\"INVALID_RECIPE\",\"message\":\"data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'x', data/operations/0 must have required property 'y', data/operations/0 must have required property 'width', data/operations/0 must have required property 'height', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'margin', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'width', data/operations/0 must have required property 'height', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'angle', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'axis', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'color_space', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'sheet_width_mm', data/operations/0 must have required property 'sheet_height_mm', data/operations/0 must have required property 'item_width_mm', data/operations/0 must have required property 'item_height_mm', data/operations/0 must have required property 'dpi', data/operations/0 must have required property 'rows', data/operations/0 must have required property 'columns', data/operations/0 must have required property 'margin_mm', data/operations/0 must have required property 'spacing_mm', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must match a schema in anyOf\",\"details\":{\"errors\":[{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/0/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/0/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"remove_background\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/1/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/1/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"resize\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"x\"},\"message\":\"must have required property 'x'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"y\"},\"message\":\"must have required property 'y'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"width\"},\"message\":\"must have required property 'width'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"height\"},\"message\":\"must have required property 'height'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"crop\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"margin\"},\"message\":\"must have required property 'margin'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"subject_crop\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"width\"},\"message\":\"must have required property 'width'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"height\"},\"message\":\"must have required property 'height'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"canvas\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/5/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/5/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"composite\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"angle\"},\"message\":\"must have required property 'angle'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"rotate\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"axis\"},\"message\":\"must have required property 'axis'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"flip\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/8/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/8/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"correct\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/9/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/9/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"mask\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"color_space\"},\"message\":\"must have required property 'color_space'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"normalize\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"sheet_width_mm\"},\"message\":\"must have required property 'sheet_width_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"sheet_height_mm\"},\"message\":\"must have required property 'sheet_height_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"item_width_mm\"},\"message\":\"must have required property 'item_width_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"item_height_mm\"},\"message\":\"must have required property 'item_height_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"dpi\"},\"message\":\"must have required property 'dpi'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"rows\"},\"message\":\"must have required property 'rows'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"columns\"},\"message\":\"must have required property 'columns'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"margin_mm\"},\"message\":\"must have required property 'margin_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"spacing_mm\"},\"message\":\"must have required property 'spacing_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"print_sheet\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf\",\"keyword\":\"anyOf\",\"params\":{},\"message\":\"must match a schema in anyOf\"}]}}}\n"
+  },
+  {
+    "id": "cli-unsupported-engine",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "run",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/unknown-engine.json",
+      "--input",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+      "--output",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/unknown-engine.webp"
+    ],
+    "exit": 3,
+    "signal": null,
+    "stdout": "",
+    "stderr": "{\"error\":{\"code\":\"UNSUPPORTED\",\"message\":\"Engine unsupported-engine-id is unavailable on native\",\"details\":{\"available\":[\"birefnet-512-fp16\",\"birefnet-lite-512-fp16\",\"birefnet-lite-1024-fp16\",\"birefnet-full-1024-fp16\",\"ben2-base-1024\"]}}}\n"
+  },
+  {
+    "id": "cli-corrupt-input",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "inspect",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/corrupt.png"
+    ],
+    "exit": 2,
+    "signal": null,
+    "stdout": "",
+    "stderr": "{\"error\":{\"code\":\"INVALID_INPUT\",\"message\":\"Input buffer contains unsupported image format\",\"details\":{}}}\n"
+  },
+  {
+    "id": "cli-existing-output",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "run",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/recipe.json",
+      "--input",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+      "--output",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/cli.webp"
+    ],
+    "exit": 4,
+    "signal": null,
+    "stdout": "",
+    "stderr": "{\"stage\":\"decode\",\"message\":\"decode\"}\n{\"stage\":\"render\",\"message\":\"render\"}\n{\"stage\":\"encode\",\"message\":\"encode\"}\n{\"stage\":\"validate\",\"message\":\"validate\"}\n{\"stage\":\"complete\",\"message\":\"Export complete\"}\n{\"error\":{\"code\":\"PROCESSING_FAILED\",\"message\":\"EEXIST: file already exists, open '/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/cli.webp'\",\"details\":{}}}\n"
+  },
+  {
+    "mcp_tools": {
+      "tools": [
+        {
+          "name": "capabilities",
+          "description": "Discover supported operations, exact model profiles, schema version and limits",
+          "inputSchema": {
+            "type": "object",
+            "properties": {},
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "inspect",
+          "description": "Inspect a local single-frame image within configured roots",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "input"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "remove",
+          "description": "Remove background using local verified weights and export PNG, preserve original; model download may be required",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              },
+              "output": {
+                "type": "string"
+              },
+              "quality": {
+                "default": "quality",
+                "type": "string",
+                "enum": [
+                  "quality",
+                  "fast"
+                ]
+              },
+              "engine": {
+                "default": "auto",
+                "type": "string"
+              }
+            },
+            "required": [
+              "input",
+              "output"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "transform",
+          "description": "Run the shared ordered operation contract on a local file; no hosted inference",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              },
+              "output": {
+                "type": "string"
+              },
+              "recipe": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              },
+              "bindings": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "input",
+              "output",
+              "recipe"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "batch",
+          "description": "Run a warmed serial local directory batch with verified identity resume and attributable failures",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input_directory": {
+                "type": "string"
+              },
+              "output_directory": {
+                "type": "string"
+              },
+              "recipe": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              },
+              "resume": {
+                "default": false,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "input_directory",
+              "output_directory",
+              "recipe"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": false,
+            "destructiveHint": false,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "resolve_preset",
+          "description": "Resolve an exact immutable preset or return material ambiguity before editing",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "request": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "request"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        },
+        {
+          "name": "validate",
+          "description": "Check supported pixel/file rules, mark visual judgments and user confirmations separately",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "input": {
+                "type": "string"
+              },
+              "preset": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "input",
+              "preset"
+            ],
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "additionalProperties": false
+          },
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false
+          },
+          "execution": {
+            "taskSupport": "forbidden"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "capabilities",
+      "arguments": {}
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"contract_version\":\"1.0\",\"implementation_version\":\"0.1.0-alpha.1\",\"adapter\":\"native\",\"operation_definitions\":[{\"id\":\"remove_background\",\"features\":[\"F001\",\"F002\",\"F003\",\"F004\"],\"description\":\"Continuous foreground alpha from approved local model\"},{\"id\":\"resize\",\"features\":[\"F027\"],\"description\":\"Exact resampling with explicit upscaling permission\"},{\"id\":\"crop\",\"features\":[\"F028\"],\"description\":\"Integer rectangle in current oriented pixels\"},{\"id\":\"subject_crop\",\"features\":[\"F029\"],\"description\":\"Alpha bounds plus explicit pixel margin\"},{\"id\":\"canvas\",\"features\":[\"F030\",\"F031\"],\"description\":\"Fit and place on exact canvas\"},{\"id\":\"composite\",\"features\":[\"F025\",\"F026\"],\"description\":\"Explicit solid or supplied background\"},{\"id\":\"rotate\",\"features\":[\"F032\"],\"description\":\"Clockwise degrees, expanded bounds\"},{\"id\":\"flip\",\"features\":[\"F033\"],\"description\":\"Horizontal or vertical reflection\"},{\"id\":\"correct\",\"features\":[\"F013\",\"F014\",\"F015\"],\"description\":\"Erase/restore from normalized original\"},{\"id\":\"mask\",\"features\":[\"F037\"],\"description\":\"Grayscale foreground coverage\"},{\"id\":\"normalize\",\"features\":[\"F038\",\"F039\",\"F040\",\"F041\"],\"description\":\"Orient once and convert to sRGB\"},{\"id\":\"print_sheet\",\"features\":[\"F084\",\"F085\"],\"description\":\"Fixed grid, round mm*dpi/25.4 to nearest pixel\"}],\"operations\":[\"remove_background\",\"resize\",\"crop\",\"subject_crop\",\"canvas\",\"composite\",\"rotate\",\"flip\",\"correct\",\"mask\",\"normalize\",\"print_sheet\"],\"formats\":[\"png\",\"jpeg\",\"webp\"],\"engines\":[{\"precision\":\"fp16\",\"inputName\":\"input_image\",\"outputName\":\"output_image\",\"normalization\":\"imagenet\",\"outputType\":\"float32\",\"outputActivation\":\"logits\",\"id\":\"birefnet-512-fp16\",\"name\":\"BiRefNet 512 Quality\",\"repository\":\"naddy24/birefnet-512-webgpu\",\"revision\":\"ca02a86c094927479e2be583abe87f8ea73fcfda\",\"file\":\"onnx/model_fp16.onnx\",\"bytes\":473435223,\"sha256\":\"6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8\",\"inputSize\":512,\"license\":\"MIT\",\"url\":\"https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx\",\"version\":\"ca02a86c094927479e2be583abe87f8ea73fcfda\",\"width\":512,\"height\":512,\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"validated\":\"diagnostic execution observed; quality and device acceptance incomplete\"},{\"precision\":\"fp16\",\"inputName\":\"input_image\",\"outputName\":\"output_image\",\"normalization\":\"imagenet\",\"outputType\":\"float32\",\"outputActivation\":\"logits\",\"id\":\"birefnet-lite-512-fp16\",\"name\":\"BiRefNet lite 512 Fast\",\"repository\":\"studioludens/birefnet-lite-512\",\"revision\":\"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\"file\":\"onnx/model_fp16.onnx\",\"bytes\":98484532,\"sha256\":\"eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516\",\"inputSize\":512,\"license\":\"MIT\",\"url\":\"https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model_fp16.onnx\",\"version\":\"4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7\",\"width\":512,\"height\":512,\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"validated\":\"diagnostic execution observed; quality and device acceptance incomplete\"},{\"precision\":\"fp16\",\"inputName\":\"input_image\",\"outputName\":\"output_image\",\"normalization\":\"imagenet\",\"outputType\":\"float32\",\"outputActivation\":\"logits\",\"id\":\"birefnet-lite-1024-fp16\",\"name\":\"BiRefNet lite 1024 candidate\",\"repository\":\"onnx-community/BiRefNet_lite-ONNX\",\"revision\":\"de15b22ba131738a16dff04aab8bdf8dc32e3ac1\",\"file\":\"onnx/model_fp16.onnx\",\"bytes\":114538221,\"sha256\":\"d39b897ceb16ae654c1731f3dba0cf9b368d9cae74b5a57459b455cc8bfec402\",\"inputSize\":1024,\"license\":\"MIT\",\"url\":\"https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/onnx/model_fp16.onnx\",\"version\":\"de15b22ba131738a16dff04aab8bdf8dc32e3ac1\",\"width\":1024,\"height\":1024,\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"validated\":\"diagnostic execution observed; quality and device acceptance incomplete\"},{\"precision\":\"fp16\",\"inputName\":\"input_image\",\"outputName\":\"output_image\",\"normalization\":\"imagenet\",\"outputType\":\"float32\",\"outputActivation\":\"logits\",\"id\":\"birefnet-full-1024-fp16\",\"name\":\"BiRefNet full 1024 candidate\",\"repository\":\"onnx-community/BiRefNet-ONNX\",\"revision\":\"534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67\",\"file\":\"onnx/model_fp16.onnx\",\"bytes\":489666272,\"sha256\":\"3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09\",\"inputSize\":1024,\"width\":1024,\"height\":1024,\"license\":\"MIT\",\"version\":\"534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67\",\"url\":\"https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/onnx/model_fp16.onnx\",\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"validated\":\"diagnostic execution observed; quality and device acceptance incomplete\"},{\"precision\":\"mixed fp32/fp16 weights\",\"inputName\":\"input.1\",\"outputName\":\"17728\",\"normalization\":\"unit\",\"outputType\":\"float16\",\"outputActivation\":\"coverage\",\"id\":\"ben2-base-1024\",\"name\":\"BEN2 Base candidate\",\"repository\":\"PramaLLC/BEN2\",\"revision\":\"e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f\",\"file\":\"BEN2_Base.onnx\",\"bytes\":222932053,\"sha256\":\"22cea62108ff53b7ccc20f7a008bf30494228d84b1687f29ecbe76936a998101\",\"inputSize\":1024,\"license\":\"MIT\",\"url\":\"https://huggingface.co/PramaLLC/BEN2/resolve/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/BEN2_Base.onnx\",\"version\":\"e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f\",\"width\":1024,\"height\":1024,\"runtime\":\"onnxruntime-node 1.30.0\",\"backend\":\"cpu\",\"validated\":\"diagnostic execution observed; quality and device acceptance incomplete\"}],\"limits\":{\"max_pixels\":16777216,\"max_bytes\":40000000,\"max_concurrency\":1},\"offline\":true}"
+        }
+      ],
+      "structuredContent": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "adapter": "native",
+        "operation_definitions": [
+          {
+            "id": "remove_background",
+            "features": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "description": "Continuous foreground alpha from approved local model"
+          },
+          {
+            "id": "resize",
+            "features": [
+              "F027"
+            ],
+            "description": "Exact resampling with explicit upscaling permission"
+          },
+          {
+            "id": "crop",
+            "features": [
+              "F028"
+            ],
+            "description": "Integer rectangle in current oriented pixels"
+          },
+          {
+            "id": "subject_crop",
+            "features": [
+              "F029"
+            ],
+            "description": "Alpha bounds plus explicit pixel margin"
+          },
+          {
+            "id": "canvas",
+            "features": [
+              "F030",
+              "F031"
+            ],
+            "description": "Fit and place on exact canvas"
+          },
+          {
+            "id": "composite",
+            "features": [
+              "F025",
+              "F026"
+            ],
+            "description": "Explicit solid or supplied background"
+          },
+          {
+            "id": "rotate",
+            "features": [
+              "F032"
+            ],
+            "description": "Clockwise degrees, expanded bounds"
+          },
+          {
+            "id": "flip",
+            "features": [
+              "F033"
+            ],
+            "description": "Horizontal or vertical reflection"
+          },
+          {
+            "id": "correct",
+            "features": [
+              "F013",
+              "F014",
+              "F015"
+            ],
+            "description": "Erase/restore from normalized original"
+          },
+          {
+            "id": "mask",
+            "features": [
+              "F037"
+            ],
+            "description": "Grayscale foreground coverage"
+          },
+          {
+            "id": "normalize",
+            "features": [
+              "F038",
+              "F039",
+              "F040",
+              "F041"
+            ],
+            "description": "Orient once and convert to sRGB"
+          },
+          {
+            "id": "print_sheet",
+            "features": [
+              "F084",
+              "F085"
+            ],
+            "description": "Fixed grid, round mm*dpi/25.4 to nearest pixel"
+          }
+        ],
+        "operations": [
+          "remove_background",
+          "resize",
+          "crop",
+          "subject_crop",
+          "canvas",
+          "composite",
+          "rotate",
+          "flip",
+          "correct",
+          "mask",
+          "normalize",
+          "print_sheet"
+        ],
+        "formats": [
+          "png",
+          "jpeg",
+          "webp"
+        ],
+        "engines": [
+          {
+            "precision": "fp16",
+            "inputName": "input_image",
+            "outputName": "output_image",
+            "normalization": "imagenet",
+            "outputType": "float32",
+            "outputActivation": "logits",
+            "id": "birefnet-512-fp16",
+            "name": "BiRefNet 512 Quality",
+            "repository": "naddy24/birefnet-512-webgpu",
+            "revision": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+            "file": "onnx/model_fp16.onnx",
+            "bytes": 473435223,
+            "sha256": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+            "inputSize": 512,
+            "license": "MIT",
+            "url": "https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx",
+            "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+            "width": 512,
+            "height": 512,
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "validated": "diagnostic execution observed; quality and device acceptance incomplete"
+          },
+          {
+            "precision": "fp16",
+            "inputName": "input_image",
+            "outputName": "output_image",
+            "normalization": "imagenet",
+            "outputType": "float32",
+            "outputActivation": "logits",
+            "id": "birefnet-lite-512-fp16",
+            "name": "BiRefNet lite 512 Fast",
+            "repository": "studioludens/birefnet-lite-512",
+            "revision": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+            "file": "onnx/model_fp16.onnx",
+            "bytes": 98484532,
+            "sha256": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+            "inputSize": 512,
+            "license": "MIT",
+            "url": "https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model_fp16.onnx",
+            "version": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+            "width": 512,
+            "height": 512,
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "validated": "diagnostic execution observed; quality and device acceptance incomplete"
+          },
+          {
+            "precision": "fp16",
+            "inputName": "input_image",
+            "outputName": "output_image",
+            "normalization": "imagenet",
+            "outputType": "float32",
+            "outputActivation": "logits",
+            "id": "birefnet-lite-1024-fp16",
+            "name": "BiRefNet lite 1024 candidate",
+            "repository": "onnx-community/BiRefNet_lite-ONNX",
+            "revision": "de15b22ba131738a16dff04aab8bdf8dc32e3ac1",
+            "file": "onnx/model_fp16.onnx",
+            "bytes": 114538221,
+            "sha256": "d39b897ceb16ae654c1731f3dba0cf9b368d9cae74b5a57459b455cc8bfec402",
+            "inputSize": 1024,
+            "license": "MIT",
+            "url": "https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/onnx/model_fp16.onnx",
+            "version": "de15b22ba131738a16dff04aab8bdf8dc32e3ac1",
+            "width": 1024,
+            "height": 1024,
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "validated": "diagnostic execution observed; quality and device acceptance incomplete"
+          },
+          {
+            "precision": "fp16",
+            "inputName": "input_image",
+            "outputName": "output_image",
+            "normalization": "imagenet",
+            "outputType": "float32",
+            "outputActivation": "logits",
+            "id": "birefnet-full-1024-fp16",
+            "name": "BiRefNet full 1024 candidate",
+            "repository": "onnx-community/BiRefNet-ONNX",
+            "revision": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+            "file": "onnx/model_fp16.onnx",
+            "bytes": 489666272,
+            "sha256": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+            "inputSize": 1024,
+            "width": 1024,
+            "height": 1024,
+            "license": "MIT",
+            "version": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+            "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/onnx/model_fp16.onnx",
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "validated": "diagnostic execution observed; quality and device acceptance incomplete"
+          },
+          {
+            "precision": "mixed fp32/fp16 weights",
+            "inputName": "input.1",
+            "outputName": "17728",
+            "normalization": "unit",
+            "outputType": "float16",
+            "outputActivation": "coverage",
+            "id": "ben2-base-1024",
+            "name": "BEN2 Base candidate",
+            "repository": "PramaLLC/BEN2",
+            "revision": "e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f",
+            "file": "BEN2_Base.onnx",
+            "bytes": 222932053,
+            "sha256": "22cea62108ff53b7ccc20f7a008bf30494228d84b1687f29ecbe76936a998101",
+            "inputSize": 1024,
+            "license": "MIT",
+            "url": "https://huggingface.co/PramaLLC/BEN2/resolve/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/BEN2_Base.onnx",
+            "version": "e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f",
+            "width": 1024,
+            "height": 1024,
+            "runtime": "onnxruntime-node 1.30.0",
+            "backend": "cpu",
+            "validated": "diagnostic execution observed; quality and device acceptance incomplete"
+          }
+        ],
+        "limits": {
+          "max_pixels": 16777216,
+          "max_bytes": 40000000,
+          "max_concurrency": 1
+        },
+        "offline": true
+      }
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "inspect",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png"
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"image\":{\"width\":48,\"height\":32,\"format\":\"png\",\"channels\":4,\"has_alpha\":true,\"is_opaque\":false,\"bytes\":175,\"color_space\":\"srgb\",\"pages\":1,\"metadata\":{\"icc\":false,\"exif\":false,\"density\":25}}}"
+        }
+      ],
+      "structuredContent": {
+        "image": {
+          "width": 48,
+          "height": 32,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": false,
+          "bytes": 175,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": false,
+            "exif": false,
+            "density": 25
+          }
+        }
+      }
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "transform",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+        "output": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp",
+        "recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "canvas",
+              "width": 1200,
+              "height": 1200,
+              "fit": "contain",
+              "background": "#ffffff",
+              "position": "center"
+            }
+          ],
+          "output": {
+            "format": "webp",
+            "quality": 90,
+            "metadata": "strip"
+          }
+        }
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"file\":\"/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp\",\"resource_uri\":\"file:///home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp\",\"record_file\":\"/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp.json\",\"record\":{\"contract_version\":\"1.0\",\"implementation_version\":\"0.1.0-alpha.1\",\"input_hash\":\"f0416c5782a061758c53cf150482aa4a791768785b11cf12d99d00a7277cd3ee\",\"recipe_hash\":\"e7a3f055b5d170bad824e43d7bbcac80462e335bc6068b4a0b9e887f1058c514\",\"binding_hashes\":{},\"resolved_recipe\":{\"spec_version\":\"1.0\",\"input\":{\"ref\":\"input-0\"},\"engine\":\"auto\",\"quality\":\"quality\",\"operations\":[{\"op\":\"canvas\",\"width\":1200,\"height\":1200,\"fit\":\"contain\",\"background\":\"#ffffff\",\"position\":\"center\"}],\"output\":{\"format\":\"webp\",\"quality\":90,\"metadata\":\"strip\"}},\"engine\":{\"id\":\"imaging\",\"version\":\"1.0\",\"model_hash\":null,\"precision\":\"uint8\",\"inference_dimensions\":[],\"runtime\":\"imaging-kernel\",\"backend\":\"local\",\"refinement\":\"none\"},\"encoder\":{\"format\":\"webp\",\"quality\":90,\"metadata\":\"strip\",\"kernel\":\"declared imaging adapter\"},\"applied_operations\":[{\"op\":\"canvas\",\"width\":1200,\"height\":1200,\"fit\":\"contain\",\"background\":\"#ffffff\",\"position\":\"center\"}],\"output\":{\"width\":1200,\"height\":1200,\"format\":\"webp\",\"channels\":3,\"has_alpha\":false,\"is_opaque\":true,\"bytes\":5158,\"color_space\":\"srgb\",\"pages\":1,\"metadata\":{\"icc\":true,\"exif\":false},\"hash\":\"d89e98cf7006c3b1c17496fffa1bbee613c5d79e90a0c9d0ee18fef384941cbc\"},\"timings_ms\":{\"decode\":16.907170000000065,\"render\":144.32864500000005,\"encode\":117.98663600000009,\"validate\":0.6166849999999613},\"warnings\":[],\"rules\":[]}}"
+        }
+      ],
+      "structuredContent": {
+        "file": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp",
+        "resource_uri": "file:///home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp",
+        "record_file": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp.json",
+        "record": {
+          "contract_version": "1.0",
+          "implementation_version": "0.1.0-alpha.1",
+          "input_hash": "f0416c5782a061758c53cf150482aa4a791768785b11cf12d99d00a7277cd3ee",
+          "recipe_hash": "e7a3f055b5d170bad824e43d7bbcac80462e335bc6068b4a0b9e887f1058c514",
+          "binding_hashes": {},
+          "resolved_recipe": {
+            "spec_version": "1.0",
+            "input": {
+              "ref": "input-0"
+            },
+            "engine": "auto",
+            "quality": "quality",
+            "operations": [
+              {
+                "op": "canvas",
+                "width": 1200,
+                "height": 1200,
+                "fit": "contain",
+                "background": "#ffffff",
+                "position": "center"
+              }
+            ],
+            "output": {
+              "format": "webp",
+              "quality": 90,
+              "metadata": "strip"
+            }
+          },
+          "engine": {
+            "id": "imaging",
+            "version": "1.0",
+            "model_hash": null,
+            "precision": "uint8",
+            "inference_dimensions": [],
+            "runtime": "imaging-kernel",
+            "backend": "local",
+            "refinement": "none"
+          },
+          "encoder": {
+            "format": "webp",
+            "quality": 90,
+            "metadata": "strip",
+            "kernel": "declared imaging adapter"
+          },
+          "applied_operations": [
+            {
+              "op": "canvas",
+              "width": 1200,
+              "height": 1200,
+              "fit": "contain",
+              "background": "#ffffff",
+              "position": "center"
+            }
+          ],
+          "output": {
+            "width": 1200,
+            "height": 1200,
+            "format": "webp",
+            "channels": 3,
+            "has_alpha": false,
+            "is_opaque": true,
+            "bytes": 5158,
+            "color_space": "srgb",
+            "pages": 1,
+            "metadata": {
+              "icc": true,
+              "exif": false
+            },
+            "hash": "d89e98cf7006c3b1c17496fffa1bbee613c5d79e90a0c9d0ee18fef384941cbc"
+          },
+          "timings_ms": {
+            "decode": 16.907170000000065,
+            "render": 144.32864500000005,
+            "encode": 117.98663600000009,
+            "validate": 0.6166849999999613
+          },
+          "warnings": [],
+          "rules": []
+        }
+      }
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "validate",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/mcp.webp",
+        "preset": "shopify-product-square",
+        "version": "2026-10-08.1"
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"preset\":{\"id\":\"shopify-product-square\",\"version\":\"2026-10-08.1\",\"purpose\":\"Shopify square product image\",\"jurisdiction\":\"Global\",\"authority\":\"Shopify\",\"channel\":\"Product or collection image upload\",\"language\":\"en\",\"aliases\":[\"shopify image\",\"shopify product\",\"shopify square\"],\"sources\":[{\"url\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"title\":\"Shopify product media types\",\"verified_at\":\"2026-10-08\"}],\"rules\":[{\"id\":\"maximum-size\",\"kind\":\"dimensions\",\"strength\":\"mandatory\",\"text\":\"At most 5000 by 5000 pixels, 25MP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":{\"max_width\":5000,\"max_height\":5000}},{\"id\":\"recommended-size\",\"kind\":\"dimensions\",\"strength\":\"recommended\",\"text\":\"2048 square usually displays best; theme controls actual display.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":{\"width\":2048,\"height\":2048}},{\"id\":\"bytes\",\"kind\":\"max_bytes\",\"strength\":\"mandatory\",\"text\":\"Smaller than 20MB; decimal/binary interval needs review.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":19999999,\"tolerance\":971520},{\"id\":\"formats\",\"kind\":\"formats\",\"strength\":\"mandatory\",\"text\":\"Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":[\"png\",\"jpeg\",\"webp\",\"tiff\",\"bmp\",\"gif\",\"svg\",\"heic\"]},{\"id\":\"shape\",\"kind\":\"visual\",\"strength\":\"recommended\",\"text\":\"Use consistent aspect ratios across main images.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"}],\"edit_policy\":{\"allowed\":[\"remove_background\",\"resize\",\"crop\",\"subject_crop\",\"canvas\",\"composite\",\"rotate\",\"flip\",\"correct\",\"mask\",\"normalize\",\"print_sheet\"],\"forbidden\":[],\"unspecified\":[],\"notes\":\"Superaster permits requested faithful image preparation. The platform source does not specify a complete editing policy; this operation list is Superaster behavior, not a claim of authority approval. Generation and identity alteration are outside the MVP.\"},\"exceptions\":[],\"user_confirmations\":[],\"freshness\":{\"status\":\"unknown\",\"verified_at\":\"2026-10-08\",\"checked_at\":\"2026-10-09T04:07:51.893Z\",\"source_change\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types: Source access failed: HTTP 403\"},\"license\":\"CC0-1.0\",\"recipe_operations\":[{\"op\":\"canvas\",\"width\":2048,\"height\":2048,\"fit\":\"contain\",\"background\":\"#ffffff\",\"position\":\"center\"}]},\"rules\":[{\"id\":\"source-freshness\",\"state\":\"needs_review\",\"message\":\"Source freshness is unknown; https://help.shopify.com/en/manual/products/product-media/product-media-types: Source access failed: HTTP 403\"},{\"id\":\"maximum-size\",\"state\":\"pass\",\"message\":\"mandatory: At most 5000 by 5000 pixels, 25MP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"recommended-size\",\"state\":\"fail\",\"message\":\"recommended: 2048 square usually displays best; theme controls actual display.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"bytes\",\"state\":\"pass\",\"message\":\"mandatory: Smaller than 20MB; decimal/binary interval needs review.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"formats\",\"state\":\"pass\",\"message\":\"mandatory: Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"shape\",\"state\":\"needs_review\",\"message\":\"Use consistent aspect ratios across main images.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"}]}"
+        }
+      ],
+      "structuredContent": {
+        "preset": {
+          "id": "shopify-product-square",
+          "version": "2026-10-08.1",
+          "purpose": "Shopify square product image",
+          "jurisdiction": "Global",
+          "authority": "Shopify",
+          "channel": "Product or collection image upload",
+          "language": "en",
+          "aliases": [
+            "shopify image",
+            "shopify product",
+            "shopify square"
+          ],
+          "sources": [
+            {
+              "url": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "title": "Shopify product media types",
+              "verified_at": "2026-10-08"
+            }
+          ],
+          "rules": [
+            {
+              "id": "maximum-size",
+              "kind": "dimensions",
+              "strength": "mandatory",
+              "text": "At most 5000 by 5000 pixels, 25MP.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": {
+                "max_width": 5000,
+                "max_height": 5000
+              }
+            },
+            {
+              "id": "recommended-size",
+              "kind": "dimensions",
+              "strength": "recommended",
+              "text": "2048 square usually displays best; theme controls actual display.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": {
+                "width": 2048,
+                "height": 2048
+              }
+            },
+            {
+              "id": "bytes",
+              "kind": "max_bytes",
+              "strength": "mandatory",
+              "text": "Smaller than 20MB; decimal/binary interval needs review.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": 19999999,
+              "tolerance": 971520
+            },
+            {
+              "id": "formats",
+              "kind": "formats",
+              "strength": "mandatory",
+              "text": "Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+              "value": [
+                "png",
+                "jpeg",
+                "webp",
+                "tiff",
+                "bmp",
+                "gif",
+                "svg",
+                "heic"
+              ]
+            },
+            {
+              "id": "shape",
+              "kind": "visual",
+              "strength": "recommended",
+              "text": "Use consistent aspect ratios across main images.",
+              "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+            }
+          ],
+          "edit_policy": {
+            "allowed": [
+              "remove_background",
+              "resize",
+              "crop",
+              "subject_crop",
+              "canvas",
+              "composite",
+              "rotate",
+              "flip",
+              "correct",
+              "mask",
+              "normalize",
+              "print_sheet"
+            ],
+            "forbidden": [],
+            "unspecified": [],
+            "notes": "Superaster permits requested faithful image preparation. The platform source does not specify a complete editing policy; this operation list is Superaster behavior, not a claim of authority approval. Generation and identity alteration are outside the MVP."
+          },
+          "exceptions": [],
+          "user_confirmations": [],
+          "freshness": {
+            "status": "unknown",
+            "verified_at": "2026-10-08",
+            "checked_at": "2026-10-09T04:07:51.893Z",
+            "source_change": "https://help.shopify.com/en/manual/products/product-media/product-media-types: Source access failed: HTTP 403"
+          },
+          "license": "CC0-1.0",
+          "recipe_operations": [
+            {
+              "op": "canvas",
+              "width": 2048,
+              "height": 2048,
+              "fit": "contain",
+              "background": "#ffffff",
+              "position": "center"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "id": "source-freshness",
+            "state": "needs_review",
+            "message": "Source freshness is unknown; https://help.shopify.com/en/manual/products/product-media/product-media-types: Source access failed: HTTP 403"
+          },
+          {
+            "id": "maximum-size",
+            "state": "pass",
+            "message": "mandatory: At most 5000 by 5000 pixels, 25MP.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "recommended-size",
+            "state": "fail",
+            "message": "recommended: 2048 square usually displays best; theme controls actual display.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "bytes",
+            "state": "pass",
+            "message": "mandatory: Smaller than 20MB; decimal/binary interval needs review.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "formats",
+            "state": "pass",
+            "message": "mandatory: Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          },
+          {
+            "id": "shape",
+            "state": "needs_review",
+            "message": "Use consistent aspect ratios across main images.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "inspect",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/outside/outside.png"
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":{\"code\":\"ACCESS_DENIED\",\"message\":\"Path is outside configured roots\",\"details\":{\"path\":\"/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/outside/outside.png\"}}}"
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "inspect",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/escape-input.png"
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":{\"code\":\"ACCESS_DENIED\",\"message\":\"Path is outside configured roots\",\"details\":{\"path\":\"/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/escape-input.png\"}}}"
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "transform",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+        "output": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/outside/out.webp",
+        "recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "canvas",
+              "width": 1200,
+              "height": 1200,
+              "fit": "contain",
+              "background": "#ffffff",
+              "position": "center"
+            }
+          ],
+          "output": {
+            "format": "webp",
+            "quality": 90,
+            "metadata": "strip"
+          }
+        }
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":{\"code\":\"ACCESS_DENIED\",\"message\":\"Path is outside configured roots\",\"details\":{\"path\":\"/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/outside/out.webp\"}}}"
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "transform",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+        "output": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/escape-directory/out.webp",
+        "recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "canvas",
+              "width": 1200,
+              "height": 1200,
+              "fit": "contain",
+              "background": "#ffffff",
+              "position": "center"
+            }
+          ],
+          "output": {
+            "format": "webp",
+            "quality": 90,
+            "metadata": "strip"
+          }
+        }
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":{\"code\":\"ACCESS_DENIED\",\"message\":\"Path is outside configured roots\",\"details\":{\"path\":\"/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/escape-directory/out.webp\"}}}"
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "transform",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+        "output": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/binding.webp",
+        "recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "composite",
+              "image_ref": "outside"
+            }
+          ],
+          "output": {
+            "format": "webp",
+            "quality": 90,
+            "metadata": "strip"
+          }
+        },
+        "bindings": {
+          "outside": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/outside/outside.png"
+        }
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":{\"code\":\"ACCESS_DENIED\",\"message\":\"Path is outside configured roots\",\"details\":{\"path\":\"/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/outside/outside.png\"}}}"
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "transform",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+        "output": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/warp.webp",
+        "recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "warp",
+              "amount": 12
+            }
+          ],
+          "output": {
+            "format": "webp",
+            "quality": 90,
+            "metadata": "strip"
+          }
+        }
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":{\"code\":\"INVALID_RECIPE\",\"message\":\"data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'x', data/operations/0 must have required property 'y', data/operations/0 must have required property 'width', data/operations/0 must have required property 'height', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'margin', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'width', data/operations/0 must have required property 'height', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'angle', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'axis', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'color_space', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'sheet_width_mm', data/operations/0 must have required property 'sheet_height_mm', data/operations/0 must have required property 'item_width_mm', data/operations/0 must have required property 'item_height_mm', data/operations/0 must have required property 'dpi', data/operations/0 must have required property 'rows', data/operations/0 must have required property 'columns', data/operations/0 must have required property 'margin_mm', data/operations/0 must have required property 'spacing_mm', data/operations/0 must NOT have additional properties, data/operations/0/op must be equal to constant, data/operations/0 must match a schema in anyOf\",\"details\":{\"errors\":[{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/0/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/0/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"remove_background\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/1/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/1/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"resize\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"x\"},\"message\":\"must have required property 'x'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"y\"},\"message\":\"must have required property 'y'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"width\"},\"message\":\"must have required property 'width'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"height\"},\"message\":\"must have required property 'height'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"crop\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"margin\"},\"message\":\"must have required property 'margin'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"subject_crop\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"width\"},\"message\":\"must have required property 'width'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"height\"},\"message\":\"must have required property 'height'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"canvas\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/5/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/5/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"composite\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"angle\"},\"message\":\"must have required property 'angle'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"rotate\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"axis\"},\"message\":\"must have required property 'axis'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"flip\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/8/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/8/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"correct\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/9/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/9/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"mask\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"color_space\"},\"message\":\"must have required property 'color_space'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"normalize\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"sheet_width_mm\"},\"message\":\"must have required property 'sheet_width_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"sheet_height_mm\"},\"message\":\"must have required property 'sheet_height_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"item_width_mm\"},\"message\":\"must have required property 'item_width_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"item_height_mm\"},\"message\":\"must have required property 'item_height_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"dpi\"},\"message\":\"must have required property 'dpi'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"rows\"},\"message\":\"must have required property 'rows'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"columns\"},\"message\":\"must have required property 'columns'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"margin_mm\"},\"message\":\"must have required property 'margin_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"spacing_mm\"},\"message\":\"must have required property 'spacing_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/additionalProperties\",\"keyword\":\"additionalProperties\",\"params\":{\"additionalProperty\":\"amount\"},\"message\":\"must NOT have additional properties\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"print_sheet\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf\",\"keyword\":\"anyOf\",\"params\":{},\"message\":\"must match a schema in anyOf\"}]}}}"
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "transform",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+        "output": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/unknown-engine-mcp.webp",
+        "recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "unsupported-engine-id",
+          "quality": "quality",
+          "operations": [],
+          "output": {
+            "format": "webp",
+            "quality": 90,
+            "metadata": "strip"
+          }
+        }
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":{\"code\":\"UNSUPPORTED\",\"message\":\"Engine unsupported-engine-id is unavailable on native\",\"details\":{\"available\":[\"birefnet-512-fp16\",\"birefnet-lite-512-fp16\",\"birefnet-lite-1024-fp16\",\"birefnet-full-1024-fp16\",\"ben2-base-1024\"]}}}"
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "mcp_request": {
+      "name": "inspect",
+      "arguments": {
+        "input": "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/input.png",
+        "unknown_parameter": true
+      }
+    },
+    "mcp_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "MCP error -32602: Input validation error: Invalid arguments for tool inspect: Unrecognized key: \"unknown_parameter\""
+        }
+      ],
+      "isError": true
+    }
+  },
+  {
+    "id": "exact-cli",
+    "command": [
+      "/home/sadid/.local/share/mise/installs/node/26.11.1/bin/node",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/node_modules/superaster-local/dist/native/cli/src/index.js",
+      "run",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/exact-recipe.json",
+      "--input",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/source-metadata.png",
+      "--output",
+      "/home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/primary-clean-package/consumer/scratch/exact-cli.png"
+    ],
+    "exit": 0,
+    "signal": null,
+    "stdout": "{\n  \"contract_version\": \"1.0\",\n  \"implementation_version\": \"0.1.0-alpha.1\",\n  \"input_hash\": \"2d4f47105a22b83c2a2f212b0df983be9b75541e76dad6a013296147e1a26486\",\n  \"recipe_hash\": \"1d68f8ee35597162eaecc54487da2029ce2c3e9e7f149ec0ca97c9da0a5f923b\",\n  \"binding_hashes\": {},\n  \"resolved_recipe\": {\n    \"spec_version\": \"1.0\",\n    \"input\": {\n      \"ref\": \"metadata-fixture\"\n    },\n    \"operations\": [\n      {\n        \"op\": \"canvas\",\n        \"width\": 48,\n        \"height\": 48,\n        \"fit\": \"contain\",\n        \"background\": \"#ffffff\"\n      }\n    ],\n    \"output\": {\n      \"format\": \"png\",\n      \"metadata\": \"strip\"\n    },\n    \"engine\": \"auto\",\n    \"quality\": \"quality\"\n  },\n  \"engine\": {\n    \"id\": \"imaging\",\n    \"version\": \"1.0\",\n    \"model_hash\": null,\n    \"precision\": \"uint8\",\n    \"inference_dimensions\": [],\n    \"runtime\": \"imaging-kernel\",\n    \"backend\": \"local\",\n    \"refinement\": \"none\"\n  },\n  \"encoder\": {\n    \"format\": \"png\",\n    \"quality\": 90,\n    \"metadata\": \"strip\",\n    \"kernel\": \"declared imaging adapter\"\n  },\n  \"applied_operations\": [\n    {\n      \"op\": \"canvas\",\n      \"width\": 48,\n      \"height\": 48,\n      \"fit\": \"contain\",\n      \"background\": \"#ffffff\"\n    }\n  ],\n  \"output\": {\n    \"width\": 48,\n    \"height\": 48,\n    \"format\": \"png\",\n    \"channels\": 4,\n    \"has_alpha\": true,\n    \"is_opaque\": true,\n    \"bytes\": 489,\n    \"color_space\": \"srgb\",\n    \"pages\": 1,\n    \"metadata\": {\n      \"icc\": true,\n      \"exif\": false,\n      \"density\": 25\n    },\n    \"hash\": \"9a71fc1fa923a9e9531ab3cacbf00087d16bcbbc212a2658f98b8ce19b0e155c\"\n  },\n  \"timings_ms\": {\n    \"decode\": 21.99033200000008,\n    \"render\": 1.2242690000000493,\n    \"encode\": 4.276161999999999,\n    \"validate\": 17.024391000000037\n  },\n  \"warnings\": [],\n  \"rules\": []\n}\n",
+    "stderr": "{\"stage\":\"decode\",\"message\":\"decode\"}\n{\"stage\":\"render\",\"message\":\"render\"}\n{\"stage\":\"encode\",\"message\":\"encode\"}\n{\"stage\":\"validate\",\"message\":\"validate\"}\n{\"stage\":\"complete\",\"message\":\"Export complete\"}\n"
+  }
+]

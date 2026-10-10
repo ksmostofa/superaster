@@ -1,0 +1,252 @@
+{
+  "status": "EXPORTED AND CHECKED; PARITY NOT RUN",
+  "source_revision": "eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9",
+  "source_weight_sha256": "a9875de5b1e6c8eb5fdaa8c727a82927ce442cdc87ba3abee6a77e6fa46c25bb",
+  "manifest_sha256": "e293dfc4721a5394d9203da05f3064ea428ec65375541b31d39cbfd69330d2c9",
+  "source_conditions_sha256": "feb5eb5e97ddf83f5e5cf6eaf0d51b9c0faf0bff53b6a86231f7fcd3b741e4da",
+  "onnx_artifact_sha256": "09e180872581e886bb531e5c72a1df354ba2dd55445a11bb0618435a98abe92d",
+  "onnx_bytes": 929574771,
+  "opsets": [
+    {
+      "domain": "",
+      "version": 19
+    }
+  ],
+  "inputs": [
+    {
+      "name": "image",
+      "dtype": 1,
+      "shape": [
+        1,
+        3,
+        1024,
+        1024
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "logits",
+      "dtype": 1,
+      "shape": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    }
+  ],
+  "operator_counts": [
+    {
+      "domain": "",
+      "op": "Add",
+      "count": 633
+    },
+    {
+      "domain": "",
+      "op": "BatchNormalization",
+      "count": 20
+    },
+    {
+      "domain": "",
+      "op": "Cast",
+      "count": 960
+    },
+    {
+      "domain": "",
+      "op": "Ceil",
+      "count": 16
+    },
+    {
+      "domain": "",
+      "op": "Concat",
+      "count": 918
+    },
+    {
+      "domain": "",
+      "op": "Constant",
+      "count": 8544
+    },
+    {
+      "domain": "",
+      "op": "ConstantOfShape",
+      "count": 416
+    },
+    {
+      "domain": "",
+      "op": "Conv",
+      "count": 82
+    },
+    {
+      "domain": "",
+      "op": "DeformConv",
+      "count": 20
+    },
+    {
+      "domain": "",
+      "op": "Div",
+      "count": 310
+    },
+    {
+      "domain": "",
+      "op": "Equal",
+      "count": 304
+    },
+    {
+      "domain": "",
+      "op": "Erf",
+      "count": 48
+    },
+    {
+      "domain": "",
+      "op": "Expand",
+      "count": 360
+    },
+    {
+      "domain": "",
+      "op": "Gather",
+      "count": 984
+    },
+    {
+      "domain": "",
+      "op": "GlobalAveragePool",
+      "count": 5
+    },
+    {
+      "domain": "",
+      "op": "Identity",
+      "count": 99
+    },
+    {
+      "domain": "",
+      "op": "LayerNormalization",
+      "count": 112
+    },
+    {
+      "domain": "",
+      "op": "MatMul",
+      "count": 294
+    },
+    {
+      "domain": "",
+      "op": "Mod",
+      "count": 32
+    },
+    {
+      "domain": "",
+      "op": "Mul",
+      "count": 486
+    },
+    {
+      "domain": "",
+      "op": "Not",
+      "count": 8
+    },
+    {
+      "domain": "",
+      "op": "Pad",
+      "count": 48
+    },
+    {
+      "domain": "",
+      "op": "Range",
+      "count": 288
+    },
+    {
+      "domain": "",
+      "op": "Relu",
+      "count": 38
+    },
+    {
+      "domain": "",
+      "op": "Reshape",
+      "count": 972
+    },
+    {
+      "domain": "",
+      "op": "Resize",
+      "count": 22
+    },
+    {
+      "domain": "",
+      "op": "ScatterND",
+      "count": 72
+    },
+    {
+      "domain": "",
+      "op": "Shape",
+      "count": 1442
+    },
+    {
+      "domain": "",
+      "op": "Sigmoid",
+      "count": 23
+    },
+    {
+      "domain": "",
+      "op": "Slice",
+      "count": 758
+    },
+    {
+      "domain": "",
+      "op": "Softmax",
+      "count": 48
+    },
+    {
+      "domain": "",
+      "op": "Sub",
+      "count": 72
+    },
+    {
+      "domain": "",
+      "op": "Transpose",
+      "count": 315
+    },
+    {
+      "domain": "",
+      "op": "Unsqueeze",
+      "count": 1776
+    },
+    {
+      "domain": "",
+      "op": "Where",
+      "count": 304
+    }
+  ],
+  "export_script_sha256": "8f3b8bf2b83c99c1acf7cfc109a0d261d75f4734e6d88f5c449a3a0f9dd2e95f",
+  "native_symbolic_sha256": "1c57315530f17458d87e049ef2a83f1d282763da0a70e2fadd1a3094853e2f83",
+  "dependency_lock_sha256": "74310df2761ad1bfa50fd036aa8a801d20a5e934ee828ac6d0c03ba8de1421b8",
+  "versions": {
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "onnx": "1.17.0",
+    "protobuf": "4.25.8"
+  },
+  "network_isolation": {
+    "required": true,
+    "namespace": "net:[4026532954]",
+    "interfaces": [
+      "lo"
+    ],
+    "probes": [
+      {
+        "family": "IPv4",
+        "errno": 101,
+        "result": "network unreachable"
+      },
+      {
+        "family": "IPv6",
+        "errno": 99,
+        "result": "no IPv6 source address available"
+      }
+    ],
+    "scope": "Linux isolated network namespace with loopback only; IPv4/IPv6 external connections unavailable"
+  },
+  "network_attempts": [],
+  "export_seconds": 52.223028473999875,
+  "process_high_water_rss_bytes": 5108469760,
+  "semantics": "raw final logits; no in-graph sigmoid or foreground cleanup; static float32 1024 input",
+  "quality": "NOT AWARDED",
+  "numerical_acceptance": "NOT AWARDED",
+  "cpu_browser_execution": "NOT RUN"
+}

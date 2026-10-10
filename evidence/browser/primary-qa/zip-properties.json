@@ -1,0 +1,565 @@
+{
+  "scope": "Actual browser geometry/cancel/resume/ZIP correctness; no inference-quality claim",
+  "outputs": [
+    {
+      "name": "001-same.png.png",
+      "hash": "d12d23f977f0ac9bbaab37c88fd76d6ef44d723feac9a20a3ee521cc1fa38fac",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 78514,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "same_retained_output": true,
+      "same_retained_record": true
+    },
+    {
+      "name": "002-same.png.png",
+      "hash": "3fc41eb2bb4b9aa5c9024344490faa0e518bc46f705c312803bc991ea5e23511",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81375,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "same_retained_output": true,
+      "same_retained_record": true
+    },
+    {
+      "name": "003-same.png.png",
+      "hash": "9070a1bdd78ce28c625c2f1d592099b9b1752d0898b8f8f959ff5ba7c3790df0",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81459,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "same_retained_output": true,
+      "same_retained_record": true
+    },
+    {
+      "name": "004-same.png.png",
+      "hash": "6862fec27d8ce8acdd3306fd6e8b6b7ce60b04f3f62dddcd198db0ab2d4e2595",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81843,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "005-same.png.png",
+      "hash": "bdb0fa0df721a362416aacee209d44d8cf7311fcd2808253a036b1e7df8de2d0",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81697,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "006-same.png.png",
+      "hash": "e02ac48866b7630e5ddf836af020af3fa9160e157724cad05afaa81a44c2d242",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81925,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "007-same.png.png",
+      "hash": "e694d5f9b56dfdbedd20c71bff576d26ef5be148780560e2547568a52f1054ee",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81575,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "008-same.png.png",
+      "hash": "1a1abe37b7793b8ea142e35d78872efa88b43dec7688e5547ff260645cb6f9e4",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81858,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "009-same.png.png",
+      "hash": "dd64ec90946fa95cff13accac6e0db8bc501ba0c65e759c82f2466a9721b8fed",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81825,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "010-same.png.png",
+      "hash": "9d814e8bea66e5d5d7b7e622402cd0f1732ffbc172935a48ed2e4b6421e034ec",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81967,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "011-same.png.png",
+      "hash": "ea4e0aca601aa5ff8b2a6fe6f43ad7d9bde70adcdbb47a91824ac820359d13a9",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81253,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "012-same.png.png",
+      "hash": "98272a1f13119f09828cab8a27974c9ba4bd9f508b5c5ccd22992d5b1790ae69",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 83646,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "013-same.png.png",
+      "hash": "d1e8942c59c4305e01dbfe9445859e4f7aaebd94534a5dcf195e214fec1c48ad",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 84133,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "014-same.png.png",
+      "hash": "bf0843c0bbc2300518fbd339d822a995babc24e75a04fce47e1866cee529530a",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 83969,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "015-same.png.png",
+      "hash": "9735d5df784521c3a27bbf840a97da36549456bdb036772cecf775f784d55232",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 82641,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "016-same.png.png",
+      "hash": "1a1ecf2a7b99c02d519af2a62dc8452c6aa57fbe9ec4b201cc7f6ac78ea60784",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 83350,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "017-same.png.png",
+      "hash": "0515f75ec9e9d414599319275d700b11f4db04b7e25cc408bc51b549567a46fa",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 85205,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "018-same.png.png",
+      "hash": "5047921919846e452e6e1526b54c99bcecce0813e947ea2dcc5fc07ef06d7366",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 84892,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "name": "019-same.png.png",
+      "hash": "048885f078e0383c152848b703d8e82ed78940aa25505adf0880a4b9908c4287",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 84530,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ]
+    }
+  ],
+  "manifest": [
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "001-same.png.png",
+      "input_hash": "b3b5df6b2fefd8c14ff1f43b2bd574918803f9bbe63a0a39370166325c638e0f",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "002-same.png.png",
+      "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "003-same.png.png",
+      "input_hash": "5d52d974f4f973a29405f539118bdea9ad4eded3f781fe4101d241d9b12ad54d",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "004-same.png.png",
+      "input_hash": "75d81f3085505a117ac9e8b1f9323ef64eac1b959962f517451336a360764a57",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "005-same.png.png",
+      "input_hash": "0533bac0ca9a4ff7b986ba921ed2929be01ee43f48969b212350a6ad112608b8",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "006-same.png.png",
+      "input_hash": "a56e46b389183e542ac403c1524efbde61ee46d2f9e428c22d34c4ff6309dcc8",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "007-same.png.png",
+      "input_hash": "60096b4286db655a22c991a20834baeff1f761064da229a29a16e7ea5ff5c352",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "008-same.png.png",
+      "input_hash": "c4abb5526defa948a9fc67f2800e56f5c10c00e7446f5ee3bc7363d71e9364b1",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "009-same.png.png",
+      "input_hash": "c6775bc2cc5c0562a670fe58d4e6b70815027553a957fb8d5dbcc581e07cbde4",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "010-same.png.png",
+      "input_hash": "169d1ba9723d5f33464748cf8a981ab53adbb1871614953bf0cad8420a0c90f6",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "011-same.png.png",
+      "input_hash": "a66ad53dd11e319a06dc11ad07276a2257452c550d22fd4a702bf4bb8844a87f",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "012-same.png.png",
+      "input_hash": "5344471bc1d5f682e9bfc2759f973670fbbac13c6e647905a7e856314e3d4280",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "013-same.png.png",
+      "input_hash": "67e2567f810f65498129cb9cbd83c0625d5a95ac62f02818171162a68d9bb302",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "014-same.png.png",
+      "input_hash": "714bbfaab0c1c39f1ddfac74018f9639c691b65e5e6d72d8c42e70fe630b168b",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "015-same.png.png",
+      "input_hash": "eda31601cc3a96acec3ca66c128a76c4daeb49f45dacf8fe12356fbfdbdc881f",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "016-same.png.png",
+      "input_hash": "4ff27c88f7bee3bdf0520335b7df30f3f47961dcd7234df243bc084279f3e920",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "017-same.png.png",
+      "input_hash": "face67440a4d56be3a47ca04d0b871166c14e199ef53b8f76f1f47c2a763725c",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "018-same.png.png",
+      "input_hash": "36ceabd6e1df84f1f60b03fc0efbd5820ae7ab71340910eb0a2fc9ae5cf8a352",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "completed",
+      "output": "019-same.png.png",
+      "input_hash": "9a9c746f8c91d485dd504938ed59b4712975ab6005408efd3b58e22b4bb3a4b5",
+      "recipe_hash": "f422c79abc4e9b31054eb8992fdf59d6791d7b8bbaaf0bf21275c7564bd77d9c"
+    },
+    {
+      "input": "same.png",
+      "status": "failed",
+      "error": "Use a single-frame JPEG, PNG or WebP image"
+    }
+  ],
+  "archive_names_unique": true,
+  "completed": 19,
+  "failed": [
+    {
+      "input": "same.png",
+      "status": "failed",
+      "error": "Use a single-frame JPEG, PNG or WebP image"
+    }
+  ],
+  "retained": [
+    {
+      "name": "001-same.png.png",
+      "hash": "d12d23f977f0ac9bbaab37c88fd76d6ef44d723feac9a20a3ee521cc1fa38fac",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 78514,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "same_retained_output": true,
+      "same_retained_record": true
+    },
+    {
+      "name": "002-same.png.png",
+      "hash": "3fc41eb2bb4b9aa5c9024344490faa0e518bc46f705c312803bc991ea5e23511",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81375,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "same_retained_output": true,
+      "same_retained_record": true
+    },
+    {
+      "name": "003-same.png.png",
+      "hash": "9070a1bdd78ce28c625c2f1d592099b9b1752d0898b8f8f959ff5ba7c3790df0",
+      "record_hash_matches": true,
+      "width": 1200,
+      "height": 1200,
+      "format": "png",
+      "bytes": 81459,
+      "icc": true,
+      "exif": false,
+      "xmp": false,
+      "corner": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "same_retained_output": true,
+      "same_retained_record": true
+    }
+  ],
+  "private_images_upload_claim": "No worker network claim from this artifact"
+}

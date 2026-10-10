@@ -1,0 +1,96 @@
+{
+  "observed_at": "2026-10-09T17:02:07.355Z",
+  "zip_sha256": "3ff6ce443b1e9250831bfaab1fc663b93d9dc33ad8646ec678a2ea344b92a1e8",
+  "manifest": [
+    {
+      "index": 1,
+      "input_ref": "image-1",
+      "input": "same.png",
+      "status": "cancelled",
+      "output": "001-same.png.png",
+      "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+      "recipe_hash": "6f8343b215248cb70fa072a363439719121726844307b5bbc4191d33681997e6",
+      "requested_recipe_hash": "6f8343b215248cb70fa072a363439719121726844307b5bbc4191d33681997e6",
+      "requested_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "composite",
+            "background": "#ffffff"
+          },
+          {
+            "op": "canvas",
+            "width": 2800,
+            "height": 2800,
+            "fit": "contain",
+            "background": "#ffffff"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "output_recipe_hash": "e241b3040bb1f68b67a8bb638271b7193165d3382aaa8af5ba7f95ea1c9d7f42",
+      "error": {
+        "code": "CANCELLED",
+        "message": "Operation cancelled; completed outputs are retained",
+        "details": {}
+      }
+    },
+    {
+      "index": 2,
+      "input_ref": "image-2",
+      "input": "same.png",
+      "status": "cancelled",
+      "output": "002-same.png.png",
+      "input_hash": "5d52d974f4f973a29405f539118bdea9ad4eded3f781fe4101d241d9b12ad54d",
+      "recipe_hash": "6f8343b215248cb70fa072a363439719121726844307b5bbc4191d33681997e6",
+      "requested_recipe_hash": "6f8343b215248cb70fa072a363439719121726844307b5bbc4191d33681997e6",
+      "requested_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "composite",
+            "background": "#ffffff"
+          },
+          {
+            "op": "canvas",
+            "width": 2800,
+            "height": 2800,
+            "fit": "contain",
+            "background": "#ffffff"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "error": {
+        "code": "CANCELLED",
+        "message": "Not scheduled after cancellation",
+        "details": {}
+      }
+    }
+  ],
+  "checks": {
+    "cancelled_status_for_new_request": "PASS",
+    "typed_cancel_error": "PASS",
+    "requested_recipe_hash": "PASS",
+    "attempt_and_retained_output_identities": "PASS",
+    "retained_png_and_record_bytes": "PASS"
+  },
+  "scope": "Actual two-item changed-recipe resume cancellation before a new encode completed. Earlier valid files remain downloadable; no inference."
+}

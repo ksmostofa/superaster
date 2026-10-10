@@ -1,0 +1,75 @@
+{
+  "spec_revision": "1.1",
+  "gate": "G2 corpus preparation, not inference/quality acceptance",
+  "environment": {
+    "platform": "Linux-7.2.5-3-omarchy-x86_64-with-glibc2.44",
+    "python": "3.12.14",
+    "pillow": "12.3.0"
+  },
+  "screening_manifest_sha256": "4856791a5b76405ac2b254c5458dda4893478977167f9d75c0d0f12736559fb6",
+  "screening_case_count": 25,
+  "category_counts": {
+    "people": 5,
+    "products": 5,
+    "animals": 5,
+    "thin_structures": 5,
+    "difficult_materials": 5
+  },
+  "licenses": {
+    "CC BY 2.0": 7,
+    "Public domain": 7,
+    "CC0": 7,
+    "CC BY 4.0": 3,
+    "CC BY 3.0 us": 1
+  },
+  "acceptance": {
+    "25_actual_images_five_per_required_category": "PASS",
+    "source_license_and_revision_metadata": "PASS",
+    "downloaded_original_and_evaluation_hashes": "PASS",
+    "retained_subject_and_challenges_declared_before_inference": "PASS",
+    "synthetic_correctness_separate_from_real_quality": "PASS",
+    "benchmark_transport_and_fixture_checks": "PASS, 8 tests",
+    "real_removal_inference": "NOT RUN, awaiting approved frozen engine profile and coordinator allocation",
+    "25_cutouts_alpha_composites": "NOT RUN",
+    "device_latency_memory_budgets": "NOT RUN",
+    "physical_pixel_7": "NOT RUN, hardware access not established",
+    "human_hidden_label_quality_review": "NOT RUN, human reviewer not available",
+    "full_resolution_remove_bg_comparator": "NOT RUN, suitable outputs/credits not provided",
+    "heldout_100_images": "PASS: 99 real source images, approximately 100, selected and visually triaged before any model output",
+    "checkpoint_train_test_overlap_audit": "PASS: pinned candidate cards inspected and hashes retained; exclusion remains UNKNOWN"
+  },
+  "claims": "Corpus and harness readiness only; no quality, speed, superiority, or device support claim",
+  "reproduction": [
+    "python benchmarks/fetch_corpus.py --verify-only",
+    "python -m unittest discover -s benchmarks -p test_evidence.py -v"
+  ],
+  "limitations": [
+    "Purposeful screening sample, not representative demand or image distribution",
+    "Published 1280/960/500-pixel renditions used where highest-resolution host was unavailable; original input versions remain explicit",
+    "No ground-truth alpha",
+    "Commons images may overlap with checkpoint training",
+    "Human judgments and actual physical-phone measurements remain required"
+  ],
+  "heldout_case_count": 99,
+  "heldout_category_counts": {
+    "people": 20,
+    "products": 19,
+    "animals": 20,
+    "thin_structures": 20,
+    "difficult_materials": 20
+  },
+  "heldout_licenses": {
+    "Public domain": 28,
+    "CC BY 4.0": 17,
+    "CC BY 2.0": 20,
+    "CC0": 25,
+    "CC BY 3.0": 6,
+    "CC BY 2.0 fr": 1,
+    "CC BY 2.5": 2
+  },
+  "heldout_manifest_sha256": "c08508992a6e171d1827a6e99c2bd67f31e3fd9fe41ae6f4f78ba9ae5e8b0296",
+  "heldout_exact_canonical_duplicate_count": 0,
+  "screen_heldout_exact_canonical_overlap_count": 0,
+  "model_overlap_record": "benchmarks/corpus/model-overlap.json",
+  "base_commit": "344b426"
+}

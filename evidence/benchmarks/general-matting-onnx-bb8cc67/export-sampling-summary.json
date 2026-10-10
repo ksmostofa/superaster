@@ -1,0 +1,7 @@
+{
+  "scope": "Finite sampled export observations, not continuous stage peaks or acceptance budgets",
+  "samples": 31,
+  "sampled_max_process_rss_bytes": 3640508416,
+  "sampled_min_host_available_bytes": 7724580864,
+  "sampled_max_host_swap_used_bytes": 529154048
+}

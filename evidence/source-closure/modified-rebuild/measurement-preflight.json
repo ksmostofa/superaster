@@ -1,0 +1,40 @@
+{
+  "success": {
+    "started_at": "2026-10-10T05:58:33.988066+00:00",
+    "finished_at": "2026-10-10T05:58:33.988754+00:00",
+    "command": [
+      "/usr/bin/true"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.0006842059956397861,
+    "user_cpu_seconds": 0.0,
+    "system_cpu_seconds": 0.0005239999999999999,
+    "linux_child_maxrss_kib": 16240,
+    "maxrss_scope": "Linux waited-child maximum RSS; not simultaneous process-tree RSS",
+    "major_page_faults": 0,
+    "minor_page_faults": 61,
+    "filesystem_input_blocks": 0,
+    "filesystem_output_blocks": 0,
+    "voluntary_context_switches": 1,
+    "involuntary_context_switches": 0
+  },
+  "failure": {
+    "started_at": "2026-10-10T05:58:34.038401+00:00",
+    "finished_at": "2026-10-10T05:58:34.039721+00:00",
+    "command": [
+      "/usr/bin/false"
+    ],
+    "exit_code": 1,
+    "wall_seconds": 0.0013160439993953332,
+    "user_cpu_seconds": 0.0,
+    "system_cpu_seconds": 0.000583,
+    "linux_child_maxrss_kib": 16480,
+    "maxrss_scope": "Linux waited-child maximum RSS; not simultaneous process-tree RSS",
+    "major_page_faults": 1,
+    "minor_page_faults": 62,
+    "filesystem_input_blocks": 88,
+    "filesystem_output_blocks": 0,
+    "voluntary_context_switches": 3,
+    "involuntary_context_switches": 0
+  }
+}

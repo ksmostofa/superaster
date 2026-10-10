@@ -1,0 +1,575 @@
+{
+  "scope": "One pinned group tensor only; no product/phone/quality/frozen-tolerance acceptance",
+  "case_id": "t01-three-birdwatchers",
+  "provider": "wasm",
+  "threads": 1,
+  "proxy": false,
+  "wasm_heap_ceiling_bytes": 4294967296,
+  "pins": {
+    "model": {
+      "name": "model.onnx",
+      "bytes": 929574771,
+      "hash": "09e180872581e886bb531e5c72a1df354ba2dd55445a11bb0618435a98abe92d"
+    },
+    "input": {
+      "name": "input.npy",
+      "bytes": 12583040,
+      "hash": "24e6193e65609e8f88326676a0b845072ed0836653e9ee5264f59ea3a7698771",
+      "shape": [
+        1,
+        3,
+        1024,
+        1024
+      ]
+    },
+    "source": {
+      "name": "source-logits.npy",
+      "bytes": 4194432,
+      "hash": "221a940711594bb0617a1b5c6a73b3436c1e2448cd8e716d2ee0b9a70751d345",
+      "shape": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    },
+    "native": {
+      "name": "native-logits.npy",
+      "bytes": 4194432,
+      "hash": "fc08106649b30d1b274b2d9d6f4c25375acd1a3e7e86700a0bbf35d8c651a1e9",
+      "shape": [
+        1,
+        1,
+        1024,
+        1024
+      ]
+    }
+  },
+  "numerical_acceptance": "NOT AWARDED",
+  "quality": "NOT AWARDED",
+  "timings_ms": {
+    "fetch:input.npy": 44.79000000655651,
+    "hash:input.npy": 33.064999997615814,
+    "fetch:source-logits.npy": 9.740000002086163,
+    "hash:source-logits.npy": 13.119999997317791,
+    "fetch:native-logits.npy": 19.53499999642372,
+    "hash:native-logits.npy": 21.089999996125698,
+    "fetch:model.onnx": 1802.070000000298,
+    "hash:model.onnx": 2763.640000000596,
+    "session_initialization": 4941.164999999106
+  },
+  "runtime_versions": {
+    "common": "1.30.0",
+    "web": "1.30.0"
+  },
+  "session_options": {
+    "executionProviders": [
+      "wasm"
+    ],
+    "graphOptimizationLevel": "all",
+    "executionMode": "sequential",
+    "enableCpuMemArena": false,
+    "enableMemPattern": false,
+    "extra": {
+      "session": {
+        "use_ort_model_bytes_directly": "1"
+      }
+    }
+  },
+  "actual_interface": {
+    "input_names": [
+      "image"
+    ],
+    "output_names": [
+      "logits"
+    ],
+    "input_metadata": [
+      {
+        "name": "image",
+        "isTensor": true,
+        "type": "float32",
+        "shape": [
+          1,
+          3,
+          1024,
+          1024
+        ]
+      }
+    ],
+    "output_metadata": [
+      {
+        "name": "logits",
+        "isTensor": true,
+        "type": "float32",
+        "shape": [
+          1,
+          1,
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  "status": "FAIL",
+  "execution_completed": false,
+  "error": {
+    "name": "Error",
+    "message": "failed to call OrtRun(). ERROR_CODE: 6, ERROR_MESSAGE: std::bad_alloc"
+  },
+  "last_stage": "one_group_wasm_inference",
+  "session_cleanup": "released",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "cross_origin_isolated": true,
+  "events": [
+    {
+      "kind": "stage",
+      "stage": "load_pinned_runtime",
+      "elapsed_ms": 0.8399999961256981
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:input.npy",
+      "elapsed_ms": 28.424999997019768
+    },
+    {
+      "kind": "stage",
+      "stage": "hash:input.npy",
+      "elapsed_ms": 73.28499999642372,
+      "received_bytes": 12583040
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:source-logits.npy",
+      "elapsed_ms": 164.86500000208616
+    },
+    {
+      "kind": "stage",
+      "stage": "hash:source-logits.npy",
+      "elapsed_ms": 174.6850000023842,
+      "received_bytes": 4194432
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:native-logits.npy",
+      "elapsed_ms": 219.29999999701977
+    },
+    {
+      "kind": "stage",
+      "stage": "hash:native-logits.npy",
+      "elapsed_ms": 238.89999999850988,
+      "received_bytes": 4194432
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 298.6199999973178
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 368.3500000014901,
+      "received_bytes": 16777216,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 418.94999999552965,
+      "received_bytes": 33554432,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 453.8949999958277,
+      "received_bytes": 50331648,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 498.2699999958277,
+      "received_bytes": 67108864,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 528.625,
+      "received_bytes": 83886080,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 567.8399999961257,
+      "received_bytes": 100663296,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 597.4350000023842,
+      "received_bytes": 117440512,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 658.7849999964237,
+      "received_bytes": 134217728,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 698.8549999967217,
+      "received_bytes": 150994944,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 737.7599999979138,
+      "received_bytes": 167772160,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 780.6850000023842,
+      "received_bytes": 184549376,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 824.5749999955297,
+      "received_bytes": 201326592,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 848.3399999961257,
+      "received_bytes": 218103808,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 878.0850000008941,
+      "received_bytes": 234881024,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 903.804999999702,
+      "received_bytes": 251658240,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 932.6499999985099,
+      "received_bytes": 268435456,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 960.2250000014901,
+      "received_bytes": 285212672,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 983.4399999976158,
+      "received_bytes": 301989888,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1003.0850000008941,
+      "received_bytes": 318767104,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1025.2400000020862,
+      "received_bytes": 335544320,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1061.6349999979138,
+      "received_bytes": 352321536,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1084.164999999106,
+      "received_bytes": 369098752,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1105.2449999973178,
+      "received_bytes": 385875968,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1130.3249999955297,
+      "received_bytes": 402653184,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1157.1700000017881,
+      "received_bytes": 419430400,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1180.515000000596,
+      "received_bytes": 436207616,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1204.3699999973178,
+      "received_bytes": 452984832,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1228.1199999973178,
+      "received_bytes": 469762048,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1264.3100000023842,
+      "received_bytes": 486539264,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1326.1049999967217,
+      "received_bytes": 503316480,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1350.289999999106,
+      "received_bytes": 520093696,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1375.695000000298,
+      "received_bytes": 536870912,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1401.2550000026822,
+      "received_bytes": 553648128,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1423.6999999955297,
+      "received_bytes": 570425344,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1450.8999999985099,
+      "received_bytes": 587202560,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1481.8849999979138,
+      "received_bytes": 603979776,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1513.0099999979138,
+      "received_bytes": 620756992,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1539.8999999985099,
+      "received_bytes": 637534208,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1572.2250000014901,
+      "received_bytes": 654311424,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1596.8949999958277,
+      "received_bytes": 671088640,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1617.195000000298,
+      "received_bytes": 687865856,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1672.2849999964237,
+      "received_bytes": 704643072,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1695.640000000596,
+      "received_bytes": 721420288,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1727.7849999964237,
+      "received_bytes": 738197504,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1763.664999999106,
+      "received_bytes": 754974720,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1798.25,
+      "received_bytes": 771751936,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1836.679999999702,
+      "received_bytes": 788529152,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1860.445000000298,
+      "received_bytes": 805306368,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1891.8149999976158,
+      "received_bytes": 822083584,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1924.5099999979138,
+      "received_bytes": 838860800,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1955.734999999404,
+      "received_bytes": 855638016,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 1984.6300000026822,
+      "received_bytes": 872415232,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 2013.5050000026822,
+      "received_bytes": 889192448,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 2054.585000000894,
+      "received_bytes": 905969664,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "fetch:model.onnx",
+      "elapsed_ms": 2094.429999999702,
+      "received_bytes": 922746880,
+      "expected_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "hash:model.onnx",
+      "elapsed_ms": 2101.064999997616,
+      "received_bytes": 929574771
+    },
+    {
+      "kind": "stage",
+      "stage": "initialize_wasm_session",
+      "elapsed_ms": 4864.744999997318
+    },
+    {
+      "kind": "stage",
+      "stage": "one_group_wasm_inference",
+      "elapsed_ms": 9806.030000001192
+    },
+    {
+      "kind": "stage",
+      "stage": "release_session",
+      "elapsed_ms": 36358.384999997914
+    }
+  ],
+  "investigation_bound_ms": 600000
+}

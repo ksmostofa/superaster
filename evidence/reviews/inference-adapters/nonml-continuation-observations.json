@@ -1,0 +1,284 @@
+{
+  "status": "PASS for corrected response assertion and previously unexecuted non-ML checks; real removal evidence is the original identified run",
+  "scope": "Real native SDK/CLI/MCP workflow checks; browser and human subject-quality checks remain separate",
+  "cross_adapter_pixel_tolerance": 0,
+  "human_intended_subject": "NOT RUN",
+  "fresh_package_install": "NOT RUN unless SUPERASTER_PACKAGE_ROOT identifies the clean installed package",
+  "conditions": {
+    "started_at": "2026-10-08T21:30:12.811Z",
+    "node": "v26.11.1",
+    "native_versions": {
+      "aom": "3.15.1",
+      "archive": "3.8.9",
+      "cairo": "1.18.6",
+      "cgif": "0.5.4",
+      "exif": "0.6.26",
+      "expat": "2.8.5",
+      "ffi": "3.8.0",
+      "fontconfig": "2.18.3",
+      "freetype": "2.14.3",
+      "fribidi": "1.0.17",
+      "glib": "2.90.0",
+      "harfbuzz": "14.5.0",
+      "heif": "1.23.5",
+      "highway": "1.4.0",
+      "imagequant": "2.4.1",
+      "lcms": "2.19.1",
+      "mozjpeg": "0826579",
+      "pango": "1.58.2",
+      "pixman": "0.46.4",
+      "png": "1.6.58",
+      "proxy-libintl": "0.5",
+      "rsvg": "2.63.2",
+      "tiff": "4.7.2",
+      "uhdr": "2.0.2",
+      "vips": "8.18.7",
+      "webp": "1.6.0",
+      "xml2": "2.15.4",
+      "zlib-ng": "2.3.3",
+      "sharp": "0.35.5"
+    },
+    "test_commit": "6cfa13381dea448d818ca63a5de2c3763ae8e445",
+    "package_root": "/home/sadid/Downloads/Superaster/superaster-verification-adapters",
+    "model_directory": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/models",
+    "model": {
+      "id": "birefnet-512-fp16",
+      "name": "BiRefNet 512 Quality",
+      "repository": "naddy24/birefnet-512-webgpu",
+      "revision": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+      "file": "onnx/model_fp16.onnx",
+      "bytes": 473435223,
+      "sha256": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+      "inputSize": 512,
+      "license": "MIT",
+      "url": "https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx",
+      "version": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+      "width": 512,
+      "height": 512,
+      "precision": "fp16",
+      "inputName": "input_image",
+      "outputName": "output_image"
+    },
+    "input": {
+      "path": "benchmarks/fixtures/generated/acceptance/t01-2400x1600.png",
+      "sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "width": 2400,
+      "height": 1600,
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+      "source_sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+      "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+      "derived_geometry": {
+        "canvas_background": "#ffffff",
+        "position_px": [
+          0,
+          3
+        ],
+        "resampling": "Pillow 12.3.0 LANCZOS; contain without upscaling",
+        "source_scaled_dimensions": [
+          2400,
+          1593
+        ]
+      },
+      "orientation_normalized": true,
+      "source_case_id": "people-group"
+    },
+    "compiled_hashes": {
+      "dist/native/sdk/src/index.js": "1e9ac6aaa28c8a62e90dc517d1cd3021c0c2522f9976614da3d6c2b7a5d42a9b",
+      "dist/native/cli/src/index.js": "f390732631910db08e9053cc992778a74b88950c96f384142033ef7b02c1b0cd",
+      "dist/native/mcp/src/index.js": "575b3993f729569e374451420406e75b4e8c7dd1418b197cae87b5c5f31f6d5c",
+      "dist/native/engines/src/native.js": "04e80900cef2983183498a15dca34be233960a987d4744fc046b835aaab04cfe",
+      "dist/native/engines/src/pipeline.js": "151b6e6ef558224ed7e0af7bc3cd11aaa04acdf3e88170edef8035e869d564ea",
+      "dist/native/core/src/index.js": "6ac4e388c8e0a6852bd2afd2cb89fd1732e286820bc492d9c5f1c82399846b56",
+      "dist/native/contract/src/index.js": "52469a8b5564a2ae2c70703e3fda456961180de9ba066207cd1e2a519ee14fd1"
+    },
+    "parallel_inference_jobs": 0,
+    "download_condition": "Approved existing model files verified by byte size and SHA-256 in initial run; cold download not exercised",
+    "continuation_from": "/home/sadid/Downloads/Superaster/superaster-verification-adapters/.cache/inference-adapters-LbjEBL",
+    "continuation_scope": "Existing real inference outputs retained; only previously failing response assertion and unexecuted non-ML checks rerun"
+  },
+  "previous_observations_sha256": "6c4032655fdfcd02b7b63b37bf6bff1748a4532116a81ea3b6e95e0d202745da",
+  "validation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"preset\":{\"id\":\"shopify-product-square\",\"version\":\"2026-10-08.1\",\"purpose\":\"Shopify square product image\",\"jurisdiction\":\"Global\",\"authority\":\"Shopify\",\"channel\":\"Product or collection image upload\",\"language\":\"en\",\"aliases\":[\"shopify image\",\"shopify product\",\"shopify square\"],\"sources\":[{\"url\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"title\":\"Shopify product media types\",\"verified_at\":\"2026-10-08\"}],\"rules\":[{\"id\":\"maximum-size\",\"kind\":\"dimensions\",\"strength\":\"mandatory\",\"text\":\"At most 5000 by 5000 pixels, 25MP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":{\"max_width\":5000,\"max_height\":5000}},{\"id\":\"recommended-size\",\"kind\":\"dimensions\",\"strength\":\"recommended\",\"text\":\"2048 square usually displays best; theme controls actual display.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":{\"width\":2048,\"height\":2048}},{\"id\":\"bytes\",\"kind\":\"max_bytes\",\"strength\":\"mandatory\",\"text\":\"Smaller than 20MB; decimal/binary interval needs review.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":19999999,\"tolerance\":971520},{\"id\":\"formats\",\"kind\":\"formats\",\"strength\":\"mandatory\",\"text\":\"Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\",\"value\":[\"png\",\"jpeg\",\"webp\",\"tiff\",\"bmp\",\"gif\",\"svg\",\"heic\"]},{\"id\":\"shape\",\"kind\":\"visual\",\"strength\":\"recommended\",\"text\":\"Use consistent aspect ratios across main images.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"}],\"edit_policy\":{\"allowed\":[\"remove_background\",\"resize\",\"crop\",\"subject_crop\",\"canvas\",\"composite\",\"rotate\",\"flip\",\"correct\",\"mask\",\"normalize\",\"print_sheet\"],\"forbidden\":[],\"unspecified\":[],\"notes\":\"Superaster permits requested faithful image preparation. The platform source does not specify a complete editing policy; this operation list is Superaster behavior, not a claim of authority approval. Generation and identity alteration are outside the MVP.\"},\"exceptions\":[],\"user_confirmations\":[],\"freshness\":{\"status\":\"verified\",\"verified_at\":\"2026-10-08\"},\"license\":\"CC0-1.0\",\"recipe_operations\":[{\"op\":\"canvas\",\"width\":2048,\"height\":2048,\"fit\":\"contain\",\"background\":\"#ffffff\",\"position\":\"center\"}]},\"rules\":[{\"id\":\"maximum-size\",\"state\":\"pass\",\"message\":\"mandatory: At most 5000 by 5000 pixels, 25MP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"recommended-size\",\"state\":\"fail\",\"message\":\"recommended: 2048 square usually displays best; theme controls actual display.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"bytes\",\"state\":\"pass\",\"message\":\"mandatory: Smaller than 20MB; decimal/binary interval needs review.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"formats\",\"state\":\"pass\",\"message\":\"mandatory: Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"},{\"id\":\"shape\",\"state\":\"needs_review\",\"message\":\"Use consistent aspect ratios across main images.\",\"source\":\"https://help.shopify.com/en/manual/products/product-media/product-media-types\"}]}"
+      }
+    ],
+    "structuredContent": {
+      "preset": {
+        "id": "shopify-product-square",
+        "version": "2026-10-08.1",
+        "purpose": "Shopify square product image",
+        "jurisdiction": "Global",
+        "authority": "Shopify",
+        "channel": "Product or collection image upload",
+        "language": "en",
+        "aliases": [
+          "shopify image",
+          "shopify product",
+          "shopify square"
+        ],
+        "sources": [
+          {
+            "url": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+            "title": "Shopify product media types",
+            "verified_at": "2026-10-08"
+          }
+        ],
+        "rules": [
+          {
+            "id": "maximum-size",
+            "kind": "dimensions",
+            "strength": "mandatory",
+            "text": "At most 5000 by 5000 pixels, 25MP.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+            "value": {
+              "max_width": 5000,
+              "max_height": 5000
+            }
+          },
+          {
+            "id": "recommended-size",
+            "kind": "dimensions",
+            "strength": "recommended",
+            "text": "2048 square usually displays best; theme controls actual display.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+            "value": {
+              "width": 2048,
+              "height": 2048
+            }
+          },
+          {
+            "id": "bytes",
+            "kind": "max_bytes",
+            "strength": "mandatory",
+            "text": "Smaller than 20MB; decimal/binary interval needs review.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+            "value": 19999999,
+            "tolerance": 971520
+          },
+          {
+            "id": "formats",
+            "kind": "formats",
+            "strength": "mandatory",
+            "text": "Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+            "value": [
+              "png",
+              "jpeg",
+              "webp",
+              "tiff",
+              "bmp",
+              "gif",
+              "svg",
+              "heic"
+            ]
+          },
+          {
+            "id": "shape",
+            "kind": "visual",
+            "strength": "recommended",
+            "text": "Use consistent aspect ratios across main images.",
+            "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+          }
+        ],
+        "edit_policy": {
+          "allowed": [
+            "remove_background",
+            "resize",
+            "crop",
+            "subject_crop",
+            "canvas",
+            "composite",
+            "rotate",
+            "flip",
+            "correct",
+            "mask",
+            "normalize",
+            "print_sheet"
+          ],
+          "forbidden": [],
+          "unspecified": [],
+          "notes": "Superaster permits requested faithful image preparation. The platform source does not specify a complete editing policy; this operation list is Superaster behavior, not a claim of authority approval. Generation and identity alteration are outside the MVP."
+        },
+        "exceptions": [],
+        "user_confirmations": [],
+        "freshness": {
+          "status": "verified",
+          "verified_at": "2026-10-08"
+        },
+        "license": "CC0-1.0",
+        "recipe_operations": [
+          {
+            "op": "canvas",
+            "width": 2048,
+            "height": 2048,
+            "fit": "contain",
+            "background": "#ffffff",
+            "position": "center"
+          }
+        ]
+      },
+      "rules": [
+        {
+          "id": "maximum-size",
+          "state": "pass",
+          "message": "mandatory: At most 5000 by 5000 pixels, 25MP.",
+          "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+        },
+        {
+          "id": "recommended-size",
+          "state": "fail",
+          "message": "recommended: 2048 square usually displays best; theme controls actual display.",
+          "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+        },
+        {
+          "id": "bytes",
+          "state": "pass",
+          "message": "mandatory: Smaller than 20MB; decimal/binary interval needs review.",
+          "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+        },
+        {
+          "id": "formats",
+          "state": "pass",
+          "message": "mandatory: Accepted PNG/JPEG/WebP and listed TIFF/BMP/GIF/SVG/HEIC; MVP codecs remain PNG/JPEG/WebP.",
+          "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+        },
+        {
+          "id": "shape",
+          "state": "needs_review",
+          "message": "Use consistent aspect ratios across main images.",
+          "source": "https://help.shopify.com/en/manual/products/product-media/product-media-types"
+        }
+      ]
+    }
+  },
+  "unsupported": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"error\":{\"code\":\"INVALID_RECIPE\",\"message\":\"data/operations/0/op must be equal to constant, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'x', data/operations/0 must have required property 'y', data/operations/0 must have required property 'width', data/operations/0 must have required property 'height', data/operations/0/op must be equal to constant, data/operations/0 must have required property 'margin', data/operations/0/op must be equal to constant, data/operations/0 must have required property 'width', data/operations/0 must have required property 'height', data/operations/0/op must be equal to constant, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'angle', data/operations/0/op must be equal to constant, data/operations/0 must have required property 'axis', data/operations/0/op must be equal to constant, data/operations/0/op must be equal to constant, data/operations/0/op must be equal to constant, data/operations/0 must have required property 'color_space', data/operations/0/op must be equal to constant, data/operations/0 must have required property 'sheet_width_mm', data/operations/0 must have required property 'sheet_height_mm', data/operations/0 must have required property 'item_width_mm', data/operations/0 must have required property 'item_height_mm', data/operations/0 must have required property 'dpi', data/operations/0 must have required property 'rows', data/operations/0 must have required property 'columns', data/operations/0 must have required property 'margin_mm', data/operations/0 must have required property 'spacing_mm', data/operations/0/op must be equal to constant, data/operations/0 must match a schema in anyOf\",\"details\":{\"errors\":[{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/0/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"remove_background\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/1/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"resize\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"x\"},\"message\":\"must have required property 'x'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"y\"},\"message\":\"must have required property 'y'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"width\"},\"message\":\"must have required property 'width'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"height\"},\"message\":\"must have required property 'height'\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/2/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"crop\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"margin\"},\"message\":\"must have required property 'margin'\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/3/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"subject_crop\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"width\"},\"message\":\"must have required property 'width'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"height\"},\"message\":\"must have required property 'height'\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/4/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"canvas\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/5/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"composite\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"angle\"},\"message\":\"must have required property 'angle'\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/6/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"rotate\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"axis\"},\"message\":\"must have required property 'axis'\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/7/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"flip\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/8/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"correct\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/9/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"mask\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"color_space\"},\"message\":\"must have required property 'color_space'\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/10/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"normalize\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"sheet_width_mm\"},\"message\":\"must have required property 'sheet_width_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"sheet_height_mm\"},\"message\":\"must have required property 'sheet_height_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"item_width_mm\"},\"message\":\"must have required property 'item_width_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"item_height_mm\"},\"message\":\"must have required property 'item_height_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"dpi\"},\"message\":\"must have required property 'dpi'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"rows\"},\"message\":\"must have required property 'rows'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"columns\"},\"message\":\"must have required property 'columns'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"margin_mm\"},\"message\":\"must have required property 'margin_mm'\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/required\",\"keyword\":\"required\",\"params\":{\"missingProperty\":\"spacing_mm\"},\"message\":\"must have required property 'spacing_mm'\"},{\"instancePath\":\"/operations/0/op\",\"schemaPath\":\"#/properties/operations/items/anyOf/11/properties/op/const\",\"keyword\":\"const\",\"params\":{\"allowedValue\":\"print_sheet\"},\"message\":\"must be equal to constant\"},{\"instancePath\":\"/operations/0\",\"schemaPath\":\"#/properties/operations/items/anyOf\",\"keyword\":\"anyOf\",\"params\":{},\"message\":\"must match a schema in anyOf\"}]}}}"
+      }
+    ],
+    "isError": true
+  },
+  "maximum_mcp_response_bytes": 7338,
+  "sdk_prepared": {
+    "sha256": "69f42310aeed84deadc5e4f0581c683403edde296d02a2b94e5d3d445feb69dd",
+    "bytes": 111968,
+    "decoded_pixel_sha256": "a4b3f7a7b944eb51ed6bb8adabd8a085613337c9f144b552cd91adadf29eb6cc",
+    "metadata": {
+      "width": 1200,
+      "height": 1200,
+      "format": "webp",
+      "has_icc": true,
+      "exif": false
+    }
+  },
+  "prepared_pixels": {
+    "maximum_channel_delta": 0,
+    "first_pixel_sha256": "a4b3f7a7b944eb51ed6bb8adabd8a085613337c9f144b552cd91adadf29eb6cc",
+    "second_pixel_sha256": "a4b3f7a7b944eb51ed6bb8adabd8a085613337c9f144b552cd91adadf29eb6cc"
+  }
+}

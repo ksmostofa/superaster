@@ -1,0 +1,7 @@
+corpus/originals/
+corpus/evaluation/
+corpus/source-snapshots/
+fixtures/generated/
+runs/
+__pycache__/
+.venv/

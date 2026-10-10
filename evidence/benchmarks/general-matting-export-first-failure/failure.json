@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "stage": "trace_and_export",
+  "type": "ValueError",
+  "message": "The reviewed export requires fixed NCHW image and OIHW weight dimensions",
+  "network_attempts": [],
+  "process_high_water_rss_bytes": 5143986176
+}

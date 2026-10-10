@@ -1,0 +1,96 @@
+{
+  "name": "superaster-local",
+  "version": "0.1.0-alpha.1",
+  "description": "Free local image processing for people, developers and agents",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "superaster": "dist/native/cli/src/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/native/sdk/src/index.d.ts",
+      "import": "./dist/native/sdk/src/index.js"
+    },
+    "./contract": {
+      "types": "./dist/native/contract/src/index.d.ts",
+      "import": "./dist/native/contract/src/index.js"
+    }
+  },
+  "files": [
+    "dist/native",
+    "schemas",
+    "packages/catalog/data",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "third-party-licenses",
+    "docs",
+    "research/artifacts.json",
+    "research/catalog.md",
+    "research/runtime-source-compliance.md",
+    "benchmarks/README.md",
+    "benchmarks/review-protocol.md",
+    "benchmarks/budgets.json",
+    "benchmarks/corpus/model-overlap.json",
+    "benchmarks/corpus/NOTICE.md",
+    "evidence/benchmarks/native-screening-baseline.md",
+    "README.md",
+    "evidence/benchmarks/native-screening-baseline.json",
+    "evidence/benchmarks/screening-quality-d21946e/conditions.json",
+    "evidence/benchmarks/screening-quality-d21946e/results.json",
+    "evidence/benchmarks/screening-quality-d21946e/thin-plant--1/white.png",
+    "evidence/benchmarks/screening-fast-40d2c57/conditions.json",
+    "evidence/benchmarks/screening-fast-40d2c57/results.json",
+    "evidence/benchmarks/screening-fast-40d2c57/thin-plant--1/measurement.json",
+    "evidence/benchmarks/screening-fast-40d2c57/thin-plant--1/alpha.png",
+    "evidence/benchmarks/screening-fast-40d2c57/thin-plant--1/white.png",
+    "scripts/source-verification.mjs"
+  ],
+  "scripts": {
+    "dev": "npm run assets && vite --host 127.0.0.1",
+    "build": "npm run build:native && npm run build:web",
+    "build:native": "tsc -p tsconfig.native.json",
+    "build:web": "npm run assets && vite build && tsx scripts/service-worker.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build:native && vitest run",
+    "schemas": "tsx scripts/schemas.ts",
+    "assets": "tsx scripts/assets.ts",
+    "preview": "vite preview --host 127.0.0.1 --port 5180"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "vitest": "5.0.3"
+  },
+  "dependencies": {
+    "@fontsource-variable/figtree": "5.3.0",
+    "@hugeicons/core-free-icons": "4.3.5",
+    "@hugeicons/react": "1.1.10",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@sinclair/typebox": "0.34.52",
+    "ajv": "8.20.0",
+    "clsx": "2.1.1",
+    "effect": "4.0.2",
+    "fflate": "0.8.3",
+    "lucide-react": "1.53.0",
+    "motion": "14.0.0",
+    "onnxruntime-node": "1.30.0",
+    "onnxruntime-web": "1.30.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "0.35.5",
+    "tailwind-merge": "3.7.0",
+    "wasm-vips": "0.0.19",
+    "zod": "4.6.5"
+  }
+}

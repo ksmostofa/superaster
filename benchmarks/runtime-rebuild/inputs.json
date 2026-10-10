@@ -1,0 +1,225 @@
+{
+  "scope": "Declared modified source rebuild; historical release identity is not asserted",
+  "entries": [
+    {
+      "component": "wasm-vips",
+      "version": "49ac4378f2df80e38f45491abeeac9b86dddbedd",
+      "url": "https://codeload.github.com/kleisauke/wasm-vips/tar.gz/49ac4378f2df80e38f45491abeeac9b86dddbedd",
+      "bytes": 7715169,
+      "sha256": "ebd94f51dae13165bd98db3f2ff99a66e64dd59c982c8722250a1f3a160c25a1",
+      "file": "wasm-vips-49ac4378f2df80e38f45491abeeac9b86dddbedd.archive",
+      "aliases": [
+        "https://codeload.github.com/kleisauke/wasm-vips/tar.gz/49ac4378f2df80e38f45491abeeac9b86dddbedd"
+      ]
+    },
+    {
+      "component": "libvips",
+      "version": "8.18.7",
+      "url": "https://github.com/libvips/libvips/releases/download/v8.18.7/vips-8.18.7.tar.xz",
+      "bytes": 25425084,
+      "sha256": "5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94",
+      "file": "libvips-8.18.7.archive",
+      "aliases": [
+        "https://github.com/libvips/libvips/releases/download/v8.18.7/vips-8.18.7.tar.xz"
+      ]
+    },
+    {
+      "component": "glib",
+      "version": "2.90.0",
+      "url": "https://download.gnome.org/sources/glib/2.90/glib-2.90.0.tar.xz",
+      "bytes": 5830480,
+      "sha256": "17d15cac2af80a33271127408e0abc2748eb297c595c2a26409e81e14e7d1b8f",
+      "file": "glib-2.90.0.archive",
+      "aliases": [
+        "https://download.gnome.org/sources/glib/2.90/glib-2.90.0.tar.xz"
+      ]
+    },
+    {
+      "component": "libexif",
+      "version": "0.6.26",
+      "url": "https://github.com/libexif/libexif/releases/download/v0.6.26/libexif-0.6.26.tar.xz",
+      "bytes": 1335488,
+      "sha256": "4a055ed6575e61ca46c3172be3c753cc16c9becd0f99ec71d58dd0e471476c0c",
+      "file": "libexif-0.6.26.archive",
+      "aliases": [
+        "https://github.com/libexif/libexif/releases/download/v0.6.26/libexif-0.6.26.tar.xz"
+      ]
+    },
+    {
+      "component": "zlib-ng",
+      "version": "2.3.3",
+      "url": "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.3.tar.gz",
+      "bytes": 2447397,
+      "sha256": "f9c65aa9c852eb8255b636fd9f07ce1c406f061ec19a2e7d508b318ca0c907d1",
+      "file": "zlib-ng-2.3.3.archive",
+      "aliases": [
+        "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.3.tar.gz"
+      ]
+    },
+    {
+      "component": "libffi",
+      "version": "3.8.0",
+      "url": "https://github.com/libffi/libffi/releases/download/v3.8.0/libffi-3.8.0.tar.gz",
+      "bytes": 1581626,
+      "sha256": "7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4",
+      "file": "libffi-3.8.0.archive",
+      "aliases": [
+        "https://github.com/libffi/libffi/releases/download/v3.8.0/libffi-3.8.0.tar.gz"
+      ]
+    },
+    {
+      "component": "expat",
+      "version": "2.8.5",
+      "url": "https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.xz",
+      "bytes": 528380,
+      "sha256": "1e727b8933ec51a77a9a9d9afcf8e688bce45d907c13e36ab7393fe36e703182",
+      "file": "expat-2.8.5.archive",
+      "aliases": [
+        "https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.xz"
+      ]
+    },
+    {
+      "component": "lcms",
+      "version": "2.19.1",
+      "url": "https://github.com/mm2/Little-CMS/releases/download/lcms2.19.1/lcms2-2.19.1.tar.gz",
+      "bytes": 5728743,
+      "sha256": "bfc54f7bab59fbc921012014a8032e4cba4abd46db47d46b76416a8c0b2815c8",
+      "file": "lcms-2.19.1.archive",
+      "aliases": [
+        "https://github.com/mm2/Little-CMS/releases/download/lcms2.19.1/lcms2-2.19.1.tar.gz"
+      ]
+    },
+    {
+      "component": "highway",
+      "version": "1.4.0",
+      "url": "https://github.com/google/highway/archive/refs/tags/1.4.0.tar.gz",
+      "bytes": 3691240,
+      "sha256": "e72241ac9524bb653ae52ced768b508045d4438726a303f10181a38f764a453c",
+      "file": "highway-1.4.0.archive",
+      "aliases": [
+        "https://github.com/google/highway/archive/refs/tags/1.4.0.tar.gz"
+      ]
+    },
+    {
+      "component": "mozjpeg",
+      "version": "0826579",
+      "url": "https://github.com/mozilla/mozjpeg/archive/0826579.tar.gz",
+      "bytes": 2443542,
+      "sha256": "b680167bd5d9afebdd576a12f8c49d2c9066a3b92ef96a2b2c5f7829b8600fe5",
+      "file": "mozjpeg-0826579.archive",
+      "aliases": [
+        "https://github.com/mozilla/mozjpeg/archive/0826579.tar.gz"
+      ]
+    },
+    {
+      "component": "libultrahdr",
+      "version": "2.0.2",
+      "url": "https://github.com/google/libultrahdr/archive/refs/tags/v2.0.2.tar.gz",
+      "bytes": 1518872,
+      "sha256": "aa8d193bb887c348c419780511dd03b374f4e07af8812b6d3f80c8537cf1ef2c",
+      "file": "libultrahdr-2.0.2.archive",
+      "aliases": [
+        "https://github.com/google/libultrahdr/archive/refs/tags/v2.0.2.tar.gz"
+      ]
+    },
+    {
+      "component": "libpng",
+      "version": "1.6.58",
+      "url": "https://github.com/pnggroup/libpng/archive/refs/tags/v1.6.58.tar.gz",
+      "bytes": 1592190,
+      "sha256": "a9d4df463d36a6e5f9c29bd6f4967312d17e996c1854f3511f833924eb1993cf",
+      "file": "libpng-1.6.58.archive",
+      "aliases": [
+        "https://github.com/pnggroup/libpng/archive/refs/tags/v1.6.58.tar.gz"
+      ]
+    },
+    {
+      "component": "libimagequant",
+      "version": "2.4.1",
+      "url": "https://github.com/lovell/libimagequant/archive/refs/tags/v2.4.1.tar.gz",
+      "bytes": 45792,
+      "sha256": "47d2a84b7b1052975c9d50a3d4e3cacbf57b43d84a4c3131210848ead9964dfb",
+      "file": "libimagequant-2.4.1.archive",
+      "aliases": [
+        "https://github.com/lovell/libimagequant/archive/refs/tags/v2.4.1.tar.gz"
+      ]
+    },
+    {
+      "component": "cgif",
+      "version": "0.5.4",
+      "url": "https://github.com/dloebl/cgif/archive/refs/tags/v0.5.4.tar.gz",
+      "bytes": 40028,
+      "sha256": "83a70a15bc2da41f081a44ebc58ee48e2e1d524a6d3fdb4a24064afa08d5ad4d",
+      "file": "cgif-0.5.4.archive",
+      "aliases": [
+        "https://github.com/dloebl/cgif/archive/refs/tags/v0.5.4.tar.gz"
+      ]
+    },
+    {
+      "component": "webp",
+      "version": "1.6.0",
+      "url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.6.0.tar.gz",
+      "bytes": 4296070,
+      "sha256": "e4ab7009bf0629fd11982d4c2aa83964cf244cffba7347ecd39019a9e38c4564",
+      "file": "webp-1.6.0.archive",
+      "aliases": [
+        "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.6.0.tar.gz"
+      ]
+    },
+    {
+      "component": "tiff",
+      "version": "4.7.2",
+      "url": "https://gitlab.com/libtiff/libtiff/-/archive/v4.7.2/libtiff-v4.7.2.tar.gz",
+      "bytes": 2616788,
+      "sha256": "62b15f44c10106065211efa22a2dc77937bd97ee1f6e3afd2c9659010de112eb",
+      "file": "tiff-4.7.2.archive",
+      "aliases": [
+        "https://gitlab.com/libtiff/libtiff/-/archive/v4.7.2/libtiff-v4.7.2.tar.gz"
+      ]
+    },
+    {
+      "component": "glib-patch",
+      "version": "pinned candidate",
+      "url": "https://github.com/GNOME/glib/compare/436d47a723da97fbe67057f6b51dcf49a244fd4a...kleisauke:1180af32b6d401f79017156a260945483404edd0.patch",
+      "aliases": [
+        "https://github.com/GNOME/glib/compare/2.90.0...kleisauke:wasm-vips-2.90.0.patch"
+      ],
+      "bytes": 208505,
+      "sha256": "e57b5b8bc485d74dbdacd56432b9a98cb3889b4ed46007c6bfe210275a4cc2be",
+      "file": "glib-patch.patch"
+    },
+    {
+      "component": "vips-patch",
+      "version": "pinned candidate",
+      "url": "https://github.com/libvips/libvips/compare/24ad4d042940e6bf99a68871ba886ca8847c9c82...kleisauke:e9ac3e5c29fed4e3c8678595564e4974f1ef05c1.patch",
+      "aliases": [
+        "https://github.com/libvips/libvips/compare/v8.18.7...kleisauke:wasm-vips-8.18.7.patch"
+      ],
+      "bytes": 109430,
+      "sha256": "6c9039a65d5853dd2918c5a308b0e1f7db0f05d8b2cf9cab0b79376348b65df7",
+      "file": "vips-patch.patch"
+    },
+    {
+      "component": "emscripten-patch",
+      "version": "pinned candidate",
+      "url": "https://github.com/emscripten-core/emscripten/compare/d6c521a7f05449857c76bd99e396895583cf2083...kleisauke:d1aa1ceae8408311868149e0971473bd3e2eafab.patch",
+      "aliases": [
+        "https://github.com/emscripten-core/emscripten/compare/6.0.10...kleisauke:wasm-vips-6.0.10.patch"
+      ],
+      "bytes": 13783,
+      "sha256": "8e5a81a90cbcebc0b502cf774d3653890f068bd26fcb6959231068cda3251bbd",
+      "file": "emscripten-patch.patch"
+    },
+    {
+      "component": "mozjpeg-patch",
+      "version": "pinned candidate",
+      "url": "https://github.com/kleisauke/libjpeg-turbo/commit/a60fb467fc7601b008741d42e98268c8a7bcb5b4.patch",
+      "aliases": [
+        "https://github.com/kleisauke/libjpeg-turbo/commit/a60fb467fc7601b008741d42e98268c8a7bcb5b4.patch"
+      ],
+      "bytes": 2574,
+      "sha256": "707c465f0215a786843438a352039bf18ccc83e5bb374670270c1e4e753bbe8b",
+      "file": "mozjpeg-patch.patch"
+    }
+  ]
+}

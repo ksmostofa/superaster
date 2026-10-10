@@ -1,0 +1,460 @@
+{
+  "checked": "2026-10-09",
+  "entries": [
+    {
+      "path": "browser-modules.json",
+      "sha256": "f833a522413e3d9d3cd8d0aa38a8a81fd8c44cc6d2d0c02d5cf8c6fd9000dfcf",
+      "bytes": 33524,
+      "component": "rendered module audit",
+      "status": "observed final integrated source build; module inventory only"
+    },
+    {
+      "path": "fetch-sources.mjs",
+      "bytes": 2032,
+      "sha256": "6e185cd2c99013818161225dc8674482ea90114ca2e5cd59f8df73a3d22b461c",
+      "source": "Superaster source-access documentation or derived audit evidence"
+    },
+    {
+      "path": "js/@fontsource-variable__figtree-5.3.0-LICENSE",
+      "sha256": "ee23e6c84000126692e112ff067b456470493349f993ceaa8b4d3766dd6fad5d",
+      "bytes": 4498,
+      "component": "@fontsource-variable/figtree",
+      "version": "5.3.0",
+      "license": "OFL-1.1",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/%40fontsource-variable%2Ffigtree/5.3.0"
+    },
+    {
+      "path": "js/@sinclair__typebox-0.34.52-license",
+      "sha256": "a62f9f2edd97ed0d92f0ef93584dd109a7d34299795abc7780b8b5a85ff00671",
+      "bytes": 1164,
+      "component": "@sinclair/typebox",
+      "version": "0.34.52",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/%40sinclair%2Ftypebox/0.34.52"
+    },
+    {
+      "path": "js/ajv-8.20.0-LICENSE",
+      "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3",
+      "bytes": 1090,
+      "component": "ajv",
+      "version": "8.20.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/ajv/8.20.0"
+    },
+    {
+      "path": "js/effect-4.0.2-LICENSE",
+      "sha256": "774c3bc5924ad8ae6c5a75f1c53db13feb238ade15989625c513d07b60dedf30",
+      "bytes": 1083,
+      "component": "effect",
+      "version": "4.0.2",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/effect/4.0.2"
+    },
+    {
+      "path": "js/fast-deep-equal-3.1.3-LICENSE",
+      "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+      "bytes": 1074,
+      "component": "fast-deep-equal",
+      "version": "3.1.3",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/fast-deep-equal/3.1.3"
+    },
+    {
+      "path": "js/fast-uri-3.1.8-LICENSE",
+      "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786",
+      "bytes": 1813,
+      "component": "fast-uri",
+      "version": "3.1.8",
+      "license": "BSD-3-Clause",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/fast-uri/3.1.8"
+    },
+    {
+      "path": "js/fflate-0.8.3-LICENSE",
+      "sha256": "0a1df3a083d0c010560aa342e87959c8c1070e6fd54545741f083f22d0c8b551",
+      "bytes": 1069,
+      "component": "fflate",
+      "version": "0.8.3",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/fflate/0.8.3"
+    },
+    {
+      "path": "js/framer-motion-14.0.0-LICENSE.md",
+      "sha256": "5ff46083b88563822b0560dd6221ab89d2f74bc97a52d4c97a75020fd62c6f32",
+      "bytes": 1078,
+      "component": "framer-motion",
+      "version": "14.0.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/framer-motion/14.0.0"
+    },
+    {
+      "path": "js/json-schema-traverse-1.0.0-LICENSE",
+      "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+      "bytes": 1074,
+      "component": "json-schema-traverse",
+      "version": "1.0.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/json-schema-traverse/1.0.0"
+    },
+    {
+      "path": "js/motion-14.0.0-LICENSE.md",
+      "sha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "bytes": 1100,
+      "component": "motion",
+      "version": "14.0.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/motion/14.0.0"
+    },
+    {
+      "path": "js/motion-dom-14.0.0-LICENSE.md",
+      "sha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "bytes": 1100,
+      "component": "motion-dom",
+      "version": "14.0.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/motion-dom/14.0.0"
+    },
+    {
+      "path": "js/motion-utils-14.0.0-LICENSE.md",
+      "sha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "bytes": 1100,
+      "component": "motion-utils",
+      "version": "14.0.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/motion-utils/14.0.0"
+    },
+    {
+      "path": "js/react-19.3.0-LICENSE",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "bytes": 1088,
+      "component": "react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/react/19.3.0"
+    },
+    {
+      "path": "js/react-dom-19.3.0-LICENSE",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "bytes": 1088,
+      "component": "react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/react-dom/19.3.0"
+    },
+    {
+      "path": "js/rolldown-1.2.13-LICENSE",
+      "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+      "bytes": 1302,
+      "component": "rolldown",
+      "version": "1.2.13",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/rolldown/1.2.13"
+    },
+    {
+      "path": "js/scheduler-0.28.0-LICENSE",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "bytes": 1088,
+      "component": "scheduler",
+      "version": "0.28.0",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/scheduler/0.28.0"
+    },
+    {
+      "path": "js/vite-8.3.4-LICENSE.md",
+      "sha256": "a47172e44a86a7e2cd1c16282341f7726ec60caafe3a6166fe3e0602005b6fa6",
+      "bytes": 108786,
+      "component": "vite",
+      "version": "8.3.4",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/vite/8.3.4"
+    },
+    {
+      "path": "js/wasm-vips-0.0.19-LICENSE",
+      "sha256": "9cbb5847deb22dffbdd860fe659a122d61c144e52cbd3a97d4bb858c5fb9cef6",
+      "bytes": 1086,
+      "component": "wasm-vips",
+      "version": "0.0.19",
+      "license": "MIT",
+      "source": "installed exact npm package",
+      "package_url": "https://registry.npmjs.org/wasm-vips/0.0.19"
+    },
+    {
+      "path": "legal/LGPL-2.1.txt",
+      "sha256": "5749785c8bdefafcb5d798270ed0a967036fe2ca63dcedade1627565dfef81d2",
+      "bytes": 26001,
+      "component": "GNU license text",
+      "source": "verbatim installed SPDX license text",
+      "upstream": "https://www.gnu.org/licenses/"
+    },
+    {
+      "path": "legal/LGPL-3.0-and-GPL-3.0.txt",
+      "sha256": "996af0513df21f7496288951c41428a03c174e9e4a9d63665c57d670f845ccb1",
+      "bytes": 42098,
+      "component": "GNU license text",
+      "source": "verbatim installed SPDX license text",
+      "upstream": "https://www.gnu.org/licenses/"
+    },
+    {
+      "path": "models/BiRefNet-LICENSE",
+      "sha256": "92a7089e0915fc32bc40067560b398f1e6a7a5958abd7d04eda393629a5acefb",
+      "bytes": 1066,
+      "source_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE"
+    },
+    {
+      "path": "native/sharp-0.35.5-LICENSE",
+      "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+      "bytes": 10273,
+      "component": "Sharp wrapper",
+      "version": "0.35.5",
+      "source": "node_modules/sharp/LICENSE"
+    },
+    {
+      "path": "native/sharp-libvips-linux-x64-1.3.4-README.md",
+      "sha256": "b4fb1a9f5909cfd58edb4177c2028ce3033cf8651aef740a554c1dc58b3c5ee3",
+      "bytes": 4331,
+      "component": "native vendor notices, separately installed dependency",
+      "version": "1.3.4",
+      "source": "node_modules/@img/sharp-libvips-linux-x64/README.md"
+    },
+    {
+      "path": "native/sharp-libvips-linux-x64-1.3.4-versions.json",
+      "sha256": "e2611d5d854815a8b33c8a3d2ec649511a9596ccf16844e8eae7cf81e79881c4",
+      "bytes": 596,
+      "component": "native vendor inventory, separately installed dependency",
+      "version": "1.3.4",
+      "source": "node_modules/@img/sharp-libvips-linux-x64/versions.json"
+    },
+    {
+      "path": "runtime/onnxruntime-1.30.0-LICENSE",
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "bytes": 1073,
+      "source_url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/LICENSE"
+    },
+    {
+      "path": "runtime/onnxruntime-1.30.0-ThirdPartyNotices.txt",
+      "sha256": "143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3",
+      "bytes": 338088,
+      "source_url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/ThirdPartyNotices.txt"
+    },
+    {
+      "path": "runtime/wasm-vips-0.0.19-THIRD-PARTY-NOTICES.md",
+      "sha256": "0f52de00dd217125646ae85177def3e144de48d11f76368f257ba6468d3f7d8d",
+      "bytes": 3323,
+      "component": "wasm-vips vendor notices",
+      "version": "0.0.19",
+      "source": "node_modules/wasm-vips/THIRD-PARTY-NOTICES.md"
+    },
+    {
+      "path": "runtime/wasm-vips-0.0.19-versions.json",
+      "sha256": "e1b6858d24d76de7c28c15a5765d02661a1638b8555625bbc74cb3c67f6f184d",
+      "bytes": 434,
+      "component": "wasm-vips version inventory",
+      "version": "0.0.19",
+      "source": "node_modules/wasm-vips/versions.json"
+    },
+    {
+      "path": "SOURCES.md",
+      "bytes": 6519,
+      "sha256": "31f482460ee50c7160ca91c362a5fcc756027bd88ec0379eec49a6947976b27d",
+      "source": "Superaster source-access documentation or derived audit evidence"
+    },
+    {
+      "path": "sources/archives.json",
+      "bytes": 2015,
+      "sha256": "f1ce9438e2723d028eb934c7ef31c07f3b728d2d561c2ee3a1f29741f970a0a2",
+      "source": "Superaster source-access documentation or derived audit evidence"
+    },
+    {
+      "path": "sources/sharp-libvips-Linux-x64-Dockerfile",
+      "sha256": "1e8bc3981c8f1718cd99ea4fcd6d2e511afb9969f2fe3e0d2dc1ebf5a338a6e3",
+      "bytes": 1429,
+      "source_url": "https://raw.githubusercontent.com/lovell/sharp-libvips/ebb95f8add54eee8bed840e3fb587e4cbec857d7/platforms/linux-x64/Dockerfile"
+    },
+    {
+      "path": "sources/sharp-libvips-posix.sh",
+      "sha256": "333031b3b49bf1a16d0b9d6812d98f67c404218932ef8c0b389388524a524b36",
+      "bytes": 23877,
+      "source_url": "https://raw.githubusercontent.com/lovell/sharp-libvips/ebb95f8add54eee8bed840e3fb587e4cbec857d7/build/posix.sh"
+    },
+    {
+      "path": "sources/wasm-vips-build.sh",
+      "sha256": "03087405e00849b4da5f46681ba019904817b7e65554c75a4b25c9c9a7485b7c",
+      "bytes": 25333,
+      "source_url": "https://raw.githubusercontent.com/kleisauke/wasm-vips/49ac4378f2df80e38f45491abeeac9b86dddbedd/build.sh"
+    },
+    {
+      "path": "sources/wasm-vips-ci.yml",
+      "bytes": 2612,
+      "sha256": "68d431f19aab177031be260584ac8f1b8f86a58fa37b32edbed9b183fe017285",
+      "source": "https://raw.githubusercontent.com/kleisauke/wasm-vips/49ac4378f2df80e38f45491abeeac9b86dddbedd/.github/workflows/ci.yml"
+    },
+    {
+      "path": "sources/wasm-vips-Dockerfile",
+      "sha256": "69b5fac46254c85216fc5e7850af4f6b2c057dbcfdf67c4d32112d0a93ddebbe",
+      "bytes": 1164,
+      "source_url": "https://raw.githubusercontent.com/kleisauke/wasm-vips/49ac4378f2df80e38f45491abeeac9b86dddbedd/Dockerfile"
+    },
+    {
+      "path": "sources/wasm-vips-npm-provenance.json",
+      "bytes": 1687,
+      "sha256": "5b037638bc08dcbb5b69f97eb6e2ef549fb48d9fcca606abb29fe3036c05fa70",
+      "source": "Superaster source-access documentation or derived audit evidence"
+    },
+    {
+      "path": "ui/ANIMATE-UI.txt",
+      "sha256": "bb145c4b692008a88e8e565953d1ca258f2f9ea25190afaa86877a9e9de1c040",
+      "bytes": 1292,
+      "component": "Animate UI",
+      "version": "efeb96ffd7a3b7a4868667e4ac3c346620fb3044",
+      "source": "packages/web/licenses/ANIMATE-UI.txt"
+    },
+    {
+      "path": "ui/RARE-UI.txt",
+      "sha256": "75640a5a9e996db1abc438f3485f7b297b34e2f0a5652873a3b5dacbf489f0b8",
+      "bytes": 1646,
+      "component": "Rare UI",
+      "version": "b4de46efe4eb2613e22bb8134b482ed4e0c7736a",
+      "source": "packages/web/licenses/RARE-UI.txt"
+    },
+    {
+      "path": "wasm/cgif-0.5.4-LICENSE",
+      "sha256": "7264dede477abab4ac3fe8236beb8153845c04ccd33b18f281085087e219fc6d",
+      "bytes": 1099,
+      "source_url": "https://raw.githubusercontent.com/dloebl/cgif/v0.5.4/LICENSE"
+    },
+    {
+      "path": "wasm/emscripten-6.0.10-LICENSE",
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+      "bytes": 5093,
+      "source_url": "https://raw.githubusercontent.com/emscripten-core/emscripten/6.0.10/LICENSE"
+    },
+    {
+      "path": "wasm/expat-2.8.5-COPYING",
+      "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+      "bytes": 1144,
+      "source_url": "https://raw.githubusercontent.com/libexpat/libexpat/R_2_8_5/expat/COPYING"
+    },
+    {
+      "path": "wasm/glib-2.90.0-LGPL-2.1-or-later.txt",
+      "bytes": 25967,
+      "sha256": "fa6f36630bb1e0c571d34b2bbdf188d08495c9dbf58f28cac112f303fc1f58fb",
+      "source_url": "https://raw.githubusercontent.com/GNOME/glib/2.90.0/LICENSES/LGPL-2.1-or-later.txt",
+      "source_note": "Upstream COPYING is a symlink; retained its full LICENSES target rather than only the one-line pointer"
+    },
+    {
+      "path": "wasm/highway-1.4.0-LICENSE",
+      "sha256": "e340270d4f64384569a91d546acb5b094d69ce47f0c015db77abb74dc6f815af",
+      "bytes": 20785,
+      "source_url": "https://raw.githubusercontent.com/google/highway/1.4.0/LICENSE"
+    },
+    {
+      "path": "wasm/lcms-2.19.1-LICENSE",
+      "source_url": "https://raw.githubusercontent.com/mm2/Little-CMS/lcms2.19.1/LICENSE",
+      "bytes": 1080,
+      "sha256": "6dbd60437f8ef91d8de1f08ad75882547fd4931bfcc3566a0735f28db1484d31"
+    },
+    {
+      "path": "wasm/libexif-0.6.26-COPYING",
+      "sha256": "36b6d3fa47916943fd5fec313c584784946047ec1337a78b440e5992cb595f89",
+      "bytes": 26434,
+      "source_url": "https://raw.githubusercontent.com/libexif/libexif/v0.6.26/COPYING"
+    },
+    {
+      "path": "wasm/libffi-3.8.0-LICENSE",
+      "sha256": "17b64dc60f3b6897a60f971e288b973f655c2edcdf08b25f3c3dd5549857881c",
+      "bytes": 1132,
+      "source_url": "https://raw.githubusercontent.com/libffi/libffi/v3.8.0/LICENSE"
+    },
+    {
+      "path": "wasm/libimagequant-2.4.1-COPYRIGHT",
+      "sha256": "7391bfbcde4404cefb9849553362c3ab436f929f5cc1abb57071ec045590ee99",
+      "bytes": 1851,
+      "source_url": "https://raw.githubusercontent.com/lovell/libimagequant/v2.4.1/COPYRIGHT"
+    },
+    {
+      "path": "wasm/libnsgif-bundled-libvips-8.18.7-COPYING",
+      "source_url": "https://raw.githubusercontent.com/libvips/libvips/v8.18.7/libvips/foreign/libnsgif/COPYING",
+      "bytes": 1133,
+      "sha256": "1469b759cf18e43c6e1b4ff892307d3962cbbb337ac497620d6690a219fad10c"
+    },
+    {
+      "path": "wasm/libpng-1.6.58-LICENSE",
+      "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526",
+      "bytes": 5345,
+      "source_url": "https://raw.githubusercontent.com/pnggroup/libpng/v1.6.58/LICENSE"
+    },
+    {
+      "path": "wasm/libtiff-4.7.2-LICENSE.md",
+      "sha256": "0e27c2382d7b8147972bbb746e04059a1152c8d0fda9d03ef1399d1a433c4ade",
+      "bytes": 2416,
+      "source_url": "https://gitlab.com/libtiff/libtiff/-/raw/v4.7.2/LICENSE.md"
+    },
+    {
+      "path": "wasm/libultrahdr-2.0.2-LICENSE",
+      "sha256": "c9247b5cb07866938643cc238292434e6f2af8642e1fce10771c0e4cc7909316",
+      "bytes": 12566,
+      "source_url": "https://raw.githubusercontent.com/google/libultrahdr/v2.0.2/LICENSE"
+    },
+    {
+      "path": "wasm/libvips-8.18.7-LICENSE",
+      "source_url": "https://raw.githubusercontent.com/libvips/libvips/v8.18.7/LICENSE",
+      "bytes": 26530,
+      "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551"
+    },
+    {
+      "path": "wasm/libwebp-1.6.0-COPYING",
+      "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf",
+      "bytes": 1496,
+      "source_url": "https://raw.githubusercontent.com/webmproject/libwebp/v1.6.0/COPYING"
+    },
+    {
+      "path": "wasm/libwebp-1.6.0-PATENTS",
+      "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+      "bytes": 1436,
+      "source_url": "https://raw.githubusercontent.com/webmproject/libwebp/v1.6.0/PATENTS"
+    },
+    {
+      "path": "wasm/mozjpeg-0826579-LICENSE.md",
+      "sha256": "96f5b328adbb78eeaaec6980d73fd558cb1e4d62560ed615646bc3cf5e532430",
+      "bytes": 5620,
+      "source_url": "https://raw.githubusercontent.com/mozilla/mozjpeg/0826579/LICENSE.md"
+    },
+    {
+      "path": "wasm/zlib-ng-2.3.3-LICENSE.md",
+      "sha256": "6c9f0d975b41afaa34d22f55bb8986ce69e5cb7ad327cb2b28820cd425edf5ee",
+      "bytes": 867,
+      "source_url": "https://raw.githubusercontent.com/zlib-ng/zlib-ng/2.3.3/LICENSE.md"
+    },
+    {
+      "path": "wasm/README.ijg",
+      "bytes": 12715,
+      "sha256": "f4a85f8677ca4e41b185c0a9f7c31a30ddb9ce43c561483ee92ef12db37c2a10",
+      "component": "IJG JPEG software in mozjpeg",
+      "version": "0826579",
+      "source": "https://raw.githubusercontent.com/mozilla/mozjpeg/0826579/README.ijg"
+    },
+    {
+      "path": "models/BEN2-LICENSE",
+      "bytes": 1066,
+      "sha256": "a4843132cbd56c50f20ae008739d85b7563d38905fd692a337af52ad588c581a",
+      "source_url": "https://huggingface.co/PramaLLC/BEN2/raw/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/LICENSE"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "checked_date_jst": "2026-10-09",
+  "scope": "G1 audit input; runtime/quality approval requires G2 measurements",
+  "hash_source": "Hugging Face pinned tree API lfs.oid SHA-256, downloaded bytes separately checked",
+  "models": [
+    {
+      "id": "birefnet-lite-512-fp16",
+      "role": "fast candidate; feasibility smoke first",
+      "status": "license-approved and native CPU smoke passed; quality/browser admission pending",
+      "repository": "studioludens/birefnet-lite-512",
+      "revision": "4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7",
+      "path": "onnx/model_fp16.onnx",
+      "bytes": 98484532,
+      "sha256": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+      "url": "https://huggingface.co/studioludens/birefnet-lite-512/resolve/4a3c40c36c94093cc1e724d9ea428b8fa4b57dc7/onnx/model_fp16.onnx",
+      "license": "MIT",
+      "source_checkpoint": {
+        "repository": "ZhengPeng7/BiRefNet_lite",
+        "revision": "aa62cd87eafb9cc43056d08ef3615a14628b831d",
+        "bytes": 177634392,
+        "sha256": "4417d89795250e698c3cb0ae8df15743810065f646f48a694fdfa7ca052d0815"
+      },
+      "conversion": "512 fixed input, opset 17, deform-conv2d exporter per conversion card; fp16 conversion",
+      "local_path": ".cache/models/birefnet-lite-512-fp16.onnx",
+      "preprocessing": {
+        "rgb": true,
+        "size": [
+          512,
+          512
+        ],
+        "layout": "NCHW",
+        "rescale": 0.00392156862745098,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "resample": "bilinear",
+        "input_name": "input_image",
+        "input_type": "float32"
+      },
+      "output": {
+        "meaning": "logits; sigmoid before bilinear resize to output size",
+        "shape": [
+          1,
+          1,
+          512,
+          512
+        ],
+        "name": "output_image",
+        "element_type": "float32"
+      },
+      "download_verification": {
+        "bytes": 98484532,
+        "sha256": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+        "matches_upstream": true
+      },
+      "smoke": {
+        "runtime": "onnxruntime-node 1.30.0",
+        "provider": "cpu",
+        "input": "rights-cleared animal-fur.jpg1200x977",
+        "node": "26.11.1",
+        "initialize_ms": 4043.568035,
+        "inference_ms": 3425.712293,
+        "total_ms": 7751.617519,
+        "max_rss_kib": 2445072,
+        "evidence": "evidence/feasibility/lite-native-smoke-corrected.json",
+        "limitations": "one small real image, no quality score, no physical phone/browser validation",
+        "export_verified": true
+      }
+    },
+    {
+      "id": "birefnet-512-fp16",
+      "role": "quality candidate",
+      "status": "license-approved, not downloaded or runtime verified",
+      "repository": "naddy24/birefnet-512-webgpu",
+      "revision": "ca02a86c094927479e2be583abe87f8ea73fcfda",
+      "path": "onnx/model_fp16.onnx",
+      "bytes": 473435223,
+      "sha256": "6ea208a51de23aab41f42489e5764d1c9d70896fbef5f0a0666404dcd3c3b3d8",
+      "url": "https://huggingface.co/naddy24/birefnet-512-webgpu/resolve/ca02a86c094927479e2be583abe87f8ea73fcfda/onnx/model_fp16.onnx",
+      "license": "MIT",
+      "source_checkpoint": {
+        "repository": "ZhengPeng7/BiRefNet_512x512",
+        "revision": "678c37f9158280a2b3000b566ecd12bfbfd1a09c",
+        "bytes": 444473596,
+        "sha256": "d94ae0eefb2d2020192001e984ecd6b367478118257a3132e6a484bbf18b0f41"
+      },
+      "conversion": "onnx-community/BiRefNet_512x512-ONNX b0b30aff33d009f6bcd7dacdc3cdcf2f8f42175b; five empty ScatterND replaced by Identity and 530 dead nodes removed per conversion card",
+      "preprocessing": {
+        "rgb": true,
+        "size": [
+          512,
+          512
+        ],
+        "layout": "NCHW",
+        "rescale": 0.00392156862745098,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ],
+        "resample": "bilinear",
+        "input_name": "input_image",
+        "input_type": "VERIFY from runtime metadata"
+      },
+      "output": {
+        "meaning": "logits; sigmoid before bilinear resize to output size",
+        "shape": "[1,1,512,512], verify via runtime metadata",
+        "name": "VERIFY from runtime metadata"
+      }
+    },
+    {
+      "id": "ben2-base-onnx",
+      "role": "challenger, not selected for first feasibility",
+      "status": "MIT weight card and source notice verified; browser operators unverified",
+      "repository": "PramaLLC/BEN2",
+      "revision": "e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f",
+      "path": "BEN2_Base.onnx",
+      "bytes": 222932053,
+      "sha256": "22cea62108ff53b7ccc20f7a008bf30494228d84b1687f29ecbe76936a998101",
+      "url": "https://huggingface.co/PramaLLC/BEN2/resolve/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/BEN2_Base.onnx",
+      "license": "MIT",
+      "source_code_revision": "2c99a5da477b5523585bfa5c893888a6e818a8f6"
+    },
+    {
+      "id": "feynobg",
+      "role": "challenger requiring conversion",
+      "status": "Apache-2.0 card; no published ONNX in pinned repository; no runtime evidence",
+      "repository": "feyninc/FeyNobg",
+      "revision": "c1fd67fbefe3efeb78fe2a003270fb5350a0bb1c",
+      "path": "model.safetensors",
+      "bytes": 1051353168,
+      "sha256": "7ee181389acf07c6dcf3d72caba2d169224caacdde8bb837ecf7aa3e22e0c3aa",
+      "license": "Apache-2.0",
+      "source_code_revision": "37015c6a2dff63eaa052410c23169ecdfeb64e0c"
+    },
+    {
+      "id": "birefnet-lite-1024-fp16",
+      "repository": "onnx-community/BiRefNet_lite-ONNX",
+      "revision": "de15b22ba131738a16dff04aab8bdf8dc32e3ac1",
+      "file": "onnx/model_fp16.onnx",
+      "bytes": 114538221,
+      "sha256": "d39b897ceb16ae654c1731f3dba0cf9b368d9cae74b5a57459b455cc8bfec402",
+      "normalization": "imagenet",
+      "outputType": "float32",
+      "outputActivation": "logits",
+      "role": "explicit experimental diagnosis candidate; never default",
+      "status": "rights/hash/graph audited; quality approval and browser/phone admission pending",
+      "license": "MIT",
+      "inputSize": 1024,
+      "url": "https://huggingface.co/onnx-community/BiRefNet_lite-ONNX/resolve/de15b22ba131738a16dff04aab8bdf8dc32e3ac1/onnx/model_fp16.onnx"
+    },
+    {
+      "id": "ben2-base-1024",
+      "repository": "PramaLLC/BEN2",
+      "revision": "e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f",
+      "file": "BEN2_Base.onnx",
+      "bytes": 222932053,
+      "sha256": "22cea62108ff53b7ccc20f7a008bf30494228d84b1687f29ecbe76936a998101",
+      "normalization": "unit",
+      "outputType": "float16",
+      "outputActivation": "coverage",
+      "role": "explicit experimental diagnosis candidate; never default",
+      "status": "rights/hash/graph audited; quality approval and browser/phone admission pending",
+      "license": "MIT",
+      "inputSize": 1024,
+      "url": "https://huggingface.co/PramaLLC/BEN2/resolve/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/BEN2_Base.onnx"
+    },
+    {
+      "id": "birefnet-full-1024-fp16",
+      "name": "BiRefNet full 1024 candidate",
+      "repository": "onnx-community/BiRefNet-ONNX",
+      "revision": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+      "file": "onnx/model_fp16.onnx",
+      "bytes": 489666272,
+      "sha256": "3654c741eb80bd926ada8fed1713b506ccf8d30eb1f6487e87eb9f234f33df09",
+      "inputSize": 1024,
+      "width": 1024,
+      "height": 1024,
+      "license": "MIT",
+      "precision": "fp16",
+      "inputName": "input_image",
+      "outputName": "output_image",
+      "normalization": "imagenet",
+      "outputType": "float32",
+      "outputActivation": "logits",
+      "version": "534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67",
+      "url": "https://huggingface.co/onnx-community/BiRefNet-ONNX/resolve/534d3c82d3bb8b2f0867db6dfbc3a525b8e42f67/onnx/model_fp16.onnx",
+      "role": "explicit experimental diagnosis candidate; never default",
+      "status": "rights/hash/graph audited; quality approval and browser/phone admission pending"
+    }
+  ],
+  "licenses": [
+    {
+      "component": "BiRefNet source and original weights",
+      "license": "MIT",
+      "copyright": "2024 ZhengPeng",
+      "source_revision": "ebcc0bc8ec7fe919cec829f2dea656b3078acddc",
+      "license_url": "https://github.com/ZhengPeng7/BiRefNet/blob/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE",
+      "obligations": "Include original copyright and permission notice with model distribution; identify conversion authors and changes. HF cards independently declare export MIT."
+    }
+  ],
+  "upstreams": [
+    {
+      "component": "BG0",
+      "revision": "420442c016eafb5fc76c66c56b6bacf191c61ed7",
+      "license": "Apache-2.0",
+      "repository_package_version": "0.1.2",
+      "npm_version": "0.1.1",
+      "npm_tarball_sha256": "37da2bef9c2cffed16575475fcf5808e05b9ddf8f2d621396aac4dec38788447"
+    },
+    {
+      "component": "rembg",
+      "revision": "202e42649a8492a7c49f808de36608a7d1cbbfe3",
+      "license": "MIT"
+    },
+    {
+      "component": "withoutbg",
+      "revision": "891c1663315ead5c3be16b55205c096594de7ef2",
+      "license": "Apache-2.0 source; mixed Apache/MIT/Meta DINOv3 weights"
+    },
+    {
+      "component": "IMG.LY",
+      "revision": "12f56cc4f2a90d624e165a715748d22efc7a1d93",
+      "version": "1.7.0",
+      "license": "AGPL-3.0"
+    },
+    {
+      "component": "wasm-vips",
+      "revision": "4ea2b9769a1179735b61ce9cb97176a2c8366674",
+      "version": "0.0.19",
+      "license": "MIT JS bindings; compiled libraries have independent licenses including LGPLv3"
+    }
+  ]
+}

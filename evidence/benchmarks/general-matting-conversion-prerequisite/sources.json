@@ -1,0 +1,145 @@
+{
+  "utc": "2026-10-09T16:55:07.130979+00:00",
+  "sources": [
+    {
+      "name": "converter-head",
+      "url": "https://api.github.com/repos/masamitsu-murase/deform_conv2d_onnx_exporter/commits/main",
+      "status": 200,
+      "bytes": 4552,
+      "sha256": "4c39b11caf603c4588bfe9558c027b65e5392b68b2e24ed2574b36adc539dea4"
+    },
+    {
+      "name": "ort130-tag",
+      "url": "https://api.github.com/repos/microsoft/onnxruntime/git/ref/tags/v1.30.0",
+      "status": 200,
+      "bytes": 353,
+      "sha256": "5b34b0c9446aa8cc72d279b732db6e633f16a782089641b6dc4219a529296978"
+    },
+    {
+      "name": "torch25-onnx-source",
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.5.1/torch/onnx/__init__.py",
+      "status": 200,
+      "bytes": 19723,
+      "sha256": "2e33e5f76768cf4bfe5c7053f415d2acc2ff152d86d8d06425e6707f53083747"
+    },
+    {
+      "name": "torchvision020-deform",
+      "url": "https://raw.githubusercontent.com/pytorch/vision/v0.20.1/torchvision/ops/deform_conv.py",
+      "status": 200,
+      "bytes": 6990,
+      "sha256": "7c9c64551fe9fce40cccc8dae1f96f99382a0cfbeb38e730cc31bc6d5ed0ee91"
+    },
+    {
+      "name": "onnx-deform-schema",
+      "url": "https://onnx.ai/onnx/operators/onnx__DeformConv.html",
+      "status": 200,
+      "bytes": 264294,
+      "sha256": "e2d8a5a142e6acb889838d0e6b691dcba3c2088c0bd4221e15d8e957a0f4cfa2"
+    },
+    {
+      "name": "onnx117-pypi",
+      "url": "https://pypi.org/pypi/onnx/1.17.0/json",
+      "status": 200,
+      "bytes": 84177,
+      "sha256": "2ecd52033004aa814070953e49f74a55d0543ac3a7f380380ff4a85a787858ac"
+    },
+    {
+      "name": "protobuf4258-pypi",
+      "url": "https://pypi.org/pypi/protobuf/4.25.8/json",
+      "status": 200,
+      "bytes": 11695,
+      "sha256": "f544643cd42aabac6638d5a60619b43e13f0b0ea7f106bdadbba2b52af19136a"
+    },
+    {
+      "name": "converter-readme",
+      "url": "https://raw.githubusercontent.com/masamitsu-murase/deform_conv2d_onnx_exporter/ed84d9114b4ab17c5e0a5dc8a412c0d57743a402/README.md",
+      "status": 200,
+      "bytes": 5298,
+      "sha256": "fd6f10db64be8217e021de7c3d4d956f77822b9213aab799ff1eb04e001d955e"
+    },
+    {
+      "name": "converter-code",
+      "url": "https://raw.githubusercontent.com/masamitsu-murase/deform_conv2d_onnx_exporter/ed84d9114b4ab17c5e0a5dc8a412c0d57743a402/src/deform_conv2d_onnx_exporter.py",
+      "status": 200,
+      "bytes": 22977,
+      "sha256": "4856926c0d55ecd1185e21f8056f76670c25603e71f96b98c6b12d263de721ba"
+    },
+    {
+      "name": "converter-test",
+      "url": "https://raw.githubusercontent.com/masamitsu-murase/deform_conv2d_onnx_exporter/ed84d9114b4ab17c5e0a5dc8a412c0d57743a402/tests/test_deform_conv2d_onnx_exporter.py",
+      "status": 200,
+      "bytes": 9628,
+      "sha256": "402393606f467690cc6081eef9264d3702839dac0604e9df05a7911ac23fd5b0"
+    },
+    {
+      "name": "ort130-kernels",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/docs/OperatorKernels.md",
+      "status": 200,
+      "bytes": 340211,
+      "sha256": "de05c5848b0158f52ff642614d19854296e98562b03b80164ce9771c7a551499"
+    },
+    {
+      "name": "ort130-webgpu-rules",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/js/web/lib/wasm/jsep/webgpu/op-resolve-rules.ts",
+      "status": 200,
+      "bytes": 7348,
+      "sha256": "6895744d74d1a8771c4744648ed62dcc4cca2d2a1a6d9f582930e98a9c7b4cf3"
+    },
+    {
+      "name": "ort130-cpu-deform",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/onnxruntime/core/providers/cpu/nn/deform_conv.cc",
+      "status": 200,
+      "bytes": 42905,
+      "sha256": "fe123152d7ceae2180246177c3e27514b909d800fb2549b227454716234e8501"
+    },
+    {
+      "name": "ort130-tree",
+      "url": "https://api.github.com/repos/microsoft/onnxruntime/git/trees/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7?recursive=1",
+      "status": 200,
+      "bytes": 3337757,
+      "sha256": "bfb6607643e52bb5393054fe635338ca7f9984b0b807cc97039e92f8256f6542"
+    },
+    {
+      "name": "ort130-webgpu-operators",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/js/web/docs/webgpu-operators.md",
+      "status": 200,
+      "bytes": 5570,
+      "sha256": "500c21258c3c419f07233837d9cbfa497e97a8807697836bf9040e8b5f34ee83"
+    },
+    {
+      "name": "ort130-build-wasm",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/tools/ci_build/github/azure-pipelines/templates/build-linux-wasm-step.yml",
+      "status": 200,
+      "bytes": 2307,
+      "sha256": "a4c4b4c59d2f8d7a2b808ebe45a555ca239402aa9ecec40ff72d0040347aa545"
+    },
+    {
+      "name": "ort130-cpu-deform-tests",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/onnxruntime/test/providers/cpu/nn/deform_conv_op_test.cc",
+      "status": 200,
+      "bytes": 43931,
+      "sha256": "a0c8b27215d5fad596466649b66a453d77ac7207013758848ca083a197f014df"
+    },
+    {
+      "name": "ort130-cpu-providers",
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/onnxruntime/core/providers/cpu/cpu_execution_provider.cc",
+      "status": 200,
+      "bytes": 402289,
+      "sha256": "dade21a068f02c59677d94697fc5c68f7840c8342172c33d32134be19e3b34ea"
+    },
+    {
+      "name": "onnxruntime130-pypi",
+      "url": "https://pypi.org/pypi/onnxruntime/1.30.0/json",
+      "status": 200,
+      "bytes": 26667,
+      "sha256": "14a4958821080acf16f28c5455ef3d432dce984d2836ce422939412d3d1e7c14"
+    },
+    {
+      "name": "flatbuffers25210-pypi",
+      "url": "https://pypi.org/pypi/flatbuffers/25.2.10/json",
+      "status": 200,
+      "bytes": 3188,
+      "sha256": "ed6865c029040487533fa6ac735ab2713266404578151957f1eacef00063e46f"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+	pytorch2.5.1:Å
+∑
+image
+weight
+offset
+bias
+maskoutput/DeformConv"
+DeformConv*
+	dilations@@†*
+group†*
+kernel_shape@@†*
+offset_group†*
+pads@@@@†*
+strides@@†
+main_graphZ
+image
+
+
+
+
+Z 
+weight
+
+
+
+
+Z 
+offset
+
+
+
+
+Z
+mask
+
+
+	
+
+Z
+bias
+
+
+b 
+output
+
+
+
+
+B

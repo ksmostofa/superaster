@@ -1,0 +1,137 @@
+{
+  "scope": "Additional main-WASM build inputs fetched from exact inspected release build.sh; current bodies, not certified historical build responses",
+  "entries": [
+    {
+      "component": "zlib-ng",
+      "version": "2.3.3",
+      "url": "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.3.3.tar.gz",
+      "checked_at": "2026-10-09T06:20:43.548Z",
+      "bytes": 2447397,
+      "sha256": "f9c65aa9c852eb8255b636fd9f07ce1c406f061ec19a2e7d508b318ca0c907d1",
+      "response_url": "https://codeload.github.com/zlib-ng/zlib-ng/tar.gz/refs/tags/2.3.3",
+      "file": "zlib-ng-2.3.3.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "libffi",
+      "version": "3.8.0",
+      "url": "https://github.com/libffi/libffi/releases/download/v3.8.0/libffi-3.8.0.tar.gz",
+      "checked_at": "2026-10-09T06:20:51.586Z",
+      "bytes": 1581626,
+      "sha256": "7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4",
+      "response_url": "https://release-assets.githubusercontent.com/github-production-release-asset/321154/f687b05e-5780-4828-b7c6-c9c243e5cd9f?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-09T06%3A56%3A09Z&rscd=attachment%3B+filename%3Dlibffi-3.8.0.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-09T05%3A55%3A47Z&ske=2026-10-09T06%3A56%3A09Z&sks=b&skv=2018-11-09&sig=19xXKB2r6%2Fd0pavfK84xPu%2BH5c%2BRGNVLjN3Ps3bh%2Fvc%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTUyNzE1MiwibmJmIjoxNzkxNTI2ODUyLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.dv90nGvnOhCOpKEWpuADJaIa8KD9kDZCNPBM6L_ldZE&response-content-disposition=attachment%3B%20filename%3Dlibffi-3.8.0.tar.gz&response-content-type=application%2Foctet-stream",
+      "file": "libffi-3.8.0.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "expat",
+      "version": "2.8.5",
+      "url": "https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.xz",
+      "checked_at": "2026-10-09T06:20:54.526Z",
+      "bytes": 528380,
+      "sha256": "1e727b8933ec51a77a9a9d9afcf8e688bce45d907c13e36ab7393fe36e703182",
+      "response_url": "https://release-assets.githubusercontent.com/github-production-release-asset/80314213/b0368f5b-9ee4-4fe8-9d25-0a5e4d59eabe?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-09T07%3A01%3A18Z&rscd=attachment%3B+filename%3Dexpat-2.8.5.tar.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-09T06%3A00%3A20Z&ske=2026-10-09T07%3A01%3A18Z&sks=b&skv=2018-11-09&sig=QANiAMbA%2FaImHmk9NzX8uwXhYjUyIxKsnrbQk7CeVwM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTUyNzE1NCwibmJmIjoxNzkxNTI2ODU0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.kdf3bIgNX2rJDXGv3eEhXEFl4dJ_PvN7wISM505JTvo&response-content-disposition=attachment%3B%20filename%3Dexpat-2.8.5.tar.xz&response-content-type=application%2Foctet-stream",
+      "file": "expat-2.8.5.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "lcms",
+      "version": "2.19.1",
+      "url": "https://github.com/mm2/Little-CMS/releases/download/lcms2.19.1/lcms2-2.19.1.tar.gz",
+      "checked_at": "2026-10-09T06:20:55.550Z",
+      "bytes": 5728743,
+      "sha256": "bfc54f7bab59fbc921012014a8032e4cba4abd46db47d46b76416a8c0b2815c8",
+      "response_url": "https://release-assets.githubusercontent.com/github-production-release-asset/507969/7245d98e-8078-4cc4-a0c8-2a23d121d342?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-09T07%3A21%3A03Z&rscd=attachment%3B+filename%3Dlcms2-2.19.1.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-09T06%3A20%3A11Z&ske=2026-10-09T07%3A21%3A03Z&sks=b&skv=2018-11-09&sig=sLS1LuS7sVM68Z%2F9a2iLEFJ6lndqbkw6ieUTjiYb9mo%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MTUyNzE1NSwibmJmIjoxNzkxNTI2ODU1LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.71O_HhTcfg_2y835P3yujDp5iVEKPc-TxOHKGGrg4_Y&response-content-disposition=attachment%3B%20filename%3Dlcms2-2.19.1.tar.gz&response-content-type=application%2Foctet-stream",
+      "file": "lcms-2.19.1.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "highway",
+      "version": "1.4.0",
+      "url": "https://github.com/google/highway/archive/refs/tags/1.4.0.tar.gz",
+      "checked_at": "2026-10-09T06:21:03.256Z",
+      "bytes": 3691240,
+      "sha256": "e72241ac9524bb653ae52ced768b508045d4438726a303f10181a38f764a453c",
+      "response_url": "https://codeload.github.com/google/highway/tar.gz/refs/tags/1.4.0",
+      "file": "highway-1.4.0.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "mozjpeg",
+      "version": "0826579",
+      "url": "https://github.com/mozilla/mozjpeg/archive/0826579.tar.gz",
+      "checked_at": "2026-10-09T06:21:06.402Z",
+      "bytes": 2443542,
+      "sha256": "b680167bd5d9afebdd576a12f8c49d2c9066a3b92ef96a2b2c5f7829b8600fe5",
+      "response_url": "https://codeload.github.com/mozilla/mozjpeg/tar.gz/08265790774cd0714832c9e675522acbe5581437",
+      "file": "mozjpeg-0826579.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "libultrahdr",
+      "version": "2.0.2",
+      "url": "https://github.com/google/libultrahdr/archive/refs/tags/v2.0.2.tar.gz",
+      "checked_at": "2026-10-09T06:21:08.110Z",
+      "bytes": 1518872,
+      "sha256": "aa8d193bb887c348c419780511dd03b374f4e07af8812b6d3f80c8537cf1ef2c",
+      "response_url": "https://codeload.github.com/google/libultrahdr/tar.gz/refs/tags/v2.0.2",
+      "file": "libultrahdr-2.0.2.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "libpng",
+      "version": "1.6.58",
+      "url": "https://github.com/pnggroup/libpng/archive/refs/tags/v1.6.58.tar.gz",
+      "checked_at": "2026-10-09T06:21:09.290Z",
+      "bytes": 1592190,
+      "sha256": "a9d4df463d36a6e5f9c29bd6f4967312d17e996c1854f3511f833924eb1993cf",
+      "response_url": "https://codeload.github.com/pnggroup/libpng/tar.gz/refs/tags/v1.6.58",
+      "file": "libpng-1.6.58.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "libimagequant",
+      "version": "2.4.1",
+      "url": "https://github.com/lovell/libimagequant/archive/refs/tags/v2.4.1.tar.gz",
+      "checked_at": "2026-10-09T06:21:10.282Z",
+      "bytes": 45792,
+      "sha256": "47d2a84b7b1052975c9d50a3d4e3cacbf57b43d84a4c3131210848ead9964dfb",
+      "response_url": "https://codeload.github.com/lovell/libimagequant/tar.gz/refs/tags/v2.4.1",
+      "file": "libimagequant-2.4.1.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "cgif",
+      "version": "0.5.4",
+      "url": "https://github.com/dloebl/cgif/archive/refs/tags/v0.5.4.tar.gz",
+      "checked_at": "2026-10-09T06:21:10.834Z",
+      "bytes": 40028,
+      "sha256": "83a70a15bc2da41f081a44ebc58ee48e2e1d524a6d3fdb4a24064afa08d5ad4d",
+      "response_url": "https://codeload.github.com/dloebl/cgif/tar.gz/refs/tags/v0.5.4",
+      "file": "cgif-0.5.4.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "webp",
+      "version": "1.6.0",
+      "url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.6.0.tar.gz",
+      "checked_at": "2026-10-09T06:21:11.450Z",
+      "bytes": 4296070,
+      "sha256": "e4ab7009bf0629fd11982d4c2aa83964cf244cffba7347ecd39019a9e38c4564",
+      "response_url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.6.0.tar.gz",
+      "file": "webp-1.6.0.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    },
+    {
+      "component": "tiff",
+      "version": "4.7.2",
+      "url": "https://gitlab.com/libtiff/libtiff/-/archive/v4.7.2/libtiff-v4.7.2.tar.gz",
+      "checked_at": "2026-10-09T06:21:14.280Z",
+      "bytes": 2616788,
+      "sha256": "62b15f44c10106065211efa22a2dc77937bd97ee1f6e3afd2c9659010de112eb",
+      "response_url": "https://gitlab.com/libtiff/libtiff/-/archive/v4.7.2/libtiff-v4.7.2.tar.gz",
+      "file": "tiff-4.7.2.archive",
+      "status": "DOWNLOADED_HASHED_NOT_BUILT"
+    }
+  ]
+}

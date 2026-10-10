@@ -1,0 +1,28 @@
+{"stage": "initialize_pinned_cpu_model"}
+{"stage": "trace_and_export"}
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:1042: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if W % self.patch_size[1] != 0:
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:1044: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if H % self.patch_size[0] != 0:
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:980: TracerWarning: torch.tensor results are registered as constants in the trace. You can safely ignore this warning if you use this function to create tensors out of constant variables that would be the same every time you call this function. In any other case, this might cause the trace to be incorrect.
+  Hp = torch.ceil(torch.tensor(H) / self.window_size).to(torch.int64) * self.window_size
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:980: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  Hp = torch.ceil(torch.tensor(H) / self.window_size).to(torch.int64) * self.window_size
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:981: TracerWarning: torch.tensor results are registered as constants in the trace. You can safely ignore this warning if you use this function to create tensors out of constant variables that would be the same every time you call this function. In any other case, this might cause the trace to be incorrect.
+  Wp = torch.ceil(torch.tensor(W) / self.window_size).to(torch.int64) * self.window_size
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:981: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  Wp = torch.ceil(torch.tensor(W) / self.window_size).to(torch.int64) * self.window_size
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:816: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert L == H * W, "input feature has wrong size"
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:666: TracerWarning: Converting a tensor to a Python integer might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  B = int(windows.shape[0] / (H * W / window_size / window_size))
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:854: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if pad_r > 0 or pad_b > 0:
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:887: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert L == H * W, "input feature has wrong size"
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:892: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  pad_input = (H % 2 == 1) or (W % 2 == 1)
+/home/sadid/Downloads/Superaster/superaster-batch-identities/.cache/general-model-prerequisite/source-reference/model/birefnet.py:893: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  if pad_input:
+{"stage": "check_graph_and_interface"}
+{"export": "completed", "parity": "NOT RUN", "artifact_sha256": "09e180872581e886bb531e5c72a1df354ba2dd55445a11bb0618435a98abe92d"}

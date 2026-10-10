@@ -1,0 +1,37 @@
+{
+  "source_commit": "653cf02e32ce9a744ee7a7d22883822520e4cf5c",
+  "branch": "work/primary-integration",
+  "environment": {
+    "node": "26.11.1",
+    "platform": "Linux x86_64"
+  },
+  "commands": [
+    "git clone --branch work/primary-integration https://github.com/ksmostofa/superaster SOURCE",
+    "git -C SOURCE checkout 653cf02e32ce9a744ee7a7d22883822520e4cf5c",
+    "cd SOURCE",
+    "bash scripts/cloud-setup.sh",
+    "npm test -- --reporter=json --outputFile=tests.json"
+  ],
+  "results": {
+    "numTotalTests": 141,
+    "numPassedTests": 138,
+    "numFailedTests": 0,
+    "numPendingTests": 3,
+    "success": true
+  },
+  "logs": {
+    "setup.log": {
+      "sha256": "3a8afb9ac819a016e385c757523773d04b3762652ded21310c6da77b3bb4bb3b",
+      "bytes": 2359
+    },
+    "tests.log": {
+      "sha256": "d5ed9143ea30594f932ace3a494664df31ec4e3dd0eb77ee0aa15bb810d2971f",
+      "bytes": 339
+    },
+    "tests.json": {
+      "sha256": "5a8e6545d71ae5547b7b744ff0c5cdfef6636782cbb3efc105d1181ad146ee21",
+      "bytes": 55505
+    }
+  },
+  "scope": "Fresh clone with its own node_modules. No model setup or ML quality was executed; three inference checks explicitly skipped."
+}

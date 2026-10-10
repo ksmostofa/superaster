@@ -1,0 +1,33 @@
+{
+  "base_commit": "598af47",
+  "reviewed_working_tree": {
+    "benchmarks/source-reference/full-browser.html": {
+      "bytes": 1226,
+      "sha256": "e729abf3994f4c583d9cb6bfe28d7c1dbc6bc2bb1a159b410940bb2f1dbad2e7"
+    },
+    "benchmarks/source-reference/full-browser.mjs": {
+      "bytes": 2671,
+      "sha256": "fba0906e8b698b672bb7ebfe49be867a13df047fae2c8fadaf2a15f103d4a336"
+    },
+    "benchmarks/source-reference/full-browser-worker.mjs": {
+      "bytes": 8252,
+      "sha256": "4f639bff8c03c3e40de5cfe996f70dfaefd1653b6de8af9eaf744f685af0fdb1"
+    },
+    "benchmarks/source-reference/prepare_full_browser.py": {
+      "bytes": 4431,
+      "sha256": "bc9a8e0ee52a3263e91a3af3c55391f798cf622bc42bf484d042bc168379be8a"
+    },
+    "benchmarks/source-reference/serve_full_browser.py": {
+      "bytes": 2720,
+      "sha256": "6921580742ae963e9b34782f5250443ca8f6be248d9ffe51791ec6537e781241"
+    },
+    "node_modules/onnxruntime-web/lib/wasm/session-options.ts": {
+      "bytes": 11941,
+      "sha256": "e9b0eb9db4bb5d30fa4b0ab373e142009fc77384dec22bfa4fa056b19819ed59"
+    },
+    "node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs": {
+      "bytes": 24381,
+      "sha256": "e13f7f94fc51b4ca72b12faeb1ee95f4ace6dfbc8939bc718aabdc0a27c4299b"
+    }
+  }
+}

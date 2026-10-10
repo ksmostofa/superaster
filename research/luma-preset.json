@@ -1,0 +1,10 @@
+{
+  "cli": "shadcn@4.21.4",
+  "code": "b1VlJBjs",
+  "base": "base",
+  "style": "luma",
+  "theme": "neutral",
+  "font": "figtree",
+  "icons": "hugeicons",
+  "source": "https://ui.shadcn.com/init?preset=b1VlJBjs"
+}

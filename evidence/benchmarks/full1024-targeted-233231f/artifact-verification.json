@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-10-09T06:13:52.106Z",
+  "scope": "Independent read-only decoded file/hash checks, without inference or a model session; no subject-quality score",
+  "results": [
+    {
+      "id": "t01-three-birdwatchers",
+      "status": "PASS",
+      "input_sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+      "original_sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+      "output_sha256": "760e00ad2e3612d8d221c72264aff90c6ea6d2845912452c6012e1cd0c5dc0b7",
+      "mask_sha256": "ba8ada4147d734edd5dcf2c45c0c08eae16554559759e3e981be58d8db359c17",
+      "width": 2400,
+      "height": 1600,
+      "mask_file_channels": 1,
+      "mask_decoded_channels": 1,
+      "transparent_pixels": 2830434,
+      "partial_pixels": 44408,
+      "opaque_pixels": 965158,
+      "mask_alpha_mismatch_pixels": 0,
+      "opaque_rgb_changed_pixels": 0
+    },
+    {
+      "id": "thin-plant",
+      "status": "PASS",
+      "input_sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b",
+      "original_sha256": "20778fc6cc3b0a862578ec669d3714b00fcf9202591ac04dac7290ff70273ed9",
+      "output_sha256": "333cf6fc1f7942f38333251485a83070ca8e3ac33bfce1841f15979ca516d44b",
+      "mask_sha256": "5c3c71d2dcc35d7bfae5b8a205c70f8eb069ad84e69e9f0ea33ff5ef22c07426",
+      "width": 1280,
+      "height": 960,
+      "mask_file_channels": 1,
+      "mask_decoded_channels": 1,
+      "transparent_pixels": 421709,
+      "partial_pixels": 57228,
+      "opaque_pixels": 749863,
+      "mask_alpha_mismatch_pixels": 0,
+      "opaque_rgb_changed_pixels": 0
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Superaster research: one pinned browser model case</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:65rem}button,a{margin-right:1rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}button{padding:.6rem}</style>
+<h1>One pinned browser model diagnosis</h1>
+<p>Research only. This processes the saved group tensor once in local ORT 1.30 WASM, one thread. It does not test the product UI, phone, hidden-label quality, frozen tolerance or remove.bg comparison.</p>
+<p>The WASM heap has a 4 GiB ceiling. Feasibility is unproven. The worker has a ten-minute investigation bound; cancel terminates it immediately. No automatic retry.</p>
+<button id="run">Run the one group case</button><button id="cancel" disabled>Cancel worker</button>
+<a id="report-download" hidden download="browser-model-report.json">Save actual report</a>
+<a id="raw-download" hidden download="browser-group-logits.f32.bin">Save actual raw logits</a>
+<pre id="output" role="status" aria-live="polite">READY. No model has been fetched or executed.</pre>
+<script type="module" src="./full-browser.mjs"></script>
+</html>

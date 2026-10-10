@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-10-08",
+  "method": "urllib with Mozilla/5.0; failed raw requests do not erase independently verified web-tool guidance; source-change checks must flag retrieval failure as unknown",
+  "sources": {
+    "visa": {
+      "url": "https://www.us.emb-japan.go.jp/itpr_en/visa-short-term-visit.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "residence": {
+      "url": "https://www.moj.go.jp/isa/applications/status/photo_info_00002.html",
+      "status": 200,
+      "bytes": 24311,
+      "sha256": "b51591567adb305823613021bf26386e92a1e2245bbc70959f7afeee25827c99",
+      "resolved_url": "https://www.moj.go.jp/isa/applications/status/photo_info_00002.html"
+    },
+    "residence-diagram": {
+      "url": "https://www.moj.go.jp/isa/content/930002400.gif",
+      "status": 200,
+      "bytes": 10037,
+      "sha256": "649ea7e8198bee4838ae1612f5296bd2fee36597be39b613b65db9a701c1eca0",
+      "resolved_url": "https://www.moj.go.jp/isa/content/930002400.gif"
+    },
+    "uk": {
+      "url": "https://www.gov.uk/photos-for-passports",
+      "status": 200,
+      "bytes": 82520,
+      "sha256": "cf84a659bb185411ceb4c0512a0182161b5c01c956f9b74abaf502dcb7df6f54",
+      "resolved_url": "https://www.gov.uk/photos-for-passports"
+    },
+    "x": {
+      "url": "https://help.x.com/en/managing-your-account/common-issues-when-uploading-profile-photo",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "youtube": {
+      "url": "https://support.google.com/youtube/answer/10456525?hl=en",
+      "status": 200,
+      "bytes": 1629049,
+      "sha256": "374bc2253fb0e4b51b9fb8676bbbace393b0509a2d03a1e50076b4c80d8d8135",
+      "resolved_url": "https://support.google.com/youtube/answer/10456525?hl=en"
+    },
+    "thumbnail": {
+      "url": "https://support.google.com/youtube/answer/72431?hl=en&isappinstalled=0",
+      "status": 200,
+      "bytes": 1630916,
+      "sha256": "cf8e3e9d8823f7176e08532c50f2669edd9215991676304df1c15768884ac84d",
+      "resolved_url": "https://support.google.com/youtube/answer/72431?hl=en&isappinstalled=0"
+    },
+    "shopify": {
+      "url": "https://help.shopify.com/en/manual/products/product-media/product-media-types",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "etsy": {
+      "url": "https://help.etsy.com/hc/en-us/articles/115015663347-Requirements-and-Best-Practices-for-Images-in-Your-Etsy-Shop",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "article": {
+      "url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+      "status": 200,
+      "bytes": 205484,
+      "sha256": "b1f039334725d29da7208edf3233b022c4e2c2a66709e1c170c53627e819220e",
+      "resolved_url": "https://developers.google.com/search/docs/appearance/structured-data/article"
+    },
+    "units": {
+      "url": "https://www.w3.org/TR/css-values-4/#absolute-lengths",
+      "status": 200,
+      "bytes": 823488,
+      "sha256": "7b6b68c34d00d7f6945e66e4e2efa913266299f597d5825393cae85dac1cc78c",
+      "resolved_url": "https://www.w3.org/TR/css-values-4/#absolute-lengths"
+    },
+    "a4": {
+      "url": "https://www.w3.org/TR/css-page-3/#page-size",
+      "status": 200,
+      "bytes": 314610,
+      "sha256": "6051274a159df3f315c0e6474faf5c7b595b9e0f8c23e1402dc956b765812f57",
+      "resolved_url": "https://www.w3.org/TR/css-page-3/#page-size"
+    },
+    "policy": {
+      "url": "https://github.com/ksmostofa/superaster/blob/main/research/catalog.md",
+      "status": "local policy"
+    }
+  }
+}

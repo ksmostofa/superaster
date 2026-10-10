@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-10T00:59:15.415553+00:00",
+  "commit": "bb8cc67dc8411fae189ac37fd1424f385d2bf830",
+  "memory": {
+    "total": 16558505984,
+    "available": 10888257536,
+    "percent": 34.2,
+    "used": 5670248448,
+    "free": 3671732224,
+    "active": 4287844352,
+    "inactive": 7036108800,
+    "buffers": 36864,
+    "cached": 8755822592,
+    "shared": 588742656,
+    "slab": 455323648
+  },
+  "swap": {
+    "total": 16558059520,
+    "used": 528666624,
+    "free": 16029392896,
+    "percent": 3.2,
+    "sin": 511795200,
+    "sout": 2333315072
+  },
+  "cpu_percent_one_second": 33.6,
+  "platform": "Linux-7.2.5-3-omarchy-x86_64-with-glibc2.44",
+  "cpu_count": 8,
+  "script_sha256": "8f3b8bf2b83c99c1acf7cfc109a0d261d75f4734e6d88f5c449a3a0f9dd2e95f",
+  "symbolic_sha256": "1c57315530f17458d87e049ef2a83f1d282763da0a70e2fadd1a3094853e2f83",
+  "fresh_output_directory": "export-20261010-native19-retry",
+  "limit_seconds": 900,
+  "limit_kind": "descriptive investigation guard, not frozen acceptance budget"
+}

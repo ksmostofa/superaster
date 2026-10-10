@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Superaster research: synthetic WASM kernel probe</title>
+<style>
+  body{font:16px system-ui,sans-serif;max-width:60rem;margin:2rem auto;padding:0 1rem;background:#151515;color:#eee}
+  button{font:inherit;padding:.7rem 1rem;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.5}
+</style>
+<h1>Synthetic DeformConv operator probe</h1>
+<p>Research diagnostic. This executes two tiny, explicitly synthetic ONNX fixtures using the installed ORT 1.30 WASM runtime. It establishes no model quality, GPU, performance budget or phone support.</p>
+<button id="run" type="button">Run real WASM kernel probe</button>
+<pre id="output" aria-live="polite">Ready. Fixtures and runtime are local to this diagnostic.</pre>
+<script type="module" src="./browser-probe.mjs"></script>
+</html>

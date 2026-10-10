@@ -1,0 +1,197 @@
+{
+  "scope": "Actual browser imaging while local origin preview process was stopped. First export used an existing old-generation tab; second booted the newly activated cached generation and a new worker. No ML model inference, phone benchmark, or full worker-network acceptance.",
+  "results": [
+    {
+      "id": "old-generation-server-stopped",
+      "checks": {
+        "dimensions": true,
+        "format": true,
+        "output_hash": true,
+        "input_hash": true,
+        "output_bytes": true,
+        "opaque": true,
+        "exif_stripped": true
+      },
+      "record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "5d52d974f4f973a29405f539118bdea9ad4eded3f781fe4101d241d9b12ad54d",
+        "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "composite",
+              "background": "#ffffff"
+            },
+            {
+              "op": "resize",
+              "width": 120
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "imaging",
+          "version": "1.0",
+          "model_hash": null,
+          "precision": "uint8",
+          "inference_dimensions": [],
+          "runtime": "imaging-kernel",
+          "backend": "local",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "composite",
+            "background": "#ffffff"
+          },
+          {
+            "op": "resize",
+            "width": 120
+          }
+        ],
+        "output": {
+          "width": 120,
+          "height": 80,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": true,
+          "bytes": 2063,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false,
+            "density": 72
+          },
+          "hash": "a69f434e9298faa2139c99f7f1beb0ac185e7d4e7d6f7b2a5216734832bd6e78"
+        },
+        "timings_ms": {
+          "decode": 10.53999999910593,
+          "render": 32.79500000178814,
+          "encode": 38,
+          "validate": 44.00999999791384
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "output_file": "old-generation-server-stopped.png"
+    },
+    {
+      "id": "new-generation-offline-reload",
+      "checks": {
+        "dimensions": true,
+        "format": true,
+        "output_hash": true,
+        "input_hash": true,
+        "output_bytes": true,
+        "opaque": true,
+        "exif_stripped": true
+      },
+      "record": {
+        "contract_version": "1.0",
+        "implementation_version": "0.1.0-alpha.1",
+        "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+        "recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+        "binding_hashes": {},
+        "resolved_recipe": {
+          "spec_version": "1.0",
+          "input": {
+            "ref": "input-0"
+          },
+          "engine": "auto",
+          "quality": "quality",
+          "operations": [
+            {
+              "op": "composite",
+              "background": "#ffffff"
+            },
+            {
+              "op": "resize",
+              "width": 120
+            }
+          ],
+          "output": {
+            "format": "png",
+            "metadata": "strip"
+          }
+        },
+        "engine": {
+          "id": "imaging",
+          "version": "1.0",
+          "model_hash": null,
+          "precision": "uint8",
+          "inference_dimensions": [],
+          "runtime": "imaging-kernel",
+          "backend": "local",
+          "refinement": "none"
+        },
+        "encoder": {
+          "format": "png",
+          "quality": 90,
+          "metadata": "strip",
+          "kernel": "declared imaging adapter"
+        },
+        "applied_operations": [
+          {
+            "op": "composite",
+            "background": "#ffffff"
+          },
+          {
+            "op": "resize",
+            "width": 120
+          }
+        ],
+        "output": {
+          "width": 120,
+          "height": 80,
+          "format": "png",
+          "channels": 4,
+          "has_alpha": true,
+          "is_opaque": true,
+          "bytes": 2071,
+          "color_space": "srgb",
+          "pages": 1,
+          "metadata": {
+            "icc": true,
+            "exif": false,
+            "density": 72
+          },
+          "hash": "6473a521722c8ca24d45091f3bf2494bd9f76abecb9707aac614a06e7ceef2a7"
+        },
+        "timings_ms": {
+          "decode": 5.16499999910593,
+          "render": 12.379999995231628,
+          "encode": 6.940000005066395,
+          "validate": 13.415000006556511
+        },
+        "warnings": [],
+        "rules": []
+      },
+      "output_file": "new-generation-offline-reload.png"
+    }
+  ],
+  "preview_process": "Session5139 exited130 before both offline checks; origin server stayed stopped throughout the reload and exports.",
+  "limitations": [
+    "Connector download event timed out despite actual files landing; no duplicate action was taken.",
+    "Connector worker target auto-attach is unavailable; recorded network events are tab-scoped.",
+    "Killed-install orphan and physical browser cache eviction recovery are not acceptance passes."
+  ]
+}

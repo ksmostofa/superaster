@@ -1,0 +1,599 @@
+{
+  "manifest_sha256": "c08508992a6e171d1827a6e99c2bd67f31e3fd9fe41ae6f4f78ba9ae5e8b0296",
+  "cases": [
+    {
+      "id": "heldout-people-01",
+      "original_sha256": "8e8f8d6187862661f50e5f3e7799ab98cfc1c8c4d2c3b9e6cf5a33e50de0b86d",
+      "evaluation_sha256": "95106d025bdd360f6fe9aee6cff5f9f2bd7b591266d929f35284ced536a546ad",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-02",
+      "original_sha256": "14c3f72b63812951538e0405b04056e570a8f92e1c3927f827635a30e5efd723",
+      "evaluation_sha256": "4d4bf5b130caa452bd57549610186c78129237457c81fe29a8c7105459a06a50",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-03",
+      "original_sha256": "9d78e7fec6c595e16466fdfe160cc1a869cca61df4759f9636912861e2aa2192",
+      "evaluation_sha256": "5a12526548c3d05b0da481dee923e593941df8360ed7bbbef62691dccae6200d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-04",
+      "original_sha256": "59cada70f1779537ad5b24e828cd13ff527461c457cb08d511b28f4499315fb3",
+      "evaluation_sha256": "eb9650f7366762f07502da812c7ff29ccb1f7abd6997176949c9ed60e4840aef",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-05",
+      "original_sha256": "dc8e71f3df68425e35acd9d35b910b2cfcf10d0502f6217d2906cf1951d4ffa9",
+      "evaluation_sha256": "155a47ee31cf3f8c6939b720925ba51e8326969bcf453a8294b8ff828cb8adeb",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-06",
+      "original_sha256": "ed08257e86f443dc05122e9171aa0322c8d037ffdfa321d0c0ebfa5a3213f164",
+      "evaluation_sha256": "f52f31ad2c328359b032d560f74bebe97f70539ff930a35b160d6ce327e5ba2b",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-07",
+      "original_sha256": "bd7ba23be2d204c208aa59d874c13d06662d36d879810656960e5dc6a099da31",
+      "evaluation_sha256": "844c060eddf7809b0f5bd4d332d2498779d568c304b77c0ce686562faf22ea38",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-08",
+      "original_sha256": "b4e1cd0ed628041f19f6966cb31dd0f85cf208ca64d0f35868e08b17f20521ca",
+      "evaluation_sha256": "ed79c87114757a7e55ecf16892892e0f37411697be49882afe6a518bff498aaa",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-09",
+      "original_sha256": "3bae3e1db4cca3d1663d46223f00471716c2ae4dbc15c705bcb8309631a3efdc",
+      "evaluation_sha256": "21f0b8ba6abbe807722f5d8371d931d65cd72c68949e2414f24729a0cb6c3174",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-10",
+      "original_sha256": "8feb4a9cc9a01cea248cd070ac765f6160c240e997f607a98bd6593f17b8fd7d",
+      "evaluation_sha256": "583bace5ea980103d643de2681ba5e0d6fe26f1af9ced884968af732a6d22ba6",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-11",
+      "original_sha256": "f3772f47f45d3eb573f4243c84288c6592f7ca7ed7dbb26c7236e9573490e69d",
+      "evaluation_sha256": "00cb096e5b59bbf1b6159dab47aa55b2f81f72447bce508a291a0e0a56a83d08",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-12",
+      "original_sha256": "b7ab0069c1c5acc132737dbef6feabe6ed5174404c0eeb43e32a19b89b8ac202",
+      "evaluation_sha256": "0cfc028c9d1a62875f0ccbefa65ce0592af46d07d976b9766c956e30b9d25b48",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-13",
+      "original_sha256": "10a51d0e2b66b902b402202b361fd89309f76cb3fe27d9908fc3654282d77be4",
+      "evaluation_sha256": "ac19da7b720a1e36b9960e855ce657df520d4eee452c80c18d462e9665b6f760",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-14",
+      "original_sha256": "30758dffbcc993eba37801e0ce1a74cbde62b6e2dedf714700a610719a4ced37",
+      "evaluation_sha256": "9e3f1d20acffb069538e38a0f331050f26e15b2788b03be391cc1565cc6f78d9",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-15",
+      "original_sha256": "102afd1ec427be24a81c9a7157e27d0deacf8b4c0ac0392a497ad4959ff182d4",
+      "evaluation_sha256": "e616d1b5be7fc17fd0d19a1f632810a994b7fe6d3081733f536e7d699fe8f44f",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-16",
+      "original_sha256": "4470e2952aa2f1baa4663ef439f1e83ae58d4c948de0c033bd08500c71525c2f",
+      "evaluation_sha256": "57ba256ee32598bbcee3e522fab85495de5e53c04e6e6655cd7cf41efddc0270",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-17",
+      "original_sha256": "f5b241a47d6053988127a57bb0884418cb29dc0abee06c55f12ad4f2408d667b",
+      "evaluation_sha256": "27327a0b259b0fef100997956c410bfbfe881cb2e5e661460e80cee0dbfb3bed",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-18",
+      "original_sha256": "8929b55be1e7662a018da497a131c2deac902409da5034e9075b36104226e6a0",
+      "evaluation_sha256": "785e8f6737fd4d4b133efae8eeaf88c8b70244dc425867630b4fca4e04bbe33e",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-19",
+      "original_sha256": "ddda0196e73dd979452df01d864efbbfd1814c3e77f9ef239e634b559afcaf26",
+      "evaluation_sha256": "7639e324486aab0d375a4b815b7c9b0e770a2825c5fe05e1b8bb888cbff25e13",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-people-20",
+      "original_sha256": "f92230e61a4412f04015ab030de961f4fafdd063aeab601fce0087c51090407b",
+      "evaluation_sha256": "a7a285c07d97c84d1f4b7e474179ef026c3117717e0a5e5de92cf41c15c8ac16",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-01",
+      "original_sha256": "2247e0efa61baaaf831cd75a76b5968b6f805c1391b5c075de6b7dc5b23c1ddb",
+      "evaluation_sha256": "a2996fae3ebe8c7240a2ca075e55e1f27c4d958322b59c40950c9016c3ad4ed3",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-02",
+      "original_sha256": "80995f04891109ff50f9b8ef7770f7240978bf623f0f1561496fd5b65220e8a1",
+      "evaluation_sha256": "21e7cbb3c30caa08361c79248c6fbf0d8763a5dd1f28d38803393e59479bb45b",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-03",
+      "original_sha256": "d4dec0f2cf0189d8b83462c63e02bc9007e9fe433237dadbfe3af6864d54befb",
+      "evaluation_sha256": "fd13b69dd4ae9a236addbe122335c7ef663da05c0d79d848f23a10b8a7cd51d4",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-04",
+      "original_sha256": "7073847a38f84d8ea7ef5c80ba7b59c0b87f5f4dd8c39e0ddf52602710f6c95f",
+      "evaluation_sha256": "eea654f2073df85e16e229235f4e5a62841d83bd853819512b4faa6c7b6862bd",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-05",
+      "original_sha256": "4a618f09162635f5d1cbc67df39ef15b8c1537fd98e50164b7352b4bb5f4ad2c",
+      "evaluation_sha256": "2b4278613715edfc7dfa07b309a7b7df9bf0baf39f4f3b841c199871d13b2993",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-06",
+      "original_sha256": "1eaca857ffdcee6628b812e745b91d2820b7bb91b609da817428d74bde4bb1e2",
+      "evaluation_sha256": "3255db93dd88a45be4e4ef9a419f7dabdbff16db64c897fa4731bb86e0d18c8c",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-07",
+      "original_sha256": "247746526b7d856f31106d5350dc56be334baed8866344eec1aa5d182d92cd25",
+      "evaluation_sha256": "e18b8317e26dd2bec788ca64c907fedbd9504baf8101754c6b8524dcbd34f5db",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-08",
+      "original_sha256": "ff60745636d84dc9d477855557d37dbf6df54fb36453312e4257471365375064",
+      "evaluation_sha256": "d2ddcd3002d94f0be053038f51230415a7bc7d36fb5ba96be3faad48d9055580",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-09",
+      "original_sha256": "ae20e65cf33162cf77c25594a993417cbd0d7dd588e94adb38dfe377aa0ec747",
+      "evaluation_sha256": "05a5e14b831f1a8f89b37ded692bb887badebf0f5eef93374c71ffa58363f2e5",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-10",
+      "original_sha256": "cb2471da5f5aed64f8d892fad5c0db752fa918ae03fee5e1fc0e4da67cda86a6",
+      "evaluation_sha256": "dc5f6290b7f1ca1f0c3e53b5a9d8fbb20fd0728ad313618a7612631e3560569c",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-11",
+      "original_sha256": "6cb2d37312aefeef8fd2f0df82a0c85fbdd309680c46196627fa2fc835e3f1de",
+      "evaluation_sha256": "a379b0151c15517fbd69f9d29c4f21763f20636af66c29b7b534f670542a0e88",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-12",
+      "original_sha256": "ee9a820f15f141ebe149a229d6d6669ae72d0a54e794822e9eef3a9754eb07f0",
+      "evaluation_sha256": "3440b9aace6e6cec7754859d4cb79d3cff40d88a6f9fac0222fba5360b4a8a1e",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-13",
+      "original_sha256": "f228ceeb77e7d55941a5152130a1529cc4d59709282fbda8c2ce25311e01be30",
+      "evaluation_sha256": "96758e9dda1015d084380771844eae3ce47d1ddadf4a058c622a400eec5628d8",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-14",
+      "original_sha256": "42be0c73e81b98b91ea2801e1ab8067e44d96c1d2268f5cd5769f0155838117d",
+      "evaluation_sha256": "6072074b49efebe34a5457da92593d8490346ce0fcc1963123222a78d714c53d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-15",
+      "original_sha256": "8ff15e8aaa620b37f633ac927d124ee3e8e92305d2573b023e3c6cee1f2a0336",
+      "evaluation_sha256": "af63efc5e9bf170d202ac47a8e8838a85d73830b715677a8e5d16481b802ce3d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-16",
+      "original_sha256": "2495e4d226f464a6571568549680a522065761989bc31055ab24b20706dba0fc",
+      "evaluation_sha256": "4392ff731663fe862b44188612719aeb33c87d19a78999922387c4406aa30ee1",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-17",
+      "original_sha256": "846653b39bd3d5252dfc9dd510526b98a3de65d3e6b97a3e920079d8e2327683",
+      "evaluation_sha256": "144b501ebe35aa312083b08a984dae7e900a03f3931783f7718189b425e24d90",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-18",
+      "original_sha256": "97395016ed235f5fe1c40cd1739444a800fce498c998226b3ace132fc7867f87",
+      "evaluation_sha256": "16dda0499f76bbacb2084e1fd219c7bf0aa84821c5b014f8e301cfeaf2a22841",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-products-19",
+      "original_sha256": "0a850819653187b916dc3ff69f4f4677dd3d3c2f0d51e9fe0a4892ca04eeeb37",
+      "evaluation_sha256": "68f2bdcf1bd6d7024fd5686c0eb7ede7cbb936ba9591b858c4235a2bc4b12569",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-01",
+      "original_sha256": "b749b4f73d42ed77f965fe6793bf34e8e5881406915f2ebe985f4e224eab2df8",
+      "evaluation_sha256": "cb5b2681022515f0fcab89d0c74d68627439ce116c0c35fda7a10142e36f1f1c",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-02",
+      "original_sha256": "69d0fb6912eaf31c1015cb613cea77a844b63ae37e5cfceb99356083f0faa2e8",
+      "evaluation_sha256": "72baddd88842b0004e63d380e12d43f01fdb9f13ba861f4c7f9849fce88f30cf",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-03",
+      "original_sha256": "3e46fb5858d3f67ea55df2b30707c265ec98f0a8c7831dad376229c2d04d07ac",
+      "evaluation_sha256": "0d71889760b4e29931c1bab046efce989e6c049ff0aef931ed2f59e8caf08138",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-04",
+      "original_sha256": "19557ec9faa4c5664008f06a903fda0a75e5b1bc97f559337aa9a971b2275961",
+      "evaluation_sha256": "60c12d248e6abe8cfe3272bf5d5d96f57d4a8e995325cc9f588ab52b24cf561d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-05",
+      "original_sha256": "deec4906476936b397ce143057bb208294584a5c87c33d894f0ef42508b9e5b0",
+      "evaluation_sha256": "a610925b6f9505d4a265e540d2944bf10d292dc63898b3466f7f32a3095c349a",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-06",
+      "original_sha256": "f0f041eda81d506bb43396c6fe9e962ed14c0a8b0b7ba66cbe4939c4ef00f3db",
+      "evaluation_sha256": "8291f721d13eb7a94523386b24e5bf6ae565e4089a68ef9b6fbf035101988f98",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-07",
+      "original_sha256": "b000d6c65b639d79754f9e0f80646bc463b78392c9fd77eadf7fb7aecb0e4c79",
+      "evaluation_sha256": "e8811f010972da933d3e8b3407606eb0f8bb408efa87d8db0690942ad74ff918",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-08",
+      "original_sha256": "af765f58e6a236bb741c0486a20cbd6dd4fb43a331c204845d565d5af0e92b3e",
+      "evaluation_sha256": "0cb68a495876657397970841040f1021baba76fdefa254de94739fb8b4911a3c",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-09",
+      "original_sha256": "4089af2347035d92f5d17fc99fad9826bc21a54ab0f7ad5e4b343b31715004e9",
+      "evaluation_sha256": "06532c879dfa2e06583b0597212c98051cb402d7228cacbc042d3fd51ac25b39",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-10",
+      "original_sha256": "96a3fc236ecb61d2dd2d718a5939e60c6b4156c023b285cf6d624f384df86409",
+      "evaluation_sha256": "206d627646bf9f04b27e275d1d6c606db0a6902c3301856d97ab809e68444a71",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-11",
+      "original_sha256": "723f5ed88ee4912da426610e691432c856ce218b14ba59e6aa4a83084e35df64",
+      "evaluation_sha256": "28888f6d29f09ae7d8c9ecea626e351d6b920664623abde0911c1ec6fd2647dc",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-12",
+      "original_sha256": "51916b19d312630e4c30a1aee6b8e676dfec5c81b59116042dc7dd6473b9b8d7",
+      "evaluation_sha256": "7fe3184fa91f89f2e572ab4413784331ce411a8cd6885583718cae56cdb58480",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-13",
+      "original_sha256": "cabf238af8bdd8a0337df54315569849fe229bf6e6e2d05e87748f8c0078759b",
+      "evaluation_sha256": "ca9322375db305e2ed9902bd87879689f4c0cd7563cbcfa1d6028ffadb37f3f2",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-14",
+      "original_sha256": "20bd54bc31588765eff4279945a8a7ea1e10a7c73b0ac85af9afe6a9aa7ee596",
+      "evaluation_sha256": "f5dad6d1c270cf948c76a98f5754c750d666d100f1f3ef15c9178883776ac09e",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-15",
+      "original_sha256": "7698a5425ae4f7418ffe195eca08b2f2c72dd02a8375bac93366e0b746b29f5e",
+      "evaluation_sha256": "c49f1560b22b152054941251659a8d4663e1e314d1930bdc5b7ec8bdd4b7fe3d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-16",
+      "original_sha256": "d6acbdc6686f81058ea3dc6f31320a55f42317fe6ee79b7d9113e7c255ee9f72",
+      "evaluation_sha256": "bada8d7837afd46caaf04b7b52838cdace4c17cda401fc36699307e85237ab6a",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-17",
+      "original_sha256": "b49884da3bc5e2bba4efd1b6b909ed98a6779d53050549ef7c25d2d5f8bf5d48",
+      "evaluation_sha256": "07476d3fcffbbbf77e6dceee10b73b0b8f05760bd9f83f755eff49bef2a488fe",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-18",
+      "original_sha256": "d86ca5d19a280a087e65c77f06c3820dff42ac3b162caa93c4c32924a389223d",
+      "evaluation_sha256": "d99cba85e6bc06c5ea8d8c191e526587f732cd0a7ff13e9e611d337b0d628c98",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-19",
+      "original_sha256": "ec697edb5d6570f0c882f838fa57a3345d9734ca4a0cd4740a307a0ea3ac72a3",
+      "evaluation_sha256": "638ce3a6f70307ba01fcbd9af8a21988a716b6ffb134f3edd4e9ada34a8e5950",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-animals-20",
+      "original_sha256": "9d33af9c5676f5b8f1bc51a4d50e4011581d22b56d206b97986982bff3b78de9",
+      "evaluation_sha256": "b4c1b684ee334ba8c7bd53c38921736d0fb9bc313a239b76274d663c6fdee226",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-01",
+      "original_sha256": "54741e9db9e65efe0828f8fc09e1728d30e9a766788b5660e165214759921a18",
+      "evaluation_sha256": "42e65886dc7af41fc3d75d3e1207d8ea656e34c47ea63e0b74035f5b2dc11653",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-02",
+      "original_sha256": "45ed13e96581eb99086f53818fa3fe6f5ee21dd83da6c9058e80ebb5fb581758",
+      "evaluation_sha256": "f355dc8c21126f62ff5a1dc97926ad1e33259c5ee8fb5a280ef37f07058182ff",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-03",
+      "original_sha256": "8d03ae4243009fd5cfb59bf51fab5cf128e436eccd77de0cf762791355ccb666",
+      "evaluation_sha256": "48fefd48c3e0267e34f8bfa4c49b6b0cef4e9945c1bb175f543ce4268a2de5ad",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-04",
+      "original_sha256": "495d797e89a84b960bfdfe5a41a57e056627b12804303ac0b35e0c0bbfacc832",
+      "evaluation_sha256": "2bc40c30d5a1e6ee3cc56f2acff41f592d5ee7dfb6a11b16cc5b0630f7b06be0",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-05",
+      "original_sha256": "7389c80674bec56bb657d8f41c3a6289c4ee739fa31cfb45662865efa605b806",
+      "evaluation_sha256": "12689b9a7ae9a2ec9ec7eff906842222074002b8d16c210d8395e1169772e076",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-06",
+      "original_sha256": "d9a10bdcf1a694c539e724ad60ea4171149d92d1049bf877136da19f4c2efd36",
+      "evaluation_sha256": "e42aeba8f7833f6f131ad5357ef42935a84dec7f9248f002d6d3ac04a05a3160",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-07",
+      "original_sha256": "eb0088bf8b023f81a2b2105d7f5bfa0e5659547e67d90f03cd2a53115b91a762",
+      "evaluation_sha256": "af15a0b18bf62b7c33011c31e980b3c2751344a127b3fb82126db2cde9e808d0",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-08",
+      "original_sha256": "0e9f0c9644c9e6ce47b9ff6b6fb496fd2265d20fb8037c6b390474663232002e",
+      "evaluation_sha256": "2907d3490242cfc6ba17bd6c4796561da105f73505ae39121cea9169771b33d7",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-09",
+      "original_sha256": "053af5e68bf389b0f241d8bd1275c3eefcbe020a7469f9043dc9fe8db9e88b9d",
+      "evaluation_sha256": "1b788396e25552fe95f6307cbe1bf3ad946026fef3a63107aea00cff84b90d48",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-10",
+      "original_sha256": "8f5c53efcabde49bfa758c12a16d2715803a38a43151af4c6a3eba3dd9ccbdb8",
+      "evaluation_sha256": "362f5f2880f14592696d37688e8ea4ab7bb5950380c56ca8ad4d0bf9a09c54df",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-11",
+      "original_sha256": "b36bb8159fafde661027461f0513e72858fcd82e800a57279973cb46af645ff9",
+      "evaluation_sha256": "7d10b524dee27620f7092a9487e99e338d453b2fb1ca89e21c69091a457a17c8",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-12",
+      "original_sha256": "008f407311ea559df0ea7b8521884f5ad933fd5fc3824976db88233bef777eea",
+      "evaluation_sha256": "2dde20eeb911e46e2c4d9bafae449f865a8e3376fa3ab16323c648f929f487aa",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-13",
+      "original_sha256": "9a00f4c5b9eaaf898948c3c4150a6ce3a3d860b71099b32cfac517b010ea6a32",
+      "evaluation_sha256": "7d1a7df0a11fd653505aad46ef37138918b9f6008015bf32aa9a406d1841f5ea",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-14",
+      "original_sha256": "2ec730257da07686f582da82f2fbab3ed3612fe2ca4c0e493754734d6f938322",
+      "evaluation_sha256": "3a308bcbdc61eb13aac4aa73afe84ab4017fcc981979f87465f5235d64ae9202",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-15",
+      "original_sha256": "8c6f74dcb929780f6b3a56f1c08e653e2af1096ab73695963cd443b7f2662308",
+      "evaluation_sha256": "878db5e1ad1a69c8198cde40c04af1865462c354fe86cb98fe0ed9fbefb18eeb",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-16",
+      "original_sha256": "27781ccc2b759e8b68da015671d239a2874f68a8f826f89daf2662730707a827",
+      "evaluation_sha256": "3953165519eaa2b00e138c25e608243bfdcc5011c6dfe8a2f1d1b4b270a12e4a",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-17",
+      "original_sha256": "6e3edabd705afe149261729e0ced520e0b9b0405f3c4916f672632116e17494f",
+      "evaluation_sha256": "c2ebee6b004e73a51b72badb6a24ac4ec7704406607b5ea556290728a462aa4d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-18",
+      "original_sha256": "4a11640eb8746aa68aabe42b423f1eae21fa04b6a681ecf0c056d30fe326bf3a",
+      "evaluation_sha256": "33c74caef51665370d494c5814d32dd58b9c77131698a01ab8218405850f1c9f",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-19",
+      "original_sha256": "ab639b9f898898dcc66e18bf5295f05b00acdc79c1c8802a3a46e5d99a9bc47c",
+      "evaluation_sha256": "7586bbed093df8ea8d1f9f06b53d6b07be59aa0c8630314c6bac371ab728aca2",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-thin_structures-20",
+      "original_sha256": "4b5aefdb80aa3c2bf60df2e8d92d4252e9b5d91e215a983272e4b818709c35e1",
+      "evaluation_sha256": "48820a931831444df29824a07cb243afa967e2d47fa4f72fa4457572ce372b78",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-01",
+      "original_sha256": "fb20e8de1f966b3e025ebfb753d977ab45e5319d95f5feeac0c15cb30f006c02",
+      "evaluation_sha256": "52f83565944518aaee5b4ff22696c71b000ae6a7d6ee04543417ecad4849c2c3",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-02",
+      "original_sha256": "0003dab0a0919d8888b0eab982419dcf7323f9949970da6a56feafc803acb719",
+      "evaluation_sha256": "987a9d79b464736ee49a9bdfbdc3309ea446eb3417bd00c1d39770b6402e083a",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-03",
+      "original_sha256": "ba18b8968beaefd5c0e6da91fac79cdbdc6f9e09a609c4458d22dd8cfe3fe0cd",
+      "evaluation_sha256": "88486a514fdd6a6b8a3e968342be02a7550c3f7dd254edbf6e7e60dfa2531c6d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-04",
+      "original_sha256": "3e75b7f279ccf302b088f039bfbb3f0f79e0ae5d83500f19584b8fa4158c4d51",
+      "evaluation_sha256": "b153c602a79933f5e6587e2b7750830fd8b81711da276db5ade4bcd922fa6cdf",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-05",
+      "original_sha256": "3b5e714f3be63439996c358376ad61ae9cc6b01a5b363e325b0179863cded971",
+      "evaluation_sha256": "594384b5d8a71a5f48695df051093749b4f8ee1b0ff4bfd56ecd2fdd3cd38c3b",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-06",
+      "original_sha256": "e57b205fd2a640bda5780672936ab6415391c3cd09e623f7ae343f8a9f79e8c0",
+      "evaluation_sha256": "274f60f0d2e3a31b1c65a3b815e22f807a54c9ee23782c0146f5ffff9232e635",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-07",
+      "original_sha256": "3cabefa264b511e9fdd81e4c096368c2ebedc6aac255f9d33ae41cf97aeef012",
+      "evaluation_sha256": "4aad000d9aa4694ffbf1530f77f0e802901033aa5b65d09309b8f1bd1c667ec7",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-08",
+      "original_sha256": "fb9f4b80ced042f2659e95adf81d10ad9b70415be2f7e3c79b240fa967244859",
+      "evaluation_sha256": "4c2267edbb39fe7a39279775ed8e2494a2febb72140130095fbad8f023c9b977",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-09",
+      "original_sha256": "e6298b19067a1b0350f97a2a3c8fefb9d027ffcfb694ab13bf66728d34db0d7d",
+      "evaluation_sha256": "a23a37ad8f0ea882fe7c9c2df9e09b3f1940bf70109a4062f3d5a4e20f7d40ce",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-10",
+      "original_sha256": "19b661192e332850952c0436f30273dd26f87a516d6b005aec0d2aa6cb5b3112",
+      "evaluation_sha256": "2655c78d621f88e34857688e4d6a04057956ce18a848a9bbc611f000e2bd8f3a",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-11",
+      "original_sha256": "d6ea15c40c8871dd82f1af86b4cd3796f1a7680b2c6dd163a5b3ec7b6ac4b3b1",
+      "evaluation_sha256": "67f6a9647283d6ebca179b1262ccc1425ed4bf2f096e8a358c4a05266b892ced",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-12",
+      "original_sha256": "0304234bc8ca6b5dd32c9ed0a526d2e6214b2a39888db00a7be65ace70e2ac4b",
+      "evaluation_sha256": "71e69ffb450d36c3fcf2fbe3e67b5f990fd0604b75503995cc3c90ad109e7dd1",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-13",
+      "original_sha256": "2fe0acede2f6830cce2d108cf67957f4f2169b9d704cabdf227dec0f3f18cd0b",
+      "evaluation_sha256": "5cdc79f68b84430ed371f5f9ddb3580a5c7dea10c2e350ad092663fc46dad235",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-14",
+      "original_sha256": "022e5396905dd2edcee5d21b5038afb0f651f8f8e1902462dd3c4c6b12ad10db",
+      "evaluation_sha256": "a3bbbc1abdd9af617c4c7910bce09f7b5e7f119489d73a0676f78e307b90815e",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-15",
+      "original_sha256": "2d5a81592ebfacebe485815b7c5b470706433f662c3727909d97797d29faff12",
+      "evaluation_sha256": "ca5fd34bf5b443a89985b4cf1ffec8ff11ab6f507800fa3534f0bfdeb5480edf",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-16",
+      "original_sha256": "06cabd0c0972b647727faa363474fa864ffcbd91da4b19a5d3372fe705ff14e8",
+      "evaluation_sha256": "ffee551df3c96dc0cf0f5b831210d6d8a72a38a0f7b19f053b514ec15b00cd1a",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-17",
+      "original_sha256": "b34a3f552c8f592cd921f1561ae69445f303f9b9fac3e3a316a95559380ee881",
+      "evaluation_sha256": "2b4eeafb9940695f025f9a9d1740d347012df1db99e4a35c9e53b34064df0dfa",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-18",
+      "original_sha256": "3f806d00807133ebb683c33a5d7cd7400516cab5d7e46ff58c8a4b9375727df6",
+      "evaluation_sha256": "3e7ef89b06867cd6444e79e962c83936810573d70b75eb90e2eb269811b6ce16",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-19",
+      "original_sha256": "0cc7e8ba632619d74a1eeb3b8d6066db3d1929dfe720f3250de8d8bb198b5bb7",
+      "evaluation_sha256": "daa6d4ab1a3c7eb446637c94bc494f1cf3d86542b01e72a4a2e9e4cfb8ffd54d",
+      "status": "PASS"
+    },
+    {
+      "id": "heldout-difficult_materials-20",
+      "original_sha256": "734c6419c1db0ba178969a6869c825c3670e7a6dbed4377629c13ecf4c7f062d",
+      "evaluation_sha256": "a55b0c4b40c2c1eb444a35058a4ea58aaaf54a2d7d779e61f93362cdd8096111",
+      "status": "PASS"
+    }
+  ]
+}

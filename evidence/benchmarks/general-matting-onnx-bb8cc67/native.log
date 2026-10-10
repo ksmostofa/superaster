@@ -1,0 +1,4 @@
+{"stage": "initialize_cpu_onnx_session"}
+{"stage": "onnx_inference:t01-three-birdwatchers"}
+{"stage": "onnx_inference:thin-plant"}
+{"onnx_cpu_execution": "completed", "cases": 2, "parity": "MEASUREMENT PENDING", "quality": "NOT AWARDED"}

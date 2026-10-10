@@ -1,0 +1,72 @@
+{
+  "reviewed_complete_model_lines": [
+    1,
+    2250
+  ],
+  "source_revision": "eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9",
+  "unmodified_sources": [
+    {
+      "name": "github-LICENSE",
+      "url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE",
+      "final_url": "https://raw.githubusercontent.com/ZhengPeng7/BiRefNet/ebcc0bc8ec7fe919cec829f2dea656b3078acddc/LICENSE",
+      "status": 200,
+      "bytes": 1066,
+      "sha256": "92a7089e0915fc32bc40067560b398f1e6a7a5958abd7d04eda393629a5acefb"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-config.json",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/config.json",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/config.json?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2Fconfig.json=&etag=%22a90e853725c77d46f395583b265df9125f40f672%22",
+      "status": 200,
+      "bytes": 413,
+      "sha256": "b2b235983b80fbff325976ca517bb7eda25e915b84a97b150eca41266cf8a13b"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-birefnet.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/birefnet.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/birefnet.py?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2Fbirefnet.py=&etag=%22237ac4e21c0999b007381742a387ec1276e6c684%22",
+      "status": 200,
+      "bytes": 92134,
+      "sha256": "2a45b4e0ece72d7c4212bca1a988e7d7e52bfe9f98ec59c58b8809c8a8b7a831"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-BiRefNet_config.py",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/BiRefNet_config.py",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/BiRefNet_config.py?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2FBiRefNet_config.py=&etag=%2237c8ac58bec2f52dac34204978a7b61b69e3da76%22",
+      "status": 200,
+      "bytes": 298,
+      "sha256": "e7b8c2a74f6cea6a59553d517f71d47f2c1d90e670a13416af17c25fe2f3dc52"
+    },
+    {
+      "name": "ZhengPeng7--BiRefNet-matting-requirements.txt",
+      "url": "https://huggingface.co/ZhengPeng7/BiRefNet-matting/resolve/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/requirements.txt",
+      "final_url": "https://huggingface.co/api/resolve-cache/models/ZhengPeng7/BiRefNet-matting/eccde0a8cbdce7ac5fecfeb06340fe7b949e85d9/requirements.txt?%2FZhengPeng7%2FBiRefNet-matting%2Fresolve%2Feccde0a8cbdce7ac5fecfeb06340fe7b949e85d9%2Frequirements.txt=&etag=%22ed8583eb7e7264c7a0c76523882b265a3297423f%22",
+      "status": 200,
+      "bytes": 149,
+      "sha256": "bdfdd83a090d31a2acf64f7350653fa63cd8b5d9d6e0ff3e135bea7ce3786341"
+    }
+  ],
+  "imports": [
+    "os",
+    "math",
+    "functools",
+    "collections",
+    "torch",
+    "numpy",
+    "torchvision",
+    "timm.layers",
+    "transformers",
+    "kornia.filters",
+    "einops",
+    ".BiRefNet_config"
+  ],
+  "runtime_evaluation": "fixed reviewed Config names in eval; no caller supplied code or config strings",
+  "backbone_weights": "False explicit config; load_weights path unreachable for selected constructor",
+  "remote_code": "no AutoModel or from_pretrained loader; imports local reviewed package only",
+  "network": "Python socket audit rejects resolution/connect during preflight/run; not an OS sandbox for native libraries. HF offline flags and reviewed source path use no download API.",
+  "weight_deserialization": "safetensors local; torch.load never called for selected backbone",
+  "training": "no train/compile; inference_mode and eval only; source config compile true is unused",
+  "source_changes": false,
+  "model_init": "NOT RUN",
+  "inference": "NOT RUN"
+}

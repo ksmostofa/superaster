@@ -1,0 +1,151 @@
+{
+  "observed_at": "2026-10-09T16:56:53.204Z",
+  "before_zip_sha256": "bf1eb972c6256e6939b066e9255ccf6cf08f0ce6c5e28d56756e61cad99f3f14",
+  "missing_zip_sha256": "0e22d52c37bade7ea6e89446250623e06aa08af3fec03a1478ae3ec9c173aa0e",
+  "success_zip_sha256": "deea4cd7ebddcaa8bb3addcc873964b8d3228b982fd47f2100d8eb71932207a0",
+  "missing_manifest": [
+    {
+      "index": 1,
+      "input_ref": "image-1",
+      "input": "same.png",
+      "status": "failed",
+      "output": "001-same.png.png",
+      "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+      "requested_recipe_hash": "a2876b6df448fc37329848f91310badc3c207d44b31bf920a0419f6ebb64df0d",
+      "requested_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "composite",
+            "image_ref": "unselected-background"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "Missing bound input unselected-background",
+        "details": {}
+      }
+    },
+    {
+      "index": 2,
+      "input_ref": "image-2",
+      "input": "same.png",
+      "status": "failed",
+      "output": "002-same.png.png",
+      "input_hash": "5d52d974f4f973a29405f539118bdea9ad4eded3f781fe4101d241d9b12ad54d",
+      "requested_recipe_hash": "a2876b6df448fc37329848f91310badc3c207d44b31bf920a0419f6ebb64df0d",
+      "requested_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "composite",
+            "image_ref": "unselected-background"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "Missing bound input unselected-background",
+        "details": {}
+      }
+    }
+  ],
+  "success_manifest": [
+    {
+      "index": 1,
+      "input_ref": "image-1",
+      "input": "same.png",
+      "status": "completed",
+      "output": "001-same.png.png",
+      "input_hash": "fcbe5debcf73f114167d48cc6fdf9f226cf37a945eefff9048268bfe42384956",
+      "recipe_hash": "e241b3040bb1f68b67a8bb638271b7193165d3382aaa8af5ba7f95ea1c9d7f42",
+      "requested_recipe_hash": "e241b3040bb1f68b67a8bb638271b7193165d3382aaa8af5ba7f95ea1c9d7f42",
+      "requested_recipe": {
+        "engine": "auto",
+        "input": {
+          "ref": "input-0"
+        },
+        "operations": [
+          {
+            "background": "#ffffff",
+            "op": "composite"
+          },
+          {
+            "op": "resize",
+            "width": 60
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        },
+        "quality": "quality",
+        "spec_version": "1.0"
+      },
+      "output_recipe_hash": "e241b3040bb1f68b67a8bb638271b7193165d3382aaa8af5ba7f95ea1c9d7f42"
+    },
+    {
+      "index": 2,
+      "input_ref": "image-2",
+      "input": "same.png",
+      "status": "failed",
+      "output": "002-same.png.png",
+      "input_hash": "5d52d974f4f973a29405f539118bdea9ad4eded3f781fe4101d241d9b12ad54d",
+      "requested_recipe_hash": "a2876b6df448fc37329848f91310badc3c207d44b31bf920a0419f6ebb64df0d",
+      "requested_recipe": {
+        "spec_version": "1.0",
+        "input": {
+          "ref": "input-0"
+        },
+        "engine": "auto",
+        "quality": "quality",
+        "operations": [
+          {
+            "op": "composite",
+            "image_ref": "unselected-background"
+          }
+        ],
+        "output": {
+          "format": "png",
+          "metadata": "strip"
+        }
+      },
+      "output_recipe_hash": "a8af3143bf8e7af351077b9e71d1ca232f6cc4e35026f0676dd858371e120bbf",
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "Missing bound input unselected-background",
+        "details": {}
+      }
+    }
+  ],
+  "checks": {
+    "failed_status_on_preflight_error": "PASS",
+    "requested_recipe_hash": "PASS",
+    "unresolved_hash_not_fabricated": "PASS",
+    "retained_output_identity_and_bytes": "PASS",
+    "successful_webmcp_identity": "PASS",
+    "successful_decoded_pixels_and_record": "PASS"
+  },
+  "scope": "Actual final-build UI resume with a missing bound input and actual WebMCP changed-recipe success. No inference."
+}

@@ -1,0 +1,167 @@
+{
+  "role": "workflow correctness/resource/error inputs; excluded from automatic quality scoring and heldout corpus",
+  "source_permissions": "Real images retain screening manifest licenses and attribution; generated corruption bytes are original CC0.",
+  "t01": {
+    "derived_geometry": {
+      "canvas_background": "#ffffff",
+      "position_px": [
+        0,
+        3
+      ],
+      "resampling": "Pillow 12.3.0 LANCZOS; contain without upscaling",
+      "source_scaled_dimensions": [
+        2400,
+        1593
+      ]
+    },
+    "height": 1600,
+    "license": "Public domain",
+    "orientation_normalized": true,
+    "path": "benchmarks/fixtures/generated/acceptance/t01-2400x1600.png",
+    "retained_subject": "all three visible foreground birdwatchers with clothing and equipment",
+    "sha256": "08eeb79ecc9b1b1ed5bf6c93631835005b240d24523303379384737694585734",
+    "source_case_id": "people-group",
+    "source_sha256": "59240dd21009422421968a096a28a551caa4130d0e0435f549c632c7a7904dc7",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_group_of_people_stand_birdwatching.jpg",
+    "width": 2400
+  },
+  "t08_batch": {
+    "corrupt_input_count": 1,
+    "files": [
+      {
+        "case_id": "people-hair",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/01-people-hair.png",
+        "sha256": "c2fb68f779061d47fe2bfe78536953710d37f001794394366dbb91664f1adbeb"
+      },
+      {
+        "case_id": "people-covering",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/02-people-covering.png",
+        "sha256": "c6953196a2e1b506ef71fea1127d3c02b1a6fe4a4901e1a38ea48dc2bf71aff1"
+      },
+      {
+        "case_id": "people-group",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/03-people-group.png",
+        "sha256": "8bdcdd74c7a97d134b21029c6cbae479aa2bd5b80180ede4beceab95d141bcf2"
+      },
+      {
+        "case_id": "people-motion",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/04-people-motion.png",
+        "sha256": "a6c9ad508330ce6137ebd877cf4ba80a2c7f0603bfa76bb075b28a03065686f6"
+      },
+      {
+        "case_id": "people-portrait",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/05-people-portrait.png",
+        "sha256": "2e1ada599cd0ddbeb8eb942a668e032a920de16ed98f7deb53d9bbd5604833ed"
+      },
+      {
+        "case_id": "product-hole",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/06-product-hole.png",
+        "sha256": "e2cee6af17d72293f03023fddb6642a4368c3a4c065a5abf9f57a252287dceb8"
+      },
+      {
+        "case_id": "product-white",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/07-product-white.png",
+        "sha256": "abfb998bf3947ad5b8562a524f5d141fead62371e6cd582ca2da455da70417de"
+      },
+      {
+        "case_id": "product-dark",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/08-product-dark.png",
+        "sha256": "01096d7374b7595ff632d0219914425a25c1bf064871d42854bde35cd977f45d"
+      },
+      {
+        "case_id": "product-shadow",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/09-product-shadow.png",
+        "sha256": "cac404308bc23c6740a7031abeaf398107591864af30349c478d5b6042525b8a"
+      },
+      {
+        "case_id": "product-tools",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/10-product-tools.png",
+        "sha256": "239a0b8237bcb990c9dd33d5e5a4d0ba529493859321f7c72340a25b74185a76"
+      },
+      {
+        "case_id": "animal-fur",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/11-animal-fur.png",
+        "sha256": "a6fb8781aba578c1a8a7f561f30bc2c8bbb27dd3d94c489354ea30febc167434"
+      },
+      {
+        "case_id": "animal-whisker",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/12-animal-whisker.png",
+        "sha256": "eb2f780aa586467369670da557d666865fea244d1ba86f835aa7160cfc7a472d"
+      },
+      {
+        "case_id": "animal-feather",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/13-animal-feather.png",
+        "sha256": "bcef00a300c4e6f428cadaea9fa361243b08d17e66607543140a7abff3ef9b73"
+      },
+      {
+        "case_id": "animal-dog",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/14-animal-dog.png",
+        "sha256": "632ddaaeba4d8de981a53b99df2a2a61fdcae79b55aa31051d89efaa52e1280c"
+      },
+      {
+        "case_id": "animal-bird",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/15-animal-bird.png",
+        "sha256": "1b13825c30df470a9f426779438296ca51d7f777f9b5c2b263ad30c515cf7385"
+      },
+      {
+        "case_id": "thin-spokes",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/16-thin-spokes.png",
+        "sha256": "28731b61c50aa83a2c50cde2e2677bb36ab2025311fe2062addcd25d866afae1"
+      },
+      {
+        "case_id": "thin-mesh",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/17-thin-mesh.png",
+        "sha256": "efeb28f8d3d0e51cb506b4f3a2b4edd998d7269dd522e85c798b83e5a0e82570"
+      },
+      {
+        "case_id": "thin-plant",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/18-thin-plant.png",
+        "sha256": "11f56e745cf24d162b5a415db8035c61e195c99411428ce210b1923240cd0b2b"
+      },
+      {
+        "case_id": "thin-cables",
+        "expected": "valid real-image input; output quality judged separately",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/19-thin-cables.png",
+        "sha256": "63c2205961585e4a40e28f8d4fec3f931e57aedc243e7d851e9b9016c76cfa57"
+      },
+      {
+        "case_id": "corrupt",
+        "expected": "one attributable invalid-image error",
+        "path": "benchmarks/fixtures/generated/acceptance/batch-20/20-corrupt.jpg",
+        "sha256": "b552ce46ecd2ab572ac1c6d980b884e5fb16a38f43dfefd0863100221f6ee030"
+      }
+    ],
+    "valid_input_count": 19
+  },
+  "t10_duplicate_basenames": [
+    {
+      "case_id": "people-hair",
+      "path": "benchmarks/fixtures/generated/acceptance/batch-collisions/a/same-name.png",
+      "sha256": "c2fb68f779061d47fe2bfe78536953710d37f001794394366dbb91664f1adbeb"
+    },
+    {
+      "case_id": "people-covering",
+      "path": "benchmarks/fixtures/generated/acceptance/batch-collisions/b/same-name.png",
+      "sha256": "c6953196a2e1b506ef71fea1127d3c02b1a6fe4a4901e1a38ea48dc2bf71aff1"
+    }
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,25 @@
+{
+  "headerBounds": {
+    "bottom": 176.58203125,
+    "height": 176.58203125,
+    "left": 0,
+    "right": 375,
+    "top": 0,
+    "width": 375,
+    "x": 0,
+    "y": 0
+  },
+  "height": 844,
+  "noticeBounds": {
+    "bottom": 165.95703125,
+    "height": 51.97265625,
+    "left": 15.99609375,
+    "right": 359.00390625,
+    "top": 113.984375,
+    "width": 343.0078125,
+    "x": 15.99609375,
+    "y": 113.984375
+  },
+  "overflow": false,
+  "width": 390
+}

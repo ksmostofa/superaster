@@ -1,0 +1,46 @@
+{
+  "checked": "2026-10-09",
+  "scope": "Pinned build repository and LGPL main-WASM source archives; dependencies/patches identified in build.sh still need exact input retention for a fully frozen rebuild",
+  "entries": [
+    {
+      "component": "wasm-vips",
+      "version": "49ac4378f2df80e38f45491abeeac9b86dddbedd",
+      "url": "https://codeload.github.com/kleisauke/wasm-vips/tar.gz/49ac4378f2df80e38f45491abeeac9b86dddbedd",
+      "bytes": 7715169,
+      "sha256": "ebd94f51dae13165bd98db3f2ff99a66e64dd59c982c8722250a1f3a160c25a1",
+      "status": "downloaded and hashed; source rebuild not run"
+    },
+    {
+      "component": "sharp-libvips-build",
+      "version": "ebb95f8add54eee8bed840e3fb587e4cbec857d7",
+      "url": "https://codeload.github.com/lovell/sharp-libvips/tar.gz/ebb95f8add54eee8bed840e3fb587e4cbec857d7",
+      "bytes": 24490,
+      "sha256": "65fdb633c2d97626352a3771b7a0ce30b6a89af03d2a1238491c8b068e6b8dad",
+      "status": "downloaded and hashed; source rebuild not run"
+    },
+    {
+      "component": "libvips",
+      "version": "8.18.7",
+      "url": "https://github.com/libvips/libvips/releases/download/v8.18.7/vips-8.18.7.tar.xz",
+      "bytes": 25425084,
+      "sha256": "5baaead3b0bb20ffdb9e9ff09aa9fda08620923df77b63b436654cb5e0b3bf94",
+      "status": "downloaded and hashed; source rebuild not run"
+    },
+    {
+      "component": "glib",
+      "version": "2.90.0",
+      "url": "https://download.gnome.org/sources/glib/2.90/glib-2.90.0.tar.xz",
+      "bytes": 5830480,
+      "sha256": "17d15cac2af80a33271127408e0abc2748eb297c595c2a26409e81e14e7d1b8f",
+      "status": "downloaded and hashed; source rebuild not run"
+    },
+    {
+      "component": "libexif",
+      "version": "0.6.26",
+      "url": "https://github.com/libexif/libexif/releases/download/v0.6.26/libexif-0.6.26.tar.xz",
+      "bytes": 1335488,
+      "sha256": "4a055ed6575e61ca46c3172be3c753cc16c9becd0f99ec71d58dd0e471476c0c",
+      "status": "downloaded and hashed; source rebuild not run"
+    }
+  ]
+}

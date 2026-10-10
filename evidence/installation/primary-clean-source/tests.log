@@ -1,0 +1,9 @@
+
+> superaster-local@0.1.0-alpha.1 test
+> npm run build:native && vitest run --reporter=json --outputFile=../tests-correct.json
+
+
+> superaster-local@0.1.0-alpha.1 build:native
+> tsc -p tsconfig.native.json
+
+JSON report written to /home/sadid/Downloads/Superaster/superaster-primary-integration/.cache/cloud-install-check/tests-correct.json

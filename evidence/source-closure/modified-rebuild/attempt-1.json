@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-10-10T05:57:44.621482+00:00",
+  "commit": "ccd3c3ffd7b1ba4da16c218d64f746ed77f77b49",
+  "command": "SUPERASTER_COMPILE_APPROVED=yes bash benchmarks/runtime-rebuild/run.sh .cache/runtime-rebuild",
+  "compiler_jobs": 2,
+  "timeout_minutes": 75,
+  "status": "FAIL",
+  "exit_code": 127,
+  "finished_at": "2026-10-10T05:57:44.647622+00:00"
+}

@@ -1,0 +1,65 @@
+{
+  "facts": {
+    "buttons": [
+      {
+        "bounds": {
+          "bottom": 182.607421875,
+          "height": 47.998046875,
+          "left": 278.837890625,
+          "right": 374.00390625,
+          "top": 134.609375,
+          "width": 95.166015625,
+          "x": 278.837890625,
+          "y": 134.609375
+        },
+        "name": "Add images"
+      },
+      {
+        "bounds": {
+          "bottom": 765.5859375,
+          "height": 47.998046875,
+          "left": 15.99609375,
+          "right": 374.00390625,
+          "top": 717.587890625,
+          "width": 358.0078125,
+          "x": 15.99609375,
+          "y": 717.587890625
+        },
+        "name": "Download image"
+      },
+      {
+        "bounds": {
+          "bottom": 821.58203125,
+          "height": 47.998046875,
+          "left": 15.99609375,
+          "right": 374.00390625,
+          "top": 773.583984375,
+          "width": 358.0078125,
+          "x": 15.99609375,
+          "y": 773.583984375
+        },
+        "name": "Process again"
+      }
+    ],
+    "height": 844,
+    "image": [
+      {
+        "bounds": {
+          "bottom": 564.39453125,
+          "height": 221.845703125,
+          "left": 28.61328125,
+          "right": 361.38671875,
+          "top": 342.548828125,
+          "width": 332.7734375,
+          "x": 28.61328125,
+          "y": 342.548828125
+        },
+        "naturalHeight": 800,
+        "naturalWidth": 1200
+      }
+    ],
+    "overflow": false,
+    "width": 390
+  },
+  "scope": "390x844 browser emulation; no physical-phone performance or acceptance."
+}
